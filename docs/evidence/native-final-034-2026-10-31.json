@@ -1,0 +1,33 @@
+{
+  "version": "0.3.4",
+  "health": {
+    "service": "vsl-clinic",
+    "status": "ok",
+    "version": "0.3.4",
+    "model_loaded": true
+  },
+  "captured_at": "2026-10-31T14:52:29.5494356+07:00",
+  "clients": {
+    "doctor": 1,
+    "patient": 1
+  },
+  "capture": {
+    "status": "idle",
+    "generation": 15
+  },
+  "conversation": {
+    "status": "idle",
+    "mode": "manual",
+    "epoch": "1b54a709f75c",
+    "source": {
+      "kind": "camera",
+      "camera_index": 0
+    },
+    "started_at_ms": null
+  },
+  "known_patient_accuracy_limit": "8/10 exact patient turns in final packaged rehearsal; no human webcam/mic validation",
+  "process": {
+    "ProcessId": 22468,
+    "ExecutablePath": "E:\\project\\vsl projects\\ver 2 - 2026-05-28 - vsl translator\\vsl-clinic-desktop\\release\\desktop-v0.3.4\\win-unpacked\\vsl clinic.exe"
+  }
+}

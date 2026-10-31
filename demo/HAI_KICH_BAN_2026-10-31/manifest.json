@@ -1,0 +1,389 @@
+{
+  "schema": "clinic-rehearsal-v1",
+  "scope": "Two fixed demo conversations; patient responses use only the unchanged 400 classes. Video rehearsal is not an accuracy guarantee for a new signer.",
+  "scenarios": [
+    {
+      "id": "01_Tiep_don_va_hoi_trieu_chung",
+      "title": "Tiếp đón và hỏi triệu chứng",
+      "steps": [
+        {
+          "doctor": "Bây giờ bác sĩ khám bệnh.",
+          "patient_ids": [
+            395
+          ],
+          "meaning": "Đồng ý.",
+          "doctor_projection": [
+            "Bây giờ",
+            "Bác sĩ",
+            "Khám bệnh"
+          ],
+          "doctor_gloss_ids": [
+            "17",
+            "11",
+            "145"
+          ],
+          "patient_labels": [
+            "Đồng ý"
+          ],
+          "clips": [
+            {
+              "file": "01_Tiep_don_va_hoi_trieu_chung/01_Tra_loi/1.mp4",
+              "model_id": 395,
+              "label": "Đồng ý",
+              "source_video_id": "021016",
+              "sha256": "84f47e2ba8c9fdfbcc38c78b1a115bb0bea41bdd977f151df04a3ed997996c94"
+            }
+          ],
+          "replay": {
+            "file": "01_Tiep_don_va_hoi_trieu_chung/01_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "a63093e3f860f290786dab942244d64c3ad1c2e12640c4830507fab402ca1bc6",
+            "frames": 145,
+            "duration_ms": 4833
+          }
+        },
+        {
+          "doctor": "Bạn có đau bụng không?",
+          "patient_ids": [
+            379
+          ],
+          "meaning": "Đau.",
+          "doctor_projection": [
+            "Bụng",
+            "Đau"
+          ],
+          "doctor_gloss_ids": [
+            "qipedc-W00362",
+            "379"
+          ],
+          "patient_labels": [
+            "Đau"
+          ],
+          "clips": [
+            {
+              "file": "01_Tiep_don_va_hoi_trieu_chung/02_Tra_loi/1.mp4",
+              "model_id": 379,
+              "label": "Đau",
+              "source_video_id": "021292",
+              "sha256": "cdf21771e58fb060e9733108b2580ef62f6927cd60ee022531e1d0eff4dcb3ff"
+            }
+          ],
+          "replay": {
+            "file": "01_Tiep_don_va_hoi_trieu_chung/02_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "86553ddbd91251fb4ce186bb13c0b5f874048aa02f40282dafce7d75c187d1c6",
+            "frames": 155,
+            "duration_ms": 5167
+          }
+        },
+        {
+          "doctor": "Bạn có cảm thấy mệt không?",
+          "patient_ids": [
+            204
+          ],
+          "meaning": "Mệt.",
+          "doctor_projection": [
+            "Cảm thấy",
+            "Mệt"
+          ],
+          "doctor_gloss_ids": [
+            "85",
+            "204"
+          ],
+          "patient_labels": [
+            "Mệt"
+          ],
+          "clips": [
+            {
+              "file": "01_Tiep_don_va_hoi_trieu_chung/03_Tra_loi/1.mp4",
+              "model_id": 204,
+              "label": "Mệt",
+              "source_video_id": "021291",
+              "sha256": "ab893d25729ad900a51e450ea85231e20451225f4dacbf53e4b2176d3877a288"
+            }
+          ],
+          "replay": {
+            "file": "01_Tiep_don_va_hoi_trieu_chung/03_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "32c9f9b231f4ac93829aa2e24807571a5fb75a8bdeea47a7d98a3d363638d151",
+            "frames": 155,
+            "duration_ms": 5167
+          }
+        },
+        {
+          "doctor": "Bác sĩ đo nhiệt độ.",
+          "patient_ids": [
+            395
+          ],
+          "meaning": "Đồng ý.",
+          "doctor_projection": [
+            "Bác sĩ",
+            "Nhiệt độ",
+            "Đo"
+          ],
+          "doctor_gloss_ids": [
+            "11",
+            "qipedc-W01298",
+            "qipedc-W01227"
+          ],
+          "patient_labels": [
+            "Đồng ý"
+          ],
+          "clips": [
+            {
+              "file": "01_Tiep_don_va_hoi_trieu_chung/04_Tra_loi/1.mp4",
+              "model_id": 395,
+              "label": "Đồng ý",
+              "source_video_id": "021016",
+              "sha256": "84f47e2ba8c9fdfbcc38c78b1a115bb0bea41bdd977f151df04a3ed997996c94"
+            }
+          ],
+          "replay": {
+            "file": "01_Tiep_don_va_hoi_trieu_chung/04_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "a63093e3f860f290786dab942244d64c3ad1c2e12640c4830507fab402ca1bc6",
+            "frames": 145,
+            "duration_ms": 4833
+          }
+        },
+        {
+          "doctor": "Ngồi nghỉ ngơi.",
+          "patient_ids": [
+            86
+          ],
+          "meaning": "Cảm ơn.",
+          "doctor_projection": [
+            "Ngồi",
+            "Nghỉ ngơi"
+          ],
+          "doctor_gloss_ids": [
+            "qipedc-W02400N",
+            "210"
+          ],
+          "patient_labels": [
+            "Cảm ơn"
+          ],
+          "clips": [
+            {
+              "file": "01_Tiep_don_va_hoi_trieu_chung/05_Tra_loi/1.mp4",
+              "model_id": 86,
+              "label": "Cảm ơn",
+              "source_video_id": "021025",
+              "sha256": "3b8f96f3972f4673f38085c55a27fcf400f626e65baa7c570e506abc174e15e8"
+            }
+          ],
+          "replay": {
+            "file": "01_Tiep_don_va_hoi_trieu_chung/05_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "a280dc434e861b9dccbc2e0fab78cbbb05d5a5c418bcea1ca8364c392d645196",
+            "frames": 157,
+            "duration_ms": 5233
+          }
+        }
+      ]
+    },
+    {
+      "id": "02_Nhu_cau_va_ho_tro",
+      "title": "Nêu nhu cầu và hỗ trợ",
+      "steps": [
+        {
+          "doctor": "Bạn có cần giúp đỡ không?",
+          "patient_ids": [
+            87,
+            116
+          ],
+          "meaning": "Cần giúp đỡ.",
+          "doctor_projection": [
+            "Cần",
+            "Giúp đỡ"
+          ],
+          "doctor_gloss_ids": [
+            "87",
+            "116"
+          ],
+          "patient_labels": [
+            "Cần",
+            "Giúp đỡ"
+          ],
+          "clips": [
+            {
+              "file": "02_Nhu_cau_va_ho_tro/01_Tra_loi/1.mp4",
+              "model_id": 87,
+              "label": "Cần",
+              "source_video_id": "021023",
+              "sha256": "4f7fe2abb472d6d52d758b5e3ad0f225d476d45597e0da1170d9206858174595"
+            },
+            {
+              "file": "02_Nhu_cau_va_ho_tro/01_Tra_loi/2.mp4",
+              "model_id": 116,
+              "label": "Giúp đỡ",
+              "source_video_id": "021036",
+              "sha256": "fc2aa1b23c1509130c63a6fdfe29f79766cf38f1c0f9ef9bebaca2e593a68205"
+            }
+          ],
+          "replay": {
+            "file": "02_Nhu_cau_va_ho_tro/01_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "fc0b36e10491e903ed484f57452113a4bb34e32e0ca334da2a664c4fe2b3d5a1",
+            "frames": 255,
+            "duration_ms": 8500
+          }
+        },
+        {
+          "doctor": "Bạn muốn uống nước không?",
+          "patient_ids": [
+            87,
+            243
+          ],
+          "meaning": "Cần nước.",
+          "doctor_projection": [
+            "Muốn",
+            "Nước",
+            "Uống"
+          ],
+          "doctor_gloss_ids": [
+            "169",
+            "243",
+            "348"
+          ],
+          "patient_labels": [
+            "Cần",
+            "Nước"
+          ],
+          "clips": [
+            {
+              "file": "02_Nhu_cau_va_ho_tro/02_Tra_loi/1.mp4",
+              "model_id": 87,
+              "label": "Cần",
+              "source_video_id": "021023",
+              "sha256": "4f7fe2abb472d6d52d758b5e3ad0f225d476d45597e0da1170d9206858174595"
+            },
+            {
+              "file": "02_Nhu_cau_va_ho_tro/02_Tra_loi/2.mp4",
+              "model_id": 243,
+              "label": "Nước",
+              "source_video_id": "020824",
+              "sha256": "08690638ac7f752ff15686110bc0eca3228a9944d2d5d12b2bf0a9c7b294a371"
+            }
+          ],
+          "replay": {
+            "file": "02_Nhu_cau_va_ho_tro/02_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "910dfb6b641d89b0f696a81b5b1f93c905fa42771eb27dc5f5a39bf770573b1b",
+            "frames": 274,
+            "duration_ms": 9133
+          }
+        },
+        {
+          "doctor": "Uống nước nhé.",
+          "patient_ids": [
+            395
+          ],
+          "meaning": "Đồng ý.",
+          "doctor_projection": [
+            "Nước",
+            "Uống"
+          ],
+          "doctor_gloss_ids": [
+            "243",
+            "348"
+          ],
+          "patient_labels": [
+            "Đồng ý"
+          ],
+          "clips": [
+            {
+              "file": "02_Nhu_cau_va_ho_tro/03_Tra_loi/1.mp4",
+              "model_id": 395,
+              "label": "Đồng ý",
+              "source_video_id": "021016",
+              "sha256": "84f47e2ba8c9fdfbcc38c78b1a115bb0bea41bdd977f151df04a3ed997996c94"
+            }
+          ],
+          "replay": {
+            "file": "02_Nhu_cau_va_ho_tro/03_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "a63093e3f860f290786dab942244d64c3ad1c2e12640c4830507fab402ca1bc6",
+            "frames": 145,
+            "duration_ms": 4833
+          }
+        },
+        {
+          "doctor": "Bạn muốn nghỉ ngơi không?",
+          "patient_ids": [
+            204,
+            87,
+            210
+          ],
+          "meaning": "Mệt. Cần nghỉ ngơi.",
+          "doctor_projection": [
+            "Muốn",
+            "Nghỉ ngơi"
+          ],
+          "doctor_gloss_ids": [
+            "169",
+            "210"
+          ],
+          "patient_labels": [
+            "Mệt",
+            "Cần",
+            "Nghỉ ngơi"
+          ],
+          "clips": [
+            {
+              "file": "02_Nhu_cau_va_ho_tro/04_Tra_loi/1.mp4",
+              "model_id": 204,
+              "label": "Mệt",
+              "source_video_id": "021291",
+              "sha256": "ab893d25729ad900a51e450ea85231e20451225f4dacbf53e4b2176d3877a288"
+            },
+            {
+              "file": "02_Nhu_cau_va_ho_tro/04_Tra_loi/2.mp4",
+              "model_id": 87,
+              "label": "Cần",
+              "source_video_id": "021023",
+              "sha256": "4f7fe2abb472d6d52d758b5e3ad0f225d476d45597e0da1170d9206858174595"
+            },
+            {
+              "file": "02_Nhu_cau_va_ho_tro/04_Tra_loi/3.mp4",
+              "model_id": 210,
+              "label": "Nghỉ ngơi",
+              "source_video_id": "021041",
+              "sha256": "c0680880197f6151c3f1b51c0adae6519d50de8cf1eb99b8297c781c6f3d1878"
+            }
+          ],
+          "replay": {
+            "file": "02_Nhu_cau_va_ho_tro/04_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "abd5f99def1655252528feb40003a262fcb3eb7364f0bb4bcd97f5d0348d58e3",
+            "frames": 344,
+            "duration_ms": 11467
+          }
+        },
+        {
+          "doctor": "Cảm ơn.",
+          "patient_ids": [
+            86
+          ],
+          "meaning": "Cảm ơn.",
+          "doctor_projection": [
+            "Cảm ơn"
+          ],
+          "doctor_gloss_ids": [
+            "86"
+          ],
+          "patient_labels": [
+            "Cảm ơn"
+          ],
+          "clips": [
+            {
+              "file": "02_Nhu_cau_va_ho_tro/05_Tra_loi/1.mp4",
+              "model_id": 86,
+              "label": "Cảm ơn",
+              "source_video_id": "021025",
+              "sha256": "3b8f96f3972f4673f38085c55a27fcf400f626e65baa7c570e506abc174e15e8"
+            }
+          ],
+          "replay": {
+            "file": "02_Nhu_cau_va_ho_tro/05_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "a280dc434e861b9dccbc2e0fab78cbbb05d5a5c418bcea1ca8364c392d645196",
+            "frames": 157,
+            "duration_ms": 5233
+          }
+        }
+      ]
+    }
+  ],
+  "video_note": "Composite clips append 800 ms holds per word and a 2 s final hold; source videos and hashes retained. Not a natural continuous signing benchmark."
+}

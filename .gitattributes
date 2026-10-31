@@ -1,0 +1,5 @@
+# Keep provenance/checksum inputs byte-identical across Windows and Linux clones.
+# Text files still receive normal text diffs; only line-ending conversion is off.
+* -text
+# CRLF bytes are intentional in the pinned inputs, not trailing spaces.
+* whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

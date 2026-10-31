@@ -1,0 +1,25 @@
+{
+  "schema": "clinic-speech-model-v1",
+  "repository": "vinai/PhoWhisper-base",
+  "revision": "7ebdb9e88f5cc5271fb88f4d642c82ff9388650e",
+  "source_url": "https://huggingface.co/vinai/PhoWhisper-base/tree/7ebdb9e88f5cc5271fb88f4d642c82ff9388650e",
+  "source_checkpoint_sha256": "910b9e8875497078efa83dc506ea7ee378e4e759a206ceecbf23e088aec9b9f8",
+  "license_url": "https://raw.githubusercontent.com/VinAIResearch/PhoWhisper/main/LICENSE",
+  "license": "BSD-3-Clause",
+  "quantization": "int8",
+  "language": "vi",
+  "packages": {
+    "torch": "2.7.1+cpu",
+    "transformers": "4.53.3",
+    "ctranslate2": "4.6.2",
+    "huggingface-hub": "0.34.4"
+  },
+  "files": {
+    "config.json": "d01989ec688fe3508788cdee0dd4f6b2de5ce354b2c0b5f585d713fc19fab81f",
+    "LICENSE": "6ba6977f0a21f70170fac152bb5d7ef9c136ee708007f49efb9a8729883b60cd",
+    "model.bin": "8b039b26e4e640942900d93f1094ee83a2d71c0245e398bc83b02494e868e588",
+    "preprocessor_config.json": "a6a76d28c93edb273669eb9e0b0636a2bddbb1272c3261e47b7ca6dfdbac1b8d",
+    "tokenizer.json": "c218b12acbc2168cad951ae8a8c8d345df09dfa63b787214d4ac27762170fd7b",
+    "vocabulary.json": "aa4e6188766a36f6a7f3e44db3f74823c6fee0bf33a9559247e18fedb3bc8d55"
+  }
+}

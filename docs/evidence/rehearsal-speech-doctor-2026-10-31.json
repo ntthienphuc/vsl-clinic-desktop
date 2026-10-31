@@ -1,0 +1,90 @@
+{
+  "created_at": "2026-10-31T07:09:02.203374+00:00",
+  "scope": "Synthetic TTS through real paced live WebSocket. Does not validate the user's voice/microphone/room acoustics.",
+  "rows": [
+    {
+      "input": "Bác sĩ đo nhiệt độ.",
+      "synthetic": true,
+      "transcripts": [
+        {
+          "text": "bác sĩ đo nhiệt độ.",
+          "decode_ms": 971.2495999992825,
+          "audio_ms": 2176.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.027633666653524746,
+              "no_speech_prob": 1.6858989898560495e-11
+            }
+          ],
+          "type": "transcript",
+          "sequence": 1,
+          "utterance_id": "2643eccb22ce49c19134e0f8626082e1:1",
+          "session_id": "8509821789ec:9cd1622007b9",
+          "queue_ms": 0.21289999858709052,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false,
+          "delivery": {
+            "status": "sent",
+            "message_id": "454e84767444"
+          }
+        }
+      ],
+      "messages": [
+        {
+          "id": "454e84767444",
+          "role": "doctor",
+          "text": "bác sĩ đo nhiệt độ.",
+          "created_at_ms": 1793430532680.1443,
+          "mode": "sign",
+          "glosses": [
+            {
+              "id": "11",
+              "label": "Bác sĩ",
+              "start": 0,
+              "tokens": 0
+            },
+            {
+              "id": "qipedc-W01298",
+              "label": "Nhiệt độ",
+              "start": 0,
+              "tokens": 0
+            },
+            {
+              "id": "qipedc-W01227",
+              "label": "Đo",
+              "start": 0,
+              "tokens": 0
+            }
+          ],
+          "status": "presenting",
+          "phrase_id": "doctor-temperature",
+          "nonmanual": "neutral",
+          "act": "statement",
+          "clauses": [
+            {
+              "text": "bác sĩ đo nhiệt độ.",
+              "gloss_start": 0,
+              "gloss_end": 3,
+              "supported": true,
+              "phrase_id": "doctor-temperature",
+              "nonmanual": "neutral",
+              "act": "statement",
+              "explanation": "Chủ thể bác sĩ → nhiệt độ → đo."
+            }
+          ],
+          "speech_utterance_id": "2643eccb22ce49c19134e0f8626082e1:1",
+          "presented_at_ms": 1793430532704.168
+        }
+      ],
+      "drafts": [],
+      "checks": {
+        "one_transcript": true,
+        "dispatch": true,
+        "same_glosses": true,
+        "avatar_completed": true
+      }
+    }
+  ],
+  "passed": true
+}

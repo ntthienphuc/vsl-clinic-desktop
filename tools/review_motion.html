@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="vi">
+<meta charset="utf-8">
+<title>VSL Clinic · Kiểm tra chuyển động</title>
+<style>
+  body { margin: 24px; font: 16px system-ui; background: #eef4f3; color: #173d3c; }
+  button, select, input { font: inherit; padding: 8px; margin: 4px; }
+  .views { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .panel { background: white; padding: 16px; border-radius: 16px; }
+  #stage, video { width: 100%; height: 520px; object-fit: contain; }
+  #stage canvas { width: 100%; height: 100%; }
+  pre { white-space: pre-wrap; font-size: 13px; }
+  a { display: inline-block; margin: 8px; }
+</style>
+<h1>Đối chiếu motion và video medoid</h1>
+<p>Cùng pha chuẩn hóa; góc nhìn chính diện. Kiểm tra hình học không xác nhận nghĩa VSL hay các dấu hiệu nét mặt.</p>
+<label>Từ <select id="word"></select></label>
+<button id="toggle">Tạm dừng</button>
+<button id="export">Tạo bảng đối chiếu (mỗi từ × 3 pha)</button>
+<label>Pha <input id="seek" type="range" min="0" max="1" step="0.01" value="0"></label>
+<div class="views">
+  <div class="panel"><h2>Avatar với ràng buộc khớp</h2><div id="stage"></div></div>
+  <div class="panel"><h2>Video gốc được chọn làm medoid</h2><video id="reference" muted playsinline loop controls></video></div>
+</div>
+<pre id="status">Đang tải…</pre>
+<div id="downloads"></div>
+<script type="module">
+  import * as THREE from 'three';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  import { VRMLoaderPlugin } from '@pixiv/three-vrm';
+  import { HumanoidRetargeter } from '../src/avatar/retarget.ts';
+  import { sampleMotion, neutralPose } from '../src/avatar/motion.ts';
+  import { dressClinician } from '../src/avatar/clinicalOutfit.ts';
+
+  const words = await (await fetch('/research/review/manifest.json')).json();
+  const qipedc = await (await fetch('/research/qipedc-sources.json')).json();
+  words.push(...qipedc.words.map((word) => ({
+    id: word.id,
+    label: word.label,
+    video: `/assets/reference-source/qipedc/${word.source_id}.mp4`,
+    source_window_ms: word.references[0].source_window_ms,
+  })));
+  const select = document.querySelector('#word');
+  const video = document.querySelector('video');
+  const status = document.querySelector('#status');
+  const seek = document.querySelector('#seek');
+  for (const word of words) {
+    select.add(new Option(word.label, word.id));
+  }
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+  renderer.setSize(640, 640);
+  renderer.setClearColor('#f3f7f6');
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1;
+  renderer.localClippingEnabled = true;
+  document.querySelector('#stage').append(renderer.domElement);
+  const scene = new THREE.Scene();
+  const camera = new THREE.OrthographicCamera(-.62, .62, .62, -.62, .01, 20);
+  camera.position.set(0, 1.28, 3.5);
+  camera.lookAt(0, 1.28, 0);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0xb8cbd0, 1.1));
+  const key = new THREE.DirectionalLight(0xffffff, 1.2);
+  key.position.set(-1, 2.5, 3);
+  scene.add(key);
+  const loader = new GLTFLoader();
+  loader.register((parser) => new VRMLoaderPlugin(parser));
+  const gltf = await loader.loadAsync('/assets/avatar/VRM1_Constraint_Twist_Sample.vrm');
+  const vrm = gltf.userData.vrm;
+  dressClinician(vrm);
+  scene.add(vrm.scene);
+  vrm.scene.traverse((object) => { object.frustumCulled = false; });
+  let retargeter;
+  let motion;
+  let exporting = false;
+  let diagnostic;
+  let frames = 0;
+  let sourceStart = 0;
+  let sourceEnd = 0;
+  function resetRig() {
+    vrm.humanoid.resetNormalizedPose();
+    vrm.humanoid.update();
+    vrm.scene.updateMatrixWorld(true);
+    retargeter = new HumanoidRetargeter(vrm);
+    for (let i = 0; i < 20; i += 1) {
+      retargeter.apply(neutralPose(), 1 / 30, i / 30);
+    }
+  }
+  async function choose(id) {
+    const word = words.find((item) => item.id === id);
+    motion = await (await fetch(`/assets/motions/${id}.json`)).json();
+    video.src = word.video;
+    await new Promise((resolve) => video.addEventListener('loadeddata', resolve, { once: true }));
+    sourceStart = (word.source_window_ms?.[0] ?? 0) / 1000;
+    sourceEnd = word.source_window_ms ? word.source_window_ms[1] / 1000 : video.duration;
+    video.currentTime = sourceStart;
+    resetRig();
+    await video.play();
+  }
+  select.onchange = () => void choose(select.value);
+  document.querySelector('#toggle').onclick = () => {
+    if (video.paused) {
+      void video.play();
+    } else {
+      video.pause();
+    }
+  };
+  seek.oninput = () => { video.currentTime = sourceStart + Number(seek.value) * (sourceEnd - sourceStart); };
+  await choose(words[0].id);
+  let last = performance.now();
+  function animate(time) {
+    requestAnimationFrame(animate);
+    if (exporting || time - last < 1000 / 30 - 1) {
+      return;
+    }
+    const dt = Math.min(.1, (time - last) / 1000);
+    last = time;
+    if (!video.paused && (video.currentTime < sourceStart || video.currentTime >= sourceEnd)) {
+      video.currentTime = sourceStart;
+    }
+    const phase = Math.max(0, Math.min(1, (video.currentTime - sourceStart) / (sourceEnd - sourceStart) || 0));
+    diagnostic = retargeter.apply(sampleMotion(motion, phase * motion.duration_ms), dt, time / 1000);
+    renderer.render(scene, camera);
+    frames += 1;
+    seek.value = String(phase);
+    document.querySelector('#toggle').textContent = video.paused ? 'Tiếp tục' : 'Tạm dừng';
+    window.motionReview = { id: motion.id, frames, phase, ...diagnostic };
+    status.textContent = `${motion.label} · medoid ${motion.medoid_id}\n` + JSON.stringify({ frames, phase, elbow: diagnostic.elbowFlexDegrees, fingerCorrection: diagnostic.fingerCorrectionDegrees, wristCorrection: diagnostic.wristCorrectionDegrees, reachError: diagnostic.currentReachError }, null, 2);
+  }
+  requestAnimationFrame(animate);
+
+  document.querySelector('#export').onclick = async () => {
+    exporting = true;
+    video.pause();
+    document.querySelector('#export').disabled = true;
+    document.querySelector('#downloads').replaceChildren();
+    for (let group = 0; group < Math.ceil(words.length / 5); group += 1) {
+      const sheet = document.createElement('canvas');
+      sheet.width = 1800;
+      sheet.height = 1660;
+      const context = sheet.getContext('2d');
+      context.fillStyle = '#eef4f3';
+      context.fillRect(0, 0, sheet.width, sheet.height);
+      for (let row = 0; row < 5; row += 1) {
+        const word = words[group * 5 + row];
+        if (!word) {
+          break;
+        }
+        await choose(word.id);
+        video.pause();
+        context.fillStyle = '#173d3c';
+        context.font = '22px Arial';
+        context.fillText(`${word.label} · medoid ${motion.medoid_id} · phases 25%, 50%, 75% · original / avatar`, 12, row * 330 + 27);
+        let simulationTime = 0;
+        for (let column = 0; column < 3; column += 1) {
+          const phase = (column + 1) / 4;
+          const time = phase * motion.duration_ms;
+          while (simulationTime <= time) {
+            retargeter.apply(sampleMotion(motion, simulationTime), 1 / 30, simulationTime / 1000);
+            simulationTime += 1000 / 30;
+          }
+          video.currentTime = sourceStart + phase * (sourceEnd - sourceStart);
+          await new Promise((resolve) => video.addEventListener('seeked', resolve, { once: true }));
+          renderer.render(scene, camera);
+          context.drawImage(video, column * 600, row * 330 + 35, 300, 290);
+          context.drawImage(renderer.domElement, column * 600 + 300, row * 330 + 35, 300, 290);
+        }
+        status.textContent = `Đã đối chiếu ${group * 5 + row + 1}/${words.length}: ${word.label}`;
+      }
+      const link = document.createElement('a');
+      link.download = `motion-review-v0.2.1-${group + 1}.png`;
+      link.textContent = `Tải bảng ${group + 1}`;
+      const blob = await new Promise((resolve) => sheet.toBlob(resolve, 'image/png'));
+      const saved = await fetch(`/__review-evidence/${group + 1}`, { method: 'POST', headers: { 'Content-Type': 'image/png' }, body: blob });
+      if (!saved.ok) {
+        status.textContent = 'Không lưu được bằng chứng đối chiếu. Kiểm tra Vite dev server.';
+        exporting = false;
+        document.querySelector('#export').disabled = false;
+        return;
+      }
+      link.href = `/docs/evidence/motion-review-v0.2.1-${group + 1}.png`;
+      document.querySelector('#downloads').append(link);
+    }
+    exporting = false;
+    document.querySelector('#export').disabled = false;
+    select.value = motion.id;
+    await video.play();
+  };
+</script>
+</html>

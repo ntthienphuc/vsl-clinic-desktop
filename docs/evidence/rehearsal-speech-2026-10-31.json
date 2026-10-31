@@ -1,0 +1,805 @@
+{
+  "created_at": "2026-10-31T07:07:12.614054+00:00",
+  "scope": "Synthetic TTS through real paced live WebSocket. Does not validate the user's voice/microphone/room acoustics.",
+  "rows": [
+    {
+      "input": "Bây giờ bác sĩ khám bệnh.",
+      "synthetic": true,
+      "transcripts": [
+        {
+          "text": "bây giờ bác sĩ khám bệnh.",
+          "decode_ms": 916.7997999993531,
+          "audio_ms": 2592.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.018863745965063572,
+              "no_speech_prob": 1.3305396784346613e-09
+            }
+          ],
+          "type": "transcript",
+          "sequence": 1,
+          "utterance_id": "416551d8f5e8407d972973cc9ebceb45:1",
+          "session_id": "87cc5805191f:d31692b9fbc6",
+          "queue_ms": 0.18180000006395858,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false,
+          "delivery": {
+            "status": "sent",
+            "message_id": "e02c024aa210"
+          }
+        }
+      ],
+      "messages": [
+        {
+          "id": "e02c024aa210",
+          "role": "doctor",
+          "text": "bây giờ bác sĩ khám bệnh.",
+          "created_at_ms": 1793430328598.4988,
+          "mode": "sign",
+          "glosses": [
+            {
+              "id": "17",
+              "label": "Bây giờ",
+              "start": 0,
+              "tokens": 0
+            },
+            {
+              "id": "11",
+              "label": "Bác sĩ",
+              "start": 0,
+              "tokens": 0
+            },
+            {
+              "id": "145",
+              "label": "Khám bệnh",
+              "start": 0,
+              "tokens": 0
+            }
+          ],
+          "status": "presenting",
+          "phrase_id": "now-exam",
+          "nonmanual": "neutral",
+          "act": "request",
+          "clauses": [
+            {
+              "text": "bây giờ bác sĩ khám bệnh.",
+              "gloss_start": 0,
+              "gloss_end": 3,
+              "supported": true,
+              "phrase_id": "now-exam",
+              "nonmanual": "neutral",
+              "act": "request",
+              "explanation": "Mẫu demo: Bây giờ → Bác sĩ → Khám bệnh. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+            }
+          ],
+          "speech_utterance_id": "416551d8f5e8407d972973cc9ebceb45:1",
+          "presented_at_ms": 1793430329360.7556
+        }
+      ],
+      "drafts": [],
+      "checks": {
+        "one_transcript": true,
+        "dispatch": true,
+        "same_glosses": true,
+        "avatar_completed": true
+      }
+    },
+    {
+      "input": "Bạn có đau bụng không?",
+      "synthetic": true,
+      "transcripts": [
+        {
+          "text": "bạn có đau bụng không.",
+          "decode_ms": 781.5167999997357,
+          "audio_ms": 2144.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.0007227117153392596,
+              "no_speech_prob": 4.018590581827963e-12
+            }
+          ],
+          "type": "transcript",
+          "sequence": 1,
+          "utterance_id": "74d97793946045b4ad1fa2ef4c591d15:1",
+          "session_id": "87cc5805191f:d31692b9fbc6",
+          "queue_ms": 0.17299999854003545,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false,
+          "delivery": {
+            "status": "sent",
+            "message_id": "c6893904b8db"
+          }
+        }
+      ],
+      "messages": [
+        {
+          "id": "c6893904b8db",
+          "role": "doctor",
+          "text": "bạn có đau bụng không.",
+          "created_at_ms": 1793430341831.8433,
+          "mode": "sign",
+          "glosses": [
+            {
+              "id": "qipedc-W00362",
+              "label": "Bụng",
+              "start": 0,
+              "tokens": 0
+            },
+            {
+              "id": "379",
+              "label": "Đau",
+              "start": 0,
+              "tokens": 0
+            }
+          ],
+          "status": "presenting",
+          "phrase_id": "ask-abdomen",
+          "nonmanual": "question",
+          "act": "yes_no_question",
+          "clauses": [
+            {
+              "text": "bạn có đau bụng không.",
+              "gloss_start": 0,
+              "gloss_end": 2,
+              "supported": true,
+              "phrase_id": "ask-abdomen",
+              "nonmanual": "question",
+              "act": "yes_no_question",
+              "explanation": "Vị trí bụng → đau, đi cùng nét mặt hỏi có/không; giữ câu hỏi bằng chữ."
+            }
+          ],
+          "speech_utterance_id": "74d97793946045b4ad1fa2ef4c591d15:1",
+          "presented_at_ms": 1793430342416.7454
+        }
+      ],
+      "drafts": [],
+      "checks": {
+        "one_transcript": true,
+        "dispatch": true,
+        "same_glosses": true,
+        "avatar_completed": true
+      }
+    },
+    {
+      "input": "Bạn có cảm thấy mệt không?",
+      "synthetic": true,
+      "transcripts": [
+        {
+          "text": "bạn có cảm thấy mệt không.",
+          "decode_ms": 835.8041999999841,
+          "audio_ms": 2432.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -5.038579335329511e-05,
+              "no_speech_prob": 2.5210716760731833e-12
+            }
+          ],
+          "type": "transcript",
+          "sequence": 1,
+          "utterance_id": "f2f70b9e230c4cf0a06df45b190b490f:1",
+          "session_id": "87cc5805191f:d31692b9fbc6",
+          "queue_ms": 0.14170000031299423,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false,
+          "delivery": {
+            "status": "sent",
+            "message_id": "57cc46bc8000"
+          }
+        }
+      ],
+      "messages": [
+        {
+          "id": "57cc46bc8000",
+          "role": "doctor",
+          "text": "bạn có cảm thấy mệt không.",
+          "created_at_ms": 1793430351973.5227,
+          "mode": "sign",
+          "glosses": [
+            {
+              "id": "85",
+              "label": "Cảm thấy",
+              "start": 0,
+              "tokens": 0
+            },
+            {
+              "id": "204",
+              "label": "Mệt",
+              "start": 0,
+              "tokens": 0
+            }
+          ],
+          "status": "presenting",
+          "phrase_id": "question-85-204",
+          "nonmanual": "question",
+          "act": "yes_no_question",
+          "clauses": [
+            {
+              "text": "bạn có cảm thấy mệt không.",
+              "gloss_start": 0,
+              "gloss_end": 2,
+              "supported": true,
+              "phrase_id": "question-85-204",
+              "nonmanual": "question",
+              "act": "yes_no_question",
+              "explanation": "Mẫu demo: Cảm thấy → Mệt. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+            }
+          ],
+          "speech_utterance_id": "f2f70b9e230c4cf0a06df45b190b490f:1",
+          "presented_at_ms": 1793430352298.928
+        }
+      ],
+      "drafts": [],
+      "checks": {
+        "one_transcript": true,
+        "dispatch": true,
+        "same_glosses": true,
+        "avatar_completed": true
+      }
+    },
+    {
+      "input": "Y tá ơi, đo nhiệt độ nha.",
+      "synthetic": true,
+      "transcripts": [
+        {
+          "text": "y tá ơi đò nhiệt độ nhà.",
+          "decode_ms": 792.0091999985743,
+          "audio_ms": 3040.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.07884289438907917,
+              "no_speech_prob": 5.360744942568829e-13
+            }
+          ],
+          "type": "transcript",
+          "sequence": 1,
+          "utterance_id": "8f151e92de474d03b5b69926790f9de8:1",
+          "session_id": "87cc5805191f:d31692b9fbc6",
+          "queue_ms": 0.2746999998635147,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false,
+          "delivery": {
+            "status": "review",
+            "draft_id": "8f151e92de474d03b5b69926790f9de8:1"
+          }
+        }
+      ],
+      "messages": [],
+      "drafts": [
+        {
+          "id": "8f151e92de474d03b5b69926790f9de8:1",
+          "text": "y tá ơi đò nhiệt độ nhà.",
+          "created_at_ms": 1793430362614.5623,
+          "reason": "Chưa có đủ ký hiệu hoặc mẫu câu này. Bạn hãy nói lại bằng câu ngắn hơn, hoặc chọn câu có sẵn.",
+          "supported": false,
+          "reason_code": "unsupported",
+          "unsupported": [
+            "đò",
+            "nhà"
+          ]
+        }
+      ],
+      "checks": {
+        "one_transcript": true,
+        "dispatch": false,
+        "same_glosses": false
+      }
+    },
+    {
+      "input": "Ngồi nghỉ ngơi.",
+      "synthetic": true,
+      "transcripts": [
+        {
+          "text": "ngồi nghỉ ngơi.",
+          "decode_ms": 775.8192000001145,
+          "audio_ms": 1760.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.00842094433028251,
+              "no_speech_prob": 1.066473515401456e-12
+            }
+          ],
+          "type": "transcript",
+          "sequence": 1,
+          "utterance_id": "c0bcee05e4614f19a493a1c9e448f3e0:1",
+          "session_id": "87cc5805191f:d31692b9fbc6",
+          "queue_ms": 0.18529999942984432,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false,
+          "delivery": {
+            "status": "sent",
+            "message_id": "f9773f3b85b6"
+          }
+        }
+      ],
+      "messages": [
+        {
+          "id": "f9773f3b85b6",
+          "role": "doctor",
+          "text": "ngồi nghỉ ngơi.",
+          "created_at_ms": 1793430370638.4106,
+          "mode": "sign",
+          "glosses": [
+            {
+              "id": "qipedc-W02400N",
+              "label": "Ngồi",
+              "start": 0,
+              "tokens": 0
+            },
+            {
+              "id": "210",
+              "label": "Nghỉ ngơi",
+              "start": 0,
+              "tokens": 0
+            }
+          ],
+          "status": "presenting",
+          "phrase_id": "sit-rest",
+          "nonmanual": "neutral",
+          "act": "request",
+          "clauses": [
+            {
+              "text": "ngồi nghỉ ngơi.",
+              "gloss_start": 0,
+              "gloss_end": 2,
+              "supported": true,
+              "phrase_id": "sit-rest",
+              "nonmanual": "neutral",
+              "act": "request",
+              "explanation": "Hai hành động nối tiếp: ngồi → nghỉ ngơi."
+            }
+          ],
+          "speech_utterance_id": "c0bcee05e4614f19a493a1c9e448f3e0:1",
+          "presented_at_ms": 1793430371401.6748
+        }
+      ],
+      "drafts": [],
+      "checks": {
+        "one_transcript": true,
+        "dispatch": true,
+        "same_glosses": true,
+        "avatar_completed": true
+      }
+    },
+    {
+      "input": "Bạn có cần giúp đỡ không?",
+      "synthetic": true,
+      "transcripts": [
+        {
+          "text": "bạn có cần giúp đỡ không.",
+          "decode_ms": 787.2455000015179,
+          "audio_ms": 2496.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.0030293464466618993,
+              "no_speech_prob": 1.0931961932914014e-11
+            }
+          ],
+          "type": "transcript",
+          "sequence": 1,
+          "utterance_id": "e55d1c94e51641b7835051b46ad18aa7:1",
+          "session_id": "87cc5805191f:d31692b9fbc6",
+          "queue_ms": 0.1878000002761837,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false,
+          "delivery": {
+            "status": "sent",
+            "message_id": "e9f3b1eb1a7b"
+          }
+        }
+      ],
+      "messages": [
+        {
+          "id": "e9f3b1eb1a7b",
+          "role": "doctor",
+          "text": "bạn có cần giúp đỡ không.",
+          "created_at_ms": 1793430381258.4226,
+          "mode": "sign",
+          "glosses": [
+            {
+              "id": "87",
+              "label": "Cần",
+              "start": 0,
+              "tokens": 0
+            },
+            {
+              "id": "116",
+              "label": "Giúp đỡ",
+              "start": 0,
+              "tokens": 0
+            }
+          ],
+          "status": "presenting",
+          "phrase_id": "question-87-116",
+          "nonmanual": "question",
+          "act": "yes_no_question",
+          "clauses": [
+            {
+              "text": "bạn có cần giúp đỡ không.",
+              "gloss_start": 0,
+              "gloss_end": 2,
+              "supported": true,
+              "phrase_id": "question-87-116",
+              "nonmanual": "question",
+              "act": "yes_no_question",
+              "explanation": "Mẫu demo: Cần → Giúp đỡ. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+            }
+          ],
+          "speech_utterance_id": "e55d1c94e51641b7835051b46ad18aa7:1",
+          "presented_at_ms": 1793430381464.9602
+        }
+      ],
+      "drafts": [],
+      "checks": {
+        "one_transcript": true,
+        "dispatch": true,
+        "same_glosses": true,
+        "avatar_completed": true
+      }
+    },
+    {
+      "input": "Bạn muốn uống nước không?",
+      "synthetic": true,
+      "transcripts": [
+        {
+          "text": "bạn muốn uống nước không.",
+          "decode_ms": 994.0143000003445,
+          "audio_ms": 2208.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.032301902770996094,
+              "no_speech_prob": 1.2389542516921814e-11
+            }
+          ],
+          "type": "transcript",
+          "sequence": 1,
+          "utterance_id": "d0b79e3fd388457e9331107894009e40:1",
+          "session_id": "87cc5805191f:d31692b9fbc6",
+          "queue_ms": 0.20000000040454324,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false,
+          "delivery": {
+            "status": "sent",
+            "message_id": "32d09e04b9fd"
+          }
+        }
+      ],
+      "messages": [
+        {
+          "id": "32d09e04b9fd",
+          "role": "doctor",
+          "text": "bạn muốn uống nước không.",
+          "created_at_ms": 1793430391189.9915,
+          "mode": "sign",
+          "glosses": [
+            {
+              "id": "169",
+              "label": "Muốn",
+              "start": 0,
+              "tokens": 0
+            },
+            {
+              "id": "243",
+              "label": "Nước",
+              "start": 0,
+              "tokens": 0
+            },
+            {
+              "id": "348",
+              "label": "Uống",
+              "start": 0,
+              "tokens": 0
+            }
+          ],
+          "status": "presenting",
+          "phrase_id": "question-169-243-348",
+          "nonmanual": "question",
+          "act": "yes_no_question",
+          "clauses": [
+            {
+              "text": "bạn muốn uống nước không.",
+              "gloss_start": 0,
+              "gloss_end": 3,
+              "supported": true,
+              "phrase_id": "question-169-243-348",
+              "nonmanual": "question",
+              "act": "yes_no_question",
+              "explanation": "Mẫu demo: Muốn → Nước → Uống. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+            }
+          ],
+          "speech_utterance_id": "d0b79e3fd388457e9331107894009e40:1",
+          "presented_at_ms": 1793430391503.7136
+        }
+      ],
+      "drafts": [],
+      "checks": {
+        "one_transcript": true,
+        "dispatch": true,
+        "same_glosses": true,
+        "avatar_completed": true
+      }
+    },
+    {
+      "input": "Uống nước nhé.",
+      "synthetic": true,
+      "transcripts": [
+        {
+          "text": "uống nước nhé.",
+          "decode_ms": 802.9943000001367,
+          "audio_ms": 1600.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.05195999251944678,
+              "no_speech_prob": 1.3622539207780449e-10
+            }
+          ],
+          "type": "transcript",
+          "sequence": 1,
+          "utterance_id": "8dd7e78b0d194c54aff5d7fafeb9b7ff:1",
+          "session_id": "87cc5805191f:d31692b9fbc6",
+          "queue_ms": 0.19740000061574392,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false,
+          "delivery": {
+            "status": "sent",
+            "message_id": "eeaa39e8f96c"
+          }
+        }
+      ],
+      "messages": [
+        {
+          "id": "eeaa39e8f96c",
+          "role": "doctor",
+          "text": "uống nước nhé.",
+          "created_at_ms": 1793430401383.0332,
+          "mode": "sign",
+          "glosses": [
+            {
+              "id": "243",
+              "label": "Nước",
+              "start": 0,
+              "tokens": 0
+            },
+            {
+              "id": "348",
+              "label": "Uống",
+              "start": 0,
+              "tokens": 0
+            }
+          ],
+          "status": "presenting",
+          "phrase_id": "drink-water",
+          "nonmanual": "neutral",
+          "act": "request",
+          "clauses": [
+            {
+              "text": "Uống nước.",
+              "gloss_start": 0,
+              "gloss_end": 2,
+              "supported": true,
+              "phrase_id": "drink-water",
+              "nonmanual": "neutral",
+              "act": "request",
+              "explanation": "Đối tượng nước trước hành động uống; một yêu cầu ngắn."
+            }
+          ],
+          "speech_utterance_id": "8dd7e78b0d194c54aff5d7fafeb9b7ff:1",
+          "presented_at_ms": 1793430401533.4243
+        }
+      ],
+      "drafts": [],
+      "checks": {
+        "one_transcript": true,
+        "dispatch": true,
+        "same_glosses": true,
+        "avatar_completed": true
+      }
+    },
+    {
+      "input": "Bạn muốn nghỉ ngơi không?",
+      "synthetic": true,
+      "transcripts": [
+        {
+          "text": "bạn muốn nghỉ ngơi không.",
+          "decode_ms": 767.4253999994107,
+          "audio_ms": 2208.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.00014533996145473793,
+              "no_speech_prob": 1.9669934084309837e-11
+            }
+          ],
+          "type": "transcript",
+          "sequence": 1,
+          "utterance_id": "f075b09f4412477ea530e385eb41a38d:1",
+          "session_id": "87cc5805191f:d31692b9fbc6",
+          "queue_ms": 0.20880000010947697,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false,
+          "delivery": {
+            "status": "sent",
+            "message_id": "2e2ce2b46b3d"
+          }
+        }
+      ],
+      "messages": [
+        {
+          "id": "2e2ce2b46b3d",
+          "role": "doctor",
+          "text": "bạn muốn nghỉ ngơi không.",
+          "created_at_ms": 1793430410066.719,
+          "mode": "sign",
+          "glosses": [
+            {
+              "id": "169",
+              "label": "Muốn",
+              "start": 0,
+              "tokens": 0
+            },
+            {
+              "id": "210",
+              "label": "Nghỉ ngơi",
+              "start": 0,
+              "tokens": 0
+            }
+          ],
+          "status": "presenting",
+          "phrase_id": "question-169-210",
+          "nonmanual": "question",
+          "act": "yes_no_question",
+          "clauses": [
+            {
+              "text": "bạn muốn nghỉ ngơi không.",
+              "gloss_start": 0,
+              "gloss_end": 2,
+              "supported": true,
+              "phrase_id": "question-169-210",
+              "nonmanual": "question",
+              "act": "yes_no_question",
+              "explanation": "Mẫu demo: Muốn → Nghỉ ngơi. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+            }
+          ],
+          "speech_utterance_id": "f075b09f4412477ea530e385eb41a38d:1",
+          "presented_at_ms": 1793430410555.0981
+        }
+      ],
+      "drafts": [],
+      "checks": {
+        "one_transcript": true,
+        "dispatch": true,
+        "same_glosses": true,
+        "avatar_completed": true
+      }
+    },
+    {
+      "input": "Cảm ơn.",
+      "synthetic": true,
+      "transcripts": [
+        {
+          "text": "cảm ơn.",
+          "decode_ms": 755.2918000001227,
+          "audio_ms": 1440.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.00803961099258491,
+              "no_speech_prob": 7.570141735691038e-10
+            }
+          ],
+          "type": "transcript",
+          "sequence": 1,
+          "utterance_id": "8f9029fb2d5246718589dea35f00d08e:1",
+          "session_id": "87cc5805191f:d31692b9fbc6",
+          "queue_ms": 0.18140000065614004,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false,
+          "delivery": {
+            "status": "sent",
+            "message_id": "68a16d9d6ab4"
+          }
+        }
+      ],
+      "messages": [
+        {
+          "id": "68a16d9d6ab4",
+          "role": "doctor",
+          "text": "cảm ơn.",
+          "created_at_ms": 1793430419309.3667,
+          "mode": "sign",
+          "glosses": [
+            {
+              "id": "86",
+              "label": "Cảm ơn",
+              "start": 0,
+              "tokens": 2
+            }
+          ],
+          "status": "completed",
+          "phrase_id": null,
+          "nonmanual": "neutral",
+          "act": "word",
+          "clauses": [
+            {
+              "text": "cảm ơn.",
+              "gloss_start": 0,
+              "gloss_end": 1,
+              "supported": true,
+              "phrase_id": null,
+              "nonmanual": "neutral",
+              "act": "word",
+              "explanation": "Một ký hiệu riêng lẻ."
+            }
+          ],
+          "speech_utterance_id": "8f9029fb2d5246718589dea35f00d08e:1",
+          "presented_at_ms": 1793430419589.9705
+        }
+      ],
+      "drafts": [],
+      "checks": {
+        "one_transcript": true,
+        "dispatch": true,
+        "same_glosses": true,
+        "avatar_completed": true
+      }
+    },
+    {
+      "input": "Bạn cảm thấy thế nào?",
+      "synthetic": true,
+      "transcripts": [
+        {
+          "text": "bạn cảm thấy thế nào.",
+          "decode_ms": 975.0012000004062,
+          "audio_ms": 2144.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -1.7484029134114582e-05,
+              "no_speech_prob": 3.104035041154307e-13
+            }
+          ],
+          "type": "transcript",
+          "sequence": 1,
+          "utterance_id": "c0e540b8ea5f4076a9a4952dc5edaa5a:1",
+          "session_id": "87cc5805191f:d31692b9fbc6",
+          "queue_ms": 0.19129999964206945,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false,
+          "delivery": {
+            "status": "review",
+            "draft_id": "c0e540b8ea5f4076a9a4952dc5edaa5a:1"
+          }
+        }
+      ],
+      "messages": [],
+      "drafts": [
+        {
+          "id": "c0e540b8ea5f4076a9a4952dc5edaa5a:1",
+          "text": "bạn cảm thấy thế nào.",
+          "created_at_ms": 1793430427767.174,
+          "reason": "Chưa có đủ ký hiệu hoặc mẫu câu này. Bạn hãy nói lại bằng câu ngắn hơn, hoặc chọn câu có sẵn.",
+          "supported": false,
+          "reason_code": "unsupported",
+          "unsupported": [
+            "bạn",
+            "thế",
+            "nào"
+          ]
+        }
+      ],
+      "checks": {
+        "one_transcript": true,
+        "dispatch": true,
+        "same_glosses": true
+      }
+    }
+  ],
+  "passed": false
+}

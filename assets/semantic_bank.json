@@ -1,0 +1,145 @@
+{
+  "schema": "clinic-semantic-bank-v1",
+  "version": "0.3.3-seed",
+  "purpose": "Route natural spoken Vietnamese to reviewed avatar phrases without inventing gloss IDs.",
+  "target_variety": "VSL demo; regional variants accepted for pilot, fluent signer review pending",
+  "filler_phrases": [
+    "ơi",
+    "nha",
+    "nhé",
+    "nhá",
+    "ạ",
+    "xin",
+    "vui lòng",
+    "giúp tôi",
+    "giúp em",
+    "với"
+  ],
+  "aliases": [
+    {
+      "id": "temperature-action",
+      "canonical": "Đo nhiệt độ",
+      "aliases": ["đo nhiệt độ", "kiểm tra nhiệt độ", "xem nhiệt độ", "đo thân nhiệt", "kiểm tra thân nhiệt", "đo nhiệt"],
+      "review_state": "reviewed-demo",
+      "source": "local clinic phrase review",
+      "note": "Retrieval aliases only; they do not change the 400-class recognizer vocabulary."
+    },
+    {
+      "id": "nurse",
+      "canonical": "Y tá",
+      "aliases": ["y tá", "chị y tá", "cô y tá"],
+      "review_state": "reviewed-demo",
+      "source": "assets/phrases.json"
+    },
+    {
+      "id": "doctor",
+      "canonical": "Bác sĩ",
+      "aliases": ["bác sĩ", "bác sĩ điều trị"],
+      "review_state": "reviewed-demo",
+      "source": "assets/phrases.json"
+    },
+    {
+      "id": "water-action",
+      "canonical": "Uống nước",
+      "aliases": ["uống nước"],
+      "review_state": "reviewed-demo",
+      "source": "assets/phrases.json"
+    },
+    {
+      "id": "rest-action",
+      "canonical": "Ngồi nghỉ ngơi",
+      "aliases": ["ngồi nghỉ ngơi", "ngồi nghỉ"],
+      "review_state": "reviewed-demo",
+      "source": "assets/phrases.json"
+    },
+    {
+      "id": "eat-action",
+      "canonical": "Ăn cơm",
+      "aliases": ["ăn cơm"],
+      "review_state": "reviewed-demo",
+      "source": "assets/phrases.json"
+    }
+  ],
+  "rules": [
+    {
+      "id": "nurse-measure-temperature-spoken",
+      "intent": "measure_temperature",
+      "canonical_text": "Y tá đo nhiệt độ.",
+      "concepts": [
+        {"id": "nurse", "aliases": ["y tá", "chị y tá", "cô y tá"], "required": true},
+        {"id": "temperature-action", "aliases": ["đo nhiệt độ", "kiểm tra nhiệt độ", "xem nhiệt độ", "đo thân nhiệt", "kiểm tra thân nhiệt", "đo nhiệt"], "required": true}
+      ],
+      "risk": "safe",
+      "confidence": 0.98,
+      "source": "clinic-semantic-bank-seed; phrase nurse-temperature",
+      "explanation": "Chủ thể y tá và hành động đo nhiệt độ đã có cùng mẫu avatar; các từ lịch sự được ghi lại riêng."
+    },
+    {
+      "id": "doctor-measure-temperature-spoken",
+      "intent": "measure_temperature",
+      "canonical_text": "Bác sĩ đo nhiệt độ.",
+      "concepts": [
+        {"id": "doctor", "aliases": ["bác sĩ", "bác sĩ điều trị"], "required": true},
+        {"id": "temperature-action", "aliases": ["đo nhiệt độ", "kiểm tra nhiệt độ", "xem nhiệt độ", "đo thân nhiệt", "kiểm tra thân nhiệt", "đo nhiệt"], "required": true}
+      ],
+      "risk": "safe",
+      "confidence": 0.98,
+      "source": "clinic-semantic-bank-seed; phrase doctor-temperature",
+      "explanation": "Chủ thể bác sĩ và hành động đo nhiệt độ đã có cùng mẫu avatar; không tự thêm mức độ hay kết quả đo."
+    },
+    {
+      "id": "temperature-request-spoken",
+      "intent": "measure_temperature",
+      "canonical_text": "Đo nhiệt độ.",
+      "concepts": [
+        {"id": "temperature-action", "aliases": ["đo nhiệt độ", "kiểm tra nhiệt độ", "xem nhiệt độ", "đo thân nhiệt", "kiểm tra thân nhiệt", "đo nhiệt"], "required": true}
+      ],
+      "risk": "safe",
+      "confidence": 0.96,
+      "source": "clinic-semantic-bank-seed; phrase temperature",
+      "explanation": "Yêu cầu ngắn được đưa về mẫu nhiệt độ đã có; câu chữ gốc vẫn được giữ trong lịch sử."
+    },
+    {
+      "id": "drink-water-spoken",
+      "intent": "drink_water",
+      "canonical_text": "Uống nước.",
+      "concepts": [
+        {"id": "water-action", "aliases": ["uống nước"], "required": true}
+      ],
+      "risk": "safe",
+      "confidence": 0.96,
+      "source": "clinic-semantic-bank-seed; phrase drink-water",
+      "explanation": "Câu yêu cầu có từ lịch sự đã duyệt; không thêm liều lượng hoặc thời điểm."
+    },
+    {
+      "id": "rest-spoken",
+      "intent": "rest",
+      "canonical_text": "Ngồi nghỉ ngơi.",
+      "concepts": [
+        {"id": "rest-action", "aliases": ["ngồi nghỉ ngơi", "ngồi nghỉ"], "required": true}
+      ],
+      "risk": "safe",
+      "confidence": 0.95,
+      "source": "clinic-semantic-bank-seed; phrase sit-rest",
+      "explanation": "Hai động tác đã có mẫu nối; không tự thêm thời lượng nghỉ."
+    },
+    {
+      "id": "speaker-eat-rice-review",
+      "intent": "eat_rice",
+      "canonical_text": "Ăn cơm.",
+      "concepts": [
+        {"id": "speaker", "aliases": ["tôi", "em"], "required": true},
+        {"id": "eat-action", "aliases": ["ăn cơm"], "required": true}
+      ],
+      "risk": "review",
+      "confidence": 0.74,
+      "source": "clinic-semantic-bank-seed; requires signer review",
+      "explanation": "Có thể cần đổi trật tự và lược đại từ theo ngữ cảnh VSL; không phát tự động khi chưa được duyệt."
+    }
+  ],
+  "notes": [
+    "A synonym is a retrieval hint, never permission to drop negation, quantity, time, body location, or modality.",
+    "A phrase bank entry must point to existing motion IDs and pass the ordinary TextPlanner before playback.",
+    "The seed is intentionally small. Bulk QIPEDC material is indexed separately and is not automatically promoted to runtime."
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "events": [
+    {
+      "time_ms": 13873.5,
+      "type": "loading"
+    },
+    {
+      "activity_detector": "Silero v6 ONNX streaming",
+      "available": true,
+      "cpu_threads": 2,
+      "device": "cpu",
+      "endpoint_ms": 576,
+      "language": "vi",
+      "loaded": true,
+      "name": "PhoWhisper base INT8",
+      "sample_rate": 16000,
+      "time_ms": 16530.100000000093,
+      "type": "ready"
+    },
+    {
+      "time_ms": 40695.69999999995,
+      "type": "decoding"
+    },
+    {
+      "audio_ms": 2080,
+      "cut_at_limit": false,
+      "decode_ms": 835.6721999998626,
+      "delivery": {
+        "draft_id": "ea2872b637d94127bfb2883d30b4b290:1",
+        "status": "review"
+      },
+      "endpoint_audio_ms": 576,
+      "queue_ms": 0.1528000000234897,
+      "segments": [
+        {
+          "avg_logprob": -0.00002257029230653037,
+          "no_speech_prob": 2.704502474835252e-13
+        }
+      ],
+      "sequence": 1,
+      "session_id": "90b4a3411e91:1344a8f64514",
+      "text": "bạn cảm thấy thế nào.",
+      "time_ms": 41532.5,
+      "type": "transcript",
+      "uncertain": false,
+      "utterance_id": "ea2872b637d94127bfb2883d30b4b290:1"
+    }
+  ],
+  "height": 768,
+  "plays": [
+    {
+      "duration_ms": 41872,
+      "name": "unsupported-feeling.mp3",
+      "noiseSeconds": 40,
+      "sample_rate": 16000,
+      "speech_ms": 1872,
+      "start_ms": 38459.39999999991
+    }
+  ],
+  "scrollHeight": 768,
+  "time_ms": 117235.19999999995,
+  "width": 1366
+}

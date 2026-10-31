@@ -1,0 +1,108 @@
+{
+  "schema": "clinic-speech-probe-v1",
+  "source": "https://github.com/dangnguyenngochai/demo_vietasr/tree/main/demo_wav",
+  "note": "Public speech samples for latency smoke checks, not a medical or speaker accuracy benchmark. Audio excluded from shipped app.",
+  "records": [
+    {
+      "file": "6.wav",
+      "sha256": "1aca03852fc728b7da26c6d5687370e27427aa6da0d732075242f5e0a33d6ff5",
+      "audio_ms": 6612.0625,
+      "ready_ms": 465.9472999992431,
+      "events": [
+        {
+          "text": "đó là ước vọng của nguyễn ái quốc từ những năm hai mươi của thế kỷ trước về một nhà nước việt nam độc lập dân chủ.",
+          "decode_ms": 1891.6085000018938,
+          "audio_ms": 7230.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.0020907542892490273,
+              "no_speech_prob": 1.2767643929947892e-12
+            }
+          ],
+          "type": "transcript",
+          "sequence": 1,
+          "session_id": "a1aad9ce3194",
+          "queue_ms": 0.4045999958179891,
+          "endpoint_audio_ms": 540.0,
+          "cut_at_limit": false,
+          "received_ms": 9101.248400002078
+        }
+      ]
+    },
+    {
+      "file": "91.wav",
+      "sha256": "8aa8c5819e483d51b302bd999f84f0e2f141d305c23b16c2b7695af3282c8b98",
+      "audio_ms": 4363.3125,
+      "ready_ms": 2.90099999983795,
+      "events": [
+        {
+          "text": "tuyệt quá chứ cần bấm nút là nó chạy mà không cần phải cố gắng gì nữa.",
+          "decode_ms": 1533.5264000023017,
+          "audio_ms": 4740.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.03002178206526,
+              "no_speech_prob": 3.2361618810053394e-13
+            }
+          ],
+          "type": "transcript",
+          "sequence": 1,
+          "session_id": "a1aad9ce3194",
+          "queue_ms": 0.1508999994257465,
+          "endpoint_audio_ms": 540.0,
+          "cut_at_limit": false,
+          "received_ms": 6247.522600002412
+        }
+      ]
+    },
+    {
+      "file": "test1.wav",
+      "sha256": "3fec63a534fe5f2ffae1daf576fa65e0e1b7a2c87992140b2569042c04877825",
+      "audio_ms": 4364.25,
+      "ready_ms": 3.3511000001453795,
+      "events": [
+        {
+          "text": "mời các đồng chí và các bạn nghe chương trình phát thanh quân đội nhân dân.",
+          "decode_ms": 1671.199800002796,
+          "audio_ms": 4620.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.020939620031464483,
+              "no_speech_prob": 3.0334165734835494e-11
+            }
+          ],
+          "type": "transcript",
+          "sequence": 1,
+          "session_id": "a1aad9ce3194",
+          "queue_ms": 0.23949999740580097,
+          "endpoint_audio_ms": 540.0,
+          "cut_at_limit": false,
+          "received_ms": 6485.369900001388
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "decode_ms": {
+      "count": 3,
+      "median": 1671.199800002796,
+      "p95": 1869.567630001984,
+      "max": 1891.6085000018938
+    },
+    "queue_ms": {
+      "count": 3,
+      "median": 0.23949999740580097,
+      "p95": 0.3880899959767703,
+      "max": 0.4045999958179891
+    },
+    "endpoint_to_text_ms": {
+      "count": 3,
+      "median": 2211.439300000202,
+      "p95": 2409.955719997961,
+      "max": 2432.013099997712
+    }
+  }
+}

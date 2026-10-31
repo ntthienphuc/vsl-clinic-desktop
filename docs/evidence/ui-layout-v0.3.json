@@ -1,0 +1,43 @@
+{
+  "dimensions1366": {
+    "doctor": {
+      "height": 768,
+      "scrollHeight": 768,
+      "scrollWidth": 1366,
+      "width": 1366
+    },
+    "patient": {
+      "height": 768,
+      "scrollHeight": 768,
+      "scrollWidth": 1366,
+      "width": 1366
+    }
+  },
+  "dimensions1920": {
+    "doctor": {
+      "height": 1080,
+      "scrollHeight": 1080,
+      "scrollWidth": 1920,
+      "width": 1920
+    },
+    "patient": {
+      "height": 1080,
+      "scrollHeight": 1080,
+      "scrollWidth": 1920,
+      "width": 1920
+    }
+  },
+  "currentPackageConsole": {
+    "doctor": [],
+    "patient": []
+  },
+  "earlierDevelopmentConsole": [
+    {
+      "level": "error",
+      "message": "You are calling ReactDOMClient.createRoot() on a container that has already been passed to createRoot() before. Instead, call root.render() on the existing root instead if you want to update it.",
+      "timestamp": "2026-10-22T02:59:35.816Z",
+      "url": "http://127.0.0.1:5173/@vite/client"
+    }
+  ],
+  "source": "Packaged 0.3.0 frontend in Chrome; exact CSS sizes measured after compensating browser zoom. Earlier 5173 development logs are retained separately."
+}

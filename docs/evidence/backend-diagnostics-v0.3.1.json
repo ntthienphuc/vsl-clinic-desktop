@@ -1,0 +1,429 @@
+{
+  "model_sha256": "582f3d8712f73f78c5fe7b7521609ea54a9257e5a3a877aa8c9346b8e28ebb21",
+  "capture_profile": "clinic-pc-tasks-lite-parallel-v2",
+  "state": {
+    "session_id": "90b4a3411e91",
+    "revision": 36,
+    "server_time_ms": 1792645280819.8928,
+    "messages": [
+      {
+        "id": "8ae2237bd25b",
+        "role": "patient",
+        "kind": "patient_turn",
+        "created_at_ms": 1792644633916.2664,
+        "status": "candidate",
+        "words": [
+          {
+            "id": "d5f2dea342ea",
+            "role": "patient",
+            "text": "Đau",
+            "created_at_ms": 1792644633916.2664,
+            "status": "candidate",
+            "confidence": 1.0,
+            "uncertain": false,
+            "predictions": [
+              {
+                "gloss": "Đau",
+                "score": 1.0,
+                "model_id": 379
+              },
+              {
+                "gloss": "Quạt (đứng)",
+                "score": 3.176611923153655E-30,
+                "model_id": 256
+              },
+              {
+                "gloss": "Bố",
+                "score": 2.9683013467303126E-30,
+                "model_id": 33
+              }
+            ],
+            "context_candidates": [],
+            "metrics": {
+              "frame_count": 53,
+              "hand_coverage": 1.0,
+              "inference_ms": 164.549560546875,
+              "queue_ms": 0.0,
+              "last_active_epoch_ms": 1792644633364.827,
+              "server_result_epoch_ms": 1792644633916.2664,
+              "source_start_ms": 500.4337092146527,
+              "source_end_ms": 2301.9950623874024,
+              "model": "SL-GCN / 400 gloss",
+              "profile": "clinic-pc-tasks-lite-parallel-v2",
+              "generation": 1
+            },
+            "turn_id": "8ae2237bd25b"
+          }
+        ],
+        "text": "Đau",
+        "uncertain": false,
+        "updated_at_ms": 1792644633916.2664,
+        "ended_at_ms": 1792644635422.4272,
+        "end_reason": "pause",
+        "raw_text": "Đau",
+        "reading": {
+          "text": "Đau",
+          "rewritten": false,
+          "rule": "verbatim"
+        }
+      },
+      {
+        "id": "0cbb7b6c483e",
+        "role": "doctor",
+        "text": "uống nước.",
+        "created_at_ms": 1792644737783.3845,
+        "mode": "sign",
+        "glosses": [
+          {
+            "id": "243",
+            "label": "Nước",
+            "start": 0,
+            "tokens": 0
+          },
+          {
+            "id": "348",
+            "label": "Uống",
+            "start": 0,
+            "tokens": 0
+          }
+        ],
+        "status": "completed",
+        "phrase_id": "drink-water",
+        "nonmanual": "neutral",
+        "act": "request",
+        "clauses": [
+          {
+            "text": "uống nước.",
+            "gloss_start": 0,
+            "gloss_end": 2,
+            "supported": true,
+            "phrase_id": "drink-water",
+            "nonmanual": "neutral",
+            "act": "request",
+            "explanation": "Đối tượng nước trước hành động uống; một yêu cầu ngắn."
+          }
+        ],
+        "speech_utterance_id": "ea2872b637d94127bfb2883d30b4b290:2",
+        "presented_at_ms": 1792644737800.2893
+      },
+      {
+        "id": "fcc197474e12",
+        "role": "doctor",
+        "text": "uống nước.",
+        "created_at_ms": 1792644763823.8633,
+        "mode": "sign",
+        "glosses": [
+          {
+            "id": "243",
+            "label": "Nước",
+            "start": 0,
+            "tokens": 0
+          },
+          {
+            "id": "348",
+            "label": "Uống",
+            "start": 0,
+            "tokens": 0
+          }
+        ],
+        "status": "completed",
+        "phrase_id": "drink-water",
+        "nonmanual": "neutral",
+        "act": "request",
+        "clauses": [
+          {
+            "text": "uống nước.",
+            "gloss_start": 0,
+            "gloss_end": 2,
+            "supported": true,
+            "phrase_id": "drink-water",
+            "nonmanual": "neutral",
+            "act": "request",
+            "explanation": "Đối tượng nước trước hành động uống; một yêu cầu ngắn."
+          }
+        ],
+        "speech_utterance_id": "ea2872b637d94127bfb2883d30b4b290:3",
+        "presented_at_ms": 1792644763848.2588
+      },
+      {
+        "id": "2410c6f8d1af",
+        "role": "doctor",
+        "text": "bạn có đau không.",
+        "created_at_ms": 1792644786788.2537,
+        "mode": "sign",
+        "glosses": [
+          {
+            "id": "379",
+            "label": "Đau",
+            "start": 0,
+            "tokens": 0
+          }
+        ],
+        "status": "completed",
+        "phrase_id": "ask-pain",
+        "nonmanual": "question",
+        "act": "yes_no_question",
+        "clauses": [
+          {
+            "text": "bạn có đau không.",
+            "gloss_start": 0,
+            "gloss_end": 1,
+            "supported": true,
+            "phrase_id": "ask-pain",
+            "nonmanual": "question",
+            "act": "yes_no_question",
+            "explanation": "Hỏi người bệnh đối diện: đau? Nét mặt hỏi có/không đi cùng ký hiệu; đây không phải câu phủ định."
+          }
+        ],
+        "speech_utterance_id": "ea2872b637d94127bfb2883d30b4b290:4",
+        "presented_at_ms": 1792644786797.9888
+      }
+    ],
+    "capture": {
+      "type": "capture",
+      "status": "ended",
+      "source_kind": "demo",
+      "generation": 1,
+      "has_pose": true,
+      "hand_count": 2,
+      "captured": 71,
+      "processed": 66,
+      "dropped": 5,
+      "processed_fps": 24.276079939807353,
+      "detect_ms": 33.377900000004956,
+      "frame_age_ms": 60.241455078125,
+      "queued_segments": 0,
+      "inflight_segments": 0,
+      "motion_detected": true,
+      "buffer_frames": 0
+    },
+    "current_result": {
+      "id": "d5f2dea342ea",
+      "role": "patient",
+      "text": "Đau",
+      "created_at_ms": 1792644633916.2664,
+      "status": "candidate",
+      "confidence": 1.0,
+      "uncertain": false,
+      "predictions": [
+        {
+          "gloss": "Đau",
+          "score": 1.0,
+          "model_id": 379
+        },
+        {
+          "gloss": "Quạt (đứng)",
+          "score": 3.176611923153655E-30,
+          "model_id": 256
+        },
+        {
+          "gloss": "Bố",
+          "score": 2.9683013467303126E-30,
+          "model_id": 33
+        }
+      ],
+      "context_candidates": [],
+      "metrics": {
+        "frame_count": 53,
+        "hand_coverage": 1.0,
+        "inference_ms": 164.549560546875,
+        "queue_ms": 0.0,
+        "last_active_epoch_ms": 1792644633364.827,
+        "server_result_epoch_ms": 1792644633916.2664,
+        "source_start_ms": 500.4337092146527,
+        "source_end_ms": 2301.9950623874024,
+        "model": "SL-GCN / 400 gloss",
+        "profile": "clinic-pc-tasks-lite-parallel-v2",
+        "generation": 1
+      },
+      "turn_id": "8ae2237bd25b"
+    },
+    "playback": {
+      "id": "9a8b6c4e33b2",
+      "message_id": "2410c6f8d1af",
+      "text": "bạn có đau không.",
+      "glosses": [
+        {
+          "id": "379",
+          "label": "Đau",
+          "start": 0,
+          "tokens": 0
+        }
+      ],
+      "status": "completed",
+      "rate": 1.0,
+      "elapsed_ms": 2969.0,
+      "started_at_ms": 1792644786797.9888,
+      "timeline": [
+        {
+          "phase": "intro",
+          "start_ms": 0.0,
+          "end_ms": 350.0,
+          "index": 0,
+          "source_ms": 0
+        },
+        {
+          "phase": "sign",
+          "start_ms": 350.0,
+          "end_ms": 2619.0,
+          "index": 0,
+          "source_start_ms": 0,
+          "source_end_ms": 2269
+        },
+        {
+          "phase": "outro",
+          "start_ms": 2619.0,
+          "end_ms": 2969.0,
+          "index": 0,
+          "source_ms": 2269
+        }
+      ],
+      "clauses": [
+        {
+          "text": "bạn có đau không.",
+          "gloss_start": 0,
+          "gloss_end": 1,
+          "supported": true,
+          "phrase_id": "ask-pain",
+          "nonmanual": "question",
+          "act": "yes_no_question",
+          "explanation": "Hỏi người bệnh đối diện: đau? Nét mặt hỏi có/không đi cùng ký hiệu; đây không phải câu phủ định.",
+          "start_ms": 0.0,
+          "end_ms": 2969.0
+        }
+      ],
+      "total_ms": 2969.0,
+      "timeline_schema": "clinic-playback-v2",
+      "iteration": 0,
+      "nonmanual": "question",
+      "act": "yes_no_question",
+      "requested_at_ms": 1792644786788.2537
+    },
+    "pending_count": 0,
+    "clients": {
+      "doctor": 1,
+      "patient": 1
+    },
+    "conversation": {
+      "status": "active",
+      "mode": "auto",
+      "epoch": "1344a8f64514",
+      "source": {
+        "kind": "demo",
+        "demo_id": "379",
+        "camera_index": 0
+      },
+      "started_at_ms": 1792644631291.4414
+    },
+    "patient_turn": null,
+    "speech_drafts": []
+  },
+  "metrics": [
+    {
+      "type": "recognition",
+      "message_id": "d5f2dea342ea",
+      "predictions": [
+        {
+          "gloss": "Đau",
+          "score": 1.0,
+          "model_id": 379
+        },
+        {
+          "gloss": "Quạt (đứng)",
+          "score": 3.176611923153655E-30,
+          "model_id": 256
+        },
+        {
+          "gloss": "Bố",
+          "score": 2.9683013467303126E-30,
+          "model_id": 33
+        }
+      ],
+      "frame_count": 53,
+      "hand_coverage": 1.0,
+      "inference_ms": 164.549560546875,
+      "queue_ms": 0.0,
+      "last_active_epoch_ms": 1792644633364.827,
+      "server_result_epoch_ms": 1792644633916.2664,
+      "source_start_ms": 500.4337092146527,
+      "source_end_ms": 2301.9950623874024,
+      "model": "SL-GCN / 400 gloss",
+      "profile": "clinic-pc-tasks-lite-parallel-v2",
+      "generation": 1
+    },
+    {
+      "event": "doctor_result_painted",
+      "message_id": "d5f2dea342ea",
+      "received_at_ms": 1792644633918,
+      "painted_at_ms": 1792644634186,
+      "role": "doctor",
+      "recorded_at_ms": 1792644634191.9055
+    },
+    {
+      "type": "speech",
+      "decode_ms": 835.6721999998626,
+      "queue_ms": 0.1528000000234897,
+      "audio_ms": 2080.0,
+      "endpoint_audio_ms": 576.0,
+      "characters": 21,
+      "cut_at_limit": false,
+      "delivery": "review",
+      "recorded_at_ms": 1792644659138.718
+    },
+    {
+      "type": "speech",
+      "decode_ms": 786.3445000000411,
+      "queue_ms": 0.1558999999815569,
+      "audio_ms": 1344.0,
+      "endpoint_audio_ms": 576.0,
+      "characters": 10,
+      "cut_at_limit": false,
+      "delivery": "sent",
+      "recorded_at_ms": 1792644737783.3845
+    },
+    {
+      "event": "patient_avatar_first_frame",
+      "playback_id": "254cccf64172",
+      "painted_at_ms": 1792644738799,
+      "role": "patient",
+      "recorded_at_ms": 1792644738800.975
+    },
+    {
+      "type": "speech",
+      "decode_ms": 908.6913999999524,
+      "queue_ms": 0.15619999999216816,
+      "audio_ms": 1088.0,
+      "endpoint_audio_ms": 576.0,
+      "characters": 10,
+      "cut_at_limit": false,
+      "delivery": "sent",
+      "recorded_at_ms": 1792644763823.8633
+    },
+    {
+      "event": "patient_avatar_first_frame",
+      "playback_id": "949cb75b8820",
+      "painted_at_ms": 1792644763866,
+      "role": "patient",
+      "recorded_at_ms": 1792644763868.2654
+    },
+    {
+      "type": "speech",
+      "decode_ms": 870.9530999999515,
+      "queue_ms": 0.14899999996487168,
+      "audio_ms": 1728.0,
+      "endpoint_audio_ms": 576.0,
+      "characters": 17,
+      "cut_at_limit": false,
+      "delivery": "sent",
+      "recorded_at_ms": 1792644786788.2537
+    },
+    {
+      "event": "patient_avatar_first_frame",
+      "playback_id": "9a8b6c4e33b2",
+      "painted_at_ms": 1792644786813,
+      "role": "patient",
+      "recorded_at_ms": 1792644786809.879
+    }
+  ],
+  "uptime_seconds": 680.4822986125946
+}

@@ -1,0 +1,88 @@
+{
+  "schema": "clinic-idle-retest-v1",
+  "created_at": "2026-10-31T09:06:38.673894+00:00",
+  "scope": "Same two fixed video rehearsals, repeated twice on unchanged packaged 0.3.4 after the user paused Lip preparation/hash jobs. No new signer, webcam, microphone, or controlled causal inference claim.",
+  "runtime_unchanged": true,
+  "runtime_files_checked": 44,
+  "environment": {
+    "captured_at": "2026-10-31T15:59:50.5430006+07:00",
+    "experiment": "Same 0.3.4 executable, no code/configuration change; user paused external Lip processing",
+    "processor": {
+      "PercentProcessorUtility": 18,
+      "PercentProcessorPerformance": 168
+    },
+    "lip_processing": null
+  },
+  "runs": [
+    {
+      "file": "rehearsal-idle-exe-run1-2026-10-31.json",
+      "turns": 10,
+      "exact_turns": 10,
+      "words": 14,
+      "checks": {
+        "all_ten_turns": true,
+        "unknown_meaning_blocked": true
+      },
+      "observed_fps": {
+        "min": 25.999999999999996,
+        "median": 27.574967405475874,
+        "max": 30.0
+      },
+      "end_to_server_ms": {
+        "median": 623.7958984375,
+        "max": 683.30322265625
+      },
+      "quality_warnings": 0,
+      "avatar_fps": [
+        29.990360241353653,
+        29.97590544309109,
+        30.007760627748556,
+        29.995730145175063,
+        29.992050299916464,
+        29.992672244851175,
+        30.019142641678066,
+        30.010468768174945,
+        30.00035294533074,
+        29.98875421717554
+      ]
+    },
+    {
+      "file": "rehearsal-idle-exe-run2-2026-10-31.json",
+      "turns": 10,
+      "exact_turns": 10,
+      "words": 14,
+      "checks": {
+        "all_ten_turns": true,
+        "unknown_meaning_blocked": true
+      },
+      "observed_fps": {
+        "min": 24.255319148936174,
+        "median": 27.499999999999996,
+        "max": 28.92857142857143
+      },
+      "end_to_server_ms": {
+        "median": 611.6826171875,
+        "max": 719.686767578125
+      },
+      "quality_warnings": 0,
+      "avatar_fps": [
+        29.990717158975933,
+        29.97647415952673,
+        29.971062422490554,
+        29.995730145175063,
+        29.992592191089372,
+        29.99216113969641,
+        29.98783102508803,
+        30.009770622996133,
+        29.999823530453764,
+        29.9878174491543
+      ]
+    }
+  ],
+  "total_exact_turns": 20,
+  "total_turns": 20,
+  "total_words": 28,
+  "latency_definition": "From last frame the segmenter labels active to server result; not human-annotated gesture end or display-photon latency.",
+  "historical_failure_evidence": "rehearsal-render-budget-exe-2026-10-31.json",
+  "packaged_frontend_files_checked": 6
+}

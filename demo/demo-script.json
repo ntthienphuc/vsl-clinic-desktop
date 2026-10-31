@@ -1,0 +1,365 @@
+{
+  "schema": "clinic-demo-kit-v1",
+  "created_at": "2026-10-22T04:43:51.313930+00:00",
+  "scope": "Local practice kit; patient vocabulary is exactly a subset of the 400 model labels. Not a clinical protocol or continuous sentence recognition benchmark.",
+  "vocabulary_sha256": "68e6da5841aa76232c834ebfcd729ebbed103005c04f94ae9a1bebb1bed45f91",
+  "source_manifest_sha256": "877d660c91f55e196e83c72a9f2e3df219077cd9ab5cfb8085eb0deba5c5e0d4",
+  "source_metadata_sha256": "a94d122ce7c923ecc663bf36cb7230d86bfa6ae2805a994ac545355b9f687d25",
+  "scenes": [
+    {
+      "step": 1,
+      "title": "Bắt đầu trao đổi",
+      "folder": "benh_nhan/01_Dong_y_kham_benh",
+      "doctor_text": "Bác sĩ khám bệnh.",
+      "doctor_glosses": [
+        "Bác sĩ",
+        "Khám bệnh"
+      ],
+      "patient_meaning": "Đồng ý.",
+      "patient_glosses": [
+        "Đồng ý"
+      ],
+      "clips": [
+        {
+          "number": 1,
+          "file": "benh_nhan/01_Dong_y_kham_benh/1.mp4",
+          "label": "Đồng ý",
+          "model_id": 395,
+          "source_video_id": "021016",
+          "declared_signer_id": "024",
+          "original_path": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021016.mp4",
+          "sha256": "84f47e2ba8c9fdfbcc38c78b1a115bb0bea41bdd977f151df04a3ed997996c94",
+          "frames": 61,
+          "fps": 29.974,
+          "resolution": [
+            1080,
+            1080
+          ],
+          "duration_ms": 2035
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "title": "Hỏi triệu chứng",
+      "folder": "benh_nhan/02_Dau",
+      "doctor_text": "Bạn có đau bụng không?",
+      "doctor_glosses": [
+        "Bụng",
+        "Đau"
+      ],
+      "patient_meaning": "Đau.",
+      "patient_glosses": [
+        "Đau"
+      ],
+      "clips": [
+        {
+          "number": 1,
+          "file": "benh_nhan/02_Dau/1.mp4",
+          "label": "Đau",
+          "model_id": 379,
+          "source_video_id": "021292",
+          "declared_signer_id": "024",
+          "original_path": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021292.mp4",
+          "sha256": "cdf21771e58fb060e9733108b2580ef62f6927cd60ee022531e1d0eff4dcb3ff",
+          "frames": 71,
+          "fps": 29.974,
+          "resolution": [
+            1080,
+            1080
+          ],
+          "duration_ms": 2369
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "title": "Nêu nhu cầu nghỉ",
+      "folder": "benh_nhan/03_Met_Can_Nghi_ngoi",
+      "doctor_text": "Bạn có mệt không?",
+      "doctor_glosses": [
+        "Mệt"
+      ],
+      "patient_meaning": "Mệt. Cần nghỉ ngơi.",
+      "patient_glosses": [
+        "Mệt",
+        "Cần",
+        "Nghỉ ngơi"
+      ],
+      "clips": [
+        {
+          "number": 1,
+          "file": "benh_nhan/03_Met_Can_Nghi_ngoi/1.mp4",
+          "label": "Mệt",
+          "model_id": 204,
+          "source_video_id": "021291",
+          "declared_signer_id": "024",
+          "original_path": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021291.mp4",
+          "sha256": "ab893d25729ad900a51e450ea85231e20451225f4dacbf53e4b2176d3877a288",
+          "frames": 71,
+          "fps": 29.974,
+          "resolution": [
+            1080,
+            1080
+          ],
+          "duration_ms": 2369
+        },
+        {
+          "number": 2,
+          "file": "benh_nhan/03_Met_Can_Nghi_ngoi/2.mp4",
+          "label": "Cần",
+          "model_id": 87,
+          "source_video_id": "021023",
+          "declared_signer_id": "024",
+          "original_path": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021023.mp4",
+          "sha256": "4f7fe2abb472d6d52d758b5e3ad0f225d476d45597e0da1170d9206858174595",
+          "frames": 75,
+          "fps": 29.974,
+          "resolution": [
+            1080,
+            1080
+          ],
+          "duration_ms": 2502
+        },
+        {
+          "number": 3,
+          "file": "benh_nhan/03_Met_Can_Nghi_ngoi/3.mp4",
+          "label": "Nghỉ ngơi",
+          "model_id": 210,
+          "source_video_id": "021041",
+          "declared_signer_id": "024",
+          "original_path": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021041.mp4",
+          "sha256": "c0680880197f6151c3f1b51c0adae6519d50de8cf1eb99b8297c781c6f3d1878",
+          "frames": 66,
+          "fps": 29.974,
+          "resolution": [
+            1080,
+            1080
+          ],
+          "duration_ms": 2202
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "title": "Giải thích bước tiếp theo",
+      "folder": "benh_nhan/04_Dong_y_do_nhiet_do",
+      "doctor_text": "Y tá đo nhiệt độ.",
+      "doctor_glosses": [
+        "Y tá",
+        "Nhiệt độ",
+        "Đo"
+      ],
+      "patient_meaning": "Đồng ý.",
+      "patient_glosses": [
+        "Đồng ý"
+      ],
+      "clips": [
+        {
+          "number": 1,
+          "file": "benh_nhan/04_Dong_y_do_nhiet_do/1.mp4",
+          "label": "Đồng ý",
+          "model_id": 395,
+          "source_video_id": "021016",
+          "declared_signer_id": "024",
+          "original_path": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021016.mp4",
+          "sha256": "84f47e2ba8c9fdfbcc38c78b1a115bb0bea41bdd977f151df04a3ed997996c94",
+          "frames": 61,
+          "fps": 29.974,
+          "resolution": [
+            1080,
+            1080
+          ],
+          "duration_ms": 2035
+        }
+      ]
+    },
+    {
+      "step": 5,
+      "title": "Đề nghị hỗ trợ",
+      "folder": "benh_nhan/05_Can_Giup_do",
+      "doctor_text": "Y tá giúp đỡ.",
+      "doctor_glosses": [
+        "Y tá",
+        "Giúp đỡ"
+      ],
+      "patient_meaning": "Cần giúp đỡ.",
+      "patient_glosses": [
+        "Cần",
+        "Giúp đỡ"
+      ],
+      "clips": [
+        {
+          "number": 1,
+          "file": "benh_nhan/05_Can_Giup_do/1.mp4",
+          "label": "Cần",
+          "model_id": 87,
+          "source_video_id": "021023",
+          "declared_signer_id": "024",
+          "original_path": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021023.mp4",
+          "sha256": "4f7fe2abb472d6d52d758b5e3ad0f225d476d45597e0da1170d9206858174595",
+          "frames": 75,
+          "fps": 29.974,
+          "resolution": [
+            1080,
+            1080
+          ],
+          "duration_ms": 2502
+        },
+        {
+          "number": 2,
+          "file": "benh_nhan/05_Can_Giup_do/2.mp4",
+          "label": "Giúp đỡ",
+          "model_id": 116,
+          "source_video_id": "021036",
+          "declared_signer_id": "024",
+          "original_path": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021036.mp4",
+          "sha256": "fc2aa1b23c1509130c63a6fdfe29f79766cf38f1c0f9ef9bebaca2e593a68205",
+          "frames": 72,
+          "fps": 29.974,
+          "resolution": [
+            1080,
+            1080
+          ],
+          "duration_ms": 2402
+        }
+      ]
+    },
+    {
+      "step": 6,
+      "title": "Nêu nhu cầu nước",
+      "folder": "benh_nhan/06_Can_Nuoc",
+      "doctor_text": "Ngồi nghỉ ngơi.",
+      "doctor_glosses": [
+        "Ngồi",
+        "Nghỉ ngơi"
+      ],
+      "patient_meaning": "Cần nước.",
+      "patient_glosses": [
+        "Cần",
+        "Nước"
+      ],
+      "clips": [
+        {
+          "number": 1,
+          "file": "benh_nhan/06_Can_Nuoc/1.mp4",
+          "label": "Cần",
+          "model_id": 87,
+          "source_video_id": "021023",
+          "declared_signer_id": "024",
+          "original_path": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021023.mp4",
+          "sha256": "4f7fe2abb472d6d52d758b5e3ad0f225d476d45597e0da1170d9206858174595",
+          "frames": 75,
+          "fps": 29.974,
+          "resolution": [
+            1080,
+            1080
+          ],
+          "duration_ms": 2502
+        },
+        {
+          "number": 2,
+          "file": "benh_nhan/06_Can_Nuoc/2.mp4",
+          "label": "Nước",
+          "model_id": 243,
+          "source_video_id": "020824",
+          "declared_signer_id": "024",
+          "original_path": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\020824.mp4",
+          "sha256": "08690638ac7f752ff15686110bc0eca3228a9944d2d5d12b2bf0a9c7b294a371",
+          "frames": 91,
+          "fps": 29.974,
+          "resolution": [
+            1080,
+            1080
+          ],
+          "duration_ms": 3036
+        }
+      ]
+    },
+    {
+      "step": 7,
+      "title": "Xác nhận đã hiểu",
+      "folder": "benh_nhan/07_Dong_y_Cam_on",
+      "doctor_text": "Uống nước.",
+      "doctor_glosses": [
+        "Nước",
+        "Uống"
+      ],
+      "patient_meaning": "Đồng ý. Cảm ơn.",
+      "patient_glosses": [
+        "Đồng ý",
+        "Cảm ơn"
+      ],
+      "clips": [
+        {
+          "number": 1,
+          "file": "benh_nhan/07_Dong_y_Cam_on/1.mp4",
+          "label": "Đồng ý",
+          "model_id": 395,
+          "source_video_id": "021016",
+          "declared_signer_id": "024",
+          "original_path": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021016.mp4",
+          "sha256": "84f47e2ba8c9fdfbcc38c78b1a115bb0bea41bdd977f151df04a3ed997996c94",
+          "frames": 61,
+          "fps": 29.974,
+          "resolution": [
+            1080,
+            1080
+          ],
+          "duration_ms": 2035
+        },
+        {
+          "number": 2,
+          "file": "benh_nhan/07_Dong_y_Cam_on/2.mp4",
+          "label": "Cảm ơn",
+          "model_id": 86,
+          "source_video_id": "021025",
+          "declared_signer_id": "024",
+          "original_path": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021025.mp4",
+          "sha256": "3b8f96f3972f4673f38085c55a27fcf400f626e65baa7c570e506abc174e15e8",
+          "frames": 73,
+          "fps": 29.974,
+          "resolution": [
+            1080,
+            1080
+          ],
+          "duration_ms": 2435
+        }
+      ]
+    },
+    {
+      "step": 8,
+      "title": "Kết thúc demo",
+      "folder": "benh_nhan/08_Cam_on",
+      "doctor_text": "Cảm ơn.",
+      "doctor_glosses": [
+        "Cảm ơn"
+      ],
+      "patient_meaning": "Cảm ơn.",
+      "patient_glosses": [
+        "Cảm ơn"
+      ],
+      "clips": [
+        {
+          "number": 1,
+          "file": "benh_nhan/08_Cam_on/1.mp4",
+          "label": "Cảm ơn",
+          "model_id": 86,
+          "source_video_id": "021025",
+          "declared_signer_id": "024",
+          "original_path": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021025.mp4",
+          "sha256": "3b8f96f3972f4673f38085c55a27fcf400f626e65baa7c570e506abc174e15e8",
+          "frames": 73,
+          "fps": 29.974,
+          "resolution": [
+            1080,
+            1080
+          ],
+          "duration_ms": 2435
+        }
+      ]
+    }
+  ],
+  "validated_clips": 13,
+  "validation": "Every original, runtime sample and copied MP4 has the declared SHA-256; every copied video decodes fully; numbered file set is exact; every doctor sentence is supported by the current planner."
+}

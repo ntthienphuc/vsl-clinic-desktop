@@ -1,0 +1,3206 @@
+{
+  "version": 1,
+  "count": 400,
+  "words": [
+    {
+      "id": "1",
+      "model_id": 0,
+      "label": "Anh",
+      "category": "Gia đình",
+      "video_id": "020601",
+      "video_path": "/videos/020601.mp4"
+    },
+    {
+      "id": "2",
+      "model_id": 1,
+      "label": "Ba lô",
+      "category": "Từ thông dụng",
+      "video_id": "020840",
+      "video_path": "/videos/020840.mp4"
+    },
+    {
+      "id": "3",
+      "model_id": 2,
+      "label": "Bia",
+      "category": "Từ thông dụng",
+      "video_id": "020825",
+      "video_path": "/videos/020825.mp4"
+    },
+    {
+      "id": "4",
+      "model_id": 3,
+      "label": "Buổi chiều",
+      "category": "Mùa & Thời gian",
+      "video_id": "020690",
+      "video_path": "/videos/020690.mp4"
+    },
+    {
+      "id": "5",
+      "model_id": 4,
+      "label": "Buổi sáng",
+      "category": "Mùa & Thời gian",
+      "video_id": "020688",
+      "video_path": "/videos/020688.mp4"
+    },
+    {
+      "id": "6",
+      "model_id": 5,
+      "label": "Buổi trưa",
+      "category": "Mùa & Thời gian",
+      "video_id": "020689",
+      "video_path": "/videos/020689.mp4"
+    },
+    {
+      "id": "7",
+      "model_id": 6,
+      "label": "Buổi tối",
+      "category": "Mùa & Thời gian",
+      "video_id": "020691",
+      "video_path": "/videos/020691.mp4"
+    },
+    {
+      "id": "8",
+      "model_id": 7,
+      "label": "Bà ngoại",
+      "category": "Gia đình",
+      "video_id": "021240",
+      "video_path": "/videos/021240.mp4"
+    },
+    {
+      "id": "9",
+      "model_id": 8,
+      "label": "Bà nội",
+      "category": "Gia đình",
+      "video_id": "021238",
+      "video_path": "/videos/021238.mp4"
+    },
+    {
+      "id": "10",
+      "model_id": 9,
+      "label": "Bàn phím",
+      "category": "Từ thông dụng",
+      "video_id": "020833",
+      "video_path": "/videos/020833.mp4"
+    },
+    {
+      "id": "11",
+      "model_id": 10,
+      "label": "Bác",
+      "category": "Gia đình",
+      "video_id": "020606",
+      "video_path": "/videos/020606.mp4"
+    },
+    {
+      "id": "12",
+      "model_id": 11,
+      "label": "Bác sĩ",
+      "category": "Y tế",
+      "video_id": "020870",
+      "video_path": "/videos/020870.mp4"
+    },
+    {
+      "id": "13",
+      "model_id": 12,
+      "label": "Bánh bao",
+      "category": "Từ thông dụng",
+      "video_id": "020817",
+      "video_path": "/videos/020817.mp4"
+    },
+    {
+      "id": "14",
+      "model_id": 13,
+      "label": "Bánh chưng",
+      "category": "Từ thông dụng",
+      "video_id": "020822",
+      "video_path": "/videos/020822.mp4"
+    },
+    {
+      "id": "15",
+      "model_id": 14,
+      "label": "Bánh tét",
+      "category": "Từ thông dụng",
+      "video_id": "020823",
+      "video_path": "/videos/020823.mp4"
+    },
+    {
+      "id": "16",
+      "model_id": 15,
+      "label": "Bánh xèo",
+      "category": "Từ thông dụng",
+      "video_id": "020819",
+      "video_path": "/videos/020819.mp4"
+    },
+    {
+      "id": "17",
+      "model_id": 16,
+      "label": "Báo cáo",
+      "category": "Từ thông dụng",
+      "video_id": "021264",
+      "video_path": "/videos/021264.mp4"
+    },
+    {
+      "id": "18",
+      "model_id": 17,
+      "label": "Bây giờ",
+      "category": "Mùa & Thời gian",
+      "video_id": "020692",
+      "video_path": "/videos/020692.mp4"
+    },
+    {
+      "id": "19",
+      "model_id": 18,
+      "label": "Bình minh",
+      "category": "Mùa & Thời gian",
+      "video_id": "020686",
+      "video_path": "/videos/020686.mp4"
+    },
+    {
+      "id": "20",
+      "model_id": 19,
+      "label": "Bóng bàn",
+      "category": "Từ thông dụng",
+      "video_id": "020802",
+      "video_path": "/videos/020802.mp4"
+    },
+    {
+      "id": "21",
+      "model_id": 20,
+      "label": "Bóng chuyền",
+      "category": "Từ thông dụng",
+      "video_id": "020801",
+      "video_path": "/videos/020801.mp4"
+    },
+    {
+      "id": "22",
+      "model_id": 21,
+      "label": "Bóng rổ",
+      "category": "Từ thông dụng",
+      "video_id": "020803",
+      "video_path": "/videos/020803.mp4"
+    },
+    {
+      "id": "23",
+      "model_id": 22,
+      "label": "Bóng đá",
+      "category": "Từ thông dụng",
+      "video_id": "020699",
+      "video_path": "/videos/020699.mp4"
+    },
+    {
+      "id": "24",
+      "model_id": 23,
+      "label": "Bún",
+      "category": "Từ thông dụng",
+      "video_id": "020814",
+      "video_path": "/videos/020814.mp4"
+    },
+    {
+      "id": "25",
+      "model_id": 24,
+      "label": "Bút bi",
+      "category": "Trường học",
+      "video_id": "020834",
+      "video_path": "/videos/020834.mp4"
+    },
+    {
+      "id": "26",
+      "model_id": 25,
+      "label": "Bút chì",
+      "category": "Trường học",
+      "video_id": "020838",
+      "video_path": "/videos/020838.mp4"
+    },
+    {
+      "id": "27",
+      "model_id": 26,
+      "label": "Bơi lội",
+      "category": "Từ thông dụng",
+      "video_id": "020804",
+      "video_path": "/videos/020804.mp4"
+    },
+    {
+      "id": "28",
+      "model_id": 27,
+      "label": "Bảng",
+      "category": "Trường học",
+      "video_id": "020836",
+      "video_path": "/videos/020836.mp4"
+    },
+    {
+      "id": "29",
+      "model_id": 28,
+      "label": "Bảo vệ",
+      "category": "Từ thông dụng",
+      "video_id": "020871",
+      "video_path": "/videos/020871.mp4"
+    },
+    {
+      "id": "30",
+      "model_id": 29,
+      "label": "Bận",
+      "category": "Từ thông dụng",
+      "video_id": "021253",
+      "video_path": "/videos/021253.mp4"
+    },
+    {
+      "id": "31",
+      "model_id": 30,
+      "label": "Bắt buộc",
+      "category": "Từ thông dụng",
+      "video_id": "021263",
+      "video_path": "/videos/021263.mp4"
+    },
+    {
+      "id": "32",
+      "model_id": 31,
+      "label": "Bắt chước",
+      "category": "Từ thông dụng",
+      "video_id": "021262",
+      "video_path": "/videos/021262.mp4"
+    },
+    {
+      "id": "33",
+      "model_id": 32,
+      "label": "Bệnh viện",
+      "category": "Y tế",
+      "video_id": "020643",
+      "video_path": "/videos/020643.mp4"
+    },
+    {
+      "id": "34",
+      "model_id": 33,
+      "label": "Bố",
+      "category": "Gia đình",
+      "video_id": "021231",
+      "video_path": "/videos/021231.mp4"
+    },
+    {
+      "id": "35",
+      "model_id": 34,
+      "label": "Ca sĩ",
+      "category": "Từ thông dụng",
+      "video_id": "020875",
+      "video_path": "/videos/020875.mp4"
+    },
+    {
+      "id": "36",
+      "model_id": 35,
+      "label": "Cao (người)",
+      "category": "Từ thông dụng",
+      "video_id": "021284",
+      "video_path": "/videos/021284.mp4"
+    },
+    {
+      "id": "37",
+      "model_id": 36,
+      "label": "Cao (đồ vật)",
+      "category": "Từ thông dụng",
+      "video_id": "021054",
+      "video_path": "/videos/021054.mp4"
+    },
+    {
+      "id": "38",
+      "model_id": 37,
+      "label": "Cay",
+      "category": "Từ thông dụng",
+      "video_id": "021273",
+      "video_path": "/videos/021273.mp4"
+    },
+    {
+      "id": "39",
+      "model_id": 38,
+      "label": "Cho",
+      "category": "Từ thông dụng",
+      "video_id": "021033",
+      "video_path": "/videos/021033.mp4"
+    },
+    {
+      "id": "40",
+      "model_id": 39,
+      "label": "Chua",
+      "category": "Từ thông dụng",
+      "video_id": "021044",
+      "video_path": "/videos/021044.mp4"
+    },
+    {
+      "id": "41",
+      "model_id": 40,
+      "label": "Cháu",
+      "category": "Từ thông dụng",
+      "video_id": "020609",
+      "video_path": "/videos/020609.mp4"
+    },
+    {
+      "id": "42",
+      "model_id": 41,
+      "label": "Chìa khóa",
+      "category": "Từ thông dụng",
+      "video_id": "020622",
+      "video_path": "/videos/020622.mp4"
+    },
+    {
+      "id": "43",
+      "model_id": 42,
+      "label": "Chú",
+      "category": "Gia đình",
+      "video_id": "020604",
+      "video_path": "/videos/020604.mp4"
+    },
+    {
+      "id": "44",
+      "model_id": 43,
+      "label": "Chú ý",
+      "category": "Từ thông dụng",
+      "video_id": "021019",
+      "video_path": "/videos/021019.mp4"
+    },
+    {
+      "id": "45",
+      "model_id": 44,
+      "label": "Chăm chỉ",
+      "category": "Từ thông dụng",
+      "video_id": "021294",
+      "video_path": "/videos/021294.mp4"
+    },
+    {
+      "id": "46",
+      "model_id": 45,
+      "label": "Chơi cờ",
+      "category": "Từ thông dụng",
+      "video_id": "020806",
+      "video_path": "/videos/020806.mp4"
+    },
+    {
+      "id": "47",
+      "model_id": 46,
+      "label": "Chạy",
+      "category": "Từ thông dụng",
+      "video_id": "021252",
+      "video_path": "/videos/021252.mp4"
+    },
+    {
+      "id": "48",
+      "model_id": 47,
+      "label": "Chậm chạp",
+      "category": "Từ thông dụng",
+      "video_id": "021057",
+      "video_path": "/videos/021057.mp4"
+    },
+    {
+      "id": "49",
+      "model_id": 48,
+      "label": "Chật",
+      "category": "Từ thông dụng",
+      "video_id": "021280",
+      "video_path": "/videos/021280.mp4"
+    },
+    {
+      "id": "50",
+      "model_id": 49,
+      "label": "Chết",
+      "category": "Từ thông dụng",
+      "video_id": "021250",
+      "video_path": "/videos/021250.mp4"
+    },
+    {
+      "id": "51",
+      "model_id": 50,
+      "label": "Chị",
+      "category": "Gia đình",
+      "video_id": "020602",
+      "video_path": "/videos/020602.mp4"
+    },
+    {
+      "id": "52",
+      "model_id": 51,
+      "label": "Chồng",
+      "category": "Từ thông dụng",
+      "video_id": "021236",
+      "video_path": "/videos/021236.mp4"
+    },
+    {
+      "id": "53",
+      "model_id": 52,
+      "label": "Chợ",
+      "category": "Từ thông dụng",
+      "video_id": "020644",
+      "video_path": "/videos/020644.mp4"
+    },
+    {
+      "id": "54",
+      "model_id": 53,
+      "label": "Chụp hình",
+      "category": "Từ thông dụng",
+      "video_id": "021032",
+      "video_path": "/videos/021032.mp4"
+    },
+    {
+      "id": "55",
+      "model_id": 54,
+      "label": "Chủ nhật",
+      "category": "Từ thông dụng",
+      "video_id": "020664",
+      "video_path": "/videos/020664.mp4"
+    },
+    {
+      "id": "56",
+      "model_id": 55,
+      "label": "Chủ tịch",
+      "category": "Từ thông dụng",
+      "video_id": "020880",
+      "video_path": "/videos/020880.mp4"
+    },
+    {
+      "id": "57",
+      "model_id": 56,
+      "label": "Con bò",
+      "category": "Động vật",
+      "video_id": "021208",
+      "video_path": "/videos/021208.mp4"
+    },
+    {
+      "id": "58",
+      "model_id": 57,
+      "label": "Con chó",
+      "category": "Động vật",
+      "video_id": "021201",
+      "video_path": "/videos/021201.mp4"
+    },
+    {
+      "id": "59",
+      "model_id": 58,
+      "label": "Con dê",
+      "category": "Động vật",
+      "video_id": "021209",
+      "video_path": "/videos/021209.mp4"
+    },
+    {
+      "id": "60",
+      "model_id": 59,
+      "label": "Con gà",
+      "category": "Động vật",
+      "video_id": "021203",
+      "video_path": "/videos/021203.mp4"
+    },
+    {
+      "id": "61",
+      "model_id": 60,
+      "label": "Con gái",
+      "category": "Gia đình",
+      "video_id": "021234",
+      "video_path": "/videos/021234.mp4"
+    },
+    {
+      "id": "62",
+      "model_id": 61,
+      "label": "Con heo",
+      "category": "Động vật",
+      "video_id": "021210",
+      "video_path": "/videos/021210.mp4"
+    },
+    {
+      "id": "63",
+      "model_id": 62,
+      "label": "Con mèo",
+      "category": "Động vật",
+      "video_id": "021202",
+      "video_path": "/videos/021202.mp4"
+    },
+    {
+      "id": "64",
+      "model_id": 63,
+      "label": "Con rùa",
+      "category": "Động vật",
+      "video_id": "021205",
+      "video_path": "/videos/021205.mp4"
+    },
+    {
+      "id": "65",
+      "model_id": 64,
+      "label": "Con thỏ",
+      "category": "Động vật",
+      "video_id": "021206",
+      "video_path": "/videos/021206.mp4"
+    },
+    {
+      "id": "66",
+      "model_id": 65,
+      "label": "Con trai",
+      "category": "Gia đình",
+      "video_id": "021233",
+      "video_path": "/videos/021233.mp4"
+    },
+    {
+      "id": "67",
+      "model_id": 66,
+      "label": "Con trâu",
+      "category": "Động vật",
+      "video_id": "021207",
+      "video_path": "/videos/021207.mp4"
+    },
+    {
+      "id": "68",
+      "model_id": 67,
+      "label": "Con vịt",
+      "category": "Động vật",
+      "video_id": "021204",
+      "video_path": "/videos/021204.mp4"
+    },
+    {
+      "id": "69",
+      "model_id": 68,
+      "label": "Cung cấp",
+      "category": "Từ thông dụng",
+      "video_id": "021261",
+      "video_path": "/videos/021261.mp4"
+    },
+    {
+      "id": "70",
+      "model_id": 69,
+      "label": "Cà phê",
+      "category": "Từ thông dụng",
+      "video_id": "020827",
+      "video_path": "/videos/020827.mp4"
+    },
+    {
+      "id": "71",
+      "model_id": 70,
+      "label": "Cái bàn",
+      "category": "Từ thông dụng",
+      "video_id": "020613",
+      "video_path": "/videos/020613.mp4"
+    },
+    {
+      "id": "72",
+      "model_id": 71,
+      "label": "Cái chảo",
+      "category": "Từ thông dụng",
+      "video_id": "020616",
+      "video_path": "/videos/020616.mp4"
+    },
+    {
+      "id": "73",
+      "model_id": 72,
+      "label": "Cái cửa",
+      "category": "Từ thông dụng",
+      "video_id": "020620",
+      "video_path": "/videos/020620.mp4"
+    },
+    {
+      "id": "74",
+      "model_id": 73,
+      "label": "Cái ghế",
+      "category": "Từ thông dụng",
+      "video_id": "020614",
+      "video_path": "/videos/020614.mp4"
+    },
+    {
+      "id": "75",
+      "model_id": 74,
+      "label": "Cái kéo",
+      "category": "Từ thông dụng",
+      "video_id": "020845",
+      "video_path": "/videos/020845.mp4"
+    },
+    {
+      "id": "76",
+      "model_id": 75,
+      "label": "Cái nồi",
+      "category": "Từ thông dụng",
+      "video_id": "020615",
+      "video_path": "/videos/020615.mp4"
+    },
+    {
+      "id": "77",
+      "model_id": 76,
+      "label": "Cái quần",
+      "category": "Từ thông dụng",
+      "video_id": "020849",
+      "video_path": "/videos/020849.mp4"
+    },
+    {
+      "id": "78",
+      "model_id": 77,
+      "label": "Cái áo",
+      "category": "Từ thông dụng",
+      "video_id": "020848",
+      "video_path": "/videos/020848.mp4"
+    },
+    {
+      "id": "79",
+      "model_id": 78,
+      "label": "Cái đèn",
+      "category": "Từ thông dụng",
+      "video_id": "020618",
+      "video_path": "/videos/020618.mp4"
+    },
+    {
+      "id": "80",
+      "model_id": 79,
+      "label": "Có",
+      "category": "Gia đình",
+      "video_id": "021042",
+      "video_path": "/videos/021042.mp4"
+    },
+    {
+      "id": "81",
+      "model_id": 80,
+      "label": "Cô",
+      "category": "Gia đình",
+      "video_id": "020608",
+      "video_path": "/videos/020608.mp4"
+    },
+    {
+      "id": "82",
+      "model_id": 81,
+      "label": "Công ty",
+      "category": "Từ thông dụng",
+      "video_id": "020637",
+      "video_path": "/videos/020637.mp4"
+    },
+    {
+      "id": "83",
+      "model_id": 82,
+      "label": "Công viên",
+      "category": "Từ thông dụng",
+      "video_id": "020638",
+      "video_path": "/videos/020638.mp4"
+    },
+    {
+      "id": "84",
+      "model_id": 83,
+      "label": "Cũ",
+      "category": "Từ thông dụng",
+      "video_id": "021069",
+      "video_path": "/videos/021069.mp4"
+    },
+    {
+      "id": "85",
+      "model_id": 84,
+      "label": "Cười",
+      "category": "Từ thông dụng",
+      "video_id": "021247",
+      "video_path": "/videos/021247.mp4"
+    },
+    {
+      "id": "86",
+      "model_id": 85,
+      "label": "Cảm thấy",
+      "category": "Từ thông dụng",
+      "video_id": "021022",
+      "video_path": "/videos/021022.mp4"
+    },
+    {
+      "id": "87",
+      "model_id": 86,
+      "label": "Cảm ơn",
+      "category": "Từ thông dụng",
+      "video_id": "021025",
+      "video_path": "/videos/021025.mp4"
+    },
+    {
+      "id": "88",
+      "model_id": 87,
+      "label": "Cần",
+      "category": "Từ thông dụng",
+      "video_id": "021023",
+      "video_path": "/videos/021023.mp4"
+    },
+    {
+      "id": "89",
+      "model_id": 88,
+      "label": "Cầu lông",
+      "category": "Từ thông dụng",
+      "video_id": "020700",
+      "video_path": "/videos/020700.mp4"
+    },
+    {
+      "id": "90",
+      "model_id": 89,
+      "label": "Cậu",
+      "category": "Từ thông dụng",
+      "video_id": "020605",
+      "video_path": "/videos/020605.mp4"
+    },
+    {
+      "id": "91",
+      "model_id": 90,
+      "label": "Cắm trại",
+      "category": "Từ thông dụng",
+      "video_id": "021260",
+      "video_path": "/videos/021260.mp4"
+    },
+    {
+      "id": "92",
+      "model_id": 91,
+      "label": "Cục tẩy",
+      "category": "Từ thông dụng",
+      "video_id": "020835",
+      "video_path": "/videos/020835.mp4"
+    },
+    {
+      "id": "93",
+      "model_id": 92,
+      "label": "Cứng",
+      "category": "Từ thông dụng",
+      "video_id": "021086",
+      "video_path": "/videos/021086.mp4"
+    },
+    {
+      "id": "94",
+      "model_id": 93,
+      "label": "Cửa sổ",
+      "category": "Từ thông dụng",
+      "video_id": "020621",
+      "video_path": "/videos/020621.mp4"
+    },
+    {
+      "id": "95",
+      "model_id": 94,
+      "label": "Diễn viên",
+      "category": "Từ thông dụng",
+      "video_id": "020881",
+      "video_path": "/videos/020881.mp4"
+    },
+    {
+      "id": "96",
+      "model_id": 95,
+      "label": "Dài",
+      "category": "Từ thông dụng",
+      "video_id": "021283",
+      "video_path": "/videos/021283.mp4"
+    },
+    {
+      "id": "97",
+      "model_id": 96,
+      "label": "Dây chuyền",
+      "category": "Từ thông dụng",
+      "video_id": "020859",
+      "video_path": "/videos/020859.mp4"
+    },
+    {
+      "id": "98",
+      "model_id": 97,
+      "label": "Dép",
+      "category": "Từ thông dụng",
+      "video_id": "020854",
+      "video_path": "/videos/020854.mp4"
+    },
+    {
+      "id": "99",
+      "model_id": 98,
+      "label": "Dì",
+      "category": "Từ thông dụng",
+      "video_id": "020607",
+      "video_path": "/videos/020607.mp4"
+    },
+    {
+      "id": "100",
+      "model_id": 99,
+      "label": "Dũng cảm",
+      "category": "Từ thông dụng",
+      "video_id": "021299",
+      "video_path": "/videos/021299.mp4"
+    },
+    {
+      "id": "101",
+      "model_id": 100,
+      "label": "Dơ",
+      "category": "Từ thông dụng",
+      "video_id": "021065",
+      "video_path": "/videos/021065.mp4"
+    },
+    {
+      "id": "102",
+      "model_id": 101,
+      "label": "Dễ",
+      "category": "Từ thông dụng",
+      "video_id": "021087",
+      "video_path": "/videos/021087.mp4"
+    },
+    {
+      "id": "103",
+      "model_id": 102,
+      "label": "Dỗi",
+      "category": "Từ thông dụng",
+      "video_id": "021249",
+      "video_path": "/videos/021249.mp4"
+    },
+    {
+      "id": "104",
+      "model_id": 103,
+      "label": "Dở",
+      "category": "Từ thông dụng",
+      "video_id": "021083",
+      "video_path": "/videos/021083.mp4"
+    },
+    {
+      "id": "105",
+      "model_id": 104,
+      "label": "Dụng cụ học tập",
+      "category": "Trường học",
+      "video_id": "020830",
+      "video_path": "/videos/020830.mp4"
+    },
+    {
+      "id": "106",
+      "model_id": 105,
+      "label": "Dừng lại",
+      "category": "Từ thông dụng",
+      "video_id": "021010",
+      "video_path": "/videos/021010.mp4"
+    },
+    {
+      "id": "107",
+      "model_id": 106,
+      "label": "Dữ",
+      "category": "Từ thông dụng",
+      "video_id": "021091",
+      "video_path": "/videos/021091.mp4"
+    },
+    {
+      "id": "108",
+      "model_id": 107,
+      "label": "Em",
+      "category": "Gia đình",
+      "video_id": "020603",
+      "video_path": "/videos/020603.mp4"
+    },
+    {
+      "id": "109",
+      "model_id": 108,
+      "label": "Ghét",
+      "category": "Từ thông dụng",
+      "video_id": "021006",
+      "video_path": "/videos/021006.mp4"
+    },
+    {
+      "id": "110",
+      "model_id": 109,
+      "label": "Già",
+      "category": "Từ thông dụng",
+      "video_id": "021060",
+      "video_path": "/videos/021060.mp4"
+    },
+    {
+      "id": "111",
+      "model_id": 110,
+      "label": "Giàu",
+      "category": "Từ thông dụng",
+      "video_id": "021070",
+      "video_path": "/videos/021070.mp4"
+    },
+    {
+      "id": "112",
+      "model_id": 111,
+      "label": "Giày",
+      "category": "Từ thông dụng",
+      "video_id": "020850",
+      "video_path": "/videos/020850.mp4"
+    },
+    {
+      "id": "113",
+      "model_id": 112,
+      "label": "Giám đốc",
+      "category": "Từ thông dụng",
+      "video_id": "020878",
+      "video_path": "/videos/020878.mp4"
+    },
+    {
+      "id": "114",
+      "model_id": 113,
+      "label": "Giáng sinh",
+      "category": "Từ thông dụng",
+      "video_id": "020695",
+      "video_path": "/videos/020695.mp4"
+    },
+    {
+      "id": "115",
+      "model_id": 114,
+      "label": "Giây",
+      "category": "Từ thông dụng",
+      "video_id": "020685",
+      "video_path": "/videos/020685.mp4"
+    },
+    {
+      "id": "116",
+      "model_id": 115,
+      "label": "Gió",
+      "category": "Mùa & Thời gian",
+      "video_id": "020657",
+      "video_path": "/videos/020657.mp4"
+    },
+    {
+      "id": "117",
+      "model_id": 116,
+      "label": "Giúp đỡ",
+      "category": "Từ thông dụng",
+      "video_id": "021036",
+      "video_path": "/videos/021036.mp4"
+    },
+    {
+      "id": "118",
+      "model_id": 117,
+      "label": "Giường",
+      "category": "Từ thông dụng",
+      "video_id": "020624",
+      "video_path": "/videos/020624.mp4"
+    },
+    {
+      "id": "119",
+      "model_id": 118,
+      "label": "Giấy nháp",
+      "category": "Từ thông dụng",
+      "video_id": "020843",
+      "video_path": "/videos/020843.mp4"
+    },
+    {
+      "id": "120",
+      "model_id": 119,
+      "label": "Giặt đồ",
+      "category": "Từ thông dụng",
+      "video_id": "021011",
+      "video_path": "/videos/021011.mp4"
+    },
+    {
+      "id": "121",
+      "model_id": 120,
+      "label": "Giỏi",
+      "category": "Từ thông dụng",
+      "video_id": "021293",
+      "video_path": "/videos/021293.mp4"
+    },
+    {
+      "id": "122",
+      "model_id": 121,
+      "label": "Giới thiệu",
+      "category": "Từ thông dụng",
+      "video_id": "021001",
+      "video_path": "/videos/021001.mp4"
+    },
+    {
+      "id": "123",
+      "model_id": 122,
+      "label": "Giờ",
+      "category": "Mùa & Thời gian",
+      "video_id": "020683",
+      "video_path": "/videos/020683.mp4"
+    },
+    {
+      "id": "124",
+      "model_id": 123,
+      "label": "Gạo",
+      "category": "Từ thông dụng",
+      "video_id": "020811",
+      "video_path": "/videos/020811.mp4"
+    },
+    {
+      "id": "125",
+      "model_id": 124,
+      "label": "Gần",
+      "category": "Từ thông dụng",
+      "video_id": "021090",
+      "video_path": "/videos/021090.mp4"
+    },
+    {
+      "id": "126",
+      "model_id": 125,
+      "label": "Gọi",
+      "category": "Từ thông dụng",
+      "video_id": "021018",
+      "video_path": "/videos/021018.mp4"
+    },
+    {
+      "id": "127",
+      "model_id": 126,
+      "label": "Gối (đầu)",
+      "category": "Từ thông dụng",
+      "video_id": "020625",
+      "video_path": "/videos/020625.mp4"
+    },
+    {
+      "id": "128",
+      "model_id": 127,
+      "label": "Gội đầu",
+      "category": "Từ thông dụng",
+      "video_id": "021037",
+      "video_path": "/videos/021037.mp4"
+    },
+    {
+      "id": "129",
+      "model_id": 128,
+      "label": "Hay (khen)",
+      "category": "Từ thông dụng",
+      "video_id": "021073",
+      "video_path": "/videos/021073.mp4"
+    },
+    {
+      "id": "130",
+      "model_id": 129,
+      "label": "Hiền",
+      "category": "Từ thông dụng",
+      "video_id": "021092",
+      "video_path": "/videos/021092.mp4"
+    },
+    {
+      "id": "131",
+      "model_id": 130,
+      "label": "Hiệu trưởng",
+      "category": "Trường học",
+      "video_id": "020872",
+      "video_path": "/videos/020872.mp4"
+    },
+    {
+      "id": "132",
+      "model_id": 131,
+      "label": "Hoàng hôn",
+      "category": "Từ thông dụng",
+      "video_id": "020687",
+      "video_path": "/videos/020687.mp4"
+    },
+    {
+      "id": "133",
+      "model_id": 132,
+      "label": "Hy vọng",
+      "category": "Từ thông dụng",
+      "video_id": "021002",
+      "video_path": "/videos/021002.mp4"
+    },
+    {
+      "id": "134",
+      "model_id": 133,
+      "label": "Hài hước",
+      "category": "Từ thông dụng",
+      "video_id": "021298",
+      "video_path": "/videos/021298.mp4"
+    },
+    {
+      "id": "135",
+      "model_id": 134,
+      "label": "Hàn Quốc",
+      "category": "Từ thông dụng",
+      "video_id": "021097",
+      "video_path": "/videos/021097.mp4"
+    },
+    {
+      "id": "136",
+      "model_id": 135,
+      "label": "Hát",
+      "category": "Từ thông dụng",
+      "video_id": "021254",
+      "video_path": "/videos/021254.mp4"
+    },
+    {
+      "id": "137",
+      "model_id": 136,
+      "label": "Hôi",
+      "category": "Từ thông dụng",
+      "video_id": "021063",
+      "video_path": "/videos/021063.mp4"
+    },
+    {
+      "id": "138",
+      "model_id": 137,
+      "label": "Hư",
+      "category": "Từ thông dụng",
+      "video_id": "021289",
+      "video_path": "/videos/021289.mp4"
+    },
+    {
+      "id": "139",
+      "model_id": 138,
+      "label": "Hẹp",
+      "category": "Từ thông dụng",
+      "video_id": "021281",
+      "video_path": "/videos/021281.mp4"
+    },
+    {
+      "id": "140",
+      "model_id": 139,
+      "label": "Họ hàng",
+      "category": "Từ thông dụng",
+      "video_id": "020610",
+      "video_path": "/videos/020610.mp4"
+    },
+    {
+      "id": "141",
+      "model_id": 140,
+      "label": "Học",
+      "category": "Trường học",
+      "video_id": "021248",
+      "video_path": "/videos/021248.mp4"
+    },
+    {
+      "id": "142",
+      "model_id": 141,
+      "label": "Học sinh",
+      "category": "Trường học",
+      "video_id": "020876",
+      "video_path": "/videos/020876.mp4"
+    },
+    {
+      "id": "143",
+      "model_id": 142,
+      "label": "Hứa",
+      "category": "Từ thông dụng",
+      "video_id": "021029",
+      "video_path": "/videos/021029.mp4"
+    },
+    {
+      "id": "144",
+      "model_id": 143,
+      "label": "Kem",
+      "category": "Từ thông dụng",
+      "video_id": "020821",
+      "video_path": "/videos/020821.mp4"
+    },
+    {
+      "id": "145",
+      "model_id": 144,
+      "label": "Khoe khoang",
+      "category": "Từ thông dụng",
+      "video_id": "020899",
+      "video_path": "/videos/020899.mp4"
+    },
+    {
+      "id": "146",
+      "model_id": 145,
+      "label": "Khám bệnh",
+      "category": "Y tế",
+      "video_id": "020898",
+      "video_path": "/videos/020898.mp4"
+    },
+    {
+      "id": "147",
+      "model_id": 146,
+      "label": "Khó",
+      "category": "Từ thông dụng",
+      "video_id": "021048",
+      "video_path": "/videos/021048.mp4"
+    },
+    {
+      "id": "148",
+      "model_id": 147,
+      "label": "Khóc",
+      "category": "Trường học",
+      "video_id": "021246",
+      "video_path": "/videos/021246.mp4"
+    },
+    {
+      "id": "149",
+      "model_id": 148,
+      "label": "Khô",
+      "category": "Từ thông dụng",
+      "video_id": "021059",
+      "video_path": "/videos/021059.mp4"
+    },
+    {
+      "id": "150",
+      "model_id": 149,
+      "label": "Không cho",
+      "category": "Từ thông dụng",
+      "video_id": "021269",
+      "video_path": "/videos/021269.mp4"
+    },
+    {
+      "id": "151",
+      "model_id": 150,
+      "label": "Không cần",
+      "category": "Từ thông dụng",
+      "video_id": "021268",
+      "video_path": "/videos/021268.mp4"
+    },
+    {
+      "id": "152",
+      "model_id": 151,
+      "label": "Không nghe lời",
+      "category": "Từ thông dụng",
+      "video_id": "021270",
+      "video_path": "/videos/021270.mp4"
+    },
+    {
+      "id": "153",
+      "model_id": 152,
+      "label": "Không nên",
+      "category": "Từ thông dụng",
+      "video_id": "021267",
+      "video_path": "/videos/021267.mp4"
+    },
+    {
+      "id": "154",
+      "model_id": 153,
+      "label": "Không quen",
+      "category": "Từ thông dụng",
+      "video_id": "021266",
+      "video_path": "/videos/021266.mp4"
+    },
+    {
+      "id": "155",
+      "model_id": 154,
+      "label": "Khăn quàng cổ",
+      "category": "Từ thông dụng",
+      "video_id": "020865",
+      "video_path": "/videos/020865.mp4"
+    },
+    {
+      "id": "156",
+      "model_id": 155,
+      "label": "Khỏe",
+      "category": "Từ thông dụng",
+      "video_id": "021290",
+      "video_path": "/videos/021290.mp4"
+    },
+    {
+      "id": "157",
+      "model_id": 156,
+      "label": "Kính lúp",
+      "category": "Từ thông dụng",
+      "video_id": "020846",
+      "video_path": "/videos/020846.mp4"
+    },
+    {
+      "id": "158",
+      "model_id": 157,
+      "label": "Kẹo",
+      "category": "Từ thông dụng",
+      "video_id": "020820",
+      "video_path": "/videos/020820.mp4"
+    },
+    {
+      "id": "159",
+      "model_id": 158,
+      "label": "Kẹp tóc",
+      "category": "Từ thông dụng",
+      "video_id": "020862",
+      "video_path": "/videos/020862.mp4"
+    },
+    {
+      "id": "160",
+      "model_id": 159,
+      "label": "Kế toán",
+      "category": "Từ thông dụng",
+      "video_id": "020879",
+      "video_path": "/videos/020879.mp4"
+    },
+    {
+      "id": "161",
+      "model_id": 160,
+      "label": "Laptop",
+      "category": "Từ thông dụng",
+      "video_id": "020837",
+      "video_path": "/videos/020837.mp4"
+    },
+    {
+      "id": "162",
+      "model_id": 161,
+      "label": "Luật sư",
+      "category": "Từ thông dụng",
+      "video_id": "020883",
+      "video_path": "/videos/020883.mp4"
+    },
+    {
+      "id": "163",
+      "model_id": 162,
+      "label": "Làm bài tập",
+      "category": "Từ thông dụng",
+      "video_id": "021028",
+      "video_path": "/videos/021028.mp4"
+    },
+    {
+      "id": "164",
+      "model_id": 163,
+      "label": "Làm việc",
+      "category": "Từ thông dụng",
+      "video_id": "021012",
+      "video_path": "/videos/021012.mp4"
+    },
+    {
+      "id": "165",
+      "model_id": 164,
+      "label": "Lùn",
+      "category": "Từ thông dụng",
+      "video_id": "021285",
+      "video_path": "/videos/021285.mp4"
+    },
+    {
+      "id": "166",
+      "model_id": 165,
+      "label": "Lười biếng",
+      "category": "Từ thông dụng",
+      "video_id": "021295",
+      "video_path": "/videos/021295.mp4"
+    },
+    {
+      "id": "167",
+      "model_id": 166,
+      "label": "Lạnh",
+      "category": "Từ thông dụng",
+      "video_id": "021088",
+      "video_path": "/videos/021088.mp4"
+    },
+    {
+      "id": "168",
+      "model_id": 167,
+      "label": "Lễ tân",
+      "category": "Từ thông dụng",
+      "video_id": "020873",
+      "video_path": "/videos/020873.mp4"
+    },
+    {
+      "id": "169",
+      "model_id": 168,
+      "label": "Mua bán",
+      "category": "Mùa & Thời gian",
+      "video_id": "021265",
+      "video_path": "/videos/021265.mp4"
+    },
+    {
+      "id": "170",
+      "model_id": 169,
+      "label": "Muốn",
+      "category": "Từ thông dụng",
+      "video_id": "021003",
+      "video_path": "/videos/021003.mp4"
+    },
+    {
+      "id": "171",
+      "model_id": 170,
+      "label": "Màu cam",
+      "category": "Màu sắc",
+      "video_id": "021214",
+      "video_path": "/videos/021214.mp4"
+    },
+    {
+      "id": "172",
+      "model_id": 171,
+      "label": "Màu hồng",
+      "category": "Màu sắc",
+      "video_id": "021218",
+      "video_path": "/videos/021218.mp4"
+    },
+    {
+      "id": "173",
+      "model_id": 172,
+      "label": "Màu nâu",
+      "category": "Màu sắc",
+      "video_id": "021220",
+      "video_path": "/videos/021220.mp4"
+    },
+    {
+      "id": "174",
+      "model_id": 173,
+      "label": "Màu trắng",
+      "category": "Màu sắc",
+      "video_id": "021212",
+      "video_path": "/videos/021212.mp4"
+    },
+    {
+      "id": "175",
+      "model_id": 174,
+      "label": "Màu tím",
+      "category": "Màu sắc",
+      "video_id": "021219",
+      "video_path": "/videos/021219.mp4"
+    },
+    {
+      "id": "176",
+      "model_id": 175,
+      "label": "Màu vàng",
+      "category": "Màu sắc",
+      "video_id": "021215",
+      "video_path": "/videos/021215.mp4"
+    },
+    {
+      "id": "177",
+      "model_id": 176,
+      "label": "Màu xanh da trời",
+      "category": "Màu sắc",
+      "video_id": "021217",
+      "video_path": "/videos/021217.mp4"
+    },
+    {
+      "id": "178",
+      "model_id": 177,
+      "label": "Màu xanh lá cây",
+      "category": "Màu sắc",
+      "video_id": "021216",
+      "video_path": "/videos/021216.mp4"
+    },
+    {
+      "id": "179",
+      "model_id": 178,
+      "label": "Màu đen",
+      "category": "Màu sắc",
+      "video_id": "021211",
+      "video_path": "/videos/021211.mp4"
+    },
+    {
+      "id": "180",
+      "model_id": 179,
+      "label": "Màu đỏ",
+      "category": "Màu sắc",
+      "video_id": "021213",
+      "video_path": "/videos/021213.mp4"
+    },
+    {
+      "id": "181",
+      "model_id": 180,
+      "label": "Mách",
+      "category": "Từ thông dụng",
+      "video_id": "021245",
+      "video_path": "/videos/021245.mp4"
+    },
+    {
+      "id": "182",
+      "model_id": 181,
+      "label": "Mát mẻ",
+      "category": "Từ thông dụng",
+      "video_id": "021058",
+      "video_path": "/videos/021058.mp4"
+    },
+    {
+      "id": "183",
+      "model_id": 182,
+      "label": "Máy bay",
+      "category": "Phương tiện",
+      "video_id": "020885",
+      "video_path": "/videos/020885.mp4"
+    },
+    {
+      "id": "184",
+      "model_id": 183,
+      "label": "Máy chiếu",
+      "category": "Từ thông dụng",
+      "video_id": "020611",
+      "video_path": "/videos/020611.mp4"
+    },
+    {
+      "id": "185",
+      "model_id": 184,
+      "label": "Máy giặt",
+      "category": "Từ thông dụng",
+      "video_id": "020629",
+      "video_path": "/videos/020629.mp4"
+    },
+    {
+      "id": "186",
+      "model_id": 185,
+      "label": "Máy tính cầm tay",
+      "category": "Từ thông dụng",
+      "video_id": "020844",
+      "video_path": "/videos/020844.mp4"
+    },
+    {
+      "id": "187",
+      "model_id": 186,
+      "label": "Máy điều hoà",
+      "category": "Từ thông dụng",
+      "video_id": "020628",
+      "video_path": "/videos/020628.mp4"
+    },
+    {
+      "id": "188",
+      "model_id": 187,
+      "label": "Mì gói",
+      "category": "Từ thông dụng",
+      "video_id": "020816",
+      "video_path": "/videos/020816.mp4"
+    },
+    {
+      "id": "189",
+      "model_id": 188,
+      "label": "Mùa hè",
+      "category": "Mùa & Thời gian",
+      "video_id": "020650",
+      "video_path": "/videos/020650.mp4"
+    },
+    {
+      "id": "190",
+      "model_id": 189,
+      "label": "Mùa khô",
+      "category": "Mùa & Thời gian",
+      "video_id": "020654",
+      "video_path": "/videos/020654.mp4"
+    },
+    {
+      "id": "191",
+      "model_id": 190,
+      "label": "Mùa mưa",
+      "category": "Mùa & Thời gian",
+      "video_id": "020653",
+      "video_path": "/videos/020653.mp4"
+    },
+    {
+      "id": "192",
+      "model_id": 191,
+      "label": "Mùa thu",
+      "category": "Mùa & Thời gian",
+      "video_id": "020651",
+      "video_path": "/videos/020651.mp4"
+    },
+    {
+      "id": "193",
+      "model_id": 192,
+      "label": "Mùa xuân",
+      "category": "Mùa & Thời gian",
+      "video_id": "020649",
+      "video_path": "/videos/020649.mp4"
+    },
+    {
+      "id": "194",
+      "model_id": 193,
+      "label": "Mùa đông",
+      "category": "Mùa & Thời gian",
+      "video_id": "020652",
+      "video_path": "/videos/020652.mp4"
+    },
+    {
+      "id": "195",
+      "model_id": 194,
+      "label": "Múa",
+      "category": "Từ thông dụng",
+      "video_id": "021255",
+      "video_path": "/videos/021255.mp4"
+    },
+    {
+      "id": "196",
+      "model_id": 195,
+      "label": "Mũ",
+      "category": "Từ thông dụng",
+      "video_id": "020860",
+      "video_path": "/videos/020860.mp4"
+    },
+    {
+      "id": "197",
+      "model_id": 196,
+      "label": "Mũ bảo hiểm",
+      "category": "Từ thông dụng",
+      "video_id": "020861",
+      "video_path": "/videos/020861.mp4"
+    },
+    {
+      "id": "198",
+      "model_id": 197,
+      "label": "Mưa",
+      "category": "Từ thông dụng",
+      "video_id": "020656",
+      "video_path": "/videos/020656.mp4"
+    },
+    {
+      "id": "199",
+      "model_id": 198,
+      "label": "Mạnh",
+      "category": "Từ thông dụng",
+      "video_id": "021067",
+      "video_path": "/videos/021067.mp4"
+    },
+    {
+      "id": "200",
+      "model_id": 199,
+      "label": "Mập",
+      "category": "Từ thông dụng",
+      "video_id": "021287",
+      "video_path": "/videos/021287.mp4"
+    },
+    {
+      "id": "201",
+      "model_id": 200,
+      "label": "Mặn",
+      "category": "Từ thông dụng",
+      "video_id": "021271",
+      "video_path": "/videos/021271.mp4"
+    },
+    {
+      "id": "202",
+      "model_id": 201,
+      "label": "Mẹ",
+      "category": "Gia đình",
+      "video_id": "021232",
+      "video_path": "/videos/021232.mp4"
+    },
+    {
+      "id": "203",
+      "model_id": 202,
+      "label": "Mềm",
+      "category": "Từ thông dụng",
+      "video_id": "021076",
+      "video_path": "/videos/021076.mp4"
+    },
+    {
+      "id": "204",
+      "model_id": 203,
+      "label": "Mền",
+      "category": "Từ thông dụng",
+      "video_id": "020626",
+      "video_path": "/videos/020626.mp4"
+    },
+    {
+      "id": "205",
+      "model_id": 204,
+      "label": "Mệt",
+      "category": "Từ thông dụng",
+      "video_id": "021291",
+      "video_path": "/videos/021291.mp4"
+    },
+    {
+      "id": "206",
+      "model_id": 205,
+      "label": "Mới",
+      "category": "Từ thông dụng",
+      "video_id": "021079",
+      "video_path": "/videos/021079.mp4"
+    },
+    {
+      "id": "207",
+      "model_id": 206,
+      "label": "Mỹ",
+      "category": "Từ thông dụng",
+      "video_id": "021100",
+      "video_path": "/videos/021100.mp4"
+    },
+    {
+      "id": "208",
+      "model_id": 207,
+      "label": "Nghe",
+      "category": "Từ thông dụng",
+      "video_id": "020895",
+      "video_path": "/videos/020895.mp4"
+    },
+    {
+      "id": "209",
+      "model_id": 208,
+      "label": "Nghèo",
+      "category": "Từ thông dụng",
+      "video_id": "021080",
+      "video_path": "/videos/021080.mp4"
+    },
+    {
+      "id": "210",
+      "model_id": 209,
+      "label": "Nghề nghiệp",
+      "category": "Từ thông dụng",
+      "video_id": "020866",
+      "video_path": "/videos/020866.mp4"
+    },
+    {
+      "id": "211",
+      "model_id": 210,
+      "label": "Nghỉ ngơi",
+      "category": "Từ thông dụng",
+      "video_id": "021041",
+      "video_path": "/videos/021041.mp4"
+    },
+    {
+      "id": "212",
+      "model_id": 211,
+      "label": "Ngoan",
+      "category": "Từ thông dụng",
+      "video_id": "021288",
+      "video_path": "/videos/021288.mp4"
+    },
+    {
+      "id": "213",
+      "model_id": 212,
+      "label": "Ngon miệng",
+      "category": "Từ thông dụng",
+      "video_id": "021277",
+      "video_path": "/videos/021277.mp4"
+    },
+    {
+      "id": "214",
+      "model_id": 213,
+      "label": "Ngu ngốc",
+      "category": "Từ thông dụng",
+      "video_id": "021046",
+      "video_path": "/videos/021046.mp4"
+    },
+    {
+      "id": "215",
+      "model_id": 214,
+      "label": "Ngày",
+      "category": "Từ thông dụng",
+      "video_id": "020680",
+      "video_path": "/videos/020680.mp4"
+    },
+    {
+      "id": "216",
+      "model_id": 215,
+      "label": "Ngày Nhà giáo Việt Nam",
+      "category": "Mùa & Thời gian",
+      "video_id": "020697",
+      "video_path": "/videos/020697.mp4"
+    },
+    {
+      "id": "217",
+      "model_id": 216,
+      "label": "Ngày Quốc tế Lao động",
+      "category": "Mùa & Thời gian",
+      "video_id": "020667",
+      "video_path": "/videos/020667.mp4"
+    },
+    {
+      "id": "218",
+      "model_id": 217,
+      "label": "Ngày Quốc tế Phụ nữ",
+      "category": "Mùa & Thời gian",
+      "video_id": "020666",
+      "video_path": "/videos/020666.mp4"
+    },
+    {
+      "id": "219",
+      "model_id": 218,
+      "label": "Ngày Quốc tế Thiếu nhi",
+      "category": "Mùa & Thời gian",
+      "video_id": "020665",
+      "video_path": "/videos/020665.mp4"
+    },
+    {
+      "id": "220",
+      "model_id": 219,
+      "label": "Ngân hàng",
+      "category": "Từ thông dụng",
+      "video_id": "020639",
+      "video_path": "/videos/020639.mp4"
+    },
+    {
+      "id": "221",
+      "model_id": 220,
+      "label": "Ngắn",
+      "category": "Từ thông dụng",
+      "video_id": "021045",
+      "video_path": "/videos/021045.mp4"
+    },
+    {
+      "id": "222",
+      "model_id": 221,
+      "label": "Ngọt",
+      "category": "Từ thông dụng",
+      "video_id": "021274",
+      "video_path": "/videos/021274.mp4"
+    },
+    {
+      "id": "223",
+      "model_id": 222,
+      "label": "Ngủ",
+      "category": "Từ thông dụng",
+      "video_id": "020900",
+      "video_path": "/videos/020900.mp4"
+    },
+    {
+      "id": "224",
+      "model_id": 223,
+      "label": "Ngửi",
+      "category": "Từ thông dụng",
+      "video_id": "021014",
+      "video_path": "/videos/021014.mp4"
+    },
+    {
+      "id": "225",
+      "model_id": 224,
+      "label": "Nhanh",
+      "category": "Từ thông dụng",
+      "video_id": "021047",
+      "video_path": "/videos/021047.mp4"
+    },
+    {
+      "id": "226",
+      "model_id": 225,
+      "label": "Nhà",
+      "category": "Từ thông dụng",
+      "video_id": "020636",
+      "video_path": "/videos/020636.mp4"
+    },
+    {
+      "id": "227",
+      "model_id": 226,
+      "label": "Nhà hàng",
+      "category": "Từ thông dụng",
+      "video_id": "020641",
+      "video_path": "/videos/020641.mp4"
+    },
+    {
+      "id": "228",
+      "model_id": 227,
+      "label": "Nhà sách",
+      "category": "Trường học",
+      "video_id": "020642",
+      "video_path": "/videos/020642.mp4"
+    },
+    {
+      "id": "229",
+      "model_id": 228,
+      "label": "Nhà trọ",
+      "category": "Từ thông dụng",
+      "video_id": "020646",
+      "video_path": "/videos/020646.mp4"
+    },
+    {
+      "id": "230",
+      "model_id": 229,
+      "label": "Nhân viên phục vụ",
+      "category": "Từ thông dụng",
+      "video_id": "020868",
+      "video_path": "/videos/020868.mp4"
+    },
+    {
+      "id": "231",
+      "model_id": 230,
+      "label": "Nhân viên văn phòng",
+      "category": "Từ thông dụng",
+      "video_id": "020867",
+      "video_path": "/videos/020867.mp4"
+    },
+    {
+      "id": "232",
+      "model_id": 231,
+      "label": "Nhạt",
+      "category": "Từ thông dụng",
+      "video_id": "021276",
+      "video_path": "/videos/021276.mp4"
+    },
+    {
+      "id": "233",
+      "model_id": 232,
+      "label": "Nhảy cao",
+      "category": "Từ thông dụng",
+      "video_id": "020809",
+      "video_path": "/videos/020809.mp4"
+    },
+    {
+      "id": "234",
+      "model_id": 233,
+      "label": "Nhảy dây",
+      "category": "Từ thông dụng",
+      "video_id": "020805",
+      "video_path": "/videos/020805.mp4"
+    },
+    {
+      "id": "235",
+      "model_id": 234,
+      "label": "Nhầm lẫn",
+      "category": "Từ thông dụng",
+      "video_id": "021258",
+      "video_path": "/videos/021258.mp4"
+    },
+    {
+      "id": "236",
+      "model_id": 235,
+      "label": "Nhật Bản",
+      "category": "Từ thông dụng",
+      "video_id": "021098",
+      "video_path": "/videos/021098.mp4"
+    },
+    {
+      "id": "237",
+      "model_id": 236,
+      "label": "Nhẹ",
+      "category": "Từ thông dụng",
+      "video_id": "021085",
+      "video_path": "/videos/021085.mp4"
+    },
+    {
+      "id": "238",
+      "model_id": 237,
+      "label": "Nên",
+      "category": "Từ thông dụng",
+      "video_id": "021013",
+      "video_path": "/videos/021013.mp4"
+    },
+    {
+      "id": "239",
+      "model_id": 238,
+      "label": "Nói",
+      "category": "Từ thông dụng",
+      "video_id": "021005",
+      "video_path": "/videos/021005.mp4"
+    },
+    {
+      "id": "240",
+      "model_id": 239,
+      "label": "Nói chuyện",
+      "category": "Từ thông dụng",
+      "video_id": "021039",
+      "video_path": "/videos/021039.mp4"
+    },
+    {
+      "id": "241",
+      "model_id": 240,
+      "label": "Nóng",
+      "category": "Từ thông dụng",
+      "video_id": "021078",
+      "video_path": "/videos/021078.mp4"
+    },
+    {
+      "id": "242",
+      "model_id": 241,
+      "label": "Nông dân",
+      "category": "Từ thông dụng",
+      "video_id": "020882",
+      "video_path": "/videos/020882.mp4"
+    },
+    {
+      "id": "243",
+      "model_id": 242,
+      "label": "Năm",
+      "category": "Từ thông dụng",
+      "video_id": "020682",
+      "video_path": "/videos/020682.mp4"
+    },
+    {
+      "id": "244",
+      "model_id": 243,
+      "label": "Nước",
+      "category": "Từ thông dụng",
+      "video_id": "020824",
+      "video_path": "/videos/020824.mp4"
+    },
+    {
+      "id": "245",
+      "model_id": 244,
+      "label": "Nướng",
+      "category": "Từ thông dụng",
+      "video_id": "021257",
+      "video_path": "/videos/021257.mp4"
+    },
+    {
+      "id": "246",
+      "model_id": 245,
+      "label": "Nấu",
+      "category": "Từ thông dụng",
+      "video_id": "021256",
+      "video_path": "/videos/021256.mp4"
+    },
+    {
+      "id": "247",
+      "model_id": 246,
+      "label": "Nắng",
+      "category": "Từ thông dụng",
+      "video_id": "020655",
+      "video_path": "/videos/020655.mp4"
+    },
+    {
+      "id": "248",
+      "model_id": 247,
+      "label": "Nặng",
+      "category": "Từ thông dụng",
+      "video_id": "021075",
+      "video_path": "/videos/021075.mp4"
+    },
+    {
+      "id": "249",
+      "model_id": 248,
+      "label": "Nếm",
+      "category": "Từ thông dụng",
+      "video_id": "021024",
+      "video_path": "/videos/021024.mp4"
+    },
+    {
+      "id": "250",
+      "model_id": 249,
+      "label": "Nồi cơm điện",
+      "category": "Từ thông dụng",
+      "video_id": "020612",
+      "video_path": "/videos/020612.mp4"
+    },
+    {
+      "id": "251",
+      "model_id": 250,
+      "label": "Phút",
+      "category": "Từ thông dụng",
+      "video_id": "020684",
+      "video_path": "/videos/020684.mp4"
+    },
+    {
+      "id": "252",
+      "model_id": 251,
+      "label": "Phơi đồ",
+      "category": "Từ thông dụng",
+      "video_id": "021031",
+      "video_path": "/videos/021031.mp4"
+    },
+    {
+      "id": "253",
+      "model_id": 252,
+      "label": "Phở",
+      "category": "Từ thông dụng",
+      "video_id": "020815",
+      "video_path": "/videos/020815.mp4"
+    },
+    {
+      "id": "254",
+      "model_id": 253,
+      "label": "Quan sát",
+      "category": "Từ thông dụng",
+      "video_id": "021259",
+      "video_path": "/videos/021259.mp4"
+    },
+    {
+      "id": "255",
+      "model_id": 254,
+      "label": "Quen",
+      "category": "Từ thông dụng",
+      "video_id": "021004",
+      "video_path": "/videos/021004.mp4"
+    },
+    {
+      "id": "256",
+      "model_id": 255,
+      "label": "Quán cà phê",
+      "category": "Từ thông dụng",
+      "video_id": "020640",
+      "video_path": "/videos/020640.mp4"
+    },
+    {
+      "id": "257",
+      "model_id": 256,
+      "label": "Quạt (đứng)",
+      "category": "Từ thông dụng",
+      "video_id": "020619",
+      "video_path": "/videos/020619.mp4"
+    },
+    {
+      "id": "258",
+      "model_id": 257,
+      "label": "Quả bơ",
+      "category": "Trái cây",
+      "video_id": "021227",
+      "video_path": "/videos/021227.mp4"
+    },
+    {
+      "id": "259",
+      "model_id": 258,
+      "label": "Quả cam",
+      "category": "Trái cây",
+      "video_id": "021226",
+      "video_path": "/videos/021226.mp4"
+    },
+    {
+      "id": "260",
+      "model_id": 259,
+      "label": "Quả chuối",
+      "category": "Trái cây",
+      "video_id": "021228",
+      "video_path": "/videos/021228.mp4"
+    },
+    {
+      "id": "261",
+      "model_id": 260,
+      "label": "Quả dâu",
+      "category": "Trái cây",
+      "video_id": "021221",
+      "video_path": "/videos/021221.mp4"
+    },
+    {
+      "id": "262",
+      "model_id": 261,
+      "label": "Quả dứa",
+      "category": "Trái cây",
+      "video_id": "021223",
+      "video_path": "/videos/021223.mp4"
+    },
+    {
+      "id": "263",
+      "model_id": 262,
+      "label": "Quả dừa",
+      "category": "Trái cây",
+      "video_id": "021230",
+      "video_path": "/videos/021230.mp4"
+    },
+    {
+      "id": "264",
+      "model_id": 263,
+      "label": "Quả mận",
+      "category": "Trái cây",
+      "video_id": "021222",
+      "video_path": "/videos/021222.mp4"
+    },
+    {
+      "id": "265",
+      "model_id": 264,
+      "label": "Quả xoài",
+      "category": "Trái cây",
+      "video_id": "021229",
+      "video_path": "/videos/021229.mp4"
+    },
+    {
+      "id": "266",
+      "model_id": 265,
+      "label": "Quả đu đủ",
+      "category": "Trái cây",
+      "video_id": "021225",
+      "video_path": "/videos/021225.mp4"
+    },
+    {
+      "id": "267",
+      "model_id": 266,
+      "label": "Quả đào",
+      "category": "Trái cây",
+      "video_id": "021224",
+      "video_path": "/videos/021224.mp4"
+    },
+    {
+      "id": "268",
+      "model_id": 267,
+      "label": "Quả địa cầu",
+      "category": "Trường học",
+      "video_id": "020847",
+      "video_path": "/videos/020847.mp4"
+    },
+    {
+      "id": "269",
+      "model_id": 268,
+      "label": "Quần thun",
+      "category": "Từ thông dụng",
+      "video_id": "020853",
+      "video_path": "/videos/020853.mp4"
+    },
+    {
+      "id": "270",
+      "model_id": 269,
+      "label": "Quần tây",
+      "category": "Từ thông dụng",
+      "video_id": "020857",
+      "video_path": "/videos/020857.mp4"
+    },
+    {
+      "id": "271",
+      "model_id": 270,
+      "label": "Quần đùi",
+      "category": "Từ thông dụng",
+      "video_id": "021094",
+      "video_path": "/videos/021094.mp4"
+    },
+    {
+      "id": "272",
+      "model_id": 271,
+      "label": "Rượu",
+      "category": "Từ thông dụng",
+      "video_id": "020826",
+      "video_path": "/videos/020826.mp4"
+    },
+    {
+      "id": "273",
+      "model_id": 272,
+      "label": "Rạp chiếu phim",
+      "category": "Từ thông dụng",
+      "video_id": "020647",
+      "video_path": "/videos/020647.mp4"
+    },
+    {
+      "id": "274",
+      "model_id": 273,
+      "label": "Rẻ",
+      "category": "Từ thông dụng",
+      "video_id": "021051",
+      "video_path": "/videos/021051.mp4"
+    },
+    {
+      "id": "275",
+      "model_id": 274,
+      "label": "Rộng",
+      "category": "Từ thông dụng",
+      "video_id": "021282",
+      "video_path": "/videos/021282.mp4"
+    },
+    {
+      "id": "276",
+      "model_id": 275,
+      "label": "Rửa chén",
+      "category": "Từ thông dụng",
+      "video_id": "021021",
+      "video_path": "/videos/021021.mp4"
+    },
+    {
+      "id": "277",
+      "model_id": 276,
+      "label": "Rửa mặt",
+      "category": "Từ thông dụng",
+      "video_id": "021017",
+      "video_path": "/videos/021017.mp4"
+    },
+    {
+      "id": "278",
+      "model_id": 277,
+      "label": "Rửa tay",
+      "category": "Từ thông dụng",
+      "video_id": "021007",
+      "video_path": "/videos/021007.mp4"
+    },
+    {
+      "id": "279",
+      "model_id": 278,
+      "label": "Sai",
+      "category": "Từ thông dụng",
+      "video_id": "021062",
+      "video_path": "/videos/021062.mp4"
+    },
+    {
+      "id": "280",
+      "model_id": 279,
+      "label": "Sinh viên",
+      "category": "Trường học",
+      "video_id": "020877",
+      "video_path": "/videos/020877.mp4"
+    },
+    {
+      "id": "281",
+      "model_id": 280,
+      "label": "Siêu thị",
+      "category": "Từ thông dụng",
+      "video_id": "020645",
+      "video_path": "/videos/020645.mp4"
+    },
+    {
+      "id": "282",
+      "model_id": 281,
+      "label": "Sách",
+      "category": "Trường học",
+      "video_id": "020831",
+      "video_path": "/videos/020831.mp4"
+    },
+    {
+      "id": "283",
+      "model_id": 282,
+      "label": "Sáng tạo",
+      "category": "Từ thông dụng",
+      "video_id": "021300",
+      "video_path": "/videos/021300.mp4"
+    },
+    {
+      "id": "284",
+      "model_id": 283,
+      "label": "Sạch sẽ",
+      "category": "Trường học",
+      "video_id": "021055",
+      "video_path": "/videos/021055.mp4"
+    },
+    {
+      "id": "285",
+      "model_id": 284,
+      "label": "Sớm",
+      "category": "Từ thông dụng",
+      "video_id": "021071",
+      "video_path": "/videos/021071.mp4"
+    },
+    {
+      "id": "286",
+      "model_id": 285,
+      "label": "Sữa",
+      "category": "Từ thông dụng",
+      "video_id": "020829",
+      "video_path": "/videos/020829.mp4"
+    },
+    {
+      "id": "287",
+      "model_id": 286,
+      "label": "Taxi",
+      "category": "Phương tiện",
+      "video_id": "020892",
+      "video_path": "/videos/020892.mp4"
+    },
+    {
+      "id": "288",
+      "model_id": 287,
+      "label": "Tham lam",
+      "category": "Từ thông dụng",
+      "video_id": "021072",
+      "video_path": "/videos/021072.mp4"
+    },
+    {
+      "id": "289",
+      "model_id": 288,
+      "label": "Tham ăn",
+      "category": "Từ thông dụng",
+      "video_id": "021082",
+      "video_path": "/videos/021082.mp4"
+    },
+    {
+      "id": "290",
+      "model_id": 289,
+      "label": "Thay đổi",
+      "category": "Từ thông dụng",
+      "video_id": "021038",
+      "video_path": "/videos/021038.mp4"
+    },
+    {
+      "id": "291",
+      "model_id": 290,
+      "label": "Thuyền",
+      "category": "Từ thông dụng",
+      "video_id": "020888",
+      "video_path": "/videos/020888.mp4"
+    },
+    {
+      "id": "292",
+      "model_id": 291,
+      "label": "Thành phố",
+      "category": "Từ thông dụng",
+      "video_id": "020631",
+      "video_path": "/videos/020631.mp4"
+    },
+    {
+      "id": "293",
+      "model_id": 292,
+      "label": "Thái Lan",
+      "category": "Từ thông dụng",
+      "video_id": "021099",
+      "video_path": "/videos/021099.mp4"
+    },
+    {
+      "id": "294",
+      "model_id": 293,
+      "label": "Tháng",
+      "category": "Từ thông dụng",
+      "video_id": "020681",
+      "video_path": "/videos/020681.mp4"
+    },
+    {
+      "id": "295",
+      "model_id": 294,
+      "label": "Tháng ba",
+      "category": "Mùa & Thời gian",
+      "video_id": "020670",
+      "video_path": "/videos/020670.mp4"
+    },
+    {
+      "id": "296",
+      "model_id": 295,
+      "label": "Tháng bảy",
+      "category": "Mùa & Thời gian",
+      "video_id": "020674",
+      "video_path": "/videos/020674.mp4"
+    },
+    {
+      "id": "297",
+      "model_id": 296,
+      "label": "Tháng chín",
+      "category": "Mùa & Thời gian",
+      "video_id": "020676",
+      "video_path": "/videos/020676.mp4"
+    },
+    {
+      "id": "298",
+      "model_id": 297,
+      "label": "Tháng hai",
+      "category": "Mùa & Thời gian",
+      "video_id": "020669",
+      "video_path": "/videos/020669.mp4"
+    },
+    {
+      "id": "299",
+      "model_id": 298,
+      "label": "Tháng mười",
+      "category": "Mùa & Thời gian",
+      "video_id": "020677",
+      "video_path": "/videos/020677.mp4"
+    },
+    {
+      "id": "300",
+      "model_id": 299,
+      "label": "Tháng mười hai",
+      "category": "Mùa & Thời gian",
+      "video_id": "020679",
+      "video_path": "/videos/020679.mp4"
+    },
+    {
+      "id": "301",
+      "model_id": 300,
+      "label": "Tháng mười một",
+      "category": "Mùa & Thời gian",
+      "video_id": "020678",
+      "video_path": "/videos/020678.mp4"
+    },
+    {
+      "id": "302",
+      "model_id": 301,
+      "label": "Tháng một",
+      "category": "Mùa & Thời gian",
+      "video_id": "020668",
+      "video_path": "/videos/020668.mp4"
+    },
+    {
+      "id": "303",
+      "model_id": 302,
+      "label": "Tháng năm",
+      "category": "Mùa & Thời gian",
+      "video_id": "020672",
+      "video_path": "/videos/020672.mp4"
+    },
+    {
+      "id": "304",
+      "model_id": 303,
+      "label": "Tháng sáu",
+      "category": "Mùa & Thời gian",
+      "video_id": "020673",
+      "video_path": "/videos/020673.mp4"
+    },
+    {
+      "id": "305",
+      "model_id": 304,
+      "label": "Tháng tám",
+      "category": "Mùa & Thời gian",
+      "video_id": "020675",
+      "video_path": "/videos/020675.mp4"
+    },
+    {
+      "id": "306",
+      "model_id": 305,
+      "label": "Tháng tư",
+      "category": "Mùa & Thời gian",
+      "video_id": "020671",
+      "video_path": "/videos/020671.mp4"
+    },
+    {
+      "id": "307",
+      "model_id": 306,
+      "label": "Thèm",
+      "category": "Từ thông dụng",
+      "video_id": "021244",
+      "video_path": "/videos/021244.mp4"
+    },
+    {
+      "id": "308",
+      "model_id": 307,
+      "label": "Thích",
+      "category": "Từ thông dụng",
+      "video_id": "021034",
+      "video_path": "/videos/021034.mp4"
+    },
+    {
+      "id": "309",
+      "model_id": 308,
+      "label": "Thông minh",
+      "category": "Từ thông dụng",
+      "video_id": "021093",
+      "video_path": "/videos/021093.mp4"
+    },
+    {
+      "id": "310",
+      "model_id": 309,
+      "label": "Thú vị",
+      "category": "Mùa & Thời gian",
+      "video_id": "021297",
+      "video_path": "/videos/021297.mp4"
+    },
+    {
+      "id": "311",
+      "model_id": 310,
+      "label": "Thơm",
+      "category": "Từ thông dụng",
+      "video_id": "021053",
+      "video_path": "/videos/021053.mp4"
+    },
+    {
+      "id": "312",
+      "model_id": 311,
+      "label": "Thư ký",
+      "category": "Mùa & Thời gian",
+      "video_id": "020884",
+      "video_path": "/videos/020884.mp4"
+    },
+    {
+      "id": "313",
+      "model_id": 312,
+      "label": "Thước kẻ",
+      "category": "Từ thông dụng",
+      "video_id": "020839",
+      "video_path": "/videos/020839.mp4"
+    },
+    {
+      "id": "314",
+      "model_id": 313,
+      "label": "Thấp (đồ vật)",
+      "category": "Từ thông dụng",
+      "video_id": "021064",
+      "video_path": "/videos/021064.mp4"
+    },
+    {
+      "id": "315",
+      "model_id": 314,
+      "label": "Thể dục (thể thao)",
+      "category": "Từ thông dụng",
+      "video_id": "020698",
+      "video_path": "/videos/020698.mp4"
+    },
+    {
+      "id": "316",
+      "model_id": 315,
+      "label": "Thịt",
+      "category": "Từ thông dụng",
+      "video_id": "020812",
+      "video_path": "/videos/020812.mp4"
+    },
+    {
+      "id": "317",
+      "model_id": 316,
+      "label": "Thời gian",
+      "category": "Từ thông dụng",
+      "video_id": "020693",
+      "video_path": "/videos/020693.mp4"
+    },
+    {
+      "id": "318",
+      "model_id": 317,
+      "label": "Thời tiết",
+      "category": "Từ thông dụng",
+      "video_id": "020648",
+      "video_path": "/videos/020648.mp4"
+    },
+    {
+      "id": "319",
+      "model_id": 318,
+      "label": "Thứ ba",
+      "category": "Mùa & Thời gian",
+      "video_id": "020659",
+      "video_path": "/videos/020659.mp4"
+    },
+    {
+      "id": "320",
+      "model_id": 319,
+      "label": "Thứ bảy",
+      "category": "Mùa & Thời gian",
+      "video_id": "020663",
+      "video_path": "/videos/020663.mp4"
+    },
+    {
+      "id": "321",
+      "model_id": 320,
+      "label": "Thứ hai",
+      "category": "Mùa & Thời gian",
+      "video_id": "020658",
+      "video_path": "/videos/020658.mp4"
+    },
+    {
+      "id": "322",
+      "model_id": 321,
+      "label": "Thứ năm",
+      "category": "Mùa & Thời gian",
+      "video_id": "020661",
+      "video_path": "/videos/020661.mp4"
+    },
+    {
+      "id": "323",
+      "model_id": 322,
+      "label": "Thứ sáu",
+      "category": "Mùa & Thời gian",
+      "video_id": "020662",
+      "video_path": "/videos/020662.mp4"
+    },
+    {
+      "id": "324",
+      "model_id": 323,
+      "label": "Thứ tư",
+      "category": "Mùa & Thời gian",
+      "video_id": "020660",
+      "video_path": "/videos/020660.mp4"
+    },
+    {
+      "id": "325",
+      "model_id": 324,
+      "label": "Thức dậy",
+      "category": "Từ thông dụng",
+      "video_id": "021009",
+      "video_path": "/videos/021009.mp4"
+    },
+    {
+      "id": "326",
+      "model_id": 325,
+      "label": "Thử",
+      "category": "Từ thông dụng",
+      "video_id": "021030",
+      "video_path": "/videos/021030.mp4"
+    },
+    {
+      "id": "327",
+      "model_id": 326,
+      "label": "Tivi",
+      "category": "Từ thông dụng",
+      "video_id": "020617",
+      "video_path": "/videos/020617.mp4"
+    },
+    {
+      "id": "328",
+      "model_id": 327,
+      "label": "Tiếp tục",
+      "category": "Từ thông dụng",
+      "video_id": "021020",
+      "video_path": "/videos/021020.mp4"
+    },
+    {
+      "id": "329",
+      "model_id": 328,
+      "label": "Trung Quốc",
+      "category": "Từ thông dụng",
+      "video_id": "021096",
+      "video_path": "/videos/021096.mp4"
+    },
+    {
+      "id": "330",
+      "model_id": 329,
+      "label": "Trung thu",
+      "category": "Từ thông dụng",
+      "video_id": "020694",
+      "video_path": "/videos/020694.mp4"
+    },
+    {
+      "id": "331",
+      "model_id": 330,
+      "label": "Trà",
+      "category": "Từ thông dụng",
+      "video_id": "020828",
+      "video_path": "/videos/020828.mp4"
+    },
+    {
+      "id": "332",
+      "model_id": 331,
+      "label": "Trường Cao đẳng",
+      "category": "Trường học",
+      "video_id": "020634",
+      "video_path": "/videos/020634.mp4"
+    },
+    {
+      "id": "333",
+      "model_id": 332,
+      "label": "Trường học",
+      "category": "Trường học",
+      "video_id": "020635",
+      "video_path": "/videos/020635.mp4"
+    },
+    {
+      "id": "334",
+      "model_id": 333,
+      "label": "Trường Đại học",
+      "category": "Trường học",
+      "video_id": "020633",
+      "video_path": "/videos/020633.mp4"
+    },
+    {
+      "id": "335",
+      "model_id": 334,
+      "label": "Trẻ",
+      "category": "Từ thông dụng",
+      "video_id": "021050",
+      "video_path": "/videos/021050.mp4"
+    },
+    {
+      "id": "336",
+      "model_id": 335,
+      "label": "Trễ",
+      "category": "Từ thông dụng",
+      "video_id": "021081",
+      "video_path": "/videos/021081.mp4"
+    },
+    {
+      "id": "337",
+      "model_id": 336,
+      "label": "Trứng",
+      "category": "Từ thông dụng",
+      "video_id": "020818",
+      "video_path": "/videos/020818.mp4"
+    },
+    {
+      "id": "338",
+      "model_id": 337,
+      "label": "Trực thăng",
+      "category": "Từ thông dụng",
+      "video_id": "020886",
+      "video_path": "/videos/020886.mp4"
+    },
+    {
+      "id": "339",
+      "model_id": 338,
+      "label": "Tàu hỏa",
+      "category": "Phương tiện",
+      "video_id": "020894",
+      "video_path": "/videos/020894.mp4"
+    },
+    {
+      "id": "340",
+      "model_id": 339,
+      "label": "Tìm",
+      "category": "Từ thông dụng",
+      "video_id": "021040",
+      "video_path": "/videos/021040.mp4"
+    },
+    {
+      "id": "341",
+      "model_id": 340,
+      "label": "Túi xách",
+      "category": "Từ thông dụng",
+      "video_id": "020855",
+      "video_path": "/videos/020855.mp4"
+    },
+    {
+      "id": "342",
+      "model_id": 341,
+      "label": "Tường",
+      "category": "Từ thông dụng",
+      "video_id": "020623",
+      "video_path": "/videos/020623.mp4"
+    },
+    {
+      "id": "343",
+      "model_id": 342,
+      "label": "Tắm rửa",
+      "category": "Từ thông dụng",
+      "video_id": "021027",
+      "video_path": "/videos/021027.mp4"
+    },
+    {
+      "id": "344",
+      "model_id": 343,
+      "label": "Tết Âm lịch",
+      "category": "Từ thông dụng",
+      "video_id": "020696",
+      "video_path": "/videos/020696.mp4"
+    },
+    {
+      "id": "345",
+      "model_id": 344,
+      "label": "Tỉnh",
+      "category": "Từ thông dụng",
+      "video_id": "020632",
+      "video_path": "/videos/020632.mp4"
+    },
+    {
+      "id": "346",
+      "model_id": 345,
+      "label": "Tốt bụng",
+      "category": "Từ thông dụng",
+      "video_id": "021296",
+      "video_path": "/videos/021296.mp4"
+    },
+    {
+      "id": "347",
+      "model_id": 346,
+      "label": "Tủ lạnh",
+      "category": "Từ thông dụng",
+      "video_id": "020630",
+      "video_path": "/videos/020630.mp4"
+    },
+    {
+      "id": "348",
+      "model_id": 347,
+      "label": "Từ chối",
+      "category": "Từ thông dụng",
+      "video_id": "021026",
+      "video_path": "/videos/021026.mp4"
+    },
+    {
+      "id": "349",
+      "model_id": 348,
+      "label": "Uống",
+      "category": "Từ thông dụng",
+      "video_id": "021242",
+      "video_path": "/videos/021242.mp4"
+    },
+    {
+      "id": "350",
+      "model_id": 349,
+      "label": "Viên phấn",
+      "category": "Từ thông dụng",
+      "video_id": "020832",
+      "video_path": "/videos/020832.mp4"
+    },
+    {
+      "id": "351",
+      "model_id": 350,
+      "label": "Viết",
+      "category": "Từ thông dụng",
+      "video_id": "020897",
+      "video_path": "/videos/020897.mp4"
+    },
+    {
+      "id": "352",
+      "model_id": 351,
+      "label": "Việt Nam",
+      "category": "Từ thông dụng",
+      "video_id": "021095",
+      "video_path": "/videos/021095.mp4"
+    },
+    {
+      "id": "353",
+      "model_id": 352,
+      "label": "Vâng lời",
+      "category": "Từ thông dụng",
+      "video_id": "021043",
+      "video_path": "/videos/021043.mp4"
+    },
+    {
+      "id": "354",
+      "model_id": 353,
+      "label": "Vòng tay",
+      "category": "Từ thông dụng",
+      "video_id": "020864",
+      "video_path": "/videos/020864.mp4"
+    },
+    {
+      "id": "355",
+      "model_id": 354,
+      "label": "Võ",
+      "category": "Từ thông dụng",
+      "video_id": "020807",
+      "video_path": "/videos/020807.mp4"
+    },
+    {
+      "id": "356",
+      "model_id": 355,
+      "label": "Vở",
+      "category": "Từ thông dụng",
+      "video_id": "020841",
+      "video_path": "/videos/020841.mp4"
+    },
+    {
+      "id": "357",
+      "model_id": 356,
+      "label": "Vợ",
+      "category": "Từ thông dụng",
+      "video_id": "021235",
+      "video_path": "/videos/021235.mp4"
+    },
+    {
+      "id": "358",
+      "model_id": 357,
+      "label": "Xa",
+      "category": "Từ thông dụng",
+      "video_id": "021089",
+      "video_path": "/videos/021089.mp4"
+    },
+    {
+      "id": "359",
+      "model_id": 358,
+      "label": "Xe buýt",
+      "category": "Phương tiện",
+      "video_id": "020890",
+      "video_path": "/videos/020890.mp4"
+    },
+    {
+      "id": "360",
+      "model_id": 359,
+      "label": "Xe máy",
+      "category": "Phương tiện",
+      "video_id": "020893",
+      "video_path": "/videos/020893.mp4"
+    },
+    {
+      "id": "361",
+      "model_id": 360,
+      "label": "Xe tải",
+      "category": "Phương tiện",
+      "video_id": "020889",
+      "video_path": "/videos/020889.mp4"
+    },
+    {
+      "id": "362",
+      "model_id": 361,
+      "label": "Xe đạp",
+      "category": "Phương tiện",
+      "video_id": "020891",
+      "video_path": "/videos/020891.mp4"
+    },
+    {
+      "id": "363",
+      "model_id": 362,
+      "label": "Xem",
+      "category": "Từ thông dụng",
+      "video_id": "021243",
+      "video_path": "/videos/021243.mp4"
+    },
+    {
+      "id": "364",
+      "model_id": 363,
+      "label": "Xin",
+      "category": "Từ thông dụng",
+      "video_id": "021008",
+      "video_path": "/videos/021008.mp4"
+    },
+    {
+      "id": "365",
+      "model_id": 364,
+      "label": "Xin lỗi",
+      "category": "Từ thông dụng",
+      "video_id": "021015",
+      "video_path": "/videos/021015.mp4"
+    },
+    {
+      "id": "366",
+      "model_id": 365,
+      "label": "Xôi",
+      "category": "Từ thông dụng",
+      "video_id": "020813",
+      "video_path": "/videos/020813.mp4"
+    },
+    {
+      "id": "367",
+      "model_id": 366,
+      "label": "Xấu (vật)",
+      "category": "Từ thông dụng",
+      "video_id": "021278",
+      "video_path": "/videos/021278.mp4"
+    },
+    {
+      "id": "368",
+      "model_id": 367,
+      "label": "Xấu (người)",
+      "category": "Từ thông dụng",
+      "video_id": "021074",
+      "video_path": "/videos/021074.mp4"
+    },
+    {
+      "id": "369",
+      "model_id": 368,
+      "label": "Y tá",
+      "category": "Y tế",
+      "video_id": "020869",
+      "video_path": "/videos/020869.mp4"
+    },
+    {
+      "id": "370",
+      "model_id": 369,
+      "label": "Yên tĩnh",
+      "category": "Từ thông dụng",
+      "video_id": "021066",
+      "video_path": "/videos/021066.mp4"
+    },
+    {
+      "id": "371",
+      "model_id": 370,
+      "label": "Yêu thương",
+      "category": "Từ thông dụng",
+      "video_id": "020896",
+      "video_path": "/videos/020896.mp4"
+    },
+    {
+      "id": "372",
+      "model_id": 371,
+      "label": "Yếu",
+      "category": "Từ thông dụng",
+      "video_id": "021077",
+      "video_path": "/videos/021077.mp4"
+    },
+    {
+      "id": "373",
+      "model_id": 372,
+      "label": "Áo sơ mi",
+      "category": "Từ thông dụng",
+      "video_id": "020856",
+      "video_path": "/videos/020856.mp4"
+    },
+    {
+      "id": "374",
+      "model_id": 373,
+      "label": "Áo thun",
+      "category": "Từ thông dụng",
+      "video_id": "020852",
+      "video_path": "/videos/020852.mp4"
+    },
+    {
+      "id": "375",
+      "model_id": 374,
+      "label": "Áo đầm",
+      "category": "Từ thông dụng",
+      "video_id": "020858",
+      "video_path": "/videos/020858.mp4"
+    },
+    {
+      "id": "376",
+      "model_id": 375,
+      "label": "Ô tô",
+      "category": "Phương tiện",
+      "video_id": "020887",
+      "video_path": "/videos/020887.mp4"
+    },
+    {
+      "id": "377",
+      "model_id": 376,
+      "label": "Ông ngoại",
+      "category": "Gia đình",
+      "video_id": "021239",
+      "video_path": "/videos/021239.mp4"
+    },
+    {
+      "id": "378",
+      "model_id": 377,
+      "label": "Ông nội",
+      "category": "Gia đình",
+      "video_id": "021237",
+      "video_path": "/videos/021237.mp4"
+    },
+    {
+      "id": "379",
+      "model_id": 378,
+      "label": "Ăn",
+      "category": "Từ thông dụng",
+      "video_id": "021241",
+      "video_path": "/videos/021241.mp4"
+    },
+    {
+      "id": "380",
+      "model_id": 379,
+      "label": "Đau",
+      "category": "Y tế",
+      "video_id": "021292",
+      "video_path": "/videos/021292.mp4"
+    },
+    {
+      "id": "381",
+      "model_id": 380,
+      "label": "Đi",
+      "category": "Từ thông dụng",
+      "video_id": "021251",
+      "video_path": "/videos/021251.mp4"
+    },
+    {
+      "id": "382",
+      "model_id": 381,
+      "label": "Điền kinh",
+      "category": "Từ thông dụng",
+      "video_id": "020808",
+      "video_path": "/videos/020808.mp4"
+    },
+    {
+      "id": "383",
+      "model_id": 382,
+      "label": "Điện thoại",
+      "category": "Từ thông dụng",
+      "video_id": "020842",
+      "video_path": "/videos/020842.mp4"
+    },
+    {
+      "id": "384",
+      "model_id": 383,
+      "label": "Đá cầu",
+      "category": "Từ thông dụng",
+      "video_id": "020810",
+      "video_path": "/videos/020810.mp4"
+    },
+    {
+      "id": "385",
+      "model_id": 384,
+      "label": "Đúng",
+      "category": "Từ thông dụng",
+      "video_id": "021052",
+      "video_path": "/videos/021052.mp4"
+    },
+    {
+      "id": "386",
+      "model_id": 385,
+      "label": "Đầu bếp",
+      "category": "Từ thông dụng",
+      "video_id": "020874",
+      "video_path": "/videos/020874.mp4"
+    },
+    {
+      "id": "387",
+      "model_id": 386,
+      "label": "Đậm",
+      "category": "Từ thông dụng",
+      "video_id": "021275",
+      "video_path": "/videos/021275.mp4"
+    },
+    {
+      "id": "388",
+      "model_id": 387,
+      "label": "Đắng",
+      "category": "Từ thông dụng",
+      "video_id": "021272",
+      "video_path": "/videos/021272.mp4"
+    },
+    {
+      "id": "389",
+      "model_id": 388,
+      "label": "Đắt",
+      "category": "Từ thông dụng",
+      "video_id": "021061",
+      "video_path": "/videos/021061.mp4"
+    },
+    {
+      "id": "390",
+      "model_id": 389,
+      "label": "Đẹp (vật)",
+      "category": "Từ thông dụng",
+      "video_id": "021279",
+      "video_path": "/videos/021279.mp4"
+    },
+    {
+      "id": "391",
+      "model_id": 390,
+      "label": "Đẹp (người)",
+      "category": "Từ thông dụng",
+      "video_id": "021084",
+      "video_path": "/videos/021084.mp4"
+    },
+    {
+      "id": "392",
+      "model_id": 391,
+      "label": "Đọc",
+      "category": "Từ thông dụng",
+      "video_id": "021035",
+      "video_path": "/videos/021035.mp4"
+    },
+    {
+      "id": "393",
+      "model_id": 392,
+      "label": "Đồ buộc tóc",
+      "category": "Từ thông dụng",
+      "video_id": "020863",
+      "video_path": "/videos/020863.mp4"
+    },
+    {
+      "id": "394",
+      "model_id": 393,
+      "label": "Đồ dùng",
+      "category": "Từ thông dụng",
+      "video_id": "020627",
+      "video_path": "/videos/020627.mp4"
+    },
+    {
+      "id": "395",
+      "model_id": 394,
+      "label": "Đồng hồ đeo tay",
+      "category": "Từ thông dụng",
+      "video_id": "020851",
+      "video_path": "/videos/020851.mp4"
+    },
+    {
+      "id": "396",
+      "model_id": 395,
+      "label": "Đồng ý",
+      "category": "Từ thông dụng",
+      "video_id": "021016",
+      "video_path": "/videos/021016.mp4"
+    },
+    {
+      "id": "397",
+      "model_id": 396,
+      "label": "Ướt",
+      "category": "Từ thông dụng",
+      "video_id": "021049",
+      "video_path": "/videos/021049.mp4"
+    },
+    {
+      "id": "398",
+      "model_id": 397,
+      "label": "Ấm",
+      "category": "Từ thông dụng",
+      "video_id": "021068",
+      "video_path": "/videos/021068.mp4"
+    },
+    {
+      "id": "399",
+      "model_id": 398,
+      "label": "Ốm",
+      "category": "Y tế",
+      "video_id": "021286",
+      "video_path": "/videos/021286.mp4"
+    },
+    {
+      "id": "400",
+      "model_id": 399,
+      "label": "Ồn ào",
+      "category": "Từ thông dụng",
+      "video_id": "021056",
+      "video_path": "/videos/021056.mp4"
+    }
+  ]
+}

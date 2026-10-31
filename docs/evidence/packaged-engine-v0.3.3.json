@@ -1,0 +1,54 @@
+{
+  "schema": "clinic-packaged-engine-smoke-v1",
+  "package": "release/desktop-v0.3.3/win-unpacked",
+  "executable": "resources/engine/ClinicEngine.exe",
+  "checked_at": "2026-10-23T12:56:53+07:00",
+  "scope": "Frozen engine loopback smoke; no human camera, microphone, signer comprehension, or clinical validation.",
+  "healthcheck": {
+    "service": "vsl-clinic",
+    "status": "ok",
+    "version": "0.3.3",
+    "model_loaded": true
+  },
+  "model": {
+    "name": "SL-GCN",
+    "labels": 400,
+    "capture_profile": "clinic-pc-tasks-lite-parallel-v2",
+    "sha256": "582f3d8712f73f78c5fe7b7521609ea54a9257e5a3a877aa8c9346b8e28ebb21",
+    "engine_sha256": "006b4691863f7b9eda09fa2256153a3caa409e55460a521148c9da7cf07c86df"
+  },
+  "payload": {
+    "vocabulary_count": 65,
+    "phrase_count": 58,
+    "semantic_bank_bytes": 5883,
+    "frontend_index_present": true
+  },
+  "semantic_probe": {
+    "input": "Y tá ơi, đo nhiệt độ nha",
+    "supported": true,
+    "projection": ["Y tá", "Nhiệt độ", "Đo"],
+    "decision": "auto",
+    "omitted_reviewed_fillers": ["nha", "ơi"]
+  },
+  "review_guard": {
+    "input": "Tôi ăn cơm",
+    "supported": false,
+    "decision": "review",
+    "applied": false
+  },
+  "meaning_guard": {
+    "input": "Y tá ơi, không đo nhiệt độ",
+    "supported": false,
+    "unsupported": ["không"]
+  },
+  "long_sentence_review": {
+    "input": "Y tá ơi, hôm nay kiểm tra thân nhiệt giúp em nhé",
+    "supported": false,
+    "decision": "review",
+    "candidate_projection": ["Y tá", "Nhiệt độ", "Đo"],
+    "unmatched": ["hôm", "nay"],
+    "applied": false,
+    "message": "Đã nhận ra: Y tá, Kiểm tra thân nhiệt. Chưa phân loại được: hôm, nay. Kiểm tra mẫu đề xuất trước khi phát avatar."
+  },
+  "shutdown": "clean"
+}

@@ -1,0 +1,56 @@
+{
+  "created_at": "2026-10-31T07:07:36.896714+00:00",
+  "scope": "Synthetic TTS through real paced live WebSocket. Does not validate the user's voice/microphone/room acoustics.",
+  "rows": [
+    {
+      "input": "Y tá đo nhiệt độ.",
+      "synthetic": true,
+      "transcripts": [
+        {
+          "text": "y tở đo nhiệt độ.",
+          "decode_ms": 801.7526000003272,
+          "audio_ms": 2208.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.10315362025390971,
+              "no_speech_prob": 5.595835426974727e-12
+            }
+          ],
+          "type": "transcript",
+          "sequence": 1,
+          "utterance_id": "e8a8124758af49aba4d108f90b03a169:1",
+          "session_id": "12f720930eef:3db46f2aac5c",
+          "queue_ms": 0.18030000137514435,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false,
+          "delivery": {
+            "status": "review",
+            "draft_id": "e8a8124758af49aba4d108f90b03a169:1"
+          }
+        }
+      ],
+      "messages": [],
+      "drafts": [
+        {
+          "id": "e8a8124758af49aba4d108f90b03a169:1",
+          "text": "y tở đo nhiệt độ.",
+          "created_at_ms": 1793430451891.6963,
+          "reason": "Chưa có đủ ký hiệu hoặc mẫu câu này. Bạn hãy nói lại bằng câu ngắn hơn, hoặc chọn câu có sẵn.",
+          "supported": false,
+          "reason_code": "unsupported",
+          "unsupported": [
+            "y",
+            "tở"
+          ]
+        }
+      ],
+      "checks": {
+        "one_transcript": true,
+        "dispatch": false,
+        "same_glosses": false
+      }
+    }
+  ],
+  "passed": false
+}

@@ -1,0 +1,166 @@
+{
+  "kind": "offline deterministic audio regression",
+  "cases": {
+    "digital_silence_40s": {
+      "audio_seconds": 40.0,
+      "segmenter_ms": 293.7599999999634,
+      "utterance_count": 0,
+      "segments": [],
+      "transcripts": []
+    },
+    "hiss_40s": {
+      "audio_seconds": 40.0,
+      "segmenter_ms": 151.8676999999684,
+      "utterance_count": 0,
+      "segments": [],
+      "transcripts": []
+    },
+    "hum_40s": {
+      "audio_seconds": 40.0,
+      "segmenter_ms": 156.53160000005073,
+      "utterance_count": 0,
+      "segments": [],
+      "transcripts": []
+    },
+    "keyboard_impulses_40s": {
+      "audio_seconds": 40.0,
+      "segmenter_ms": 147.00940000000173,
+      "utterance_count": 0,
+      "segments": [],
+      "transcripts": []
+    },
+    "modulated_noise_40s": {
+      "audio_seconds": 40.0,
+      "segmenter_ms": 147.8856000000519,
+      "utterance_count": 0,
+      "segments": [],
+      "transcripts": []
+    },
+    "speech_then_silence_40s": {
+      "audio_seconds": 45.3633125,
+      "segmenter_ms": 169.17769999997745,
+      "utterance_count": 1,
+      "segments": [
+        {
+          "duration_ms": 4768.0,
+          "voice_end_sample": 81408,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false
+        }
+      ],
+      "transcripts": [
+        {
+          "text": "tuyệt quá chứ cần bấm nút là nó chạy mà không cần phải cố gắng gì nữa.",
+          "decode_ms": 946.6620999999691,
+          "audio_ms": 4768.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.025448289667737895,
+              "no_speech_prob": 2.5383068043283163e-12
+            }
+          ]
+        }
+      ]
+    },
+    "speech_then_hum_40s": {
+      "audio_seconds": 45.3633125,
+      "segmenter_ms": 172.95000000001437,
+      "utterance_count": 1,
+      "segments": [
+        {
+          "duration_ms": 4768.0,
+          "voice_end_sample": 81408,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false
+        }
+      ],
+      "transcripts": [
+        {
+          "text": "tuyệt quá chứ cần bấm nút là nó chạy mà không cần phải cố gắng gì nữa.",
+          "decode_ms": 917.1233000000143,
+          "audio_ms": 4768.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.04250112021791524,
+              "no_speech_prob": 7.17490628542039e-13
+            }
+          ]
+        }
+      ]
+    },
+    "speech_then_modulated_noise_40s": {
+      "audio_seconds": 45.3633125,
+      "segmenter_ms": 174.31260000000748,
+      "utterance_count": 1,
+      "segments": [
+        {
+          "duration_ms": 4768.0,
+          "voice_end_sample": 81408,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false
+        }
+      ],
+      "transcripts": [
+        {
+          "text": "tuyệt quá chứ cần bấm nút là nó chạy mà không cần phải cố gắng gì nữa.",
+          "decode_ms": 857.0488999999952,
+          "audio_ms": 4768.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.02844718432631986,
+              "no_speech_prob": 1.9670337407518e-12
+            }
+          ]
+        }
+      ]
+    },
+    "same_speech_twice": {
+      "audio_seconds": 14.726625,
+      "segmenter_ms": 61.392899999987094,
+      "utterance_count": 2,
+      "segments": [
+        {
+          "duration_ms": 4768.0,
+          "voice_end_sample": 81408,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false
+        },
+        {
+          "duration_ms": 4736.0,
+          "voice_end_sample": 183296,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false
+        }
+      ],
+      "transcripts": [
+        {
+          "text": "tuyệt quá chứ cần bấm nút là nó chạy mà không cần phải cố gắng gì nữa.",
+          "decode_ms": 861.5257000000156,
+          "audio_ms": 4768.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.025448289667737895,
+              "no_speech_prob": 2.5383068043283163e-12
+            }
+          ]
+        },
+        {
+          "text": "tuyệt quá chứ cần bấm nút là nó chạy mà không cần phải cố gắng gì nữa.",
+          "decode_ms": 867.8370000000086,
+          "audio_ms": 4736.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.02582132430939839,
+              "no_speech_prob": 6.748269477940827e-12
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

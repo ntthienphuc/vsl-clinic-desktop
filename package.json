@@ -1,0 +1,50 @@
+{
+  "name": "vsl-clinic-desktop",
+  "productName": "VSL Clinic",
+  "version": "0.3.4",
+  "private": true,
+  "type": "module",
+  "description": "Giao tiếp VSL cục bộ giữa bác sĩ và bệnh nhân trên hai màn hình",
+  "main": "desktop/main.cjs",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "start": "node desktop/launch.cjs",
+    "test": "node --test tests/*.test.mjs",
+    "package": "npm run build && electron-builder --win dir"
+  },
+  "dependencies": {
+    "@pixiv/three-vrm": "3.5.5",
+    "lucide-react": "1.60.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.18.8",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/three": "0.186.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "electron": "44.9.2",
+    "electron-builder": "26.15.3",
+    "typescript": "5.9.3",
+    "vite": "8.3.4"
+  },
+  "build": {
+    "appId": "vn.vsl.clinic.desktop",
+    "asar": true,
+    "electronDist": "node_modules/electron/dist",
+    "directories": { "output": "release/desktop-v0.3.4" },
+    "files": ["desktop/**/*", "dist/**/*", "package.json"],
+    "extraFiles": [{ "from": "demo", "to": "demo" }],
+    "extraResources": [
+      { "from": "build/engine/ClinicEngine", "to": "engine" },
+      { "from": "dist", "to": "frontend", "filter": ["**/*", "!**/*.map"] },
+      { "from": "assets", "to": "assets", "filter": ["**/*", "!reference-source/**"] },
+      { "from": "licenses", "to": "licenses" },
+      { "from": "THIRD_PARTY_NOTICES.md", "to": "THIRD_PARTY_NOTICES.md" }
+    ],
+    "win": { "target": "dir", "signAndEditExecutable": false }
+  }
+}

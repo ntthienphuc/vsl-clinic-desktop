@@ -1,0 +1,13 @@
+{
+  "schema": "clinic-inherited-code-v1",
+  "source": "../vsl_server local working copy",
+  "source_head": "5b0b818ffe539ece31ec426e75e553a939f089d0",
+  "source_has_uncommitted_changes": true,
+  "note": "Byte equality with local Translator verified when recording this snapshot; hashes pin the inherited files independently of a parent checkout.",
+  "files": {
+    "pipelines/slgcn_onnx_inference.py": "197ffcf19a4a9119bfad32ba3e7bebba3c43a70879ec336e700122f9c7789665",
+    "pipelines/spoter_onnx_inference.py": "2d09d410804de561a8fe87a12a891ad8d061328b69cbd7b1c4e700e977ec248c",
+    "data/utils.py": "4cbe1ea53ceebab3872a7fe7380107ea08cdc3ae6c0be89f18c25115ffae6083",
+    "utils/constants.py": "a71244ba7139f0ab54c198497cc3be567849346abc18f5b195562bc6de9ebb3a"
+  }
+}

@@ -1,0 +1,246 @@
+{
+  "kind": "offline deterministic audio regression",
+  "cases": {
+    "digital_silence_40s": {
+      "audio_seconds": 40.0,
+      "segmenter_ms": 4.411900008562952,
+      "utterance_count": 0,
+      "segments": [],
+      "transcripts": []
+    },
+    "hiss_40s": {
+      "audio_seconds": 40.0,
+      "segmenter_ms": 5.190900003071874,
+      "utterance_count": 0,
+      "segments": [],
+      "transcripts": []
+    },
+    "hum_40s": {
+      "audio_seconds": 40.0,
+      "segmenter_ms": 5.094299995107576,
+      "utterance_count": 0,
+      "segments": [],
+      "transcripts": []
+    },
+    "keyboard_impulses_40s": {
+      "audio_seconds": 40.0,
+      "segmenter_ms": 5.202500004088506,
+      "utterance_count": 0,
+      "segments": [],
+      "transcripts": []
+    },
+    "modulated_noise_40s": {
+      "audio_seconds": 40.0,
+      "segmenter_ms": 5.948199992417358,
+      "utterance_count": 4,
+      "segments": [
+        {
+          "duration_ms": 12000.0,
+          "voice_end_sample": 201120,
+          "endpoint_audio_ms": 60.0,
+          "cut_at_limit": true
+        },
+        {
+          "duration_ms": 12000.0,
+          "voice_end_sample": 393120,
+          "endpoint_audio_ms": 60.0,
+          "cut_at_limit": true
+        },
+        {
+          "duration_ms": 12000.0,
+          "voice_end_sample": 585120,
+          "endpoint_audio_ms": 60.0,
+          "cut_at_limit": true
+        },
+        {
+          "duration_ms": 3370.0,
+          "voice_end_sample": 638400,
+          "endpoint_audio_ms": 90.0,
+          "cut_at_limit": false
+        }
+      ],
+      "transcripts": [
+        {
+          "text": "các em có thể sửa chữa bệnh trực tiếp trước khi trở thành công bệnh.",
+          "decode_ms": 1252.0228999928804,
+          "audio_ms": 12000.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.8073674848205165,
+              "no_speech_prob": 5.718518991670862e-09
+            }
+          ]
+        },
+        {
+          "text": "các em có thể thay đổi bằng cách tôi trở thành thông tin cho đối tượng.",
+          "decode_ms": 1146.3780000049155,
+          "audio_ms": 12000.0,
+          "uncertain": true,
+          "segments": [
+            {
+              "avg_logprob": -0.9700035791139345,
+              "no_speech_prob": 9.54879730841185e-09
+            }
+          ]
+        }
+      ]
+    },
+    "speech_then_silence_40s": {
+      "audio_seconds": 45.3633125,
+      "segmenter_ms": 6.257899993215688,
+      "utterance_count": 1,
+      "segments": [
+        {
+          "duration_ms": 4800.0,
+          "voice_end_sample": 82560,
+          "endpoint_audio_ms": 540.0,
+          "cut_at_limit": false
+        }
+      ],
+      "transcripts": [
+        {
+          "text": "tuyệt quá chứ cần bấm nút là nó chạy mà không cần phải cố gắng gì nữa.",
+          "decode_ms": 1032.803399997647,
+          "audio_ms": 4800.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.020942917671696894,
+              "no_speech_prob": 1.5241746666866396e-12
+            }
+          ]
+        }
+      ]
+    },
+    "speech_then_hum_40s": {
+      "audio_seconds": 45.3633125,
+      "segmenter_ms": 5.900199990719557,
+      "utterance_count": 1,
+      "segments": [
+        {
+          "duration_ms": 4800.0,
+          "voice_end_sample": 82560,
+          "endpoint_audio_ms": 540.0,
+          "cut_at_limit": false
+        }
+      ],
+      "transcripts": [
+        {
+          "text": "tuyệt quá chứ cần bấm nút là nó chạy mà không cần phải cố gắng gì nữa.",
+          "decode_ms": 1036.62689999328,
+          "audio_ms": 4800.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.029039382934570312,
+              "no_speech_prob": 7.30841277253591e-13
+            }
+          ]
+        }
+      ]
+    },
+    "speech_then_modulated_noise_40s": {
+      "audio_seconds": 45.3633125,
+      "segmenter_ms": 7.034099995507859,
+      "utterance_count": 4,
+      "segments": [
+        {
+          "duration_ms": 12000.0,
+          "voice_end_sample": 206400,
+          "endpoint_audio_ms": 0.0,
+          "cut_at_limit": true
+        },
+        {
+          "duration_ms": 12000.0,
+          "voice_end_sample": 398400,
+          "endpoint_audio_ms": 0.0,
+          "cut_at_limit": true
+        },
+        {
+          "duration_ms": 12000.0,
+          "voice_end_sample": 590400,
+          "endpoint_audio_ms": 0.0,
+          "cut_at_limit": true
+        },
+        {
+          "duration_ms": 8463.3125,
+          "voice_end_sample": 725280,
+          "endpoint_audio_ms": 30.0,
+          "cut_at_limit": false
+        }
+      ],
+      "transcripts": [
+        {
+          "text": "tuyệt quá chứ cần bấm đúc là nó chạy mà không cần phải cố gắng gì nữa.",
+          "decode_ms": 1027.6474999991478,
+          "audio_ms": 12000.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.049963226606105936,
+              "no_speech_prob": 1.037744759915804e-12
+            }
+          ]
+        },
+        {
+          "text": "các em có thể sửa chữa bệnh trực tiếp trước khi trở lại.",
+          "decode_ms": 1092.908399994485,
+          "audio_ms": 12000.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.8197499457746744,
+              "no_speech_prob": 8.561391595662826e-09
+            }
+          ]
+        }
+      ]
+    },
+    "same_speech_twice": {
+      "audio_seconds": 14.726625,
+      "segmenter_ms": 2.097199991112575,
+      "utterance_count": 2,
+      "segments": [
+        {
+          "duration_ms": 4800.0,
+          "voice_end_sample": 82560,
+          "endpoint_audio_ms": 540.0,
+          "cut_at_limit": false
+        },
+        {
+          "duration_ms": 5220.0,
+          "voice_end_sample": 189120,
+          "endpoint_audio_ms": 540.0,
+          "cut_at_limit": false
+        }
+      ],
+      "transcripts": [
+        {
+          "text": "tuyệt quá chứ cần bấm nút là nó chạy mà không cần phải cố gắng gì nữa.",
+          "decode_ms": 1093.8944999943487,
+          "audio_ms": 4800.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.020942917671696894,
+              "no_speech_prob": 1.5241746666866396e-12
+            }
+          ]
+        },
+        {
+          "text": "tuyệt quá chứ cần bấm nút là nó chạy mà không cần phải cố gắng gì nữa.",
+          "decode_ms": 1206.2297000084072,
+          "audio_ms": 5220.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.019273412124863987,
+              "no_speech_prob": 2.797798884929259e-12
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

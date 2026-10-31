@@ -1,0 +1,50 @@
+{
+  "schema": "clinic-runtime-ui-audit-v1",
+  "version": "0.3.3",
+  "observed_at": "2026-10-23T12:00:00+07:00",
+  "scope": "Read-only audit of the portable Windows package before the final rebuild plus an isolated frozen-engine duplex probe. The package was rebuilt and its parity receipt refreshed afterward. This does not prove camera, microphone, signer comprehension, clinical safety, or two physical monitors.",
+  "package": "release/desktop-v0.3.3/win-unpacked",
+  "launcher": "release/desktop-v0.3.3/win-unpacked/VSL Clinic.exe",
+  "live_desktop_process": {
+    "executable": "release/desktop-v0.3.3/win-unpacked/VSL Clinic.exe",
+    "engine_executable": "release/desktop-v0.3.3/win-unpacked/resources/engine/ClinicEngine.exe",
+    "engine_port_from_log": 55818,
+    "parent_window_process_responding": true,
+    "visible_windows": [
+      {"title": "VSL Clinic · Bác sĩ", "x": 0, "y": 0, "width": 768, "height": 816},
+      {"title": "VSL Clinic · Người bệnh", "x": 768, "y": 0, "width": 768, "height": 816}
+    ],
+    "window_route_evidence": "Native top-level window titles identify the two role routes; both windows belong to the packaged Electron process."
+  },
+  "frozen_engine_duplex_probe": {
+    "health": {"status": "ok", "version": "0.3.3", "model_loaded": true},
+    "roles": ["doctor", "patient"],
+    "doctor_to_patient": {
+      "input": "Y tá ơi, đo nhiệt độ nha",
+      "both_websocket_roles_received_message": true,
+      "patient_playback_status": "loading",
+      "patient_text": "Y tá ơi, đo nhiệt độ nha"
+    },
+    "patient_to_doctor": {
+      "source": "packaged demo video",
+      "demo_label": "Bác sĩ",
+      "both_websocket_roles_observed_streaming_patient_turn": true,
+      "word_count_observed": 1
+    },
+    "probe_cleanup": "isolated engine stopped through /api/shutdown"
+  },
+  "source_package_parity": {
+    "receipt": "docs/evidence/release-receipt.json",
+    "status": "verified-after-final-rebuild",
+    "changed_after_receipt": [],
+    "impact": "The final 0.3.3 package was rebuilt after the semantic router change; release-receipt.json was regenerated and the packaged semantic probe passed."
+  },
+  "checks": {
+    "node_syntax": "passed",
+    "node_tests": "6 passed",
+    "isolated_packaged_engine_smoke": "passed",
+    "native_electron_window_titles": "passed",
+    "two_physical_monitor_layout": "not_verified",
+    "camera_and_microphone": "not_verified"
+  }
+}

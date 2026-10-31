@@ -1,0 +1,520 @@
+[
+  {
+    "id": "11",
+    "label": "Bác sĩ",
+    "model_id": 11,
+    "category": "Khám bệnh",
+    "demo": "/assets/samples/011.mp4"
+  },
+  {
+    "id": "368",
+    "label": "Y tá",
+    "model_id": 368,
+    "category": "Khám bệnh",
+    "demo": "/assets/samples/368.mp4"
+  },
+  {
+    "id": "32",
+    "label": "Bệnh viện",
+    "model_id": 32,
+    "category": "Khám bệnh",
+    "demo": "/assets/samples/032.mp4"
+  },
+  {
+    "id": "145",
+    "label": "Khám bệnh",
+    "model_id": 145,
+    "category": "Khám bệnh",
+    "demo": "/assets/samples/145.mp4"
+  },
+  {
+    "id": "379",
+    "label": "Đau",
+    "model_id": 379,
+    "category": "Khám bệnh",
+    "demo": "/assets/samples/379.mp4"
+  },
+  {
+    "id": "204",
+    "label": "Mệt",
+    "model_id": 204,
+    "category": "Khám bệnh",
+    "demo": "/assets/samples/204.mp4"
+  },
+  {
+    "id": "155",
+    "label": "Khỏe",
+    "model_id": 155,
+    "category": "Khám bệnh",
+    "demo": "/assets/samples/155.mp4"
+  },
+  {
+    "id": "398",
+    "label": "Ốm",
+    "model_id": 398,
+    "category": "Khám bệnh",
+    "demo": "/assets/samples/398.mp4"
+  },
+  {
+    "id": "378",
+    "label": "Ăn",
+    "model_id": 378,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/378.mp4"
+  },
+  {
+    "id": "348",
+    "label": "Uống",
+    "model_id": 348,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/348.mp4"
+  },
+  {
+    "id": "243",
+    "label": "Nước",
+    "model_id": 243,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/243.mp4"
+  },
+  {
+    "id": "210",
+    "label": "Nghỉ ngơi",
+    "model_id": 210,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/210.mp4"
+  },
+  {
+    "id": "222",
+    "label": "Ngủ",
+    "model_id": 222,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/222.mp4"
+  },
+  {
+    "id": "87",
+    "label": "Cần",
+    "model_id": 87,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/087.mp4"
+  },
+  {
+    "id": "116",
+    "label": "Giúp đỡ",
+    "model_id": 116,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/116.mp4"
+  },
+  {
+    "id": "105",
+    "label": "Dừng lại",
+    "model_id": 105,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/105.mp4"
+  },
+  {
+    "id": "86",
+    "label": "Cảm ơn",
+    "model_id": 86,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/086.mp4"
+  },
+  {
+    "id": "364",
+    "label": "Xin lỗi",
+    "model_id": 364,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/364.mp4"
+  },
+  {
+    "id": "384",
+    "label": "Đúng",
+    "model_id": 384,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/384.mp4"
+  },
+  {
+    "id": "395",
+    "label": "Đồng ý",
+    "model_id": 395,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/395.mp4"
+  },
+  {
+    "id": "qipedc-W00362",
+    "label": "Bụng",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W00362",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W00362.mp4"
+  },
+  {
+    "id": "qipedc-W03090",
+    "label": "Tay",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W03090",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W03090.mp4"
+  },
+  {
+    "id": "qipedc-W03008",
+    "label": "Sốt",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W03008",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W03008.mp4"
+  },
+  {
+    "id": "qipedc-W02400N",
+    "label": "Ngồi",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W02400N",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W02400N.mp4"
+  },
+  {
+    "id": "qipedc-W01227",
+    "label": "Đo",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W01227",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W01227.mp4"
+  },
+  {
+    "id": "qipedc-W01298",
+    "label": "Nhiệt độ",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W01298",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W01298.mp4"
+  },
+  {
+    "id": "qipedc-W00884",
+    "label": "Cơm",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W00884",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W00884.mp4"
+  },
+  {
+    "id": "qipedc-W03305",
+    "label": "Thở",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W03305",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W03305.mp4"
+  },
+  {
+    "id": "qipedc-W00248",
+    "label": "Bệnh nhân",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W00248",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W00248.mp4"
+  },
+  {
+    "id": "85",
+    "label": "Cảm thấy",
+    "model_id": 85,
+    "category": "Khám bệnh",
+    "demo": "/assets/samples/085.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "166",
+    "label": "Lạnh",
+    "model_id": 166,
+    "category": "Khám bệnh",
+    "demo": "/assets/samples/166.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "240",
+    "label": "Nóng",
+    "model_id": 240,
+    "category": "Khám bệnh",
+    "demo": "/assets/samples/240.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "247",
+    "label": "Nặng",
+    "model_id": 247,
+    "category": "Khám bệnh",
+    "demo": "/assets/samples/247.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "236",
+    "label": "Nhẹ",
+    "model_id": 236,
+    "category": "Khám bệnh",
+    "demo": "/assets/samples/236.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "371",
+    "label": "Yếu",
+    "model_id": 371,
+    "category": "Khám bệnh",
+    "demo": "/assets/samples/371.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "198",
+    "label": "Mạnh",
+    "model_id": 198,
+    "category": "Khám bệnh",
+    "demo": "/assets/samples/198.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "277",
+    "label": "Rửa tay",
+    "model_id": 277,
+    "category": "Khám bệnh",
+    "demo": "/assets/samples/277.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "283",
+    "label": "Sạch sẽ",
+    "model_id": 283,
+    "category": "Khám bệnh",
+    "demo": "/assets/samples/283.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "117",
+    "label": "Giường",
+    "model_id": 117,
+    "category": "Khám bệnh",
+    "demo": "/assets/samples/117.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "79",
+    "label": "Có",
+    "model_id": 79,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/079.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "150",
+    "label": "Không cần",
+    "model_id": 150,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/150.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "152",
+    "label": "Không nên",
+    "model_id": 152,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/152.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "169",
+    "label": "Muốn",
+    "model_id": 169,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/169.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "237",
+    "label": "Nên",
+    "model_id": 237,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/237.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "43",
+    "label": "Chú ý",
+    "model_id": 43,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/043.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "207",
+    "label": "Nghe",
+    "model_id": 207,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/207.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "238",
+    "label": "Nói",
+    "model_id": 238,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/238.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "239",
+    "label": "Nói chuyện",
+    "model_id": 239,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/239.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "125",
+    "label": "Gọi",
+    "model_id": 125,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/125.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "327",
+    "label": "Tiếp tục",
+    "model_id": 327,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/327.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "325",
+    "label": "Thử",
+    "model_id": 325,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/325.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "350",
+    "label": "Viết",
+    "model_id": 350,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/350.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "391",
+    "label": "Đọc",
+    "model_id": 391,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/391.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "362",
+    "label": "Xem",
+    "model_id": 362,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/362.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "278",
+    "label": "Sai",
+    "model_id": 278,
+    "category": "Giao tiếp",
+    "demo": "/assets/samples/278.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "212",
+    "label": "Ngon miệng",
+    "model_id": 212,
+    "category": "Sinh hoạt",
+    "demo": "/assets/samples/212.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "285",
+    "label": "Sữa",
+    "model_id": 285,
+    "category": "Sinh hoạt",
+    "demo": "/assets/samples/285.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "324",
+    "label": "Thức dậy",
+    "model_id": 324,
+    "category": "Sinh hoạt",
+    "demo": "/assets/samples/324.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "380",
+    "label": "Đi",
+    "model_id": 380,
+    "category": "Sinh hoạt",
+    "demo": "/assets/samples/380.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "17",
+    "label": "Bây giờ",
+    "model_id": 17,
+    "category": "Thời gian",
+    "demo": "/assets/samples/017.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "4",
+    "label": "Buổi sáng",
+    "model_id": 4,
+    "category": "Thời gian",
+    "demo": "/assets/samples/004.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "5",
+    "label": "Buổi trưa",
+    "model_id": 5,
+    "category": "Thời gian",
+    "demo": "/assets/samples/005.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "3",
+    "label": "Buổi chiều",
+    "model_id": 3,
+    "category": "Thời gian",
+    "demo": "/assets/samples/003.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "6",
+    "label": "Buổi tối",
+    "model_id": 6,
+    "category": "Thời gian",
+    "demo": "/assets/samples/006.mp4",
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "250",
+    "label": "Phút",
+    "model_id": 250,
+    "category": "Thời gian",
+    "demo": "/assets/samples/250.mp4",
+    "source_kind": "local-consensus"
+  }
+]

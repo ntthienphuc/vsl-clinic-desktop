@@ -1,0 +1,74 @@
+[
+  {
+    "file": "drink-water.mp3",
+    "results": [
+      {
+        "text": "uống nước.",
+        "decode_ms": 712.3953999999912,
+        "audio_ms": 1472.0,
+        "uncertain": false,
+        "segments": [
+          {
+            "avg_logprob": -0.005938339233398438,
+            "no_speech_prob": 6.222908299768903e-11
+          }
+        ],
+        "supported": true
+      }
+    ]
+  },
+  {
+    "file": "pain-question.mp3",
+    "results": [
+      {
+        "text": "bạn có đau không.",
+        "decode_ms": 718.1125999999267,
+        "audio_ms": 1984.0,
+        "uncertain": false,
+        "segments": [
+          {
+            "avg_logprob": -0.0013622045662486926,
+            "no_speech_prob": 2.5621895230476532e-11
+          }
+        ],
+        "supported": true
+      }
+    ]
+  },
+  {
+    "file": "unsupported-dose.mp3",
+    "results": [
+      {
+        "text": "uống thuốc hai viên.",
+        "decode_ms": 734.5417999999881,
+        "audio_ms": 2048.0,
+        "uncertain": false,
+        "segments": [
+          {
+            "avg_logprob": -0.019158016551624645,
+            "no_speech_prob": 6.915376604688106e-11
+          }
+        ],
+        "supported": false
+      }
+    ]
+  },
+  {
+    "file": "unsupported-feeling.mp3",
+    "results": [
+      {
+        "text": "bạn cảm thấy thế nào.",
+        "decode_ms": 742.031900000029,
+        "audio_ms": 2144.0,
+        "uncertain": false,
+        "segments": [
+          {
+            "avg_logprob": -2.5510787812284736e-05,
+            "no_speech_prob": 2.5412408722474966e-13
+          }
+        ],
+        "supported": false
+      }
+    ]
+  }
+]

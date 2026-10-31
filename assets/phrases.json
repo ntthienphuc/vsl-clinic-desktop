@@ -1,0 +1,649 @@
+{
+  "schema": "clinic-phrases-v2",
+  "target_variety": "VSL demo; regional variants accepted by user",
+  "regional_review": "pending_deaf_signer_review",
+  "grammar_source": "https://qipedc.moet.gov.vn/congvan/T%C3%A0i%20li%E1%BB%87u%20t%E1%BA%ADp%20hu%E1%BA%A5n-Ng%C6%B0%E1%BB%9Di%20l%E1%BB%9Bn%20%C4%91i%E1%BA%BFc.pdf",
+  "source_pages": [
+    23,
+    24,
+    25
+  ],
+  "note": "Finite demo mappings inspired by QIPEDC clause order and nonmanual questions. Regional variants are accepted for this demo; fluent signer review remains pending. The written sentence is always retained. No medication, quantity, negation or time expression is omitted.",
+  "entries": [
+    {
+      "id": "ask-abdomen",
+      "text": "Bạn có đau bụng không?",
+      "aliases": [
+        "Bạn có đau bụng không",
+        "Có đau bụng không?",
+        "Có đau bụng không"
+      ],
+      "gloss_ids": [
+        "qipedc-W00362",
+        "379"
+      ],
+      "act": "yes_no_question",
+      "nonmanual": "question",
+      "explanation": "Vị trí bụng → đau, đi cùng nét mặt hỏi có/không; giữ câu hỏi bằng chữ."
+    },
+    {
+      "id": "ask-hand",
+      "text": "Bạn có đau tay không?",
+      "aliases": [
+        "Bạn có đau tay không",
+        "Có đau tay không?",
+        "Có đau tay không"
+      ],
+      "gloss_ids": [
+        "qipedc-W03090",
+        "379"
+      ],
+      "act": "yes_no_question",
+      "nonmanual": "question",
+      "explanation": "Vị trí tay → đau, đi cùng nét mặt hỏi có/không."
+    },
+    {
+      "id": "ask-fever",
+      "text": "Bạn có sốt không?",
+      "aliases": [
+        "Bạn có sốt không",
+        "Có sốt không?",
+        "Có sốt không"
+      ],
+      "gloss_ids": [
+        "qipedc-W03008"
+      ],
+      "act": "yes_no_question",
+      "nonmanual": "question",
+      "explanation": "Hỏi về sốt, không tự kết luận tình trạng người bệnh."
+    },
+    {
+      "id": "nurse-temperature",
+      "text": "Y tá đo nhiệt độ.",
+      "aliases": [],
+      "gloss_ids": [
+        "368",
+        "qipedc-W01298",
+        "qipedc-W01227"
+      ],
+      "act": "statement",
+      "nonmanual": "neutral",
+      "explanation": "Chủ thể y tá → đối tượng nhiệt độ → hành động đo. Ba ký hiệu trong một lượt phát."
+    },
+    {
+      "id": "doctor-temperature",
+      "text": "Bác sĩ đo nhiệt độ.",
+      "aliases": [],
+      "gloss_ids": [
+        "11",
+        "qipedc-W01298",
+        "qipedc-W01227"
+      ],
+      "act": "statement",
+      "nonmanual": "neutral",
+      "explanation": "Chủ thể bác sĩ → nhiệt độ → đo."
+    },
+    {
+      "id": "temperature",
+      "text": "Đo nhiệt độ.",
+      "aliases": [],
+      "gloss_ids": [
+        "qipedc-W01298",
+        "qipedc-W01227"
+      ],
+      "act": "request",
+      "nonmanual": "neutral",
+      "explanation": "Đối tượng nhiệt độ đứng trước hành động đo."
+    },
+    {
+      "id": "abdomen-pain",
+      "text": "Đau bụng.",
+      "aliases": [],
+      "gloss_ids": [
+        "qipedc-W00362",
+        "379"
+      ],
+      "act": "statement",
+      "nonmanual": "neutral",
+      "explanation": "Nêu vị trí bụng rồi trạng thái đau; không thêm mức độ."
+    },
+    {
+      "id": "hand-pain",
+      "text": "Đau tay.",
+      "aliases": [],
+      "gloss_ids": [
+        "qipedc-W03090",
+        "379"
+      ],
+      "act": "statement",
+      "nonmanual": "neutral",
+      "explanation": "Nêu vị trí tay rồi trạng thái đau."
+    },
+    {
+      "id": "eat-rice",
+      "text": "Ăn cơm.",
+      "aliases": [],
+      "gloss_ids": [
+        "qipedc-W00884",
+        "378"
+      ],
+      "act": "statement",
+      "nonmanual": "neutral",
+      "explanation": "Đối tượng cơm → hành động ăn; giữ đúng hai ký hiệu."
+    },
+    {
+      "id": "sit-rest",
+      "text": "Ngồi nghỉ ngơi.",
+      "aliases": [],
+      "gloss_ids": [
+        "qipedc-W02400N",
+        "210"
+      ],
+      "act": "request",
+      "nonmanual": "neutral",
+      "explanation": "Hai hành động nối tiếp: ngồi → nghỉ ngơi."
+    },
+    {
+      "id": "drink-water",
+      "text": "Uống nước.",
+      "aliases": [
+        "Uống nước",
+        "Bạn hãy uống nước",
+        "Hãy uống nước"
+      ],
+      "gloss_ids": [
+        "243",
+        "348"
+      ],
+      "act": "request",
+      "nonmanual": "neutral",
+      "explanation": "Đối tượng nước trước hành động uống; một yêu cầu ngắn."
+    },
+    {
+      "id": "doctor-exam",
+      "text": "Bác sĩ khám bệnh.",
+      "aliases": [
+        "Bác sĩ khám bệnh"
+      ],
+      "gloss_ids": [
+        "11",
+        "145"
+      ],
+      "act": "statement",
+      "nonmanual": "neutral",
+      "explanation": "Chủ thể bác sĩ và hành động khám bệnh."
+    },
+    {
+      "id": "nurse-help",
+      "text": "Y tá giúp đỡ.",
+      "aliases": [
+        "Y tá giúp đỡ"
+      ],
+      "gloss_ids": [
+        "368",
+        "116"
+      ],
+      "act": "statement",
+      "nonmanual": "neutral",
+      "explanation": "Chủ thể y tá và hành động giúp đỡ."
+    },
+    {
+      "id": "need-rest",
+      "text": "Cần nghỉ ngơi.",
+      "aliases": [
+        "Cần nghỉ ngơi"
+      ],
+      "gloss_ids": [
+        "87",
+        "210"
+      ],
+      "act": "statement",
+      "nonmanual": "neutral",
+      "explanation": "Giữ từ cần; không thêm thời gian hay mức độ."
+    },
+    {
+      "id": "ask-pain",
+      "text": "Bạn có đau không?",
+      "aliases": [
+        "Có đau không?",
+        "Bạn có đau không",
+        "Có đau không"
+      ],
+      "gloss_ids": [
+        "379"
+      ],
+      "act": "yes_no_question",
+      "nonmanual": "question",
+      "explanation": "Hỏi người bệnh đối diện: đau? Nét mặt hỏi có/không đi cùng ký hiệu; đây không phải câu phủ định."
+    },
+    {
+      "id": "ask-tired",
+      "text": "Bạn có mệt không?",
+      "aliases": [
+        "Có mệt không?",
+        "Bạn có mệt không",
+        "Có mệt không"
+      ],
+      "gloss_ids": [
+        "204"
+      ],
+      "act": "yes_no_question",
+      "nonmanual": "question",
+      "explanation": "Hỏi người bệnh đối diện: mệt? Nét mặt hỏi có/không đi cùng ký hiệu."
+    },
+    {
+      "id": "ask-well",
+      "text": "Bạn có khỏe không?",
+      "aliases": [
+        "Có khỏe không?",
+        "Bạn có khỏe không",
+        "Có khỏe không"
+      ],
+      "gloss_ids": [
+        "155"
+      ],
+      "act": "yes_no_question",
+      "nonmanual": "question",
+      "explanation": "Hỏi người bệnh đối diện: khỏe? Không tự suy ra tình trạng sức khỏe."
+    },
+    {
+      "id": "ask-agree",
+      "text": "Bạn có đồng ý không?",
+      "aliases": [
+        "Có đồng ý không?",
+        "Bạn có đồng ý không",
+        "Có đồng ý không"
+      ],
+      "gloss_ids": [
+        "395"
+      ],
+      "act": "yes_no_question",
+      "nonmanual": "question",
+      "explanation": "Hỏi người bệnh đối diện: đồng ý? Phản hồi của người bệnh vẫn phải được đối chiếu."
+    },
+    {
+      "id": "ask-166",
+      "text": "Bạn có lạnh không?",
+      "aliases": [
+        "Bạn có lạnh không"
+      ],
+      "gloss_ids": [
+        "166"
+      ],
+      "act": "yes_no_question",
+      "nonmanual": "question",
+      "explanation": "Mẫu demo: Lạnh. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "ask-240",
+      "text": "Bạn có nóng không?",
+      "aliases": [
+        "Bạn có nóng không"
+      ],
+      "gloss_ids": [
+        "240"
+      ],
+      "act": "yes_no_question",
+      "nonmanual": "question",
+      "explanation": "Mẫu demo: Nóng. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "ask-371",
+      "text": "Bạn có yếu không?",
+      "aliases": [
+        "Bạn có yếu không"
+      ],
+      "gloss_ids": [
+        "371"
+      ],
+      "act": "yes_no_question",
+      "nonmanual": "question",
+      "explanation": "Mẫu demo: Yếu. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "question-87-116",
+      "text": "Bạn có cần giúp đỡ không?",
+      "aliases": [
+        "Bạn có cần giúp đỡ không"
+      ],
+      "gloss_ids": [
+        "87",
+        "116"
+      ],
+      "act": "yes_no_question",
+      "nonmanual": "question",
+      "explanation": "Mẫu demo: Cần → Giúp đỡ. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "question-169-243-348",
+      "text": "Bạn muốn uống nước không?",
+      "aliases": [
+        "Bạn muốn uống nước không"
+      ],
+      "gloss_ids": [
+        "169",
+        "243",
+        "348"
+      ],
+      "act": "yes_no_question",
+      "nonmanual": "question",
+      "explanation": "Mẫu demo: Muốn → Nước → Uống. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "question-169-222",
+      "text": "Bạn muốn ngủ không?",
+      "aliases": [
+        "Bạn muốn ngủ không"
+      ],
+      "gloss_ids": [
+        "169",
+        "222"
+      ],
+      "act": "yes_no_question",
+      "nonmanual": "question",
+      "explanation": "Mẫu demo: Muốn → Ngủ. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "question-169-210",
+      "text": "Bạn muốn nghỉ ngơi không?",
+      "aliases": [
+        "Bạn muốn nghỉ ngơi không"
+      ],
+      "gloss_ids": [
+        "169",
+        "210"
+      ],
+      "act": "yes_no_question",
+      "nonmanual": "question",
+      "explanation": "Mẫu demo: Muốn → Nghỉ ngơi. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "question-85-204",
+      "text": "Bạn có cảm thấy mệt không?",
+      "aliases": [
+        "Bạn có cảm thấy mệt không"
+      ],
+      "gloss_ids": [
+        "85",
+        "204"
+      ],
+      "act": "yes_no_question",
+      "nonmanual": "question",
+      "explanation": "Mẫu demo: Cảm thấy → Mệt. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "wash-hands",
+      "text": "Rửa tay.",
+      "aliases": [
+        "Bạn hãy rửa tay",
+        "Hãy rửa tay"
+      ],
+      "gloss_ids": [
+        "277"
+      ],
+      "act": "request",
+      "nonmanual": "neutral",
+      "explanation": "Mẫu demo: Rửa tay. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "listen",
+      "text": "Chú ý nghe.",
+      "aliases": [
+        "Bạn hãy chú ý nghe"
+      ],
+      "gloss_ids": [
+        "43",
+        "207"
+      ],
+      "act": "request",
+      "nonmanual": "neutral",
+      "explanation": "Mẫu demo: Chú ý → Nghe. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "continue",
+      "text": "Tiếp tục.",
+      "aliases": [
+        "Bạn hãy tiếp tục",
+        "Hãy tiếp tục"
+      ],
+      "gloss_ids": [
+        "327"
+      ],
+      "act": "request",
+      "nonmanual": "neutral",
+      "explanation": "Mẫu demo: Tiếp tục. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "try-continue",
+      "text": "Thử tiếp tục.",
+      "aliases": [],
+      "gloss_ids": [
+        "325",
+        "327"
+      ],
+      "act": "request",
+      "nonmanual": "neutral",
+      "explanation": "Mẫu demo: Thử → Tiếp tục. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "call-nurse",
+      "text": "Gọi y tá.",
+      "aliases": [
+        "Hãy gọi y tá"
+      ],
+      "gloss_ids": [
+        "368",
+        "125"
+      ],
+      "act": "request",
+      "nonmanual": "neutral",
+      "explanation": "Mẫu demo: Y tá → Gọi. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "call-doctor",
+      "text": "Gọi bác sĩ.",
+      "aliases": [
+        "Hãy gọi bác sĩ"
+      ],
+      "gloss_ids": [
+        "11",
+        "125"
+      ],
+      "act": "request",
+      "nonmanual": "neutral",
+      "explanation": "Mẫu demo: Bác sĩ → Gọi. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "should-rest",
+      "text": "Nên nghỉ ngơi.",
+      "aliases": [],
+      "gloss_ids": [
+        "237",
+        "210"
+      ],
+      "act": "request",
+      "nonmanual": "neutral",
+      "explanation": "Mẫu demo: Nên → Nghỉ ngơi. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "need-help",
+      "text": "Cần giúp đỡ.",
+      "aliases": [],
+      "gloss_ids": [
+        "87",
+        "116"
+      ],
+      "act": "request",
+      "nonmanual": "neutral",
+      "explanation": "Mẫu demo: Cần → Giúp đỡ. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "want-water",
+      "text": "Muốn uống nước.",
+      "aliases": [],
+      "gloss_ids": [
+        "169",
+        "243",
+        "348"
+      ],
+      "act": "request",
+      "nonmanual": "neutral",
+      "explanation": "Mẫu demo: Muốn → Nước → Uống. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "want-rest",
+      "text": "Muốn nghỉ ngơi.",
+      "aliases": [],
+      "gloss_ids": [
+        "169",
+        "210"
+      ],
+      "act": "request",
+      "nonmanual": "neutral",
+      "explanation": "Mẫu demo: Muốn → Nghỉ ngơi. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "no-need-help",
+      "text": "Không cần giúp đỡ.",
+      "aliases": [],
+      "gloss_ids": [
+        "150",
+        "116"
+      ],
+      "act": "request",
+      "nonmanual": "neutral",
+      "explanation": "Mẫu demo: Không cần → Giúp đỡ. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "now-exam",
+      "text": "Bây giờ bác sĩ khám bệnh.",
+      "aliases": [],
+      "gloss_ids": [
+        "17",
+        "11",
+        "145"
+      ],
+      "act": "request",
+      "nonmanual": "neutral",
+      "explanation": "Mẫu demo: Bây giờ → Bác sĩ → Khám bệnh. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "now-temperature",
+      "text": "Bây giờ y tá đo nhiệt độ.",
+      "aliases": [],
+      "gloss_ids": [
+        "17",
+        "368",
+        "qipedc-W01298",
+        "qipedc-W01227"
+      ],
+      "act": "request",
+      "nonmanual": "neutral",
+      "explanation": "Mẫu demo: Bây giờ → Y tá → Nhiệt độ → Đo. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "now-rest",
+      "text": "Bây giờ nghỉ ngơi.",
+      "aliases": [],
+      "gloss_ids": [
+        "17",
+        "210"
+      ],
+      "act": "request",
+      "nonmanual": "neutral",
+      "explanation": "Mẫu demo: Bây giờ → Nghỉ ngơi. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    }
+  ],
+  "grammar": {
+    "profile": "qipedc-subject-object-predicate-demo-v1",
+    "note": "Restricted positive clauses only. Do not move every subject to the end. Missing pronouns, negations, quantities and conjunctions remain unsupported. Regional intelligibility review is pending.",
+    "subjects": [
+      {
+        "text": "Bác sĩ",
+        "gloss_id": "11"
+      },
+      {
+        "text": "Y tá",
+        "gloss_id": "368"
+      },
+      {
+        "text": "Bệnh nhân",
+        "gloss_id": "qipedc-W00248"
+      }
+    ],
+    "predicates": [
+      {
+        "id": "eat-rice",
+        "text": "ăn cơm",
+        "gloss_ids": [
+          "qipedc-W00884",
+          "378"
+        ],
+        "explanation": "Chủ thể → Cơm → Ăn. Ba ký hiệu được phát nối tiếp trong cùng một câu."
+      },
+      {
+        "id": "drink-water",
+        "text": "uống nước",
+        "gloss_ids": [
+          "243",
+          "348"
+        ],
+        "explanation": "Chủ thể → Nước → Uống. Ba ký hiệu được nối trong cùng một lượt phát; giữ nguyên câu tiếng Việt."
+      },
+      {
+        "id": "pain",
+        "text": "đau",
+        "gloss_ids": [
+          "379"
+        ],
+        "explanation": "Giữ chủ thể và trạng thái đau; không thêm nguyên nhân hoặc mức độ."
+      },
+      {
+        "id": "tired",
+        "text": "mệt",
+        "gloss_ids": [
+          "204"
+        ],
+        "explanation": "Giữ chủ thể và trạng thái mệt."
+      },
+      {
+        "id": "well",
+        "text": "khỏe",
+        "gloss_ids": [
+          "155"
+        ],
+        "explanation": "Giữ chủ thể và trạng thái khỏe."
+      },
+      {
+        "id": "rest",
+        "text": "nghỉ ngơi",
+        "gloss_ids": [
+          "210"
+        ],
+        "explanation": "Giữ chủ thể và hành động nghỉ ngơi."
+      }
+    ]
+  },
+  "aliases_for_review": [
+    {
+      "input": "nhà thương",
+      "canonical": "Bệnh viện",
+      "reason": "Cách gọi bệnh viện; bác sĩ chọn lại nếu đúng ý."
+    },
+    {
+      "input": "mệt mỏi",
+      "canonical": "Mệt",
+      "reason": "Từ gần nghĩa; cần xác nhận sắc thái và mức độ."
+    },
+    {
+      "input": "trợ giúp",
+      "canonical": "Giúp đỡ",
+      "reason": "Cách diễn đạt tương đương trong giao tiếp cơ bản."
+    },
+    {
+      "input": "ngưng lại",
+      "canonical": "Dừng lại",
+      "reason": "Cách diễn đạt tương đương; không áp dụng tự động vào câu dài."
+    }
+  ]
+}

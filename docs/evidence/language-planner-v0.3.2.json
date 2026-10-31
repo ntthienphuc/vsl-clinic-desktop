@@ -1,0 +1,102 @@
+{
+  "schema": "clinic-language-planner-evidence-v1",
+  "version": "0.3.2",
+  "scope": "Packaged Windows build language planning and doctor-to-patient playback QA",
+  "planner_rules": {
+    "removed_only_before_planning": [
+      "vocative ơi after a supported subject",
+      "commas",
+      "trailing polite markers nha, nhé, nhá, ạ"
+    ],
+    "preserved_as_required_vocabulary": [
+      "negation",
+      "quantities",
+      "conjunctions",
+      "other unsupported content"
+    ],
+    "safety_rule": "A sentence with unsupported meaning is blocked from avatar playback and asks the doctor to edit, send text, or ask the patient to repeat."
+  },
+  "planner_cases": [
+    {
+      "input": "Y tá ơi, đo nhiệt độ nha",
+      "supported": true,
+      "normalized_text": "Y tá đo nhiệt độ",
+      "projection": ["Y tá", "Nhiệt độ", "Đo"],
+      "expected_playback_order": ["Y tá", "Nhiệt độ", "Đo"]
+    },
+    {
+      "input": "Bác sĩ ơi, uống nước nhé",
+      "supported": true,
+      "normalized_text": "Bác sĩ uống nước",
+      "projection": ["Bác sĩ", "Nước", "Uống"],
+      "expected_playback_order": ["Bác sĩ", "Nước", "Uống"]
+    },
+    {
+      "input": "Bạn cảm thấy thế nào?",
+      "supported": false,
+      "unsupported": ["Bạn", "thế", "nào"],
+      "expected_action": "warn_and_request_repeat_or_text"
+    },
+    {
+      "input": "Y tá ơi, không đo nhiệt độ nha",
+      "supported": false,
+      "unsupported": ["không"],
+      "expected_action": "block_partial_sign"
+    },
+    {
+      "input": "Y tá ơi, đo nhiệt độ và uống nước nha",
+      "supported": false,
+      "unsupported": ["và"],
+      "expected_action": "block_partial_sign"
+    }
+  ],
+  "packaged_runtime_qa": {
+    "executable": "release/desktop-v0.3.2/win-unpacked/VSL Clinic.exe",
+    "doctor_route": "http://127.0.0.1:<local-port>/doctor",
+    "patient_route": "http://127.0.0.1:<local-port>/patient",
+    "conversation_started": true,
+    "doctor_input": "Y tá ơi, đo nhiệt độ nha",
+    "doctor_preview": "Y tá → Nhiệt độ → Đo",
+    "patient_sequence": ["Y tá", "Nhiệt độ", "Đo"],
+    "conversation_count_after_send": 1,
+    "unknown_input": "Bạn cảm thấy thế nào?",
+    "unknown_warning": "Có từ hoặc nội dung chưa hỗ trợ avatar",
+    "unknown_tokens_shown": ["Bạn", "thế", "nào"],
+    "unknown_send_blocked": true,
+    "visual_result": "Doctor and patient screens rendered in the packaged 16:9 layout; avatar controls showed active playback and completed playback."
+  },
+  "patient_to_doctor_probe": {
+    "evidence": "docs/evidence/runtime-packaged-v0.3.2.json",
+    "model": "SL-GCN",
+    "labels": 400,
+    "demo_input": "Bác sĩ",
+    "top1_output": "Bác sĩ",
+    "matching_top1": true,
+    "capture_processed_frames": 67,
+    "capture_dropped_frames": 14,
+    "end_to_doctor_paint_ms": 756.16,
+    "server_to_websocket_ms": 9.68,
+    "avatar_send_to_first_frame_ms": 46.89,
+    "capture_errors": []
+  },
+  "realtime_gate_evidence": {
+    "probe": "tools/probe_speech_gate.py",
+    "noise_40_seconds_segments": 0,
+    "one_phrase_plus_noise_segments": 1,
+    "same_phrase_twice_segments": 2,
+    "endpoint_silence_ms": 576,
+    "interpretation": "One pause closes one utterance; silence does not create repeated drafts."
+  },
+  "automated_checks": {
+    "python_tests": "276 passed",
+    "node_tests": "6 passed",
+    "npm_build": "passed",
+    "pyinstaller_engine_build": "passed",
+    "release_receipt_payload_files": 1874,
+    "release_receipt": "docs/evidence/release-receipt.json"
+  },
+  "limitations": [
+    "The packaged QA environment had no usable microphone, so a real spoken sentence was not captured in this run.",
+    "Camera and human signing quality still require an on-device human trial before clinical use."
+  ]
+}

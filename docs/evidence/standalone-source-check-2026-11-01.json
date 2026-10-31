@@ -1,0 +1,36 @@
+{
+  "schema": "clinic-standalone-source-check-v1",
+  "date": "2026-11-01",
+  "app_version": "0.3.4",
+  "repository": "https://github.com/ntthienphuc/vsl-clinic-desktop",
+  "visibility_at_creation": "private",
+  "source_snapshot": {
+    "repository": "https://github.com/ntthienphuc/vsl_temp",
+    "commit": "f8a9d648df268415a732fe9090dddc6951ba0e96",
+    "subtree": "vsl-clinic-desktop",
+    "subtree_git_object": "1fc156108f8b0f3664d31d4356a714b627dbf39a",
+    "exported_files": 431,
+    "modified_snapshot_files": ["README.md", "docs/GIT_SETUP.md"],
+    "runtime_and_bank_bytes_unchanged": true,
+    "inherited_parent_git_history": false,
+    "android_flutter_source_present": false
+  },
+  "local_assets": {
+    "manifest": "local-assets-manifest.json",
+    "checked": 107,
+    "copied": 107,
+    "problems": [],
+    "uploaded_to_git": false
+  },
+  "validation": {
+    "environment": "Fresh Python 3.11 venv and npm ci in the standalone repository",
+    "python": {"command": ".venv/Scripts/python.exe -m pytest -q", "passed": 303, "skipped": 0, "exit_code": 0},
+    "node": {"command": "npm test", "passed": 6, "skipped": 0, "exit_code": 0},
+    "frontend": {
+      "command": "npm run build",
+      "exit_code": 0,
+      "assets": ["index-DuZllZ-Z.css", "index-x1UkBQFQ.js"]
+    }
+  },
+  "scope": "Source extraction and independent setup verification. No runtime change or new EXE build; the existing portable app and prior runtime evidence remain separate. Research bank-generation scripts may require the original external corpus as documented in docs/GIT_SETUP.md."
+}

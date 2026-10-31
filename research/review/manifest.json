@@ -1,0 +1,142 @@
+[
+  {
+    "id": "11",
+    "label": "Bác sĩ",
+    "video": "/research/review/11-browser.mp4",
+    "medoid_id": "022688",
+    "sha256": "dcaa504f72582ac737ad2c89968f449eddb536d83db9d44a939986eb5842ab3c"
+  },
+  {
+    "id": "368",
+    "label": "Y tá",
+    "video": "/research/review/368-browser.mp4",
+    "medoid_id": "020969",
+    "sha256": "6b928b9e81f0fc3889cdcd50c86ce2fcc386dfb62aa6b62d421f178128ffe2a6"
+  },
+  {
+    "id": "32",
+    "label": "Bệnh viện",
+    "video": "/research/review/32-browser.mp4",
+    "medoid_id": "024195",
+    "sha256": "38d4fae38280b785eb8f7654280be369ea1ecd47e966416ac7762c292887d1bc"
+  },
+  {
+    "id": "145",
+    "label": "Khám bệnh",
+    "video": "/research/review/145-browser.mp4",
+    "medoid_id": "020998",
+    "sha256": "86689d4050b7e344af13fc8cc50c0b3bdedfca64c7f06aa188491a8939996cf4"
+  },
+  {
+    "id": "379",
+    "label": "Đau",
+    "video": "/research/review/379-browser.mp4",
+    "medoid_id": "023944",
+    "sha256": "70f33dc536ae271afdff7aa70fc18e85de62b2d7e19b36522c0a202e8fa5192a"
+  },
+  {
+    "id": "204",
+    "label": "Mệt",
+    "video": "/research/review/204-browser.mp4",
+    "medoid_id": "024643",
+    "sha256": "20e12a9576bceeaaa1853a1ce54cb426eb6ff2a2c485d5dbd32c57dca212903c"
+  },
+  {
+    "id": "155",
+    "label": "Khỏe",
+    "video": "/research/review/155-browser.mp4",
+    "medoid_id": "024642",
+    "sha256": "3586295dcfa327f1d2e3134230ea7398bd3e698726611b85273dfe9dc0aba91e"
+  },
+  {
+    "id": "398",
+    "label": "Ốm",
+    "video": "/research/review/398-browser.mp4",
+    "medoid_id": "022270",
+    "sha256": "b4b5e48fbaf1d22e0b5f914dbe8786f6a9269b66293e73b8a12434d3c2182d6c"
+  },
+  {
+    "id": "378",
+    "label": "Ăn",
+    "video": "/research/review/378-browser.mp4",
+    "medoid_id": "024593",
+    "sha256": "8ad1e2878ee7024e7b8ccb6233a829891ea1bbe7fc6f4950f10b239865398fce"
+  },
+  {
+    "id": "348",
+    "label": "Uống",
+    "video": "/research/review/348-browser.mp4",
+    "medoid_id": "024594",
+    "sha256": "fa836eca0ed7d71e96979ceb023bb469adecb3e71064e9b2c341e0b7d7aa1359"
+  },
+  {
+    "id": "243",
+    "label": "Nước",
+    "video": "/research/review/243-browser.mp4",
+    "medoid_id": "020924",
+    "sha256": "57203b529157cb82937f3bb8d9c6fb10934230a38fbf0602656d2ac6dab420a1"
+  },
+  {
+    "id": "210",
+    "label": "Nghỉ ngơi",
+    "video": "/research/review/210-browser.mp4",
+    "medoid_id": "021925",
+    "sha256": "2f5bf3d5c0b4b2ee1bbc08ca0883747b0eca8c39cfcfa2af9bd2f2203b60497e"
+  },
+  {
+    "id": "222",
+    "label": "Ngủ",
+    "video": "/research/review/222-browser.mp4",
+    "medoid_id": "022718",
+    "sha256": "0723e9a57f2affcb30334024ee74f2dfb3ed8948b85c0c6d53964e62cbae00d1"
+  },
+  {
+    "id": "87",
+    "label": "Cần",
+    "video": "/research/review/87-browser.mp4",
+    "medoid_id": "022007",
+    "sha256": "a0c2b3791428faef8aac31acfac332ba61baa17ea853a48381296ce9c2fe25fa"
+  },
+  {
+    "id": "116",
+    "label": "Giúp đỡ",
+    "video": "/research/review/116-browser.mp4",
+    "medoid_id": "023788",
+    "sha256": "2a4c492cb5675cbd92bd1cddf50ffa0574c7370652ffa0d90d6b3719787d3011"
+  },
+  {
+    "id": "105",
+    "label": "Dừng lại",
+    "video": "/research/review/105-browser.mp4",
+    "medoid_id": "024362",
+    "sha256": "970984117814e4410dd3095cb3a28cb7a096280974bdd22e0a4db0500cab14b4"
+  },
+  {
+    "id": "86",
+    "label": "Cảm ơn",
+    "video": "/research/review/86-browser.mp4",
+    "medoid_id": "021909",
+    "sha256": "9f218c9085c0db5254a9fbd62e4c0c0a4bd6aff5f2f1ff5465acfa00fa446fa0"
+  },
+  {
+    "id": "364",
+    "label": "Xin lỗi",
+    "video": "/research/review/364-browser.mp4",
+    "medoid_id": "024367",
+    "sha256": "81299bc0b7142a18abb398c2d7133680f729860313d990ef7a65d1680e9aacdd"
+  },
+  {
+    "id": "384",
+    "label": "Đúng",
+    "video": "/research/review/384-browser.mp4",
+    "medoid_id": "021152",
+    "sha256": "d1a6fadff7a73ccd4f7ecb403114ca638f94e08d617b4456577fdba0ac8a4f34"
+  },
+  {
+    "id": "395",
+    "label": "Đồng ý",
+    "video": "/research/review/395-browser.mp4",
+    "medoid_id": "022784",
+    "sha256": "0e11021c63b5d94a9a947bc073d3e2637c72df6afaa2d22762e70c0805e0c322"
+  }
+]

@@ -1,0 +1,121 @@
+{
+  "schema": "clinic-live-turn-probe-v1",
+  "note": "Concatenated heldout isolated recordings with a frozen final frame. Tests streaming and turn grouping, not natural continuous sentence recognition.",
+  "sources": [
+    {
+      "model_id": 379,
+      "sha256": "cdf21771e58fb060e9733108b2580ef62f6927cd60ee022531e1d0eff4dcb3ff",
+      "ends_at_ms": 2366.6666666666665
+    },
+    {
+      "model_id": 204,
+      "sha256": "ab893d25729ad900a51e450ea85231e20451225f4dacbf53e4b2176d3877a288",
+      "ends_at_ms": 4733.333333333333
+    }
+  ],
+  "words": [
+    {
+      "text": "Mệt",
+      "turn_id": "3f3d0108d662",
+      "received_ms": 5859.227783203125,
+      "turn_status_when_received": "streaming",
+      "metrics": {
+        "frame_count": 152,
+        "hand_coverage": 1.0,
+        "inference_ms": 210.673828125,
+        "queue_ms": 0.0,
+        "last_active_epoch_ms": 1792638181031.2783,
+        "server_result_epoch_ms": 1792638181996.464,
+        "source_start_ms": 233.33333333333334,
+        "source_end_ms": 5400.0,
+        "model": "SL-GCN / 400 gloss",
+        "profile": "clinic-pc-tasks-lite-parallel-v2",
+        "generation": 9
+      },
+      "paint": {
+        "event": "doctor_result_painted",
+        "message_id": "4e8c71964ade",
+        "received_at_ms": 1792638181998,
+        "painted_at_ms": 1792638183038,
+        "role": "doctor",
+        "recorded_at_ms": 1792638183040.9165
+      }
+    }
+  ],
+  "turns": [
+    {
+      "id": "3f3d0108d662",
+      "role": "patient",
+      "kind": "patient_turn",
+      "created_at_ms": 1792638181996.464,
+      "status": "candidate",
+      "words": [
+        {
+          "id": "4e8c71964ade",
+          "role": "patient",
+          "text": "Mệt",
+          "created_at_ms": 1792638181996.464,
+          "status": "candidate",
+          "confidence": 1.0,
+          "uncertain": false,
+          "predictions": [
+            {
+              "gloss": "Mệt",
+              "score": 1.0,
+              "model_id": 204
+            },
+            {
+              "gloss": "Đau",
+              "score": 5.2554670684767935e-12,
+              "model_id": 379
+            },
+            {
+              "gloss": "Màu trắng",
+              "score": 2.76761730530874e-14,
+              "model_id": 173
+            }
+          ],
+          "context_candidates": [],
+          "metrics": {
+            "frame_count": 152,
+            "hand_coverage": 1.0,
+            "inference_ms": 210.673828125,
+            "queue_ms": 0.0,
+            "last_active_epoch_ms": 1792638181031.2783,
+            "server_result_epoch_ms": 1792638181996.464,
+            "source_start_ms": 233.33333333333334,
+            "source_end_ms": 5400.0,
+            "model": "SL-GCN / 400 gloss",
+            "profile": "clinic-pc-tasks-lite-parallel-v2",
+            "generation": 9
+          },
+          "turn_id": "3f3d0108d662"
+        }
+      ],
+      "text": "Mệt",
+      "uncertain": false,
+      "updated_at_ms": 1792638181996.464,
+      "ended_at_ms": 1792638183517.0942,
+      "end_reason": "pause",
+      "raw_text": "Mệt",
+      "reading": {
+        "text": "Mệt",
+        "rewritten": false,
+        "rule": "verbatim"
+      }
+    }
+  ],
+  "stream_snapshots": [
+    {
+      "elapsed_ms": 5859.227783203125,
+      "live_text": "Mệt",
+      "status": "streaming"
+    }
+  ],
+  "checks": {
+    "correct_order": false,
+    "single_turn": true,
+    "immediate_streaming_words": false,
+    "finished": true
+  }
+}

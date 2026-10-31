@@ -1,0 +1,916 @@
+/* Conversation workspace: reserve screen space for people and messages. */
+.app-header {
+  min-height: 62px;
+  padding: 10px 24px;
+  gap: 18px;
+}
+.brand {
+  font-size: 22px;
+}
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+}
+.header-divider {
+  height: 24px;
+}
+.role-heading strong {
+  margin: 0;
+  font-size: 16px;
+}
+.connection {
+  font-size: 13px;
+}
+.doctor-page, .patient-page {
+  width: 100%;
+  max-width: none;
+  padding: 12px 24px;
+}
+.workspace-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+.workspace-toolbar h1 {
+  font-size: 20px;
+  font-weight: 800;
+}
+.workspace-toolbar > div {
+  display: flex;
+  gap: 8px;
+}
+.workspace-toolbar > span {
+  color: #506b67;
+  font-size: 14px;
+}
+.doctor-grid {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 16px;
+}
+.patient-grid {
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 16px;
+}
+.doctor-main, .doctor-aside, .patient-aside {
+  gap: 14px;
+  min-height: 0;
+}
+.section-heading {
+  padding: 14px 18px;
+  gap: 10px;
+}
+.section-heading h2 {
+  font-size: 17px;
+}
+.section-heading h3 {
+  font-size: 16px;
+}
+.section-heading p {
+  font-size: 13px;
+  color: #5c746f;
+}
+.heading-icon {
+  width: 32px;
+  height: 32px;
+}
+.button {
+  font-size: 15px;
+  min-height: 44px;
+}
+.button.compact {
+  font-size: 13px;
+  min-height: 38px;
+}
+.soft-tag {
+  font-size: 12px;
+}
+.app-footer {
+  width: 100%;
+  max-width: none;
+  padding: 4px 24px 8px;
+  font-size: 10px;
+  color: #6d837a;
+}
+.app-footer > span:first-child {
+  display: none;
+}
+.app-footer > span:last-child {
+  display: block;
+  margin-left: auto;
+}
+.composer-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.composer-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  gap: 12px;
+  padding: 0 18px;
+}
+.composer-modes {
+  margin: 0;
+  flex-shrink: 0;
+}
+.segmented button {
+  min-height: 38px;
+  font-size: 14px;
+}
+.dictation-panel {
+  margin: 0;
+  padding: 10px;
+  flex-shrink: 0;
+}
+.dictation-help {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #526b61;
+}
+.dictation-review textarea {
+  min-height: 64px;
+  height: 76px;
+  resize: vertical;
+}
+.dictation-actions small {
+  max-width: 50%;
+}
+.composer-input {
+  display: flex;
+  flex: 1;
+  min-height: 96px;
+  margin: 0;
+}
+.composer-input textarea {
+  min-height: 96px;
+  height: 100%;
+  max-height: none;
+  resize: none;
+  font-size: 20px;
+  padding: 14px 16px 28px;
+}
+.composer-input textarea::placeholder {
+  font-size: 17px;
+  color: #718b80;
+}
+.character-count {
+  color: #668376;
+  font-size: 12px;
+}
+.plan-status {
+  margin: 0;
+  font-size: 14px;
+  flex-shrink: 0;
+  max-height: 100px;
+  overflow-y: auto;
+}
+.suggestion-panel {
+  margin: 0;
+}
+.composer-actions {
+  padding: 12px 18px;
+  flex-shrink: 0;
+}
+.composer-actions > span {
+  font-size: 13px;
+  color: #607b70;
+  max-width: none;
+}
+.composer-actions small {
+  color: #6b8279;
+  font-size: 11px;
+}
+.quick-phrases {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 18px;
+  border-top: 1px solid var(--line);
+}
+.quick-phrases .word-chip {
+  font-size: 13px;
+  min-height: 38px;
+}
+.playback-controls, .playback-empty {
+  min-height: 52px;
+  padding: 8px 14px;
+  flex-shrink: 0;
+}
+.playback-controls {
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.playback-empty {
+  font-size: 13px;
+  color: #647f71;
+}
+.control-button {
+  width: auto;
+  gap: 6px;
+  padding: 8px;
+  min-height: 38px;
+  font-size: 13px;
+}
+.playback-status {
+  font-size: 12px;
+  color: #547568;
+}
+.speed-select {
+  font-size: 13px;
+  min-height: 38px;
+}
+.recognition-idle {
+  padding: 0 18px 16px;
+}
+.idle-symbol, .recognition-rule {
+  display: none;
+}
+.recognition-idle strong {
+  font-size: 22px;
+}
+.recognition-idle p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.recognition-result {
+  margin: 0 18px 10px;
+  padding: 10px;
+}
+.recognition-result > strong {
+  font-size: 32px;
+  margin: 2px 0;
+}
+.recognition-result .result-label {
+  font-size: 10px;
+}
+.recognition-result > span:last-child {
+  font-size: 12px;
+}
+.result-review {
+  padding: 0 18px 14px;
+}
+.confirm-row input {
+  font-size: 15px;
+}
+.result-alternatives {
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.result-alternatives summary {
+  cursor: pointer;
+  color: var(--teal);
+}
+.result-alternatives .alternative-list {
+  margin-top: 8px;
+}
+.conversation-card {
+  min-height: 0;
+}
+.conversation {
+  min-height: 0;
+  max-height: none;
+  padding: 4px 18px 14px;
+}
+.conversation-empty {
+  min-height: 120px;
+  height: 100%;
+  color: #657d71;
+  font-size: 15px;
+}
+.conversation-empty small {
+  color: #748b80;
+  font-size: 12px;
+}
+.message-bubble {
+  font-size: 17px;
+  background: #f1f4f2;
+  color: #284d40;
+}
+.message.doctor .message-bubble {
+  background: #e6f1ec;
+  color: #276956;
+}
+.message.patient .message-bubble {
+  background: #f1f4f2;
+  color: #284d40;
+  border-radius: 10px 10px 10px 2px;
+}
+.message-meta {
+  font-size: 12px;
+  color: #536f61;
+}
+.message-meta time {
+  color: #6b8477;
+}
+.message-status {
+  font-size: 11px;
+  color: #647e70;
+}
+.conversation-footer {
+  padding: 9px 18px;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+.avatar-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.avatar-stage {
+  min-height: 350px;
+}
+.avatar-stage-top {
+  top: 16px;
+  left: 18px;
+  right: 18px;
+}
+.avatar-stage-top .eyebrow {
+  font-size: 13px;
+  letter-spacing: .3px;
+  color: #426958;
+}
+.avatar-stage-top .soft-tag {
+  display: none;
+}
+.avatar-stage-tools {
+  top: 12px;
+  bottom: auto;
+  right: 12px;
+}
+.avatar-caption {
+  font-size: 16px;
+  left: 50%;
+}
+.sign-sequence {
+  font-size: 13px;
+  max-height: 48px;
+}
+.avatar-stage:has(.sign-sequence) .avatar-caption {
+  bottom: 70px;
+}
+.doctor-message-card {
+  flex-shrink: 0;
+}
+.doctor-caption {
+  font-size: clamp(23px, 2vw, 34px);
+  margin: 0 18px 14px;
+  max-height: 160px;
+  padding-left: 12px;
+}
+.doctor-caption.empty {
+  font-size: 20px;
+  color: #637f70;
+}
+.feedback-buttons {
+  padding: 0 18px 16px;
+  flex-wrap: nowrap;
+}
+.feedback-buttons .button {
+  font-size: 16px;
+  min-height: 48px;
+  min-width: 0;
+}
+.feedback-sent {
+  margin: -6px 18px 12px;
+  font-size: 13px;
+  color: #3f795b;
+}
+.current-sign-text {
+  margin: 0 18px 12px;
+  color: #5e7969;
+  font-size: 13px;
+  max-height: 44px;
+  overflow: auto;
+}
+.patient-camera {
+  display: flex;
+  min-height: 0;
+}
+.source-panel.with-preview {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 0;
+}
+.camera-preview {
+  margin: 0 18px 12px;
+  min-height: 100px;
+}
+.camera-placeholder {
+  min-height: 0;
+  padding: 12px;
+}
+.camera-placeholder strong {
+  font-size: 15px;
+  color: #52755f;
+}
+.camera-placeholder span {
+  font-size: 13px;
+  color: #698573;
+  max-width: none;
+}
+.preview-source {
+  font-size: 12px;
+}
+.capture-toolbar {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 18px;
+}
+.capture-help {
+  text-align: center;
+  font-size: 14px;
+  color: #4f7260;
+  padding: 9px 12px 12px;
+}
+.tracking-note {
+  margin: 0 18px 10px;
+  font-size: 13px;
+}
+.source-options {
+  padding: 0;
+}
+.source-select select {
+  font-size: 15px;
+}
+.source-select {
+  margin-top: 16px;
+}
+.upload-button {
+  font-size: 14px;
+  margin: 16px 0;
+}
+.upload-button span {
+  font-size: 12px;
+  color: #617e6f;
+}
+.diagnostics {
+  font-size: 13px;
+  margin-top: 12px;
+}
+.diagnostic-grid, .diagnostics p {
+  font-size: 12px;
+}
+.sheet-dialog {
+  width: min(720px, calc(100vw - 40px));
+  max-height: calc(100dvh - 48px);
+  padding: 0;
+  border: 1px solid #cbded3;
+  border-radius: 16px;
+  color: #203a40;
+  box-shadow: 0 20px 80px #12372f40;
+}
+.sheet-dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+.sheet-dialog::backdrop {
+  background: #173a3360;
+  backdrop-filter: blur(3px);
+}
+.sheet-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 22px;
+  border-bottom: 1px solid var(--line);
+}
+.sheet-heading h2 {
+  font-size: 21px;
+}
+.sheet-content {
+  padding: 20px 22px;
+  overflow-y: auto;
+  min-height: 0;
+}
+.sheet-content .section-heading {
+  padding-left: 0;
+  padding-right: 0;
+}
+.picker-toolbar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.picker-toolbar input {
+  flex: 1;
+  min-width: 180px;
+  font-size: 15px;
+}
+.picker-help {
+  margin: 14px 0;
+  color: #5f7b6e;
+  font-size: 14px;
+}
+.picker-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+.picker-list .word-chip {
+  font-size: 16px;
+  min-height: 46px;
+  text-align: left;
+}
+.connection-banner {
+  flex-shrink: 0;
+}
+.toast {
+  max-width: calc(100vw - 30px);
+}
+@media (min-width: 900px) and (min-height: 600px) {
+  .app {
+    height: 100dvh;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .app-header, .app-footer {
+    flex-shrink: 0;
+  }
+  .doctor-page, .patient-page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    margin: 0;
+  }
+  .workspace-toolbar {
+    flex-shrink: 0;
+  }
+  .doctor-grid, .patient-grid {
+    flex: 1;
+    min-height: 0;
+    align-items: stretch;
+  }
+  .doctor-main, .doctor-aside, .patient-aside {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .composer-card, .conversation-card, .patient-camera {
+    flex: 1;
+    min-height: 0;
+  }
+  .composer-body {
+    flex: 1;
+    overflow-y: auto;
+  }
+  .recognition-card {
+    flex-shrink: 0;
+    max-height: 45%;
+    overflow-y: auto;
+  }
+  .patient-page .avatar-stage {
+    height: auto;
+    flex: 1;
+    min-height: 0;
+  }
+  .patient-aside .camera-preview {
+    height: auto;
+    min-height: 100px;
+    aspect-ratio: auto;
+    flex: 1;
+  }
+  .doctor-caption {
+    max-height: min(18vh, 180px);
+  }
+  .patient-aside .feedback-buttons {
+    padding-bottom: 16px;
+  }
+}
+@media (min-width: 900px) and (max-height: 800px) {
+  .app-header {
+    min-height: 54px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+  .doctor-page, .patient-page {
+    padding-top: 10px;
+    padding-bottom: 8px;
+  }
+  .workspace-toolbar {
+    margin-bottom: 10px;
+  }
+  .section-heading {
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+  .composer-body {
+    gap: 9px;
+  }
+  .composer-input {
+    min-height: 88px;
+  }
+  .composer-input textarea {
+    min-height: 88px;
+  }
+  .dictation-help {
+    margin-top: 3px;
+  }
+  .quick-phrases {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .doctor-caption {
+    font-size: 25px;
+    max-height: 100px;
+  }
+  .doctor-caption.empty {
+    font-size: 18px;
+  }
+  .patient-aside .section-heading {
+    padding: 11px 18px;
+  }
+  .feedback-buttons .button {
+    font-size: 14px;
+  }
+  .capture-toolbar .button {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1100px) {
+  .doctor-page, .patient-page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .doctor-grid, .patient-grid {
+    gap: 12px;
+  }
+  .workspace-toolbar h1 {
+    font-size: 18px;
+  }
+  .workspace-toolbar > span {
+    display: none;
+  }
+  .playback-status {
+    width: 100%;
+    text-align: left;
+  }
+  .control-button {
+    font-size: 12px;
+    padding: 6px;
+  }
+  .feedback-buttons .button {
+    font-size: 14px;
+  }
+  .capture-toolbar {
+    flex-wrap: wrap;
+  }
+}
+/* Narrow windows and high zoom remain reachable, with normal document flow. */
+@media (max-width: 899px), (max-height: 599px) {
+  .app {
+    height: auto;
+    overflow: visible;
+  }
+  .workspace-toolbar {
+    flex-wrap: wrap;
+  }
+  .doctor-grid {
+    grid-template-columns: 1fr;
+  }
+  .doctor-aside {
+    display: flex;
+  }
+  .composer-input {
+    min-height: 120px;
+  }
+  .composer-input textarea {
+    min-height: 120px;
+  }
+  .conversation {
+    min-height: 180px;
+    max-height: 300px;
+  }
+  .patient-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(250px, 1fr);
+  }
+  .patient-page .avatar-stage {
+    height: 460px;
+  }
+  .patient-aside .camera-preview {
+    height: 180px;
+  }
+  .patient-aside .feedback-buttons .button {
+    min-width: 0;
+  }
+  .feedback-buttons {
+    flex-wrap: wrap;
+  }
+  .feedback-buttons .button {
+    min-width: 100%;
+  }
+}
+@media (max-width: 620px) {
+  .patient-grid {
+    grid-template-columns: 1fr;
+  }
+  .patient-aside {
+    order: 0;
+  }
+  .workspace-toolbar > div {
+    flex-wrap: wrap;
+  }
+  .picker-list {
+    grid-template-columns: 1fr;
+  }
+  .header-right {
+    gap: 8px;
+  }
+  .connection {
+    font-size: 12px;
+  }
+}
+
+.conversation-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+  margin-bottom: 12px;
+}
+.conversation-bar > span {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: auto;
+  color: #55706c;
+  font-size: 13px;
+}
+.conversation-bar .segmented {
+  width: auto;
+}
+.live-speech {
+  border: 1px solid #d8e4e0;
+  border-radius: 12px;
+  padding: 11px 13px;
+  background: #f7faf8;
+}
+.live-speech.recording {
+  background: #edf7f3;
+  border-color: #b7d9ca;
+}
+.live-speech-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #285c54;
+  font-size: 14px;
+}
+.live-speech-status .text-button {
+  margin-left: auto;
+}
+.live-speech p, .speech-last {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #56716a;
+  margin: 6px 0 0;
+}
+.speech-drafts {
+  max-height: 254px;
+  overflow-y: auto;
+  margin-top: 9px;
+}
+.speech-drafts summary, .word-review summary {
+  cursor: pointer;
+  font-size: 13px;
+  color: #49655e;
+}
+.speech-review-item {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #d0e0d8;
+}
+.speech-review-item textarea {
+  width: 100%;
+  min-height: 60px;
+  resize: vertical;
+  border: 1px solid #b8d0c6;
+  border-radius: 8px;
+  padding: 9px;
+  font: inherit;
+}
+.speech-review-item > small {
+  color: #796745;
+  font-size: 12px;
+}
+.speech-review-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  align-items: center;
+  margin-top: 6px;
+}
+.speech-review-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+}
+.speech-review-heading select {
+  min-width: 0;
+  max-width: 70%;
+  flex: 1;
+  padding: 5px;
+}
+.speech-warning {
+  display: grid;
+  gap: 3px;
+  border-left: 3px solid #b77816;
+  background: #fff8e8;
+  color: #78500e;
+  padding: 7px 9px;
+  font-size: 12px;
+  line-height: 1.45;
+  margin-bottom: 7px;
+}
+.live-patient-turn {
+  padding: 4px 20px 14px;
+}
+.live-word-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 10px 0;
+  max-height: 108px;
+  overflow-y: auto;
+}
+.live-word-list > span {
+  padding: 6px 11px;
+  border-radius: 9px;
+  background: #e7f3ee;
+  color: #22574d;
+  font-size: 20px;
+  font-weight: 700;
+}
+.live-word-list > .uncertain {
+  background: #fcf1da;
+  color: #805c21;
+}
+.live-patient-turn > small, .live-patient-turn p span {
+  color: #62776f;
+  font-size: 12px;
+}
+.live-patient-turn > p {
+  margin: 6px 0 0;
+  font-size: 17px;
+}
+.word-review {
+  padding: 0 20px 14px;
+}
+.word-review .recognition-result {
+  margin: 9px 0;
+}
+.word-review .result-review {
+  padding: 0;
+}
+.patient-listening {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #2a6156;
+  padding: 12px 8px 4px;
+}
+.patient-passive-camera .capture-help {
+  padding-bottom: 14px;
+}
+.original-words {
+  font-size: 12px;
+  color: #556c63;
+  padding: 5px 0;
+}
+.word-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.word-categories .selected {
+  background: #dceee6;
+  border-color: #72a68f;
+}
+@media (max-width: 1100px) {
+  .conversation-bar > span {
+    display: none;
+  }
+  .conversation-bar > .button {
+    margin-left: auto;
+  }
+}
+@media (max-width: 700px) {
+  .conversation-bar {
+    flex-wrap: wrap;
+  }
+}

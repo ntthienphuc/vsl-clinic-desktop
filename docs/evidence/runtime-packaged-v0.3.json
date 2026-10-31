@@ -1,0 +1,21 @@
+{
+  "health": {
+    "service": "vsl-clinic",
+    "status": "ok",
+    "version": "0.3.0",
+    "model_loaded": true
+  },
+  "words": 65,
+  "phrases": 58,
+  "model": {
+    "name": "SL-GCN",
+    "labels": 400,
+    "sha256": "582f3d8712f73f78c5fe7b7521609ea54a9257e5a3a877aa8c9346b8e28ebb21",
+    "capture_profile": "clinic-pc-tasks-lite-parallel-v2"
+  },
+  "avatar": "/assets/avatar/ClinicMale.vrm",
+  "engine_sha256": "06D046D1A3C9B3D52E06358A6B7114E3A16C2E2B49C74EB1BCEB4ADB24573A20",
+  "live_turn_evidence": "live-turn-packaged-v0.3.json",
+  "speech_evidence": "speech-packaged-v0.3.json",
+  "ui_evidence": "ui-layout-v0.3.json"
+}

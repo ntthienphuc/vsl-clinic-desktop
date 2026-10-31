@@ -1,0 +1,442 @@
+{
+  "source": "E:\\Project\\VSL Projects\\ver 1 - 2025-04-18 - VSL\\qipedc_dictionary_4362_records.json",
+  "source_sha256": "7c63edc5eacddd763f2eeff91537798a776b3b71267b2376f0d72f4aa3da4d69",
+  "records": 4362,
+  "regional_status": "The inferred_region column is local inference from filenames, not verified Dong Nai attribution.",
+  "decision": "Keep the original 20-word bank. QIPEDC candidates require sense, movement and regional review before import. No silent vocabulary merge.",
+  "matches": [
+    {
+      "label": "Bác sĩ",
+      "model_id": 11,
+      "exact": [],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Y tá",
+      "model_id": 368,
+      "exact": [],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Bệnh viện",
+      "model_id": 32,
+      "exact": [],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Khám bệnh",
+      "model_id": 145,
+      "exact": [
+        {
+          "word": "khám bệnh",
+          "description": "",
+          "type": 0,
+          "tl": "Động từ",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W01767.mp4",
+          "inferred_region": "Không xác định (ID không có hậu tố vùng)"
+        }
+      ],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Đau",
+      "model_id": 379,
+      "exact": [],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Mệt",
+      "model_id": 204,
+      "exact": [],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Khỏe",
+      "model_id": 155,
+      "exact": [],
+      "accent_candidates_require_review": [
+        {
+          "word": "khoe",
+          "description": "Cố ý làm cho người ta thấy, biết cái tốt đẹp, cái hay của mình, thường là bằng lời nói.",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W01822.mp4"
+        }
+      ]
+    },
+    {
+      "label": "Ốm",
+      "model_id": 398,
+      "exact": [],
+      "accent_candidates_require_review": [
+        {
+          "word": "ôm",
+          "description": "Vòng hai tay qua để giữ sát vào lòng, vào người.",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W02565.mp4"
+        }
+      ]
+    },
+    {
+      "label": "Ăn",
+      "model_id": 378,
+      "exact": [],
+      "accent_candidates_require_review": [
+        {
+          "word": "ấn",
+          "description": "Dùng tay đè xuống, gí xuống.",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W00059.mp4"
+        }
+      ]
+    },
+    {
+      "label": "Uống",
+      "model_id": 348,
+      "exact": [],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Nước",
+      "model_id": 243,
+      "exact": [],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Nghỉ ngơi",
+      "model_id": 210,
+      "exact": [
+        {
+          "word": "nghỉ ngơi",
+          "description": "Nghỉ để hồi phục sức khoẻ (nói khái quát).",
+          "type": 0,
+          "tl": "Động từ",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W02364.mp4",
+          "inferred_region": "Không xác định (ID không có hậu tố vùng)"
+        }
+      ],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Ngủ",
+      "model_id": 222,
+      "exact": [],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Cần",
+      "model_id": 87,
+      "exact": [],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Giúp đỡ",
+      "model_id": 116,
+      "exact": [
+        {
+          "word": "giúp đỡ",
+          "description": "Giúp để làm giảm bớt khó khăn hoặc để thực hiện được một công việc nào đó.",
+          "type": 0,
+          "tl": "Động từ",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W01497B.mp4",
+          "inferred_region": "Bắc (suy luận từ hậu tố B)"
+        },
+        {
+          "word": "giúp đỡ",
+          "description": "Giúp để làm giảm bớt khó khăn hoặc để thực hiện được một công việc nào đó.",
+          "type": 0,
+          "tl": "Động từ",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W01497N.mp4",
+          "inferred_region": "Nam (suy luận từ hậu tố N)"
+        },
+        {
+          "word": "giúp đỡ",
+          "description": "Giúp để làm giảm bớt khó khăn hoặc để thực hiện được một công việc nào đó.",
+          "type": 0,
+          "tl": "Động từ",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W01497T.mp4",
+          "inferred_region": "Trung (suy luận từ hậu tố T)"
+        }
+      ],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Dừng lại",
+      "model_id": 105,
+      "exact": [
+        {
+          "word": "dừng lại",
+          "description": "",
+          "type": 0,
+          "tl": "Động từ",
+          "video_url": "https://qipedc.moet.gov.vn/videos/D0183.mp4",
+          "inferred_region": "Không xác định (ID không có hậu tố vùng)"
+        }
+      ],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Cảm ơn",
+      "model_id": 86,
+      "exact": [],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Xin lỗi",
+      "model_id": 364,
+      "exact": [
+        {
+          "word": "xin lỗi",
+          "description": "Xin được tha thứ vì đã biết lỗi.",
+          "type": 0,
+          "tl": "Động từ",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W03990.mp4",
+          "inferred_region": "Không xác định (ID không có hậu tố vùng)"
+        }
+      ],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Đúng",
+      "model_id": 384,
+      "exact": [],
+      "accent_candidates_require_review": [
+        {
+          "word": "đựng",
+          "description": "Chứa vật gì ở bên trong lòng một đồ vật khác.",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W01328.mp4"
+        }
+      ]
+    },
+    {
+      "label": "Đồng ý",
+      "model_id": 395,
+      "exact": [],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Tôi",
+      "model_id": null,
+      "exact": [],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Bạn",
+      "model_id": null,
+      "exact": [
+        {
+          "word": "bạn",
+          "description": "Người quen biết và có quan hệ gần gũi, thân thiện với nhau .",
+          "type": 0,
+          "tl": "Danh từ",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W00110B.mp4",
+          "inferred_region": "Bắc (suy luận từ hậu tố B)"
+        },
+        {
+          "word": "bạn",
+          "description": "Người quen biết và có quan hệ gần gũi, thân thiện với nhau .",
+          "type": 0,
+          "tl": "Danh từ",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W00110N.mp4",
+          "inferred_region": "Nam (suy luận từ hậu tố N)"
+        },
+        {
+          "word": "bạn",
+          "description": "Người quen biết và có quan hệ gần gũi, thân thiện với nhau .",
+          "type": 0,
+          "tl": "Danh từ",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W00110T.mp4",
+          "inferred_region": "Trung (suy luận từ hậu tố T)"
+        }
+      ],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Không",
+      "model_id": null,
+      "exact": [],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Chưa",
+      "model_id": null,
+      "exact": [],
+      "accent_candidates_require_review": [
+        {
+          "word": "chùa",
+          "description": "Công trình được xây cất lên, lamg nơi thờ Phật, thường có nhà sư ở.",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W00655B.mp4"
+        },
+        {
+          "word": "chùa",
+          "description": "Công trình được xây cất lên, lamg nơi thờ Phật, thường có nhà sư ở.",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W00655N.mp4"
+        },
+        {
+          "word": "chùa",
+          "description": "Công trình được xây cất lên, lamg nơi thờ Phật, thường có nhà sư ở.",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W00655T.mp4"
+        }
+      ]
+    },
+    {
+      "label": "Có",
+      "model_id": null,
+      "exact": [],
+      "accent_candidates_require_review": [
+        {
+          "word": "cỏ",
+          "description": "Cây thân mềm và thấp, thường mọc lan thành đám trên mặt đất, có nhiều loài khác nhau, dùng để làm thức ăn cho trâu, bò, ngựa, v.v.",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W00357B.mp4"
+        },
+        {
+          "word": "cỏ",
+          "description": "Cây thân mềm và thấp, thường mọc lan thành đám trên mặt đất, có nhiều loài khác nhau, dùng để làm thức ăn cho trâu, bò, ngựa, v.v.",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W00357N.mp4"
+        },
+        {
+          "word": "cỏ",
+          "description": "Cây thân mềm và thấp, thường mọc lan thành đám trên mặt đất, có nhiều loài khác nhau, dùng để làm thức ăn cho trâu, bò, ngựa, v.v.",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W00357T.mp4"
+        },
+        {
+          "word": "cổ",
+          "description": "Bộ phận của cơ thể, nối đầu với thân.",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W00814.mp4"
+        },
+        {
+          "word": "cỗ",
+          "description": "Tất cả những món ăn bày thành mâm để cúng lễ và ăn uống, theo tục lệ.",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W00826.mp4"
+        },
+        {
+          "word": "cờ",
+          "description": "Vật làm bằng vải, lụa, v.v., có kích cỡ, hình dáng, màu sắc nhất định, nhiều khi có hình tượng trưng, dùng làm hiệu cho một nước, một tổ chức chính trị, xã hội, v.v. hoặc để báo hiệu.",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W00878.mp4"
+        }
+      ]
+    },
+    {
+      "label": "Đâu",
+      "model_id": null,
+      "exact": [],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Ngồi",
+      "model_id": null,
+      "exact": [
+        {
+          "word": "ngồi",
+          "description": "Ở tư thế đít đặt trên mặt nền hoặc chân gập lại để đỡ toàn thân.",
+          "type": 0,
+          "tl": "Động từ",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W02400B.mp4",
+          "inferred_region": "Bắc (suy luận từ hậu tố B)"
+        },
+        {
+          "word": "ngồi",
+          "description": "Ở tư thế đít đặt trên mặt nền hoặc chân gập lại để đỡ toàn thân.",
+          "type": 0,
+          "tl": "Động từ",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W02400N.mp4",
+          "inferred_region": "Nam (suy luận từ hậu tố N)"
+        },
+        {
+          "word": "ngồi",
+          "description": "Ở tư thế đít đặt trên mặt nền hoặc chân gập lại để đỡ toàn thân.",
+          "type": 0,
+          "tl": "Động từ",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W02400T.mp4",
+          "inferred_region": "Trung (suy luận từ hậu tố T)"
+        }
+      ],
+      "accent_candidates_require_review": [
+        {
+          "word": "ngói",
+          "description": "Vật liệu lợp nhà, thường ở dạng tấm nhỏ, chế tạo từ đất sét đã nung hay từ xi măng.",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W02387.mp4"
+        }
+      ]
+    },
+    {
+      "label": "Thuốc",
+      "model_id": null,
+      "exact": [],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Bụng",
+      "model_id": null,
+      "exact": [
+        {
+          "word": "bụng",
+          "description": "Bộ phận cơ thể người hoặc động vật, chứa ruột, dạ dày, v.v.",
+          "type": 0,
+          "tl": "Danh từ",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W00362.mp4",
+          "inferred_region": "Không xác định (ID không có hậu tố vùng)"
+        }
+      ],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Đầu",
+      "model_id": null,
+      "exact": [],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Bệnh nhân",
+      "model_id": null,
+      "exact": [
+        {
+          "word": "bệnh nhân",
+          "description": "Người bệnh đang được điều trị, trong quan hệ với cơ sở điều trị và với thầy thuốc.",
+          "type": 0,
+          "tl": "Danh từ",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W00248.mp4",
+          "inferred_region": "Không xác định (ID không có hậu tố vùng)"
+        }
+      ],
+      "accent_candidates_require_review": []
+    },
+    {
+      "label": "Mời",
+      "model_id": null,
+      "exact": [
+        {
+          "word": "mời",
+          "description": "",
+          "type": 0,
+          "tl": "Động từ",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W02263.mp4",
+          "inferred_region": "Không xác định (ID không có hậu tố vùng)"
+        }
+      ],
+      "accent_candidates_require_review": [
+        {
+          "word": "môi",
+          "description": "Nếp cơ mềm làm thành cửa miệng.",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W02235.mp4"
+        },
+        {
+          "word": "mỗi",
+          "description": "Từ chỉ một phần tử bất kì của một tập hợp cùng loại, được xét riêng lẻ, nhưng nhằm để qua đó nói chung cho mọi phần tử của tập hợp.",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W02237.mp4"
+        },
+        {
+          "word": "mới",
+          "description": "Vừa được làm ra hay là chưa dùng hoặc dùng chưa lâu, còn giữ nguyên phẩm chất giá trị.",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W02264B.mp4"
+        },
+        {
+          "word": "mới",
+          "description": "Vừa được làm ra hay là chưa dùng hoặc dùng chưa lâu, còn giữ nguyên phẩm chất giá trị.",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W02264N.mp4"
+        },
+        {
+          "word": "mới",
+          "description": "Vừa được làm ra hay là chưa dùng hoặc dùng chưa lâu, còn giữ nguyên phẩm chất giá trị.",
+          "video_url": "https://qipedc.moet.gov.vn/videos/W02264T.mp4"
+        }
+      ]
+    }
+  ]
+}

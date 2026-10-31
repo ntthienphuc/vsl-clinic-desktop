@@ -1,0 +1,132 @@
+[
+  {
+    "path": "assets/models/slgcn_bone_all_cams.onnx",
+    "sha256": "582f3d8712f73f78c5fe7b7521609ea54a9257e5a3a877aa8c9346b8e28ebb21",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\vsl_server\\models\\slgcn_bone_all_cams.onnx"
+  },
+  {
+    "path": "assets/gloss.csv",
+    "sha256": "68e6da5841aa76232c834ebfcd729ebbed103005c04f94ae9a1bebb1bed45f91",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\vsl_server\\gloss.csv"
+  },
+  {
+    "path": "assets/models/pose_landmarker_lite.task",
+    "sha256": "59929e1d1ee95287735ddd833b19cf4ac46d29bc7afddbbf6753c459690d574a",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\android\\app\\src\\main\\assets\\pose_landmarker_lite.task"
+  },
+  {
+    "path": "assets/models/hand_landmarker.task",
+    "sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\android\\app\\src\\main\\assets\\hand_landmarker.task"
+  },
+  {
+    "path": "public/fonts/Nunito-Regular.ttf",
+    "sha256": "b0885056b60511b29aa9f69198055fe3bad13e76ec8a9b9e37cd61da7b4ee1e5",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\assets\\fonts\\Nunito-Regular.ttf"
+  },
+  {
+    "path": "public/fonts/Nunito-Bold.ttf",
+    "sha256": "ad443e47990c5fc4b263693b3018b7807868263b8c42ccb1115e030158931960",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\assets\\fonts\\Nunito-Bold.ttf"
+  },
+  {
+    "path": "assets/samples/011.mp4",
+    "sha256": "924c83f41b60361a847f395170e3fbb37c300055c88409875fa52bd04ba2866c",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\020870.mp4"
+  },
+  {
+    "path": "assets/samples/368.mp4",
+    "sha256": "1adbf00efd863b8745c3148cb7ceba7391f9b00142f29c4dc7d564e9ee1a9821",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\020869.mp4"
+  },
+  {
+    "path": "assets/samples/032.mp4",
+    "sha256": "4d32e57afc80d863a9d8e5b5fff0a8e78a391734953ecc76063463e85f1545e5",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\020643.mp4"
+  },
+  {
+    "path": "assets/samples/145.mp4",
+    "sha256": "ad690bbd7b8e5096a3e7ac24b9949e44f3dd68e81c925c159edaa38bc48df85c",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\020898.mp4"
+  },
+  {
+    "path": "assets/samples/379.mp4",
+    "sha256": "cdf21771e58fb060e9733108b2580ef62f6927cd60ee022531e1d0eff4dcb3ff",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021292.mp4"
+  },
+  {
+    "path": "assets/samples/204.mp4",
+    "sha256": "ab893d25729ad900a51e450ea85231e20451225f4dacbf53e4b2176d3877a288",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021291.mp4"
+  },
+  {
+    "path": "assets/samples/155.mp4",
+    "sha256": "a92233e531def221dcaddbca2cd5ca38eb1a5c03d9dd4257173ba75ff0d9c666",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021290.mp4"
+  },
+  {
+    "path": "assets/samples/398.mp4",
+    "sha256": "feb357859f9335baeb9c11effa6a23abb449a68a5a724db0438b38c27030021c",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021286.mp4"
+  },
+  {
+    "path": "assets/samples/378.mp4",
+    "sha256": "8e47a2ab3e84f7e3866930eff62c5d2cace465af963a50fbfcab40eb10e5f304",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021241.mp4"
+  },
+  {
+    "path": "assets/samples/348.mp4",
+    "sha256": "561c30dfa4c05deb75e648d140e1be4a32d6d90797d8f51737eab4401831e112",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021242.mp4"
+  },
+  {
+    "path": "assets/samples/243.mp4",
+    "sha256": "08690638ac7f752ff15686110bc0eca3228a9944d2d5d12b2bf0a9c7b294a371",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\020824.mp4"
+  },
+  {
+    "path": "assets/samples/210.mp4",
+    "sha256": "c0680880197f6151c3f1b51c0adae6519d50de8cf1eb99b8297c781c6f3d1878",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021041.mp4"
+  },
+  {
+    "path": "assets/samples/222.mp4",
+    "sha256": "f7dbd0291f5069912c1f1f1b56b77d661a8c20a5231b6b60cc51d70c8444f95f",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\020900.mp4"
+  },
+  {
+    "path": "assets/samples/087.mp4",
+    "sha256": "4f7fe2abb472d6d52d758b5e3ad0f225d476d45597e0da1170d9206858174595",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021023.mp4"
+  },
+  {
+    "path": "assets/samples/116.mp4",
+    "sha256": "fc2aa1b23c1509130c63a6fdfe29f79766cf38f1c0f9ef9bebaca2e593a68205",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021036.mp4"
+  },
+  {
+    "path": "assets/samples/105.mp4",
+    "sha256": "e3ab981dbfb5b7bc8d15b2c9cfebc9f3511ad68a29d598fbe5f5afec477a059d",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021010.mp4"
+  },
+  {
+    "path": "assets/samples/086.mp4",
+    "sha256": "3b8f96f3972f4673f38085c55a27fcf400f626e65baa7c570e506abc174e15e8",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021025.mp4"
+  },
+  {
+    "path": "assets/samples/364.mp4",
+    "sha256": "3394959cdf6413d9c9cead1065e035957365da04d3a6c25202539bf40a76f4b5",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021015.mp4"
+  },
+  {
+    "path": "assets/samples/384.mp4",
+    "sha256": "e7797c5d6a5c9585ba73ac8af4c36c6ab73cc3e0ce059b92fb0b40e2a257f27a",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021052.mp4"
+  },
+  {
+    "path": "assets/samples/395.mp4",
+    "sha256": "84f47e2ba8c9fdfbcc38c78b1a115bb0bea41bdd977f151df04a3ed997996c94",
+    "source": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\All_cam1\\All_cam1\\021016.mp4"
+  }
+]

@@ -1,0 +1,96 @@
+{
+  "events": [
+    {
+      "time_ms": 13873.5,
+      "type": "loading"
+    },
+    {
+      "activity_detector": "Silero v6 ONNX streaming",
+      "available": true,
+      "cpu_threads": 2,
+      "device": "cpu",
+      "endpoint_ms": 576,
+      "language": "vi",
+      "loaded": true,
+      "name": "PhoWhisper base INT8",
+      "sample_rate": 16000,
+      "time_ms": 16530.100000000093,
+      "type": "ready"
+    },
+    {
+      "time_ms": 40695.69999999995,
+      "type": "decoding"
+    },
+    {
+      "audio_ms": 2080,
+      "cut_at_limit": false,
+      "decode_ms": 835.6721999998626,
+      "delivery": {
+        "draft_id": "ea2872b637d94127bfb2883d30b4b290:1",
+        "status": "review"
+      },
+      "endpoint_audio_ms": 576,
+      "queue_ms": 0.1528000000234897,
+      "segments": [
+        {
+          "avg_logprob": -0.00002257029230653037,
+          "no_speech_prob": 2.704502474835252e-13
+        }
+      ],
+      "sequence": 1,
+      "session_id": "90b4a3411e91:1344a8f64514",
+      "text": "bạn cảm thấy thế nào.",
+      "time_ms": 41532.5,
+      "type": "transcript",
+      "uncertain": false,
+      "utterance_id": "ea2872b637d94127bfb2883d30b4b290:1"
+    },
+    {
+      "time_ms": 119390.30000000005,
+      "type": "decoding"
+    },
+    {
+      "audio_ms": 1344,
+      "cut_at_limit": false,
+      "decode_ms": 786.3445000000411,
+      "delivery": {
+        "message_id": "0cbb7b6c483e",
+        "status": "sent"
+      },
+      "endpoint_audio_ms": 576,
+      "queue_ms": 0.1558999999815569,
+      "segments": [
+        {
+          "avg_logprob": -0.01088123321533203,
+          "no_speech_prob": 9.747002510662739e-11
+        }
+      ],
+      "sequence": 2,
+      "session_id": "90b4a3411e91:1344a8f64514",
+      "text": "uống nước.",
+      "time_ms": 120177.69999999995,
+      "type": "transcript",
+      "uncertain": false,
+      "utterance_id": "ea2872b637d94127bfb2883d30b4b290:2"
+    }
+  ],
+  "plays": [
+    {
+      "duration_ms": 41872,
+      "name": "unsupported-feeling.mp3",
+      "noiseSeconds": 40,
+      "sample_rate": 16000,
+      "speech_ms": 1872,
+      "start_ms": 38459.39999999991
+    },
+    {
+      "duration_ms": 31032,
+      "name": "drink-water.mp3",
+      "noiseSeconds": 30,
+      "sample_rate": 16000,
+      "speech_ms": 1032,
+      "start_ms": 117767.69999999995
+    }
+  ],
+  "time_ms": 143724.1000000001
+}

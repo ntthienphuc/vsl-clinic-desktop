@@ -1,0 +1,27 @@
+{
+  "name": "Sakurada Fumiriya / VRoid Studio beta male sample",
+  "license": "CC0-1.0",
+  "download_url": "https://raw.githubusercontent.com/madjin/vrm-samples/master/vroid/beta/Sakurada_Fumiriya.vrm",
+  "license_reference": "https://vroid.pixiv.help/hc/en-us/articles/360014788554-Sakurada-Fumiriya",
+  "embedded_meta": {
+    "version": "",
+    "author": "",
+    "contactInformation": "",
+    "reference": "",
+    "title": "Sakurada Fumiriya",
+    "texture": 29,
+    "allowedUserName": "Everyone",
+    "violentUssageName": "Allow",
+    "sexualUssageName": "Allow",
+    "commercialUssageName": "Allow",
+    "otherPermissionUrl": "",
+    "licenseName": "CC0",
+    "otherLicenseUrl": ""
+  },
+  "original_sha256": "d8fb05f33e377df028cb6b9d58c441ce68326c41fa23f6c735d40c65ae3dc710",
+  "runtime_sha256": "942b21dfb4014ec5fd18bd47627a9f5658cda9d3e1d16bfeaad46501a13f6c2e",
+  "modifications": [
+    "Move primitive targetNames into mesh extras for current GLTFLoader",
+    "0.3.4 runtime: PBR materials without toon outlines, reduced eye geometry with transformed morph deltas, widened lower face, short continuous hair, glasses and longer skinned white coat; original rig, hand geometry and skin weights retained"
+  ]
+}

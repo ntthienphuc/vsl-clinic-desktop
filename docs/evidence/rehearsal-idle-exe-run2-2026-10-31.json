@@ -1,0 +1,822 @@
+{
+  "created_at": "2026-10-31T09:02:30.647748+00:00",
+  "scope": "Actual paced video detector/model and browser avatar; no human microphone or webcam claim.",
+  "scenarios": [
+    {
+      "id": "01_Tiep_don_va_hoi_trieu_chung",
+      "steps": [
+        {
+          "step": 1,
+          "doctor": "Bây giờ bác sĩ khám bệnh.",
+          "projection": [
+            "Bây giờ",
+            "Bác sĩ",
+            "Khám bệnh"
+          ],
+          "avatar_completed": true,
+          "avatar_first_frame_ms": 51.662109375,
+          "video": {
+            "file": "01_Tiep_don_va_hoi_trieu_chung/01_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "a63093e3f860f290786dab942244d64c3ad1c2e12640c4830507fab402ca1bc6",
+            "frames": 145,
+            "duration_ms": 4833
+          },
+          "expected": [
+            "Đồng ý"
+          ],
+          "render": [
+            {
+              "event": "patient_avatar_render_summary",
+              "playback_id": "9fb56a341529",
+              "role": "patient",
+              "iteration": 0,
+              "renderer_frames": 253,
+              "measured_fps": 29.990717158975933,
+              "mean_cpu_ms": 1.2403162055218173,
+              "max_frame_gap_ms": 41.90000000037253,
+              "recorded_at_ms": 1793437359407.747
+            }
+          ],
+          "recognized": [
+            {
+              "text": "Đồng ý",
+              "score": 1.0,
+              "first_seen_turn_status": "streaming",
+              "metrics": {
+                "observed_fps": 24.255319148936174,
+                "maximum_observation_gap_ms": 66.66666666666674,
+                "quality_warning": null,
+                "frame_count": 39,
+                "hand_coverage": 1.0,
+                "inference_ms": 236.17529296875,
+                "queue_ms": 0.0,
+                "last_active_epoch_ms": 1793437361282.2935,
+                "server_result_epoch_ms": 1793437361892.5564,
+                "source_start_ms": 500.0,
+                "source_end_ms": 1966.6666666666667,
+                "model": "SL-GCN / 400 gloss",
+                "profile": "clinic-pc-tasks-lite-parallel-v2",
+                "generation": 30
+              }
+            }
+          ],
+          "turns": [
+            {
+              "raw": "Đồng ý",
+              "text": "Đồng ý",
+              "status": "candidate"
+            }
+          ],
+          "checks": {
+            "exact_order_no_extras": true,
+            "streamed_before_end": true,
+            "single_finished_turn": true,
+            "avatar_painted": true
+          }
+        },
+        {
+          "step": 2,
+          "doctor": "Bạn có đau bụng không?",
+          "projection": [
+            "Bụng",
+            "Đau"
+          ],
+          "avatar_completed": true,
+          "avatar_first_frame_ms": 43.622802734375,
+          "video": {
+            "file": "01_Tiep_don_va_hoi_trieu_chung/02_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "86553ddbd91251fb4ce186bb13c0b5f874048aa02f40282dafce7d75c187d1c6",
+            "frames": 155,
+            "duration_ms": 5167
+          },
+          "expected": [
+            "Đau"
+          ],
+          "render": [
+            {
+              "event": "patient_avatar_render_summary",
+              "playback_id": "fd54875ea3a3",
+              "role": "patient",
+              "iteration": 0,
+              "renderer_frames": 159,
+              "measured_fps": 29.97647415952673,
+              "mean_cpu_ms": 1.2037735848494295,
+              "max_frame_gap_ms": 41.80000000074506,
+              "recorded_at_ms": 1793437370109.6343
+            }
+          ],
+          "recognized": [
+            {
+              "text": "Đau",
+              "score": 1.0,
+              "first_seen_turn_status": "streaming",
+              "metrics": {
+                "observed_fps": 28.333333333333332,
+                "maximum_observation_gap_ms": 66.66666666666669,
+                "quality_warning": null,
+                "frame_count": 52,
+                "hand_coverage": 1.0,
+                "inference_ms": 214.0107421875,
+                "queue_ms": 0.0,
+                "last_active_epoch_ms": 1793437372220.256,
+                "server_result_epoch_ms": 1793437372819.257,
+                "source_start_ms": 533.3333333333334,
+                "source_end_ms": 2233.3333333333335,
+                "model": "SL-GCN / 400 gloss",
+                "profile": "clinic-pc-tasks-lite-parallel-v2",
+                "generation": 31
+              }
+            }
+          ],
+          "turns": [
+            {
+              "raw": "Đau",
+              "text": "Đau",
+              "status": "candidate"
+            }
+          ],
+          "checks": {
+            "exact_order_no_extras": true,
+            "streamed_before_end": true,
+            "single_finished_turn": true,
+            "avatar_painted": true
+          }
+        },
+        {
+          "step": 3,
+          "doctor": "Bạn có cảm thấy mệt không?",
+          "projection": [
+            "Cảm thấy",
+            "Mệt"
+          ],
+          "avatar_completed": true,
+          "avatar_first_frame_ms": 39.805908203125,
+          "video": {
+            "file": "01_Tiep_don_va_hoi_trieu_chung/03_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "32c9f9b231f4ac93829aa2e24807571a5fb75a8bdeea47a7d98a3d363638d151",
+            "frames": 155,
+            "duration_ms": 5167
+          },
+          "expected": [
+            "Mệt"
+          ],
+          "render": [
+            {
+              "event": "patient_avatar_render_summary",
+              "playback_id": "6a4d5d1f32eb",
+              "role": "patient",
+              "iteration": 0,
+              "renderer_frames": 175,
+              "measured_fps": 29.971062422490554,
+              "mean_cpu_ms": 1.223428571320006,
+              "max_frame_gap_ms": 41.80000000074506,
+              "recorded_at_ms": 1793437381623.193
+            }
+          ],
+          "recognized": [
+            {
+              "text": "Mệt",
+              "score": 1.0,
+              "first_seen_turn_status": "streaming",
+              "metrics": {
+                "observed_fps": 28.92857142857143,
+                "maximum_observation_gap_ms": 66.66666666666669,
+                "quality_warning": null,
+                "frame_count": 55,
+                "hand_coverage": 1.0,
+                "inference_ms": 219.270751953125,
+                "queue_ms": 0.0,
+                "last_active_epoch_ms": 1793437383804.5364,
+                "server_result_epoch_ms": 1793437384431.0283,
+                "source_start_ms": 533.3333333333334,
+                "source_end_ms": 2300.0,
+                "model": "SL-GCN / 400 gloss",
+                "profile": "clinic-pc-tasks-lite-parallel-v2",
+                "generation": 32
+              }
+            }
+          ],
+          "turns": [
+            {
+              "raw": "Mệt",
+              "text": "Mệt",
+              "status": "candidate"
+            }
+          ],
+          "checks": {
+            "exact_order_no_extras": true,
+            "streamed_before_end": true,
+            "single_finished_turn": true,
+            "avatar_painted": true
+          }
+        },
+        {
+          "step": 4,
+          "doctor": "Bác sĩ đo nhiệt độ.",
+          "projection": [
+            "Bác sĩ",
+            "Nhiệt độ",
+            "Đo"
+          ],
+          "avatar_completed": true,
+          "avatar_first_frame_ms": 47.226318359375,
+          "video": {
+            "file": "01_Tiep_don_va_hoi_trieu_chung/04_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "a63093e3f860f290786dab942244d64c3ad1c2e12640c4830507fab402ca1bc6",
+            "frames": 145,
+            "duration_ms": 4833
+          },
+          "expected": [
+            "Đồng ý"
+          ],
+          "render": [
+            {
+              "event": "patient_avatar_render_summary",
+              "playback_id": "2cacd3cceda5",
+              "role": "patient",
+              "iteration": 0,
+              "renderer_frames": 282,
+              "measured_fps": 29.995730145175063,
+              "mean_cpu_ms": 1.2450354609849816,
+              "max_frame_gap_ms": 41.80000000074506,
+              "recorded_at_ms": 1793437396832.2498
+            }
+          ],
+          "recognized": [
+            {
+              "text": "Đồng ý",
+              "score": 1.0,
+              "first_seen_turn_status": "streaming",
+              "metrics": {
+                "observed_fps": 27.446808510638302,
+                "maximum_observation_gap_ms": 66.66666666666674,
+                "quality_warning": null,
+                "frame_count": 44,
+                "hand_coverage": 1.0,
+                "inference_ms": 218.300537109375,
+                "queue_ms": 0.0,
+                "last_active_epoch_ms": 1793437398695.0334,
+                "server_result_epoch_ms": 1793437399300.0105,
+                "source_start_ms": 500.0,
+                "source_end_ms": 1966.6666666666667,
+                "model": "SL-GCN / 400 gloss",
+                "profile": "clinic-pc-tasks-lite-parallel-v2",
+                "generation": 33
+              }
+            }
+          ],
+          "turns": [
+            {
+              "raw": "Đồng ý",
+              "text": "Đồng ý",
+              "status": "candidate"
+            }
+          ],
+          "checks": {
+            "exact_order_no_extras": true,
+            "streamed_before_end": true,
+            "single_finished_turn": true,
+            "avatar_painted": true
+          }
+        },
+        {
+          "step": 5,
+          "doctor": "Ngồi nghỉ ngơi.",
+          "projection": [
+            "Ngồi",
+            "Nghỉ ngơi"
+          ],
+          "avatar_completed": true,
+          "avatar_first_frame_ms": 39.92724609375,
+          "video": {
+            "file": "01_Tiep_don_va_hoi_trieu_chung/05_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "a280dc434e861b9dccbc2e0fab78cbbb05d5a5c418bcea1ca8364c392d645196",
+            "frames": 157,
+            "duration_ms": 5233
+          },
+          "expected": [
+            "Cảm ơn"
+          ],
+          "render": [
+            {
+              "event": "patient_avatar_render_summary",
+              "playback_id": "f71d8e68024e",
+              "role": "patient",
+              "iteration": 0,
+              "renderer_frames": 167,
+              "measured_fps": 29.992592191089372,
+              "mean_cpu_ms": 1.2089820360642172,
+              "max_frame_gap_ms": 41.80000000074506,
+              "recorded_at_ms": 1793437407803.4214
+            }
+          ],
+          "recognized": [
+            {
+              "text": "Cảm ơn",
+              "score": 1.0,
+              "first_seen_turn_status": "streaming",
+              "metrics": {
+                "observed_fps": 26.94915254237288,
+                "maximum_observation_gap_ms": 66.66666666666674,
+                "quality_warning": null,
+                "frame_count": 54,
+                "hand_coverage": 0.9074074074074074,
+                "inference_ms": 206.272705078125,
+                "queue_ms": 0.0,
+                "last_active_epoch_ms": 1793437410140.941,
+                "server_result_epoch_ms": 1793437410739.6208,
+                "source_start_ms": 500.0,
+                "source_end_ms": 2366.6666666666665,
+                "model": "SL-GCN / 400 gloss",
+                "profile": "clinic-pc-tasks-lite-parallel-v2",
+                "generation": 34
+              }
+            }
+          ],
+          "turns": [
+            {
+              "raw": "Cảm ơn",
+              "text": "Cảm ơn",
+              "status": "candidate"
+            }
+          ],
+          "checks": {
+            "exact_order_no_extras": true,
+            "streamed_before_end": true,
+            "single_finished_turn": true,
+            "avatar_painted": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "02_Nhu_cau_va_ho_tro",
+      "steps": [
+        {
+          "step": 1,
+          "doctor": "Bạn có cần giúp đỡ không?",
+          "projection": [
+            "Cần",
+            "Giúp đỡ"
+          ],
+          "avatar_completed": true,
+          "avatar_first_frame_ms": 48.65478515625,
+          "video": {
+            "file": "02_Nhu_cau_va_ho_tro/01_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "fc0b36e10491e903ed484f57452113a4bb34e32e0ca334da2a664c4fe2b3d5a1",
+            "frames": 255,
+            "duration_ms": 8500
+          },
+          "expected": [
+            "Cần",
+            "Giúp đỡ"
+          ],
+          "render": [
+            {
+              "event": "patient_avatar_render_summary",
+              "playback_id": "a177acc137fd",
+              "role": "patient",
+              "iteration": 0,
+              "renderer_frames": 177,
+              "measured_fps": 29.99216113969641,
+              "mean_cpu_ms": 1.2203389830824176,
+              "max_frame_gap_ms": 41.80000000074506,
+              "recorded_at_ms": 1793437419595.7297
+            }
+          ],
+          "recognized": [
+            {
+              "text": "Cần",
+              "score": 0.9999797344207764,
+              "first_seen_turn_status": "streaming",
+              "metrics": {
+                "observed_fps": 27.5,
+                "maximum_observation_gap_ms": 66.66666666666674,
+                "quality_warning": null,
+                "frame_count": 56,
+                "hand_coverage": 1.0,
+                "inference_ms": 248.22509765625,
+                "queue_ms": 0.0,
+                "last_active_epoch_ms": 1793437421922.1284,
+                "server_result_epoch_ms": 1793437422574.1746,
+                "source_start_ms": 500.0,
+                "source_end_ms": 2466.6666666666665,
+                "model": "SL-GCN / 400 gloss",
+                "profile": "clinic-pc-tasks-lite-parallel-v2",
+                "generation": 36
+              }
+            },
+            {
+              "text": "Giúp đỡ",
+              "score": 1.0,
+              "first_seen_turn_status": "streaming",
+              "metrics": {
+                "observed_fps": 25.555555555555557,
+                "maximum_observation_gap_ms": 66.66666666666697,
+                "quality_warning": null,
+                "frame_count": 47,
+                "hand_coverage": 0.9787234042553191,
+                "inference_ms": 224.641845703125,
+                "queue_ms": 0.0,
+                "last_active_epoch_ms": 1793437424989.6262,
+                "server_result_epoch_ms": 1793437425608.238,
+                "source_start_ms": 3866.6666666666665,
+                "source_end_ms": 5533.333333333333,
+                "model": "SL-GCN / 400 gloss",
+                "profile": "clinic-pc-tasks-lite-parallel-v2",
+                "generation": 36
+              }
+            }
+          ],
+          "turns": [
+            {
+              "raw": "Cần · Giúp đỡ",
+              "text": "Cần giúp đỡ.",
+              "status": "candidate"
+            }
+          ],
+          "checks": {
+            "exact_order_no_extras": true,
+            "streamed_before_end": true,
+            "single_finished_turn": true,
+            "avatar_painted": true
+          }
+        },
+        {
+          "step": 2,
+          "doctor": "Bạn muốn uống nước không?",
+          "projection": [
+            "Muốn",
+            "Nước",
+            "Uống"
+          ],
+          "avatar_completed": true,
+          "avatar_first_frame_ms": 42.53759765625,
+          "video": {
+            "file": "02_Nhu_cau_va_ho_tro/02_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "910dfb6b641d89b0f696a81b5b1f93c905fa42771eb27dc5f5a39bf770573b1b",
+            "frames": 274,
+            "duration_ms": 9133
+          },
+          "expected": [
+            "Cần",
+            "Nước"
+          ],
+          "render": [
+            {
+              "event": "patient_avatar_render_summary",
+              "playback_id": "8a1e5e349225",
+              "role": "patient",
+              "iteration": 0,
+              "renderer_frames": 208,
+              "measured_fps": 29.98783102508803,
+              "mean_cpu_ms": 1.2370192307549028,
+              "max_frame_gap_ms": 41.90000000037253,
+              "recorded_at_ms": 1793437435609.9248
+            }
+          ],
+          "recognized": [
+            {
+              "text": "Cần",
+              "score": 1.0,
+              "first_seen_turn_status": "streaming",
+              "metrics": {
+                "observed_fps": 28.0,
+                "maximum_observation_gap_ms": 66.66666666666674,
+                "quality_warning": null,
+                "frame_count": 57,
+                "hand_coverage": 1.0,
+                "inference_ms": 218.01611328125,
+                "queue_ms": 0.0,
+                "last_active_epoch_ms": 1793437437925.0488,
+                "server_result_epoch_ms": 1793437438534.4312,
+                "source_start_ms": 500.0,
+                "source_end_ms": 2433.3333333333335,
+                "model": "SL-GCN / 400 gloss",
+                "profile": "clinic-pc-tasks-lite-parallel-v2",
+                "generation": 37
+              }
+            },
+            {
+              "text": "Nước",
+              "score": 1.0,
+              "first_seen_turn_status": "streaming",
+              "metrics": {
+                "observed_fps": 27.972972972972975,
+                "maximum_observation_gap_ms": 66.66666666666697,
+                "quality_warning": null,
+                "frame_count": 70,
+                "hand_coverage": 1.0,
+                "inference_ms": 254.056640625,
+                "queue_ms": 0.0,
+                "last_active_epoch_ms": 1793437441793.9756,
+                "server_result_epoch_ms": 1793437442423.645,
+                "source_start_ms": 3900.0,
+                "source_end_ms": 6300.0,
+                "model": "SL-GCN / 400 gloss",
+                "profile": "clinic-pc-tasks-lite-parallel-v2",
+                "generation": 37
+              }
+            }
+          ],
+          "turns": [
+            {
+              "raw": "Cần · Nước",
+              "text": "Cần · Nước",
+              "status": "candidate"
+            }
+          ],
+          "checks": {
+            "exact_order_no_extras": true,
+            "streamed_before_end": true,
+            "single_finished_turn": true,
+            "avatar_painted": true
+          }
+        },
+        {
+          "step": 3,
+          "doctor": "Uống nước nhé.",
+          "projection": [
+            "Nước",
+            "Uống"
+          ],
+          "avatar_completed": true,
+          "avatar_first_frame_ms": 43.889404296875,
+          "video": {
+            "file": "02_Nhu_cau_va_ho_tro/03_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "a63093e3f860f290786dab942244d64c3ad1c2e12640c4830507fab402ca1bc6",
+            "frames": 145,
+            "duration_ms": 4833
+          },
+          "expected": [
+            "Đồng ý"
+          ],
+          "render": [
+            {
+              "event": "patient_avatar_render_summary",
+              "playback_id": "8f810b8710c7",
+              "role": "patient",
+              "iteration": 0,
+              "renderer_frames": 130,
+              "measured_fps": 30.009770622996133,
+              "mean_cpu_ms": 1.2607692307864244,
+              "max_frame_gap_ms": 41.59999999962747,
+              "recorded_at_ms": 1793437449692.3286
+            }
+          ],
+          "recognized": [
+            {
+              "text": "Đồng ý",
+              "score": 1.0,
+              "first_seen_turn_status": "streaming",
+              "metrics": {
+                "observed_fps": 26.808510638297875,
+                "maximum_observation_gap_ms": 66.66666666666674,
+                "quality_warning": null,
+                "frame_count": 43,
+                "hand_coverage": 1.0,
+                "inference_ms": 284.901123046875,
+                "queue_ms": 0.0,
+                "last_active_epoch_ms": 1793437451602.2412,
+                "server_result_epoch_ms": 1793437452321.928,
+                "source_start_ms": 466.6666666666667,
+                "source_end_ms": 1966.6666666666667,
+                "model": "SL-GCN / 400 gloss",
+                "profile": "clinic-pc-tasks-lite-parallel-v2",
+                "generation": 38
+              }
+            }
+          ],
+          "turns": [
+            {
+              "raw": "Đồng ý",
+              "text": "Đồng ý",
+              "status": "candidate"
+            }
+          ],
+          "checks": {
+            "exact_order_no_extras": true,
+            "streamed_before_end": true,
+            "single_finished_turn": true,
+            "avatar_painted": true
+          }
+        },
+        {
+          "step": 4,
+          "doctor": "Bạn muốn nghỉ ngơi không?",
+          "projection": [
+            "Muốn",
+            "Nghỉ ngơi"
+          ],
+          "avatar_completed": true,
+          "avatar_first_frame_ms": 43.19384765625,
+          "video": {
+            "file": "02_Nhu_cau_va_ho_tro/04_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "abd5f99def1655252528feb40003a262fcb3eb7364f0bb4bcd97f5d0348d58e3",
+            "frames": 344,
+            "duration_ms": 11467
+          },
+          "expected": [
+            "Mệt",
+            "Cần",
+            "Nghỉ ngơi"
+          ],
+          "render": [
+            {
+              "event": "patient_avatar_render_summary",
+              "playback_id": "cad9735a9abd",
+              "role": "patient",
+              "iteration": 0,
+              "renderer_frames": 171,
+              "measured_fps": 29.999823530453764,
+              "mean_cpu_ms": 1.2555555556383398,
+              "max_frame_gap_ms": 41.90000000037253,
+              "recorded_at_ms": 1793437460769.45
+            }
+          ],
+          "recognized": [
+            {
+              "text": "Mệt",
+              "score": 1.0,
+              "first_seen_turn_status": "streaming",
+              "metrics": {
+                "observed_fps": 28.90909090909091,
+                "maximum_observation_gap_ms": 66.66666666666674,
+                "quality_warning": null,
+                "frame_count": 54,
+                "hand_coverage": 1.0,
+                "inference_ms": 208.65234375,
+                "queue_ms": 0.0,
+                "last_active_epoch_ms": 1793437462972.616,
+                "server_result_epoch_ms": 1793437463603.124,
+                "source_start_ms": 533.3333333333334,
+                "source_end_ms": 2300.0,
+                "model": "SL-GCN / 400 gloss",
+                "profile": "clinic-pc-tasks-lite-parallel-v2",
+                "generation": 39
+              }
+            },
+            {
+              "text": "Cần",
+              "score": 1.0,
+              "first_seen_turn_status": "streaming",
+              "metrics": {
+                "observed_fps": 27.499999999999993,
+                "maximum_observation_gap_ms": 66.66666666666697,
+                "quality_warning": null,
+                "frame_count": 56,
+                "hand_coverage": 0.9642857142857143,
+                "inference_ms": 212.449462890625,
+                "queue_ms": 0.0,
+                "last_active_epoch_ms": 1793437466305.3923,
+                "server_result_epoch_ms": 1793437466900.594,
+                "source_start_ms": 3666.6666666666665,
+                "source_end_ms": 5600.0,
+                "model": "SL-GCN / 400 gloss",
+                "profile": "clinic-pc-tasks-lite-parallel-v2",
+                "generation": 39
+              }
+            },
+            {
+              "text": "Nghỉ ngơi",
+              "score": 1.0,
+              "first_seen_turn_status": "streaming",
+              "metrics": {
+                "observed_fps": 27.115384615384606,
+                "maximum_observation_gap_ms": 66.66666666666697,
+                "quality_warning": null,
+                "frame_count": 48,
+                "hand_coverage": 0.9791666666666666,
+                "inference_ms": 204.05224609375,
+                "queue_ms": 0.0,
+                "last_active_epoch_ms": 1793437469239.0967,
+                "server_result_epoch_ms": 1793437469852.199,
+                "source_start_ms": 6933.333333333333,
+                "source_end_ms": 8566.666666666666,
+                "model": "SL-GCN / 400 gloss",
+                "profile": "clinic-pc-tasks-lite-parallel-v2",
+                "generation": 39
+              }
+            }
+          ],
+          "turns": [
+            {
+              "raw": "Mệt · Cần · Nghỉ ngơi",
+              "text": "Mệt · Cần · Nghỉ ngơi",
+              "status": "candidate"
+            }
+          ],
+          "checks": {
+            "exact_order_no_extras": true,
+            "streamed_before_end": true,
+            "single_finished_turn": true,
+            "avatar_painted": true
+          }
+        },
+        {
+          "step": 5,
+          "doctor": "Cảm ơn.",
+          "projection": [
+            "Cảm ơn"
+          ],
+          "avatar_completed": true,
+          "avatar_first_frame_ms": 44.311279296875,
+          "video": {
+            "file": "02_Nhu_cau_va_ho_tro/05_Tra_loi/CAU_TRA_LOI.mp4",
+            "sha256": "a280dc434e861b9dccbc2e0fab78cbbb05d5a5c418bcea1ca8364c392d645196",
+            "frames": 157,
+            "duration_ms": 5233
+          },
+          "expected": [
+            "Cảm ơn"
+          ],
+          "render": [
+            {
+              "event": "patient_avatar_render_summary",
+              "playback_id": "b75035f49c53",
+              "role": "patient",
+              "iteration": 0,
+              "renderer_frames": 97,
+              "measured_fps": 29.9878174491543,
+              "mean_cpu_ms": 1.2278350516577665,
+              "max_frame_gap_ms": 39,
+              "recorded_at_ms": 1793437476024.5789
+            }
+          ],
+          "recognized": [
+            {
+              "text": "Cảm ơn",
+              "score": 1.0,
+              "first_seen_turn_status": "streaming",
+              "metrics": {
+                "observed_fps": 28.47457627118644,
+                "maximum_observation_gap_ms": 66.66666666666663,
+                "quality_warning": null,
+                "frame_count": 57,
+                "hand_coverage": 0.9298245614035088,
+                "inference_ms": 204.316650390625,
+                "queue_ms": 0.0,
+                "last_active_epoch_ms": 1793437478372.1777,
+                "server_result_epoch_ms": 1793437478954.5356,
+                "source_start_ms": 500.0,
+                "source_end_ms": 2366.6666666666665,
+                "model": "SL-GCN / 400 gloss",
+                "profile": "clinic-pc-tasks-lite-parallel-v2",
+                "generation": 40
+              }
+            }
+          ],
+          "turns": [
+            {
+              "raw": "Cảm ơn",
+              "text": "Cảm ơn",
+              "status": "candidate"
+            }
+          ],
+          "checks": {
+            "exact_order_no_extras": true,
+            "streamed_before_end": true,
+            "single_finished_turn": true,
+            "avatar_painted": true
+          }
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "all_ten_turns": true,
+    "unknown_meaning_blocked": true
+  },
+  "inventory": {
+    "avatar_words": 65,
+    "phrases": 58,
+    "recognizer_classes": 400,
+    "model_sha256": "582f3d8712f73f78c5fe7b7521609ea54a9257e5a3a877aa8c9346b8e28ebb21"
+  },
+  "blocked": [
+    {
+      "text": "Y tá không đo nhiệt độ.",
+      "status": 422,
+      "no_message_added": true,
+      "no_playback_changed": true
+    },
+    {
+      "text": "Uống thuốc hai viên.",
+      "status": 422,
+      "no_message_added": true,
+      "no_playback_changed": true
+    },
+    {
+      "text": "Bạn cảm thấy thế nào?",
+      "status": 422,
+      "no_message_added": true,
+      "no_playback_changed": true
+    },
+    {
+      "text": "Y tá ơi, hôm nay kiểm tra thân nhiệt giúp em nhé",
+      "status": 422,
+      "no_message_added": true,
+      "no_playback_changed": true
+    }
+  ]
+}

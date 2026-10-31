@@ -1,0 +1,152 @@
+{
+  "checks": {
+    "pause_holds_clock": true,
+    "speed_retains_pause": true,
+    "all_clauses_completed": true,
+    "replay_new_iteration": true,
+    "next_message_queued": true,
+    "stop_cancels_queue": true
+  },
+  "messages": [
+    {
+      "id": "7f52c7dc3da3",
+      "role": "doctor",
+      "text": "Bác sĩ khám bệnh. Bạn có đau bụng không? Uống nước.",
+      "created_at_ms": 1793431750550.6072,
+      "mode": "sign",
+      "glosses": [
+        {
+          "id": "11",
+          "label": "Bác sĩ",
+          "start": 0,
+          "tokens": 0
+        },
+        {
+          "id": "145",
+          "label": "Khám bệnh",
+          "start": 0,
+          "tokens": 0
+        },
+        {
+          "id": "qipedc-W00362",
+          "label": "Bụng",
+          "start": 4,
+          "tokens": 0
+        },
+        {
+          "id": "379",
+          "label": "Đau",
+          "start": 4,
+          "tokens": 0
+        },
+        {
+          "id": "243",
+          "label": "Nước",
+          "start": 9,
+          "tokens": 0
+        },
+        {
+          "id": "348",
+          "label": "Uống",
+          "start": 9,
+          "tokens": 0
+        }
+      ],
+      "status": "stopped",
+      "phrase_id": "drink-water",
+      "nonmanual": "neutral",
+      "act": "sentences",
+      "clauses": [
+        {
+          "text": "Bác sĩ khám bệnh.",
+          "gloss_start": 0,
+          "gloss_end": 2,
+          "supported": true,
+          "phrase_id": "doctor-exam",
+          "nonmanual": "neutral",
+          "act": "statement",
+          "explanation": "Chủ thể bác sĩ và hành động khám bệnh."
+        },
+        {
+          "text": "Bạn có đau bụng không?",
+          "gloss_start": 2,
+          "gloss_end": 4,
+          "supported": true,
+          "phrase_id": "ask-abdomen",
+          "nonmanual": "question",
+          "act": "yes_no_question",
+          "explanation": "Vị trí bụng → đau, đi cùng nét mặt hỏi có/không; giữ câu hỏi bằng chữ."
+        },
+        {
+          "text": "Uống nước.",
+          "gloss_start": 4,
+          "gloss_end": 6,
+          "supported": true,
+          "phrase_id": "drink-water",
+          "nonmanual": "neutral",
+          "act": "request",
+          "explanation": "Đối tượng nước trước hành động uống; một yêu cầu ngắn."
+        }
+      ],
+      "presented_at_ms": 1793431772512.0032
+    },
+    {
+      "id": "79459ebed9dd",
+      "role": "doctor",
+      "text": "Cảm ơn.",
+      "created_at_ms": 1793431772634.5488,
+      "mode": "sign",
+      "glosses": [
+        {
+          "id": "86",
+          "label": "Cảm ơn",
+          "start": 0,
+          "tokens": 2
+        }
+      ],
+      "status": "cancelled",
+      "phrase_id": null,
+      "nonmanual": "neutral",
+      "act": "word",
+      "clauses": [
+        {
+          "text": "Cảm ơn.",
+          "gloss_start": 0,
+          "gloss_end": 1,
+          "supported": true,
+          "phrase_id": null,
+          "nonmanual": "neutral",
+          "act": "word",
+          "explanation": "Một ký hiệu riêng lẻ."
+        }
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "event": "patient_avatar_first_frame",
+      "playback_id": "b36a80ab7000",
+      "painted_at_ms": 1793431750631,
+      "role": "patient",
+      "recorded_at_ms": 1793431750638.1638
+    },
+    {
+      "event": "patient_avatar_render_summary",
+      "playback_id": "b36a80ab7000",
+      "role": "patient",
+      "iteration": 0,
+      "renderer_frames": 1017,
+      "measured_fps": 47.77242271070883,
+      "mean_cpu_ms": 1.9479842674913894,
+      "max_frame_gap_ms": 28.59999999962747,
+      "recorded_at_ms": 1793431772364.9172
+    },
+    {
+      "event": "patient_avatar_first_frame",
+      "playback_id": "b36a80ab7000",
+      "painted_at_ms": 1793431772533,
+      "role": "patient",
+      "recorded_at_ms": 1793431772542.0046
+    }
+  ]
+}

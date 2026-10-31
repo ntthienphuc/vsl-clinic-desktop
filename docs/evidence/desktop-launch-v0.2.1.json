@@ -1,0 +1,59 @@
+{
+  "schema": "clinic-desktop-launch-check-v1",
+  "checked_at": "2026-10-22T01:54:39.9009015Z",
+  "version": "0.2.1",
+  "launcher": "release/desktop-v0.2.1/win-unpacked/VSL Clinic.exe",
+  "main_pid": 7624,
+  "engine_pid": 10544,
+  "engine_port": 56221,
+  "renderer_count": 2,
+  "health": {
+    "service": "vsl-clinic",
+    "status": "ok",
+    "version": "0.2.1",
+    "model_loaded": true
+  },
+  "processes": [
+    {
+      "ProcessId": 7624,
+      "ParentProcessId": 22712,
+      "Name": "VSL Clinic.exe",
+      "ExecutablePath": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\vsl-clinic-desktop\\release\\desktop-v0.2.1\\win-unpacked\\VSL Clinic.exe"
+    },
+    {
+      "ProcessId": 20252,
+      "ParentProcessId": 7624,
+      "Name": "VSL Clinic.exe",
+      "ExecutablePath": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\vsl-clinic-desktop\\release\\desktop-v0.2.1\\win-unpacked\\VSL Clinic.exe"
+    },
+    {
+      "ProcessId": 18712,
+      "ParentProcessId": 7624,
+      "Name": "VSL Clinic.exe",
+      "ExecutablePath": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\vsl-clinic-desktop\\release\\desktop-v0.2.1\\win-unpacked\\VSL Clinic.exe"
+    },
+    {
+      "ProcessId": 20088,
+      "ParentProcessId": 7624,
+      "Name": "VSL Clinic.exe",
+      "ExecutablePath": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\vsl-clinic-desktop\\release\\desktop-v0.2.1\\win-unpacked\\VSL Clinic.exe"
+    },
+    {
+      "ProcessId": 10544,
+      "ParentProcessId": 7624,
+      "Name": "ClinicEngine.exe",
+      "ExecutablePath": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\vsl-clinic-desktop\\release\\desktop-v0.2.1\\win-unpacked\\resources\\engine\\ClinicEngine.exe"
+    },
+    {
+      "ProcessId": 11472,
+      "ParentProcessId": 7624,
+      "Name": "VSL Clinic.exe",
+      "ExecutablePath": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\vsl-clinic-desktop\\release\\desktop-v0.2.1\\win-unpacked\\VSL Clinic.exe"
+    }
+  ],
+  "log_lines": [
+    "2026-10-22T01:53:43.174Z ready at http://127.0.0.1:56221; model=400 words"
+  ],
+  "renderer_or_engine_errors": [],
+  "scope": "Packaged launcher startup, child ownership, two renderer processes and health. UI interaction verified separately in Chrome against the packaged engine. Native UI control and two physical monitors not verified."
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "clinic-rehearsal-v1",
+  "scope": "Two fixed demo conversations; patient responses use only the unchanged 400 classes. Video rehearsal is not an accuracy guarantee for a new signer.",
+  "scenarios": [
+    {
+      "id": "01_Tiep_don_va_hoi_trieu_chung",
+      "title": "Tiếp đón và hỏi triệu chứng",
+      "steps": [
+        {"doctor": "Bây giờ bác sĩ khám bệnh.", "patient_ids": [395], "meaning": "Đồng ý."},
+        {"doctor": "Bạn có đau bụng không?", "patient_ids": [379], "meaning": "Đau."},
+        {"doctor": "Bạn có cảm thấy mệt không?", "patient_ids": [204], "meaning": "Mệt."},
+        {"doctor": "Bác sĩ đo nhiệt độ.", "patient_ids": [395], "meaning": "Đồng ý."},
+        {"doctor": "Ngồi nghỉ ngơi.", "patient_ids": [86], "meaning": "Cảm ơn."}
+      ]
+    },
+    {
+      "id": "02_Nhu_cau_va_ho_tro",
+      "title": "Nêu nhu cầu và hỗ trợ",
+      "steps": [
+        {"doctor": "Bạn có cần giúp đỡ không?", "patient_ids": [87, 116], "meaning": "Cần giúp đỡ."},
+        {"doctor": "Bạn muốn uống nước không?", "patient_ids": [87, 243], "meaning": "Cần nước."},
+        {"doctor": "Uống nước nhé.", "patient_ids": [395], "meaning": "Đồng ý."},
+        {"doctor": "Bạn muốn nghỉ ngơi không?", "patient_ids": [204, 87, 210], "meaning": "Mệt. Cần nghỉ ngơi."},
+        {"doctor": "Cảm ơn.", "patient_ids": [86], "meaning": "Cảm ơn."}
+      ]
+    }
+  ]
+}

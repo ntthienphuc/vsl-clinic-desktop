@@ -1,0 +1,51 @@
+{
+  "health": {
+    "service": "vsl-clinic",
+    "status": "ok",
+    "version": "0.3.0",
+    "model_loaded": true
+  },
+  "launcher_pid": 19036,
+  "package": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\vsl-clinic-desktop\\release\\desktop-v0.3.0\\win-unpacked",
+  "renderers": 2,
+  "processes": [
+    {
+      "ProcessId": 19036,
+      "ParentProcessId": 12012,
+      "Name": "VSL Clinic.exe",
+      "ExecutablePath": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\vsl-clinic-desktop\\release\\desktop-v0.3.0\\win-unpacked\\VSL Clinic.exe"
+    },
+    {
+      "ProcessId": 1508,
+      "ParentProcessId": 19036,
+      "Name": "VSL Clinic.exe",
+      "ExecutablePath": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\vsl-clinic-desktop\\release\\desktop-v0.3.0\\win-unpacked\\VSL Clinic.exe"
+    },
+    {
+      "ProcessId": 18032,
+      "ParentProcessId": 19036,
+      "Name": "VSL Clinic.exe",
+      "ExecutablePath": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\vsl-clinic-desktop\\release\\desktop-v0.3.0\\win-unpacked\\VSL Clinic.exe"
+    },
+    {
+      "ProcessId": 22916,
+      "ParentProcessId": 19036,
+      "Name": "VSL Clinic.exe",
+      "ExecutablePath": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\vsl-clinic-desktop\\release\\desktop-v0.3.0\\win-unpacked\\VSL Clinic.exe"
+    },
+    {
+      "ProcessId": 21180,
+      "ParentProcessId": 19036,
+      "Name": "ClinicEngine.exe",
+      "ExecutablePath": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\vsl-clinic-desktop\\release\\desktop-v0.3.0\\win-unpacked\\resources\\engine\\ClinicEngine.exe"
+    },
+    {
+      "ProcessId": 13324,
+      "ParentProcessId": 19036,
+      "Name": "VSL Clinic.exe",
+      "ExecutablePath": "E:\\Project\\VSL Projects\\ver 2 - 2026-05-28 - VSL Translator\\vsl-clinic-desktop\\release\\desktop-v0.3.0\\win-unpacked\\VSL Clinic.exe"
+    }
+  ],
+  "log": "2026-10-22T03:55:24.924Z ready at http://127.0.0.1:56185; model=400 words\n",
+  "visual_scope": "Two UIs visually reviewed through Chrome on the packaged HTTP frontend; native Electron rendering not directly inspected."
+}

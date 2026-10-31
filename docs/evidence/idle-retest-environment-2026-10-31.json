@@ -1,0 +1,9 @@
+{
+  "captured_at": "2026-10-31T15:59:50.5430006+07:00",
+  "experiment": "Same 0.3.4 executable, no code/configuration change; user paused external Lip processing",
+  "processor": {
+    "PercentProcessorUtility": 18,
+    "PercentProcessorPerformance": 168
+  },
+  "lip_processing": null
+}

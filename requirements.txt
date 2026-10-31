@@ -1,0 +1,14 @@
+fastapi==0.115.12
+uvicorn[standard]==0.39.0
+onnxruntime==1.19.2
+mediapipe==0.10.21
+opencv-contrib-python==4.10.0.84
+numpy==1.26.4
+scipy==1.15.3
+python-multipart==0.0.20
+httpx==0.28.1
+pytest==8.4.2
+pyinstaller==6.16.0
+faster-whisper==1.2.1
+ctranslate2==4.6.2
+webrtcvad-wheels==2.0.14.post1

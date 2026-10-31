@@ -1,0 +1,15 @@
+{
+  "scope": "Browser WEBGL_lose_context test on local production frontend",
+  "paused_on_loss": true,
+  "playback_id": "d1ca929e2ebc",
+  "elapsed_at_loss": 6633.222900390625,
+  "glosses": [
+    "Bác sĩ",
+    "Khám bệnh",
+    "Bụng",
+    "Đau",
+    "Nước",
+    "Uống"
+  ],
+  "restored_and_completed": true
+}

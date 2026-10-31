@@ -1,0 +1,134 @@
+{
+  "source": "QIPEDC, Ministry of Education and Training, Vietnam",
+  "dictionary_url": "https://qipedc.moet.gov.vn/dictionary",
+  "source_kind": "single reference per word; no consensus claim",
+  "scope": "Downloaded on user request for local demo. Original video redistribution is not part of this package.",
+  "entries": [
+    {
+      "id": "qipedc-W00362",
+      "label": "Bụng",
+      "source_id": "W00362",
+      "url": "https://qipedc.moet.gov.vn/videos/W00362.mp4",
+      "description": "Bộ phận cơ thể người hoặc động vật, chứa ruột, dạ dày, v.v.",
+      "sha256": "5d9465cee3093506dea091bbdfd94a516f9da4088bf857281f81e0874672dd30",
+      "downloaded_at": null,
+      "source_window_ms": [
+        1068.1333333333334,
+        3269.5333333333333
+      ],
+      "window_method": "first-to-last observed hand plus 400ms; original video retained for review"
+    },
+    {
+      "id": "qipedc-W03090",
+      "label": "Tay",
+      "source_id": "W03090",
+      "url": "https://qipedc.moet.gov.vn/videos/W03090.mp4",
+      "description": "Bộ phận của cơ thể người, từ vai đến các ngón, dùng để cầm, nắm.",
+      "sha256": "58f125e66c4f7f8cfda72a31941ab2ae8562b4270cbba6ab69fbf1cd04d066df",
+      "downloaded_at": "2026-10-22T00:32:30.730850+00:00",
+      "source_window_ms": [
+        0,
+        3603.6
+      ],
+      "window_method": "first-to-last observed hand plus 400ms; original video retained for review"
+    },
+    {
+      "id": "qipedc-W03008",
+      "label": "Sốt",
+      "source_id": "W03008",
+      "url": "https://qipedc.moet.gov.vn/videos/W03008.mp4",
+      "description": "Tăng nhiệt độ cơ thể lên quá mức bình thường, do bị bệnh.",
+      "sha256": "651300d3744ce4cd1b22fde8214e0d2de64dd37802901d2eb0cf2029be704bde",
+      "downloaded_at": "2026-10-22T00:32:34.371552+00:00",
+      "source_window_ms": [
+        0,
+        4471.133333333333
+      ],
+      "window_method": "first-to-last observed hand plus 400ms; original video retained for review"
+    },
+    {
+      "id": "qipedc-W02400N",
+      "label": "Ngồi",
+      "source_id": "W02400N",
+      "url": "https://qipedc.moet.gov.vn/videos/W02400N.mp4",
+      "description": "Ở tư thế đít đặt trên mặt nền hoặc chân gập lại để đỡ toàn thân.",
+      "sha256": "0cba14709a00cdc5b95463bf55f67bb3094e95408a9838dded07a567ce0b9a27",
+      "downloaded_at": "2026-10-22T00:32:38.370209+00:00",
+      "source_window_ms": [
+        0,
+        2202.2
+      ],
+      "window_method": "first-to-last observed hand plus 400ms; original video retained for review"
+    },
+    {
+      "id": "qipedc-W01227",
+      "label": "Đo",
+      "source_id": "W01227",
+      "url": "https://qipedc.moet.gov.vn/videos/W01227.mp4",
+      "description": "Xác định độ lớn của một đại lượng bằng cách so sánh với một đại lượng cùng loại được chọn làm đơn vị.",
+      "sha256": "ebacbf5bba6efbe291aaab13ee91954e7e3194db56422914fddd103fee287401",
+      "downloaded_at": "2026-10-22T00:32:40.751725+00:00",
+      "source_window_ms": [
+        200.60000000000002,
+        2802.4
+      ],
+      "window_method": "first-to-last observed hand plus 400ms; original video retained for review"
+    },
+    {
+      "id": "qipedc-W01298",
+      "label": "Nhiệt độ",
+      "source_id": "W01298",
+      "url": "https://qipedc.moet.gov.vn/videos/W01298.mp4",
+      "description": "Đại lượng chỉ độ nóng lạnh của một vật.",
+      "sha256": "43b9bfc9d74b1c7adee74dace46dc63f1dc54754d1e5136b132867c470911d8f",
+      "downloaded_at": "2026-10-22T00:32:44.438193+00:00",
+      "source_window_ms": [
+        350.75,
+        3736.6666666666665
+      ],
+      "window_method": "first-to-last observed hand plus 400ms; original video retained for review"
+    },
+    {
+      "id": "qipedc-W00884",
+      "label": "Cơm",
+      "source_id": "W00884",
+      "url": "https://qipedc.moet.gov.vn/videos/W00884.mp4",
+      "description": "Gạo đem nấu chín, ráo nước, dùng làm món chính trong bữa ăn hằng ngày.",
+      "sha256": "d8008eb8f7fd3379327c3db9d04775ee292ecc6ff30435a2622cee3d38ccbaa0",
+      "downloaded_at": "2026-10-22T00:32:47.972038+00:00",
+      "source_window_ms": [
+        0.4000000000000341,
+        2735.6666666666665
+      ],
+      "window_method": "first-to-last observed hand plus 400ms; original video retained for review"
+    },
+    {
+      "id": "qipedc-W03305",
+      "label": "Thở",
+      "source_id": "W03305",
+      "url": "https://qipedc.moet.gov.vn/videos/W03305.mp4",
+      "description": "Hít không khí vào lồng ngực, vào cơ thể rồi đưa trở ra qua mũi, miệng (điều kiện và biểu hiện của sự sống).",
+      "sha256": "2a48d6b982f0fa1859c95b9139cf5611afe0c107e60a451eb4d486c3505c82e9",
+      "downloaded_at": "2026-10-22T00:32:51.160859+00:00",
+      "source_window_ms": [
+        601.0,
+        4737.666666666667
+      ],
+      "window_method": "first-to-last observed hand plus 400ms; original video retained for review"
+    },
+    {
+      "id": "qipedc-W00248",
+      "label": "Bệnh nhân",
+      "source_id": "W00248",
+      "url": "https://qipedc.moet.gov.vn/videos/W00248.mp4",
+      "description": "Người bệnh đang được điều trị, trong quan hệ với cơ sở điều trị và với thầy thuốc.",
+      "sha256": "e2ad005115ecb6c12ebca28a72258036fa325917fd56ed3158479f22ffc23bb5",
+      "downloaded_at": "2026-10-22T00:32:56.058229+00:00",
+      "source_window_ms": [
+        1500,
+        4200
+      ],
+      "window_method": "front-facing take only; side-view repetition excluded after visual review"
+    }
+  ]
+}

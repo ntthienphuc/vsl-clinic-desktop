@@ -1,0 +1,91 @@
+{
+  "schema": "vsl-clinic-ui-smoke-v1",
+  "version": "0.3.3",
+  "tested_at": "2026-10-23T13:08:00+07:00",
+  "scope": "Local source-engine browser DOM and API smoke; no human camera or microphone claim.",
+  "server": {
+    "base_url": "http://127.0.0.1:58889",
+    "healthcheck": {
+      "status": "ok",
+      "version": "0.3.3",
+      "model_loaded": true
+    },
+    "bootstrap": {
+      "model": "SL-GCN",
+      "label_count": 400,
+      "vocabulary_count": 65,
+      "phrase_count": 58
+    },
+    "diagnostics_after_smoke": {
+      "clients": {
+        "doctor": 3,
+        "patient": 3
+      },
+      "capture_source": "demo",
+      "capture_demo_id": "11",
+      "capture_status": "ended",
+      "recognition": "Bác sĩ",
+      "recognition_confidence": 0.7061261534690857,
+      "patient_turn_status": "candidate",
+      "doctor_result_painted": true
+    }
+  },
+  "routes": [
+    {
+      "route": "/doctor?token=<test-token>",
+      "http_status": 200,
+      "dom_verified": [
+        "Bác sĩ · Đã kết nối",
+        "Tự động",
+        "Xác nhận trước khi gửi",
+        "Nội dung gửi người bệnh",
+        "Người bệnh đang nói",
+        "Nội dung trao đổi"
+      ]
+    },
+    {
+      "route": "/patient?token=<test-token>",
+      "http_status": 200,
+      "dom_verified": [
+        "Người bệnh · Đã kết nối",
+        "Avatar 3D thực hiện ký hiệu bằng cánh tay, bàn tay và các ngón tay",
+        "Lời bác sĩ",
+        "Hình ảnh của bạn"
+      ]
+    }
+  ],
+  "doctor_to_patient": {
+    "input": "Y tá ơi, đo nhiệt độ nha",
+    "projection": ["Y tá", "Nhiệt độ", "Đo"],
+    "decision": "auto",
+    "patient_sequence_dom": ["Y tá", "Nhiệt độ", "Đo"],
+    "avatar_first_frame_metric": true,
+    "conversation_history_visible": true
+  },
+  "long_sentence_review_dom": {
+    "input": "Y tá ơi, hôm nay kiểm tra thân nhiệt giúp em nhé",
+    "message": "Đã nhận ra: Y tá, Kiểm tra thân nhiệt. Chưa phân loại được: hôm, nay.",
+    "unmatched_display": ["hôm", "nay"],
+    "candidate_button": "Y tá đo nhiệt độ.",
+    "send_button_disabled": true,
+    "avatar_playback_started": false
+  },
+  "patient_to_doctor": {
+    "source": "assets/samples/011.mp4",
+    "mode": "auto",
+    "recognized_text": "Bác sĩ",
+    "doctor_panel_visible": true,
+    "conversation_history_visible": true,
+    "uncertainty_label": "Kết quả nhận dạng · cần đối chiếu"
+  },
+  "cleanup": {
+    "conversation_stop": "idle",
+    "source_engine_stopped": true,
+    "packaged_app_untouched": true
+  },
+  "limitations": [
+    "Browser DOM smoke does not replace a human signer comprehension check.",
+    "Microphone and live webcam permissions were not exercised in this run.",
+    "The recognition result is a candidate and remains marked for clinician review."
+  ]
+}
