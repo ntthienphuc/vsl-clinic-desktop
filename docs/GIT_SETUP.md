@@ -4,10 +4,10 @@ VSL Clinic desktop dùng Electron, React/TypeScript, Three.js/VRM và backend Py
 
 ## Clone repo riêng
 
-Repo `ntthienphuc/vsl-clinic-desktop` hiện để private. Dùng tài khoản GitHub có quyền truy cập:
+Repo `ntthienphuc/vsl-clinic-desktop` hiện để public. Có thể clone bằng Git mà không cần đăng nhập GitHub:
 
 ```powershell
-gh repo clone ntthienphuc/vsl-clinic-desktop
+git clone https://github.com/ntthienphuc/vsl-clinic-desktop.git
 cd vsl-clinic-desktop
 ```
 
