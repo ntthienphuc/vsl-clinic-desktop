@@ -3,3 +3,9 @@
 * -text
 # CRLF bytes are intentional in the pinned inputs, not trailing spaces.
 * whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Show the app's own languages in GitHub statistics; retain bundled notices.
+licenses/** linguist-vendored=true
+backend/legacy/** linguist-vendored=true
+docs/evidence/** linguist-generated=true
+public/fonts/** linguist-vendored=true
