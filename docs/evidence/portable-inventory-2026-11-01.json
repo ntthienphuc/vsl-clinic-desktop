@@ -1,0 +1,50 @@
+{
+  "schema": "clinic-portable-inventory-v1",
+  "checked_at": "2026-10-31T18:24:45.267580+00:00",
+  "version": "0.3.4",
+  "distribution": "portable folder, not a single-file executable or installer",
+  "receipt_payload_files_verified": 1990,
+  "launcher_sha256": "7e7bd36b5f26e3799030998c521d0246bdf67924dfd0904df8fbf00e2f7d04f4",
+  "app_asar_sha256": "ad9f4f3b12f8a73b876d34245c535a3fa3a6630c0bcfa50031e72b4b53a8fc65",
+  "package_files": 2077,
+  "package_bytes": 1265187881,
+  "recognizer_labels": 400,
+  "avatar_vocabulary": 65,
+  "motion_entries": 65,
+  "sample_videos": 56,
+  "demo_kit_videos": 37,
+  "raw_reference_videos": 0,
+  "inherited_catalog_video_links": 400,
+  "inherited_catalog_video_files_present": 0,
+  "speech_files_verified": [
+    "config.json",
+    "LICENSE",
+    "model.bin",
+    "preprocessor_config.json",
+    "tokenizer.json",
+    "vocabulary.json"
+  ],
+  "silero_payload": [
+    "resources/engine/_internal/faster_whisper/assets/silero_vad_v6.onnx"
+  ],
+  "recognition_models": [
+    {
+      "name": "hand_landmarker.task",
+      "bytes": 7819105,
+      "sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1"
+    },
+    {
+      "name": "pose_landmarker_lite.task",
+      "bytes": 5777746,
+      "sha256": "59929e1d1ee95287735ddd833b19cf4ac46d29bc7afddbbf6753c459690d574a"
+    },
+    {
+      "name": "slgcn_bone_all_cams.onnx",
+      "bytes": 17041797,
+      "sha256": "582f3d8712f73f78c5fe7b7521609ea54a9257e5a3a877aa8c9346b8e28ebb21"
+    }
+  ],
+  "problems": [],
+  "passed": true,
+  "scope": "Checks bundled runtime assets and existing build receipt. Raw research references and all 400 dictionary videos are not required by the current runtime and are reported separately. Does not prove clean-machine compatibility or signer comprehension."
+}

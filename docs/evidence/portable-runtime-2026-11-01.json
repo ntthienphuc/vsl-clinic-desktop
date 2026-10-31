@@ -1,0 +1,77 @@
+{
+  "checked_at": "2026-10-31T18:26:40.615119+00:00",
+  "scope": "Relocated frozen runtime on the same Windows PC; not a clean Windows VM or live microphone/webcam test. External Python/Node paths removed from engine PATH, Python environment variables removed, empty Hugging Face cache, offline model-loading flags enabled.",
+  "checks": {
+    "bootstrap": true,
+    "avatar_and_65_motion_assets_served": true,
+    "meaning_guard": true,
+    "93_videos_decode": true,
+    "packaged_detector_and_recognizer": true,
+    "phowhisper_and_silero_transcribe": true,
+    "hf_cache_stayed_empty": true
+  },
+  "health": {
+    "service": "vsl-clinic",
+    "status": "ok",
+    "version": "0.3.4",
+    "model_loaded": true
+  },
+  "model": {
+    "name": "SL-GCN",
+    "labels": 400,
+    "sha256": "582f3d8712f73f78c5fe7b7521609ea54a9257e5a3a877aa8c9346b8e28ebb21",
+    "capture_profile": "clinic-pc-tasks-lite-parallel-v2"
+  },
+  "speech_before": {
+    "available": true,
+    "loaded": false,
+    "name": "PhoWhisper base INT8",
+    "language": "vi",
+    "device": "cpu",
+    "cpu_threads": 2,
+    "sample_rate": 16000,
+    "endpoint_ms": 576,
+    "activity_detector": "Silero v6 ONNX streaming"
+  },
+  "planner": {
+    "supported_labels": [
+      "Y tá",
+      "Nhiệt độ",
+      "Đo"
+    ],
+    "negation_supported": false
+  },
+  "videos": {
+    "decoded": 93,
+    "failures": []
+  },
+  "patient_sample": {
+    "expected": [
+      "Đau"
+    ],
+    "recognized": [
+      "Đau"
+    ]
+  },
+  "speech_test": {
+    "fixture": "91.wav (local development input, not shipped)",
+    "transcripts": [
+      "tuyệt quá chứ cần bấm nút là nó chạy mà không cần phải cố gắng gì nữa."
+    ],
+    "decode_ms": [
+      1012.5670999987051
+    ]
+  },
+  "speech_after": {
+    "available": true,
+    "loaded": true,
+    "name": "PhoWhisper base INT8",
+    "language": "vi",
+    "device": "cpu",
+    "cpu_threads": 2,
+    "sample_rate": 16000,
+    "endpoint_ms": 576,
+    "activity_detector": "Silero v6 ONNX streaming"
+  },
+  "passed": true
+}

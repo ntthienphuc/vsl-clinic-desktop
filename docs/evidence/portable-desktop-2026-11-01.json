@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-31T18:33:39.662711+00:00",
+  "version": "0.3.4",
+  "source": "Relocated existing portable folder on drive C; no rebuild",
+  "launch_environment": "External Python/Node paths and Python environment overrides removed; fresh desktop profile; offline model-loading flags",
+  "doctor_window": "VSL Clinic · Bác sĩ",
+  "patient_window": "VSL Clinic · Người bệnh",
+  "connected_both": true,
+  "interaction": "Selected Uống nước. in doctor UI and clicked Gửi người bệnh",
+  "patient_message": "Uống nước.",
+  "sign_sequence": [
+    "Nước",
+    "Uống"
+  ],
+  "patient_playback_status": "Đã kết thúc",
+  "avatar_visible": true,
+  "screenshot_local_only": "portable-patient-2026-11-01.png",
+  "screenshot_sha256": "e1b3be5f7a66588453f1af2ac34b63f0ce0eb9b2e89e7827be99da057a46d256",
+  "scope": "Same-machine native desktop smoke; no live microphone/webcam or clean Windows machine claim",
+  "passed": true
+}

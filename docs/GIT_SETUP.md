@@ -1,40 +1,46 @@
-# Source checkout và dữ liệu cục bộ
+# Source checkout and local assets
 
-VSL Clinic desktop dùng Electron, React/TypeScript, Three.js/VRM và backend Python/FastAPI. Đây là repo độc lập, không kèm mã Android/Flutter hoặc lịch sử Git của dự án Translator.
+[← Project overview](../README.md) · [Documentation](README.md)
 
-## Clone repo riêng
+VSL Clinic uses Electron, React/TypeScript, Three.js/VRM and Python/FastAPI. This standalone repository does not include Android/Flutter code or the Translator project's Git history.
 
-Repo `ntthienphuc/vsl-clinic-desktop` hiện để public. Có thể clone bằng Git mà không cần đăng nhập GitHub:
+## Clone
+
+The repository is public; no GitHub login is required:
 
 ```powershell
 git clone https://github.com/ntthienphuc/vsl-clinic-desktop.git
 cd vsl-clinic-desktop
 ```
 
-`package.json`, `src/`, `backend/`, `desktop/`, `assets/` và `tools/` nằm ngay thư mục gốc. Không cần checkout dự án Android để chạy app.
+`package.json`, `src/`, `backend/`, `desktop/`, `assets/` and `tools/` are at the repository root. An Android checkout is not needed to run Clinic.
 
-Git chứa mã nguồn, lockfile, test, cấu hình build, bank chuyển động, avatar được cấp phép, kịch bản và bằng chứng kiểm thử dạng JSON. Các video dữ liệu, trọng số nhận dạng/ASR, cache, môi trường Python/Node và EXE không nằm trong Git. `local-assets-manifest.json` lưu đường dẫn tương đối, dung lượng và SHA-256 của những đầu vào cần giữ riêng để chạy lại đúng demo. Đây không phải bản sao lưu đầy đủ dữ liệu huấn luyện hoặc toàn bộ thư mục nghiên cứu.
+Git contains source, lockfiles, tests, build configuration, the motion bank, avatar assets, scripts and JSON evidence. Recognition/ASR weights, original videos, caches, development environments and executables remain outside Git. `local-assets-manifest.json` records paths, sizes and SHA-256 hashes for 107 local inputs; it is not a full training-corpus backup.
 
-## Khôi phục trên máy đang có bộ dữ liệu được phép sử dụng
+## Restore authorized inputs
 
-Chạy từ thư mục `vsl-clinic-desktop` của checkout mới:
+Use Windows, Python 3.11 and Node.js 22+. From the checkout root:
 
 ```powershell
-py -3.11 tools/restore_local_assets.py --from "D:\ban-sao-day-du\vsl-clinic-desktop"
+py -3.11 tools/restore_local_assets.py --from "D:\complete-copy\vsl-clinic-desktop"
 ./tools/setup.ps1
 npm start
 ```
 
-Thay đường dẫn mẫu bằng thư mục Clinic đầy đủ hiện có. Công cụ chỉ chép các file được liệt kê trong manifest, kiểm tra hash trước/sau và từ chối ghi đè file đã khác. Không tự tải dữ liệu hoặc suy ra quyền phân phối từ việc có URL nguồn. Nếu thiếu file, giữ nguyên các đầu vào đang có và báo danh sách cần bổ sung.
+Replace the example path with an existing complete Clinic folder you are authorized to use. The tool copies only manifest-listed files, verifies hashes before and after copying, and refuses to overwrite an existing file with different content. It does not download data or infer redistribution rights from a source URL. Missing inputs are reported without replacing existing files.
 
-Có thể kiểm tra lại đầu vào mà không chép gì:
+To verify without copying:
 
 ```powershell
 py -3.11 tools/restore_local_assets.py
 ```
 
-Sau khi khôi phục đủ, chạy `.venv/Scripts/python.exe -m pytest -q`, `npm test` và `npm run build`. Bản portable đã đóng gói trên máy dùng được độc lập với checkout; hướng dẫn nằm trong `docs/DEMO_0.3.4.md`. Giữ nguyên cả thư mục portable khi sao chép EXE.
+After restoration, run `.venv/Scripts/python.exe -m pytest -q`, `npm test` and `npm run build`.
 
-Các script nghiên cứu/tạo lại bank như `prepare_assets.py`, `expand_vocabulary.py`, `build_qipedc_bank.py` và `research_qipedc.py` vẫn có đường dẫn mặc định tới corpus của dự án gốc. Chúng là công cụ xây dựng dữ liệu riêng, không thuộc luồng setup hoặc chạy app. Muốn tạo lại bank từ đầu cần cung cấp corpus gốc phù hợp; bản bank đã kiểm thử nằm sẵn trong repo.
+## Source versus portable distribution
 
-Provenance của mã nhận dạng kế thừa được kiểm tra bằng hash cố định tại `backend/legacy/provenance.json`. Test không phụ thuộc vào việc checkout cha đang ở phiên bản Android/server nào. Video QIPEDC để kiểm tra nguồn được đọc từ `assets/reference-source/qipedc` sau khi khôi phục, thay vì đường dẫn tuyệt đối của máy đã tạo bank.
+The portable distribution runs independently of this checkout and includes its own runtimes and model files. Keep its complete folder together. [Package contents](PACKAGE_CONTENTS.md) distinguishes recognition labels, avatar motions, sample videos and raw research references.
+
+Research scripts such as `prepare_assets.py`, `expand_vocabulary.py`, `build_qipedc_bank.py` and `research_qipedc.py` retain default paths to the original corpus. They are separate data-building tools, not part of setup or startup. Rebuilding the bank requires the appropriate original corpus; the tested motion bank is already in Git.
+
+Inherited recognition code is checked against fixed hashes in `backend/legacy/provenance.json`; tests do not depend on the Android/server parent's current revision. QIPEDC source checks read restored videos from `assets/reference-source/qipedc` instead of the original workstation's absolute paths.

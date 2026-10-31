@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
-  <title id="title">VSL Clinic — Hai màn hình. Một cuộc trò chuyện.</title>
-  <desc id="desc">Banner màu xanh bệnh viện với hai màn hình kết nối: bác sĩ và người bệnh. Ứng dụng desktop xử lý cục bộ.</desc>
+  <title id="title">VSL Clinic — Two screens. One conversation.</title>
+  <desc id="desc">A teal banner showing connected doctor and patient screens on a single local computer.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#edf7f3"/>
@@ -20,22 +20,22 @@
     <path d="M64 67h8l5-10 7 24 5-14h5" fill="none" stroke="#fff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
     <text x="119" y="76" fill="#286367" font-size="14" font-weight="650" letter-spacing="2.1">VIETNAMESE SIGN LANGUAGE</text>
     <text x="50" y="170" fill="#103f46" font-size="64" font-weight="700" letter-spacing="-2">VSL Clinic</text>
-    <text x="54" y="214" fill="#24585f" font-size="26" font-weight="500">Hai màn hình. Một cuộc trò chuyện.</text>
-    <text x="55" y="253" fill="#51766f" font-size="16">Giao tiếp giữa bác sĩ và người bệnh khiếm thính.</text>
+    <text x="54" y="214" fill="#24585f" font-size="26" font-weight="500">Two screens. One conversation.</text>
+    <text x="55" y="253" fill="#51766f" font-size="16">Vietnamese Sign Language for clinical conversations.</text>
     <rect x="54" y="287" width="109" height="29" rx="14.5" fill="#fff" opacity=".8"/>
     <circle cx="70" cy="302" r="4" fill="#148a77"/>
     <text x="83" y="307" fill="#28635d" font-size="12" font-weight="600">WINDOWS</text>
-    <text x="181" y="307" fill="#51766f" font-size="13">Xử lý cục bộ</text>
+    <text x="181" y="307" fill="#51766f" font-size="13">Local processing</text>
     <g transform="translate(752 72)">
       <rect x="0" y="0" width="172" height="170" rx="17" fill="#113f48"/>
       <rect x="7" y="7" width="158" height="153" rx="11" fill="#fff"/>
       <rect x="7" y="7" width="158" height="35" rx="11" fill="#eff7f4"/>
       <circle cx="25" cy="25" r="5" fill="#087f83"/>
-      <text x="40" y="29" fill="#285d61" font-size="11" font-weight="700">BÁC SĨ</text>
+      <text x="40" y="29" fill="#285d61" font-size="11" font-weight="700">DOCTOR</text>
       <rect x="22" y="57" width="128" height="37" rx="7" fill="#eef5f3"/>
       <path d="M33 70h82m-82 10h55" stroke="#7caaa3" stroke-width="4" stroke-linecap="round"/>
       <rect x="22" y="105" width="92" height="28" rx="7" fill="#087f83"/>
-      <text x="35" y="123" fill="#fff" font-size="10" font-weight="600">Lời nói / chữ</text>
+      <text x="35" y="123" fill="#fff" font-size="10" font-weight="600">Speech / text</text>
       <path d="M67 170v18h38v-18M48 190h76" fill="none" stroke="#113f48" stroke-width="5" stroke-linecap="round"/>
     </g>
     <g transform="translate(1000 72)">
@@ -43,7 +43,7 @@
       <rect x="7" y="7" width="158" height="153" rx="11" fill="#fff"/>
       <rect x="7" y="7" width="158" height="35" rx="11" fill="#eff7f4"/>
       <circle cx="25" cy="25" r="5" fill="#087f83"/>
-      <text x="40" y="29" fill="#285d61" font-size="11" font-weight="700">NGƯỜI BỆNH</text>
+      <text x="40" y="29" fill="#285d61" font-size="11" font-weight="700">PATIENT</text>
       <rect x="22" y="53" width="128" height="86" rx="8" fill="#eef5f3"/>
       <circle cx="86" cy="75" r="11" fill="#7caaa3"/>
       <path d="M63 118v-10c0-12 10-20 23-20s23 8 23 20v10" fill="#bfd9d0"/>
@@ -51,6 +51,6 @@
       <path d="M67 170v18h38v-18M48 190h76" fill="none" stroke="#113f48" stroke-width="5" stroke-linecap="round"/>
     </g>
     <path d="M942 137h39m-8-8 8 8-8 8m8 26h-39m8-8-8 8 8 8" fill="none" stroke="#087f83" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="962" y="302" text-anchor="middle" fill="#28635d" font-size="14" font-weight="600">Một máy tính · Hai vai trò</text>
+    <text x="962" y="302" text-anchor="middle" fill="#28635d" font-size="14" font-weight="600">One computer · Two roles</text>
   </g>
 </svg>

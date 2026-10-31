@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="docs/media/clinic-banner.svg" alt="VSL Clinic — Hai màn hình. Một cuộc trò chuyện." width="100%">
+  <img src="docs/media/clinic-banner.svg" alt="VSL Clinic — Two screens. One conversation." width="100%">
 </p>
 
 <p align="center">
-  <strong>Không gian giao tiếp giữa bác sĩ và người bệnh khiếm thính.</strong><br>
+  <strong>A shared communication space for doctors and deaf patients.</strong><br>
   Vietnamese Sign Language · Local desktop communication
 </p>
 
@@ -14,148 +14,150 @@
 </p>
 
 <p align="center">
-  <a href="#giao-diện">Giao diện</a> ·
-  <a href="#chạy-trên-máy">Cách chạy</a> ·
-  <a href="#hai-kịch-bản-demo">Demo</a> ·
-  <a href="#bên-trong-clinic">Kiến trúc</a> ·
-  <a href="docs/README.md">Tài liệu</a>
+  <a href="#interface">Interface</a> ·
+  <a href="#getting-started">Getting started</a> ·
+  <a href="#demo-scenarios">Demo</a> ·
+  <a href="#how-it-works">Architecture</a> ·
+  <a href="docs/README.md">Documentation</a>
 </p>
 
 ---
 
-**VSL Clinic** chạy trên một máy Windows, mở hai cửa sổ song song cho hai vai trò. Bác sĩ nói tiếng Việt hoặc nhập chữ; người bệnh xem lời nhắn và avatar ký hiệu. Ở chiều ngược lại, mỗi từ ký hiệu nhận được sẽ xuất hiện ngay trước khi được gom thành lượt hội thoại.
+**VSL Clinic** runs on one Windows computer with two simultaneous windows. Doctors speak Vietnamese or type; patients see the message and a signing avatar. In the other direction, recognized sign words appear immediately on the doctor's screen, then form a conversation turn after a pause.
 
-| Nhận dạng phía người bệnh | Bank phát avatar | Mẫu câu có kiểm soát | Bố trí |
+| Patient-side recognition | Avatar motion bank | Controlled templates | Setup |
 | :---: | :---: | :---: | :---: |
-| **400** nhãn từ rời | **65** ký hiệu | **58** mẫu câu | **1 máy · 2 màn hình** |
+| **400** isolated-word labels | **65** signs | **58** sentence patterns | **1 computer · 2 screens** |
 
-Đây là bản demo có phạm vi từ vựng rõ ràng. Hai chiều nhận dạng và phát avatar dùng hai tập dữ liệu khác nhau; 400 nhãn nhận dạng không đồng nghĩa với 400 ký hiệu avatar.
+This is a demo with a defined vocabulary. Recognition labels and avatar motions are separate inventories: 400 recognition labels do not mean 400 avatar signs.
 
-## Giao diện
+## Interface
 
 <table>
   <tr>
-    <td width="50%"><strong>Màn hình bác sĩ</strong><br>Nói hoặc nhập chữ, xem từng từ đang nhận và theo dõi lịch sử trao đổi.</td>
-    <td width="50%"><strong>Màn hình người bệnh</strong><br>Xem avatar, lời bác sĩ và preview camera trong một bố cục đơn giản.</td>
+    <td width="50%"><strong>Doctor screen</strong><br>Speak or type, watch incoming words, and follow the conversation history.</td>
+    <td width="50%"><strong>Patient screen</strong><br>View the signing avatar, the doctor's message, and a camera preview.</td>
   </tr>
   <tr>
-    <td><a href="docs/media/doctor-screen.png"><img src="docs/media/doctor-screen.png" alt="Giao diện bác sĩ VSL Clinic 0.3.4: nhập lời nói, từ nhận dạng trực tiếp và lịch sử" width="100%"></a></td>
-    <td><a href="docs/media/patient-screen.png"><img src="docs/media/patient-screen.png" alt="Giao diện người bệnh VSL Clinic 0.3.4: avatar nam mặc áo blouse, lời bác sĩ và vùng camera" width="100%"></a></td>
+    <td><a href="docs/media/doctor-screen.png"><img src="docs/media/doctor-screen.png" alt="VSL Clinic 0.3.4 doctor interface: text input, live recognition and conversation history" width="100%"></a></td>
+    <td><a href="docs/media/patient-screen.png"><img src="docs/media/patient-screen.png" alt="VSL Clinic 0.3.4 patient interface: male doctor avatar, message panel and camera area" width="100%"></a></td>
   </tr>
 </table>
 
-<sub>Ảnh chụp thật bản Windows 0.3.4 ở trạng thái chờ. Bấm vào ảnh để xem lớn. [Nguồn ảnh](docs/media/README.md).</sub>
+<sub>Actual Windows 0.3.4 screenshots in the idle state. The app interface and supported speech language are Vietnamese. Click an image to enlarge. [Image provenance](docs/media/README.md).</sub>
 
-### Hai chiều, một cuộc trao đổi
+### Two directions, one conversation
 
-| Người bệnh → bác sĩ | Bác sĩ → người bệnh |
+| Patient → doctor | Doctor → patient |
 | --- | --- |
-| Camera hoặc video quan sát chuyển động. | Micro tiếng Việt hoặc nhập trực tiếp. |
-| Nhận dạng từng từ và gửi ngay sang màn hình bác sĩ. | Kiểm tra câu, từ đồng nghĩa đã duyệt và độ phủ ký hiệu. |
-| Nghỉ một nhịp dài để gom thành lượt; giữ lại từ gốc. | Phát chuỗi ký hiệu trên avatar, đồng bộ cùng chữ. |
+| Camera or video captures movement. | Vietnamese microphone input or typed text. |
+| Each recognized word is sent immediately. | Reviewed aliases, meaning checks and sign coverage are evaluated. |
+| A longer pause groups words into a turn; original labels remain available. | The avatar plays a sign sequence on a shared text/motion timeline. |
 
-**Tự động:** một nhịp nghỉ kết thúc ý nói; câu nhận rõ và đủ ký hiệu được gửi ngay. **Xác nhận trước khi gửi:** bác sĩ đọc, sửa và gửi từng câu. Nội dung chưa đủ nghĩa sẽ được giữ để nói lại hoặc chủ động gửi bằng chữ.
+**Automatic mode:** a speech pause ends an utterance; clearly recognized, supported content is sent immediately. **Review before sending:** the doctor checks, edits and sends each utterance. Unsupported meaning stays in a draft for rephrasing or an explicit text-only send.
 
-## Chạy trên máy
+## Getting started
 
-Cần **Windows, Python 3.11 và Node.js 22+**. Máy đã dùng kiểm thử: i7-10750H, RAM 16 GB, GTX 1650 Ti 4 GB; đây là cấu hình tham chiếu, chưa phải yêu cầu tối thiểu đã đo.
+For source development, use **Windows, Python 3.11 and Node.js 22+**. The reference machine used for testing has an i7-10750H, 16 GB RAM and GTX 1650 Ti 4 GB; this is not a measured minimum specification.
 
 ```powershell
 git clone https://github.com/ntthienphuc/vsl-clinic-desktop.git
 cd vsl-clinic-desktop
 
-# Thay đường dẫn bằng bộ Clinic đầy đủ mà bạn được phép sử dụng.
-py -3.11 tools/restore_local_assets.py --from "D:\ban-sao-day-du\vsl-clinic-desktop"
+# Replace this with a complete Clinic copy you are authorized to use.
+py -3.11 tools/restore_local_assets.py --from "D:\complete-copy\vsl-clinic-desktop"
 
 ./tools/setup.ps1
 npm start
 ```
 
 > [!IMPORTANT]
-> Git chứa mã nguồn, bank chuyển động, avatar và tài liệu. **Model nhận dạng/giọng nói, video gốc và EXE không nằm trong repo.** Lệnh khôi phục kiểm tra 107 file theo SHA-256; không tự tải dữ liệu. Nếu chưa có bộ đầu vào, xem [hướng dẫn checkout và dữ liệu](docs/GIT_SETUP.md).
+> Git includes source, the motion bank, avatar assets and documentation. **Recognition/speech weights, original videos and the executable are not in this repository.** The restore tool verifies 107 local inputs using SHA-256; it does not download them. See the [source and local-assets guide](docs/GIT_SETUP.md).
 
-Đã có bản portable? Mở `VSL Clinic.exe` trong cả thư mục `win-unpacked`, không cần cài Python/Node. Hướng dẫn nằm ở [bàn giao 0.3.4](docs/DEMO_0.3.4.md).
+Already have the portable distribution? Keep its entire folder together and open `VSL Clinic.exe`. It includes its own runtimes; installing Python or Node is not part of the end-user workflow. This is a portable folder, not a single-file EXE or installer. See [what the Windows package includes](docs/PACKAGE_CONTENTS.md).
 
-### Bắt đầu trong ba bước
+### Start a conversation
 
-1. **Bác sĩ chọn nguồn hình ảnh** và chế độ Tự động hoặc Xác nhận trước khi gửi, rồi bấm **Bắt đầu cuộc trao đổi**.
-2. **Bác sĩ nói hoặc nhập từng ý ngắn.** Người bệnh xem avatar và lời nhắn trên màn hình riêng.
-3. **Người bệnh ký từng từ**, nghỉ khoảng 0,7–1 giây giữa các từ và khoảng 1,5 giây sau một lượt. Mỗi từ hiện ngay phía bác sĩ.
+1. **The doctor selects a camera/video source** and Automatic or Review mode, then presses **Bắt đầu cuộc trao đổi** (Start conversation).
+2. **The doctor speaks or types one short idea.** The patient sees the message and signing avatar on their screen.
+3. **The patient signs individual words**, pausing approximately 0.7–1 second between words and 1.5 seconds after a turn. Each word appears immediately for the doctor.
 
-Một màn hình có thể chia đôi hai cửa sổ. Với hai màn hình, dùng menu **Bố trí màn hình** để sắp xếp hoặc đổi bên. [Xem hướng dẫn thao tác đầy đủ →](docs/USAGE.md)
+One monitor can display the windows side by side. With two monitors, **Bố trí màn hình** (Screen layout) can arrange or swap them. [Full usage guide →](docs/USAGE.md)
 
-## Hai kịch bản demo
+## Demo scenarios
 
-Hai kịch bản có sẵn trong app tại **Chọn câu / từ → 2 kịch bản demo**. Mỗi kịch bản gồm 5 lượt, kèm lời bác sĩ, thứ tự ký hiệu của người bệnh và hướng dẫn video.
+Both scenarios are available in **Chọn câu / từ → 2 kịch bản demo** (Choose phrase/word → 2 demo scenarios). Each contains five turns with exact Vietnamese doctor prompts, patient sign order and practice-video instructions.
 
-| Kịch bản | Nội dung | Hướng dẫn |
+| Scenario | Conversation | Script |
 | --- | --- | --- |
-| **01 · Tiếp đón và hỏi triệu chứng** | Khám bệnh, đau, mệt, đo nhiệt độ, nghỉ ngơi. | [Mở kịch bản](demo/HAI_KICH_BAN_2026-10-31/01_Tiep_don_va_hoi_trieu_chung/KICH_BAN.md) |
-| **02 · Nêu nhu cầu và hỗ trợ** | Cần giúp đỡ, cần nước, đồng ý, cần nghỉ, cảm ơn. | [Mở kịch bản](demo/HAI_KICH_BAN_2026-10-31/02_Nhu_cau_va_ho_tro/KICH_BAN.md) |
+| **01 · Reception and symptoms** | Examination, pain, tiredness, temperature measurement and rest. | [Vietnamese script](demo/HAI_KICH_BAN_2026-10-31/01_Tiep_don_va_hoi_trieu_chung/KICH_BAN.md) |
+| **02 · Needs and assistance** | Asking for help or water, agreement, rest and thanks. | [Vietnamese script](demo/HAI_KICH_BAN_2026-10-31/02_Nhu_cau_va_ho_tro/KICH_BAN.md) |
 
-Chưa có webcam vẫn có thể thử bằng video sau khi khôi phục dữ liệu. App chạy nhận dạng trên video thật, không gán sẵn đáp án. [Chuẩn bị demo và cách dùng clip →](demo/HAI_KICH_BAN_2026-10-31/README.md)
+After restoring local inputs, you can rehearse with video instead of a webcam. The app runs real recognition on the clips; it does not insert predefined answers. Scripts retain Vietnamese wording because they are actual demo inputs. [Video rehearsal instructions, Vietnamese →](demo/HAI_KICH_BAN_2026-10-31/README.md)
 
-## Bên trong Clinic
+## How it works
 
 ```mermaid
 flowchart LR
-    subgraph doctor["Bác sĩ → người bệnh"]
-        A["Giọng nói / bàn phím"] --> B["Tiếng Việt"]
-        B --> C["Kiểm tra nghĩa & bank"]
-        C --> D["Chuỗi ký hiệu → avatar"]
+    subgraph doctor["Doctor → patient"]
+        A["Speech / keyboard"] --> B["Vietnamese text"]
+        B --> C["Meaning and bank checks"]
+        C --> D["Sign sequence → avatar"]
     end
-    subgraph patient["Người bệnh → bác sĩ"]
-        E["Camera / video"] --> F["Keypoint → model 400 từ"]
-        F --> G["Gửi từng từ ngay"]
-        G --> H["Nhịp nghỉ → gom lượt"]
+    subgraph patient["Patient → doctor"]
+        E["Camera / video"] --> F["Keypoints → 400-word model"]
+        F --> G["Stream each word"]
+        G --> H["Pause → group a turn"]
     end
 ```
 
-| Thành phần | Công nghệ |
+| Component | Technology |
 | --- | --- |
-| Ứng dụng và hai cửa sổ | Electron · React · TypeScript · Vite |
-| Avatar và chuyển động bàn tay | Three.js · VRM · IK · giới hạn khớp |
-| Engine và đồng bộ | Python · FastAPI · WebSocket trên loopback |
-| Nhận dạng ký hiệu | MediaPipe Pose/Hands · SL-GCN qua ONNX Runtime |
-| Nhận tiếng Việt | PhoWhisper INT8 · Silero VAD · xử lý cục bộ |
+| Desktop shell and two windows | Electron · React · TypeScript · Vite |
+| Avatar and hand motion | Three.js · VRM · inverse kinematics · joint constraints |
+| Engine and synchronization | Python · FastAPI · loopback WebSocket |
+| Sign recognition | MediaPipe Pose/Hands · SL-GCN through ONNX Runtime |
+| Vietnamese speech | PhoWhisper INT8 · Silero VAD · local inference |
 
-Runtime chọn mẫu câu và alias đã duyệt; chưa có LLM sinh bản dịch tự do. Giữ nguyên nội dung gốc, không tự thêm triệu chứng, phủ định, liều lượng hoặc chẩn đoán. [Cơ chế ngôn ngữ và bank →](docs/SEMANTIC_AND_BANK_PLAN.md)
+The runtime uses reviewed sentence templates and aliases, not a free-form generative LLM. Original content is preserved; symptoms, negation, quantities and diagnoses are not invented. [Semantic routing and bank design, Vietnamese →](docs/SEMANTIC_AND_BANK_PLAN.md)
 
 <details>
-<summary><strong>Cấu trúc mã nguồn</strong></summary>
+<summary><strong>Repository layout</strong></summary>
 
 ```text
 vsl-clinic-desktop/
-├── src/         Hai giao diện, avatar và trạng thái phía client
-├── desktop/     Electron, cửa sổ và vòng đời engine
-├── backend/     Nhận dạng, ASR, planner và hội thoại
-├── assets/      Catalog, bank chuyển động và avatar
-├── demo/        Kịch bản, manifest và hướng dẫn tập
-├── tests/       Kiểm thử backend và động học avatar
-├── tools/       Setup, xử lý dữ liệu, audit và đóng gói
-├── docs/        Hướng dẫn, thiết kế và bằng chứng kiểm thử
-└── licenses/    Thông tin giấy phép các thành phần
+├── src/         Doctor/patient interfaces, avatar and client state
+├── desktop/     Electron windows and engine lifecycle
+├── backend/     Recognition, ASR, planning and conversation state
+├── assets/      Catalogs, motion bank and avatar assets
+├── demo/        Scripts, manifests and practice instructions
+├── tests/       Backend and avatar kinematics checks
+├── tools/       Setup, data processing, audits and packaging
+├── docs/        Guides, design notes and verification evidence
+└── licenses/    Third-party notices and license texts
 ```
 
-Repo độc lập cho desktop; mã Android/Flutter và lịch sử dự án Translator không nằm trong repo này.
+This standalone desktop repository contains neither the Android/Flutter app nor the Translator repository's Git history.
 
 </details>
 
-## Kiểm thử và phạm vi
+## Verification and scope
 
-| Phép kiểm tra đã lưu | Kết quả | Bằng chứng |
+| Recorded check | Result | Evidence |
 | --- | --- | --- |
-| Checkout độc lập · 01/11/2026 | **303 test Python**, **6 test avatar**, build giao diện đạt | [Source check](docs/evidence/standalone-source-check-2026-11-01.json) |
-| Hai kịch bản video, lặp hai vòng · 31/10/2026 | **20/20 lượt**, **28/28 lần nhận từ** đúng thứ tự | [Runtime retest](docs/evidence/idle-retest-summary-2026-10-31.json) |
+| Independent checkout · 2026-11-01 | **303 Python tests**, **6 avatar tests**, frontend build passed | [Source check](docs/evidence/standalone-source-check-2026-11-01.json) |
+| Portable inventory · 2026-11-01 | **1,990 payload files** matched the receipt; models, avatar and motions present | [Package inventory](docs/evidence/portable-inventory-2026-11-01.json) |
+| Relocated frozen engine · 2026-11-01 | Recognition and PhoWhisper ran with an empty model cache; **93 videos** decoded | [Runtime probe](docs/evidence/portable-runtime-2026-11-01.json) |
+| Fixed video scenarios, repeated twice · 2026-10-31 | **20/20 turns**, **28/28 word occurrences** in the expected order | [Rehearsal retest](docs/evidence/idle-retest-summary-2026-10-31.json) |
 
-Phép thử video lặp lại cùng 14 lượt nhận từ sau khi máy giảm tải; không phải 28 mẫu độc lập hoặc đánh giá toàn bộ 400 nhãn. Khi máy bận đã có nhận sai. [Điều kiện đo và giới hạn →](docs/DEMO_0.3.4.md)
+The rehearsal repeats the same 14 word occurrences after reducing machine load; these are not 28 independent samples or a 400-class accuracy benchmark. Earlier loaded-machine runs included errors. Relocation was tested on the same Windows PC, not a clean Windows VM. [Conditions and limitations, Vietnamese →](docs/DEMO_0.3.4.md)
 
-Model hiện nhận **từ rời**, cần nhịp nghỉ giữa các từ. Ký liền thành câu, giọng/người ký mới, mức hiểu avatar của người dùng VSL và hội thoại lâm sàng chưa được kiểm chứng đầy đủ. Các mẫu câu demo không được gắn nhãn chuẩn riêng cho hệ Đồng Nai.
+The recognizer handles **isolated words** and requires word boundaries. Continuous signing, new speakers/signers, avatar comprehension by VSL users and clinical conversations have not been fully validated. Demo patterns are not labeled as a verified Đồng Nai regional standard.
 
 <details>
-<summary><strong>Chạy kiểm thử và đóng gói</strong></summary>
+<summary><strong>Run checks and build a portable distribution</strong></summary>
 
-Sau khi khôi phục đầu vào và chạy setup:
+After restoring local inputs and completing setup:
 
 ```powershell
 .venv/Scripts/python.exe -m pytest -q
@@ -163,32 +165,33 @@ npm test
 npm run build
 ```
 
-Đóng app đang dùng thư mục đầu ra trước khi đóng gói:
+Close any app using the output folder before packaging:
 
 ```powershell
 .venv/Scripts/python.exe tools/build_demo_kit.py
 ./tools/build.ps1
 ```
 
-Build kiểm tra backend, động học, rig VRM, giấy phép và SHA-256 payload trước khi bàn giao. Giữ cả thư mục portable; bản Windows hiện chưa có chứng thư ký mã.
+The build checks backend behavior, kinematics, the VRM rig, notices and payload SHA-256 hashes. Keep the complete portable folder together. The Windows executable is currently unsigned.
 
 </details>
 
-## Tài liệu
+## Documentation
 
-| Bạn muốn… | Mở tài liệu |
+| I want to… | Start here |
 | --- | --- |
-| Cài và khôi phục đầu vào | [Git & local assets](docs/GIT_SETUP.md) |
-| Thao tác hai màn hình | [Hướng dẫn sử dụng](docs/USAGE.md) |
-| Chuẩn bị buổi trình diễn | [Hai kịch bản demo](demo/HAI_KICH_BAN_2026-10-31/README.md) |
-| Hiểu cách xử lý câu và từ ngoài bank | [Semantic routing](docs/SEMANTIC_AND_BANK_PLAN.md) |
-| Hiểu cách làm mượt và giới hạn khớp | [Motion quality](docs/MOTION_QUALITY.md) |
-| Xem toàn bộ tài liệu và bằng chứng | [Mục lục tài liệu](docs/README.md) |
+| Set up source and recover local inputs | [Source & local assets](docs/GIT_SETUP.md) |
+| Use the two-screen app | [Usage guide](docs/USAGE.md) |
+| Check the end-user distribution | [Windows package contents](docs/PACKAGE_CONTENTS.md) |
+| Prepare a rehearsal | [Two demo scenarios, Vietnamese](demo/HAI_KICH_BAN_2026-10-31/README.md) |
+| Understand language coverage | [Semantic routing, Vietnamese](docs/SEMANTIC_AND_BANK_PLAN.md) |
+| Understand motion smoothing | [Motion quality, Vietnamese](docs/MOTION_QUALITY.md) |
+| Browse all guides and evidence | [Documentation index](docs/README.md) |
 
 ---
 
 <p align="center">
-  <strong>VSL Clinic</strong> · Hai màn hình. Một cuộc trò chuyện.<br>
-  <a href="THIRD_PARTY_NOTICES.md">Nguồn tài nguyên & giấy phép</a> ·
-  <a href="https://github.com/ntthienphuc/vsl-clinic-desktop/issues">Báo lỗi / góp ý</a>
+  <strong>VSL Clinic</strong> · Two screens. One conversation.<br>
+  <a href="THIRD_PARTY_NOTICES.md">Asset sources & licenses</a> ·
+  <a href="https://github.com/ntthienphuc/vsl-clinic-desktop/issues">Report an issue / suggest an improvement</a>
 </p>

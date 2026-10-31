@@ -1,51 +1,51 @@
-# Sử dụng hai màn hình
+# Using the two-screen app
 
-[← Trang giới thiệu](../README.md) · [Mục lục tài liệu](README.md) · [Hai kịch bản demo](../demo/HAI_KICH_BAN_2026-10-31/README.md)
+[← Project overview](../README.md) · [Documentation](README.md) · [Demo scripts, Vietnamese](../demo/HAI_KICH_BAN_2026-10-31/README.md)
 
-## Chuẩn bị
+The interface is Vietnamese. This guide includes exact UI labels alongside English explanations.
 
-Mở `VSL Clinic.exe` từ cả thư mục portable, hoặc chạy `npm start` sau khi hoàn tất [setup từ Git](GIT_SETUP.md). Chỉ mở một phiên Clinic. Menu **Bố trí màn hình** hỗ trợ tự sắp xếp, đổi bên và toàn màn hình; một màn hình thì hai cửa sổ chia đôi.
+## Prepare
 
-Với webcam, cần thấy rõ mặt, vai, khuỷu và hai bàn tay. Chưa có webcam có thể dùng **Camera / video → Mở video trên máy** sau khi khôi phục bộ demo. Video ghép để thử phần mềm có nhịp nghỉ; không phải câu ký tự nhiên.
+Open `VSL Clinic.exe` from the complete portable folder, or run `npm start` after [source setup](GIT_SETUP.md). Use one Clinic session at a time. **Bố trí màn hình** (Screen layout) supports arrangement, swapping roles and full-screen mode. On one monitor, the two windows share the display.
 
-## Bác sĩ bắt đầu cuộc trao đổi
+For a webcam, keep the face, shoulders, elbows and both hands visible. Without a webcam, use **Camera / video → Mở video trên máy** (Open local video) after restoring the demo assets. Concatenated rehearsal clips include pauses and are software fixtures, not natural signed sentences.
 
-1. Chọn nguồn camera/video.
-2. Chọn **Tự động** hoặc **Xác nhận trước khi gửi**.
-3. Bấm **Bắt đầu cuộc trao đổi**. Nguồn hình ảnh bắt đầu theo dõi và micro mở nếu có thiết bị/quyền sử dụng. Không có micro vẫn nhập chữ được.
-4. Nói từng ý ngắn hoặc chọn câu trong **Chọn câu / từ**. Trong chế độ tự động, một nhịp nghỉ sẽ chốt lời nói; chỉ câu nhận rõ và đủ ký hiệu mới tự gửi.
-5. Chờ avatar hoàn tất rồi để người bệnh trả lời.
+## The doctor starts
 
-| Chế độ | Khi nào gửi? |
+1. Select the camera/video source.
+2. Choose **Tự động** (Automatic) or **Xác nhận trước khi gửi** (Review before sending).
+3. Press **Bắt đầu cuộc trao đổi** (Start conversation). Capture starts and the microphone opens when a device and permission are available. Typing remains available without a microphone.
+4. Speak one short idea or select an entry in **Chọn câu / từ** (Choose phrase/word).
+5. Wait for the avatar to finish, then let the patient respond.
+
+| Mode | Sending behavior |
 | --- | --- |
-| **Tự động** | Câu nhận rõ, đã qua kiểm tra nghĩa và đủ ký hiệu được gửi sau nhịp nghỉ. |
-| **Xác nhận trước khi gửi** | Bác sĩ kiểm tra/sửa và bấm gửi từng câu. |
+| **Automatic** | Clearly recognized content with supported meaning and complete sign coverage is sent after a pause. |
+| **Review before sending** | The doctor checks/edits and explicitly sends each utterance. |
 
-Nếu nghe chưa rõ, câu dài bị cắt hoặc thiếu ký hiệu, bản nháp được giữ để kiểm tra. **Nói lại** bằng một ý ngắn được hỗ trợ, chọn mẫu có sẵn, hoặc chủ động gửi nguyên văn bằng chữ. App không tự bỏ phần nghĩa chưa hỗ trợ để phát phần còn lại.
+Unclear speech, a length-limited utterance or missing coverage stays in a draft. Choose **Nói lại** (Say it again), select a supported template, or explicitly send the complete text. Unsupported meaning is not silently removed.
 
-Ví dụ khi nhập chữ: **“Y tá ơi, đo nhiệt độ nha”** có alias đã duyệt và phát **Y tá → Nhiệt độ → Đo**. Khi demo giọng nói nên dùng **“Bác sĩ đo nhiệt độ.”** theo kịch bản; mẫu y tá từng bị ASR nghe sai trong thử âm thanh và đã bị chặn. Thêm phủ định hoặc liều lượng không được xem là thêm từ đệm.
+Typed example: **“Y tá ơi, đo nhiệt độ nha”** uses reviewed aliases and plays **Y tá → Nhiệt độ → Đo**. For the voice rehearsal, use **“Bác sĩ đo nhiệt độ.”** as scripted; the nurse wording was misrecognized and blocked in an earlier audio test. Negation and dosage are not filler words.
 
-## Người bệnh trả lời
+## The patient responds
 
-Người bệnh xem lời bác sĩ và avatar; camera theo dõi trong phiên, không cần bấm để bắt đầu từng từ.
+The patient watches the message and avatar. Capture remains active during the session; there is no per-word start button.
 
-- Mỗi từ nhận xong được gửi ngay sang khung **Người bệnh đang nói** phía bác sĩ.
-- Giữ hoặc hạ tay khoảng **0,7–1 giây giữa các từ** để model từ rời xác định ranh giới.
-- Nghỉ khoảng **1,5 giây sau từ cuối** để gom thành lượt trong lịch sử. Nếu từ kế tiếp đang xử lý, app chờ kết quả trước khi chốt.
-- Các nút **Tôi đã hiểu / Xin giải thích lại** là phản hồi tùy chọn.
+- Each recognized word is sent immediately to **Người bệnh đang nói** (Patient is speaking) on the doctor's screen.
+- Hold or lower the hands for roughly **0.7–1 second between words** so the isolated-word model can detect boundaries.
+- Pause roughly **1.5 seconds after the final word** to group a turn into history. A pending next-word inference is allowed to finish first.
+- **Tôi đã hiểu / Xin giải thích lại** (I understand / Please explain again) are optional feedback buttons.
 
-Ví dụ **Đau → Mệt** xuất hiện dần ở bác sĩ, rồi được gom thành **Đau và mệt.** sau nhịp nghỉ. Từ gốc vẫn được giữ để đối chiếu. App không tự thêm vị trí đau hoặc triệu chứng từ câu hỏi của bác sĩ.
+For example, **Đau → Mệt** (Pain → Tired) appears incrementally, then becomes **Đau và mệt.** after a pause. Original labels remain available. The app does not invent a pain location or symptoms from the doctor's question.
 
-Ký liền nhiều từ không có ranh giới có thể bị gộp thành một động tác. Ghép các từ vào lịch sử không biến model 400 từ rời thành bộ dịch câu ký hiệu liên tục.
+Multiple signs without boundaries may be merged into one movement. Grouping words into history does not turn the 400-word model into a continuous sign-language translator.
 
-## Kiểm tra, phát lại và kết thúc
+## Review, replay and finish
 
-Avatar hỗ trợ tạm dừng, phát lại và thay đổi tốc độ; chữ và chuyển động dùng chung timeline. Khi mất WebGL, phần phát sẽ tạm dừng và chờ khôi phục.
+The avatar supports pause, replay and speed changes on the same timeline as text. A lost WebGL context pauses playback until rendering recovers.
 
-Nếu nhận sai hoặc báo thiếu nhịp quan sát, dùng **Đối chiếu từ vừa nhận** để sửa/xác nhận, giảm công việc xử lý nặng trên máy và thử lại. Video mẫu cũng có thể nhận sai khi máy thiếu tài nguyên.
+For a wrong prediction or low sampling-rate warning, use **Đối chiếu từ vừa nhận** (Review recognized word), reduce heavy processing elsewhere on the PC, and retry. Sample videos can also be misrecognized when resources are constrained.
 
-**Kết thúc** dừng camera, micro và avatar, giữ nội dung trong phiên. **Cuộc trao đổi mới** xóa nội dung RAM và vô hiệu hóa kết quả cũ. Đóng cả hai cửa sổ để thoát app và engine.
+**Kết thúc** (End) stops capture, microphone and avatar while keeping session history. **Cuộc trao đổi mới** (New conversation) clears in-memory content and invalidates old results. Close both windows to exit the app and engine.
 
-## Trước buổi demo
-
-Tập một vòng với đúng người diễn, webcam và micro. Hai kịch bản đã được thử bằng video có sẵn; chưa bảo đảm giọng/người ký mới sẽ luôn được nhận đúng. [Điều kiện thử, kết quả và phạm vi →](DEMO_0.3.4.md)
+Before presenting, rehearse with the actual signer, webcam and microphone. Fixed-video results do not guarantee recognition of a new voice or signer. See [0.3.4 evidence and limitations, Vietnamese](DEMO_0.3.4.md).
