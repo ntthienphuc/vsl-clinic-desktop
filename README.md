@@ -16,7 +16,6 @@
 <p align="center">
   <a href="#interface">Interface</a> ·
   <a href="#getting-started">Getting started</a> ·
-  <a href="#demo-scenarios">Demo</a> ·
   <a href="#how-it-works">Architecture</a> ·
   <a href="docs/README.md">Documentation</a>
 </p>
@@ -84,17 +83,6 @@ Already have the portable distribution? Keep its entire folder together and open
 
 One monitor can display the windows side by side. With two monitors, **Bố trí màn hình** (Screen layout) can arrange or swap them. [Full usage guide →](docs/USAGE.md)
 
-## Demo scenarios
-
-Both scenarios are available in **Chọn câu / từ → 2 kịch bản demo** (Choose phrase/word → 2 demo scenarios). Each contains five turns with exact Vietnamese doctor prompts, patient sign order and practice-video instructions.
-
-| Scenario | Conversation | Script |
-| --- | --- | --- |
-| **01 · Reception and symptoms** | Examination, pain, tiredness, temperature measurement and rest. | [Vietnamese script](demo/HAI_KICH_BAN_2026-10-31/01_Tiep_don_va_hoi_trieu_chung/KICH_BAN.md) |
-| **02 · Needs and assistance** | Asking for help or water, agreement, rest and thanks. | [Vietnamese script](demo/HAI_KICH_BAN_2026-10-31/02_Nhu_cau_va_ho_tro/KICH_BAN.md) |
-
-After restoring local inputs, you can rehearse with video instead of a webcam. The app runs real recognition on the clips; it does not insert predefined answers. Scripts retain Vietnamese wording because they are actual demo inputs. [Video rehearsal instructions, Vietnamese →](demo/HAI_KICH_BAN_2026-10-31/README.md)
-
 ## How it works
 
 ```mermaid
@@ -148,7 +136,7 @@ This standalone desktop repository contains neither the Android/Flutter app nor 
 | Independent checkout · 2026-11-01 | **303 Python tests**, **6 avatar tests**, frontend build passed | [Source check](docs/evidence/standalone-source-check-2026-11-01.json) |
 | Portable inventory · 2026-11-01 | **1,990 payload files** matched the receipt; models, avatar and motions present | [Package inventory](docs/evidence/portable-inventory-2026-11-01.json) |
 | Relocated frozen engine · 2026-11-01 | Recognition and PhoWhisper ran with an empty model cache; **93 videos** decoded | [Runtime probe](docs/evidence/portable-runtime-2026-11-01.json) |
-| Fixed video scenarios, repeated twice · 2026-10-31 | **20/20 turns**, **28/28 word occurrences** in the expected order | [Rehearsal retest](docs/evidence/idle-retest-summary-2026-10-31.json) |
+| Fixed reference-video checks, repeated twice · 2026-10-31 | **20/20 turns**, **28/28 word occurrences** in the expected order | [Rehearsal retest](docs/evidence/idle-retest-summary-2026-10-31.json) |
 
 The rehearsal repeats the same 14 word occurrences after reducing machine load; these are not 28 independent samples or a 400-class accuracy benchmark. Earlier loaded-machine runs included errors. Relocation was tested on the same Windows PC, not a clean Windows VM. [Conditions and limitations, Vietnamese →](docs/DEMO_0.3.4.md)
 
@@ -183,7 +171,6 @@ The build checks backend behavior, kinematics, the VRM rig, notices and payload 
 | Set up source and recover local inputs | [Source & local assets](docs/GIT_SETUP.md) |
 | Use the two-screen app | [Usage guide](docs/USAGE.md) |
 | Check the end-user distribution | [Windows package contents](docs/PACKAGE_CONTENTS.md) |
-| Prepare a rehearsal | [Two demo scenarios, Vietnamese](demo/HAI_KICH_BAN_2026-10-31/README.md) |
 | Understand language coverage | [Semantic routing, Vietnamese](docs/SEMANTIC_AND_BANK_PLAN.md) |
 | Understand motion smoothing | [Motion quality, Vietnamese](docs/MOTION_QUALITY.md) |
 | Browse all guides and evidence | [Documentation index](docs/README.md) |

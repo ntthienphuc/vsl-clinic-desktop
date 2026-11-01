@@ -11,9 +11,7 @@ A local Windows desktop demo with simultaneous doctor and patient windows. Main 
 | [Source setup](GIT_SETUP.md) | Clone, restore 107 authorized local inputs, setup and checksum verification. |
 | [Usage guide](USAGE.md) | Two modes, camera/video, pauses and unsupported sentences. |
 | [Windows package contents](PACKAGE_CONTENTS.md) | Bundled runtimes, models, avatar bank, videos and excluded research sources. |
-| [Two demo scenarios — Vietnamese](../demo/HAI_KICH_BAN_2026-10-31/README.md) | Ten dialogue turns, practice videos and rehearsal clips. |
 | [0.3.4 handoff — Vietnamese](DEMO_0.3.4.md) | Runtime changes, inventory, test conditions and limitations. |
-| [Original script — Vietnamese](../demo/KICH_BAN_DEMO.md) | An additional eight-turn rehearsal. |
 
 ## Understand the system
 
