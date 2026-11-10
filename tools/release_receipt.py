@@ -6,6 +6,7 @@ import os
 from pathlib import Path
 import shutil
 import subprocess
+from packaging_assets import inactive_multimodal_weights
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
@@ -22,6 +23,7 @@ def digest(path):
 
 def main():
     records = []
+    inactive = inactive_multimodal_weights(ROOT / "assets")
     engine_build = json.loads((PACKAGE / "resources/engine/ENGINE_BUILD_INFO.json").read_text("utf8"))
     for name, checksum in engine_build["source_sha256"].items():
         if digest(ROOT / name) != checksum:
@@ -61,7 +63,7 @@ process.stdout.write(JSON.stringify({hashes, manifest: JSON.parse(manifest), man
         (ROOT / "demo", PACKAGE / "demo"),
     ]:
         for source in sorted(source_folder.rglob("*")):
-            if not source.is_file() or "__pycache__" in source.parts or source.suffix in {".map", ".partial"} or "reference-source" in source.parts or source == ROOT / "assets/language/runtime.zip":
+            if not source.is_file() or source in inactive or "__pycache__" in source.parts or source.suffix in {".map", ".partial"} or "reference-source" in source.parts or source == ROOT / "assets/language/runtime.zip":
                 continue
             relative = source.relative_to(source_folder)
             packaged = destination_folder / relative
@@ -117,6 +119,7 @@ process.stdout.write(JSON.stringify({hashes, manifest: JSON.parse(manifest), man
         "git_head": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
         "scope": "Uncommitted local project. Build payload parity, not clean-machine or clinical validation.",
         "payload_files_verified": len(records),
+        "inactive_historical_weights_omitted": [p.relative_to(ROOT).as_posix() for p in sorted(inactive)],
         "asar_source_files_verified": archived,
         "packaged_manifest_sha256": archive_result["manifest_sha256"],
         "manifest_verification": "All production metadata equal; electron-builder strips scripts/devDependencies/build and reserializes JSON.",

@@ -59,7 +59,7 @@ def main() -> None:
         with (evidence / 'compiler.log').open('w', encoding='utf8') as log:
             subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, check=True)
         compiled = staging / setup.name
-        if not compiled.is_file() or not 0 < compiled.stat().st_size < 4 * 1024**3:
+        if not compiled.is_file() or not 0 < compiled.stat().st_size < 4_200_000_000:
             raise RuntimeError('The single setup file is missing or exceeds the Windows executable size limit.')
         os.replace(compiled, setup)
     report = dict(version=version, created_at=datetime.now(timezone.utc).isoformat(),

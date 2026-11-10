@@ -84,7 +84,10 @@ def main():
     path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), "utf8")
     records.append(dict(path="models/MODEL_MANIFEST.json", sha256=sha256(path), bytes=path.stat().st_size))
     # Unique identity per staged file. Previous source remains available for provenance.
-    unique = {r["path"]:r for r in records}
+    active_weights = set(foundations.values()) | {"r3/head/best.pt"}
+    unique = {r["path"]:r for r in records
+              if Path(r["path"]).suffix not in {".pt", ".safetensors"}
+              or r["path"] in active_weights}
     deployment = dict(previous, contract=contract, profile="slgcn-avhubert",
         source_manifest_sha256=sha256(path), foundations=foundations, files=list(unique.values()),
         previous_contract=previous["contract"])

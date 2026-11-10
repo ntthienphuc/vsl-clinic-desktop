@@ -24,6 +24,8 @@ End users receive one **VSL-Clinic-Setup-0.5.2.exe** containing the full offline
 
 No separate Python, Node, PhoWhisper or model download is part of the normal end-user launch flow. The speech model is opened from its packaged local directory with `local_files_only=True`.
 
+The installer omits five historical SPOTER/VLR weight files from the 0.5.0 configuration (about 1.01 GB), which remain in the local source/research archive. The active manifest declares the SL-GCN encoder, AV-HuBERT encoder and fusion head; all three remain byte-identical. The independent 400-class ONNX models, all voice clips and the complete runtime remain included. The deployment integrity list and package receipt record this selection; the model contract and numerical pipeline are unchanged.
+
 The 0.5.1 inventory passed with **20,400 isolated runtime files**, all 100 class-to-voice mappings, **419 patient clips**, **132 avatar narration clips** and a logical portable size of about **9.62 GB**. The payload is verified against source/build inputs in `BUILD_RECEIPT.json`. Large immutable binaries use ordinary NTFS hardlinks on this development drive; copying the entire folder produces a self-contained copy, and no research-directory path is required at runtime. AV-HuBERT restricts this artifact to non-commercial research; its original license is bundled.
 
 ## What is not in this package

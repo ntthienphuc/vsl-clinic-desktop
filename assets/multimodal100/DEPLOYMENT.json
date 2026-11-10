@@ -218,11 +218,6 @@
       "bytes": 38622
     },
     {
-      "path": "models/fusion.pt",
-      "sha256": "1367a90f4cd3fedeba1e62b4314eaa95f0cf94f82983b722130bb61d85325c99",
-      "bytes": 2308201
-    },
-    {
       "path": "models/fusion.config.json",
       "sha256": "ee3c3c85469553f2fc0ae7fee7fb31f2b2aa261d5bf9d6dfd52c44301fce2d05",
       "bytes": 1785
@@ -233,11 +228,6 @@
       "bytes": 727
     },
     {
-      "path": "models/sign_only.pt",
-      "sha256": "f1a0ea4ae20f66946ac35b3ccfdd1c4a859fdce0acf35b48d21b2cdf9aed4180",
-      "bytes": 2308201
-    },
-    {
       "path": "models/sign_only.config.json",
       "sha256": "8f198b4f3f8c1ce0a9ddb9d3bd13f47f15324fa913a7d9ce2aadfdff5d0413b4",
       "bytes": 1773
@@ -246,11 +236,6 @@
       "path": "models/sign_only.source_hashes.json",
       "sha256": "fe38b76f582b0d0c4b9997e9b4b7663a9d4f05a4a7785e35e605b8a37e644257",
       "bytes": 727
-    },
-    {
-      "path": "models/mouth_only.pt",
-      "sha256": "b1a41f9eea2ba4b3988b9994d33a353f23b5d04987576a73e74be34baf24c5fe",
-      "bytes": 2308201
     },
     {
       "path": "models/mouth_only.config.json",
@@ -296,16 +281,6 @@
       "path": "server/__init__.py",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "bytes": 0
-    },
-    {
-      "path": "models/foundations/spoter.safetensors",
-      "sha256": "d62ed125de51c5719daa48f340f66695353e24776a534ac28266b86663dd185e",
-      "bytes": 24974624
-    },
-    {
-      "path": "models/foundations/vlr_pretrained.pt",
-      "sha256": "b38177ae98f1f3cbea1a4c183c2bca804cf0a576e99abd23aab85ae56f413280",
-      "bytes": 973787221
     },
     {
       "path": "r3/assets/slgcn/model.safetensors",

@@ -12,6 +12,7 @@ import shutil
 import subprocess
 import sys
 from datetime import datetime, timezone
+from packaging_assets import inactive_multimodal_weights
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -91,8 +92,15 @@ def main():
     require_closed(package)
     subprocess.run(["node", str(ROOT / "node_modules/electron-builder/cli.js"),
                     "--win", "dir", "--config", str(custom)], cwd=ROOT, check=True)
+    inactive = inactive_multimodal_weights(ROOT / "assets")
+    for source in inactive:
+        target = package / "resources/assets" / source.relative_to(ROOT / "assets")
+        if not target.resolve().is_relative_to(package):
+            raise ValueError("Inactive weight escaped package")
+        if target.is_file():
+            target.unlink()  # Remove this generated hardlink, preserving source weights.
     stage_tree(ROOT / "assets", package / "resources/assets",
-               skip=lambda p: "reference-source" in p.parts or p.suffix in {".partial", ".map"} or p == ROOT / "assets/language/runtime.zip")
+               skip=lambda p: p in inactive or "reference-source" in p.parts or p.suffix in {".partial", ".map"} or p == ROOT / "assets/language/runtime.zip")
     stage_tree(ROOT / "build/engine/ClinicEngine", package / "resources/engine")
     stage_tree(ROOT / "build/multimodal-runtime", package / "resources/multimodal-runtime")
     stage_tree(ROOT / "multimodal", package / "resources/multimodal")
