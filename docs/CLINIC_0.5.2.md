@@ -35,6 +35,8 @@ Trước sử dụng bệnh viện thật vẫn thiếu kiểm người dùng/ng
 
 ## Evidence và bàn giao
 
+**Cập nhật bộ cài 10/11:** [hồ sơ bộ cài](INSTALLER_0.5.2.md) ghi cả lượt cài đầu không đạt tự đọc và bản sửa khởi động bộ dò trước khi mở nguồn hình. Nguồn hiện tại qua đủ 20 kiểm chức năng, 8/12 từ tự đọc đúng, 4 chờ đối chiếu, lặp từ/ASR/Kết thúc và thoát sạch. Biên bản bản đã cài cuối, hash toàn bộ payload và quyết định dọn nằm tại `Organization/Installer_0.5.2` ở root dự án. Số liệu bên dưới thuộc bản portable trước thay đổi khởi động.
+
 **Bản EXE cuối:** `packaged-ui-12-minimal-reviewed-052/REPORT.json` đạt các kiểm chức năng và thoát sạch trên gói đã build. Dùng 12 clip VSL100 có hình môi (6 nhãn, 2 người ký, giữ SHA256 và fold01/seed17 đã chốt): **7 tự đọc đúng, 5 chờ đối chiếu, 0 tự đọc sai, 11/12 top-1 khớp**. Không bỏ clip nào. Một lượt sửa từ qua UI là thao tác QA cố ý, không tính thành nhận đúng tự động. Clip Đau ở bộ 400 nhận/đọc đúng. Hai từ Sốt liên tiếp trong video nguyên pixel được tự đọc một lần mỗi từ trước khi hết lượt, không cần xác nhận.
 
 | Số đo EXE cuối | Kết quả |

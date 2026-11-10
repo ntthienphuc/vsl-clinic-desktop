@@ -34,6 +34,7 @@ class Run:
     capped: int = 0
     inflight: int = 0
     segment_number: int = 0
+    detector_warmup_ms: float = 0.
     started: float = field(default_factory=time.perf_counter)
     state: str = "starting"
     last_activity: dict = field(default_factory=dict)
@@ -85,6 +86,13 @@ class MultimodalCapture:
     def _read(self, run):
         cap = None
         try:
+            # Opening a camera after kernel warmup also avoids buffering stale
+            # device frames while the detector is still preparing.
+            while not run.detector_ready.wait(.05):
+                if run.cancel.is_set():
+                    return
+            if run.cancel.is_set():
+                return
             if isinstance(run.source, int):
                 cap = cv2.VideoCapture(run.source, cv2.CAP_DSHOW)
                 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
@@ -97,9 +105,6 @@ class MultimodalCapture:
                 raise ValueError("capture_open_failed")
             fps = cap.get(cv2.CAP_PROP_FPS)
             fps = fps if 1 <= fps <= 240 else 30.
-            while not run.detector_ready.wait(.05):
-                if run.cancel.is_set():
-                    return
             run.started = base = time.perf_counter()
             preview_at, next_due = -1e6, 0.
             while not run.cancel.is_set():
@@ -152,6 +157,7 @@ class MultimodalCapture:
         self.emit(run, dict(type="capture", status=run.state, source_kind=run.source_kind,
             captured=run.captured, processed=run.processed, dropped=run.dropped, fps_cap_drops=run.capped,
             processed_fps=run.processed / max(.001, time.perf_counter() - run.started),
+            detector_warmup_ms=run.detector_warmup_ms,
             inflight_segments=inflight, queued_segments=run.segments.qsize(),
             **run.last_activity, **extra))
 
@@ -184,6 +190,7 @@ class MultimodalCapture:
         processor = None
         try:
             processor = MemoryProcessor(self.root)
+            run.detector_warmup_ms = processor.warmup()
             gate = make_gate(self.engine.manifest)
             run.detector_ready.set()
             last_notice = 0.

@@ -52,6 +52,23 @@ class MemoryProcessor:
         self.frames = []
         self.closed = False
 
+    def warmup(self):
+        """Initialize lazy CPU kernels before the reader starts its clock.
+
+        No patient frame or synthetic observation enters the segment buffer.
+        A blank image supplies no pose/hand state to the tracking graphs.
+        """
+        if self.closed or self.frames:
+            raise ValueError("warmup_requires_fresh_processor")
+        started = time.perf_counter()
+        blank = np.zeros((1080, 1080, 3), dtype=np.uint8)
+        face_pending = self.face_executor.submit(self._face, blank)
+        try:
+            self.holistic.process(blank)
+        finally:
+            face_pending.result()
+        return (time.perf_counter() - started) * 1000
+
     def append(self, bgr, frame_id, capture_ms, captured_monotonic_ms=None):
         if self.closed:
             raise ValueError("processor_closed")

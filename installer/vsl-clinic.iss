@@ -29,7 +29,6 @@ OutputDir={#InstallerOutput}
 OutputBaseFilename=VSL-Clinic-Setup-{#AppVersion}
 Compression=lzma2/normal
 SolidCompression=yes
-LZMAUseSeparateProcess=yes
 LZMANumBlockThreads=2
 LZMABlockSize=262144
 DiskSpanning=no

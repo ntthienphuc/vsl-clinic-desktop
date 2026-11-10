@@ -1,0 +1,227 @@
+{
+  "passed": true,
+  "desktop_exit": 0,
+  "checks": {
+    "layout720p1080p": true,
+    "minimalPlainLanguageResponsiveSettingsAndCancel": true,
+    "defaultFusion100": true,
+    "quickPhrases24ReviewThenRealAvatarVoiceMouth": true,
+    "patientFeedbackAndUnsupportedMeaningPreserved": true,
+    "liveModeSwitchSharedDictionarySourceAndOldResultFence": true,
+    "sign400RealRecognitionAndVoice": true,
+    "returnFusionAndEndFencesBothEngines": true,
+    "avatarVoiceMouthAndMicGuard": true,
+    "manualPauseResumeStopsSoundAndMouth": true,
+    "reviewCorrectionUsesCorrectVoice": true,
+    "realFusionIncrementalWordsVoiceAndReview": true,
+    "noRepeatWhenTurnEnds": true,
+    "realPatientReplyYieldsAvatar": true,
+    "sameStreamRepeatedWordSpokenOnceEachBeforeTurnEnd": true,
+    "realSpeechSocketRejectsSyntheticNoise": true,
+    "realBundledASRSendsOnce": true,
+    "endFencesFusionAndAudio": true,
+    "temporaryHistoryNeverReplaysAndDiscards": true,
+    "cleanDesktopEngineAndWorkerExit": true
+  },
+  "clips": 12,
+  "automatic": 8,
+  "wrong_automatic": 0,
+  "review": 4,
+  "top1_agreement": 11,
+  "omitted_clips": 0,
+  "input_fps": [
+    13.846153846153847,
+    20.384615384615383
+  ],
+  "latency": {
+    "last_active_frame_to_paint": {
+      "n": 12,
+      "p50_ms": 828.85,
+      "p95_ms": 934.94,
+      "min_ms": 733.58,
+      "max_ms": 949.33
+    },
+    "last_active_frame_to_audio": {
+      "n": 8,
+      "p50_ms": 868.68,
+      "p95_ms": 945.27,
+      "min_ms": 807.6,
+      "max_ms": 946.4
+    },
+    "inference": {
+      "n": 12,
+      "p50_ms": 343.05,
+      "p95_ms": 419.09,
+      "min_ms": 209.4,
+      "max_ms": 423.52
+    },
+    "caveat": "Software timestamps, not photon/acoustic latency; tiny fixed sample, descriptive p95."
+  },
+  "report": "E:\\Project\\VSL Clinic\\Organization\\MultimodalIntegration_2026-11-09\\source-ui-final-warmup-source-052\\REPORT.json",
+  "report_sha256": "2b2f68a6d630447524a8bb6b54024a51f2a787ddd210512b80597ac6758c6f8b",
+  "executable": "E:\\Project\\VSL Clinic\\Source\\node_modules\\electron\\dist\\electron.exe",
+  "started_at": "2026-11-10T05:49:52.854Z",
+  "error": null,
+  "shutdown_ms": 1699,
+  "forced_shutdown": false,
+  "worker_exited": true,
+  "engine_graceful_exit": true,
+  "speech_negative": {
+    "seconds": 8,
+    "kinds": [
+      "silence",
+      "hiss",
+      "hum",
+      "keyboard-like impulses"
+    ],
+    "transcripts": 0
+  },
+  "counts": {
+    "trials": 12,
+    "autoWords": 8,
+    "newWords": 4,
+    "yielded": 7
+  },
+  "repeated_words": [
+    {
+      "text": "Sốt",
+      "uncertain": false
+    },
+    {
+      "text": "Sốt",
+      "uncertain": false
+    }
+  ],
+  "repeat_qa_confirmations": 0,
+  "trials": [
+    {
+      "clip": "Học_T01_C1_W066",
+      "expected": "W066",
+      "recognized": "Mệt",
+      "review": false,
+      "reasons": [],
+      "input_fps": 20.384615384615383,
+      "max_capture_gap_ms": 83.33333333333337,
+      "detector_warmup_ms": 164.50239999903715
+    },
+    {
+      "clip": "Học_T01_C1_W068",
+      "expected": "W068",
+      "recognized": "Sốt",
+      "review": true,
+      "reasons": [
+        "incomplete_word_boundary"
+      ],
+      "input_fps": 16.91275167785235,
+      "max_capture_gap_ms": 116.66666666666669,
+      "detector_warmup_ms": 196.0123000026215
+    },
+    {
+      "clip": "Học_T01_C1_W069",
+      "expected": "W069",
+      "recognized": "Buồn nôn",
+      "review": false,
+      "reasons": [],
+      "input_fps": 16.60377358490566,
+      "max_capture_gap_ms": 133.33333333333337,
+      "detector_warmup_ms": 212.35589999923832
+    },
+    {
+      "clip": "Học_T01_C1_W072",
+      "expected": "W072",
+      "recognized": "Bụng",
+      "review": false,
+      "reasons": [],
+      "input_fps": 15.413793103448274,
+      "max_capture_gap_ms": 132.4384787472036,
+      "detector_warmup_ms": 201.35970000046655
+    },
+    {
+      "clip": "Học_T01_C1_W082",
+      "expected": "W082",
+      "recognized": "Quen",
+      "review": true,
+      "reasons": [
+        "ambiguous_closed_set_prediction"
+      ],
+      "input_fps": 15.121951219512194,
+      "max_capture_gap_ms": 133.33333333333334,
+      "detector_warmup_ms": 244.8229999972682
+    },
+    {
+      "clip": "Học_T01_C1_W093",
+      "expected": "W093",
+      "recognized": "Cần",
+      "review": false,
+      "reasons": [],
+      "input_fps": 17.746478873239436,
+      "max_capture_gap_ms": 83.33333333333348,
+      "detector_warmup_ms": 213.11830000195187
+    },
+    {
+      "clip": "Huy_T01_C1_W066",
+      "expected": "W066",
+      "recognized": "Mệt",
+      "review": false,
+      "reasons": [],
+      "input_fps": 15.937499999999998,
+      "max_capture_gap_ms": 116.66666666666669,
+      "detector_warmup_ms": 207.69559999826015
+    },
+    {
+      "clip": "Huy_T01_C1_W068",
+      "expected": "W068",
+      "recognized": "Sốt",
+      "review": false,
+      "reasons": [],
+      "input_fps": 17.142857142857142,
+      "max_capture_gap_ms": 166.66666666666669,
+      "detector_warmup_ms": 212.18929999668035
+    },
+    {
+      "clip": "Huy_T01_C1_W069",
+      "expected": "W069",
+      "recognized": "Buồn nôn",
+      "review": true,
+      "reasons": [
+        "ambiguous_closed_set_prediction"
+      ],
+      "input_fps": 16.684491978609625,
+      "max_capture_gap_ms": 133.33333333333337,
+      "detector_warmup_ms": 201.90229999934672
+    },
+    {
+      "clip": "Huy_T01_C1_W072",
+      "expected": "W072",
+      "recognized": "Bụng",
+      "review": true,
+      "reasons": [
+        "ambiguous_closed_set_prediction"
+      ],
+      "input_fps": 13.846153846153847,
+      "max_capture_gap_ms": 149.9999999999999,
+      "detector_warmup_ms": 194.67909999730182
+    },
+    {
+      "clip": "Huy_T01_C1_W082",
+      "expected": "W082",
+      "recognized": "Nhà vệ sinh",
+      "review": false,
+      "reasons": [],
+      "input_fps": 16.6643209007741,
+      "max_capture_gap_ms": 82.77027027027043,
+      "detector_warmup_ms": 224.60359999968205
+    },
+    {
+      "clip": "Huy_T01_C1_W093",
+      "expected": "W093",
+      "recognized": "Cần",
+      "review": false,
+      "reasons": [],
+      "input_fps": 15.918367346938776,
+      "max_capture_gap_ms": 116.66666666666669,
+      "detector_warmup_ms": 205.7065999979386
+    }
+  ],
+  "scope": "Same fixed 12 VSL100 recordings with mouth pixels, synthetic audio and real local UI; no live person/camera, real room noise or independent accuracy claim."
+}
