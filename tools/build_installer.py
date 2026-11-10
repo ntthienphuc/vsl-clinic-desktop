@@ -9,6 +9,7 @@ import os
 from pathlib import Path
 import shutil
 import subprocess
+import tempfile
 
 from audit_portable import audit
 
@@ -47,13 +48,20 @@ def main() -> None:
     if not inventory['passed'] or inventory['version'] != version:
         raise RuntimeError('Portable inventory failed or version differs; rebuild and refresh the receipt first.')
     output.mkdir(exist_ok=True)
-    command = [str(compiler), '/Qp', f'/DAppVersion={version}', f'/DPayloadDir={payload}',
-               f'/DInstallerOutput={output}', str(ROOT / 'installer/vsl-clinic.iss')]
-    with (evidence / 'compiler.log').open('w', encoding='utf8') as log:
-        subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, check=True)
     setup = output / f'VSL-Clinic-Setup-{version}.exe'
-    if not setup.is_file() or not 0 < setup.stat().st_size < 4 * 1024**3:
-        raise RuntimeError('The single setup file is missing or exceeds the Windows executable size limit.')
+    # Keep incomplete compiler output out of the user-facing Installer folder.
+    with tempfile.TemporaryDirectory(prefix='build-', dir=evidence) as temporary:
+        staging = Path(temporary).resolve()
+        if not staging.is_relative_to(evidence.resolve()):
+            raise RuntimeError('Installer staging escaped the evidence directory.')
+        command = [str(compiler), f'/DAppVersion={version}', f'/DPayloadDir={payload}',
+                   f'/DInstallerOutput={staging}', str(ROOT / 'installer/vsl-clinic.iss')]
+        with (evidence / 'compiler.log').open('w', encoding='utf8') as log:
+            subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, check=True)
+        compiled = staging / setup.name
+        if not compiled.is_file() or not 0 < compiled.stat().st_size < 4 * 1024**3:
+            raise RuntimeError('The single setup file is missing or exceeds the Windows executable size limit.')
+        os.replace(compiled, setup)
     report = dict(version=version, created_at=datetime.now(timezone.utc).isoformat(),
                   setup=str(setup), bytes=setup.stat().st_size, sha256=digest(setup),
                   compiler=str(compiler), compiler_sha256=digest(compiler),

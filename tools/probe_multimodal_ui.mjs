@@ -21,6 +21,7 @@ const report={scope:`${version} ${packaged?'packaged EXE':'source Electron'}; fi
 const delay=ms=>new Promise(r=>setTimeout(r,ms));
 async function until(fn, timeout=90000) {const start=Date.now();while(Date.now()-start<timeout){const r=await fn();if(r)return r;await delay(80);}throw Error('Timeout: '+fn.toString().slice(0,150));}
 const env={...process.env};delete env.ELECTRON_RUN_AS_NODE;delete env.PYTHONPATH;delete env.PYTHONHOME;
+if(installedExecutable){env.HF_HOME=path.join(output,'empty-hf-cache');env.HF_HUB_OFFLINE='1';env.TRANSFORMERS_OFFLINE='1';}
 // Avoid development Python/FFmpeg from PATH in the packaged test.
 if(packaged)env.PATH=process.env.SystemRoot+'\\System32;'+process.env.SystemRoot;
 const executable=installedExecutable?path.resolve(installedExecutable):packaged?path.join(root,'../App',version,'win-unpacked/VSL Clinic.exe'):path.join(root,'node_modules/electron/dist/electron.exe');
