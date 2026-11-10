@@ -59,6 +59,59 @@ def audit(package: Path) -> dict:
         labels = list(csv.reader(stream))
     if len(labels) != 400 or {int(row[0]) for row in labels} != set(range(400)):
         problems.append({"reason": "recognizer label count differs from 400"})
+    voice_entries = []
+    voice_manifest = assets / 'patient-voice/manifest.json'
+    if voice_manifest.is_file():
+        voice_entries = read(voice_manifest)['entries']
+        if {e['id']: e['text'] for e in voice_entries if e['id'].isdigit()} != dict(labels):
+            problems.append({'reason': 'patient readout dictionary differs from the 400 labels'})
+        for entry in voice_entries:
+            verify('resources/assets/patient-voice/' + entry['file'], entry['sha256'])
+    elif tuple(map(int, receipt['version'].split('.'))) >= (0, 3, 5):
+        problems.append({'reason': 'bundled Vietnamese patient readout is missing'})
+    multimodal = assets / "multimodal100"
+    if tuple(map(int, receipt['version'].split('.'))) >= (0, 5, 0):
+        verify("resources/multimodal-runtime/python.exe")
+        verify("resources/multimodal-runtime/python311.dll")
+        verify("resources/multimodal-runtime/python311._pth")
+        verify("resources/multimodal/worker.py")
+        deployment = read(multimodal / "DEPLOYMENT.json")
+        for row in deployment["files"]:
+            verify("resources/assets/multimodal100/" + row["path"], row["sha256"])
+        manifest = read(multimodal / "models/MODEL_MANIFEST.json")
+        for name, relative in deployment["foundations"].items():
+            verify("resources/assets/multimodal100/" + relative, manifest["foundations"][name]["sha256"])
+        mappings = read(multimodal / "label_mapping.json")
+        voice_by_id = {e["id"]: e for e in voice_entries}
+        if len(mappings) != 100:
+            problems.append({"reason": "multimodal vocabulary does not contain 100 labels"})
+        for i, row in enumerate(mappings):
+            entry = voice_by_id.get(row["voice_key"])
+            if row["class_index"] != i or row["class_id"] != f"W{i+1:03d}" or not entry or entry["text"] != row["display_text"]:
+                problems.append({"reason": "multimodal class/voice mismatch", "class_id": row["class_id"]})
+        runtime = read(package / "resources/multimodal-runtime/RUNTIME_MANIFEST.json")
+        for row in runtime["files"]:
+            verify("resources/multimodal-runtime/" + row["path"], row["sha256"])
+    avatar_voice_entries = []
+    avatar_voice_manifest = assets / 'avatar-voice/manifest.json'
+    if avatar_voice_manifest.is_file():
+        avatar_voice_entries = read(avatar_voice_manifest)['entries']
+        phrase_catalog = read(assets / 'phrases.json')
+        phrases = phrase_catalog['entries']
+        expected = {f"w:{word['id']}" for word in words} | {f"p:{phrase['id']}" for phrase in phrases}
+        grammar = phrase_catalog.get('grammar', {})
+        expected |= {f"p:subject-{subject['gloss_id']}-{predicate['id']}"
+                     for subject in grammar.get('subjects', [])
+                     for predicate in grammar.get('predicates', [])}
+        actual = [entry['id'] for entry in avatar_voice_entries]
+        if set(actual) != expected or len(actual) != len(expected):
+            problems.append({'reason': 'avatar narration does not cover exactly the words and phrases'})
+        for entry in avatar_voice_entries:
+            verify('resources/assets/avatar-voice/' + entry['file'], entry['sha256'])
+            if not entry.get('words') or not any(entry.get('envelope', [])):
+                problems.append({'reason': 'avatar voice lacks mouth timing', 'id': entry['id']})
+    elif tuple(map(int, receipt['version'].split('.'))) >= (0, 4, 1):
+        problems.append({'reason': 'bundled avatar narration is missing'})
     catalog = read(assets / "catalog.json")["words"]
     # These are inherited catalog metadata URLs, not the app's runtime demos.
     old_video_links = [w for w in catalog if w.get("video_path")]
@@ -74,7 +127,13 @@ def audit(package: Path) -> dict:
         "app_asar_sha256": digest(package / "resources/app.asar"),
         "package_files": len(files),
         "package_bytes": sum(p.stat().st_size for p in files),
-        "recognizer_labels": len(labels),
+        "recognizer_labels": len(mappings) if multimodal.is_dir() else len(labels),
+        "recognizer_family": "multimodal100" if multimodal.is_dir() else "legacy400",
+        "legacy_recognizer_labels": len(labels),
+        "multimodal_runtime_files": len(runtime["files"]) if multimodal.is_dir() else 0,
+        "multimodal_contract": manifest.get("contract_id", manifest.get("contract")) if multimodal.is_dir() else None,
+        "patient_readout_clips": len(voice_entries),
+        "avatar_narration_clips": len(avatar_voice_entries),
         "avatar_vocabulary": len(words),
         "motion_entries": len(motions),
         "sample_videos": len(list((assets / "samples").glob("*.mp4"))),

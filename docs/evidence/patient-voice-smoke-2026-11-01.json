@@ -1,0 +1,123 @@
+{
+  "scope": "Real Electron UI, real prerecorded-video inference, local WAV output, fake silent microphone; not human microphone or signer validation.",
+  "cases": [
+    {
+      "clip": "01_Tiep_don_va_hoi_trieu_chung/01_Tra_loi/CAU_TRA_LOI.mp4",
+      "expected": [
+        "Đồng ý"
+      ],
+      "words": [
+        {
+          "text": "Đồng ý",
+          "uncertain": false
+        }
+      ],
+      "played": [
+        {
+          "type": "playing",
+          "message_id": "05c0ee2ab6f6",
+          "text": "Đồng ý",
+          "latency_ms": 39
+        }
+      ],
+      "audible": true,
+      "micBlocked": true,
+      "firstStatuses": {
+        "05c0ee2ab6f6": "streaming"
+      },
+      "microphoneResumed": true,
+      "noSpeechFeedback": true
+    },
+    {
+      "clip": "02_Nhu_cau_va_ho_tro/04_Tra_loi/CAU_TRA_LOI.mp4",
+      "expected": [
+        "Mệt",
+        "Cần",
+        "Nghỉ ngơi"
+      ],
+      "words": [
+        {
+          "text": "Mệt",
+          "uncertain": false
+        },
+        {
+          "text": "Cần",
+          "uncertain": false
+        },
+        {
+          "text": "Nghỉ ngơi",
+          "uncertain": false
+        }
+      ],
+      "played": [
+        {
+          "type": "playing",
+          "message_id": "5755395a7ef0",
+          "text": "Mệt",
+          "latency_ms": 61
+        },
+        {
+          "type": "playing",
+          "message_id": "ebc5d624ab94",
+          "text": "Cần",
+          "latency_ms": 58
+        },
+        {
+          "type": "playing",
+          "message_id": "d1e8d91d1d31",
+          "text": "Nghỉ ngơi",
+          "latency_ms": 62
+        }
+      ],
+      "audible": true,
+      "micBlocked": true,
+      "firstStatuses": {
+        "5755395a7ef0": "streaming",
+        "ebc5d624ab94": "streaming",
+        "d1e8d91d1d31": "streaming"
+      },
+      "microphoneResumed": true,
+      "noSpeechFeedback": true
+    }
+  ],
+  "externalRequests": [],
+  "passed": true,
+  "layouts": [
+    {
+      "role": "patient",
+      "width": 1278,
+      "height": 715,
+      "scrollWidth": 1278,
+      "scrollHeight": 715,
+      "wordFont": null,
+      "captionFont": "28px"
+    },
+    {
+      "role": "doctor",
+      "width": 1280,
+      "height": 720,
+      "scrollWidth": 1280,
+      "scrollHeight": 720,
+      "wordFont": "28px",
+      "captionFont": null
+    },
+    {
+      "role": "patient",
+      "width": 1918,
+      "height": 1075,
+      "scrollWidth": 1918,
+      "scrollHeight": 1075,
+      "wordFont": null,
+      "captionFont": "38px"
+    },
+    {
+      "role": "doctor",
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080,
+      "wordFont": "36px",
+      "captionFont": null
+    }
+  ]
+}

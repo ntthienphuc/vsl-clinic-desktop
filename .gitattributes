@@ -9,3 +9,10 @@ licenses/** linguist-vendored=true
 backend/legacy/** linguist-vendored=true
 docs/evidence/** linguist-generated=true
 public/fonts/** linguist-vendored=true
+assets/multimodal100/server/vendor/** linguist-vendored=true
+assets/multimodal100/r3/vendor/** linguist-vendored=true
+installer/Vietnamese.isl linguist-vendored=true
+# Pinned upstream bytes must retain their original whitespace for hash parity.
+assets/multimodal100/server/vendor/** -whitespace
+assets/multimodal100/r3/vendor/** -whitespace
+assets/multimodal100/r3/deps/** linguist-vendored=true -whitespace

@@ -1,14 +1,17 @@
 """One authoritative conversation and playback clock shared by both windows."""
 from __future__ import annotations
 
-import asyncio
 import copy
 import time
 import uuid
+from collections import deque
 
 from .text_to_sign import TextPlanner
 from .playback import build_timeline
 from .patient_turns import PatientTurns
+from .patient_handover import PatientHandover
+from .avatar_voice import attach_narration
+from .speech_repair import repair_speech
 
 
 def now_ms():
@@ -20,28 +23,37 @@ def identity():
 
 
 class ClinicSession:
-    def __init__(self, planner: TextPlanner, durations: dict[str, float], join_profile: dict | None = None):
+    def __init__(self, planner: TextPlanner, durations: dict[str, float], join_profile: dict | None = None, voice_bank=None):
         self.planner = planner
         self.durations = durations
         self.join_profile = join_profile or {}
+        self.voice_bank = voice_bank or {}
         self.listeners = {}
         self.loop = None
         self.revision = 0
         self.metrics = []
         self.reset()
 
-    def reset(self):
+    def reset(self, *, generation=None, preserve_temporary=False):
+        if not preserve_temporary:
+            self.temporary = None
+        generation = self.capture.get("generation", 0) if generation is None and hasattr(self, "capture") else (generation or 0)
         self.session_id = identity()
         self.messages = []
-        self.capture = {"status": "idle", "generation": 0}
+        self.capture = {"status": "idle", "generation": generation}
         self.playback = None
         self.pending = []
         self.current_result = None
+        self.recognition_seen = deque(maxlen=512)
+        self.recognition_sequence = None
         self.turns = PatientTurns()
+        self.handover = PatientHandover()
         self.conversation = {"status": "idle", "mode": "manual", "epoch": identity(),
                              "source": {"kind": "camera", "camera_index": 0}, "started_at_ms": None}
         self.speech_drafts = []
         self.speech_seen = set()
+        self.avatar_voice_enabled = getattr(self, "avatar_voice_enabled", True)
+        self.recognition = getattr(self, "recognition", {"mode": "fusion", "labels": 100, "status": "loading", "switching": False})
         self.metrics.clear()
         self.revision += 1
         self.broadcast()
@@ -56,6 +68,11 @@ class ClinicSession:
             "conversation": copy.deepcopy(self.conversation),
             "patient_turn": copy.deepcopy(self.turns.current),
             "speech_drafts": copy.deepcopy(self.speech_drafts),
+            "avatar_voice_enabled": self.avatar_voice_enabled,
+            "recognition": copy.deepcopy(self.recognition),
+            "temporary": ({"id": self.temporary["id"], "saved_at_ms": self.temporary["saved_at_ms"],
+                           "message_count": len(self.temporary["messages"]), "draft_count": len(self.temporary["speech_drafts"])}
+                          if self.temporary else None),
         }
 
     def broadcast(self):
@@ -85,9 +102,27 @@ class ClinicSession:
             self.capture = {**self.capture, **event}
             if event["status"] == "signing":
                 self.turns.activity(now_ms())
+                self.capture.pop("quality_warning", None)
             if event["status"] in {"error", "idle", "no_person", "starting"}:
                 self.current_result = None
+            self.handover.observe(self.playback, self.capture, self.conversation["mode"] == "auto", self.elapsed, now_ms())
+        elif event["type"] == "recognition_unavailable":
+            self.capture["quality_warning"] = event.get("quality_warning") or event.get("policy", {}).get("prompt")
+            self.current_result = None
+            self.metrics.append({**event, "recorded_at_ms": now_ms()})
+            self.metrics = self.metrics[-500:]
         elif event["type"] == "recognition":
+            if event.get("stream_id") is not None and event.get("segment_number") is not None:
+                stream_key = (generation, event["stream_id"])
+                previous = self.recognition_sequence
+                if previous and previous[0] == stream_key and event["segment_number"] <= previous[1]:
+                    return
+                self.recognition_sequence = (stream_key, event["segment_number"])
+            segment_key = (generation, event.get("segment_id"))
+            if event.get("segment_id"):
+                if segment_key in self.recognition_seen:
+                    return
+                self.recognition_seen.append(segment_key)
             predictions = event["predictions"]
             last_doctor = next((item for item in reversed(self.messages)
                                 if item["role"] == "doctor" and item.get("presented_at_ms")), {})
@@ -96,12 +131,19 @@ class ClinicSession:
             if last_doctor.get("mode") == "sign" and self.playback and self.playback["message_id"] == last_doctor.get("id"):
                 shown = [clause for clause in self.playback["clauses"] if clause["start_ms"] <= self.elapsed()]
                 question_id = shown[-1].get("phrase_id") if shown else None
-            context = self.planner.contextual_candidates(predictions, question_id if recent else None)
+            multimodal = event.get("engine_family") == "multimodal100"
+            # Lexical matches have not established motion equivalence to the
+            # avatar bank. Do not pass new W IDs into legacy context routing.
+            context = [] if multimodal else self.planner.contextual_candidates(predictions, question_id if recent else None)
             top = predictions[0] if predictions else {"gloss": "Chưa nhận rõ", "score": 0}
+            uncertain = (not event.get("policy", {}).get("committed", False) if multimodal
+                         else top["score"] < 0.55 or bool(event.get("quality_warning")))
             message = {
                 "id": identity(), "role": "patient", "text": top["gloss"],
                 "created_at_ms": now_ms(), "status": "candidate", "confidence": top["score"],
-                "uncertain": top["score"] < 0.55 or bool(event.get("quality_warning")), "predictions": predictions,
+                "uncertain": uncertain, "predictions": predictions,
+                "voice_key": top.get("voice_key"), "original_gloss": top.get("original_gloss", top["gloss"]),
+                "recognition": {key: event.get(key) for key in ("engine_family", "contract", "actual_mode", "segment_id", "policy")},
                 "quality_warning": event.get("quality_warning"),
                 "context_candidates": context,
                 "metrics": {key: value for key, value in event.items() if key not in {"predictions", "type"}},
@@ -111,6 +153,11 @@ class ClinicSession:
                 self.messages.append(turn)
             self.messages = self.messages[-100:]
             self.current_result = message
+            self.capture.pop("quality_warning", None)
+            if not message["uncertain"] and self.conversation["mode"] == "auto" and self.playback and (self.playback["status"] == "playing" or self.playback.get("pause_reason") == "patient_activity"):
+                self.playback["elapsed_ms"] = self.elapsed()
+                self.playback["status"] = "paused"
+                self.playback["pause_reason"] = "patient_reply"
             self.metrics.append({"type": "recognition", "message_id": message["id"], **event})
             self.metrics = self.metrics[-500:]
         self.changed()
@@ -122,7 +169,9 @@ class ClinicSession:
         self.changed()
 
     def tick(self):
-        if self.turns.tick(now_ms(), self.capture):
+        turn_changed = self.turns.tick(now_ms(), self.capture)
+        handover_changed = self.handover.settle(self.playback, self.capture, now_ms())
+        if turn_changed or handover_changed:
             self.changed()
 
     def configure_conversation(self, mode: str, source: dict | None = None):
@@ -139,11 +188,24 @@ class ClinicSession:
         self.conversation.update(status="active", epoch=identity(), started_at_ms=now_ms())
         self.changed()
 
-    def stop_conversation(self):
-        self.conversation.update(status="idle", epoch=identity())
+    def stop_conversation(self, keep_temporary=False, generation=None):
+        mode, source = self.conversation["mode"], copy.deepcopy(self.conversation["source"])
         self.turns.finish(now_ms(), "conversation_stopped")
-        if self.playback and self.playback["status"] not in {"stopped", "completed"}:
-            self.control_playback("stop", self.playback["id"])
+        for message in self.messages:
+            if message["role"] == "doctor" and message["status"] in {"queued", "presenting", "playing", "loading"}:
+                message["status"] = "cancelled"
+        self.temporary = ({"id": identity(), "saved_at_ms": now_ms(),
+                           "messages": copy.deepcopy(self.messages), "speech_drafts": copy.deepcopy(self.speech_drafts)}
+                          if keep_temporary and (self.messages or self.speech_drafts) else None)
+        # Fence queued camera results before yielding to worker shutdown. Both
+        # the session ID and ASR epoch change, so old callbacks cannot repopulate it.
+        floor = max(self.capture.get("generation", 0) + 1, generation or 0)
+        self.reset(generation=floor, preserve_temporary=True)
+        self.conversation.update(mode=mode, source=source)
+        self.changed()
+
+    def discard_temporary(self):
+        self.temporary = None
         self.changed()
 
     def speech_result(self, result: dict, epoch: str):
@@ -153,8 +215,9 @@ class ClinicSession:
         if key in self.speech_seen or not result["text"].strip():
             return None
         self.speech_seen.add(key)
+        spoken_text, repair = repair_speech(result)
         try:
-            plan = self.planner.plan(result["text"])
+            plan = self.planner.plan(spoken_text)
         except ValueError:
             plan = {"supported": False, "unsupported": []}
         reason = ""
@@ -167,13 +230,17 @@ class ClinicSession:
             reason = "Chưa có đủ ký hiệu hoặc mẫu câu này. Bạn hãy nói lại bằng câu ngắn hơn, hoặc chọn câu có sẵn."
         elif self.conversation["mode"] == "auto":
             try:
-                message = self.send(result["text"], "sign")
+                message = self.send(spoken_text, "sign")
                 message["speech_utterance_id"] = key
-                return {"status": "sent", "message_id": message["id"]}
+                if repair:
+                    message["raw_text"] = result["text"]
+                    message["speech_repair"] = repair
+                    self.changed()
+                return {"status": "sent", "message_id": message["id"], "repair": repair, "text": spoken_text}
             except ValueError as error:
                 reason = str(error)
                 reason_code = "busy"
-        draft = {"id": key, "text": result["text"], "created_at_ms": now_ms(),
+        draft = {"id": key, "text": spoken_text, "raw_text": result["text"], "repair": repair, "created_at_ms": now_ms(),
                  "reason": reason or "Kiểm tra nội dung rồi gửi.", "supported": plan["supported"],
                  "reason_code": reason_code,
                  "unsupported": list(dict.fromkeys(item["text"] for item in plan.get("unsupported", [])))}
@@ -218,6 +285,7 @@ class ClinicSession:
 
     def _start_playback(self, message):
         timing = build_timeline(message["glosses"], message.get("clauses", []), self.durations, self.join_profile)
+        timing = attach_narration(timing, message["glosses"], self.voice_bank)
         self.playback = {"id": identity(), "message_id": message["id"], "text": message["text"],
                          "glosses": message["glosses"], "status": "loading", "rate": 1.0,
                          "elapsed_ms": 0, "started_at_ms": 0, **timing, "iteration": 0,
@@ -261,6 +329,7 @@ class ClinicSession:
             playback["elapsed_ms"] = self.elapsed()
             playback["status"] = "paused"
         elif action == "resume" and playback["status"] == "paused":
+            self.handover.manual()
             playback["started_at_ms"] = now_ms()
             playback["status"] = "playing"
             playback.pop("pause_reason", None)
@@ -302,6 +371,8 @@ class ClinicSession:
         message["text"] = text.strip()
         message["status"] = "confirmed"
         message["uncertain"] = False
+        if self.conversation["mode"] == "auto" and self.playback and (self.playback["status"] == "playing" or self.playback.get("pause_reason") == "patient_activity"):
+            self.playback.update(elapsed_ms=self.elapsed(), status="paused", pause_reason="patient_reply")
         for turn in self.messages:
             if message in turn.get("words", []):
                 from .patient_turns import paraphrase

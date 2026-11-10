@@ -1,0 +1,56 @@
+{
+  "health": {
+    "service": "vsl-clinic",
+    "status": "ok",
+    "version": "0.4.0",
+    "model_loaded": true
+  },
+  "model": {
+    "name": "SL-GCN",
+    "labels": 400,
+    "sha256": "582f3d8712f73f78c5fe7b7521609ea54a9257e5a3a877aa8c9346b8e28ebb21",
+    "capture_profile": "clinic-pc-tasks-lite-parallel-v2"
+  },
+  "vocabulary_count": 67,
+  "phrase_count": 65,
+  "semantic_plan": {
+    "supported": true,
+    "projection": [
+      "Y tá",
+      "Nhiệt độ",
+      "Đo"
+    ],
+    "decision": null,
+    "omitted": []
+  },
+  "review_guard": {
+    "input": "Tôi ăn cơm",
+    "supported": false,
+    "decision": "review",
+    "applied": false
+  },
+  "meaning_guard": {
+    "input": "Y tá ơi, không đo nhiệt độ",
+    "supported": false,
+    "unsupported": [
+      "không"
+    ]
+  },
+  "long_sentence_review": {
+    "input": "Y tá ơi, hôm nay kiểm tra thân nhiệt giúp em nhé",
+    "supported": false,
+    "decision": "review",
+    "candidate_projection": [
+      "Y tá",
+      "Nhiệt độ",
+      "Đo"
+    ],
+    "unmatched": [
+      "hôm",
+      "nay"
+    ],
+    "applied": false,
+    "message": "Mẫu gần nhất chưa giữ đủ ý quan trọng của câu gốc. Hãy nói lại, tách ý hoặc gửi nguyên văn bằng chữ."
+  },
+  "asset_bytes": 5883
+}

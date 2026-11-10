@@ -1,0 +1,26 @@
+{
+  "scope": "Identical frames/timestamps from two legacy fixtures; detector/model parity and wall time only.",
+  "cases": [
+    {
+      "file": "E:\\Project\\VSL Clinic\\Source\\assets\\samples\\379.mp4",
+      "sha256": "cdf21771e58fb060e9733108b2580ef62f6927cd60ee022531e1d0eff4dcb3ff",
+      "frames": 71,
+      "coordinate_max_abs": 0.0,
+      "tensor_max_abs": 0.0,
+      "logit_max_abs": 0.0,
+      "original_ms": 3139.4145000003846,
+      "bounded_ms": 3014.10610000039
+    },
+    {
+      "file": "E:\\Project\\VSL Clinic\\Source\\assets\\samples\\204.mp4",
+      "sha256": "ab893d25729ad900a51e450ea85231e20451225f4dacbf53e4b2176d3877a288",
+      "frames": 71,
+      "coordinate_max_abs": 0.0,
+      "tensor_max_abs": 0.0,
+      "logit_max_abs": 0.0,
+      "original_ms": 2983.403299999736,
+      "bounded_ms": 2942.648900000677
+    }
+  ],
+  "passed": true
+}

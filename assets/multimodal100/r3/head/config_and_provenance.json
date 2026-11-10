@@ -1,0 +1,39 @@
+{
+  "initial_state_sha256": "3e20fa8623ca01262fab225a2c2673cf4c727b1e627798ec502e1983641ee9d0",
+  "initialization_policy": "r3_component_seeded_default_distributions",
+  "target_checkpoint_loaded": false,
+  "code_sha256": {
+    "train_protocol.py": "6896d935d2f9387970d3e8af3d8bc8bc16e4618639a433664d4dfcf6932e6591",
+    "model.py": "52fda263bab6a8564261efcbf49b09fdda23c7f9a7bca3ac5507fe8ca834ab02",
+    "legacy_fusion.py": "07b12f7b977b40480487eac926e9e7df3228b799e876f300698531ce4c8134a8",
+    "evaluation_metrics.py": "c90b15218250248b3edc723a9c73bd2b63c85fbf31afd23a1ce2cf072095d506"
+  },
+  "feature_receipt_sha256": {
+    "sign": "4aa9f554c023fa8a32ae2e97d11689f5a8deff344286da9f37531549f778f9bb",
+    "lip": "3596eb3df24e1c2fbebd6cc9a266e30fd874017c0e40cd04f604e8242fbc11af"
+  },
+  "fold_sha256": "5cdce746bee74ba5c86ea64a5374dff859e133ed765c49c46ce41e15d5b8a0e7",
+  "protocol_sha256": "0a732e6033cd2183630356039c28fbf30988683f998b3c8d378f8896b7687d67",
+  "tf32": false,
+  "config": {
+    "fold": "/workspace/vsl100_r3_20261106/training_inputs/r3_loso_01.json",
+    "protocol": "/workspace/vsl100_r3_20261106/splits/r3_loso_01.json",
+    "sign_features": "/workspace/vsl100_r3_20261106/features/slgcn_replication_fp32",
+    "lip_features": "/workspace/vsl100_r3_20261106/features/avhubert_replication_fp32",
+    "pixel_dir": "/workspace/vsl100_r3_20261106/cache/pixels",
+    "output": "/workspace/vsl100_r3_20261106/results/primary__r3_loso_01__slgcn_replication_fp32__avhubert_replication_fp32__cross_attention__s17",
+    "arm": "cross_attention",
+    "seed": 17,
+    "device": "cuda",
+    "epochs": 60,
+    "batch_size": 32,
+    "preflight_only": false,
+    "preload": true,
+    "sign_dim": 256,
+    "lip_dim": 1024,
+    "num_classes": 100,
+    "with_mirrors": false,
+    "modality_dropout": 0.2,
+    "shuffle_lip": false
+  }
+}

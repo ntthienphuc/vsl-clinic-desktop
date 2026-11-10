@@ -17,7 +17,7 @@ from pipelines.spoter_onnx_inference import load_id2label
 
 
 MODEL_SHA256 = "582f3d8712f73f78c5fe7b7521609ea54a9257e5a3a877aa8c9346b8e28ebb21"
-CAPTURE_PROFILE = "clinic-pc-tasks-lite-parallel-v2"
+CAPTURE_PROFILE = "clinic-pc-tasks-lite-parallel-bounded-v3"
 
 
 def sampling_quality(frames):

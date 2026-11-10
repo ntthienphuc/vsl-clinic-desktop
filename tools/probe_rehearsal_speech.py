@@ -18,11 +18,11 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 async def main(args):
-    catalog = json.loads((ROOT / "demo/scenarios-v0.3.4.json").read_text(encoding="utf-8"))
-    cases = [s["doctor"] for scenario in catalog["scenarios"] for s in scenario["steps"]]
-    cases.append("Bạn cảm thấy thế nào?")
-    folder = ROOT / "research/speech-samples/rehearsal-034"
-    folder.mkdir(exist_ok=True)
+    catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
+    cases = list(dict.fromkeys(s["doctor"] for scenario in catalog["scenarios"] for s in scenario["steps"]))
+    cases.append("Bạn đau bụng bao nhiêu ngày?")
+    folder = ROOT / "research/speech-samples" / args.catalog.stem
+    folder.mkdir(parents=True, exist_ok=True)
     provenance, rows = [], []
     for index, phrase in enumerate(cases):
         path = folder / (hashlib.sha256(phrase.encode("utf-8")).hexdigest()[:12] + ".mp3")
@@ -110,4 +110,5 @@ if __name__ == "__main__":
     p.add_argument("--token", default="ui-smoke")
     p.add_argument("--output", default="docs/evidence/rehearsal-speech-2026-10-31.json")
     p.add_argument("--only", type=int, nargs="+")
+    p.add_argument("--catalog", type=Path, default=ROOT / "demo/scenarios-v0.3.4.json")
     asyncio.run(main(p.parse_args()))

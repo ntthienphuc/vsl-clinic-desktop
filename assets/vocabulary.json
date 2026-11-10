@@ -516,5 +516,25 @@
     "category": "Thời gian",
     "demo": "/assets/samples/250.mp4",
     "source_kind": "local-consensus"
+  },
+  {
+    "id": "qipedc-W03239N",
+    "label": "Thế nào",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W03239N",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W03239N.mp4"
+  },
+  {
+    "id": "qipedc-W00145N",
+    "label": "Bao giờ",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W00145N",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W00145N.mp4"
   }
 ]

@@ -1,0 +1,152 @@
+{
+  "scope": "Three existing fixed clips for encoder parity and small hardware feasibility only; no training or large benchmark. Methods shortlisted using existing full research results, not these clip scores.",
+  "clips": [
+    {
+      "clip_id": "Huy_T01_C1_W068",
+      "source_sha256": "0e1a431422177eecf919619c7a5695600f4776c4b280b29ac74d5087288de012",
+      "pixel_path": "E:\\Paper\\MultiModel Paper\\VSL100_Run_20261105\\remote_backup_20261105\\cache\\pixels_v2\\Huy_T01_C1_W068.npz",
+      "pixel_sha256": "089ada658469777d8bdb53079cf0971fbd93b73f0ca6eb02bd1fbae0dbda8f37",
+      "pixel_metadata_sha256": "ed7373c25eb6c82159b683f9588a40d2963af33a705e37ed03c7836f0d4e6d56",
+      "pixel_processor_sha256": "a7910b8e5bfbb44013e961a9a6969a0a40d13b0187ea0228732ca08741202f0c",
+      "pixel_qa_status": "PASS_REVIEWED_SAMPLED",
+      "features": {
+        "spoter": {
+          "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\feature_backups\\20261105T124144Z\\readback\\spoter\\features\\spoter\\Huy_T01_C1_W068.npy",
+          "sha256": "f2f7afd014a15a6dd74e3a5f72f888769d38ab19ddfb56b98bad44ba27b048b4",
+          "shape": [
+            1,
+            108
+          ],
+          "bytes": 560
+        },
+        "vlr_uniform_fp32": {
+          "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\feature_backups\\20261105T124144Z\\readback\\vlr_uniform_fp32\\features\\vlr_uniform_fp32\\Huy_T01_C1_W068.npy",
+          "sha256": "f220a190dc8454ca2cdd31dc08a6aa4c0e8312c331820c6ef76bcfcb0b952101",
+          "shape": [
+            74,
+            768
+          ],
+          "bytes": 227456
+        },
+        "slgcn_replication_fp32": {
+          "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\feature_backups\\20261105T124144Z\\readback\\slgcn_replication_fp32\\features\\slgcn_replication_fp32\\Huy_T01_C1_W068.npy",
+          "sha256": "bfb60c9da8d043551e14cbea4f4ec4af41013c303872690ef21d2af860185595",
+          "shape": [
+            1,
+            256
+          ],
+          "bytes": 1152
+        },
+        "avhubert_replication_fp32": {
+          "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\feature_backups\\20261105T124144Z\\readback\\avhubert_replication_fp32\\features\\avhubert_replication_fp32\\Huy_T01_C1_W068.npy",
+          "sha256": "31e123bddc05d78f7d37d765cf320e53653fcd78055ffbb991996f1e6eb9b145",
+          "shape": [
+            74,
+            1024
+          ],
+          "bytes": 303232
+        }
+      }
+    },
+    {
+      "clip_id": "Học_T01_C1_W066",
+      "source_sha256": "68178aab7ef342fed06389eeb02234ed03b152e1a54126d5642cb6f27f821e2d",
+      "pixel_path": "E:\\Paper\\MultiModel Paper\\VSL100_Run_20261105\\remote_backup_20261105\\cache\\pixels_v2\\Học_T01_C1_W066.npz",
+      "pixel_sha256": "e36effb72d0c1ebd949262f87b7e5aa6920a0b785f32e44ea8d4939a39b3449f",
+      "pixel_metadata_sha256": "ec4a578cf83325b6c9add18f29ab3e309dce068de2dc99fbbf259f31cd1b0b1a",
+      "pixel_processor_sha256": "a7910b8e5bfbb44013e961a9a6969a0a40d13b0187ea0228732ca08741202f0c",
+      "pixel_qa_status": "PASS_REVIEWED_SAMPLED",
+      "features": {
+        "spoter": {
+          "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\feature_backups\\20261105T124144Z\\readback\\spoter\\features\\spoter\\Học_T01_C1_W066.npy",
+          "sha256": "f5f70bc69884053ef6a1419ef2c1081d807b30c20c7b0232a5e43cd5c256ceef",
+          "shape": [
+            1,
+            108
+          ],
+          "bytes": 560
+        },
+        "vlr_uniform_fp32": {
+          "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\feature_backups\\20261105T124144Z\\readback\\vlr_uniform_fp32\\features\\vlr_uniform_fp32\\Học_T01_C1_W066.npy",
+          "sha256": "9f0be4144e6e82e904e790a2d6a1befa41f9b7a23a7a7f9125db04367604b637",
+          "shape": [
+            66,
+            768
+          ],
+          "bytes": 202880
+        },
+        "slgcn_replication_fp32": {
+          "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\feature_backups\\20261105T124144Z\\readback\\slgcn_replication_fp32\\features\\slgcn_replication_fp32\\Học_T01_C1_W066.npy",
+          "sha256": "5ca70cedf63122de5c61c154cb2fe6fe386d82f2faebd28eb763b9c58c3c579e",
+          "shape": [
+            1,
+            256
+          ],
+          "bytes": 1152
+        },
+        "avhubert_replication_fp32": {
+          "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\feature_backups\\20261105T124144Z\\readback\\avhubert_replication_fp32\\features\\avhubert_replication_fp32\\Học_T01_C1_W066.npy",
+          "sha256": "2f10153267d26de693bd1e922b2f9b65a4f9d57d9556d1fb4cd3c8ac9af6ca31",
+          "shape": [
+            66,
+            1024
+          ],
+          "bytes": 270464
+        }
+      }
+    },
+    {
+      "clip_id": "Huy_T01_C1_W093",
+      "source_sha256": "3128510cbaa0e5f5935e2e7b9106699b746afc64d6af24d4ce48d9b3054cc215",
+      "pixel_path": "E:\\Paper\\MultiModel Paper\\VSL100_Run_20261105\\remote_backup_20261105\\cache\\pixels_v2\\Huy_T01_C1_W093.npz",
+      "pixel_sha256": "6d279f9b76e6913dfa2449a460edf8fb1878734299147ff7091200845689e8ed",
+      "pixel_metadata_sha256": "8ecb390fb1df2c4ee36dc36ef05c0ef67841b1d95fcebcf0362373171563f982",
+      "pixel_processor_sha256": "a7910b8e5bfbb44013e961a9a6969a0a40d13b0187ea0228732ca08741202f0c",
+      "pixel_qa_status": "PASS_REVIEWED_SAMPLED",
+      "features": {
+        "spoter": {
+          "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\feature_backups\\20261105T124144Z\\readback\\spoter\\features\\spoter\\Huy_T01_C1_W093.npy",
+          "sha256": "dc1bbd99782438453404f92aa1fb3626af13013fe1e81b15c566393082ab04c8",
+          "shape": [
+            1,
+            108
+          ],
+          "bytes": 560
+        },
+        "vlr_uniform_fp32": {
+          "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\feature_backups\\20261105T124144Z\\readback\\vlr_uniform_fp32\\features\\vlr_uniform_fp32\\Huy_T01_C1_W093.npy",
+          "sha256": "1d1d6481a817d7ba31c10fbe7fea3b4e06a9e213f1c503b1d6aaf51c126d59c2",
+          "shape": [
+            63,
+            768
+          ],
+          "bytes": 193664
+        },
+        "slgcn_replication_fp32": {
+          "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\feature_backups\\20261105T124144Z\\readback\\slgcn_replication_fp32\\features\\slgcn_replication_fp32\\Huy_T01_C1_W093.npy",
+          "sha256": "ccd2327f807eb113656d9da597c2ce35331e05e72574d214fc76f1aff3c4a032",
+          "shape": [
+            1,
+            256
+          ],
+          "bytes": 1152
+        },
+        "avhubert_replication_fp32": {
+          "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\feature_backups\\20261105T124144Z\\readback\\avhubert_replication_fp32\\features\\avhubert_replication_fp32\\Huy_T01_C1_W093.npy",
+          "sha256": "8dc6cbc203c3fd842662ba3cfe5304d02d2890836db1305101efd523ba6134eb",
+          "shape": [
+            63,
+            1024
+          ],
+          "bytes": 258176
+        }
+      }
+    }
+  ],
+  "candidate_methods": [
+    "cross_attention:slgcn_replication_fp32+avhubert_replication_fp32",
+    "cross_attention:slgcn_replication_fp32+vlr_uniform_fp32",
+    "gated:spoter+vlr_uniform_fp32",
+    "cross_attention:spoter+vlr_uniform_fp32"
+  ]
+}

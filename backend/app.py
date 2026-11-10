@@ -11,7 +11,7 @@ import tempfile
 import time
 
 import cv2
-from fastapi import Depends, FastAPI, Header, HTTPException, Request, UploadFile, WebSocket, WebSocketDisconnect
+from fastapi import Depends, FastAPI, Header, HTTPException, Request, UploadFile, WebSocket
 from fastapi.concurrency import run_in_threadpool
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, StreamingResponse
@@ -19,12 +19,16 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
-from .capture import CaptureEngine
-from .recognition import CAPTURE_PROFILE, Recognizer
+from .recognition import CAPTURE_PROFILE
 from .session import ClinicSession
 from .text_to_sign import TextPlanner
 from .playback import load_join_profile
 from .speech import SpeechService, stream_dictation
+from .language_assist import LanguageAssist
+from .avatar_voice import load_avatar_voice
+from .multimodal_provider import MultimodalProvider
+from .recognition_modes import RecognitionModes, load_catalogs
+from .clinic_phrases import quick_phrases
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -35,26 +39,35 @@ WORDS = json.loads((ASSETS / "vocabulary.json").read_text(encoding="utf-8"))
 BANK = json.loads((ASSETS / "motions/manifest.json").read_text(encoding="utf-8"))
 PHRASES = json.loads((ASSETS / "phrases.json").read_text(encoding="utf-8"))
 SEMANTIC_BANK = json.loads((ASSETS / "semantic_bank.json").read_text(encoding="utf-8"))
+MM_SAMPLES = json.loads((ASSETS / "multimodal-samples/manifest.json").read_text(encoding="utf-8"))["entries"]
+RECOGNITION_CATALOGS = load_catalogs(ASSETS)
 planner = TextPlanner(WORDS, PHRASES, SEMANTIC_BANK)
-session = ClinicSession(planner, {entry["id"]: entry["duration_ms"] for entry in BANK["entries"]}, load_join_profile(ASSETS))
+session = ClinicSession(planner, {entry["id"]: entry["duration_ms"] for entry in BANK["entries"]}, load_join_profile(ASSETS), load_avatar_voice(ASSETS))
 engine = None
 temp_root = None
 control = asyncio.Lock()
 speech = SpeechService(ASSETS)
+language = LanguageAssist(ASSETS, planner)
 
 
 @asynccontextmanager
 async def lifespan(app):
-    global engine, temp_root, speech
+    global engine, temp_root, speech, language
+    language = LanguageAssist(ASSETS, planner)
     if speech.closed:
         speech = SpeechService(ASSETS)
     session.loop = asyncio.get_running_loop()
-    recognizer = await run_in_threadpool(Recognizer, ASSETS)
-    engine = CaptureEngine(recognizer, session.thread_event)
+    engine = RecognitionModes(ASSETS, session.thread_event)
+    await run_in_threadpool(engine.warmup)
     temp_root = tempfile.TemporaryDirectory(prefix="vsl-clinic-")
     app.state.started = time.time()
     async def endpoint_clock():
         while True:
+            if not session.recognition.get("switching"):
+                info = recognition_info()
+                if info != session.recognition:
+                    session.recognition = info
+                    session.changed()
             session.tick()
             await asyncio.sleep(0.1)
     endpoint_task = asyncio.create_task(endpoint_clock())
@@ -64,11 +77,12 @@ async def lifespan(app):
         endpoint_task.cancel()
         await asyncio.gather(endpoint_task, return_exceptions=True)
         speech.close()
-        await run_in_threadpool(engine.stop)
+        await run_in_threadpool(language.close)
+        await run_in_threadpool(getattr(engine, "close", engine.stop))
         temp_root.cleanup()
 
 
-app = FastAPI(title="VSL Clinic", version="0.3.4", lifespan=lifespan, docs_url=None, redoc_url=None)
+app = FastAPI(title="VSL Clinic", version="0.5.2", lifespan=lifespan, docs_url=None, redoc_url=None)
 app.add_middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost", "testserver"])
 app.add_middleware(CORSMiddleware, allow_origins=["http://127.0.0.1:5173", "http://localhost:5173"], allow_methods=["GET", "POST"], allow_headers=["Authorization", "Content-Type"])
 
@@ -80,14 +94,28 @@ def authorize(authorization: str | None = Header(default=None)):
 
 @app.get("/healthcheck")
 async def healthcheck():
-    return {"service": "vsl-clinic", "status": "ok", "version": "0.3.4", "model_loaded": engine is not None}
+    model = recognition_info()
+    loaded = model.get("worker", {}).get("status") == "ready" if model.get("family") == "multimodal100" else engine is not None
+    return {"service": "vsl-clinic", "status": "ok", "version": "0.5.2", "model_loaded": loaded,
+            "recognition": model}
+
+
+def recognition_info():
+    if isinstance(engine, RecognitionModes):
+        return engine.info()
+    if isinstance(engine, MultimodalProvider):
+        return engine.info()
+    return {"name": "SL-GCN", "labels": 400, "family": "legacy400",
+            "sha256": engine.recognizer.sha256 if engine else None, "capture_profile": CAPTURE_PROFILE}
 
 
 @app.get("/api/bootstrap", dependencies=[Depends(authorize)])
 async def bootstrap():
-    return {"vocabulary": WORDS, "phrases": planner.entries, "bank": BANK, "avatar_url": "/assets/avatar/ClinicMale.vrm",
-            "model": {"name": "SL-GCN", "labels": 400, "sha256": engine.recognizer.sha256, "capture_profile": CAPTURE_PROFILE},
-            "speech": speech.info(), "state": session.snapshot(), "server_time_ms": time.time() * 1000}
+    return {"vocabulary": WORDS, "phrases": planner.entries, "quick_phrases": quick_phrases(planner), "bank": BANK, "avatar_url": "/assets/avatar/ClinicMale.vrm",
+            "model": recognition_info(),
+            "patient_sources": [w for w in RECOGNITION_CATALOGS[engine.mode] if w["demo"]],
+            "recognition_catalogs": RECOGNITION_CATALOGS,
+            "speech": speech.info(), "language": language.info(), "state": session.snapshot(), "server_time_ms": time.time() * 1000}
 
 
 @app.websocket("/ws/speech")
@@ -96,6 +124,8 @@ async def speech_socket(socket: WebSocket, token: str = "", live: bool = False):
         await socket.close(code=1008)
         return
     def record_speech_metric(item):
+        if session.conversation["epoch"] != epoch:
+            return
         session.metrics.append({**item, "recorded_at_ms": time.time() * 1000})
         session.metrics = session.metrics[-500:]
     epoch = session.conversation["epoch"]
@@ -136,11 +166,37 @@ async def send(payload: TextRequest):
         raise HTTPException(422, str(error)) from error
 
 
+@app.post("/api/language/suggest", dependencies=[Depends(authorize)])
+async def language_suggestion(payload: TextRequest):
+    context = (session.session_id, session.conversation["epoch"])
+    result = await run_in_threadpool(language.suggest, payload.text)
+    if context != (session.session_id, session.conversation["epoch"]):
+        raise HTTPException(409, "Cuộc trao đổi đã thay đổi. Vui lòng nhập lại câu trong phiên mới.")
+    return result
+
+
+async def clear_language_context():
+    global language
+    previous, language = language, LanguageAssist(ASSETS, planner)
+    await run_in_threadpool(previous.close)
+
+
 class PlaybackRequest(BaseModel):
     action: str
     playback_id: str
     rate: float | None = None
     iteration: int | None = Field(default=None, ge=0)
+
+
+class AvatarVoiceRequest(BaseModel):
+    enabled: bool
+
+
+@app.post("/api/avatar/voice", dependencies=[Depends(authorize)])
+async def avatar_voice(payload: AvatarVoiceRequest):
+    session.avatar_voice_enabled = payload.enabled
+    session.changed()
+    return session.snapshot()
 
 
 @app.post("/api/playback", dependencies=[Depends(authorize)])
@@ -163,12 +219,66 @@ class ConversationRequest(BaseModel):
     source: CaptureRequest | None = None
 
 
+class RecognitionModeRequest(BaseModel):
+    mode: str
+
+
+def capture_source(payload):
+    if payload.kind == "camera":
+        return payload.camera_index
+    if payload.kind != "demo":
+        raise HTTPException(422, "Chọn camera hoặc video mẫu.")
+    words = RECOGNITION_CATALOGS[engine.mode]
+    word = next((w for w in words if w["id"] == payload.demo_id and w["demo"]), None)
+    if word is None:
+        raise HTTPException(422, "Video không thuộc bộ từ đang chọn. Hãy chọn lại video mẫu.")
+    return str(ASSETS / word["demo"].removeprefix("/assets/"))
+
+
+@app.post("/api/recognition/mode", dependencies=[Depends(authorize)])
+async def recognition_mode(payload: RecognitionModeRequest):
+    if payload.mode not in RECOGNITION_CATALOGS:
+        raise HTTPException(422, "Chọn Fusion hoặc Sign only.")
+    async with control:
+        if engine.mode == payload.mode:
+            return session.snapshot()
+        old_mode = engine.mode
+        request_session = session.session_id
+        selected = session.conversation["source"]
+        old_word = next((w for w in RECOGNITION_CATALOGS[old_mode] if w["id"] == selected.get("demo_id")), None)
+        resume = session.conversation["status"] == "active" or session.capture["status"] in {"starting", "ready", "tracking", "no_person", "signing"}
+        uploaded = engine.last_source if engine.last_source and engine.last_source[1] == "video" else None
+        engine.generation = max(engine.generation, session.capture.get("generation", 0)) + 1
+        session.recognition = dict(engine.info(), switching=True, requested_mode=payload.mode)
+        session.capture_stopped(engine.generation)
+        try:
+            await run_in_threadpool(engine.activate, payload.mode)
+            if selected["kind"] == "demo":
+                demos = [w for w in RECOGNITION_CATALOGS[payload.mode] if w["demo"]]
+                word = next((w for w in demos if old_word and w["label"] == old_word["label"]), demos[0])
+                session.conversation["source"] = dict(kind="demo", demo_id=word["id"])
+            session.recognition = engine.info()
+            session.changed()
+            if resume and session.session_id == request_session:
+                source, kind = uploaded or (capture_source(CaptureRequest(**session.conversation["source"])), session.conversation["source"]["kind"])
+                await run_in_threadpool(engine.start, source, kind)
+        except Exception as error:
+            session.recognition = dict(engine.info(), switching=False)
+            session.capture.update(status="error", message="Chưa đổi được chế độ nhận dạng. Chọn lại chế độ hoặc kiểm tra nguồn hình.")
+            session.changed()
+            raise HTTPException(503, session.capture["message"]) from error
+    return session.snapshot()
+
+
 @app.post("/api/conversation/configure", dependencies=[Depends(authorize)])
 async def configure_conversation(payload: ConversationRequest):
-    try:
-        session.configure_conversation(payload.mode, payload.source.model_dump() if payload.source else None)
-    except ValueError as error:
-        raise HTTPException(422, str(error)) from error
+    async with control:
+        try:
+            if payload.source:
+                capture_source(payload.source)
+            session.configure_conversation(payload.mode, payload.source.model_dump() if payload.source else None)
+        except ValueError as error:
+            raise HTTPException(422, str(error)) from error
     return session.snapshot()
 
 
@@ -180,10 +290,31 @@ async def start_conversation():
     return session.snapshot()
 
 
+class EndConversationRequest(BaseModel):
+    keep_temporary: bool = False
+
+
 @app.post("/api/conversation/stop", dependencies=[Depends(authorize)])
-async def stop_conversation():
-    session.stop_conversation()
-    await stop_capture()
+async def stop_conversation(payload: EndConversationRequest = EndConversationRequest()):
+    # End is visible immediately even if the other window is loading a provider.
+    # The mode request checks the session identity before restarting capture.
+    engine.generation = max(engine.generation, session.capture.get("generation", 0)) + 1
+    session.stop_conversation(payload.keep_temporary, engine.generation)
+    async with control:
+        await clear_language_context()
+        await run_in_threadpool(engine.stop)
+    return session.snapshot()
+
+
+@app.get("/api/session/temporary", dependencies=[Depends(authorize)])
+async def temporary_conversation():
+    # One optional read-only copy in process memory; never persisted to disk.
+    return session.temporary
+
+
+@app.post("/api/session/temporary/discard", dependencies=[Depends(authorize)])
+async def discard_temporary_conversation():
+    session.discard_temporary()
     return session.snapshot()
 
 
@@ -204,17 +335,11 @@ async def review_speech(payload: SpeechReviewRequest):
 
 @app.post("/api/capture/start", dependencies=[Depends(authorize)])
 async def start_capture(payload: CaptureRequest):
-    if payload.kind == "demo":
-        word = next((word for word in WORDS if word["id"] == payload.demo_id), None)
-        if not word or word.get("model_id") is None or not word.get("demo"):
-            raise HTTPException(404, "Unknown demo video")
-        source = str(ASSETS / "samples" / f"{word['model_id']:03d}.mp4")
-    elif payload.kind == "camera":
-        source = payload.camera_index
-    else:
-        raise HTTPException(422, "Unknown capture source")
     async with control:
+        source = capture_source(payload)
         generation = await run_in_threadpool(engine.start, source, payload.kind)
+        session.conversation["source"] = payload.model_dump()
+        session.changed()
     return {"generation": generation}
 
 
@@ -302,10 +427,11 @@ async def feedback(payload: FeedbackRequest):
 
 @app.post("/api/session/reset", dependencies=[Depends(authorize)])
 async def reset_session():
-    await stop_capture()
-    generation = engine.generation
-    session.reset()
-    session.capture_stopped(generation)
+    async with control:
+        engine.generation = max(engine.generation, session.capture.get("generation", 0)) + 1
+        session.reset(generation=engine.generation, preserve_temporary=True)
+        await clear_language_context()
+        await run_in_threadpool(engine.stop)
     return session.snapshot()
 
 
@@ -320,7 +446,8 @@ async def metric(payload: dict):
 
 @app.get("/api/diagnostics", dependencies=[Depends(authorize)])
 async def diagnostics():
-    return {"model_sha256": engine.recognizer.sha256, "capture_profile": CAPTURE_PROFILE,
+    model = recognition_info()
+    return {"model_sha256": model["sha256"], "capture_profile": model["capture_profile"], "model": model,
             "state": session.snapshot(), "metrics": session.metrics,
             "uptime_seconds": time.time() - app.state.started}
 

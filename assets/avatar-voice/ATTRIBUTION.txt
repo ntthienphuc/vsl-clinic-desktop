@@ -1,0 +1,6 @@
+Fixed public dictionary labels and reviewed doctor phrases generated at build time
+with Microsoft Edge online TTS via edge-tts; vi-VN-NamMinhNeural, rate -10%.
+Local demo assets; no general redistribution license is asserted.
+Runtime performs no network synthesis and sends no conversation data.
+Original MP3 hashes and word timings are retained. WAV decoding and energy
+envelopes were computed locally. Mouth animation is approximate.

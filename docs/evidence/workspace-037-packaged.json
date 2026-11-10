@@ -1,0 +1,12 @@
+{
+  "scope": "Actual 0.3.7 EXE and bundled engine; prerecorded video, silent test microphone; no live signer validation.",
+  "checks": {
+    "version": true,
+    "playbackPauseSpeedCompletion": true,
+    "replayAndQueue": true,
+    "endClearsBothWindows": true,
+    "temporaryReadOnlyAndDelete": true,
+    "defaultEndAndLateEvents": true
+  },
+  "passed": true
+}

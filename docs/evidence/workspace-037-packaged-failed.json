@@ -1,0 +1,8 @@
+{
+  "scope": "Actual 0.3.7 EXE and bundled engine; prerecorded video, silent test microphone; no live signer validation.",
+  "checks": {
+    "version": true,
+    "playbackPauseSpeedCompletion": true
+  },
+  "error": "TypeError: Cannot read properties of undefined (reading 'length')\n    at file:///E:/Project/VSL%20Clinic/Source/tools/probe_packaged_workspace.mjs:75:61\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async until (file:///E:/Project/VSL%20Clinic/Source/tools/probe_packaged_workspace.mjs:12:56)\n    at async file:///E:/Project/VSL%20Clinic/Source/tools/probe_packaged_workspace.mjs:75:3"
+}

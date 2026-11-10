@@ -1,0 +1,198 @@
+{
+  "scope": "Same 12 fixed prerecorded clips, repeated after user explicitly reported closing Lip; not 24 independent trials. No application/model/threshold changes between these runs.",
+  "environment": "Before the repeat, process inventory found no Clinic/VietLip matching processes and nvidia-smi compute-app query returned empty. This is a snapshot, not a controlled load benchmark.",
+  "before": {
+    "passed": true,
+    "desktop_exit": 0,
+    "shutdown_forced": false,
+    "trials": 12,
+    "committed": 5,
+    "wrong_committed": 0,
+    "review": 7,
+    "top1_matching": 11,
+    "fps": [
+      15.73,
+      20.15
+    ],
+    "active_to_paint_ms": {
+      "n": 12,
+      "p50": 744.35,
+      "p95": 885.84
+    },
+    "active_to_audio_ms": {
+      "n": 5,
+      "p50": 770.04,
+      "p95": 876.01
+    },
+    "checks": {
+      "layout720p1080p": true,
+      "avatarVoiceMouthAndMicGuard": true,
+      "manualPauseResumeStopsSoundAndMouth": true,
+      "reviewCorrectionUsesCorrectVoice": true,
+      "realFusionIncrementalWordsVoiceAndReview": true,
+      "noRepeatWhenTurnEnds": true,
+      "realPatientReplyYieldsAvatar": true,
+      "sameStreamRepeatedWordSpokenOnceEachBeforeTurnEnd": true,
+      "realBundledASRSendsOnce": true,
+      "endFencesFusionAndAudio": true
+    },
+    "error": null
+  },
+  "after": {
+    "passed": true,
+    "desktop_exit": 0,
+    "shutdown_forced": false,
+    "trials": 12,
+    "committed": 7,
+    "wrong_committed": 0,
+    "review": 5,
+    "top1_matching": 11,
+    "fps": [
+      16.29,
+      19.29
+    ],
+    "active_to_paint_ms": {
+      "n": 12,
+      "p50": 797.01,
+      "p95": 934.96
+    },
+    "active_to_audio_ms": {
+      "n": 7,
+      "p50": 860.64,
+      "p95": 950.75
+    },
+    "checks": {
+      "layout720p1080p": true,
+      "avatarVoiceMouthAndMicGuard": true,
+      "manualPauseResumeStopsSoundAndMouth": true,
+      "reviewCorrectionUsesCorrectVoice": true,
+      "realFusionIncrementalWordsVoiceAndReview": true,
+      "noRepeatWhenTurnEnds": true,
+      "realPatientReplyYieldsAvatar": true,
+      "sameStreamRepeatedWordSpokenOnceEachBeforeTurnEnd": true,
+      "realBundledASRSendsOnce": true,
+      "endFencesFusionAndAudio": true
+    },
+    "error": null
+  },
+  "pairs": [
+    {
+      "expected": "W066",
+      "video_path": "clips/clean/Học/take_01/cam_1/W066.mp4",
+      "before_text": "Mệt",
+      "after_text": "Mệt",
+      "before_committed": true,
+      "after_committed": true,
+      "after_reasons": []
+    },
+    {
+      "expected": "W068",
+      "video_path": "clips/clean/Học/take_01/cam_1/W068.mp4",
+      "before_text": "Sốt",
+      "after_text": "Sốt",
+      "before_committed": false,
+      "after_committed": true,
+      "after_reasons": []
+    },
+    {
+      "expected": "W069",
+      "video_path": "clips/clean/Học/take_01/cam_1/W069.mp4",
+      "before_text": "Buồn nôn",
+      "after_text": "Buồn nôn",
+      "before_committed": true,
+      "after_committed": true,
+      "after_reasons": []
+    },
+    {
+      "expected": "W072",
+      "video_path": "clips/clean/Học/take_01/cam_1/W072.mp4",
+      "before_text": "Bụng",
+      "after_text": "Bụng",
+      "before_committed": false,
+      "after_committed": false,
+      "after_reasons": [
+        "ambiguous_closed_set_prediction"
+      ]
+    },
+    {
+      "expected": "W082",
+      "video_path": "clips/clean/Học/take_01/cam_1/W082.mp4",
+      "before_text": "Nhà vệ sinh",
+      "after_text": "Nhà vệ sinh",
+      "before_committed": true,
+      "after_committed": true,
+      "after_reasons": []
+    },
+    {
+      "expected": "W093",
+      "video_path": "clips/clean/Học/take_01/cam_1/W093.mp4",
+      "before_text": "Cần",
+      "after_text": "Cần",
+      "before_committed": false,
+      "after_committed": true,
+      "after_reasons": []
+    },
+    {
+      "expected": "W066",
+      "video_path": "clips/clean/Huy/take_01/cam_1/W066.mp4",
+      "before_text": "Ăn",
+      "after_text": "Ăn",
+      "before_committed": false,
+      "after_committed": false,
+      "after_reasons": [
+        "ambiguous_closed_set_prediction"
+      ]
+    },
+    {
+      "expected": "W068",
+      "video_path": "clips/clean/Huy/take_01/cam_1/W068.mp4",
+      "before_text": "Sốt",
+      "after_text": "Sốt",
+      "before_committed": true,
+      "after_committed": true,
+      "after_reasons": []
+    },
+    {
+      "expected": "W069",
+      "video_path": "clips/clean/Huy/take_01/cam_1/W069.mp4",
+      "before_text": "Buồn nôn",
+      "after_text": "Buồn nôn",
+      "before_committed": false,
+      "after_committed": false,
+      "after_reasons": [
+        "ambiguous_closed_set_prediction"
+      ]
+    },
+    {
+      "expected": "W072",
+      "video_path": "clips/clean/Huy/take_01/cam_1/W072.mp4",
+      "before_text": "Bụng",
+      "after_text": "Bụng",
+      "before_committed": false,
+      "after_committed": false,
+      "after_reasons": [
+        "ambiguous_closed_set_prediction"
+      ]
+    },
+    {
+      "expected": "W082",
+      "video_path": "clips/clean/Huy/take_01/cam_1/W082.mp4",
+      "before_text": "Nhà vệ sinh",
+      "after_text": "Nhà vệ sinh",
+      "before_committed": false,
+      "after_committed": false,
+      "after_reasons": [
+        "ambiguous_closed_set_prediction"
+      ]
+    },
+    {
+      "expected": "W093",
+      "video_path": "clips/clean/Huy/take_01/cam_1/W093.mp4",
+      "before_text": "Cần",
+      "after_text": "Cần",
+      "before_committed": true,
+      "after_committed": true,
+      "after_reasons": []
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "created_at": "2026-11-02T10:52:19.722586+00:00",
+  "scope": "Synthetic TTS through real paced live WebSocket. Does not validate the user's voice/microphone/room acoustics.",
+  "rows": [
+    {
+      "input": "Bạn cảm thấy thế nào?",
+      "synthetic": true,
+      "transcripts": [
+        {
+          "text": "bạn cảm thấy thế nào.",
+          "decode_ms": 1477.2803000087151,
+          "audio_ms": 2144.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -1.7484029134114582e-05,
+              "no_speech_prob": 3.104035041154307e-13
+            }
+          ],
+          "type": "transcript",
+          "sequence": 1,
+          "utterance_id": "7cd351420fa84048b91dca23e9c21bdb:1",
+          "session_id": "5a0e2144b939:bc7d975e048d",
+          "queue_ms": 0.3271000023232773,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false,
+          "delivery": {
+            "status": "sent",
+            "message_id": "d388c736ef57"
+          }
+        }
+      ],
+      "messages": [
+        {
+          "id": "d388c736ef57",
+          "role": "doctor",
+          "text": "bạn cảm thấy thế nào.",
+          "created_at_ms": 1793616716058.1638,
+          "mode": "sign",
+          "glosses": [
+            {
+              "id": "85",
+              "label": "Cảm thấy",
+              "start": 0,
+              "tokens": 0
+            },
+            {
+              "id": "qipedc-W03239N",
+              "label": "Thế nào",
+              "start": 0,
+              "tokens": 0
+            }
+          ],
+          "status": "presenting",
+          "phrase_id": "ask-feeling-open",
+          "nonmanual": "question",
+          "act": "wh_question",
+          "clauses": [
+            {
+              "text": "bạn cảm thấy thế nào.",
+              "gloss_start": 0,
+              "gloss_end": 2,
+              "supported": true,
+              "phrase_id": "ask-feeling-open",
+              "nonmanual": "question",
+              "act": "wh_question",
+              "explanation": "Cảm thấy → thế nào. Hỏi mở; không suy đoán triệu chứng từ câu hỏi."
+            }
+          ],
+          "speech_utterance_id": "7cd351420fa84048b91dca23e9c21bdb:1",
+          "presented_at_ms": 1793616716067.8545
+        }
+      ],
+      "drafts": [],
+      "checks": {
+        "one_transcript": true,
+        "dispatch": true,
+        "same_glosses": true,
+        "avatar_completed": true
+      }
+    },
+    {
+      "input": "Bạn có đau bụng không?",
+      "synthetic": true,
+      "transcripts": [
+        {
+          "text": "bạn có đau bụng không.",
+          "decode_ms": 1326.7096000054153,
+          "audio_ms": 2144.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.0007227117153392596,
+              "no_speech_prob": 4.018590581827963e-12
+            }
+          ],
+          "type": "transcript",
+          "sequence": 1,
+          "utterance_id": "8900fcb4de2d426fbd10a0340dc27cce:1",
+          "session_id": "5a0e2144b939:bc7d975e048d",
+          "queue_ms": 0.1748999929986894,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false,
+          "delivery": {
+            "status": "sent",
+            "message_id": "de7806b74517"
+          }
+        }
+      ],
+      "messages": [
+        {
+          "id": "de7806b74517",
+          "role": "doctor",
+          "text": "bạn có đau bụng không.",
+          "created_at_ms": 1793616725584.3823,
+          "mode": "sign",
+          "glosses": [
+            {
+              "id": "qipedc-W00362",
+              "label": "Bụng",
+              "start": 0,
+              "tokens": 0
+            },
+            {
+              "id": "379",
+              "label": "Đau",
+              "start": 0,
+              "tokens": 0
+            }
+          ],
+          "status": "presenting",
+          "phrase_id": "ask-abdomen",
+          "nonmanual": "question",
+          "act": "yes_no_question",
+          "clauses": [
+            {
+              "text": "bạn có đau bụng không.",
+              "gloss_start": 0,
+              "gloss_end": 2,
+              "supported": true,
+              "phrase_id": "ask-abdomen",
+              "nonmanual": "question",
+              "act": "yes_no_question",
+              "explanation": "Vị trí bụng → đau, đi cùng nét mặt hỏi có/không; giữ câu hỏi bằng chữ."
+            }
+          ],
+          "speech_utterance_id": "8900fcb4de2d426fbd10a0340dc27cce:1",
+          "presented_at_ms": 1793616725593.3853
+        }
+      ],
+      "drafts": [],
+      "checks": {
+        "one_transcript": true,
+        "dispatch": true,
+        "same_glosses": true,
+        "avatar_completed": true
+      }
+    },
+    {
+      "input": "Bạn đau bụng bao nhiêu ngày?",
+      "synthetic": true,
+      "transcripts": [
+        {
+          "text": "bạn đau bụng bao nhiêu ngày.",
+          "decode_ms": 1368.8241000054404,
+          "audio_ms": 2400.0,
+          "uncertain": false,
+          "segments": [
+            {
+              "avg_logprob": -0.0014864114614633413,
+              "no_speech_prob": 1.269910608961422e-12
+            }
+          ],
+          "type": "transcript",
+          "sequence": 1,
+          "utterance_id": "ad2739ad34d34af985f011fb0a8b71a2:1",
+          "session_id": "5a0e2144b939:bc7d975e048d",
+          "queue_ms": 0.21969999943394214,
+          "endpoint_audio_ms": 576.0,
+          "cut_at_limit": false,
+          "delivery": {
+            "status": "review",
+            "draft_id": "ad2739ad34d34af985f011fb0a8b71a2:1"
+          }
+        }
+      ],
+      "messages": [],
+      "drafts": [
+        {
+          "id": "ad2739ad34d34af985f011fb0a8b71a2:1",
+          "text": "bạn đau bụng bao nhiêu ngày.",
+          "created_at_ms": 1793616735265.6516,
+          "reason": "Chưa có đủ ký hiệu hoặc mẫu câu này. Bạn hãy nói lại bằng câu ngắn hơn, hoặc chọn câu có sẵn.",
+          "supported": false,
+          "reason_code": "unsupported",
+          "unsupported": [
+            "bạn",
+            "bao",
+            "nhiêu",
+            "ngày"
+          ]
+        }
+      ],
+      "checks": {
+        "one_transcript": true,
+        "dispatch": true,
+        "same_glosses": true
+      }
+    }
+  ],
+  "passed": true
+}

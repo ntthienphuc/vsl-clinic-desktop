@@ -1,0 +1,212 @@
+{
+  "scope": "Controlled temporal slice only; original 25fps cached pixels and same checkpoint. Mouth geometry remains frozen to isolate temporal context; natural replay still required.",
+  "rows": [
+    {
+      "clip_id": "Huy_T01_C1_W068",
+      "temporal_policy": "whole_dataset_clip",
+      "frames": 74,
+      "range_ms": [
+        0,
+        2960
+      ],
+      "top_k": [
+        {
+          "index": 67,
+          "class_id": "W068",
+          "gloss": "Sốt",
+          "score": 0.9478210806846619
+        },
+        {
+          "index": 97,
+          "class_id": "W098",
+          "gloss": "Từ chối",
+          "score": 0.02525630034506321
+        }
+      ]
+    },
+    {
+      "clip_id": "Huy_T01_C1_W068",
+      "temporal_policy": "original_250_context",
+      "frames": 61,
+      "range_ms": [
+        250,
+        2683.3333333333335
+      ],
+      "top_k": [
+        {
+          "index": 67,
+          "class_id": "W068",
+          "gloss": "Sốt",
+          "score": 0.6086604595184326
+        },
+        {
+          "index": 50,
+          "class_id": "W051",
+          "gloss": "Cười",
+          "score": 0.14778468012809753
+        }
+      ]
+    },
+    {
+      "clip_id": "Huy_T01_C1_W068",
+      "temporal_policy": "observed_500_before_to_decision",
+      "frames": 71,
+      "range_ms": [
+        0,
+        2800
+      ],
+      "top_k": [
+        {
+          "index": 67,
+          "class_id": "W068",
+          "gloss": "Sốt",
+          "score": 0.9257720708847046
+        },
+        {
+          "index": 97,
+          "class_id": "W098",
+          "gloss": "Từ chối",
+          "score": 0.04411730915307999
+        }
+      ]
+    },
+    {
+      "clip_id": "Học_T01_C1_W066",
+      "temporal_policy": "whole_dataset_clip",
+      "frames": 66,
+      "range_ms": [
+        0,
+        2640
+      ],
+      "top_k": [
+        {
+          "index": 65,
+          "class_id": "W066",
+          "gloss": "Mệt",
+          "score": 0.9943063855171204
+        },
+        {
+          "index": 9,
+          "class_id": "W010",
+          "gloss": "Nước",
+          "score": 0.0005975386593490839
+        }
+      ]
+    },
+    {
+      "clip_id": "Học_T01_C1_W066",
+      "temporal_policy": "original_250_context",
+      "frames": 58,
+      "range_ms": [
+        200,
+        2483.3333333333335
+      ],
+      "top_k": [
+        {
+          "index": 65,
+          "class_id": "W066",
+          "gloss": "Mệt",
+          "score": 0.9848061203956604
+        },
+        {
+          "index": 9,
+          "class_id": "W010",
+          "gloss": "Nước",
+          "score": 0.003259519347921014
+        }
+      ]
+    },
+    {
+      "clip_id": "Học_T01_C1_W066",
+      "temporal_policy": "observed_500_before_to_decision",
+      "frames": 65,
+      "range_ms": [
+        0,
+        2566.6666666666665
+      ],
+      "top_k": [
+        {
+          "index": 65,
+          "class_id": "W066",
+          "gloss": "Mệt",
+          "score": 0.9936599135398865
+        },
+        {
+          "index": 9,
+          "class_id": "W010",
+          "gloss": "Nước",
+          "score": 0.0007452050340361893
+        }
+      ]
+    },
+    {
+      "clip_id": "Huy_T01_C1_W093",
+      "temporal_policy": "whole_dataset_clip",
+      "frames": 63,
+      "range_ms": [
+        0,
+        2520
+      ],
+      "top_k": [
+        {
+          "index": 92,
+          "class_id": "W093",
+          "gloss": "Cần",
+          "score": 0.9925335645675659
+        },
+        {
+          "index": 11,
+          "class_id": "W012",
+          "gloss": "Sách",
+          "score": 0.0016712250653654337
+        }
+      ]
+    },
+    {
+      "clip_id": "Huy_T01_C1_W093",
+      "temporal_policy": "original_250_context",
+      "frames": 52,
+      "range_ms": [
+        283.3333333333333,
+        2366.6666666666665
+      ],
+      "top_k": [
+        {
+          "index": 92,
+          "class_id": "W093",
+          "gloss": "Cần",
+          "score": 0.9482521414756775
+        },
+        {
+          "index": 11,
+          "class_id": "W012",
+          "gloss": "Sách",
+          "score": 0.016384530812501907
+        }
+      ]
+    },
+    {
+      "clip_id": "Huy_T01_C1_W093",
+      "temporal_policy": "observed_500_before_to_decision",
+      "frames": 63,
+      "range_ms": [
+        0,
+        2483.3333333333335
+      ],
+      "top_k": [
+        {
+          "index": 92,
+          "class_id": "W093",
+          "gloss": "Cần",
+          "score": 0.9925335645675659
+        },
+        {
+          "index": 11,
+          "class_id": "W012",
+          "gloss": "Sách",
+          "score": 0.0016712250653654337
+        }
+      ]
+    }
+  ]
+}

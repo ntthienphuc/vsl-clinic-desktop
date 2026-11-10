@@ -1,0 +1,9 @@
+{
+  "scope": "0.5.0 source Electron windows; real fusion/checkpoints/video; silent fake mic and prerecorded synthetic speech. No live webcam participant.",
+  "checks": {
+    "layout720p1080p": true
+  },
+  "timings": [],
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\ntrue !== false\n\n    at E:\\Project\\VSL Clinic\\Source\\tools\\probe_multimodal_source.cjs:52:12\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+  "passed": false
+}

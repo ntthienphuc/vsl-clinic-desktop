@@ -1,0 +1,58 @@
+{
+  "scope": "Actual Windows EXE 0.4.1; bundled audio, real renderer and prerecorded sign input. Fake silent microphone; not live-person validation.",
+  "checks": {
+    "bundled132Voices": true,
+    "realSignToTextAndVoice": true,
+    "micProtectedDuringNarration": true,
+    "micResumesDuringSilentSigning": true,
+    "clearPatientReplyYieldsAvatar": true,
+    "yieldStopsAvatarSound": true,
+    "bundledASRAutoSendsOnce": true,
+    "endCancelsEverything": true
+  },
+  "patientVoice": [
+    {
+      "type": "queued",
+      "message_id": "d758de11b3e9",
+      "text": "Đồng ý"
+    },
+    {
+      "type": "playing",
+      "message_id": "d758de11b3e9",
+      "text": "Đồng ý",
+      "latency_ms": 54
+    },
+    {
+      "type": "ended",
+      "message_id": "d758de11b3e9",
+      "text": "Đồng ý"
+    }
+  ],
+  "speech": [
+    {
+      "text": "bạn có đau bụng không.",
+      "decode_ms": 988.1825999909779,
+      "audio_ms": 2016,
+      "uncertain": false,
+      "segments": [
+        {
+          "avg_logprob": -0.0001916018399325284,
+          "no_speech_prob": 1.4649689447643333e-11
+        }
+      ],
+      "type": "transcript",
+      "sequence": 1,
+      "utterance_id": "bb0e987c5f8442c2824265ae7eb52e5c:1",
+      "session_id": "c24a6b8c6897:f87c69e9b7ae",
+      "queue_ms": 0.149500003317371,
+      "endpoint_audio_ms": 576,
+      "cut_at_limit": false,
+      "delivery": {
+        "status": "sent",
+        "message_id": "5b2642e746bd",
+        "repair": null,
+        "text": "bạn có đau bụng không."
+      }
+    }
+  ]
+}

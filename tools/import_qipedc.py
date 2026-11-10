@@ -30,6 +30,8 @@ SELECTION = {
 # sign again after turning sideways; that second take must not enter one motion.
 REVIEWED_WINDOWS = {
     "W00248": (1500, 4200, "front-facing take only; side-view repetition excluded after visual review"),
+    "W03239N": (250, 2300, "complete front-facing question; initial idle cropped after contact-sheet review"),
+    "W00145N": (1600, 3500, "single front-facing question; long idle lead and tail excluded after contact-sheet review"),
 }
 
 
@@ -46,7 +48,9 @@ def write(path, value):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dictionary", type=Path, required=True)
+    parser.add_argument("--selection", type=Path, help="Explicit code-to-label JSON; merge with the existing bank and provenance.")
     args = parser.parse_args()
+    selection = read(args.selection) if args.selection else SELECTION
     dictionary = {row["_id"]: row for row in read(args.dictionary)}
     with (ROOT / "assets/gloss.csv").open(encoding="utf-8", newline="") as handle:
         model_labels = {label.casefold(): int(identity) for identity, label in csv.reader(handle)}
@@ -56,11 +60,11 @@ def main():
     old_sources = {word["id"]: word for word in read(sources_path)["words"]} if sources_path.exists() else {}
     selected = []
     entries = []
-    for code, label in SELECTION.items():
+    for code, label in selection.items():
         if label.casefold() in model_labels:
             raise ValueError(f"Use local consensus references for model label {label}")
         row = dictionary[code]
-        if row["word"].casefold() != label.casefold():
+        if row["word"].strip().rstrip("?").casefold() != label.strip().rstrip("?").casefold():
             raise ValueError(f"Dictionary sense mismatch for {code}")
         identity = "qipedc-" + code
         path = ROOT / "assets/reference-source/qipedc" / f"{code}.mp4"
@@ -74,6 +78,9 @@ def main():
                 raise ValueError(f"Invalid MP4 download: {code}")
             path.write_bytes(data)
             downloaded_at = datetime.now(timezone.utc).isoformat()
+        if downloaded_at is None:
+            # The explicit selection may have been downloaded first for visual review.
+            downloaded_at = datetime.fromtimestamp(path.stat().st_mtime, timezone.utc).isoformat()
         digest = hashlib.sha256(path.read_bytes()).hexdigest()
         if identity in old_sources and old_sources[identity]["references"][0]["sha256"] != digest:
             raise ValueError(f"Downloaded reference changed: {code}")
@@ -113,6 +120,7 @@ def main():
     bank["method"] = "local-consensus-plus-explicit-qipedc-single-v1"
     write(ROOT / "assets/vocabulary.json", vocabulary)
     write(ROOT / "assets/motions/manifest.json", bank)
+    all_sources = {**old_sources, **{word["id"]: word for word in selected}}
     write(ROOT / "assets/qipedc-provenance.json", {
         "source": "QIPEDC, Ministry of Education and Training, Vietnam",
         "dictionary_url": "https://qipedc.moet.gov.vn/dictionary",
@@ -122,7 +130,7 @@ def main():
                      "url": word["source_url"], "description": word["description"],
                      "sha256": word["references"][0]["sha256"], "downloaded_at": word["downloaded_at"],
                      "source_window_ms": word["references"][0]["source_window_ms"],
-                     "window_method": word["references"][0]["window_method"]} for word in selected],
+                     "window_method": word["references"][0]["window_method"]} for word in all_sources.values()],
     })
     print(f"Bank ready: {len(vocabulary)} words; original 400-label recognizer unchanged.")
 

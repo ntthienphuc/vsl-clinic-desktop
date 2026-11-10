@@ -1,0 +1,800 @@
+{
+  "scope": "0.5.0 source Electron windows; real fusion/checkpoints/video; silent fake mic and prerecorded synthetic speech. No live webcam participant.",
+  "checks": {
+    "layout720p1080p": true
+  },
+  "timings": [],
+  "firstRecognition": {
+    "id": "30073cbf839f",
+    "role": "patient",
+    "text": "Sốt",
+    "created_at_ms": 1794218537361.7336,
+    "status": "candidate",
+    "confidence": 0.7285232543945312,
+    "uncertain": true,
+    "predictions": [
+      {
+        "gloss": "Sốt",
+        "score": 0.7285232543945312,
+        "model_id": null,
+        "class_id": "W068",
+        "class_index": 67,
+        "original_gloss": "Sốt",
+        "canonical_concept_id": "mm100:W068",
+        "legacy_label_candidate": null,
+        "voice_key": "mm100-W068",
+        "engine_family": "multimodal100"
+      },
+      {
+        "gloss": "Y tá",
+        "score": 0.03602719306945801,
+        "model_id": null,
+        "class_id": "W062",
+        "class_index": 61,
+        "original_gloss": "Y tá",
+        "canonical_concept_id": "mm100:W062",
+        "legacy_label_candidate": 368,
+        "voice_key": "368",
+        "engine_family": "multimodal100"
+      },
+      {
+        "gloss": "Nhiệt độ",
+        "score": 0.029008833691477776,
+        "model_id": null,
+        "class_id": "W076",
+        "class_index": 75,
+        "original_gloss": "Nhiệt độ",
+        "canonical_concept_id": "mm100:W076",
+        "legacy_label_candidate": null,
+        "voice_key": "mm100-W076",
+        "engine_family": "multimodal100"
+      },
+      {
+        "gloss": "Phút",
+        "score": 0.02304658479988575,
+        "model_id": null,
+        "class_id": "W008",
+        "class_index": 7,
+        "original_gloss": "Phút",
+        "canonical_concept_id": "mm100:W008",
+        "legacy_label_candidate": 250,
+        "voice_key": "250",
+        "engine_family": "multimodal100"
+      },
+      {
+        "gloss": "Chạy",
+        "score": 0.015257415361702442,
+        "model_id": null,
+        "class_id": "W053",
+        "class_index": 52,
+        "original_gloss": "Chạy",
+        "canonical_concept_id": "mm100:W053",
+        "legacy_label_candidate": 46,
+        "voice_key": "46",
+        "engine_family": "multimodal100"
+      }
+    ],
+    "voice_key": "mm100-W068",
+    "original_gloss": "Sốt",
+    "recognition": {
+      "engine_family": "multimodal100",
+      "contract": "vsl100-r3-spoter-vlr-f01-s17-v2.0",
+      "actual_mode": "fusion",
+      "segment_id": "9f6d18657e5c41f6b8f00b010896869a:1",
+      "policy": {
+        "version": "clinic-fusion-quality-v1",
+        "committed": false,
+        "disposition": "review",
+        "reasons": [
+          "ambiguous_closed_set_prediction"
+        ],
+        "prompt": "Chưa nhận chắc. Bạn ký lại hoặc nhờ bác sĩ đối chiếu.",
+        "scores": "uncalibrated_softmax"
+      }
+    },
+    "quality_warning": "Chưa nhận chắc. Bạn ký lại hoặc nhờ bác sĩ đối chiếu.",
+    "context_candidates": [],
+    "metrics": {
+      "segment_id": "9f6d18657e5c41f6b8f00b010896869a:1",
+      "segment_number": 1,
+      "request_id": "9f6d18657e5c41f6b8f00b010896869a:1",
+      "engine_family": "multimodal100",
+      "contract": "vsl100-r3-spoter-vlr-f01-s17-v2.0",
+      "manifest_sha256": "b0b8601aa87070be78ec18355b019f78016f480aa06a7ab3c365edff1359adcf",
+      "checkpoint_sha256": "1367a90f4cd3fedeba1e62b4314eaa95f0cf94f82983b722130bb61d85325c99",
+      "actual_mode": "fusion",
+      "requested_mode": "fusion",
+      "fallback_reason": null,
+      "policy": {
+        "version": "clinic-fusion-quality-v1",
+        "committed": false,
+        "disposition": "review",
+        "reasons": [
+          "ambiguous_closed_set_prediction"
+        ],
+        "prompt": "Chưa nhận chắc. Bạn ký lại hoặc nhờ bác sĩ đối chiếu.",
+        "scores": "uncalibrated_softmax"
+      },
+      "quality_warning": "Chưa nhận chắc. Bạn ký lại hoặc nhờ bác sĩ đối chiếu.",
+      "quality": {
+        "frame_count": 40,
+        "sampled_frames": 61,
+        "capture_span_ms": 2400,
+        "input_fps": 16.25,
+        "max_capture_gap_ms": 83.33333333333348,
+        "frame_ids": [
+          21,
+          25,
+          25,
+          28,
+          33,
+          33,
+          37,
+          37,
+          42,
+          42,
+          45,
+          49,
+          49,
+          54,
+          54,
+          59,
+          59,
+          64,
+          64,
+          66,
+          71,
+          71,
+          73,
+          78,
+          78,
+          83,
+          83,
+          85,
+          90,
+          90,
+          93,
+          97,
+          97,
+          100,
+          102,
+          105,
+          109,
+          109,
+          114,
+          114,
+          117,
+          121,
+          121,
+          124,
+          126,
+          131,
+          131,
+          133,
+          138,
+          138,
+          141,
+          145,
+          145,
+          148,
+          153,
+          153,
+          155,
+          157,
+          162,
+          162,
+          165
+        ],
+        "geometry": {
+          "rejected": [],
+          "pose_consistency": "CHECKED",
+          "anchor_frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60
+          ],
+          "nose_bias_px": [
+            12.794677734375,
+            9.625137329101562
+          ],
+          "nose_threshold_px": 31.542681884765628,
+          "eye_scale_bounds": [
+            0.65,
+            1.5
+          ],
+          "raw_fraction": 1,
+          "filtered_fraction": 1,
+          "diagnostics": [
+            {
+              "frame": 0,
+              "nose_residual_px": 6.044435501098633,
+              "relative_eye_scale": 0.9727887511253357
+            },
+            {
+              "frame": 1,
+              "nose_residual_px": 6.222512722015381,
+              "relative_eye_scale": 1.0477911233901978
+            },
+            {
+              "frame": 2,
+              "nose_residual_px": 6.222512722015381,
+              "relative_eye_scale": 1.0477911233901978
+            },
+            {
+              "frame": 3,
+              "nose_residual_px": 5.881959438323975,
+              "relative_eye_scale": 1.0330203771591187
+            },
+            {
+              "frame": 4,
+              "nose_residual_px": 5.936537265777588,
+              "relative_eye_scale": 0.9337849617004395
+            },
+            {
+              "frame": 5,
+              "nose_residual_px": 5.936537265777588,
+              "relative_eye_scale": 0.9337849617004395
+            },
+            {
+              "frame": 6,
+              "nose_residual_px": 9.455283164978027,
+              "relative_eye_scale": 0.9441189765930176
+            },
+            {
+              "frame": 7,
+              "nose_residual_px": 9.455283164978027,
+              "relative_eye_scale": 0.9441189765930176
+            },
+            {
+              "frame": 8,
+              "nose_residual_px": 9.932774543762207,
+              "relative_eye_scale": 0.9134688377380371
+            },
+            {
+              "frame": 9,
+              "nose_residual_px": 9.932774543762207,
+              "relative_eye_scale": 0.9134688377380371
+            },
+            {
+              "frame": 10,
+              "nose_residual_px": 3.5113701820373535,
+              "relative_eye_scale": 0.8770928978919983
+            },
+            {
+              "frame": 11,
+              "nose_residual_px": 5.946064472198486,
+              "relative_eye_scale": 0.9587871432304382
+            },
+            {
+              "frame": 12,
+              "nose_residual_px": 5.946064472198486,
+              "relative_eye_scale": 0.9587871432304382
+            },
+            {
+              "frame": 13,
+              "nose_residual_px": 6.180093288421631,
+              "relative_eye_scale": 1.1119741201400757
+            },
+            {
+              "frame": 14,
+              "nose_residual_px": 6.180093288421631,
+              "relative_eye_scale": 1.1119741201400757
+            },
+            {
+              "frame": 15,
+              "nose_residual_px": 5.041862487792969,
+              "relative_eye_scale": 1.052348256111145
+            },
+            {
+              "frame": 16,
+              "nose_residual_px": 5.041862487792969,
+              "relative_eye_scale": 1.052348256111145
+            },
+            {
+              "frame": 17,
+              "nose_residual_px": 10.910860061645508,
+              "relative_eye_scale": 0.913357675075531
+            },
+            {
+              "frame": 18,
+              "nose_residual_px": 10.910860061645508,
+              "relative_eye_scale": 0.913357675075531
+            },
+            {
+              "frame": 19,
+              "nose_residual_px": 11.426887512207031,
+              "relative_eye_scale": 0.9122876524925232
+            },
+            {
+              "frame": 20,
+              "nose_residual_px": 10.292136192321777,
+              "relative_eye_scale": 0.9470939636230469
+            },
+            {
+              "frame": 21,
+              "nose_residual_px": 10.292136192321777,
+              "relative_eye_scale": 0.9470939636230469
+            },
+            {
+              "frame": 22,
+              "nose_residual_px": 9.001798629760742,
+              "relative_eye_scale": 0.947924792766571
+            },
+            {
+              "frame": 23,
+              "nose_residual_px": 8.496125221252441,
+              "relative_eye_scale": 1.0630648136138916
+            },
+            {
+              "frame": 24,
+              "nose_residual_px": 8.496125221252441,
+              "relative_eye_scale": 1.0630648136138916
+            },
+            {
+              "frame": 25,
+              "nose_residual_px": 8.698709487915039,
+              "relative_eye_scale": 1.1103800535202026
+            },
+            {
+              "frame": 26,
+              "nose_residual_px": 8.698709487915039,
+              "relative_eye_scale": 1.1103800535202026
+            },
+            {
+              "frame": 27,
+              "nose_residual_px": 7.575026512145996,
+              "relative_eye_scale": 1.129214882850647
+            },
+            {
+              "frame": 28,
+              "nose_residual_px": 9.332526206970215,
+              "relative_eye_scale": 1.113905906677246
+            },
+            {
+              "frame": 29,
+              "nose_residual_px": 9.332526206970215,
+              "relative_eye_scale": 1.113905906677246
+            },
+            {
+              "frame": 30,
+              "nose_residual_px": 8.38691234588623,
+              "relative_eye_scale": 1.1616675853729248
+            },
+            {
+              "frame": 31,
+              "nose_residual_px": 7.4484100341796875,
+              "relative_eye_scale": 1.1928126811981201
+            },
+            {
+              "frame": 32,
+              "nose_residual_px": 7.4484100341796875,
+              "relative_eye_scale": 1.1928126811981201
+            },
+            {
+              "frame": 33,
+              "nose_residual_px": 6.009328842163086,
+              "relative_eye_scale": 1.1839172840118408
+            },
+            {
+              "frame": 34,
+              "nose_residual_px": 5.9286580085754395,
+              "relative_eye_scale": 1.203589916229248
+            },
+            {
+              "frame": 35,
+              "nose_residual_px": 7.636058330535889,
+              "relative_eye_scale": 1.2532150745391846
+            },
+            {
+              "frame": 36,
+              "nose_residual_px": 6.604846000671387,
+              "relative_eye_scale": 1.2782421112060547
+            },
+            {
+              "frame": 37,
+              "nose_residual_px": 6.604846000671387,
+              "relative_eye_scale": 1.2782421112060547
+            },
+            {
+              "frame": 38,
+              "nose_residual_px": 7.990067958831787,
+              "relative_eye_scale": 1.4656774997711182
+            },
+            {
+              "frame": 39,
+              "nose_residual_px": 7.990067958831787,
+              "relative_eye_scale": 1.4656774997711182
+            },
+            {
+              "frame": 40,
+              "nose_residual_px": 9.742070198059082,
+              "relative_eye_scale": 1.1425005197525024
+            },
+            {
+              "frame": 41,
+              "nose_residual_px": 9.902438163757324,
+              "relative_eye_scale": 0.9977948069572449
+            },
+            {
+              "frame": 42,
+              "nose_residual_px": 9.902438163757324,
+              "relative_eye_scale": 0.9977948069572449
+            },
+            {
+              "frame": 43,
+              "nose_residual_px": 12.713151931762695,
+              "relative_eye_scale": 0.9048504829406738
+            },
+            {
+              "frame": 44,
+              "nose_residual_px": 10.112516403198242,
+              "relative_eye_scale": 0.7436276078224182
+            },
+            {
+              "frame": 45,
+              "nose_residual_px": 8.592320442199707,
+              "relative_eye_scale": 0.80120450258255
+            },
+            {
+              "frame": 46,
+              "nose_residual_px": 8.592320442199707,
+              "relative_eye_scale": 0.80120450258255
+            },
+            {
+              "frame": 47,
+              "nose_residual_px": 10.300150871276855,
+              "relative_eye_scale": 0.794373631477356
+            },
+            {
+              "frame": 48,
+              "nose_residual_px": 5.910276889801025,
+              "relative_eye_scale": 0.8821812868118286
+            },
+            {
+              "frame": 49,
+              "nose_residual_px": 5.910276889801025,
+              "relative_eye_scale": 0.8821812868118286
+            },
+            {
+              "frame": 50,
+              "nose_residual_px": 1.4248794317245483,
+              "relative_eye_scale": 1.1086143255233765
+            },
+            {
+              "frame": 51,
+              "nose_residual_px": 0.9539751410484314,
+              "relative_eye_scale": 1.0959259271621704
+            },
+            {
+              "frame": 52,
+              "nose_residual_px": 0.9539751410484314,
+              "relative_eye_scale": 1.0959259271621704
+            },
+            {
+              "frame": 53,
+              "nose_residual_px": 3.39241099357605,
+              "relative_eye_scale": 1.0363516807556152
+            },
+            {
+              "frame": 54,
+              "nose_residual_px": 5.642914772033691,
+              "relative_eye_scale": 0.9957264065742493
+            },
+            {
+              "frame": 55,
+              "nose_residual_px": 5.642914772033691,
+              "relative_eye_scale": 0.9957264065742493
+            },
+            {
+              "frame": 56,
+              "nose_residual_px": 4.263119220733643,
+              "relative_eye_scale": 1.1042085886001587
+            },
+            {
+              "frame": 57,
+              "nose_residual_px": 2.8962512016296387,
+              "relative_eye_scale": 1.0864349603652954
+            },
+            {
+              "frame": 58,
+              "nose_residual_px": 5.61219596862793,
+              "relative_eye_scale": 1.004273533821106
+            },
+            {
+              "frame": 59,
+              "nose_residual_px": 5.61219596862793,
+              "relative_eye_scale": 1.004273533821106
+            },
+            {
+              "frame": 60,
+              "nose_residual_px": 6.225643634796143,
+              "relative_eye_scale": 1.0504529476165771
+            }
+          ]
+        },
+        "sign_valid": true,
+        "mouth_valid": true,
+        "hand_coverage": 1,
+        "single_face_fraction": 1,
+        "preprocess_ms": 2419.6787999972003,
+        "roi_ms": 47.67149999861431,
+        "sampling": "nearest capture timestamp at 25fps",
+        "source_resolution": [
+          1080,
+          1080
+        ]
+      },
+      "boundary": {
+        "start_capture_ms": 333.3333333333333,
+        "end_capture_ms": 2733.3333333333335,
+        "first_active_capture_ms": 533.3333333333334,
+        "last_active_capture_ms": 2450,
+        "decision_capture_ms": 2850,
+        "reason": "arms_returned_to_neutral",
+        "buffered_frame_count": 38,
+        "selected_frame_ids": [
+          21,
+          25,
+          28,
+          33,
+          37,
+          42,
+          45,
+          49,
+          54,
+          59,
+          64,
+          66,
+          71,
+          73,
+          78,
+          83,
+          85,
+          90,
+          93,
+          97,
+          100,
+          102,
+          105,
+          109,
+          114,
+          117,
+          121,
+          124,
+          126,
+          131,
+          133,
+          138,
+          141,
+          145,
+          148,
+          153,
+          155,
+          157,
+          162,
+          165
+        ],
+        "boundary_config": {
+          "version": "elbow140_up4_down4_300ms_context250_v3",
+          "use_raised_wrist_fallback": false,
+          "angle_threshold": 140,
+          "visibility": 0.5,
+          "min_num_up_frames": 4,
+          "min_num_down_frames": 4,
+          "min_down_time_ms": 300,
+          "delay_ms": 400,
+          "min_segment_frames": 6,
+          "max_segment_ms": 8000,
+          "max_candidate_frames": 10,
+          "context_before_ms": 250,
+          "context_after_ms": 250
+        },
+        "boundary_source": "Elbow flexion only; shared sign-guided boundaries for every mode",
+        "trim": "V1 active core plus shared observed 250-ms context on either side; capped at decision",
+        "core_start_capture_ms": 533.3333333333334,
+        "core_end_capture_ms": 2533.3333333333335,
+        "core_frame_ids": [
+          33,
+          37,
+          42,
+          45,
+          49,
+          54,
+          59,
+          64,
+          66,
+          71,
+          73,
+          78,
+          83,
+          85,
+          90,
+          93,
+          97,
+          100,
+          102,
+          105,
+          109,
+          114,
+          117,
+          121,
+          124,
+          126,
+          131,
+          133,
+          138,
+          141,
+          145,
+          148,
+          153
+        ]
+      },
+      "timing": {
+        "sign_encoder_ms": 49.50170000120124,
+        "mouth_encoder_ms": 248.00669999967795,
+        "encoder_wall_ms": 248.6148999996658,
+        "encoder_schedule": "cpu_sign_cuda_mouth_overlap",
+        "queue_ms": 0.07500000204890966,
+        "inference_wall_ms": 305.0262999981642,
+        "decision_to_result_ms": 305.1013000002131,
+        "last_selected_capture_to_result_ms": 507.4689999995753,
+        "emitted_monotonic_ms": 8318108.042199999,
+        "clock": "python_performance_counter_ms_same_host",
+        "worker_to_backend_ms": 0.6165000014007092
+      },
+      "inference_ms": 305.0262999981642,
+      "raw_logits": [
+        -1.2980244159698486,
+        -2.617504358291626,
+        -3.0427205562591553,
+        0.21515537798404694,
+        -3.3642923831939697,
+        -2.9272103309631348,
+        -4.23882532119751,
+        1.089198350906372,
+        -2.7712645530700684,
+        -2.0693838596343994,
+        -2.7343406677246094,
+        -1.6337603330612183,
+        -3.0776195526123047,
+        -4.4127373695373535,
+        -2.61149525642395,
+        -2.824284791946411,
+        -4.2022600173950195,
+        -3.275505781173706,
+        -1.7865607738494873,
+        -3.31380558013916,
+        -3.2768101692199707,
+        -4.250996112823486,
+        -4.061459064483643,
+        -4.0376715660095215,
+        -4.403532028198242,
+        -4.294437885284424,
+        -2.775200366973877,
+        -2.757690906524658,
+        -1.7624542713165283,
+        -4.187728404998779,
+        -2.1741039752960205,
+        -1.9721931219100952,
+        -3.53849720954895,
+        -1.906259536743164,
+        -1.0818675756454468,
+        -4.089303970336914,
+        -1.947836995124817,
+        -3.010132312774658,
+        -3.251413583755493,
+        -2.463090419769287,
+        -5.227014541625977,
+        -1.1493313312530518,
+        -1.336057424545288,
+        -2.9278507232666016,
+        -1.6426472663879395,
+        -1.278671383857727,
+        -4.075262546539307,
+        -1.3267003297805786,
+        -3.1547932624816895,
+        -3.4457180500030518,
+        -3.9678192138671875,
+        -3.3753011226654053,
+        0.6767464876174927,
+        0.1638035923242569,
+        -1.9298659563064575,
+        -2.0386226177215576,
+        -1.8769679069519043,
+        -1.9035626649856567,
+        0.4759606719017029,
+        -2.104456901550293,
+        -0.3220598101615906,
+        1.5359547138214111,
+        -2.475515842437744,
+        -2.42238450050354,
+        0.2414618879556656,
+        -3.5863888263702393,
+        -0.1733587086200714,
+        4.542700290679932,
+        0.5396711230278015,
+        -1.7817895412445068,
+        -2.3911964893341064,
+        -1.8999288082122803,
+        -2.197814464569092,
+        -2.8257522583007812,
+        -4.5605621337890625,
+        1.3192812204360962,
+        -1.3824249505996704,
+        -4.036421298980713,
+        -2.6997766494750977,
+        -4.455999374389648,
+        -0.37551409006118774,
+        0.49291086196899414,
+        -1.8431059122085571,
+        -3.700695037841797,
+        -2.326846122741699,
+        -5.549801826477051,
+        -0.23267439007759094,
+        -2.8639323711395264,
+        -2.807070016860962,
+        -0.589321494102478,
+        -1.045058250427246,
+        -0.7130061388015747,
+        -3.645693302154541,
+        -1.2543491125106812,
+        -2.786891460418701,
+        -5.4419426918029785,
+        -2.0980565547943115,
+        0.19408845901489258,
+        -2.5981688499450684,
+        -2.1372478008270264
+      ],
+      "generation": 1,
+      "stream_id": "9f6d18657e5c41f6b8f00b010896869a"
+    },
+    "turn_id": "3f613ca75550"
+  },
+  "captureAtFirstRecognition": {
+    "type": "capture",
+    "status": "ready",
+    "generation": 1,
+    "source_kind": "demo",
+    "message": "Đang chuẩn bị nhận dạng tay và môi…",
+    "stream_id": "9f6d18657e5c41f6b8f00b010896869a",
+    "captured": 178,
+    "processed": 46,
+    "dropped": 28,
+    "fps_cap_drops": 104,
+    "processed_fps": 14.162785268129163,
+    "inflight_segments": 0,
+    "queued_segments": 0,
+    "has_pose": true,
+    "hand_count": 2,
+    "has_face": true,
+    "boundary_state": "listening",
+    "detect_ms": 63.193400001182454,
+    "frame_age_ms": 138.2982999999076,
+    "source_width": 1080,
+    "source_height": 1080,
+    "buffer_frames": 46
+  },
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\ntrue !== false\n\n    at E:\\Project\\VSL Clinic\\Source\\tools\\probe_multimodal_source.cjs:54:12\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+  "passed": false
+}

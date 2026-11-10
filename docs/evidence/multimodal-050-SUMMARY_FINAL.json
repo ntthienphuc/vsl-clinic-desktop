@@ -1,0 +1,357 @@
+{
+  "scope": "Local fixture verification of 0.5.0. Model scores uncalibrated; no webcam signer, natural mask/non-sign, clean-machine or clinical validation.",
+  "acceptance": {
+    "engineering_fixture_checks": "passed",
+    "full_product_robustness": "not_accepted",
+    "open_items": [
+      "7 of 12 EXE clips need review initially; 5 of the same 12 in the repeat after Lip was closed",
+      "covered-mouth synthetic fixture still commits; face detection does not prove usable mouth cues",
+      "no natural incidental-gesture or real mask fixtures; three OOV cases do not establish general OOV robustness",
+      "live hardware and acoustic behavior not tested by user choice"
+    ]
+  },
+  "contract": "vsl100-r3-spoter-vlr-f01-s17-v2.0",
+  "tests": {
+    "python": 397,
+    "javascript": 23
+  },
+  "packaged_checks": {
+    "layout720p1080p": true,
+    "avatarVoiceMouthAndMicGuard": true,
+    "manualPauseResumeStopsSoundAndMouth": true,
+    "reviewCorrectionUsesCorrectVoice": true,
+    "realFusionIncrementalWordsVoiceAndReview": true,
+    "noRepeatWhenTurnEnds": true,
+    "realPatientReplyYieldsAvatar": true,
+    "sameStreamRepeatedWordSpokenOnceEachBeforeTurnEnd": true,
+    "realBundledASRSendsOnce": true,
+    "endFencesFusionAndAudio": true
+  },
+  "ui_quality": {
+    "unique_fixed_clips": 12,
+    "committed": 5,
+    "wrong_committed": 0,
+    "review": 7,
+    "top1_matching_fixed_label": 11,
+    "deliberate_repeat": {
+      "words": 2,
+      "independent_trials": false
+    }
+  },
+  "latency": {
+    "inference": {
+      "n": 12,
+      "p50_ms": 278.97,
+      "p95_ms": 355.43,
+      "min_ms": 169.95,
+      "max_ms": 361.93
+    },
+    "decision_to_result": {
+      "n": 12,
+      "p50_ms": 279.2,
+      "p95_ms": 355.64,
+      "min_ms": 170.02,
+      "max_ms": 362.28
+    },
+    "backend_to_paint": {
+      "n": 12,
+      "p50_ms": 27.8,
+      "p95_ms": 60.75,
+      "min_ms": 19.9,
+      "max_ms": 70.95
+    },
+    "last_active_frame_to_paint": {
+      "n": 12,
+      "p50_ms": 744.35,
+      "p95_ms": 885.84,
+      "min_ms": 677.33,
+      "max_ms": 913.61
+    },
+    "last_active_frame_to_audio": {
+      "n": 5,
+      "p50_ms": 770.04,
+      "p95_ms": 876.01,
+      "min_ms": 721.33,
+      "max_ms": 889.12
+    },
+    "frontend_queue_to_audio": {
+      "n": 5,
+      "p50_ms": 40.0,
+      "p95_ms": 61.6,
+      "min_ms": 34,
+      "max_ms": 66
+    },
+    "caveat": "Same-host timestamps; React plus two animation frames and Audio.onplaying, not photon/acoustic measurements. Twelve clips, only committed words contribute audio; descriptive p95 with tiny n."
+  },
+  "fps_range": [
+    15.728155339805825,
+    20.145985401459853
+  ],
+  "long_session": {
+    "checks": {
+      "crosses_five_minutes_bounded_without_reset": true,
+      "repeated_words_keep_unique_segment_identity": true,
+      "source_change_fences_prior_generation": true,
+      "worker_crash_then_restart": true,
+      "end_joins_child_without_late_words": true
+    },
+    "duration_seconds": 315.06699130000015,
+    "rss_min_mb": 1189.011456,
+    "rss_max_mb": 1660.481536,
+    "peak_buffer_frames": 217,
+    "peak_queued": 0,
+    "results": 8,
+    "static_idle_false_words": 0,
+    "static_idle_minutes": 4.35,
+    "negative_scope": "Repeated static rest only; not general non-sign detection."
+  },
+  "capture12": {
+    "clips": 12,
+    "results": 12,
+    "committed": 7,
+    "errors_among_committed": 0,
+    "clips_without_result": 0,
+    "uncommitted_results": 5,
+    "scope": "12 fixed prerecorded clips, 2 signers; natural Clinic boundaries and actual worker, not live webcam accuracy."
+  },
+  "synthetic_visibility": {
+    "no-face": 0,
+    "covered-mouth": 1,
+    "lower-body-covered": 0,
+    "shake-static-rest": 0
+  },
+  "synthetic_visibility_interpretation": "Covered-mouth yields one committed Sốt (matching original positive clip), so this is a failed occlusion-rejection expectation, not proof that masks are handled. Other three synthetic cases have no committed words. No real non-sign false-emission rate is available.",
+  "graphics": {
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "vendor": "WebKit"
+  },
+  "worker": {
+    "name": "Tay và môi · 100 từ",
+    "labels": 100,
+    "family": "multimodal100",
+    "sha256": "1367a90f4cd3fedeba1e62b4314eaa95f0cf94f82983b722130bb61d85325c99",
+    "contract": "vsl100-r3-spoter-vlr-f01-s17-v2.0",
+    "capture_profile": "clinic-mm100-ram-v2",
+    "active_head": "fusion",
+    "worker": {
+      "type": "worker_ready",
+      "contract": "vsl100-r3-spoter-vlr-f01-s17-v2.0",
+      "device": "cuda",
+      "pid": 22004,
+      "load_ms": 7647.593600000619,
+      "warmup_ms": 2669.7454000004655,
+      "manifest_sha256": "b0b8601aa87070be78ec18355b019f78016f480aa06a7ab3c365edff1359adcf",
+      "storage": "ram_only",
+      "status": "ready"
+    }
+  },
+  "packaged_shutdown_exit": 0,
+  "repeat_after_lip_closed": {
+    "scope": "Same 12 fixed prerecorded clips, repeated after user explicitly reported closing Lip; not 24 independent trials. No application/model/threshold changes between these runs.",
+    "environment": "Before the repeat, process inventory found no Clinic/VietLip matching processes and nvidia-smi compute-app query returned empty. This is a snapshot, not a controlled load benchmark.",
+    "before": {
+      "passed": true,
+      "desktop_exit": 0,
+      "shutdown_forced": false,
+      "trials": 12,
+      "committed": 5,
+      "wrong_committed": 0,
+      "review": 7,
+      "top1_matching": 11,
+      "fps": [
+        15.73,
+        20.15
+      ],
+      "active_to_paint_ms": {
+        "n": 12,
+        "p50": 744.35,
+        "p95": 885.84
+      },
+      "active_to_audio_ms": {
+        "n": 5,
+        "p50": 770.04,
+        "p95": 876.01
+      },
+      "checks": {
+        "layout720p1080p": true,
+        "avatarVoiceMouthAndMicGuard": true,
+        "manualPauseResumeStopsSoundAndMouth": true,
+        "reviewCorrectionUsesCorrectVoice": true,
+        "realFusionIncrementalWordsVoiceAndReview": true,
+        "noRepeatWhenTurnEnds": true,
+        "realPatientReplyYieldsAvatar": true,
+        "sameStreamRepeatedWordSpokenOnceEachBeforeTurnEnd": true,
+        "realBundledASRSendsOnce": true,
+        "endFencesFusionAndAudio": true
+      },
+      "error": null
+    },
+    "after": {
+      "passed": true,
+      "desktop_exit": 0,
+      "shutdown_forced": false,
+      "trials": 12,
+      "committed": 7,
+      "wrong_committed": 0,
+      "review": 5,
+      "top1_matching": 11,
+      "fps": [
+        16.29,
+        19.29
+      ],
+      "active_to_paint_ms": {
+        "n": 12,
+        "p50": 797.01,
+        "p95": 934.96
+      },
+      "active_to_audio_ms": {
+        "n": 7,
+        "p50": 860.64,
+        "p95": 950.75
+      },
+      "checks": {
+        "layout720p1080p": true,
+        "avatarVoiceMouthAndMicGuard": true,
+        "manualPauseResumeStopsSoundAndMouth": true,
+        "reviewCorrectionUsesCorrectVoice": true,
+        "realFusionIncrementalWordsVoiceAndReview": true,
+        "noRepeatWhenTurnEnds": true,
+        "realPatientReplyYieldsAvatar": true,
+        "sameStreamRepeatedWordSpokenOnceEachBeforeTurnEnd": true,
+        "realBundledASRSendsOnce": true,
+        "endFencesFusionAndAudio": true
+      },
+      "error": null
+    },
+    "pairs": [
+      {
+        "expected": "W066",
+        "video_path": "clips/clean/Học/take_01/cam_1/W066.mp4",
+        "before_text": "Mệt",
+        "after_text": "Mệt",
+        "before_committed": true,
+        "after_committed": true,
+        "after_reasons": []
+      },
+      {
+        "expected": "W068",
+        "video_path": "clips/clean/Học/take_01/cam_1/W068.mp4",
+        "before_text": "Sốt",
+        "after_text": "Sốt",
+        "before_committed": false,
+        "after_committed": true,
+        "after_reasons": []
+      },
+      {
+        "expected": "W069",
+        "video_path": "clips/clean/Học/take_01/cam_1/W069.mp4",
+        "before_text": "Buồn nôn",
+        "after_text": "Buồn nôn",
+        "before_committed": true,
+        "after_committed": true,
+        "after_reasons": []
+      },
+      {
+        "expected": "W072",
+        "video_path": "clips/clean/Học/take_01/cam_1/W072.mp4",
+        "before_text": "Bụng",
+        "after_text": "Bụng",
+        "before_committed": false,
+        "after_committed": false,
+        "after_reasons": [
+          "ambiguous_closed_set_prediction"
+        ]
+      },
+      {
+        "expected": "W082",
+        "video_path": "clips/clean/Học/take_01/cam_1/W082.mp4",
+        "before_text": "Nhà vệ sinh",
+        "after_text": "Nhà vệ sinh",
+        "before_committed": true,
+        "after_committed": true,
+        "after_reasons": []
+      },
+      {
+        "expected": "W093",
+        "video_path": "clips/clean/Học/take_01/cam_1/W093.mp4",
+        "before_text": "Cần",
+        "after_text": "Cần",
+        "before_committed": false,
+        "after_committed": true,
+        "after_reasons": []
+      },
+      {
+        "expected": "W066",
+        "video_path": "clips/clean/Huy/take_01/cam_1/W066.mp4",
+        "before_text": "Ăn",
+        "after_text": "Ăn",
+        "before_committed": false,
+        "after_committed": false,
+        "after_reasons": [
+          "ambiguous_closed_set_prediction"
+        ]
+      },
+      {
+        "expected": "W068",
+        "video_path": "clips/clean/Huy/take_01/cam_1/W068.mp4",
+        "before_text": "Sốt",
+        "after_text": "Sốt",
+        "before_committed": true,
+        "after_committed": true,
+        "after_reasons": []
+      },
+      {
+        "expected": "W069",
+        "video_path": "clips/clean/Huy/take_01/cam_1/W069.mp4",
+        "before_text": "Buồn nôn",
+        "after_text": "Buồn nôn",
+        "before_committed": false,
+        "after_committed": false,
+        "after_reasons": [
+          "ambiguous_closed_set_prediction"
+        ]
+      },
+      {
+        "expected": "W072",
+        "video_path": "clips/clean/Huy/take_01/cam_1/W072.mp4",
+        "before_text": "Bụng",
+        "after_text": "Bụng",
+        "before_committed": false,
+        "after_committed": false,
+        "after_reasons": [
+          "ambiguous_closed_set_prediction"
+        ]
+      },
+      {
+        "expected": "W082",
+        "video_path": "clips/clean/Huy/take_01/cam_1/W082.mp4",
+        "before_text": "Nhà vệ sinh",
+        "after_text": "Nhà vệ sinh",
+        "before_committed": false,
+        "after_committed": false,
+        "after_reasons": [
+          "ambiguous_closed_set_prediction"
+        ]
+      },
+      {
+        "expected": "W093",
+        "video_path": "clips/clean/Huy/take_01/cam_1/W093.mp4",
+        "before_text": "Cần",
+        "after_text": "Cần",
+        "before_committed": true,
+        "after_committed": true,
+        "after_reasons": []
+      }
+    ]
+  },
+  "three_oov_clips": {
+    "clips": 3,
+    "recognition_events": 3,
+    "out_of_vocabulary_committed_events": 0,
+    "clips_without_result": 0,
+    "review_events": 3,
+    "unavailable_events": 0,
+    "functional_run_completed": true,
+    "rejection_expectation_passed": true
+  }
+}

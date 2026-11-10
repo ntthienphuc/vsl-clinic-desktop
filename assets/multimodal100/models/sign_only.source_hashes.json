@@ -1,0 +1,10 @@
+{
+  "best.pt": "f1a0ea4ae20f66946ac35b3ccfdd1c4a859fdce0acf35b48d21b2cdf9aed4180",
+  "config_and_provenance.json": "8f198b4f3f8c1ce0a9ddb9d3bd13f47f15324fa913a7d9ce2aadfdff5d0413b4",
+  "history.json": "2cdf82d5724003d24d8e3c3994fab27c2215f6e8a7b98d62b3aa3fd7ad44c6b3",
+  "metrics.json": "487e5c2da25d2e8c9075c7bf12309419e57b8342b18b07eef42cb732a5e7460d",
+  "result.json": "5c593d171d128bfa0325de326984db8f46d627d3644802ec81c6abe57dd12b70",
+  "test_predictions.json": "b0b0163bf710e3ea161154ed0d2743c01bc4df36b7b22c343231c642f1cddc78",
+  "validation_predictions.json": "9be6b70996f2263ed9d6340c8f717a989812fb9aa319389eac85ac43dcf195a8",
+  "REGISTRATION.json": "29b86e6174b01f6fe579b346884ef5a8a1fd38046220a31ca9f246e1bf66c66e"
+}

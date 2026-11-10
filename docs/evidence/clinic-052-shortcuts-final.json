@@ -1,0 +1,16 @@
+[
+  {
+    "shortcut": "E:\\Project\\VSL Clinic\\Open Clinic.lnk",
+    "target": "E:\\Project\\VSL Clinic\\App\\0.4.1\\win-unpacked\\VSL Clinic.exe",
+    "arguments": "--user-data-dir=\"E:\\Project\\VSL Clinic\\UserData\"",
+    "workingDirectory": "E:\\Project\\VSL Clinic\\App\\0.4.1\\win-unpacked",
+    "exists": true
+  },
+  {
+    "shortcut": "E:\\Project\\VSL Clinic\\Open Clinic 0.5.2.lnk",
+    "target": "E:\\Project\\VSL Clinic\\App\\0.5.2\\win-unpacked\\VSL Clinic.exe",
+    "arguments": "--user-data-dir=\"E:\\Project\\VSL Clinic\\UserData_0.5.2\"",
+    "workingDirectory": "E:\\Project\\VSL Clinic\\App\\0.5.2\\win-unpacked",
+    "exists": true
+  }
+]

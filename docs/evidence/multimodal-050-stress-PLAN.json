@@ -1,0 +1,42 @@
+{
+  "scope": "Composed prerecorded fixture; not natural continuous signing or incidental-motion validation.",
+  "fps": 25,
+  "duration_seconds": 312,
+  "slots": [
+    [
+      1,
+      "W068"
+    ],
+    [
+      7,
+      "W068"
+    ],
+    [
+      14,
+      "W069"
+    ],
+    [
+      21,
+      "W072"
+    ],
+    [
+      285,
+      "W093"
+    ],
+    [
+      291,
+      "W082"
+    ],
+    [
+      298,
+      "W068"
+    ],
+    [
+      305,
+      "W068"
+    ]
+  ],
+  "idle": "Repeated last neutral frame of W068; static-rest negative only",
+  "file": "long-session.mp4",
+  "sha256": "be0a3954bc9b14286392eb0062e64b5a864d8dbff947fc2a3ebdb854270ac030"
+}

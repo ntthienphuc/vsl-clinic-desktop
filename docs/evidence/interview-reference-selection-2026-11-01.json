@@ -1,0 +1,305 @@
+{
+  "scope": "Selection of labelled fixed-video rehearsal references, not unbiased accuracy. Inference receives video bytes only.",
+  "rows": [
+    {
+      "video_id": "021268",
+      "label": "Không cần",
+      "source_sha256": "0bc301ddec9ab1108955479f738bc7e0943b5872d10b8c78137df8fd643055bc",
+      "replay": {
+        "sha256": "9d47ffb796d59d1f18e08213b61deecbcc438d8e7d42e482ea69a84c73271abb",
+        "frames": 150,
+        "duration_ms": 5000
+      },
+      "actual": [
+        "Đắng"
+      ],
+      "words": [
+        {
+          "id": "171c7b561c79",
+          "role": "patient",
+          "text": "Đắng",
+          "created_at_ms": 1793503549539.3633,
+          "status": "candidate",
+          "confidence": 0.9999840259552002,
+          "uncertain": false,
+          "predictions": [
+            {
+              "gloss": "Đắng",
+              "score": 0.9999840259552002,
+              "model_id": 387
+            },
+            {
+              "gloss": "Không cần",
+              "score": 1.6019084796425886e-05,
+              "model_id": 150
+            },
+            {
+              "gloss": "Trung Quốc",
+              "score": 1.3492115757962608e-10,
+              "model_id": 328
+            }
+          ],
+          "quality_warning": null,
+          "context_candidates": [],
+          "metrics": {
+            "observed_fps": 29.387755102040817,
+            "maximum_observation_gap_ms": 66.66666666666674,
+            "quality_warning": null,
+            "frame_count": 49,
+            "hand_coverage": 1.0,
+            "inference_ms": 219.822021484375,
+            "queue_ms": 0.0,
+            "last_active_epoch_ms": 1793503548911.0022,
+            "server_result_epoch_ms": 1793503549539.3633,
+            "source_start_ms": 533.3333333333334,
+            "source_end_ms": 2100.0,
+            "model": "SL-GCN / 400 gloss",
+            "profile": "clinic-pc-tasks-lite-parallel-v2",
+            "generation": 31
+          },
+          "turn_id": "887f4a4e51f4"
+        }
+      ]
+    },
+    {
+      "video_id": "021368",
+      "label": "Không cần",
+      "source_sha256": "be42d2c4f59a1704d42dd3f15083e30e3b9f1a61ad8286205f67acb4b6cd0d59",
+      "replay": {
+        "sha256": "ac1afd0598e90a9df0eb9c487902e499b5ad5ab34e0c025dbff3579d1b722ba5",
+        "frames": 147,
+        "duration_ms": 4900
+      },
+      "actual": [
+        "Đắng"
+      ],
+      "words": [
+        {
+          "id": "6f9e0c5e01c3",
+          "role": "patient",
+          "text": "Đắng",
+          "created_at_ms": 1793503555361.1565,
+          "status": "candidate",
+          "confidence": 0.9999982118606567,
+          "uncertain": false,
+          "predictions": [
+            {
+              "gloss": "Đắng",
+              "score": 0.9999982118606567,
+              "model_id": 387
+            },
+            {
+              "gloss": "Không cần",
+              "score": 1.7361780919600278e-06,
+              "model_id": 150
+            },
+            {
+              "gloss": "Thứ bảy",
+              "score": 9.020651586810757e-11,
+              "model_id": 319
+            }
+          ],
+          "quality_warning": null,
+          "context_candidates": [],
+          "metrics": {
+            "observed_fps": 27.272727272727277,
+            "maximum_observation_gap_ms": 66.66666666666674,
+            "quality_warning": null,
+            "frame_count": 41,
+            "hand_coverage": 1.0,
+            "inference_ms": 229.58740234375,
+            "queue_ms": 0.0,
+            "last_active_epoch_ms": 1793503554740.0076,
+            "server_result_epoch_ms": 1793503555361.1565,
+            "source_start_ms": 600.0,
+            "source_end_ms": 1966.6666666666667,
+            "model": "SL-GCN / 400 gloss",
+            "profile": "clinic-pc-tasks-lite-parallel-v2",
+            "generation": 33
+          },
+          "turn_id": "67a833438dc3"
+        }
+      ]
+    },
+    {
+      "video_id": "022152",
+      "label": "Không cần",
+      "source_sha256": "8343475f9494026260130df274f7f071c819ecfa4f7e2bb8667b405ec3e1ee3b",
+      "replay": {
+        "sha256": "29d032a4bea44a0b0baa9e11bbfa0881114b488c9d91df10f949f4b57741fb86",
+        "frames": 155,
+        "duration_ms": 5167
+      },
+      "actual": [
+        "Không cần"
+      ],
+      "words": [
+        {
+          "id": "7a83d34378c1",
+          "role": "patient",
+          "text": "Không cần",
+          "created_at_ms": 1793503561530.4514,
+          "status": "candidate",
+          "confidence": 0.9998519420623779,
+          "uncertain": false,
+          "predictions": [
+            {
+              "gloss": "Không cần",
+              "score": 0.9998519420623779,
+              "model_id": 150
+            },
+            {
+              "gloss": "Đắng",
+              "score": 0.00014804668899159878,
+              "model_id": 387
+            },
+            {
+              "gloss": "Chết",
+              "score": 4.222102528705918e-11,
+              "model_id": 49
+            }
+          ],
+          "quality_warning": null,
+          "context_candidates": [],
+          "metrics": {
+            "observed_fps": 30.0,
+            "maximum_observation_gap_ms": 33.333333333333485,
+            "quality_warning": null,
+            "frame_count": 59,
+            "hand_coverage": 1.0,
+            "inference_ms": 191.951416015625,
+            "queue_ms": 0.0,
+            "last_active_epoch_ms": 1793503560975.2236,
+            "server_result_epoch_ms": 1793503561530.4514,
+            "source_start_ms": 433.3333333333333,
+            "source_end_ms": 2300.0,
+            "model": "SL-GCN / 400 gloss",
+            "profile": "clinic-pc-tasks-lite-parallel-v2",
+            "generation": 35
+          },
+          "turn_id": "47c31a648083"
+        }
+      ]
+    },
+    {
+      "video_id": "023036",
+      "label": "Không cần",
+      "source_sha256": "6d374907f4850b4ff8147bd58a579e089de887ec91cbf3ac61d1dda79743b52c",
+      "replay": {
+        "sha256": "7cdc26cb1d03d84834dc299de8cc13c196406717d115559470e8e606579e9ff3",
+        "frames": 152,
+        "duration_ms": 5067
+      },
+      "actual": [
+        "Không cần"
+      ],
+      "words": [
+        {
+          "id": "36027dd5af0c",
+          "role": "patient",
+          "text": "Không cần",
+          "created_at_ms": 1793503567455.2378,
+          "status": "candidate",
+          "confidence": 0.9999997615814209,
+          "uncertain": false,
+          "predictions": [
+            {
+              "gloss": "Không cần",
+              "score": 0.9999997615814209,
+              "model_id": 150
+            },
+            {
+              "gloss": "Đắng",
+              "score": 2.9040987215012137e-07,
+              "model_id": 387
+            },
+            {
+              "gloss": "Chết",
+              "score": 1.3369250368225338e-12,
+              "model_id": 49
+            }
+          ],
+          "quality_warning": null,
+          "context_candidates": [],
+          "metrics": {
+            "observed_fps": 28.846153846153847,
+            "maximum_observation_gap_ms": 66.66666666666674,
+            "quality_warning": null,
+            "frame_count": 51,
+            "hand_coverage": 1.0,
+            "inference_ms": 187.04638671875,
+            "queue_ms": 0.0,
+            "last_active_epoch_ms": 1793503566885.8242,
+            "server_result_epoch_ms": 1793503567455.2378,
+            "source_start_ms": 533.3333333333334,
+            "source_end_ms": 2200.0,
+            "model": "SL-GCN / 400 gloss",
+            "profile": "clinic-pc-tasks-lite-parallel-v2",
+            "generation": 37
+          },
+          "turn_id": "218773581b58"
+        }
+      ]
+    },
+    {
+      "video_id": "023920",
+      "label": "Không cần",
+      "source_sha256": "1c364c23d1b707d423e15404a6f3fdf483f1191c776d6c6d76e60ff99a6f0af3",
+      "replay": {
+        "sha256": "90ebb0facecfb78aef3880de2c79ab022a1dd223e0833bf99c7130c71166e5f3",
+        "frames": 146,
+        "duration_ms": 4867
+      },
+      "actual": [
+        "Đắng"
+      ],
+      "words": [
+        {
+          "id": "5cd0bb835d27",
+          "role": "patient",
+          "text": "Đắng",
+          "created_at_ms": 1793503573200.6868,
+          "status": "candidate",
+          "confidence": 1.0,
+          "uncertain": false,
+          "predictions": [
+            {
+              "gloss": "Đắng",
+              "score": 1.0,
+              "model_id": 387
+            },
+            {
+              "gloss": "Không cần",
+              "score": 7.332093154843733e-09,
+              "model_id": 150
+            },
+            {
+              "gloss": "Chết",
+              "score": 7.851803101554946e-19,
+              "model_id": 49
+            }
+          ],
+          "quality_warning": null,
+          "context_candidates": [],
+          "metrics": {
+            "observed_fps": 28.043478260869563,
+            "maximum_observation_gap_ms": 66.66666666666674,
+            "quality_warning": null,
+            "frame_count": 44,
+            "hand_coverage": 1.0,
+            "inference_ms": 212.21435546875,
+            "queue_ms": 0.0,
+            "last_active_epoch_ms": 1793503572593.4578,
+            "server_result_epoch_ms": 1793503573200.6868,
+            "source_start_ms": 566.6666666666666,
+            "source_end_ms": 2000.0,
+            "model": "SL-GCN / 400 gloss",
+            "profile": "clinic-pc-tasks-lite-parallel-v2",
+            "generation": 39
+          },
+          "turn_id": "9074ea2af02a"
+        }
+      ]
+    }
+  ]
+}

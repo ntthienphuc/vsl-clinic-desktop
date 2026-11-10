@@ -1,0 +1,50 @@
+{
+  "scope": "Actual Windows 0.3.6 package; selected labelled video replies and synthetic speech, not live-user validation.",
+  "passed": true,
+  "patient_turns": 22,
+  "patient_word_occurrences": 29,
+  "doctor_sentences": 17,
+  "unsupported_spoken_case_blocked": true,
+  "speech_inputs": 18,
+  "layout": [
+    {
+      "role": "/patient",
+      "width": 1280,
+      "height": 720,
+      "scrollWidth": 1280,
+      "scrollHeight": 720
+    },
+    {
+      "role": "/patient",
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080
+    },
+    {
+      "role": "/doctor",
+      "width": 1280,
+      "height": 720,
+      "scrollWidth": 1280,
+      "scrollHeight": 720
+    },
+    {
+      "role": "/doctor",
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080
+    }
+  ],
+  "evidence": [
+    "interview-packaged-2026-11-01.json",
+    "interview-speech-2026-11-01.json",
+    "interview-layout-final.json"
+  ],
+  "prior_attempts": [
+    "interview-packaged-initial-2026-11-01.json",
+    "interview-speech-initial-2026-11-01.json",
+    "interview-reference-selection-2026-11-01.json",
+    "interview-runtime-capture-note-2026-11-01.json"
+  ]
+}

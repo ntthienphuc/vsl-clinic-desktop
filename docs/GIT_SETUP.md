@@ -4,6 +4,20 @@
 
 VSL Clinic uses Electron, React/TypeScript, Three.js/VRM and Python/FastAPI. This standalone repository does not include Android/Flutter code or the Translator project's Git history.
 
+The current source is 0.5.2, with two patient recognition modes and an offline
+installer recipe. The restore manifest covers **21,179** local inputs, including
+both recognition dictionaries, voices, examples, retained reference-audit videos
+and the isolated multimodal runtime. Model weights, runtime binaries and raw
+videos are excluded from Git. Keep an authorized complete **Source** folder to
+restore them; cloning Git alone does not supply these inputs.
+
+`DEPLOYMENT.json` and the runtime manifest preserve provenance and checksums.
+`tools/prepare_multimodal_r3.py` is a local staging recipe using preserved research
+paths; those paths are not needed by the installed app. Build with
+`npm run package`, verify with `tools/release_receipt.py` and
+`tools/audit_portable.py`, then use `npm run installer` to create one offline
+setup. See [installer instructions](../installer/README.md).
+
 ## Clone
 
 The repository is public; no GitHub login is required:
@@ -15,7 +29,7 @@ cd vsl-clinic-desktop
 
 `package.json`, `src/`, `backend/`, `desktop/`, `assets/` and `tools/` are at the repository root. An Android checkout is not needed to run Clinic.
 
-Git contains source, lockfiles, tests, build configuration, the motion bank, avatar assets, scripts and JSON evidence. Recognition/ASR weights, original videos, caches, development environments and executables remain outside Git. `local-assets-manifest.json` records paths, sizes and SHA-256 hashes for 107 local inputs; it is not a full training-corpus backup.
+Git contains source, lockfiles, tests, build configuration, the motion bank, avatar assets, scripts and JSON evidence. Recognition/ASR weights, original videos, caches, development environments and executables remain outside Git. `local-assets-manifest.json` records paths, sizes and SHA-256 hashes for current local inputs; it is not a full training-corpus backup.
 
 ## Restore authorized inputs
 

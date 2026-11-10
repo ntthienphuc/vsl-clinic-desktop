@@ -1,0 +1,7 @@
+Fixed Vietnamese label audio generated using Google Translate TTS at build time.
+Only public dictionary labels and the fixed uncertainty cue were submitted.
+Original MP3s, request URLs and hashes are retained in the build cache/manifest.
+Changes: decoded to mono 24 kHz PCM WAV; short silence guards retained; native speaking rate.
+No TTS service or additional voice/model installation is used by the runtime.
+These generated voice assets are included for this local demo. No new public
+license or general redistribution right over service-generated audio is asserted.

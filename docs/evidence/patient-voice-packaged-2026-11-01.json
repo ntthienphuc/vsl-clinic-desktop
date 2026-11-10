@@ -1,0 +1,94 @@
+{
+  "scope": "Actual 0.3.5 Windows EXE, bundled engine/assets/audio, prerecorded sign video, fake silent microphone.",
+  "bundledVoiceClips": 401,
+  "voice": "Google Translate Vietnamese fixed-label audio",
+  "events": [
+    {
+      "type": "queued",
+      "message_id": "d311a8f1934f",
+      "text": "Đồng ý"
+    },
+    {
+      "type": "playing",
+      "message_id": "d311a8f1934f",
+      "text": "Đồng ý",
+      "latency_ms": 192
+    },
+    {
+      "type": "ended",
+      "message_id": "d311a8f1934f",
+      "text": "Đồng ý"
+    },
+    {
+      "type": "queued",
+      "message_id": "59955a261288",
+      "text": "Mệt"
+    },
+    {
+      "type": "playing",
+      "message_id": "59955a261288",
+      "text": "Mệt",
+      "latency_ms": 38
+    },
+    {
+      "type": "ended",
+      "message_id": "59955a261288",
+      "text": "Mệt"
+    },
+    {
+      "type": "queued",
+      "message_id": "f36305158bcd",
+      "text": "Cần"
+    },
+    {
+      "type": "playing",
+      "message_id": "f36305158bcd",
+      "text": "Cần",
+      "latency_ms": 35
+    },
+    {
+      "type": "ended",
+      "message_id": "f36305158bcd",
+      "text": "Cần"
+    },
+    {
+      "type": "queued",
+      "message_id": "80edcc6f1395",
+      "text": "Nghỉ ngơi"
+    },
+    {
+      "type": "playing",
+      "message_id": "80edcc6f1395",
+      "text": "Nghỉ ngơi",
+      "latency_ms": 39
+    },
+    {
+      "type": "ended",
+      "message_id": "80edcc6f1395",
+      "text": "Nghỉ ngơi"
+    }
+  ],
+  "played": [
+    {
+      "word": "Đồng ý",
+      "latency_ms": 192
+    },
+    {
+      "word": "Mệt",
+      "latency_ms": 38
+    },
+    {
+      "word": "Cần",
+      "latency_ms": 35
+    },
+    {
+      "word": "Nghỉ ngơi",
+      "latency_ms": 39
+    }
+  ],
+  "microphonePaused": true,
+  "microphoneResumed": true,
+  "manualMutePreserved": true,
+  "readBeforeTurnFinished": true,
+  "passed": true
+}

@@ -7,6 +7,11 @@ const fs = require('node:fs');
 const net = require('node:net');
 const path = require('node:path');
 
+// On hybrid laptops keep the avatar on the high-performance adapter so its
+// rendering does not take the integrated GPU's shared CPU power/bandwidth.
+// Chromium falls back normally when no such adapter is available.
+app.commandLine.appendSwitch('force-high-performance-gpu');
+
 const project = path.resolve(__dirname, '..');
 const qaMode = !app.isPackaged && process.env.CLINIC_QA === '1';
 const sessionToken = qaMode ? 'clinic-test-session' : crypto.randomBytes(32).toString('hex');
@@ -74,7 +79,7 @@ async function startEngine() {
         signal: AbortSignal.timeout(700),
       });
       if (response.ok) {
-        log(`ready at ${origin}; model=400 words`);
+        log(`ready at ${origin}; recognition=managed multimodal worker`);
         return;
       }
     } catch {
@@ -137,6 +142,7 @@ function openWindow(role) {
       sandbox: true,
       backgroundThrottling: false,
       spellcheck: false,
+      autoplayPolicy: 'no-user-gesture-required',
     },
   });
   windows.set(role, window);
@@ -233,11 +239,17 @@ async function stopEngine() {
   } catch {
     log('shutdown request unavailable');
   }
-  for (let attempt = 0; attempt < 30 && engine.exitCode === null; attempt += 1) {
+  // The fusion worker has a bounded 12 s graceful close. Let the engine join
+  // that child before terminating its parent (the old 3 s limit raced it).
+  for (let attempt = 0; attempt < 200 && engine.exitCode === null && engine.signalCode === null; attempt += 1) {
     await new Promise((resolve) => setTimeout(resolve, 100));
   }
-  if (engine.exitCode === null) {
+  if (engine.exitCode === null && engine.signalCode === null) {
+    log('engine graceful shutdown timed out; terminating parent');
     engine.kill();
+    for (let attempt = 0; attempt < 50 && engine.exitCode === null && engine.signalCode === null; attempt += 1) {
+      await new Promise((resolve) => setTimeout(resolve, 100));
+    }
   }
 }
 
@@ -258,6 +270,9 @@ if (!app.requestSingleInstanceLock()) {
       return;
     }
     shuttingDown = true;
+    // Close renderers first: release WebSockets, microphone, WebGL and sound
+    // while the backend finishes releasing its device and worker processes.
+    for (const window of [...windows.values()]) window.destroy();
     void stopEngine().finally(() => {
       log('desktop closed');
       logStream?.end();

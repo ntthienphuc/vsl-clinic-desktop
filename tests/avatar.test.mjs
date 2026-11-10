@@ -17,7 +17,25 @@ for (const name of ['motion', 'kinematics', 'retarget']) {
 }
 const { solveArm, transportAim } = await import(pathToFileURL(path.join(output, 'retarget.mjs')));
 const { HandArticulation, RULES, constrainWrist, RotationFollower } = await import(pathToFileURL(path.join(output, 'kinematics.mjs')));
-const { samplePlaylist, sampleMotion, neutralPose, elapsedPlayback } = await import(pathToFileURL(path.join(output, 'motion.mjs')));
+const { samplePlaylist, sampleMotion, neutralPose, elapsedPlayback, transitionPose } = await import(pathToFileURL(path.join(output, 'motion.mjs')));
+
+test('bridges preserve endpoint velocity when feasible and bound conflicting contact trajectories', () => {
+  const a = [[0, 1, -.5]], b = [[1, -1, -.5]];
+  const va = [[.001, -.001, 0]], vb = [[.0015, -.002, 0]];
+  const duration = 500, epsilon = 1e-5;
+  const first = transitionPose(a, b, va, vb, duration, epsilon)[0];
+  const last = transitionPose(a, b, va, vb, duration, 1 - epsilon)[0];
+  for (let axis = 0; axis < 3; axis++) {
+    assert.ok(Math.abs((first[axis] - a[0][axis]) / (duration * epsilon) - va[0][axis]) < 1e-6);
+    assert.ok(Math.abs((b[0][axis] - last[axis]) / (duration * epsilon) - vb[0][axis]) < 1e-6);
+  }
+  for (const [start, end] of [[va, vb], [[[200, 99, 999]], [[-99, -200, -999]]]]) {
+    for (let tick = 0; tick <= 100; tick++) {
+      const point = transitionPose(a, b, start, end, duration, tick / 100)[0];
+      assert.ok(point.every((value, axis) => Number.isFinite(value) && value >= Math.min(a[0][axis], b[0][axis]) - 1e-9 && value <= Math.max(a[0][axis], b[0][axis]) + 1e-9));
+    }
+  }
+});
 
 test('arm frames cross the antipodal T-pose direction without a roll flip or endpoint drift', () => {
   const axis = new THREE.Vector3(1, 0, 0);

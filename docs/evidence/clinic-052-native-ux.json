@@ -1,0 +1,18 @@
+{
+  "scope": "Native Windows Computer Use, final packaged EXE, isolated profile; no camera/microphone start",
+  "checks": {
+    "escape_closes_modal": true,
+    "doctor_quick_phrase_dialog": true,
+    "selected_phrase_fills_without_send": true,
+    "feedback_waits_for_doctor_message": true,
+    "patient_dictionary_100_modal": true,
+    "patient_plain_language_two_modes": true,
+    "native_fullscreen_doctor_fit": true
+  },
+  "limitations": [
+    "Split single-monitor doctor window needs vertical scrolling; fullscreen or two displays improves readability.",
+    "Native action snapshots occasionally lagged; fresh readback was used before claims.",
+    "No physical camera/mic or human signer test."
+  ],
+  "captured_at": "2026-11-10T03:14:44.6389041Z"
+}

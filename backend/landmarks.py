@@ -2,6 +2,9 @@
 
 The recognizer consumes image x/y/confidence, not world coordinates. Hand identity
 is assigned against pose wrists in the unmirrored image, never a preview label.
+Two graph threads and one XNNPACK thread per kernel keep CPU use bounded while
+pose/hands run in parallel. Paired original frames preserve coordinates, model
+input and logits exactly; see the 0.5.2 scheduling parity report.
 """
 from __future__ import annotations
 
@@ -16,6 +19,25 @@ from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 
 
+class CpuOptions(python.BaseOptions):
+    def to_pb2(self):
+        value = super().to_pb2()
+        value.acceleration.xnnpack.num_threads = 1
+        return value
+
+
+class PoseTask(vision.PoseLandmarker):
+    def __init__(self, graph_config, *args, **kwargs):
+        graph_config.num_threads = 2
+        super().__init__(graph_config, *args, **kwargs)
+
+
+class HandTask(vision.HandLandmarker):
+    def __init__(self, graph_config, *args, **kwargs):
+        graph_config.num_threads = 2
+        super().__init__(graph_config, *args, **kwargs)
+
+
 class LandmarkDetector:
     def __init__(self, assets: Path):
         self.pool = ThreadPoolExecutor(max_workers=2, thread_name_prefix="clinic-landmark")
@@ -23,14 +45,14 @@ class LandmarkDetector:
         self.hands = None
         self.last_timestamp = -1
         try:
-            self.pose = vision.PoseLandmarker.create_from_options(vision.PoseLandmarkerOptions(
-                base_options=python.BaseOptions(model_asset_path=str(assets / "models/pose_landmarker_lite.task")),
+            self.pose = PoseTask.create_from_options(vision.PoseLandmarkerOptions(
+                base_options=CpuOptions(model_asset_path=str(assets / "models/pose_landmarker_lite.task")),
                 running_mode=vision.RunningMode.VIDEO,
                 min_pose_detection_confidence=0.5,
                 min_tracking_confidence=0.5,
             ))
-            self.hands = vision.HandLandmarker.create_from_options(vision.HandLandmarkerOptions(
-                base_options=python.BaseOptions(model_asset_path=str(assets / "models/hand_landmarker.task")),
+            self.hands = HandTask.create_from_options(vision.HandLandmarkerOptions(
+                base_options=CpuOptions(model_asset_path=str(assets / "models/hand_landmarker.task")),
                 running_mode=vision.RunningMode.VIDEO,
                 num_hands=2,
                 min_hand_detection_confidence=0.45,

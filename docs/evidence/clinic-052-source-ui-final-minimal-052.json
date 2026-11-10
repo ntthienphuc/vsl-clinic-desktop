@@ -1,0 +1,313 @@
+{
+  "scope": "0.5.2 source Electron; fixed prerecorded samples and synthetic silent/doctor mic; no live person.",
+  "runName": "minimal-052",
+  "startedAt": "2026-11-10T02:45:24.397Z",
+  "checks": {
+    "layout720p1080p": true,
+    "minimalPlainLanguageResponsiveSettingsAndCancel": true,
+    "defaultFusion100": true,
+    "quickPhrases24ReviewThenRealAvatarVoiceMouth": true
+  },
+  "trials": [],
+  "graphics": {
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "vendor": "WebKit"
+  },
+  "worker": {
+    "name": "Tay và môi · 100 từ",
+    "labels": 100,
+    "family": "multimodal100",
+    "sha256": "0ccf0476091990ef84055a362376f96d40987916b95be6e568f9152f64a6f28d",
+    "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+    "capture_profile": "clinic-mm100-ram-r3-v1",
+    "active_head": "fusion",
+    "worker": {
+      "type": "worker_ready",
+      "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+      "device": "cuda",
+      "pid": 4168,
+      "load_ms": 11173.071699999127,
+      "warmup_ms": 2543.6288000000786,
+      "manifest_sha256": "f4c3c90e19bb49b2ae8b0fb402a71c8a8b0688177bb76b71446d9b915b424722",
+      "storage": "ram_only",
+      "status": "ready"
+    },
+    "mode": "fusion",
+    "status": "ready",
+    "switching": false
+  },
+  "error": "Error: {\"result\":{\"type\":\"object\",\"subtype\":\"error\",\"className\":\"Error\",\"description\":\"Error: Unavailable button: Xin giải thích lại\\n    at <anonymous>:1:229\\n    at <anonymous>:1:277\",\"objectId\":\"6488628958341160215.3.1\"},\"exceptionDetails\":{\"exceptionId\":1,\"text\":\"Uncaught\",\"lineNumber\":0,\"columnNumber\":222,\"scriptId\":\"22\",\"exception\":{\"type\":\"object\",\"subtype\":\"error\",\"className\":\"Error\",\"description\":\"Error: Unavailable button: Xin giải thích lại\\n    at <anonymous>:1:229\\n    at <anonymous>:1:277\",\"objectId\":\"6488628958341160215.3.2\"}}}\n    at Object.eval (file:///E:/Project/VSL%20Clinic/Source/tools/probe_multimodal_ui.mjs:36:157)\n    at async checkModeUx (file:///E:/Project/VSL%20Clinic/Source/tools/check_mode_ux.mjs:64:2)\n    at async file:///E:/Project/VSL%20Clinic/Source/tools/probe_multimodal_ui.mjs:57:38",
+  "passed": false,
+  "finalDiagnostics": {
+    "model_sha256": "0ccf0476091990ef84055a362376f96d40987916b95be6e568f9152f64a6f28d",
+    "capture_profile": "clinic-mm100-ram-r3-v1",
+    "model": {
+      "name": "Tay và môi · 100 từ",
+      "labels": 100,
+      "family": "multimodal100",
+      "sha256": "0ccf0476091990ef84055a362376f96d40987916b95be6e568f9152f64a6f28d",
+      "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+      "capture_profile": "clinic-mm100-ram-r3-v1",
+      "active_head": "fusion",
+      "worker": {
+        "type": "worker_ready",
+        "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+        "device": "cuda",
+        "pid": 4168,
+        "load_ms": 11173.071699999127,
+        "warmup_ms": 2543.6288000000786,
+        "manifest_sha256": "f4c3c90e19bb49b2ae8b0fb402a71c8a8b0688177bb76b71446d9b915b424722",
+        "storage": "ram_only",
+        "status": "ready"
+      },
+      "mode": "fusion",
+      "status": "ready",
+      "switching": false
+    },
+    "state": {
+      "session_id": "a4ffc084e8eb",
+      "revision": 11,
+      "server_time_ms": 1794278763254.777,
+      "messages": [
+        {
+          "id": "d4fdeacbc776",
+          "role": "doctor",
+          "text": "Y tá đo nhiệt độ.",
+          "created_at_ms": 1794278753386.9238,
+          "mode": "sign",
+          "glosses": [
+            {
+              "id": "368",
+              "label": "Y tá",
+              "start": 0,
+              "tokens": 0
+            },
+            {
+              "id": "qipedc-W01298",
+              "label": "Nhiệt độ",
+              "start": 0,
+              "tokens": 0
+            },
+            {
+              "id": "qipedc-W01227",
+              "label": "Đo",
+              "start": 0,
+              "tokens": 0
+            }
+          ],
+          "status": "completed",
+          "phrase_id": "nurse-temperature",
+          "nonmanual": "neutral",
+          "act": "statement",
+          "clauses": [
+            {
+              "text": "Y tá đo nhiệt độ.",
+              "gloss_start": 0,
+              "gloss_end": 3,
+              "supported": true,
+              "phrase_id": "nurse-temperature",
+              "nonmanual": "neutral",
+              "act": "statement",
+              "explanation": "Chủ thể y tá → đối tượng nhiệt độ → hành động đo. Ba ký hiệu trong một lượt phát."
+            }
+          ],
+          "presented_at_ms": 1794278753559.2844
+        },
+        {
+          "id": "44c98ebc459d",
+          "role": "patient",
+          "text": "Tôi đã hiểu",
+          "created_at_ms": 1794278763238.969,
+          "status": "confirmed",
+          "manual": true
+        }
+      ],
+      "capture": {
+        "status": "idle",
+        "generation": 0
+      },
+      "current_result": null,
+      "playback": {
+        "id": "d6dcb5302e06",
+        "message_id": "d4fdeacbc776",
+        "text": "Y tá đo nhiệt độ.",
+        "glosses": [
+          {
+            "id": "368",
+            "label": "Y tá",
+            "start": 0,
+            "tokens": 0
+          },
+          {
+            "id": "qipedc-W01298",
+            "label": "Nhiệt độ",
+            "start": 0,
+            "tokens": 0
+          },
+          {
+            "id": "qipedc-W01227",
+            "label": "Đo",
+            "start": 0,
+            "tokens": 0
+          }
+        ],
+        "status": "completed",
+        "rate": 1,
+        "elapsed_ms": 9651,
+        "started_at_ms": 1794278753559.2844,
+        "timeline": [
+          {
+            "phase": "intro",
+            "start_ms": 0,
+            "end_ms": 350,
+            "index": 0,
+            "source_ms": 0
+          },
+          {
+            "phase": "sign",
+            "start_ms": 350,
+            "end_ms": 3019,
+            "index": 0,
+            "source_start_ms": 0,
+            "source_end_ms": 2669
+          },
+          {
+            "phase": "bridge",
+            "start_ms": 3019,
+            "end_ms": 3299,
+            "index": 1,
+            "from_index": 0,
+            "from_ms": 2669,
+            "to_ms": 0
+          },
+          {
+            "phase": "sign",
+            "start_ms": 3299,
+            "end_ms": 6552,
+            "index": 1,
+            "source_start_ms": 0,
+            "source_end_ms": 3253
+          },
+          {
+            "phase": "bridge",
+            "start_ms": 6552,
+            "end_ms": 6832,
+            "index": 2,
+            "from_index": 1,
+            "from_ms": 3253,
+            "to_ms": 0
+          },
+          {
+            "phase": "sign",
+            "start_ms": 6832,
+            "end_ms": 9301,
+            "index": 2,
+            "source_start_ms": 0,
+            "source_end_ms": 2469
+          },
+          {
+            "phase": "outro",
+            "start_ms": 9301,
+            "end_ms": 9651,
+            "index": 2,
+            "source_ms": 2469
+          }
+        ],
+        "clauses": [
+          {
+            "text": "Y tá đo nhiệt độ.",
+            "gloss_start": 0,
+            "gloss_end": 3,
+            "supported": true,
+            "phrase_id": "nurse-temperature",
+            "nonmanual": "neutral",
+            "act": "statement",
+            "explanation": "Chủ thể y tá → đối tượng nhiệt độ → hành động đo. Ba ký hiệu trong một lượt phát.",
+            "start_ms": 0,
+            "end_ms": 9651
+          }
+        ],
+        "total_ms": 9651,
+        "timeline_schema": "clinic-playback-v2",
+        "audio_cues": [
+          {
+            "entry_id": "p:nurse-temperature",
+            "text": "Y tá đo nhiệt độ.",
+            "file": "d61ae101ab73a3c63384.wav",
+            "start_ms": 350,
+            "end_ms": 1921,
+            "duration_ms": 1571
+          }
+        ],
+        "iteration": 0,
+        "nonmanual": "neutral",
+        "act": "statement",
+        "requested_at_ms": 1794278753386.9238
+      },
+      "pending_count": 0,
+      "clients": {
+        "doctor": 1,
+        "patient": 1
+      },
+      "conversation": {
+        "status": "idle",
+        "mode": "auto",
+        "epoch": "9fdc1fbb6066",
+        "source": {
+          "kind": "camera",
+          "camera_index": 0
+        },
+        "started_at_ms": null
+      },
+      "patient_turn": null,
+      "speech_drafts": [],
+      "avatar_voice_enabled": true,
+      "recognition": {
+        "name": "Tay và môi · 100 từ",
+        "labels": 100,
+        "family": "multimodal100",
+        "sha256": "0ccf0476091990ef84055a362376f96d40987916b95be6e568f9152f64a6f28d",
+        "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+        "capture_profile": "clinic-mm100-ram-r3-v1",
+        "active_head": "fusion",
+        "worker": {
+          "type": "worker_ready",
+          "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+          "device": "cuda",
+          "pid": 4168,
+          "load_ms": 11173.071699999127,
+          "warmup_ms": 2543.6288000000786,
+          "manifest_sha256": "f4c3c90e19bb49b2ae8b0fb402a71c8a8b0688177bb76b71446d9b915b424722",
+          "storage": "ram_only",
+          "status": "ready"
+        },
+        "mode": "fusion",
+        "status": "ready",
+        "switching": false
+      },
+      "temporary": null
+    },
+    "metrics": [
+      {
+        "event": "patient_avatar_first_frame",
+        "playback_id": "d6dcb5302e06",
+        "painted_at_ms": 1794278753594,
+        "role": "patient",
+        "recorded_at_ms": 1794278753595.7922
+      },
+      {
+        "event": "patient_avatar_render_summary",
+        "playback_id": "d6dcb5302e06",
+        "role": "patient",
+        "iteration": 0,
+        "renderer_frames": 289,
+        "measured_fps": 29.986880739678718,
+        "mean_cpu_ms": 1.9079584775067169,
+        "max_frame_gap_ms": 35.89999999944121,
+        "recorded_at_ms": 1794278763226.9478
+      }
+    ],
+    "uptime_seconds": 34.711209297180176
+  },
+  "desktopExit": 0
+}

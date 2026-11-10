@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-02",
+  "version": "0.4.0",
+  "language_model_acceptance": {
+    "passed": 12,
+    "total": 12,
+    "limited_scripted_cases": true
+  },
+  "runtime_checks": {
+    "language_bundled": true,
+    "speech_bundled": true,
+    "400_labels": true,
+    "plans_supported": true,
+    "planning_not_blocked_by_model": true,
+    "local_model_returns_expected_phrase": true,
+    "suggestion_never_sent": true,
+    "unsupported_send_blocked": true,
+    "patient_render_completed": true,
+    "old_suggestion_rejected_after_stop": true,
+    "model_released": true,
+    "session_cleared": true
+  },
+  "concurrent_plan_ms": {
+    "median": 13.279700004204642,
+    "max": 26.72740000707563
+  },
+  "synthetic_speech": {
+    "passed": true,
+    "cases": 3,
+    "silence_after_each_seconds": 6
+  },
+  "patient_recognition": {
+    "first_run": "Con trai, Met; 9.04 processed fps, low-quality warning; FAILED exact first word",
+    "repeat": "Dau, Met; 17.35 processed fps; streaming/grouping/painting checks PASS",
+    "unchanged_037_baseline": "Dau, Met; 20.32 processed fps; same model/runtime hashes",
+    "conclusion": "Performance remains variable. One passing repeat does not erase the initial failure or establish no regression. No live signer/webcam test."
+  },
+  "native_ui_observed": [
+    "source: unsupported input -> language dialog -> explicit selection -> populated composer; chat unchanged before Send",
+    "source: selected message -> patient two-sign sequence",
+    "source: maximized doctor/patient layouts fit observed 1536x816 logical work area without page scroll",
+    "packaged: actual two windows, correct version, shared timeline completion, End clears state"
+  ],
+  "recognizer_and_reference_assets_unchanged": true
+}

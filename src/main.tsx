@@ -8,6 +8,7 @@ import { PatientView } from './PatientView';
 import type { Role } from './types';
 import './styles.css';
 import './workspace.css';
+import './clinic-ui.css';
 
 class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { error: string }> {
   state = { error: '' };
@@ -57,7 +58,7 @@ function App() {
     {role === 'doctor'
       ? <DoctorView bootstrap={bootstrap} state={state} connected={connected} run={run} busy={operations > 0} />
       : <PatientView bootstrap={bootstrap} state={state} connected={connected} run={run} busy={operations > 0} />}
-    <footer className="app-footer"><span>VSL Clinic</span><span>Phiên riêng trên máy · Demo 0.3.4</span></footer>
+    <footer className="app-footer"><span>VSL Clinic</span><span>Bản thử nghiệm · 0.5.2</span></footer>
     {notice && <div className="toast" role="alert"><AlertCircle size={20} /><span>{notice}</span><button className="icon-button" aria-label="Đóng thông báo" onClick={() => setNotice('')}><X size={18} /></button></div>}
   </div>;
 }

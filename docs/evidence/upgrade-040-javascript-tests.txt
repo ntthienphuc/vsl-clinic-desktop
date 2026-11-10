@@ -1,0 +1,122 @@
+
+> vsl-clinic-desktop@0.4.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: bridges preserve endpoint velocity when feasible and bound conflicting contact trajectories
+ok 1 - bridges preserve endpoint velocity when feasible and bound conflicting contact trajectories
+  ---
+  duration_ms: 1.9967
+  type: 'test'
+  ...
+# Subtest: arm frames cross the antipodal T-pose direction without a roll flip or endpoint drift
+ok 2 - arm frames cross the antipodal T-pose direction without a roll flip or endpoint drift
+  ---
+  duration_ms: 3.2862
+  type: 'test'
+  ...
+# Subtest: cubic motion sampling preserves measured poses and never overshoots contact coordinates
+ok 3 - cubic motion sampling preserves measured poses and never overshoots contact coordinates
+  ---
+  duration_ms: 3.7453
+  type: 'test'
+  ...
+# Subtest: two-bone IK keeps both lengths, finite even at singular/parallel targets
+ok 4 - two-bone IK keeps both lengths, finite even at singular/parallel targets
+  ---
+  duration_ms: 1.0424
+  type: 'test'
+  ...
+# Subtest: palm-local hinge limits survive folds, mirrored hands, and adversarial point noise
+ok 5 - palm-local hinge limits survive folds, mirrored hands, and adversarial point noise
+  ---
+  duration_ms: 70.1468
+  type: 'test'
+  ...
+# Subtest: wrist swing bounds and shortest-arc palm speed limit
+ok 6 - wrist swing bounds and shortest-arc palm speed limit
+  ---
+  duration_ms: 2.8596
+  type: 'test'
+  ...
+# Subtest: every bank word and supported sentence uses a continuous server timeline and stable pause
+ok 7 - every bank word and supported sentence uses a continuous server timeline and stable pause
+  ---
+  duration_ms: 2301.5388
+  type: 'test'
+  ...
+# Subtest: reads each word immediately, in order, without waiting for the turn endpoint
+ok 8 - reads each word immediately, in order, without waiting for the turn endpoint
+  ---
+  duration_ms: 2.9271
+  type: 'test'
+  ...
+# Subtest: duplicate snapshots and confirmations never repeat audio; deliberate repeated words do
+ok 9 - duplicate snapshots and confirmations never repeat audio; deliberate repeated words do
+  ---
+  duration_ms: 0.6913
+  type: 'test'
+  ...
+# Subtest: mount, reconnection, mute and source/session changes baseline old history
+ok 10 - mount, reconnection, mute and source/session changes baseline old history
+  ---
+  duration_ms: 0.5875
+  type: 'test'
+  ...
+# Subtest: uncertain recognition has an audible uncertainty cue and preserves the model label
+ok 11 - uncertain recognition has an audible uncertainty cue and preserves the model label
+  ---
+  duration_ms: 0.6272
+  type: 'test'
+  ...
+# Subtest: audio failure releases microphone gate; stale completion cannot play queued words
+ok 12 - audio failure releases microphone gate; stale completion cannot play queued words
+  ---
+  duration_ms: 0.3771
+  type: 'test'
+  ...
+# Subtest: stopping the conversation cancels speaking; patient manual feedback is not a sign result
+ok 13 - stopping the conversation cancels speaking; patient manual feedback is not a sign result
+  ---
+  duration_ms: 0.2459
+  type: 'test'
+  ...
+# Subtest: microphone gate blocks synchronously and protects the echo tail between adjacent clips
+ok 14 - microphone gate blocks synchronously and protects the echo tail between adjacent clips
+  ---
+  duration_ms: 663.9942
+  type: 'test'
+  ...
+# Subtest: offline bank covers all 400 exact recognizer labels and every WAV matches its hash
+ok 15 - offline bank covers all 400 exact recognizer labels and every WAV matches its hash
+  ---
+  duration_ms: 204.8811
+  type: 'test'
+  ...
+# Subtest: doctor progress follows the current sign, bridge and playback rate
+ok 16 - doctor progress follows the current sign, bridge and playback rate
+  ---
+  duration_ms: 1.0502
+  type: 'test'
+  ...
+# Subtest: pause and disconnect freeze progress; loading and replay begin at zero
+ok 17 - pause and disconnect freeze progress; loading and replay begin at zero
+  ---
+  duration_ms: 0.2462
+  type: 'test'
+  ...
+# Subtest: completed reaches 100 percent; stopped preserves actual progress
+ok 18 - completed reaches 100 percent; stopped preserves actual progress
+  ---
+  duration_ms: 0.1641
+  type: 'test'
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 18
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3412.2708

@@ -1,6 +1,7 @@
 """Two reproducible rehearsals; retain originals and keep expected labels out of inference."""
 from __future__ import annotations
 import csv
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -67,14 +68,18 @@ def composite(paths, output):
 
 
 def main():
-    catalog = read(ROOT / "demo/scenarios-v0.3.4.json")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--catalog", type=Path, default=ROOT / "demo/scenarios-v0.3.4.json")
+    parser.add_argument("--destination", type=Path, default=ROOT / "demo/HAI_KICH_BAN_2026-10-31")
+    args = parser.parse_args()
+    catalog = read(args.catalog)
     planner = TextPlanner(read(ROOT / "assets/vocabulary.json"), read(ROOT / "assets/phrases.json"), read(ROOT / "assets/semantic_bank.json"))
     sources = {str(w["model_id"]): w for w in read(ROOT / "research/source-manifest.json")["words"]}
     with (ROOT / "assets/gloss.csv").open(encoding="utf-8", newline="") as f:
         labels = dict(csv.reader(f))
     assert len(labels) == 400
-    destination = ROOT / "demo/HAI_KICH_BAN_2026-10-31"
-    destination.mkdir(exist_ok=True)
+    destination = args.destination
+    destination.mkdir(parents=True, exist_ok=True)
     for scenario in catalog["scenarios"]:
         folder = destination / scenario["id"]
         folder.mkdir(exist_ok=True)
@@ -91,6 +96,11 @@ def main():
             for number, identity in enumerate(step["patient_ids"], 1):
                 source = ROOT / f"assets/samples/{identity:03d}.mp4"
                 original = sources[str(identity)]["demo_source"]
+                selected_id = step.get("patient_reference_ids", {}).get(str(identity))
+                if selected_id:
+                    options = [original, *sources[str(identity)]["references"]]
+                    original = next(item for item in options if item["video_id"] == selected_id)
+                    source = Path(original["path"])
                 assert original["gloss"] == labels[str(identity)]
                 assert sha(source) == original["sha256"]
                 output = target / f"{number}.mp4"

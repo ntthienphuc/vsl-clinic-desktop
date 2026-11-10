@@ -552,6 +552,121 @@
       "act": "request",
       "nonmanual": "neutral",
       "explanation": "Mẫu demo: Bây giờ → Nghỉ ngơi. Giữ nguyên câu bằng chữ; cần người dùng VSL duyệt cách thể hiện."
+    },
+    {
+      "id": "ask-feeling-open",
+      "text": "Bạn cảm thấy thế nào?",
+      "aliases": [
+        "Bạn cảm thấy thế nào",
+        "Bạn cảm thấy như thế nào?",
+        "Bạn thấy thế nào?"
+      ],
+      "gloss_ids": [
+        "85",
+        "qipedc-W03239N"
+      ],
+      "act": "wh_question",
+      "nonmanual": "question",
+      "explanation": "Cảm thấy → thế nào. Hỏi mở; không suy đoán triệu chứng từ câu hỏi."
+    },
+    {
+      "id": "ask-abdomen-time",
+      "text": "Bạn đau bụng vào lúc nào?",
+      "aliases": [
+        "Bạn đau bụng vào lúc nào",
+        "Bạn đau bụng lúc nào?",
+        "Bạn đau bụng khi nào?",
+        "Bạn đau bụng bao giờ?"
+      ],
+      "gloss_ids": [
+        "qipedc-W00362",
+        "379",
+        "qipedc-W00145N"
+      ],
+      "act": "wh_question",
+      "nonmanual": "question",
+      "explanation": "Bụng → đau → bao giờ. Hỏi thời điểm, không thay thế câu hỏi thời gian kéo dài hoặc thời điểm bắt đầu."
+    },
+    {
+      "id": "ask-sleep-time",
+      "text": "Bạn ngủ vào lúc nào?",
+      "aliases": [
+        "Bạn ngủ vào lúc nào",
+        "Bạn ngủ lúc nào?",
+        "Bạn ngủ khi nào?",
+        "Bạn ngủ bao giờ?"
+      ],
+      "gloss_ids": [
+        "222",
+        "qipedc-W00145N"
+      ],
+      "act": "wh_question",
+      "nonmanual": "question",
+      "explanation": "Ngủ → bao giờ. Không suy ra số giờ ngủ hay mất ngủ."
+    },
+    {
+      "id": "ask-wake-time",
+      "text": "Bạn thức dậy vào lúc nào?",
+      "aliases": [
+        "Bạn thức dậy vào lúc nào",
+        "Bạn thức dậy lúc nào?",
+        "Bạn thức dậy khi nào?",
+        "Bạn thức dậy bao giờ?",
+        "Bản thức dậy vào lúc nào",
+        "Bản thức dậy vào lúc nào?"
+      ],
+      "gloss_ids": [
+        "324",
+        "qipedc-W00145N"
+      ],
+      "act": "wh_question",
+      "nonmanual": "question",
+      "explanation": "Thức dậy → bao giờ. Giữ câu hỏi đầy đủ bằng chữ."
+    },
+    {
+      "id": "ask-want-sleep",
+      "text": "Bạn có muốn ngủ không?",
+      "aliases": [
+        "Bạn có muốn ngủ không"
+      ],
+      "gloss_ids": [
+        "169",
+        "222"
+      ],
+      "act": "yes_no_question",
+      "nonmanual": "question",
+      "explanation": "Muốn → ngủ, cùng nét mặt hỏi. Không chuyển thành kết luận thiếu ngủ."
+    },
+    {
+      "id": "ask-appetite",
+      "text": "Bạn có ăn ngon miệng không?",
+      "aliases": [
+        "Bạn có ăn ngon miệng không",
+        "Bạn ăn có ngon miệng không?",
+        "Bạn ăn ngon miệng không?"
+      ],
+      "gloss_ids": [
+        "378",
+        "212"
+      ],
+      "act": "yes_no_question",
+      "nonmanual": "question",
+      "explanation": "Ăn → ngon miệng, cùng nét mặt hỏi."
+    },
+    {
+      "id": "ask-feel-weak",
+      "text": "Bạn có cảm thấy yếu không?",
+      "aliases": [
+        "Bạn có cảm thấy yếu không",
+        "Bạn cảm thấy yếu không?"
+      ],
+      "gloss_ids": [
+        "85",
+        "371"
+      ],
+      "act": "yes_no_question",
+      "nonmanual": "question",
+      "explanation": "Cảm thấy → yếu. Không đồng nhất yếu với một chẩn đoán."
     }
   ],
   "grammar": {

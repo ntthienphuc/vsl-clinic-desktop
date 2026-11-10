@@ -1,0 +1,467 @@
+{
+  "version": "0.5.2",
+  "scope": "Fixed prerecorded VSL100 and legacy clips, synthetic sound and bundled speech fixture. No live person/device or clinical accuracy claim.",
+  "ui": {
+    "default": "Ký hiệu + khẩu hình",
+    "alternative": "Chỉ ký hiệu",
+    "vocabularies": [
+      100,
+      400
+    ],
+    "quick_phrases": 24
+  },
+  "tests": {
+    "python": 404,
+    "javascript": 23
+  },
+  "source_12": {
+    "passed": false,
+    "desktop_exit": null,
+    "checks": {
+      "layout720p1080p": true,
+      "minimalPlainLanguageResponsiveSettingsAndCancel": true,
+      "defaultFusion100": true,
+      "quickPhrases24ReviewThenRealAvatarVoiceMouth": true,
+      "patientFeedbackAndUnsupportedMeaningPreserved": true,
+      "liveModeSwitchSharedDictionarySourceAndOldResultFence": true,
+      "sign400RealRecognitionAndVoice": true,
+      "returnFusionAndEndFencesBothEngines": true,
+      "avatarVoiceMouthAndMicGuard": true,
+      "manualPauseResumeStopsSoundAndMouth": true,
+      "reviewCorrectionUsesCorrectVoice": true,
+      "realFusionIncrementalWordsVoiceAndReview": true,
+      "noRepeatWhenTurnEnds": true,
+      "realPatientReplyYieldsAvatar": true,
+      "sameStreamRepeatedWordSpokenOnceEachBeforeTurnEnd": true,
+      "realSpeechSocketRejectsSyntheticNoise": true,
+      "realBundledASRSendsOnce": true,
+      "endFencesFusionAndAudio": true,
+      "temporaryHistoryNeverReplaysAndDiscards": true
+    },
+    "clips": 12,
+    "automatic": 7,
+    "wrong_automatic": 0,
+    "review": 5,
+    "top1_agreement": 10,
+    "omitted_clips": 0,
+    "input_fps": [
+      10.363636363636363,
+      17.307692307692307
+    ],
+    "latency": {
+      "last_active_frame_to_paint": {
+        "n": 12,
+        "p50_ms": 809.24,
+        "p95_ms": 898.74,
+        "min_ms": 663.35,
+        "max_ms": 907.88
+      },
+      "last_active_frame_to_audio": {
+        "n": 7,
+        "p50_ms": 811.35,
+        "p95_ms": 924.44,
+        "min_ms": 675.35,
+        "max_ms": 951.88
+      },
+      "inference": {
+        "n": 12,
+        "p50_ms": 300.91,
+        "p95_ms": 401.99,
+        "min_ms": 202.56,
+        "max_ms": 407.72
+      },
+      "caveat": "Software timestamps, not photon/acoustic latency; tiny fixed sample, descriptive p95."
+    },
+    "repeat": {
+      "review_confirmations": 0,
+      "original": [
+        {
+          "text": "Sốt",
+          "uncertain": false
+        },
+        {
+          "text": "Sốt",
+          "uncertain": false
+        }
+      ]
+    },
+    "evidence": "source-ui-final-minimal-052-r2",
+    "functional_checks_passed": true,
+    "shutdown_forced": true,
+    "engine_graceful_exit": null,
+    "worker_exited": null,
+    "shutdown_ms": null,
+    "mode_switch": {
+      "fusionToSignMs": 976,
+      "oldGeneration": 2,
+      "newGeneration": 4
+    },
+    "legacy": {
+      "text": "Đau",
+      "reviewed": false
+    },
+    "speech_negative": {
+      "seconds": 8,
+      "kinds": [
+        "silence",
+        "hiss",
+        "hum",
+        "keyboard-like impulses"
+      ],
+      "transcripts": 0
+    },
+    "error": null
+  },
+  "source_final": {
+    "passed": true,
+    "checks": {
+      "layout720p1080p": true,
+      "minimalPlainLanguageResponsiveSettingsAndCancel": true,
+      "defaultFusion100": true,
+      "quickPhrases24ReviewThenRealAvatarVoiceMouth": true,
+      "patientFeedbackAndUnsupportedMeaningPreserved": true,
+      "liveModeSwitchSharedDictionarySourceAndOldResultFence": true,
+      "sign400RealRecognitionAndVoice": true,
+      "returnFusionAndEndFencesBothEngines": true,
+      "sameStreamRepeatedWordSpokenOnceEachBeforeTurnEnd": true,
+      "realSpeechSocketRejectsSyntheticNoise": true,
+      "realBundledASRSendsOnce": true,
+      "endFencesFusionAndAudio": true,
+      "temporaryHistoryNeverReplaysAndDiscards": true,
+      "cleanDesktopEngineAndWorkerExit": true
+    },
+    "evidence": "source-ui-final-minimal-final-052",
+    "functional_checks_passed": true,
+    "desktop_exit": 0,
+    "shutdown_forced": false,
+    "engine_graceful_exit": true,
+    "worker_exited": true,
+    "shutdown_ms": 1822,
+    "mode_switch": {
+      "fusionToSignMs": 592,
+      "oldGeneration": 2,
+      "newGeneration": 4
+    },
+    "legacy": {
+      "text": "Đau",
+      "reviewed": false
+    },
+    "repeat": {
+      "review_confirmations": 1,
+      "original": [
+        {
+          "text": "Sốt",
+          "uncertain": false
+        },
+        {
+          "text": "Sốt",
+          "uncertain": true
+        }
+      ]
+    },
+    "speech_negative": {
+      "seconds": 8,
+      "kinds": [
+        "silence",
+        "hiss",
+        "hum",
+        "keyboard-like impulses"
+      ],
+      "transcripts": 0
+    },
+    "error": null
+  },
+  "packaged": {
+    "passed": true,
+    "desktop_exit": 0,
+    "checks": {
+      "layout720p1080p": true,
+      "minimalPlainLanguageResponsiveSettingsAndCancel": true,
+      "defaultFusion100": true,
+      "quickPhrases24ReviewThenRealAvatarVoiceMouth": true,
+      "patientFeedbackAndUnsupportedMeaningPreserved": true,
+      "liveModeSwitchSharedDictionarySourceAndOldResultFence": true,
+      "sign400RealRecognitionAndVoice": true,
+      "returnFusionAndEndFencesBothEngines": true,
+      "avatarVoiceMouthAndMicGuard": true,
+      "manualPauseResumeStopsSoundAndMouth": true,
+      "reviewCorrectionUsesCorrectVoice": true,
+      "realFusionIncrementalWordsVoiceAndReview": true,
+      "noRepeatWhenTurnEnds": true,
+      "realPatientReplyYieldsAvatar": true,
+      "sameStreamRepeatedWordSpokenOnceEachBeforeTurnEnd": true,
+      "realSpeechSocketRejectsSyntheticNoise": true,
+      "realBundledASRSendsOnce": true,
+      "endFencesFusionAndAudio": true,
+      "temporaryHistoryNeverReplaysAndDiscards": true,
+      "cleanDesktopEngineAndWorkerExit": true
+    },
+    "clips": 12,
+    "automatic": 7,
+    "wrong_automatic": 0,
+    "review": 5,
+    "top1_agreement": 11,
+    "omitted_clips": 0,
+    "input_fps": [
+      10.153846153846155,
+      17.307692307692307
+    ],
+    "latency": {
+      "last_active_frame_to_paint": {
+        "n": 12,
+        "p50_ms": 856.92,
+        "p95_ms": 929.07,
+        "min_ms": 735.67,
+        "max_ms": 938.88
+      },
+      "last_active_frame_to_audio": {
+        "n": 7,
+        "p50_ms": 897.93,
+        "p95_ms": 961.68,
+        "min_ms": 826.6,
+        "max_ms": 963.31
+      },
+      "inference": {
+        "n": 12,
+        "p50_ms": 357.98,
+        "p95_ms": 416.47,
+        "min_ms": 248.86,
+        "max_ms": 429.44
+      },
+      "caveat": "Software timestamps, not photon/acoustic latency; tiny fixed sample, descriptive p95."
+    },
+    "repeat": {
+      "review_confirmations": 0,
+      "original": [
+        {
+          "text": "Sốt",
+          "uncertain": false
+        },
+        {
+          "text": "Sốt",
+          "uncertain": false
+        }
+      ]
+    },
+    "evidence": "packaged-ui-12-minimal-reviewed-052",
+    "functional_checks_passed": true,
+    "shutdown_forced": false,
+    "engine_graceful_exit": true,
+    "worker_exited": true,
+    "shutdown_ms": 2450,
+    "mode_switch": {
+      "fusionToSignMs": 908,
+      "oldGeneration": 2,
+      "newGeneration": 4
+    },
+    "legacy": {
+      "text": "Đau",
+      "reviewed": false
+    },
+    "speech_negative": {
+      "seconds": 8,
+      "kinds": [
+        "silence",
+        "hiss",
+        "hum",
+        "keyboard-like impulses"
+      ],
+      "transcripts": 0
+    },
+    "error": null
+  },
+  "isolation_before_switch": {
+    "passed": true,
+    "checks": {
+      "layout720p1080p": true,
+      "sameStreamRepeatedWordSpokenOnceEachBeforeTurnEnd": true,
+      "realBundledASRSendsOnce": true,
+      "endFencesFusionAndAudio": true
+    },
+    "evidence": "packaged-ui-fusion-isolation-052",
+    "functional_checks_passed": true,
+    "desktop_exit": 0,
+    "shutdown_forced": false,
+    "engine_graceful_exit": null,
+    "worker_exited": null,
+    "shutdown_ms": null,
+    "mode_switch": null,
+    "legacy": {
+      "text": null,
+      "reviewed": null
+    },
+    "repeat": {
+      "review_confirmations": 0,
+      "original": [
+        {
+          "text": "Sốt",
+          "uncertain": false
+        },
+        {
+          "text": "Sốt",
+          "uncertain": false
+        }
+      ]
+    },
+    "speech_negative": null,
+    "error": null
+  },
+  "isolation_after_switch": {
+    "passed": true,
+    "checks": {
+      "layout720p1080p": true,
+      "defaultFusion100": true,
+      "quickPhrases24ReviewThenRealAvatarVoiceMouth": true,
+      "patientFeedbackAndUnsupportedMeaningPreserved": true,
+      "liveModeSwitchSharedDictionarySourceAndOldResultFence": true,
+      "sign400RealRecognitionAndVoice": true,
+      "returnFusionAndEndFencesBothEngines": true,
+      "sameStreamRepeatedWordSpokenOnceEachBeforeTurnEnd": true,
+      "realSpeechSocketRejectsSyntheticNoise": true,
+      "realBundledASRSendsOnce": true,
+      "endFencesFusionAndAudio": true,
+      "temporaryHistoryNeverReplaysAndDiscards": true
+    },
+    "evidence": "packaged-ui-mode-isolation-052",
+    "functional_checks_passed": true,
+    "desktop_exit": 0,
+    "shutdown_forced": false,
+    "engine_graceful_exit": null,
+    "worker_exited": null,
+    "shutdown_ms": null,
+    "mode_switch": {
+      "fusionToSignMs": 923,
+      "oldGeneration": 2,
+      "newGeneration": 4
+    },
+    "legacy": {
+      "text": "Đau",
+      "reviewed": false
+    },
+    "repeat": {
+      "review_confirmations": 0,
+      "original": [
+        {
+          "text": "Sốt",
+          "uncertain": false
+        },
+        {
+          "text": "Sốt",
+          "uncertain": false
+        }
+      ]
+    },
+    "speech_negative": {
+      "seconds": 8,
+      "kinds": [
+        "silence",
+        "hiss",
+        "hum",
+        "keyboard-like impulses"
+      ],
+      "transcripts": 0
+    },
+    "error": null
+  },
+  "earlier_attempts": [
+    {
+      "evidence": "packaged-ui-12-modes-052",
+      "passed": false,
+      "checks": {},
+      "error": "Error: {\"id\":1,\"error\":{\"code\":-32000,\"message\":\"Target crashed\"}}\n    at call (file:///E:/Project/VSL%20Clinic/Source/tools/probe_multimodal_ui.mjs:34:309)\n    at async Object.eval (file:///E:/Project/VSL%20Clinic/Source/tools/probe_multimodal_ui.mjs:35:48)\n    at async file:///E:/Project/VSL%20Clinic/Source/tools/probe_multimodal_ui.mjs:46:23\n    at async until (file:///E:/Project/VSL%20Clinic/Source/tools/probe_multimodal_ui.mjs:20:105)\n    at async file:///E:/Project/VSL%20Clinic/Source/tools/probe_multimodal_ui.mjs:46:2",
+      "processed_clips": 0,
+      "automatic": 0
+    },
+    {
+      "evidence": "packaged-ui-12-modes-052-r2",
+      "passed": false,
+      "checks": {
+        "layout720p1080p": true,
+        "defaultFusion100": true,
+        "quickPhrases24ReviewThenRealAvatarVoiceMouth": true,
+        "patientFeedbackAndUnsupportedMeaningPreserved": true,
+        "liveModeSwitchSharedDictionarySourceAndOldResultFence": true
+      },
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n33 !== 379\n\n    at checkModeUx (file:///E:/Project/VSL%20Clinic/Source/tools/check_mode_ux.mjs:74:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async file:///E:/Project/VSL%20Clinic/Source/tools/probe_multimodal_ui.mjs:57:38",
+      "processed_clips": 0,
+      "automatic": 0
+    },
+    {
+      "evidence": "packaged-ui-12-modes-052-bounded",
+      "passed": false,
+      "checks": {
+        "layout720p1080p": true,
+        "defaultFusion100": true,
+        "quickPhrases24ReviewThenRealAvatarVoiceMouth": true,
+        "patientFeedbackAndUnsupportedMeaningPreserved": true,
+        "liveModeSwitchSharedDictionarySourceAndOldResultFence": true,
+        "sign400RealRecognitionAndVoice": true,
+        "returnFusionAndEndFencesBothEngines": true,
+        "avatarVoiceMouthAndMicGuard": true,
+        "manualPauseResumeStopsSoundAndMouth": true,
+        "reviewCorrectionUsesCorrectVoice": true
+      },
+      "error": "AssertionError [ERR_ASSERTION]: {\"autoWords\":1,\"newWords\":0,\"yielded\":0}\n    at file:///E:/Project/VSL%20Clinic/Source/tools/probe_multimodal_ui.mjs:109:24\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+      "processed_clips": 12,
+      "automatic": 1
+    },
+    {
+      "evidence": "source-ui-final-minimal-052",
+      "passed": false,
+      "checks": {
+        "layout720p1080p": true,
+        "minimalPlainLanguageResponsiveSettingsAndCancel": true,
+        "defaultFusion100": true,
+        "quickPhrases24ReviewThenRealAvatarVoiceMouth": true
+      },
+      "error": "Error: {\"result\":{\"type\":\"object\",\"subtype\":\"error\",\"className\":\"Error\",\"description\":\"Error: Unavailable button: Xin giải thích lại\\n    at <anonymous>:1:229\\n    at <anonymous>:1:277\",\"objectId\":\"6488628958341160215.3.1\"},\"exceptionDetails\":{\"exceptionId\":1,\"text\":\"Uncaught\",\"lineNumber\":0,\"columnNumber\":222,\"scriptId\":\"22\",\"exception\":{\"type\":\"object\",\"subtype\":\"error\",\"className\":\"Error\",\"description\":\"Error: Unavailable button: Xin giải thích lại\\n    at <anonymous>:1:229\\n    at <anonymous>:1:277\",\"objectId\":\"6488628958341160215.3.2\"}}}\n    at Object.eval (file:///E:/Project/VSL%20Clinic/Source/tools/probe_multimodal_ui.mjs:36:157)\n    at async checkModeUx (file:///E:/Project/VSL%20Clinic/Source/tools/check_mode_ux.mjs:64:2)\n    at async file:///E:/Project/VSL%20Clinic/Source/tools/probe_multimodal_ui.mjs:57:38",
+      "processed_clips": 0,
+      "automatic": 0
+    },
+    {
+      "evidence": "packaged-ui-12-minimal-final-052",
+      "passed": true,
+      "checks": {
+        "layout720p1080p": true,
+        "minimalPlainLanguageResponsiveSettingsAndCancel": true,
+        "defaultFusion100": true,
+        "quickPhrases24ReviewThenRealAvatarVoiceMouth": true,
+        "patientFeedbackAndUnsupportedMeaningPreserved": true,
+        "liveModeSwitchSharedDictionarySourceAndOldResultFence": true,
+        "sign400RealRecognitionAndVoice": true,
+        "returnFusionAndEndFencesBothEngines": true,
+        "avatarVoiceMouthAndMicGuard": true,
+        "manualPauseResumeStopsSoundAndMouth": true,
+        "reviewCorrectionUsesCorrectVoice": true,
+        "realFusionIncrementalWordsVoiceAndReview": true,
+        "noRepeatWhenTurnEnds": true,
+        "realPatientReplyYieldsAvatar": true,
+        "sameStreamRepeatedWordSpokenOnceEachBeforeTurnEnd": true,
+        "realSpeechSocketRejectsSyntheticNoise": true,
+        "realBundledASRSendsOnce": true,
+        "endFencesFusionAndAudio": true,
+        "temporaryHistoryNeverReplaysAndDiscards": true,
+        "cleanDesktopEngineAndWorkerExit": true
+      },
+      "error": null,
+      "processed_clips": 12,
+      "automatic": 6
+    }
+  ],
+  "inherited_051": {
+    "scope": "Unchanged fusion core only; retained historical evidence, not fresh 0.5.2 measurements.",
+    "artifacts": [
+      "fusion_explore/clinic-r3-parity/REPORT.json",
+      "stress-051/LIFECYCLE.json",
+      "cpu-051/REPORT.json",
+      "visibility-051/REPORT.json",
+      "oov3-051/REPORT.json"
+    ]
+  },
+  "limits": [
+    "Tiny fixed examples; temporal sampling and closed-set predictions vary under load.",
+    "The earlier bounded EXE run committed only 1/12; successful later runs do not erase that failure.",
+    "No speaker identity model: clear bystander speech may be transcribed.",
+    "AV-HuBERT restricts this artifact to non-commercial research; no production hospital release."
+  ]
+}

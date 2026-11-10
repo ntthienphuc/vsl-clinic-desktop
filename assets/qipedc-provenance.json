@@ -129,6 +129,34 @@
         4200
       ],
       "window_method": "front-facing take only; side-view repetition excluded after visual review"
+    },
+    {
+      "id": "qipedc-W03239N",
+      "label": "Thế nào",
+      "source_id": "W03239N",
+      "url": "https://qipedc.moet.gov.vn/videos/W03239N.mp4",
+      "description": "Tổ hợp biểu thị có một điều muốn hỏi.",
+      "sha256": "78107c5c8747438d4c05dd9adbbb7e5c15ebfd08ea4cb93c60eae5f1a4c0b315",
+      "downloaded_at": "2026-11-01T03:11:42.636939+00:00",
+      "source_window_ms": [
+        250,
+        2300
+      ],
+      "window_method": "complete front-facing question; initial idle cropped after contact-sheet review"
+    },
+    {
+      "id": "qipedc-W00145N",
+      "label": "Bao giờ",
+      "source_id": "W00145N",
+      "url": "https://qipedc.moet.gov.vn/videos/W00145N.mp4",
+      "description": "Khoảng thời gian nào đó chưa xác định, (thường dùng để hỏi).",
+      "sha256": "cf34cb913a625ab1641a9b336bc50aa2a72dcaf5b3cec96d1e0f434b54fcaff0",
+      "downloaded_at": "2026-11-01T03:11:43.856192+00:00",
+      "source_window_ms": [
+        1600,
+        3500
+      ],
+      "window_method": "single front-facing question; long idle lead and tail excluded after contact-sheet review"
     }
   ]
 }

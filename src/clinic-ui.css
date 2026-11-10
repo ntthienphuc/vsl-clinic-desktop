@@ -1,0 +1,35 @@
+/* Plain language workspace: primary actions stay visible; setup lives in a dialog. */
+.card { box-shadow: none; border: 1px solid #e0e8e4; border-radius: 14px; }
+.button, .icon-button, .text-button, .word-chip, .segmented button { touch-action: manipulation; }
+button:focus-visible, summary:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #267cbb; outline-offset: 3px; }
+.composer-body .quick-phrases { padding: 0; border: 0; flex-shrink: 0; gap: 12px; }
+.composer-body .quick-phrases .text-button { min-height: 40px; font-size: 14px; }
+.conversation-send-option { display: grid; gap: 8px; font-size: 16px; margin-bottom: 24px; }
+.conversation-send-option select { min-height: 44px; padding: 8px 12px; border: 1px solid #bad1c5; border-radius: 8px; font: inherit; background: white; color: #203a40; }
+.settings-heading { margin: 0 0 12px; font-size: 17px; }
+.session-reset-option { padding-top: 18px; margin-top: 20px; border-top: 1px solid #e0e8e4; }
+.session-reset-option .text-button { min-height: 44px; }
+.doctor-avatar-progress.completed .avatar-progress-track,
+.doctor-avatar-progress.completed .avatar-progress-detail,
+.doctor-avatar-progress.completed .avatar-progress-heading > span,
+.doctor-avatar-progress.stopped .avatar-progress-track,
+.doctor-avatar-progress.stopped .avatar-progress-detail { display: none; }
+.doctor-avatar-progress.completed .avatar-progress-heading > button { margin-left: auto; }
+.recognition-mode-options strong { font-size: 16px; }
+.recognition-mode-options span { font-size: 13px; line-height: 1.4; }
+.recognition-mode-summary { font-size: 13px; }
+.recognition-mode-summary .text-button { min-height: 40px; }
+.patient-passive-camera .capture-help { margin: 8px 14px 12px; font-size: 14px; }
+.clinic-phrase-list button { min-height: 70px; }
+.doctor-aside .recognition-card:has(.word-review[open]) { max-height: 55%; }
+.result-review .confirm-row { margin: 8px 0 10px; }
+.review-confirmed { display: flex; align-items: center; gap: 6px; font-size: 14px; color: #22665e; }
+.app-footer { color: #526c62; }
+@media (max-width: 620px) {
+  .recognition-mode-options strong { font-size: 15px; }
+  .recognition-mode-options span { font-size: 12px; }
+  .clinic-phrase-list { grid-template-columns: 1fr; }
+  .conversation-bar { flex-wrap: wrap; gap: 10px; }
+  .conversation-bar > span { flex-basis: 100%; }
+  .conversation-bar > .button { margin-left: auto; }
+}

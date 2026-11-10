@@ -1,0 +1,2029 @@
+[
+  {
+    "class_id": "W001",
+    "sequence_index": 1,
+    "printed_source_id": 36,
+    "gloss": "Nhà",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "020636",
+      "020736",
+      "021520",
+      "021620",
+      "022404",
+      "022504",
+      "023288",
+      "023388",
+      "024088",
+      "024188"
+    ],
+    "reference_glosses": [
+      "Nhà"
+    ]
+  },
+  {
+    "class_id": "W002",
+    "sequence_index": 2,
+    "printed_source_id": 55,
+    "gloss": "Nắng",
+    "reference_match_count": 16,
+    "reference_video_ids": [
+      "020655",
+      "020755",
+      "021408",
+      "021450",
+      "021539",
+      "021639",
+      "022292",
+      "022334",
+      "022423",
+      "022523",
+      "023176",
+      "023218",
+      "023307",
+      "023407",
+      "024107",
+      "024207"
+    ],
+    "reference_glosses": [
+      "Nắng"
+    ]
+  },
+  {
+    "class_id": "W003",
+    "sequence_index": 3,
+    "printed_source_id": 56,
+    "gloss": "Mưa",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "020656",
+      "020756",
+      "021540",
+      "021640",
+      "022424",
+      "022524",
+      "023308",
+      "023408",
+      "024108",
+      "024208"
+    ],
+    "reference_glosses": [
+      "Mưa"
+    ]
+  },
+  {
+    "class_id": "W004",
+    "sequence_index": 4,
+    "printed_source_id": 57,
+    "gloss": "Gió",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "020657",
+      "020757",
+      "021541",
+      "021641",
+      "022425",
+      "022525",
+      "023309",
+      "023409",
+      "024109",
+      "024209"
+    ],
+    "reference_glosses": [
+      "Gió"
+    ]
+  },
+  {
+    "class_id": "W005",
+    "sequence_index": 5,
+    "printed_source_id": 80,
+    "gloss": "Ngày",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "020680",
+      "020780",
+      "021564",
+      "021664",
+      "022448",
+      "022548",
+      "023332",
+      "023432",
+      "024132",
+      "024232"
+    ],
+    "reference_glosses": [
+      "Ngày"
+    ]
+  },
+  {
+    "class_id": "W006",
+    "sequence_index": 6,
+    "printed_source_id": 81,
+    "gloss": "Tháng",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "020681",
+      "020781",
+      "021565",
+      "021665",
+      "022449",
+      "022549",
+      "023333",
+      "023433",
+      "024133",
+      "024233"
+    ],
+    "reference_glosses": [
+      "Tháng"
+    ]
+  },
+  {
+    "class_id": "W007",
+    "sequence_index": 7,
+    "printed_source_id": 82,
+    "gloss": "Năm",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "020682",
+      "020782",
+      "021566",
+      "021666",
+      "022450",
+      "022550",
+      "023334",
+      "023434",
+      "024134",
+      "024234"
+    ],
+    "reference_glosses": [
+      "Năm"
+    ]
+  },
+  {
+    "class_id": "W008",
+    "sequence_index": 8,
+    "printed_source_id": 84,
+    "gloss": "Phút",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "020684",
+      "020784",
+      "021568",
+      "021668",
+      "022452",
+      "022552",
+      "023336",
+      "023436",
+      "024136",
+      "024236"
+    ],
+    "reference_glosses": [
+      "Phút"
+    ]
+  },
+  {
+    "class_id": "W009",
+    "sequence_index": 9,
+    "printed_source_id": 92,
+    "gloss": "Bây giờ",
+    "reference_match_count": 16,
+    "reference_video_ids": [
+      "020692",
+      "020792",
+      "021402",
+      "021444",
+      "021576",
+      "021676",
+      "022286",
+      "022328",
+      "022460",
+      "022560",
+      "023170",
+      "023212",
+      "023344",
+      "023444",
+      "024144",
+      "024244"
+    ],
+    "reference_glosses": [
+      "Bây giờ"
+    ]
+  },
+  {
+    "class_id": "W010",
+    "sequence_index": 10,
+    "printed_source_id": 124,
+    "gloss": "Nước",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "020824",
+      "020924",
+      "021708",
+      "021808",
+      "022592",
+      "022642",
+      "022742",
+      "023476",
+      "023576",
+      "024276"
+    ],
+    "reference_glosses": [
+      "Nước"
+    ]
+  },
+  {
+    "class_id": "W011",
+    "sequence_index": 11,
+    "printed_source_id": 127,
+    "gloss": "Cà phê",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "020827",
+      "020927",
+      "021711",
+      "021811",
+      "022595",
+      "022645",
+      "022745",
+      "023479",
+      "023579",
+      "024279"
+    ],
+    "reference_glosses": [
+      "Cà phê"
+    ]
+  },
+  {
+    "class_id": "W012",
+    "sequence_index": 12,
+    "printed_source_id": 131,
+    "gloss": "Sách",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "020831",
+      "020931",
+      "021715",
+      "021815",
+      "022599",
+      "022649",
+      "022749",
+      "023483",
+      "023583",
+      "024283"
+    ],
+    "reference_glosses": [
+      "Sách"
+    ]
+  },
+  {
+    "class_id": "W013",
+    "sequence_index": 13,
+    "printed_source_id": 136,
+    "gloss": "Bảng",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "020836",
+      "020936",
+      "021720",
+      "021820",
+      "022604",
+      "022654",
+      "022754",
+      "023488",
+      "023588",
+      "024288"
+    ],
+    "reference_glosses": [
+      "Bảng"
+    ]
+  },
+  {
+    "class_id": "W014",
+    "sequence_index": 14,
+    "printed_source_id": 195,
+    "gloss": "Nghe",
+    "reference_match_count": 14,
+    "reference_video_ids": [
+      "020895",
+      "020995",
+      "021433",
+      "021475",
+      "021779",
+      "021879",
+      "022317",
+      "022359",
+      "022713",
+      "023201",
+      "023243",
+      "023547",
+      "023647",
+      "024347"
+    ],
+    "reference_glosses": [
+      "Nghe"
+    ]
+  },
+  {
+    "class_id": "W015",
+    "sequence_index": 15,
+    "printed_source_id": 196,
+    "gloss": "Yêu",
+    "reference_match_count": 0,
+    "reference_video_ids": [],
+    "reference_glosses": []
+  },
+  {
+    "class_id": "W016",
+    "sequence_index": 16,
+    "printed_source_id": 197,
+    "gloss": "Viết",
+    "reference_match_count": 8,
+    "reference_video_ids": [
+      "020897",
+      "020997",
+      "021781",
+      "021881",
+      "022715",
+      "023549",
+      "023649",
+      "024349"
+    ],
+    "reference_glosses": [
+      "Viết"
+    ]
+  },
+  {
+    "class_id": "W017",
+    "sequence_index": 17,
+    "printed_source_id": 200,
+    "gloss": "Ngủ",
+    "reference_match_count": 8,
+    "reference_video_ids": [
+      "020900",
+      "021000",
+      "021784",
+      "021884",
+      "022718",
+      "023552",
+      "023652",
+      "024352"
+    ],
+    "reference_glosses": [
+      "Ngủ"
+    ]
+  },
+  {
+    "class_id": "W018",
+    "sequence_index": 18,
+    "printed_source_id": 201,
+    "gloss": "Giới thiệu",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021001",
+      "021101",
+      "021885",
+      "021985",
+      "022769",
+      "022869",
+      "023653",
+      "023753",
+      "024353",
+      "024453"
+    ],
+    "reference_glosses": [
+      "Giới thiệu"
+    ]
+  },
+  {
+    "class_id": "W019",
+    "sequence_index": 19,
+    "printed_source_id": 202,
+    "gloss": "Hy vọng",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021002",
+      "021102",
+      "021886",
+      "021986",
+      "022770",
+      "022870",
+      "023654",
+      "023754",
+      "024354",
+      "024454"
+    ],
+    "reference_glosses": [
+      "Hy vọng"
+    ]
+  },
+  {
+    "class_id": "W020",
+    "sequence_index": 20,
+    "printed_source_id": 203,
+    "gloss": "Muốn",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021003",
+      "021103",
+      "021887",
+      "021987",
+      "022771",
+      "022871",
+      "023655",
+      "023755",
+      "024355",
+      "024455"
+    ],
+    "reference_glosses": [
+      "Muốn"
+    ]
+  },
+  {
+    "class_id": "W021",
+    "sequence_index": 21,
+    "printed_source_id": 204,
+    "gloss": "Quen",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021004",
+      "021104",
+      "021888",
+      "021988",
+      "022772",
+      "022872",
+      "023656",
+      "023756",
+      "024356",
+      "024456"
+    ],
+    "reference_glosses": [
+      "Quen"
+    ]
+  },
+  {
+    "class_id": "W022",
+    "sequence_index": 22,
+    "printed_source_id": 212,
+    "gloss": "Làm việc",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021012",
+      "021112",
+      "021896",
+      "021996",
+      "022780",
+      "022880",
+      "023664",
+      "023764",
+      "024364",
+      "024464"
+    ],
+    "reference_glosses": [
+      "Làm việc"
+    ]
+  },
+  {
+    "class_id": "W023",
+    "sequence_index": 23,
+    "printed_source_id": 218,
+    "gloss": "Gọi",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021018",
+      "021118",
+      "021902",
+      "022002",
+      "022786",
+      "022886",
+      "023670",
+      "023770",
+      "024370",
+      "024470"
+    ],
+    "reference_glosses": [
+      "Gọi"
+    ]
+  },
+  {
+    "class_id": "W024",
+    "sequence_index": 24,
+    "printed_source_id": 220,
+    "gloss": "Tiếp tục",
+    "reference_match_count": 16,
+    "reference_video_ids": [
+      "021020",
+      "021120",
+      "021425",
+      "021467",
+      "021904",
+      "022004",
+      "022309",
+      "022351",
+      "022788",
+      "022888",
+      "023193",
+      "023235",
+      "023672",
+      "023772",
+      "024372",
+      "024472"
+    ],
+    "reference_glosses": [
+      "Tiếp tục"
+    ]
+  },
+  {
+    "class_id": "W025",
+    "sequence_index": 25,
+    "printed_source_id": 222,
+    "gloss": "Cảm thấy",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021022",
+      "021122",
+      "021906",
+      "022006",
+      "022790",
+      "022890",
+      "023674",
+      "023774",
+      "024374",
+      "024474"
+    ],
+    "reference_glosses": [
+      "Cảm thấy"
+    ]
+  },
+  {
+    "class_id": "W026",
+    "sequence_index": 26,
+    "printed_source_id": 225,
+    "gloss": "Cảm ơn",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021025",
+      "021125",
+      "021909",
+      "022009",
+      "022793",
+      "022893",
+      "023677",
+      "023777",
+      "024377",
+      "024477"
+    ],
+    "reference_glosses": [
+      "Cảm ơn"
+    ]
+  },
+  {
+    "class_id": "W027",
+    "sequence_index": 27,
+    "printed_source_id": 234,
+    "gloss": "Thích",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021034",
+      "021134",
+      "021918",
+      "022018",
+      "022802",
+      "022902",
+      "023686",
+      "023786",
+      "024386",
+      "024486"
+    ],
+    "reference_glosses": [
+      "Thích"
+    ]
+  },
+  {
+    "class_id": "W028",
+    "sequence_index": 28,
+    "printed_source_id": 238,
+    "gloss": "Thay đổi",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021038",
+      "021138",
+      "021922",
+      "022022",
+      "022806",
+      "022906",
+      "023690",
+      "023790",
+      "024390",
+      "024490"
+    ],
+    "reference_glosses": [
+      "Thay đổi"
+    ]
+  },
+  {
+    "class_id": "W029",
+    "sequence_index": 29,
+    "printed_source_id": 240,
+    "gloss": "Tìm",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021040",
+      "021140",
+      "021924",
+      "022024",
+      "022808",
+      "022908",
+      "023692",
+      "023792",
+      "024392",
+      "024492"
+    ],
+    "reference_glosses": [
+      "Tìm"
+    ]
+  },
+  {
+    "class_id": "W030",
+    "sequence_index": 30,
+    "printed_source_id": 245,
+    "gloss": "Ngắn",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021045",
+      "021145",
+      "021929",
+      "022029",
+      "022813",
+      "022913",
+      "023697",
+      "023797",
+      "024397",
+      "024497"
+    ],
+    "reference_glosses": [
+      "Ngắn"
+    ]
+  },
+  {
+    "class_id": "W031",
+    "sequence_index": 31,
+    "printed_source_id": 247,
+    "gloss": "Nhanh",
+    "reference_match_count": 16,
+    "reference_video_ids": [
+      "021047",
+      "021147",
+      "021439",
+      "021481",
+      "021931",
+      "022031",
+      "022323",
+      "022365",
+      "022815",
+      "022915",
+      "023207",
+      "023249",
+      "023699",
+      "023799",
+      "024399",
+      "024499"
+    ],
+    "reference_glosses": [
+      "Nhanh"
+    ]
+  },
+  {
+    "class_id": "W032",
+    "sequence_index": 32,
+    "printed_source_id": 248,
+    "gloss": "Khó",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021048",
+      "021148",
+      "021932",
+      "022032",
+      "022816",
+      "022916",
+      "023700",
+      "023800",
+      "024400",
+      "024500"
+    ],
+    "reference_glosses": [
+      "Khó"
+    ]
+  },
+  {
+    "class_id": "W033",
+    "sequence_index": 33,
+    "printed_source_id": 267,
+    "gloss": "Mạnh",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021067",
+      "021167",
+      "021951",
+      "022051",
+      "022835",
+      "022935",
+      "023719",
+      "023819",
+      "024419",
+      "024519"
+    ],
+    "reference_glosses": [
+      "Mạnh"
+    ]
+  },
+  {
+    "class_id": "W034",
+    "sequence_index": 34,
+    "printed_source_id": 270,
+    "gloss": "Giàu",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021070",
+      "021170",
+      "021954",
+      "022054",
+      "022838",
+      "022938",
+      "023722",
+      "023822",
+      "024422",
+      "024522"
+    ],
+    "reference_glosses": [
+      "Giàu"
+    ]
+  },
+  {
+    "class_id": "W035",
+    "sequence_index": 35,
+    "printed_source_id": 271,
+    "gloss": "Sớm",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021071",
+      "021171",
+      "021955",
+      "022055",
+      "022839",
+      "022939",
+      "023723",
+      "023823",
+      "024423",
+      "024523"
+    ],
+    "reference_glosses": [
+      "Sớm"
+    ]
+  },
+  {
+    "class_id": "W036",
+    "sequence_index": 36,
+    "printed_source_id": 275,
+    "gloss": "Nặng",
+    "reference_match_count": 16,
+    "reference_video_ids": [
+      "021075",
+      "021175",
+      "021409",
+      "021451",
+      "021959",
+      "022059",
+      "022293",
+      "022335",
+      "022843",
+      "022943",
+      "023177",
+      "023219",
+      "023727",
+      "023827",
+      "024427",
+      "024527"
+    ],
+    "reference_glosses": [
+      "Nặng"
+    ]
+  },
+  {
+    "class_id": "W037",
+    "sequence_index": 37,
+    "printed_source_id": 287,
+    "gloss": "Dễ",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021087",
+      "021187",
+      "021971",
+      "022071",
+      "022855",
+      "022955",
+      "023739",
+      "023839",
+      "024439",
+      "024539"
+    ],
+    "reference_glosses": [
+      "Dễ"
+    ]
+  },
+  {
+    "class_id": "W038",
+    "sequence_index": 38,
+    "printed_source_id": 288,
+    "gloss": "Lạnh (nhiệt độ)",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021088",
+      "021188",
+      "021972",
+      "022072",
+      "022856",
+      "022956",
+      "023740",
+      "023840",
+      "024440",
+      "024540"
+    ],
+    "reference_glosses": [
+      "Lạnh"
+    ]
+  },
+  {
+    "class_id": "W039",
+    "sequence_index": 39,
+    "printed_source_id": 289,
+    "gloss": "Xa",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021089",
+      "021189",
+      "021973",
+      "022073",
+      "022857",
+      "022957",
+      "023741",
+      "023841",
+      "024441",
+      "024541"
+    ],
+    "reference_glosses": [
+      "Xa"
+    ]
+  },
+  {
+    "class_id": "W040",
+    "sequence_index": 40,
+    "printed_source_id": 290,
+    "gloss": "Gần",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021090",
+      "021190",
+      "021974",
+      "022074",
+      "022858",
+      "022958",
+      "023742",
+      "023842",
+      "024442",
+      "024542"
+    ],
+    "reference_glosses": [
+      "Gần"
+    ]
+  },
+  {
+    "class_id": "W041",
+    "sequence_index": 41,
+    "printed_source_id": 295,
+    "gloss": "Việt Nam",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021095",
+      "021195",
+      "021979",
+      "022079",
+      "022863",
+      "022963",
+      "023747",
+      "023847",
+      "024447",
+      "024547"
+    ],
+    "reference_glosses": [
+      "Việt Nam"
+    ]
+  },
+  {
+    "class_id": "W042",
+    "sequence_index": 42,
+    "printed_source_id": 300,
+    "gloss": "Mỹ",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021100",
+      "021200",
+      "021984",
+      "022084",
+      "022868",
+      "022968",
+      "023752",
+      "023852",
+      "024452",
+      "024552"
+    ],
+    "reference_glosses": [
+      "Mỹ"
+    ]
+  },
+  {
+    "class_id": "W043",
+    "sequence_index": 43,
+    "printed_source_id": 331,
+    "gloss": "Bố",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021231",
+      "021331",
+      "022115",
+      "022215",
+      "022999",
+      "023099",
+      "023883",
+      "023983",
+      "024583",
+      "024683"
+    ],
+    "reference_glosses": [
+      "Bố"
+    ]
+  },
+  {
+    "class_id": "W044",
+    "sequence_index": 44,
+    "printed_source_id": 332,
+    "gloss": "Mẹ",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021232",
+      "021332",
+      "022116",
+      "022216",
+      "023000",
+      "023100",
+      "023884",
+      "023984",
+      "024584",
+      "024684"
+    ],
+    "reference_glosses": [
+      "Mẹ"
+    ]
+  },
+  {
+    "class_id": "W045",
+    "sequence_index": 45,
+    "printed_source_id": 334,
+    "gloss": "Con gái",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021234",
+      "021334",
+      "022118",
+      "022218",
+      "023002",
+      "023102",
+      "023886",
+      "023986",
+      "024586",
+      "024686"
+    ],
+    "reference_glosses": [
+      "Con gái"
+    ]
+  },
+  {
+    "class_id": "W046",
+    "sequence_index": 46,
+    "printed_source_id": 336,
+    "gloss": "Chồng",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021236",
+      "021336",
+      "022120",
+      "022220",
+      "023004",
+      "023104",
+      "023888",
+      "023988",
+      "024588",
+      "024688"
+    ],
+    "reference_glosses": [
+      "Chồng"
+    ]
+  },
+  {
+    "class_id": "W047",
+    "sequence_index": 47,
+    "printed_source_id": 341,
+    "gloss": "Ăn",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021241",
+      "021341",
+      "022125",
+      "022225",
+      "023009",
+      "023109",
+      "023893",
+      "023993",
+      "024593",
+      "024693"
+    ],
+    "reference_glosses": [
+      "Ăn"
+    ]
+  },
+  {
+    "class_id": "W048",
+    "sequence_index": 48,
+    "printed_source_id": 342,
+    "gloss": "Uống",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021242",
+      "021342",
+      "022126",
+      "022226",
+      "023010",
+      "023110",
+      "023894",
+      "023994",
+      "024594",
+      "024694"
+    ],
+    "reference_glosses": [
+      "Uống"
+    ]
+  },
+  {
+    "class_id": "W049",
+    "sequence_index": 49,
+    "printed_source_id": 343,
+    "gloss": "Xem",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021243",
+      "021343",
+      "022127",
+      "022227",
+      "023011",
+      "023111",
+      "023895",
+      "023995",
+      "024595",
+      "024695"
+    ],
+    "reference_glosses": [
+      "Xem"
+    ]
+  },
+  {
+    "class_id": "W050",
+    "sequence_index": 50,
+    "printed_source_id": 346,
+    "gloss": "Khóc",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021246",
+      "021346",
+      "022130",
+      "022230",
+      "023014",
+      "023114",
+      "023898",
+      "023998",
+      "024598",
+      "024698"
+    ],
+    "reference_glosses": [
+      "Khóc"
+    ]
+  },
+  {
+    "class_id": "W051",
+    "sequence_index": 51,
+    "printed_source_id": 347,
+    "gloss": "Cười",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021247",
+      "021347",
+      "022131",
+      "022231",
+      "023015",
+      "023115",
+      "023899",
+      "023999",
+      "024599",
+      "024699"
+    ],
+    "reference_glosses": [
+      "Cười"
+    ]
+  },
+  {
+    "class_id": "W052",
+    "sequence_index": 52,
+    "printed_source_id": 348,
+    "gloss": "Học",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021248",
+      "021348",
+      "022132",
+      "022232",
+      "023016",
+      "023116",
+      "023900",
+      "024000",
+      "024600",
+      "024700"
+    ],
+    "reference_glosses": [
+      "Học"
+    ]
+  },
+  {
+    "class_id": "W053",
+    "sequence_index": 53,
+    "printed_source_id": 352,
+    "gloss": "Chạy",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021252",
+      "021352",
+      "022136",
+      "022236",
+      "023020",
+      "023120",
+      "023904",
+      "024004",
+      "024604",
+      "024704"
+    ],
+    "reference_glosses": [
+      "Chạy"
+    ]
+  },
+  {
+    "class_id": "W054",
+    "sequence_index": 54,
+    "printed_source_id": 359,
+    "gloss": "Quan sát",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021259",
+      "021359",
+      "022143",
+      "022243",
+      "023027",
+      "023127",
+      "023911",
+      "024011",
+      "024611",
+      "024711"
+    ],
+    "reference_glosses": [
+      "Quan sát"
+    ]
+  },
+  {
+    "class_id": "W055",
+    "sequence_index": 55,
+    "printed_source_id": 382,
+    "gloss": "Rộng",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021282",
+      "021382",
+      "022166",
+      "022266",
+      "023050",
+      "023150",
+      "023934",
+      "024034",
+      "024634",
+      "024734"
+    ],
+    "reference_glosses": [
+      "Rộng"
+    ]
+  },
+  {
+    "class_id": "W056",
+    "sequence_index": 56,
+    "printed_source_id": 383,
+    "gloss": "Dài",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021283",
+      "021383",
+      "022167",
+      "022267",
+      "023051",
+      "023151",
+      "023935",
+      "024035",
+      "024635",
+      "024735"
+    ],
+    "reference_glosses": [
+      "Dài"
+    ]
+  },
+  {
+    "class_id": "W057",
+    "sequence_index": 57,
+    "printed_source_id": 390,
+    "gloss": "Khỏe",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021290",
+      "021390",
+      "022174",
+      "022274",
+      "023058",
+      "023158",
+      "023942",
+      "024042",
+      "024642",
+      "024742"
+    ],
+    "reference_glosses": [
+      "Khỏe"
+    ]
+  },
+  {
+    "class_id": "W058",
+    "sequence_index": 58,
+    "printed_source_id": 392,
+    "gloss": "Đau",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021292",
+      "021392",
+      "022176",
+      "022276",
+      "023060",
+      "023160",
+      "023944",
+      "024044",
+      "024644",
+      "024744"
+    ],
+    "reference_glosses": [
+      "Đau"
+    ]
+  },
+  {
+    "class_id": "W059",
+    "sequence_index": 59,
+    "printed_source_id": 393,
+    "gloss": "Giỏi",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021293",
+      "021393",
+      "022177",
+      "022277",
+      "023061",
+      "023161",
+      "023945",
+      "024045",
+      "024645",
+      "024745"
+    ],
+    "reference_glosses": [
+      "Giỏi"
+    ]
+  },
+  {
+    "class_id": "W060",
+    "sequence_index": 60,
+    "printed_source_id": 397,
+    "gloss": "Thú vị",
+    "reference_match_count": 16,
+    "reference_video_ids": [
+      "021297",
+      "021397",
+      "021424",
+      "021466",
+      "022181",
+      "022281",
+      "022308",
+      "022350",
+      "023065",
+      "023165",
+      "023192",
+      "023234",
+      "023949",
+      "024049",
+      "024649",
+      "024749"
+    ],
+    "reference_glosses": [
+      "Thú vị"
+    ]
+  },
+  {
+    "class_id": "W061",
+    "sequence_index": 61,
+    "printed_source_id": 61,
+    "gloss": "Bác sĩ",
+    "reference_match_count": 8,
+    "reference_video_ids": [
+      "020870",
+      "020970",
+      "021754",
+      "021854",
+      "022688",
+      "023522",
+      "023622",
+      "024322"
+    ],
+    "reference_glosses": [
+      "Bác sĩ"
+    ]
+  },
+  {
+    "class_id": "W062",
+    "sequence_index": 62,
+    "printed_source_id": 62,
+    "gloss": "Y tá",
+    "reference_match_count": 8,
+    "reference_video_ids": [
+      "020869",
+      "020969",
+      "021753",
+      "021853",
+      "022687",
+      "023521",
+      "023621",
+      "024321"
+    ],
+    "reference_glosses": [
+      "Y tá"
+    ]
+  },
+  {
+    "class_id": "W063",
+    "sequence_index": 63,
+    "printed_source_id": 63,
+    "gloss": "Bệnh viện",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "020643",
+      "020743",
+      "021527",
+      "021627",
+      "022411",
+      "022511",
+      "023295",
+      "023395",
+      "024095",
+      "024195"
+    ],
+    "reference_glosses": [
+      "Bệnh viện"
+    ]
+  },
+  {
+    "class_id": "W064",
+    "sequence_index": 64,
+    "printed_source_id": 64,
+    "gloss": "Khám bệnh",
+    "reference_match_count": 8,
+    "reference_video_ids": [
+      "020898",
+      "020998",
+      "021782",
+      "021882",
+      "022716",
+      "023550",
+      "023650",
+      "024350"
+    ],
+    "reference_glosses": [
+      "Khám bệnh"
+    ]
+  },
+  {
+    "class_id": "W065",
+    "sequence_index": 65,
+    "printed_source_id": 65,
+    "gloss": "Bệnh nhân",
+    "reference_match_count": 0,
+    "reference_video_ids": [],
+    "reference_glosses": []
+  },
+  {
+    "class_id": "W066",
+    "sequence_index": 66,
+    "printed_source_id": 66,
+    "gloss": "Mệt",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021291",
+      "021391",
+      "022175",
+      "022275",
+      "023059",
+      "023159",
+      "023943",
+      "024043",
+      "024643",
+      "024743"
+    ],
+    "reference_glosses": [
+      "Mệt"
+    ]
+  },
+  {
+    "class_id": "W067",
+    "sequence_index": 67,
+    "printed_source_id": 67,
+    "gloss": "Yếu",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021077",
+      "021177",
+      "021961",
+      "022061",
+      "022845",
+      "022945",
+      "023729",
+      "023829",
+      "024429",
+      "024529"
+    ],
+    "reference_glosses": [
+      "Yếu"
+    ]
+  },
+  {
+    "class_id": "W068",
+    "sequence_index": 68,
+    "printed_source_id": 68,
+    "gloss": "Sốt",
+    "reference_match_count": 0,
+    "reference_video_ids": [],
+    "reference_glosses": []
+  },
+  {
+    "class_id": "W069",
+    "sequence_index": 69,
+    "printed_source_id": 69,
+    "gloss": "Buồn nôn",
+    "reference_match_count": 0,
+    "reference_video_ids": [],
+    "reference_glosses": []
+  },
+  {
+    "class_id": "W070",
+    "sequence_index": 70,
+    "printed_source_id": 70,
+    "gloss": "Đau mắt",
+    "reference_match_count": 0,
+    "reference_video_ids": [],
+    "reference_glosses": []
+  },
+  {
+    "class_id": "W071",
+    "sequence_index": 71,
+    "printed_source_id": 71,
+    "gloss": "Đau tai",
+    "reference_match_count": 0,
+    "reference_video_ids": [],
+    "reference_glosses": []
+  },
+  {
+    "class_id": "W072",
+    "sequence_index": 72,
+    "printed_source_id": 72,
+    "gloss": "Bụng",
+    "reference_match_count": 0,
+    "reference_video_ids": [],
+    "reference_glosses": []
+  },
+  {
+    "class_id": "W073",
+    "sequence_index": 73,
+    "printed_source_id": 73,
+    "gloss": "Tay",
+    "reference_match_count": 0,
+    "reference_video_ids": [],
+    "reference_glosses": []
+  },
+  {
+    "class_id": "W074",
+    "sequence_index": 74,
+    "printed_source_id": 74,
+    "gloss": "Tim",
+    "reference_match_count": 0,
+    "reference_video_ids": [],
+    "reference_glosses": []
+  },
+  {
+    "class_id": "W075",
+    "sequence_index": 75,
+    "printed_source_id": 75,
+    "gloss": "Răng",
+    "reference_match_count": 0,
+    "reference_video_ids": [],
+    "reference_glosses": []
+  },
+  {
+    "class_id": "W076",
+    "sequence_index": 76,
+    "printed_source_id": 76,
+    "gloss": "Nhiệt độ",
+    "reference_match_count": 0,
+    "reference_video_ids": [],
+    "reference_glosses": []
+  },
+  {
+    "class_id": "W077",
+    "sequence_index": 77,
+    "printed_source_id": 77,
+    "gloss": "Thở",
+    "reference_match_count": 0,
+    "reference_video_ids": [],
+    "reference_glosses": []
+  },
+  {
+    "class_id": "W078",
+    "sequence_index": 78,
+    "printed_source_id": 78,
+    "gloss": "Tiêm",
+    "reference_match_count": 0,
+    "reference_video_ids": [],
+    "reference_glosses": []
+  },
+  {
+    "class_id": "W079",
+    "sequence_index": 79,
+    "printed_source_id": 79,
+    "gloss": "Băng bó",
+    "reference_match_count": 0,
+    "reference_video_ids": [],
+    "reference_glosses": []
+  },
+  {
+    "class_id": "W080",
+    "sequence_index": 80,
+    "printed_source_id": 80,
+    "gloss": "Cấp cứu",
+    "reference_match_count": 0,
+    "reference_video_ids": [],
+    "reference_glosses": []
+  },
+  {
+    "class_id": "W081",
+    "sequence_index": 81,
+    "printed_source_id": 81,
+    "gloss": "Khẩu trang",
+    "reference_match_count": 0,
+    "reference_video_ids": [],
+    "reference_glosses": []
+  },
+  {
+    "class_id": "W082",
+    "sequence_index": 82,
+    "printed_source_id": 82,
+    "gloss": "Nhà vệ sinh",
+    "reference_match_count": 0,
+    "reference_video_ids": [],
+    "reference_glosses": []
+  },
+  {
+    "class_id": "W083",
+    "sequence_index": 83,
+    "printed_source_id": 83,
+    "gloss": "Rửa tay",
+    "reference_match_count": 22,
+    "reference_video_ids": [
+      "021007",
+      "021107",
+      "021416",
+      "021423",
+      "021458",
+      "021465",
+      "021891",
+      "021991",
+      "022300",
+      "022307",
+      "022342",
+      "022349",
+      "022775",
+      "022875",
+      "023184",
+      "023191",
+      "023226",
+      "023233",
+      "023659",
+      "023759",
+      "024359",
+      "024459"
+    ],
+    "reference_glosses": [
+      "Rửa tay"
+    ]
+  },
+  {
+    "class_id": "W084",
+    "sequence_index": 84,
+    "printed_source_id": 84,
+    "gloss": "Tắm rửa",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021027",
+      "021127",
+      "021911",
+      "022011",
+      "022795",
+      "022895",
+      "023679",
+      "023779",
+      "024379",
+      "024479"
+    ],
+    "reference_glosses": [
+      "Tắm rửa"
+    ]
+  },
+  {
+    "class_id": "W085",
+    "sequence_index": 85,
+    "printed_source_id": 85,
+    "gloss": "Sạch sẽ",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021055",
+      "021155",
+      "021939",
+      "022039",
+      "022823",
+      "022923",
+      "023707",
+      "023807",
+      "024407",
+      "024507"
+    ],
+    "reference_glosses": [
+      "Sạch sẽ"
+    ]
+  },
+  {
+    "class_id": "W086",
+    "sequence_index": 86,
+    "printed_source_id": 86,
+    "gloss": "Nghỉ ngơi",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021041",
+      "021141",
+      "021925",
+      "022025",
+      "022809",
+      "022909",
+      "023693",
+      "023793",
+      "024393",
+      "024493"
+    ],
+    "reference_glosses": [
+      "Nghỉ ngơi"
+    ]
+  },
+  {
+    "class_id": "W087",
+    "sequence_index": 87,
+    "printed_source_id": 87,
+    "gloss": "Giường",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "020624",
+      "020724",
+      "021508",
+      "021608",
+      "022392",
+      "022492",
+      "023276",
+      "023376",
+      "024076",
+      "024176"
+    ],
+    "reference_glosses": [
+      "Giường"
+    ]
+  },
+  {
+    "class_id": "W088",
+    "sequence_index": 88,
+    "printed_source_id": 88,
+    "gloss": "Thức dậy",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021009",
+      "021109",
+      "021893",
+      "021993",
+      "022777",
+      "022877",
+      "023661",
+      "023761",
+      "024361",
+      "024461"
+    ],
+    "reference_glosses": [
+      "Thức dậy"
+    ]
+  },
+  {
+    "class_id": "W089",
+    "sequence_index": 89,
+    "printed_source_id": 89,
+    "gloss": "Đi",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021251",
+      "021351",
+      "022135",
+      "022235",
+      "023019",
+      "023119",
+      "023903",
+      "024003",
+      "024603",
+      "024703"
+    ],
+    "reference_glosses": [
+      "Đi"
+    ]
+  },
+  {
+    "class_id": "W090",
+    "sequence_index": 90,
+    "printed_source_id": 90,
+    "gloss": "Thể dục (thể thao)",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "020698",
+      "020798",
+      "021582",
+      "021682",
+      "022466",
+      "022566",
+      "023350",
+      "023450",
+      "024150",
+      "024250"
+    ],
+    "reference_glosses": [
+      "Thể dục (thể thao)"
+    ]
+  },
+  {
+    "class_id": "W091",
+    "sequence_index": 91,
+    "printed_source_id": 91,
+    "gloss": "Sữa",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "020829",
+      "020929",
+      "021713",
+      "021813",
+      "022597",
+      "022647",
+      "022747",
+      "023481",
+      "023581",
+      "024281"
+    ],
+    "reference_glosses": [
+      "Sữa"
+    ]
+  },
+  {
+    "class_id": "W092",
+    "sequence_index": 92,
+    "printed_source_id": 92,
+    "gloss": "Nóng",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021078",
+      "021178",
+      "021962",
+      "022062",
+      "022846",
+      "022946",
+      "023730",
+      "023830",
+      "024430",
+      "024530"
+    ],
+    "reference_glosses": [
+      "Nóng"
+    ]
+  },
+  {
+    "class_id": "W093",
+    "sequence_index": 93,
+    "printed_source_id": 93,
+    "gloss": "Cần",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021023",
+      "021123",
+      "021907",
+      "022007",
+      "022791",
+      "022891",
+      "023675",
+      "023775",
+      "024375",
+      "024475"
+    ],
+    "reference_glosses": [
+      "Cần"
+    ]
+  },
+  {
+    "class_id": "W094",
+    "sequence_index": 94,
+    "printed_source_id": 94,
+    "gloss": "Không cần",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021268",
+      "021368",
+      "022152",
+      "022252",
+      "023036",
+      "023136",
+      "023920",
+      "024020",
+      "024620",
+      "024720"
+    ],
+    "reference_glosses": [
+      "Không cần"
+    ]
+  },
+  {
+    "class_id": "W095",
+    "sequence_index": 95,
+    "printed_source_id": 95,
+    "gloss": "Giúp đỡ",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021036",
+      "021136",
+      "021920",
+      "022020",
+      "022804",
+      "022904",
+      "023688",
+      "023788",
+      "024388",
+      "024488"
+    ],
+    "reference_glosses": [
+      "Giúp đỡ"
+    ]
+  },
+  {
+    "class_id": "W096",
+    "sequence_index": 96,
+    "printed_source_id": 96,
+    "gloss": "Có",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021042",
+      "021142",
+      "021926",
+      "022026",
+      "022810",
+      "022910",
+      "023694",
+      "023794",
+      "024394",
+      "024494"
+    ],
+    "reference_glosses": [
+      "Có"
+    ]
+  },
+  {
+    "class_id": "W097",
+    "sequence_index": 97,
+    "printed_source_id": 97,
+    "gloss": "Đồng ý",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021016",
+      "021116",
+      "021900",
+      "022000",
+      "022784",
+      "022884",
+      "023668",
+      "023768",
+      "024368",
+      "024468"
+    ],
+    "reference_glosses": [
+      "Đồng ý"
+    ]
+  },
+  {
+    "class_id": "W098",
+    "sequence_index": 98,
+    "printed_source_id": 98,
+    "gloss": "Từ chối",
+    "reference_match_count": 16,
+    "reference_video_ids": [
+      "021026",
+      "021126",
+      "021431",
+      "021473",
+      "021910",
+      "022010",
+      "022315",
+      "022357",
+      "022794",
+      "022894",
+      "023199",
+      "023241",
+      "023678",
+      "023778",
+      "024378",
+      "024478"
+    ],
+    "reference_glosses": [
+      "Từ chối"
+    ]
+  },
+  {
+    "class_id": "W099",
+    "sequence_index": 99,
+    "printed_source_id": 99,
+    "gloss": "Dừng lại",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021010",
+      "021110",
+      "021894",
+      "021994",
+      "022778",
+      "022878",
+      "023662",
+      "023762",
+      "024362",
+      "024462"
+    ],
+    "reference_glosses": [
+      "Dừng lại"
+    ]
+  },
+  {
+    "class_id": "W100",
+    "sequence_index": 100,
+    "printed_source_id": 100,
+    "gloss": "Nói chuyện",
+    "reference_match_count": 10,
+    "reference_video_ids": [
+      "021039",
+      "021139",
+      "021923",
+      "022023",
+      "022807",
+      "022907",
+      "023691",
+      "023791",
+      "024391",
+      "024491"
+    ],
+    "reference_glosses": [
+      "Nói chuyện"
+    ]
+  }
+]

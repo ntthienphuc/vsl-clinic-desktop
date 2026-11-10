@@ -1,3 +1,5 @@
+> **Kịch bản mới 0.3.6:** [Hai cuộc hỏi bệnh, 22 lượt](HOI_BENH_2026-11-01/README.md). Phần dưới là kịch bản cũ được giữ để đối chiếu.
+
 # Kịch bản demo VSL Clinic — bác sĩ và bệnh nhân
 
 **Dùng cho lần demo hiện tại (0.3.4):** [Hai kịch bản đã chuẩn bị ngày 31/10/2026](HAI_KICH_BAN_2026-10-31/README.md). Mỗi kịch bản có 5 lượt; từng lượt có video gốc đánh số và clip phát thử cả câu. Trong app: **Chọn câu / từ → 2 kịch bản demo**. Phần dưới giữ kịch bản 0.3.3 cũ để tham khảo.

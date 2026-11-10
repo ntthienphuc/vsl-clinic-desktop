@@ -45,19 +45,17 @@ export function AppHeader({ role, connected, state, run }: { role: Role; connect
 }
 
 export function PlaybackControls({ playback, pending, run }: { playback: Playback | null; pending: number; run: RunAction }) {
-  if (!playback) {
-    return <div className="playback-empty"><span className="status-dot" /> Sẵn sàng phát ký hiệu</div>;
-  }
+  if (!playback) return null;
   const control = (action: string, rate?: number) => run(() => request('/playback', { action, playback_id: playback.id, rate }));
   const active = ['playing', 'paused', 'loading'].includes(playback.status);
   return <div className="playback-controls">
     <div className="playback-buttons">
       <button className="icon-button control-button" disabled={playback.status === 'loading'} title={playback.status === 'playing' ? 'Tạm dừng' : 'Tiếp tục hoặc phát lại'} aria-label={playback.status === 'playing' ? 'Tạm dừng' : 'Tiếp tục hoặc phát lại'} onClick={() => void control(playback.status === 'playing' ? 'pause' : playback.status === 'paused' ? 'resume' : 'replay')}>{playback.status === 'playing' ? <Pause size={18} /> : <Play size={18} />}<span>{playback.status === 'playing' ? 'Tạm dừng' : playback.status === 'paused' ? 'Tiếp tục' : 'Xem lại'}</span></button>
-      <button className="icon-button control-button" title="Phát lại từ đầu" aria-label="Phát lại từ đầu" onClick={() => void control('replay')}><RotateCcw size={17} /><span>Phát lại</span></button>
+      {active && <button className="icon-button control-button" title="Phát lại từ đầu" aria-label="Phát lại từ đầu" onClick={() => void control('replay')}><RotateCcw size={17} /><span>Phát lại</span></button>}
       <button className="icon-button control-button" disabled={!active} title="Dừng ký hiệu và hủy nội dung đang chờ" aria-label="Dừng ký hiệu và hủy nội dung đang chờ" onClick={() => void control('stop')}><Square size={16} /><span>Dừng</span></button>
       <select className="speed-select" aria-label="Tốc độ ký hiệu" value={playback.rate} onChange={(event) => void control('speed', Number(event.target.value))}><option value={0.5}>0,5×</option><option value={0.75}>0,75×</option><option value={1}>1×</option><option value={1.25}>1,25×</option></select>
     </div>
-    <span className="playback-status">{playback.status === 'playing' ? 'Đang thể hiện' : playback.status === 'paused' ? playback.pause_reason === 'patient_disconnected' ? 'Đã dừng chờ màn hình người bệnh · bấm tiếp tục khi sẵn sàng' : 'Đã tạm dừng' : playback.status === 'loading' ? 'Chờ màn hình người bệnh' : 'Đã kết thúc'}{pending > 0 && ` · ${pending} đang chờ`}</span>
+    <span className="playback-status">{playback.status === 'playing' ? 'Đang thể hiện' : playback.status === 'paused' ? playback.pause_reason === 'patient_reply' ? 'Đã nhường lượt cho người bệnh · bấm tiếp tục để xem phần còn lại' : playback.pause_reason === 'patient_activity' ? 'Đang lắng nghe người bệnh · tự tiếp tục nếu chưa có lời đáp' : playback.pause_reason === 'patient_disconnected' ? 'Đã dừng chờ màn hình người bệnh · bấm tiếp tục khi sẵn sàng' : 'Đã tạm dừng' : playback.status === 'loading' ? 'Chờ màn hình người bệnh' : 'Đã kết thúc'}{pending > 0 && ` · ${pending} đang chờ`}</span>
   </div>;
 }
 
@@ -75,6 +73,7 @@ export function Conversation({ messages }: { messages: Message[] }) {
     {messages.map((message) => <article key={message.id} className={`message ${message.role}`}>
       <div className="message-meta"><span>{message.role === 'doctor' ? 'Bác sĩ' : 'Người bệnh'}</span><time>{new Date(message.created_at_ms).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}</time></div>
       <div className="message-bubble">{message.text}</div>
+      {message.speech_repair && <details className="original-words"><summary>Đã sửa lỗi nghe: {message.speech_repair.corrected_text}</summary>Âm thanh được nhận thành: {message.speech_repair.raw_text}</details>}
       {message.kind === 'patient_turn' && message.reading?.rewritten && <details className="original-words"><summary>Từ nhận được</summary>{message.raw_text}</details>}
       <div className="message-status">{message.role === 'patient' ? message.status === 'streaming' ? 'Đang nhận từng từ…' : message.status === 'confirmed' ? <><Check size={11} /> Đã xác nhận</> : message.reading?.rewritten ? 'Gợi ý diễn đạt · giữ nguyên các từ gốc để đối chiếu' : 'Kết quả nhận dạng · cần đối chiếu' : message.status === 'cancelled' ? 'Đã hủy phát' : message.status === 'queued' ? 'Đang chờ phát' : message.mode === 'sign' ? 'Chữ và ký hiệu' : 'Nội dung bằng chữ'}</div>
     </article>)}
@@ -94,6 +93,6 @@ export function Diagnostics({ state }: { state: SessionState }) {
       <span>Inference<strong>{Number(result?.inference_ms ?? 0).toFixed(0)} ms</strong></span>
       <span>Đang chờ xử lý<strong>{capture.queued_segments ?? 0} đoạn</strong></span>
     </div>
-    <p>Nhận dạng 400 từ riêng lẻ. Video được đọc ở tốc độ gốc; frame cũ được thay bằng frame mới khi xử lý chậm.</p>
+    <p>{state.recognition?.mode === 'sign_only' ? 'Chỉ ký hiệu: bộ 400 từ.' : 'Ký hiệu + khẩu hình: bộ 100 từ.'} Video phát ở tốc độ gốc.</p>
   </details>;
 }

@@ -13,7 +13,8 @@ KIT = ROOT / "demo/HAI_KICH_BAN_2026-10-31"
 
 
 async def probe(args):
-    manifest = json.loads((KIT / "manifest.json").read_text(encoding="utf-8"))
+    kit = args.kit
+    manifest = json.loads((kit / "manifest.json").read_text(encoding="utf-8"))
     report = {"created_at": datetime.now(timezone.utc).isoformat(), "scope": "Actual paced video detector/model and browser avatar; no human microphone or webcam claim.", "scenarios": [], "checks": {}}
     async with httpx.AsyncClient(base_url=args.url, headers={"Authorization": "Bearer " + args.token}, timeout=40) as client:
         async def state():
@@ -56,7 +57,7 @@ async def probe(args):
                           "video": step["replay"], "expected": step["patient_labels"]}
                 record["render"] = render
                 old = {w["id"] for m in done["state"]["messages"] for w in m.get("words", [m])}
-                path = KIT / step["replay"]["file"]
+                path = kit / step["replay"]["file"]
                 with path.open("rb") as f:
                     r = await client.post("/api/capture/upload", files={"file": (path.name, f, "video/mp4")})
                 r.raise_for_status()
@@ -89,14 +90,14 @@ async def probe(args):
                 print(json.dumps({"scenario": scenario["id"], "step": index, "actual": [w["text"] for w in words.values()], "checks": record["checks"]}, ensure_ascii=False), flush=True)
             report["scenarios"].append(result)
         blocked = []
-        for text in ["Y tá không đo nhiệt độ.", "Uống thuốc hai viên.", "Bạn cảm thấy thế nào?", "Y tá ơi, hôm nay kiểm tra thân nhiệt giúp em nhé"]:
+        for text in ["Y tá không đo nhiệt độ.", "Uống thuốc hai viên.", "Bạn đau bụng bao nhiêu ngày?", "Y tá ơi, hôm nay kiểm tra thân nhiệt giúp em nhé"]:
             before = (await state())["state"]
             r = await client.post("/api/messages", json={"text": text, "mode": "sign"})
             after = (await state())["state"]
             blocked.append({"text": text, "status": r.status_code, "no_message_added": len(before["messages"]) == len(after["messages"]),
                             "no_playback_changed": before["playback"]["id"] == after["playback"]["id"]})
         report["blocked"] = blocked
-        report["checks"]["all_ten_turns"] = all(all(r["checks"].values()) for s in report["scenarios"] for r in s["steps"])
+        report["checks"]["all_turns"] = all(all(r["checks"].values()) for s in report["scenarios"] for r in s["steps"])
         report["checks"]["unknown_meaning_blocked"] = all(r["status"] == 422 and r["no_message_added"] and r["no_playback_changed"] for r in blocked)
         await post("/capture/stop", {})
     output = ROOT / args.output
@@ -109,5 +110,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--url", default="http://127.0.0.1:58889")
     parser.add_argument("--token", default="ui-smoke")
+    parser.add_argument("--kit", type=Path, default=KIT)
     parser.add_argument("--output", default="docs/evidence/rehearsal-source-2026-10-31.json")
     asyncio.run(probe(parser.parse_args()))

@@ -1,0 +1,3780 @@
+{
+  "schema": "clinic-patient-voice-v1",
+  "language": "vi-VN",
+  "voice": "Google Translate Vietnamese fixed-label audio",
+  "generation": "Build-time fixed public labels only; native speaking rate; 60/160 ms silence guards",
+  "runtime_network": false,
+  "entries": [
+    {
+      "id": "0",
+      "text": "Anh",
+      "file": "0.wav",
+      "duration_ms": 640,
+      "sha256": "bba3d7f883bb5243452dcb749e81f59b4296a3d7936dca05751f02a55aa09783",
+      "source_sha256": "450b99988a284d95582bcd8463c04f8778d6491c79d972f0c0f5c6e14d679e12",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Anh."
+    },
+    {
+      "id": "1",
+      "text": "Ba lô",
+      "file": "1.wav",
+      "duration_ms": 891,
+      "sha256": "0f02c0b4987194b0d45874a0493d5b89fb093d245c0a2071006c25c02aa95590",
+      "source_sha256": "165854f4fd6f9f75348a62c29495f373bce0e7c46851ae15354fd2257f4c1907",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ba+l%C3%B4."
+    },
+    {
+      "id": "2",
+      "text": "Bia",
+      "file": "2.wav",
+      "duration_ms": 722,
+      "sha256": "8bc66156b5839b62d243f22ccf84ef0f27db51445219f665205283069c05d25a",
+      "source_sha256": "9b502bdf801c23bed0301b9c240dfd85e9a0cedb0c49d700d8ad6532bf5ef533",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Bia."
+    },
+    {
+      "id": "3",
+      "text": "Buổi chiều",
+      "file": "3.wav",
+      "duration_ms": 997,
+      "sha256": "3cb0016259cf258fe45c8080d1cce79fd68db7f889dbbc919b65157305e943a6",
+      "source_sha256": "fb11f267275f174acb882c5cf66ca00c34d037b5531bf88c82d2c91146b3885b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Bu%E1%BB%95i+chi%E1%BB%81u."
+    },
+    {
+      "id": "4",
+      "text": "Buổi sáng",
+      "file": "4.wav",
+      "duration_ms": 1006,
+      "sha256": "be403e3dc1ef63a89629a351be1da231ff781b3f5088b8677e17003bf1e562e0",
+      "source_sha256": "80283331c59bb9f58f586449c0aedd77a66cc4acb17ad5db4111ea4b12070f0b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Bu%E1%BB%95i+s%C3%A1ng."
+    },
+    {
+      "id": "5",
+      "text": "Buổi trưa",
+      "file": "5.wav",
+      "duration_ms": 985,
+      "sha256": "68aadc8ed4e4460cd39878599ffb83bf2923cad389f5a7c634e6e2251de4c1c0",
+      "source_sha256": "37a2ff6ddced09f3449855c3fce70a5b0dc2ffcb42a8fc4ddb6c1e4e15f382df",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Bu%E1%BB%95i+tr%C6%B0a."
+    },
+    {
+      "id": "6",
+      "text": "Buổi tối",
+      "file": "6.wav",
+      "duration_ms": 967,
+      "sha256": "11c0ad812d7c0adb9a219167d606c7c9f0af75cecedbad24919c1cb4a1a07a39",
+      "source_sha256": "8135a1d2ccf601099b8aeaef27b2a9aa23802315833a866506702a80592cabbc",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Bu%E1%BB%95i+t%E1%BB%91i."
+    },
+    {
+      "id": "7",
+      "text": "Bà ngoại",
+      "file": "7.wav",
+      "duration_ms": 894,
+      "sha256": "6b25407406701762e1a52041d1552f4335256c40fdcdd9b81013029c2ec34185",
+      "source_sha256": "8589f810b97def934f409835e332df79c863cda19402f4a5fb765e3a1f32026a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C3%A0+ngo%E1%BA%A1i."
+    },
+    {
+      "id": "8",
+      "text": "Bà nội",
+      "file": "8.wav",
+      "duration_ms": 832,
+      "sha256": "f62bf541730057069eaedc7a92a96278f17f11b01ef8ba20c9481c10c8077f11",
+      "source_sha256": "54d566681576dd364281a771833deb75acda66f90734670f991683f3de661e5c",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C3%A0+n%E1%BB%99i."
+    },
+    {
+      "id": "9",
+      "text": "Bàn phím",
+      "file": "9.wav",
+      "duration_ms": 962,
+      "sha256": "c200a98c10974d48231cdb42e97e3a508a8e301a64a4fa35a6a93591f22c1594",
+      "source_sha256": "5b8482b57c015ee273598f4033fc3fbd35d5c9284c13b87a897274aa12c81092",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C3%A0n+ph%C3%ADm."
+    },
+    {
+      "id": "10",
+      "text": "Bác",
+      "file": "10.wav",
+      "duration_ms": 554,
+      "sha256": "0fbf340a56cb5198e037908f3811e776d96a6ba04de4d7c6615d0065a56a4db2",
+      "source_sha256": "640cf66c450812138859da88b8b98f59607634f482e66731a32b214922f42267",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C3%A1c."
+    },
+    {
+      "id": "11",
+      "text": "Bác sĩ",
+      "file": "11.wav",
+      "duration_ms": 988,
+      "sha256": "9553a4c87444504d754c949d760baa6eb0b914ffb992a280b8ef129716b01135",
+      "source_sha256": "671bbc7c81657c18a56f704b2f60920f1fecea23925dac2c5face5b9a27bce7e",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C3%A1c+s%C4%A9."
+    },
+    {
+      "id": "12",
+      "text": "Bánh bao",
+      "file": "12.wav",
+      "duration_ms": 946,
+      "sha256": "fd5c7c70228d9a6c26d23066a00fb7baf0ab40127a4ffd2ffd9276e46034bd4f",
+      "source_sha256": "2624b72a7e061f60af1869ecd29cef49bfaee2a2862e06f953f62800444c6ee7",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C3%A1nh+bao."
+    },
+    {
+      "id": "13",
+      "text": "Bánh chưng",
+      "file": "13.wav",
+      "duration_ms": 968,
+      "sha256": "fff5cfcf2946751e2b6db1e2d393159cc38bae60718c3ddfe70a8114e2de500a",
+      "source_sha256": "fd1940356f5266b076497b78385501b145030ce57939fda3d455d36135526497",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C3%A1nh+ch%C6%B0ng."
+    },
+    {
+      "id": "14",
+      "text": "Bánh tét",
+      "file": "14.wav",
+      "duration_ms": 898,
+      "sha256": "48a9869f7f541a8fab5c5884a82b0faed03acdce74361ee3c87e9f84db29e66b",
+      "source_sha256": "b10835b46a2725bba35d5dd82adc7e04d32b95988881eb7425e0f0e80301555c",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C3%A1nh+t%C3%A9t."
+    },
+    {
+      "id": "15",
+      "text": "Bánh xèo",
+      "file": "15.wav",
+      "duration_ms": 1016,
+      "sha256": "09f9e85e6ed6979017bc98a80df3c97783157dea478ec986a5e20f5fbe690602",
+      "source_sha256": "99b1622eacd4d7bea5dc584329f496238dfab215b8eb8a882e19e94e256ba7e5",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C3%A1nh+x%C3%A8o."
+    },
+    {
+      "id": "16",
+      "text": "Báo cáo",
+      "file": "16.wav",
+      "duration_ms": 999,
+      "sha256": "c89989e99d693697cc1c04d3f785175c553436eebd7e5d1d9184dd913df4e4a1",
+      "source_sha256": "5b4a3c45b016667df2fdfce66882b8755b9a4059ce8f58c5e12d6e34f8e84f6e",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C3%A1o+c%C3%A1o."
+    },
+    {
+      "id": "17",
+      "text": "Bây giờ",
+      "file": "17.wav",
+      "duration_ms": 906,
+      "sha256": "e478910d777655ee508e1f9d407b40b0c0db8e06370abea0cdfb5d1067473c1e",
+      "source_sha256": "7cc4868f78ce3bc934ed5df5465a71e8726d2d5e929699ef75cb4699e8adc9a2",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C3%A2y+gi%E1%BB%9D."
+    },
+    {
+      "id": "18",
+      "text": "Bình minh",
+      "file": "18.wav",
+      "duration_ms": 885,
+      "sha256": "f403a635c32a983c65302a90be0e03bc6755a6cf272451e8a977d265bcd342b5",
+      "source_sha256": "487bbc11b73dce52c873dc83990b320ad67daa189e6097a46f03e19b3439422a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C3%ACnh+minh."
+    },
+    {
+      "id": "19",
+      "text": "Bóng bàn",
+      "file": "19.wav",
+      "duration_ms": 940,
+      "sha256": "465d30c2d5c482392393af10722ededef6f9d1ed30b2f2880284399f6be36c35",
+      "source_sha256": "1a5e17aefc4cbf3cdf8e26a674fb137be38a8887cecc80e3702bde3dddefbad4",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C3%B3ng+b%C3%A0n."
+    },
+    {
+      "id": "20",
+      "text": "Bóng chuyền",
+      "file": "20.wav",
+      "duration_ms": 981,
+      "sha256": "cce5aa3f0dd28152ed8e9181d2f4fe0f66a6561590d8afd3aaf4f5186be2ef02",
+      "source_sha256": "bbcd1ff460cc798e029a2b3800ba39d7b532ecb2ae1c84898bdb76750ffb4355",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C3%B3ng+chuy%E1%BB%81n."
+    },
+    {
+      "id": "21",
+      "text": "Bóng rổ",
+      "file": "21.wav",
+      "duration_ms": 989,
+      "sha256": "b5d790b6fcce17406f53a5cfee6f16348a755ae045837b2a08b4eafe6202de3b",
+      "source_sha256": "5c5b407f89d4349d92367c6cd7bd89fc8173ea28bf7b2db5c8c414293a0a254a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C3%B3ng+r%E1%BB%95."
+    },
+    {
+      "id": "22",
+      "text": "Bóng đá",
+      "file": "22.wav",
+      "duration_ms": 945,
+      "sha256": "61d0d8e5d6008f75bfd0b44bed00fa39b28f64643f36fc1f56c28803fd195e49",
+      "source_sha256": "82df915388b8b0a44961117ea91e5c9a616f6f6b568155a9e595146ef2448470",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C3%B3ng+%C4%91%C3%A1."
+    },
+    {
+      "id": "23",
+      "text": "Bún",
+      "file": "23.wav",
+      "duration_ms": 661,
+      "sha256": "cec26b3f0bf73b81dc61e18ec58ee51f097f33779f61bd5efaefbd0f638baa37",
+      "source_sha256": "f2a42ed15d743d4a9fb5662c3ac6db06b59aeb674f6e71ec2028d0e233b2a42e",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C3%BAn."
+    },
+    {
+      "id": "24",
+      "text": "Bút bi",
+      "file": "24.wav",
+      "duration_ms": 893,
+      "sha256": "2e43e2103f4a1d7bc2fa78f0f2009abe33787ccf76ecf93ae466a7bcc0684ccd",
+      "source_sha256": "4e34cff4f40b181409857a1d4becba23b500a23e6a2bac9423c111c95d33a20d",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C3%BAt+bi."
+    },
+    {
+      "id": "25",
+      "text": "Bút chì",
+      "file": "25.wav",
+      "duration_ms": 979,
+      "sha256": "53a7dbb7a5ab4c25fc21a8352373862bd39c73428bed5826d618d7ebd0fa4e6e",
+      "source_sha256": "678dd7cbb44c5af47dfcc3bb8b88df4aa41557c0d8b118c480c12b1355ed95c2",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C3%BAt+ch%C3%AC."
+    },
+    {
+      "id": "26",
+      "text": "Bơi lội",
+      "file": "26.wav",
+      "duration_ms": 867,
+      "sha256": "a56247c60175f266f365457de9155ce6a110b8386250387b9737abbdcdd3f810",
+      "source_sha256": "731108434b0a8249455a2c8193427bc01f68c8e5e7c5eb08f94443457e281a22",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C6%A1i+l%E1%BB%99i."
+    },
+    {
+      "id": "27",
+      "text": "Bảng",
+      "file": "27.wav",
+      "duration_ms": 710,
+      "sha256": "21bd4684189b2ec0f5b5c1edc831fd65e92023c09f3ba3c57454f4fb17e4992c",
+      "source_sha256": "03e1ff62d171c56d5099ac7ffca142371e76cc16f4957a4ee9049ad34695ea66",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%E1%BA%A3ng."
+    },
+    {
+      "id": "28",
+      "text": "Bảo vệ",
+      "file": "28.wav",
+      "duration_ms": 882,
+      "sha256": "4ccdd877d4b4db29df73e865b69df28a6b0706e0e58688fdef3f4483e3821160",
+      "source_sha256": "750d87e697576c814337d61b88e5b624604f11ab04086a6b3e9399134c81b877",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%E1%BA%A3o+v%E1%BB%87."
+    },
+    {
+      "id": "29",
+      "text": "Bận",
+      "file": "29.wav",
+      "duration_ms": 585,
+      "sha256": "e1d091245b6908666f627e03b45cd94244fdb38d8666a80379b8b6fa3f0cc42e",
+      "source_sha256": "9c39cf05d907670dc1ee6a4060292b9f0c2c1d3c326004bb8d921e4a9c85b8a9",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%E1%BA%ADn."
+    },
+    {
+      "id": "30",
+      "text": "Bắt buộc",
+      "file": "30.wav",
+      "duration_ms": 799,
+      "sha256": "b5f92c027260853bead9ab3e0e256a3ca18eb64458262205960d4b9224e79154",
+      "source_sha256": "83cd1d77010105cd7c174fe90a8d4be1b6ed2a3c023cd1e540239ab4c76a48ad",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%E1%BA%AFt+bu%E1%BB%99c."
+    },
+    {
+      "id": "31",
+      "text": "Bắt chước",
+      "file": "31.wav",
+      "duration_ms": 842,
+      "sha256": "40ac3d3a3b1d11d6598932493b50d83bf1124b0c58ae4440609ad855f899cf8a",
+      "source_sha256": "2ce059e930a879daa61cfc80d0a9dbaaa1464ec9cc63e750c81da2946b072d1b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%E1%BA%AFt+ch%C6%B0%E1%BB%9Bc."
+    },
+    {
+      "id": "32",
+      "text": "Bệnh viện",
+      "file": "32.wav",
+      "duration_ms": 866,
+      "sha256": "edbee34a30ffcddd7a7cace7456dcc8377a9b80083cb2a82fd64101441cfac7f",
+      "source_sha256": "84308ae94faf154c3b1a4f0ce13834a249f1c0d278cbcf2ef7c20bab0fb402d0",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%E1%BB%87nh+vi%E1%BB%87n."
+    },
+    {
+      "id": "33",
+      "text": "Bố",
+      "file": "33.wav",
+      "duration_ms": 720,
+      "sha256": "c20f3b4513d9c77af65f056a46e35d5aa1f0b8bc1b0d4b9f5a0dbafb901b7417",
+      "source_sha256": "b8eea47ff0acea311793eea964b3b59cd9d752a7923c18638ecc548627d3dfcf",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%E1%BB%91."
+    },
+    {
+      "id": "34",
+      "text": "Ca sĩ",
+      "file": "34.wav",
+      "duration_ms": 961,
+      "sha256": "a33e7f898eebff2ea031f04c9e812e2096a22bd48a2177cadfb9846a22e3508c",
+      "source_sha256": "8ede3f117eb6dfa9c1b29b1b4c9b30c517e919d0d92c5b9f4a2e7d97af58539b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ca+s%C4%A9."
+    },
+    {
+      "id": "35",
+      "text": "Cao (người)",
+      "file": "35.wav",
+      "duration_ms": 1404,
+      "sha256": "7731add262a5d6ac28adea68d5b0a286f05c9a80f793de69a628813b69200940",
+      "source_sha256": "560e681346ef354465490498737a86d9157ab9a4e6905850dc682cf415bf44fe",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Cao+%28ng%C6%B0%E1%BB%9Di%29."
+    },
+    {
+      "id": "36",
+      "text": "Cao (đồ vật)",
+      "file": "36.wav",
+      "duration_ms": 1381,
+      "sha256": "10130a7d1e460783780363c3790d40eabeca875e7646e3c1cd00a5871a74d498",
+      "source_sha256": "849c1e58828f6f3f30369494bef083302cf37ec87b2d6e51242debae2c7787f5",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Cao+%28%C4%91%E1%BB%93+v%E1%BA%ADt%29."
+    },
+    {
+      "id": "37",
+      "text": "Cay",
+      "file": "37.wav",
+      "duration_ms": 722,
+      "sha256": "c19a495e2114cd7f9f8d9150c6012a53b5069e59c86f8108b79b6a64cb16c807",
+      "source_sha256": "24be234ea8b93c1a4c1c17dc91a3f8f74f29499b2b31c6fd606394fd9a99db45",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Cay."
+    },
+    {
+      "id": "38",
+      "text": "Cho",
+      "file": "38.wav",
+      "duration_ms": 712,
+      "sha256": "3ab6a74eed2f87a37142ff227b69449e166e7ba9fda95f1754f4eac608df2fdd",
+      "source_sha256": "cea2a9b868b951bd86700d4e9855650e08b7ecf40f78807e3cf083b2f3689003",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Cho."
+    },
+    {
+      "id": "39",
+      "text": "Chua",
+      "file": "39.wav",
+      "duration_ms": 743,
+      "sha256": "66daaebb5553242e0bfddd3b033b651bee9d99aa5bc1435a52fdc9a2a5fbc773",
+      "source_sha256": "5c45ac6b614dbd80a0295ff93e88640943b7c4beb97a4095548673187dff26f1",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Chua."
+    },
+    {
+      "id": "40",
+      "text": "Cháu",
+      "file": "40.wav",
+      "duration_ms": 776,
+      "sha256": "ed9169d058cfbb1c2d24ddd2dce1b4ba95e9ea463a667511e0eaa05c02bcd85e",
+      "source_sha256": "ed6aaa2dd982c8cf7a6905955451b71b78b9507314eee7b6840bb70f8d4d0b74",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ch%C3%A1u."
+    },
+    {
+      "id": "41",
+      "text": "Chìa khóa",
+      "file": "41.wav",
+      "duration_ms": 1072,
+      "sha256": "534911066b6954bb64b6a1e168409505839b9ce553b349d867dc8f0a614c3fb0",
+      "source_sha256": "889b3c0d5fb25342868082b32f1b6d2f43a985b0978a6b3841febb3a9b601ca8",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ch%C3%ACa+kh%C3%B3a."
+    },
+    {
+      "id": "42",
+      "text": "Chú",
+      "file": "42.wav",
+      "duration_ms": 754,
+      "sha256": "5b7dcda8e2770ca782c218e9f5f2055fe3f711e7085444419ca8382066404bfe",
+      "source_sha256": "f2eba993bfb2b6f12295e9c75a377751817237935220adf96531132bca8844b3",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ch%C3%BA."
+    },
+    {
+      "id": "43",
+      "text": "Chú ý",
+      "file": "43.wav",
+      "duration_ms": 900,
+      "sha256": "7aa510c49445bb9c280f28e639ec4164760169ae915962905204cc698a601a3a",
+      "source_sha256": "49627f788d22e9fcfc9a808327da7d37c2a8da415025345f7f1959946213aa18",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ch%C3%BA+%C3%BD."
+    },
+    {
+      "id": "44",
+      "text": "Chăm chỉ",
+      "file": "44.wav",
+      "duration_ms": 1008,
+      "sha256": "57fe4eb589c6c8754a43457f255ad46d2878c40c39828e110089c872915d044f",
+      "source_sha256": "c9cb407d0a8ba26ab51589fbab6751dbd124fc062ccaead4607047c946983793",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ch%C4%83m+ch%E1%BB%89."
+    },
+    {
+      "id": "45",
+      "text": "Chơi cờ",
+      "file": "45.wav",
+      "duration_ms": 961,
+      "sha256": "f0c0e5b132b5e73093cba06476f2aedb699e0e11b6089695a14bf1f0786b4ca7",
+      "source_sha256": "2a0a7688e6811b6e5cedb93bf52ac0c0c85b81e0cd86d5548c5df76a215db362",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ch%C6%A1i+c%E1%BB%9D."
+    },
+    {
+      "id": "46",
+      "text": "Chạy",
+      "file": "46.wav",
+      "duration_ms": 661,
+      "sha256": "4b33a1ab55902847876b2ef0586dae63ef58e7ccfce025983eb99506f78face2",
+      "source_sha256": "ee1f16809d8e434890c56c2b5318577285b808427865e562fba7e9564536cfcb",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ch%E1%BA%A1y."
+    },
+    {
+      "id": "47",
+      "text": "Chậm chạp",
+      "file": "47.wav",
+      "duration_ms": 919,
+      "sha256": "015dc31a7731327822fe21852ebb81e1dc0359eb4f439634a7c08e479364513f",
+      "source_sha256": "2fef0163f157a8194d6953a93cc8acbf069778440e9c2cd67ea8ceb370e01e31",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ch%E1%BA%ADm+ch%E1%BA%A1p."
+    },
+    {
+      "id": "48",
+      "text": "Chật",
+      "file": "48.wav",
+      "duration_ms": 577,
+      "sha256": "021bf96b0210f68f4b0f38431ef71871782d29a1af32dc66cb6a6ad0b422a48a",
+      "source_sha256": "89a7fb5ef659e9fbb7a4e8b0eebfdd94f77a4ef5a11147ca0cbdea356445932c",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ch%E1%BA%ADt."
+    },
+    {
+      "id": "49",
+      "text": "Chết",
+      "file": "49.wav",
+      "duration_ms": 611,
+      "sha256": "55caedb5e5a125723d251f8c31a0e3f1efbdbbe70d8c2cb292df7840d5a350e3",
+      "source_sha256": "b89ff766dd1b94343d0f1ee19299f713727f43b3163b8cd2346c32ec66384ad0",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ch%E1%BA%BFt."
+    },
+    {
+      "id": "50",
+      "text": "Chị",
+      "file": "50.wav",
+      "duration_ms": 691,
+      "sha256": "dd2bb38fc76078749ea2ebc0b5bf5f6a93a6de504973403b3a570e2e971cf722",
+      "source_sha256": "5f8ff0a346469cc07c9138ec6fe88cc9f6a7e37daf9ca488dc45d6d92045e76a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ch%E1%BB%8B."
+    },
+    {
+      "id": "51",
+      "text": "Chồng",
+      "file": "51.wav",
+      "duration_ms": 729,
+      "sha256": "64ade0c3ac4f0fdbd424428c3db77b949023fc17b4e55dd1197ebe2e97a8b0b0",
+      "source_sha256": "80011211a065542653661e18c8113210592c8f48fb2db6ea142211034843cd6a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ch%E1%BB%93ng."
+    },
+    {
+      "id": "52",
+      "text": "Chợ",
+      "file": "52.wav",
+      "duration_ms": 677,
+      "sha256": "11c0909e0b8d385493b6e64d42560cbb0983751970dbe05b30651bd9ee86b9c3",
+      "source_sha256": "6c9624f0eee109823f13651b7a7d42ef49ce5de5b800b6caa5ee343998cd9f13",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ch%E1%BB%A3."
+    },
+    {
+      "id": "53",
+      "text": "Chụp hình",
+      "file": "53.wav",
+      "duration_ms": 916,
+      "sha256": "8124664f82280744b0d85054dd2f11cb1eb0e59067fe104c39beddb7641dcfa9",
+      "source_sha256": "50154582a277fa261e37b2f38691fc5254eba77cf2c166921629f1b46682fb44",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ch%E1%BB%A5p+h%C3%ACnh."
+    },
+    {
+      "id": "54",
+      "text": "Chủ nhật",
+      "file": "54.wav",
+      "duration_ms": 790,
+      "sha256": "863db78958dad59c0b546507f40ea890b3a67cc32515d282aec25469352958e8",
+      "source_sha256": "5a9f1f09dc1014121182d05197996051d47fd73ac5e1aeed95d48822be7d6d76",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ch%E1%BB%A7+nh%E1%BA%ADt."
+    },
+    {
+      "id": "55",
+      "text": "Chủ tịch",
+      "file": "55.wav",
+      "duration_ms": 768,
+      "sha256": "35aca413d4726251288bbdec47e0b2ff505edd8d0a878f3f51cdd2a1fd2dd503",
+      "source_sha256": "e8cc09f67e9972e873be4e985b5d6b415a6d6d5b8a3a5f0ac4e17b6656f4a232",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ch%E1%BB%A7+t%E1%BB%8Bch."
+    },
+    {
+      "id": "56",
+      "text": "Con bò",
+      "file": "56.wav",
+      "duration_ms": 965,
+      "sha256": "2fb6509731eae6041b5195f6202d9603f94cd101f4080feca946530ff9c3bade",
+      "source_sha256": "a02225235fa5ce11bdf0a7e24d78dd66e312da4d373650317d963aca90db45e0",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Con+b%C3%B2."
+    },
+    {
+      "id": "57",
+      "text": "Con chó",
+      "file": "57.wav",
+      "duration_ms": 1036,
+      "sha256": "5cfcf244f12830fdd304de20be3d418c811a76ca420077300d03cec9b2d550e4",
+      "source_sha256": "ef4c537cb21705d61e84939a61700150333f96485f740fd71b51c8d59a50150c",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Con+ch%C3%B3."
+    },
+    {
+      "id": "58",
+      "text": "Con dê",
+      "file": "58.wav",
+      "duration_ms": 956,
+      "sha256": "09a7d43acd7ed1379cf5aafe3ada4150fea723d158229991593c413b8e068b97",
+      "source_sha256": "bae567c82633bd02cf90ad245bd4f514914883989e5c913467b62811f7f3b080",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Con+d%C3%AA."
+    },
+    {
+      "id": "59",
+      "text": "Con gà",
+      "file": "59.wav",
+      "duration_ms": 973,
+      "sha256": "469e18e02d2f2d0e1ffda8ef27c1996d58b66ef513038fa4c43975479829e0fb",
+      "source_sha256": "18561a892c372170488a7e3b5179b41025af7fd54c69d0822b07e5b8f8c3ce65",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Con+g%C3%A0."
+    },
+    {
+      "id": "60",
+      "text": "Con gái",
+      "file": "60.wav",
+      "duration_ms": 964,
+      "sha256": "09a8e5082525fbf5cced4b09500d8c79984512edec59fd6211a0b28e0d0040a7",
+      "source_sha256": "f44a9bed253393cf1870b1387715ccd8fc05f029e5d970e6378b756c02e1bc86",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Con+g%C3%A1i."
+    },
+    {
+      "id": "61",
+      "text": "Con heo",
+      "file": "61.wav",
+      "duration_ms": 967,
+      "sha256": "237bbae486565a8a139c4a8064648735b0693e2615230074384b0d3d5c044f40",
+      "source_sha256": "6960c55dc7e4fdb5872c641631b61c967eae4bc71790f3d59c72bbf8a1da24bf",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Con+heo."
+    },
+    {
+      "id": "62",
+      "text": "Con mèo",
+      "file": "62.wav",
+      "duration_ms": 962,
+      "sha256": "4f6a66638c3945ed09815bc9b61c7b12b749d1b3713bdc07a1d058f48430407c",
+      "source_sha256": "1288dae2eb56ca07e38e61325bb6ade15d58f095dd06cdb741db61641219a4de",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Con+m%C3%A8o."
+    },
+    {
+      "id": "63",
+      "text": "Con rùa",
+      "file": "63.wav",
+      "duration_ms": 990,
+      "sha256": "86d20bfa9f143387ed7811961f128b2b0cb25845ce1adef111a89b60cc247ee2",
+      "source_sha256": "3335840f654e9fbcbc18737de39f5f7b577abccd558d2862637e9b8289960082",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Con+r%C3%B9a."
+    },
+    {
+      "id": "64",
+      "text": "Con thỏ",
+      "file": "64.wav",
+      "duration_ms": 980,
+      "sha256": "779ea51a5e71b8c28fa8299c60ac72bb7a113b6d995da12c43b2c9855d8551e5",
+      "source_sha256": "bb8ef8ca4b4942185f6165062ce56bce7080107fe13fe80fe336fc7ef1f0c268",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Con+th%E1%BB%8F."
+    },
+    {
+      "id": "65",
+      "text": "Con trai",
+      "file": "65.wav",
+      "duration_ms": 975,
+      "sha256": "b5ec56c015e8b75ad46c6c25f50e369d5a49335e4a14b34bf697fe44ff2d53f5",
+      "source_sha256": "dbb2fa6733172035c246e618c41b3d4449c2ab5b3d5ef84ea8532d9be5363dca",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Con+trai."
+    },
+    {
+      "id": "66",
+      "text": "Con trâu",
+      "file": "66.wav",
+      "duration_ms": 1008,
+      "sha256": "81d1308acdc458a8dedb079662e3a1444607a2197cfdd587396a93c936e025b4",
+      "source_sha256": "804aec28acd432a71d612a36a39e4d61a0512557cb8017a9597cc0af6061d786",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Con+tr%C3%A2u."
+    },
+    {
+      "id": "67",
+      "text": "Con vịt",
+      "file": "67.wav",
+      "duration_ms": 814,
+      "sha256": "9a60b414daf65a68be4d40f7c77ecc8cea79f00545c285060fffe021f7ee836b",
+      "source_sha256": "e0c719626a066bf6fbffbb23daa5315cda66e5a81505d9116673c107b9b4769c",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Con+v%E1%BB%8Bt."
+    },
+    {
+      "id": "68",
+      "text": "Cung cấp",
+      "file": "68.wav",
+      "duration_ms": 785,
+      "sha256": "1b9c7d5034bf1bba41ce0751d406581ed9c887939a1defadf737db6893ee1c3e",
+      "source_sha256": "489bd7da798353d1cf7731580a9f6c13466665c26c123897f8ed13c4dba7f587",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Cung+c%E1%BA%A5p."
+    },
+    {
+      "id": "69",
+      "text": "Cà phê",
+      "file": "69.wav",
+      "duration_ms": 948,
+      "sha256": "880d605cff4a0f985af40a7854813124180efb949788e9b27c971faea038b61c",
+      "source_sha256": "bed092cfafdf2e22d2dc51ba09b5894f2582fe9e9b2b02f2eaab5d6753272780",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%C3%A0+ph%C3%AA."
+    },
+    {
+      "id": "70",
+      "text": "Cái bàn",
+      "file": "70.wav",
+      "duration_ms": 932,
+      "sha256": "8d2acf21f306689e71ffbe013989b00a9b684be74fc38cc99355305240fffb20",
+      "source_sha256": "fb4d97689974e99e540f12f868bda15bd327a774d146cbccaf761d6dfff62351",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%C3%A1i+b%C3%A0n."
+    },
+    {
+      "id": "71",
+      "text": "Cái chảo",
+      "file": "71.wav",
+      "duration_ms": 1032,
+      "sha256": "1493e1f9c2a1b22df3c32f67afd01a5108c0c809176f141fdc99135813a13fa9",
+      "source_sha256": "8d00cd1a6b3e580cf27f69ec1e567563d558428cf2cf458151133e449d8fbfc5",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%C3%A1i+ch%E1%BA%A3o."
+    },
+    {
+      "id": "72",
+      "text": "Cái cửa",
+      "file": "72.wav",
+      "duration_ms": 991,
+      "sha256": "d46b23a0e93dd581c3732459dbfe470ac61ab92f11101742f469f9bdca4a3cad",
+      "source_sha256": "e4d2959e80d0918e20793996316c3e920b2b739a60def64199e7f67f3ea44066",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%C3%A1i+c%E1%BB%ADa."
+    },
+    {
+      "id": "73",
+      "text": "Cái ghế",
+      "file": "73.wav",
+      "duration_ms": 967,
+      "sha256": "4dc31b9371b0ed8eec48a7be88cbe4b2496facc74e35a5dc31e7d62066c99faf",
+      "source_sha256": "01c5e87bf026235f565ef4ead968fa52bdc2590a18a99b3ece9af938cf67f40d",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%C3%A1i+gh%E1%BA%BF."
+    },
+    {
+      "id": "74",
+      "text": "Cái kéo",
+      "file": "74.wav",
+      "duration_ms": 1029,
+      "sha256": "9f6a5e68b69db4bc1739685c8aa7dabbf5ee809fd611ab9557cc853c50888fec",
+      "source_sha256": "0e5dc42e8c242d882bf2fb94a0a01fd53bee62415b699ba70ea56450bdaba002",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%C3%A1i+k%C3%A9o."
+    },
+    {
+      "id": "75",
+      "text": "Cái nồi",
+      "file": "75.wav",
+      "duration_ms": 933,
+      "sha256": "7d12c4012212f4e4a02340d44b042e81b671e734c312d2e7e5973051132b783a",
+      "source_sha256": "ad7b7c718bf66ca847b568cdd48e458b5fc966c297a996b10d1de11bed989447",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%C3%A1i+n%E1%BB%93i."
+    },
+    {
+      "id": "76",
+      "text": "Cái quần",
+      "file": "76.wav",
+      "duration_ms": 945,
+      "sha256": "ebf56dbdcb058cc6286c969f39dce763656c323e20a914ca9e4d4543aa333598",
+      "source_sha256": "255ab01dcdad3b19592fcfa9419276f6297f4a077451677a97157e62685dedc8",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%C3%A1i+qu%E1%BA%A7n."
+    },
+    {
+      "id": "77",
+      "text": "Cái áo",
+      "file": "77.wav",
+      "duration_ms": 954,
+      "sha256": "0580cfae880b9792d9b1982bafd3a0c33c06c61c646e03182b72dfae043b424c",
+      "source_sha256": "35e599a0a495758651149dfd79ac8e3a40fb2494a4412b8617fee9dcfef99fd5",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%C3%A1i+%C3%A1o."
+    },
+    {
+      "id": "78",
+      "text": "Cái đèn",
+      "file": "78.wav",
+      "duration_ms": 934,
+      "sha256": "0264b462d423fb01aa981a6eef9d98989abceb8dd83e2d1ffa6064528dfd471f",
+      "source_sha256": "1f659a08a6875cff7fd13cc753cfb23a85f276c5e967a9263c06f94838669bb8",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%C3%A1i+%C4%91%C3%A8n."
+    },
+    {
+      "id": "79",
+      "text": "Có",
+      "file": "79.wav",
+      "duration_ms": 765,
+      "sha256": "c34fd4e57ebcc64f023e5520b95a60747ab0aaa7dbfa1263688651bf619501a1",
+      "source_sha256": "5913fab98b9d69168e9dc20dd09bd27244c4167c92f1ceccf9435dcb52b9ff14",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%C3%B3."
+    },
+    {
+      "id": "80",
+      "text": "Cô",
+      "file": "80.wav",
+      "duration_ms": 695,
+      "sha256": "b7f61af57aa61d2593fca53d74726381ae7d3b464ce637655b1e8d95804ae175",
+      "source_sha256": "0d52de1d44db76ce51d8b8ef04f21f7299855063d8acc4c6780fe3294748d6dc",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%C3%B4."
+    },
+    {
+      "id": "81",
+      "text": "Công ty",
+      "file": "81.wav",
+      "duration_ms": 889,
+      "sha256": "8b5e41def0e05f3f79b482d08be8836993abf63624cfda104706ace685a4fb48",
+      "source_sha256": "e7e7dadea18fa768d6375d53c3354314d1c9454276b2eb46feb2f93a68461b7f",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%C3%B4ng+ty."
+    },
+    {
+      "id": "82",
+      "text": "Công viên",
+      "file": "82.wav",
+      "duration_ms": 930,
+      "sha256": "a6e0efdb0f71eb8447449512ba087e84c4f459033ef6450f3d666e95f053ddfd",
+      "source_sha256": "c79cca30ce97e53c3575b02de318f60446c04427e18c771a15e3907f281e2b02",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%C3%B4ng+vi%C3%AAn."
+    },
+    {
+      "id": "83",
+      "text": "Cũ",
+      "file": "83.wav",
+      "duration_ms": 725,
+      "sha256": "9e83c98013d8c80292d5375d40da5fdd43c86b73e5ca7e84cb40644bae394104",
+      "source_sha256": "ed199acf297f98ecaff9212ca426143f3d61235cdebc203d09adf88517c7bf14",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%C5%A9."
+    },
+    {
+      "id": "84",
+      "text": "Cười",
+      "file": "84.wav",
+      "duration_ms": 792,
+      "sha256": "35e31167705c710204a2c321aeaa5e2d1c67b4de76c199c972fb27a429cc45be",
+      "source_sha256": "2a16a603d4d7953cb398c8d1c42f5abaa193ef3e51e9f4ef790dcd972d3cfd37",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%C6%B0%E1%BB%9Di."
+    },
+    {
+      "id": "85",
+      "text": "Cảm thấy",
+      "file": "85.wav",
+      "duration_ms": 935,
+      "sha256": "bf522287c9b9b0d66310fc3a3ce958f72bfc4228c51d8514c2d714b41534c63a",
+      "source_sha256": "8ed1545a4f0709a326593f7d491fa5c9749bc3c0701480464ca807b65c797e83",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%E1%BA%A3m+th%E1%BA%A5y."
+    },
+    {
+      "id": "86",
+      "text": "Cảm ơn",
+      "file": "86.wav",
+      "duration_ms": 889,
+      "sha256": "6de5369d3cee764e157177ef0f46c70669c3cccac5a9cf30efb80a68ae0acb92",
+      "source_sha256": "89b482f0d787d5af209ee2541bdb4e4de7e19bf5fe810de3a93952c1a12a7602",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%E1%BA%A3m+%C6%A1n."
+    },
+    {
+      "id": "87",
+      "text": "Cần",
+      "file": "87.wav",
+      "duration_ms": 721,
+      "sha256": "fcf00bd240fe29ea6ca11e737385e59c80eec39d7ac5aab4b6ed3c6547a7cc18",
+      "source_sha256": "08aa2f0ca8aafa33176949e5ff28d335ac4626905b75fde665af851db159e768",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%E1%BA%A7n."
+    },
+    {
+      "id": "88",
+      "text": "Cầu lông",
+      "file": "88.wav",
+      "duration_ms": 952,
+      "sha256": "a9a63a5a18fd65d29804e150b139d5581b01720b95bfe9079591917775fbc346",
+      "source_sha256": "c45633f4b10032f982ec04c692d2392ff143e3b6f40855ce89ec9258a1caf3da",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%E1%BA%A7u+l%C3%B4ng."
+    },
+    {
+      "id": "89",
+      "text": "Cậu",
+      "file": "89.wav",
+      "duration_ms": 638,
+      "sha256": "e7187712ecad1e20e0606191b81e8385922545ebe8d601aeb602a4f61dcbc2f8",
+      "source_sha256": "a8fdeb7fb1992b62717ca2956a7be14aeabe8be3ab2cb40fedb650028e86c949",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%E1%BA%ADu."
+    },
+    {
+      "id": "90",
+      "text": "Cắm trại",
+      "file": "90.wav",
+      "duration_ms": 923,
+      "sha256": "a9f4afd4ab8a7950805641b3bc9a86fdf8064fdf563472d110e61374164a106f",
+      "source_sha256": "faec0df60a55698dbc7134014a4151d105f36809e769c8684c07718b5ec237e8",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%E1%BA%AFm+tr%E1%BA%A1i."
+    },
+    {
+      "id": "91",
+      "text": "Cục tẩy",
+      "file": "91.wav",
+      "duration_ms": 953,
+      "sha256": "0e639f496e789457dbe895c663213753d538b350e269f0678302be33e6bc708c",
+      "source_sha256": "4bc801e38d845069dafa0f3434bc9819c1b29f803bc95863e63f44cb8323193c",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%E1%BB%A5c+t%E1%BA%A9y."
+    },
+    {
+      "id": "92",
+      "text": "Cứng",
+      "file": "92.wav",
+      "duration_ms": 686,
+      "sha256": "be18d0ff9b141343501e4bc9a5523bcbb963dec811a054a13b0a1cc2652b1a44",
+      "source_sha256": "79b3237ce5cc85f8fab41520f0f5e604fea3fb4c37964af2213f110b3ec766e4",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%E1%BB%A9ng."
+    },
+    {
+      "id": "93",
+      "text": "Cửa sổ",
+      "file": "93.wav",
+      "duration_ms": 936,
+      "sha256": "bf2e2fbc16433309c15e582781bf84e9312010d6e09a3ca35ed5cdee6958759d",
+      "source_sha256": "c19a98c561a00fd58f67c39cc797657aea5198155d240428b14a4753ca23ab54",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%E1%BB%ADa+s%E1%BB%95."
+    },
+    {
+      "id": "94",
+      "text": "Diễn viên",
+      "file": "94.wav",
+      "duration_ms": 956,
+      "sha256": "da278b3251b5f375c5e689ba528dab7d63b85d19996611133104f350c2e06154",
+      "source_sha256": "3043806732051c33389cff7f7cac9467395675eac3bc93216a7cca25f3aae88b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Di%E1%BB%85n+vi%C3%AAn."
+    },
+    {
+      "id": "95",
+      "text": "Dài",
+      "file": "95.wav",
+      "duration_ms": 795,
+      "sha256": "0c7a82c5a94c80d79ee838c1efd33e5cc7dd6be22c7652c987b0d2afa1079c41",
+      "source_sha256": "e6cbee33e6a5ed040408f49106a4986ea67b813eefdb7da5f10f0b6c95412263",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=D%C3%A0i."
+    },
+    {
+      "id": "96",
+      "text": "Dây chuyền",
+      "file": "96.wav",
+      "duration_ms": 1016,
+      "sha256": "62e3f53df4d6dac084064dca9509893005c9265888100b143cab8a46f6b66ca4",
+      "source_sha256": "bf3a694ebac7d73032d802618040bc241d6d56aabe5e5fabad56b77394cceb85",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=D%C3%A2y+chuy%E1%BB%81n."
+    },
+    {
+      "id": "97",
+      "text": "Dép",
+      "file": "97.wav",
+      "duration_ms": 591,
+      "sha256": "73b0602f38b7230b0d3dbc2f911f28f096fa62077aeed2e95197f9fa533bac11",
+      "source_sha256": "0a7b67983b129394162a5fa10fd8e9f9508c6420ad5e42d45704cd033dddc3a7",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=D%C3%A9p."
+    },
+    {
+      "id": "98",
+      "text": "Dì",
+      "file": "98.wav",
+      "duration_ms": 738,
+      "sha256": "e1395a971acdeea2238a30c36f7f9dbd851627df9c5570864df619ce7ef18fac",
+      "source_sha256": "6d3e31baa0e8dc077f7cf8e98b0aad43d5f78a6ed6a64de22ca345f599843fc0",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=D%C3%AC."
+    },
+    {
+      "id": "99",
+      "text": "Dũng cảm",
+      "file": "99.wav",
+      "duration_ms": 953,
+      "sha256": "1ed81c4fc129e287ca58f5fdea79829d0b6ef6ddb013679d03b7f0d14c5a5e40",
+      "source_sha256": "742247ca82998090571a21c5017d20d308909306187dc2023fa9e578d672eb36",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=D%C5%A9ng+c%E1%BA%A3m."
+    },
+    {
+      "id": "100",
+      "text": "Dơ",
+      "file": "100.wav",
+      "duration_ms": 712,
+      "sha256": "9ed0c80fc8ddc192f1faf348b3eae9574b509bbd8b29dcd6920ff3e1f9bb6b17",
+      "source_sha256": "8ca5e52b870d222cb8f880056fc22b937ccba87476a2f04af21bfbbe8f0d0a41",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=D%C6%A1."
+    },
+    {
+      "id": "101",
+      "text": "Dễ",
+      "file": "101.wav",
+      "duration_ms": 777,
+      "sha256": "ff8ad65529f2388a154e6a81d0a550e86e9cbf114c02dcbcfbafd4137823e7a6",
+      "source_sha256": "f406f2cc1e21d1327d6cfd3bc192ea2fcaa72587904a6e90d712797f08845b39",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=D%E1%BB%85."
+    },
+    {
+      "id": "102",
+      "text": "Dỗi",
+      "file": "102.wav",
+      "duration_ms": 748,
+      "sha256": "c0dae11c8d7f3991720da91797a49fc21c67702c99a848e07b2061db8a5d659f",
+      "source_sha256": "e366b813ec7f41e728d660e6c292683fbb3f83767e7f1064a9f89b9436257dd7",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=D%E1%BB%97i."
+    },
+    {
+      "id": "103",
+      "text": "Dở",
+      "file": "103.wav",
+      "duration_ms": 740,
+      "sha256": "fb5a9dea55df46d4f7264a4cdcb66e850606177e335b0789c9e5913989afa60d",
+      "source_sha256": "0c6a0ae7c898fcae9b053603982a706e078dcb96ac9a0e5e3534e2ca0e66ec84",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=D%E1%BB%9F."
+    },
+    {
+      "id": "104",
+      "text": "Dụng cụ học tập",
+      "file": "104.wav",
+      "duration_ms": 1270,
+      "sha256": "8e579861ffe5568af828bc37ce1480e689907ba284845cae8c2ed11b83f206e3",
+      "source_sha256": "0f1dccf41ef85859bf845207baf1b50720c1ac9b223b3e0cf3d6e2a3521faee4",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=D%E1%BB%A5ng+c%E1%BB%A5+h%E1%BB%8Dc+t%E1%BA%ADp."
+    },
+    {
+      "id": "105",
+      "text": "Dừng lại",
+      "file": "105.wav",
+      "duration_ms": 859,
+      "sha256": "4d195f159314d612b5503e89c3ce678ce8894e34c2315d32aa3e8e48d28f7c32",
+      "source_sha256": "d6617e83534b21604adf8a4215e416fb3940da37185d08dd97b9b56227ebf0c8",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=D%E1%BB%ABng+l%E1%BA%A1i."
+    },
+    {
+      "id": "106",
+      "text": "Dữ",
+      "file": "106.wav",
+      "duration_ms": 751,
+      "sha256": "75d7b64cfdd9a5cf9e865d1000d76becdb87dec90bd38bd9bc1b237146d21b65",
+      "source_sha256": "f34fe9236b4b22c84fed91c83866fb39770d4606eac9806e50e2a56b5be9a66d",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=D%E1%BB%AF."
+    },
+    {
+      "id": "107",
+      "text": "Em",
+      "file": "107.wav",
+      "duration_ms": 618,
+      "sha256": "17a922b117427989905be15f0e4a5e63d21abaf86ca04c85318f7e99e2bfa520",
+      "source_sha256": "405f3d012500b78cf395f98cc4b0e94451c6212ba3354cee62196627afcd88cd",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Em."
+    },
+    {
+      "id": "108",
+      "text": "Ghét",
+      "file": "108.wav",
+      "duration_ms": 571,
+      "sha256": "ece08a32a83e8f5f4a8a7ae17bee2c2da958916321aec6976c42ddd671b813cb",
+      "source_sha256": "e0fb439318c66ad6d5c9f589a3cc0434489a4f78091b17694f2f53fee7dc5326",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Gh%C3%A9t."
+    },
+    {
+      "id": "109",
+      "text": "Già",
+      "file": "109.wav",
+      "duration_ms": 733,
+      "sha256": "1bf106878b342d1f6750196b2b018826b5d7b70f3f15239ff65131870305b697",
+      "source_sha256": "565f68843e1bc3343bed504f7c9d1439643f5a9024f4a6943aa24de24bcff793",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Gi%C3%A0."
+    },
+    {
+      "id": "110",
+      "text": "Giàu",
+      "file": "110.wav",
+      "duration_ms": 743,
+      "sha256": "056f700119910f204733fa3f5f116683943f1a6a1174f28341af9ad6b26443f8",
+      "source_sha256": "0d3e03fdf4e95aed41e636b0682bd329e9b6afa2e09691622ff3747195021546",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Gi%C3%A0u."
+    },
+    {
+      "id": "111",
+      "text": "Giày",
+      "file": "111.wav",
+      "duration_ms": 724,
+      "sha256": "aab715c0d38b5ab85371795fab7aa1795b5d497ec4630d0588386e92672a851b",
+      "source_sha256": "1813d597e04c402d82da8c0fa847b3fcf3254ac2ed9ce591467396ca8fdbc608",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Gi%C3%A0y."
+    },
+    {
+      "id": "112",
+      "text": "Giám đốc",
+      "file": "112.wav",
+      "duration_ms": 806,
+      "sha256": "04a41d6b4ec7db62eff910619c39eccabc8327e9354a712c592ef0bf44d362fe",
+      "source_sha256": "53df00c179189605dc8e756ebc13597e971b9a5171c45fd3a022c749c2b0c7e7",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Gi%C3%A1m+%C4%91%E1%BB%91c."
+    },
+    {
+      "id": "113",
+      "text": "Giáng sinh",
+      "file": "113.wav",
+      "duration_ms": 1032,
+      "sha256": "c71879cf5f4459c1c5f598edcc7e629d82fe7d9b397a75b60415045f48c6564b",
+      "source_sha256": "e7013ba32f57b597cefc70f52c1255be10345b32d2378836e531cd2806fb74cc",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Gi%C3%A1ng+sinh."
+    },
+    {
+      "id": "114",
+      "text": "Giây",
+      "file": "114.wav",
+      "duration_ms": 717,
+      "sha256": "ea187460d225c73a573ccc26ab66a359cb8491482e7bf60742df160fc1dcaa27",
+      "source_sha256": "d474c1fccdb7232a8c02bb4c239b3733637565ef60a346487959fd5179cbd3ff",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Gi%C3%A2y."
+    },
+    {
+      "id": "115",
+      "text": "Gió",
+      "file": "115.wav",
+      "duration_ms": 794,
+      "sha256": "e4d4faeadac82dcf29eba4a527f3de9ca675bc52ac5ede12daf8440782c4862b",
+      "source_sha256": "b44c3d5386c5368da1012190f714832238fce95de910c4d75d852b43316fe1eb",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Gi%C3%B3."
+    },
+    {
+      "id": "116",
+      "text": "Giúp đỡ",
+      "file": "116.wav",
+      "duration_ms": 920,
+      "sha256": "a9fbacfcfefa2a96f62339005baebd07c45c5cba7b146fc9378095623e9cccf1",
+      "source_sha256": "2a1cd418c450b1b13002e90aff00220ae053f27edabc15bba950c2b14a654257",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Gi%C3%BAp+%C4%91%E1%BB%A1."
+    },
+    {
+      "id": "117",
+      "text": "Giường",
+      "file": "117.wav",
+      "duration_ms": 759,
+      "sha256": "9ea8a89083137455425228c09d9f3fd3a7b05244ce52f35649a4cdd4de064e04",
+      "source_sha256": "8a34ab7f38a1068d41b3fabd34462d11c7113bca825cda41f0a100dea98853b1",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Gi%C6%B0%E1%BB%9Dng."
+    },
+    {
+      "id": "118",
+      "text": "Giấy nháp",
+      "file": "118.wav",
+      "duration_ms": 900,
+      "sha256": "f90410126724d25871678481ac2bf99260b020ed4e20948fe77afc0b2d515d9d",
+      "source_sha256": "378ddc427851a719392a2d3a2129a28d7a620339800bcfcd38776e5fbeaafdfe",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Gi%E1%BA%A5y+nh%C3%A1p."
+    },
+    {
+      "id": "119",
+      "text": "Giặt đồ",
+      "file": "119.wav",
+      "duration_ms": 964,
+      "sha256": "a6f7331749ceb5ef84b689baeb439d1e2ef5ffa333759bf88ec3576b1520c311",
+      "source_sha256": "aefbf76c4e462e4a64722db89114aef0fd65fff8246bf991b3b85374a22adf51",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Gi%E1%BA%B7t+%C4%91%E1%BB%93."
+    },
+    {
+      "id": "120",
+      "text": "Giỏi",
+      "file": "120.wav",
+      "duration_ms": 772,
+      "sha256": "cd5eec3d7d2f55b59e24c930e452677801572296f188424e401837f66cf35fad",
+      "source_sha256": "e5d01df2774e535bd659f0f0895fa9e353ac59082bcbe88eed9b221890039426",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Gi%E1%BB%8Fi."
+    },
+    {
+      "id": "121",
+      "text": "Giới thiệu",
+      "file": "121.wav",
+      "duration_ms": 908,
+      "sha256": "8ab2e2f25f6a8c429c390ce246f94c050bc2a78eee494c4b097ef8f41d2525f9",
+      "source_sha256": "abc37ad9213993f0e5657c9338219aa21cde01cc97fac559a2579212bd52d1b6",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Gi%E1%BB%9Bi+thi%E1%BB%87u."
+    },
+    {
+      "id": "122",
+      "text": "Giờ",
+      "file": "122.wav",
+      "duration_ms": 749,
+      "sha256": "f6b046d458fe3e44458e7552b20f1e652a4e6d5f167024a39ff6fd83bc2a8a42",
+      "source_sha256": "f7c8f46250c679eaa3d7a2fbb0462ac86a7f5b9998c93840067dbf22ed62078a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Gi%E1%BB%9D."
+    },
+    {
+      "id": "123",
+      "text": "Gạo",
+      "file": "123.wav",
+      "duration_ms": 672,
+      "sha256": "93201889c649b52c6a633826832b4103ee96e553e21451eff049e0733e0fbdef",
+      "source_sha256": "14e6ad40ecf8f47d333692bfa780544c8b597f552306d25b63f3ad2d9c61053d",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=G%E1%BA%A1o."
+    },
+    {
+      "id": "124",
+      "text": "Gần",
+      "file": "124.wav",
+      "duration_ms": 703,
+      "sha256": "defd00193f485b24cd60a6fff7ee27e152e363806085f9a13c962e3eb26fd7eb",
+      "source_sha256": "12afeef1a1cfbbfb857027160736fffbe3b0317f8e90a918396919dbad823075",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=G%E1%BA%A7n."
+    },
+    {
+      "id": "125",
+      "text": "Gọi",
+      "file": "125.wav",
+      "duration_ms": 657,
+      "sha256": "ee054f4ce52e89c5d0e2d00eb0741bf13936fc61f253d1262dc5fb8b18b7390c",
+      "source_sha256": "bba2eb498896ea993f34b6cd7af16f204fbbfe235ee47477f6698cc047a864f4",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=G%E1%BB%8Di."
+    },
+    {
+      "id": "126",
+      "text": "Gối (đầu)",
+      "file": "126.wav",
+      "duration_ms": 1370,
+      "sha256": "15768ff59f235df4ba0ba6697ea8c49991a3249f6ae6a42529210a10bd50e95a",
+      "source_sha256": "5672031e5ed6f7b5165c29936afb7c907aa0d332336436f906045cd740ecf07f",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=G%E1%BB%91i+%28%C4%91%E1%BA%A7u%29."
+    },
+    {
+      "id": "127",
+      "text": "Gội đầu",
+      "file": "127.wav",
+      "duration_ms": 931,
+      "sha256": "90ea2f1e39e120bd4763e068f3f760cddfdc41aff007c4f7a54f447b7bb5e70c",
+      "source_sha256": "c354f5ab3f264fc5e2cbf2d225e0468087578dfa17f7bd15f188aebf9fc880cc",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=G%E1%BB%99i+%C4%91%E1%BA%A7u."
+    },
+    {
+      "id": "128",
+      "text": "Hay (khen)",
+      "file": "128.wav",
+      "duration_ms": 1361,
+      "sha256": "68cc8e561793a0b880763559bcbbd76863b3c10086c691516095f5d00ad0c582",
+      "source_sha256": "f074f688193d22770077c141d1d56c8272e28ccf29f4d875491bdc31e6ca551a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Hay+%28khen%29."
+    },
+    {
+      "id": "129",
+      "text": "Hiền",
+      "file": "129.wav",
+      "duration_ms": 734,
+      "sha256": "80e789ab6630994d740ab52ba7a79486d5b43e6a413641965eb5d228eefad58c",
+      "source_sha256": "5f1be089c7bee3c11571d370a72db1eb56f62ed2626ea157a054ceb9571f1a7a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Hi%E1%BB%81n."
+    },
+    {
+      "id": "130",
+      "text": "Hiệu trưởng",
+      "file": "130.wav",
+      "duration_ms": 974,
+      "sha256": "7e6d2a8b15385bfaa25e0c487847b9c9bb7b7a4e08eca7a06fb93361541cc6c7",
+      "source_sha256": "d0d10ee0fe226e12fce535802f6816b82a19691b9f942ffad08cb90afb0dc508",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Hi%E1%BB%87u+tr%C6%B0%E1%BB%9Fng."
+    },
+    {
+      "id": "131",
+      "text": "Hoàng hôn",
+      "file": "131.wav",
+      "duration_ms": 1003,
+      "sha256": "f0b97efd0ba7da7e0389b6f45c6c3cf37a5ff7a89b5bcd575b36b14e8d863a6d",
+      "source_sha256": "f2df545862d852655adbe838582e68e59f69593b5802462afbabac2c89a5b727",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ho%C3%A0ng+h%C3%B4n."
+    },
+    {
+      "id": "132",
+      "text": "Hy vọng",
+      "file": "132.wav",
+      "duration_ms": 827,
+      "sha256": "126efaf87aeecd9cf8bcb2eb5e2208dea8ccf242b825dd00bd50eba635f29049",
+      "source_sha256": "9ac14e8bf9f8b0eda479cd746ee7c191d02b67864cc24f9c6b66d55777da3223",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Hy+v%E1%BB%8Dng."
+    },
+    {
+      "id": "133",
+      "text": "Hài hước",
+      "file": "133.wav",
+      "duration_ms": 846,
+      "sha256": "0ed3afdd9fccb0ef222ee0926f04af07afa2777a0c302c74cd09481ae6b5b6bb",
+      "source_sha256": "1f0c0a7d411b3bcb4308b27b28516d3ebefa2fa484deda875addbbac836dedf5",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=H%C3%A0i+h%C6%B0%E1%BB%9Bc."
+    },
+    {
+      "id": "134",
+      "text": "Hàn Quốc",
+      "file": "134.wav",
+      "duration_ms": 936,
+      "sha256": "79cc133f4fbd477ef787ac0c5ef93ad4ef943c5ec506d4b9c01e4819bb2fbbd0",
+      "source_sha256": "9a9c6f9046594649a092f3f215246bc1b644eb3e08d8042edca6fe5054866701",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=H%C3%A0n+Qu%E1%BB%91c."
+    },
+    {
+      "id": "135",
+      "text": "Hát",
+      "file": "135.wav",
+      "duration_ms": 635,
+      "sha256": "16e20abbff57af7e0a276b604ce7eb9dc670ce644bd12d4b024063d16ed5b01d",
+      "source_sha256": "143349ecd970083923c5955ea85b2ffc4c2217c60e5668b182375dc2aeaa0922",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=H%C3%A1t."
+    },
+    {
+      "id": "136",
+      "text": "Hôi",
+      "file": "136.wav",
+      "duration_ms": 740,
+      "sha256": "93c73db5daf2d8762ca049f1a3a257ca0a95c3eed8ac2bc125bd5cde5624a036",
+      "source_sha256": "12b56129f4f23d904a0fc9cc649989c512f7504517dfe69beb2ea61f953b84cd",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=H%C3%B4i."
+    },
+    {
+      "id": "137",
+      "text": "Hư",
+      "file": "137.wav",
+      "duration_ms": 712,
+      "sha256": "4c978c5ca8fd9c19decd4a96a06c216bf89f0ef2376e2a370e609c27e6a4b5ee",
+      "source_sha256": "f23b129098e1d0f0b1d7e366d90fde3186975200d7a06c42f3c32275700199ee",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=H%C6%B0."
+    },
+    {
+      "id": "138",
+      "text": "Hẹp",
+      "file": "138.wav",
+      "duration_ms": 594,
+      "sha256": "b442aa3185a0c85eb610340c424144bcc3f31474d0a726ba64983376f76ade6b",
+      "source_sha256": "b7d73cb38eddc6a2e7011c31447f5a776c24de47b903874de6059201a0ae9fbb",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=H%E1%BA%B9p."
+    },
+    {
+      "id": "139",
+      "text": "Họ hàng",
+      "file": "139.wav",
+      "duration_ms": 975,
+      "sha256": "015c247670b4ba2210503a9115f48b6b76dc5633b52958ae6059d83875efea4c",
+      "source_sha256": "c7fa6c1fbdec21585886a972a21a04a0953ed622b00bcf05a3ca1a8140cb3376",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=H%E1%BB%8D+h%C3%A0ng."
+    },
+    {
+      "id": "140",
+      "text": "Học",
+      "file": "140.wav",
+      "duration_ms": 614,
+      "sha256": "8cd98ace45269f9365fc237e8627b56ca93d914c0278e695ae3fef08f9b2a459",
+      "source_sha256": "a117b978b47e47f4a03f4323b551e5c85974a34f45e4018c532f2c6752179657",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=H%E1%BB%8Dc."
+    },
+    {
+      "id": "141",
+      "text": "Học sinh",
+      "file": "141.wav",
+      "duration_ms": 974,
+      "sha256": "22b63f51cdbd1a9e3315b304eb6fcdf279596efc35fe593e0d3cc0f0fc1c019e",
+      "source_sha256": "17b9090d6bedfcdb2e9d6df33b2b46087a04511ba74332de782ccc745f61c583",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=H%E1%BB%8Dc+sinh."
+    },
+    {
+      "id": "142",
+      "text": "Hứa",
+      "file": "142.wav",
+      "duration_ms": 772,
+      "sha256": "c7122a30e5bff25976ee4a82a02a621dee1ebd7e785c963e8904c1074b3f316a",
+      "source_sha256": "79f145962e5fbb049071f6a6529a2b7a759a32993d1b95c9fac72509c1d38d24",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=H%E1%BB%A9a."
+    },
+    {
+      "id": "143",
+      "text": "Kem",
+      "file": "143.wav",
+      "duration_ms": 654,
+      "sha256": "f5c88a813e8d299862711fdb5e2c082488a5c536857d05c78862b114ee1fd168",
+      "source_sha256": "26455ffcf908dc5607e13a43404357dc9f9c03f0a419e61ce66cbf794ab1e542",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Kem."
+    },
+    {
+      "id": "144",
+      "text": "Khoe khoang",
+      "file": "144.wav",
+      "duration_ms": 1013,
+      "sha256": "bdf180a6c8fa89666f2cc0f5278db613e40f51864ddb2241bf41aad12c5d53e8",
+      "source_sha256": "952fcebf569edb72c72014b95822ba3860dfd9c7e22f792c9f5c2eb32bec0db2",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Khoe+khoang."
+    },
+    {
+      "id": "145",
+      "text": "Khám bệnh",
+      "file": "145.wav",
+      "duration_ms": 902,
+      "sha256": "e12dcd0426938d81d2426200d26056cf349824a90e2d34b7d324e029938c397d",
+      "source_sha256": "9fc6e47d21e03192c904ca8117199040956bc2e15ebd223d889ac23d40df4530",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Kh%C3%A1m+b%E1%BB%87nh."
+    },
+    {
+      "id": "146",
+      "text": "Khó",
+      "file": "146.wav",
+      "duration_ms": 793,
+      "sha256": "c20ee81457ef8ae5f3ae9fefb1f3a4d5b229945720f05ebcd630bb837e4be1f7",
+      "source_sha256": "df7e0405f01b191577889742d53a8109e7f917a179d3a48f4a6fc4761e88785d",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Kh%C3%B3."
+    },
+    {
+      "id": "147",
+      "text": "Khóc",
+      "file": "147.wav",
+      "duration_ms": 638,
+      "sha256": "c124902f5a0961a3922e16ae0250ebf0c171c4fc2e500a460cb2b2e946fedbb7",
+      "source_sha256": "f9d8565e51a8d2fff132b337cb7e9164382e41c1b045308205513dad4ccd05f1",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Kh%C3%B3c."
+    },
+    {
+      "id": "148",
+      "text": "Khô",
+      "file": "148.wav",
+      "duration_ms": 739,
+      "sha256": "d38d7acfcd9a72ba52927c5c84cf734f88ee407678dc0262675d02c8a1803c5b",
+      "source_sha256": "3a2145510eea7593575b125e1305c16f6170bd40c83c8ba41e35b633d4c378bd",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Kh%C3%B4."
+    },
+    {
+      "id": "149",
+      "text": "Không cho",
+      "file": "149.wav",
+      "duration_ms": 1006,
+      "sha256": "23856a5717a76227f9b627f631c9a4bf4a5cf54139e07bc3b36cf6c869850e5e",
+      "source_sha256": "173f1dfadaaee9de517b513eff6d5dac9a683abe9c35c14044b4529e6269a9b1",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Kh%C3%B4ng+cho."
+    },
+    {
+      "id": "150",
+      "text": "Không cần",
+      "file": "150.wav",
+      "duration_ms": 973,
+      "sha256": "14a21045c58cf1faabe8ffdead640a6b8cbaf53032ed5e9b075746d1f6ff6415",
+      "source_sha256": "61f37700b8f37fd5b8de4c7d8dd299a61e8ecd887b6e9d8f03c8336aa8bce61e",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Kh%C3%B4ng+c%E1%BA%A7n."
+    },
+    {
+      "id": "151",
+      "text": "Không nghe lời",
+      "file": "151.wav",
+      "duration_ms": 1169,
+      "sha256": "89145653e9460ad139dd5f892b2f56087a19a0051c33ba15666afc5d101b0d4d",
+      "source_sha256": "81e6ebb9bb9b4490d0c0c5ebbf501068c0237534af7060ce6693c078b7b2b547",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Kh%C3%B4ng+nghe+l%E1%BB%9Di."
+    },
+    {
+      "id": "152",
+      "text": "Không nên",
+      "file": "152.wav",
+      "duration_ms": 964,
+      "sha256": "ce154812aef6904b90fc1cac9baab162cc0dbce46e1fe7e875ff1a8327ba74b0",
+      "source_sha256": "88692c81487e0a557beb32ead29a4c8a7b30fd194daeb685c81344cd893f97a3",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Kh%C3%B4ng+n%C3%AAn."
+    },
+    {
+      "id": "153",
+      "text": "Không quen",
+      "file": "153.wav",
+      "duration_ms": 978,
+      "sha256": "23c6e419e045de71a2639c48670da6d8191a7eef955abd8a9d6e5d3c0042497e",
+      "source_sha256": "e6bb8f67ead0a710933dafd1b9c61d0ce1bcef25f80a2bef0695a2cd87258da5",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Kh%C3%B4ng+quen."
+    },
+    {
+      "id": "154",
+      "text": "Khăn quàng cổ",
+      "file": "154.wav",
+      "duration_ms": 1487,
+      "sha256": "13d6c5d248cab828f9c044c53ed4a8a6b509c78cbf6b8095c80f8632c79e5289",
+      "source_sha256": "d132bf9a1283e56d2752b45531bd0b7251528ef817b948e36e7b1ca48e5f5150",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Kh%C4%83n+qu%C3%A0ng+c%E1%BB%95."
+    },
+    {
+      "id": "155",
+      "text": "Khỏe",
+      "file": "155.wav",
+      "duration_ms": 755,
+      "sha256": "fd9bc46cccb312f4517a146c992d6822b7d2bd7b1fbe42ff4c150901c69f746d",
+      "source_sha256": "59b432109512f1242fc3cc76ab4bc5e50ba4d028487b7bd5eb1124923ba026c5",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Kh%E1%BB%8Fe."
+    },
+    {
+      "id": "156",
+      "text": "Kính lúp",
+      "file": "156.wav",
+      "duration_ms": 843,
+      "sha256": "7cb056d55a76936996a53581e031bcbf34bb2b2a450c7c3606abd4a79039df70",
+      "source_sha256": "7aa6766eac392f5e418e41d1a1d92071bc25b0ff87c362eca129af5302538765",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=K%C3%ADnh+l%C3%BAp."
+    },
+    {
+      "id": "157",
+      "text": "Kẹo",
+      "file": "157.wav",
+      "duration_ms": 617,
+      "sha256": "771201e105672e62fc4b7ab565fb2458ceb088d63414905d85976a08f0320b42",
+      "source_sha256": "552d135e151f8cfea48ca20a75153ca00ae04efd8f8336bcac4c6b54ff3be493",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=K%E1%BA%B9o."
+    },
+    {
+      "id": "158",
+      "text": "Kẹp tóc",
+      "file": "158.wav",
+      "duration_ms": 852,
+      "sha256": "12b8cbef326c78e2351be4dac998b73f26a6418c609b10b54fab3d4d063f5e8a",
+      "source_sha256": "897685a2b082e842bbe46db2f1cad51dd2c8e49a467d5752c19484b8916787f7",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=K%E1%BA%B9p+t%C3%B3c."
+    },
+    {
+      "id": "159",
+      "text": "Kế toán",
+      "file": "159.wav",
+      "duration_ms": 964,
+      "sha256": "faa500ee72b56d9c0532822700258047c2754a0a73c83a9c38280bf4bdef1208",
+      "source_sha256": "a4ef0e1a688d14a01052a23232036998f4a07b34494f13017979aaf697eae23d",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=K%E1%BA%BF+to%C3%A1n."
+    },
+    {
+      "id": "160",
+      "text": "Laptop",
+      "file": "160.wav",
+      "duration_ms": 876,
+      "sha256": "2611857efebb6d6080e6ac16f24f214c85460af4cb6d345c230faba9f5abaccd",
+      "source_sha256": "2478c926d7a03db851e3a69baba2fc69048888f712df97f9231cf618fb6b161e",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Laptop."
+    },
+    {
+      "id": "161",
+      "text": "Luật sư",
+      "file": "161.wav",
+      "duration_ms": 982,
+      "sha256": "c43a13be40e75afe9cfab57a0296dc99a1c3175b93ade38d0b774ae9db813405",
+      "source_sha256": "b6203008beb3ed879bc4743c80a0a3799e1950bf08cfcd6d099548eddf38c489",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Lu%E1%BA%ADt+s%C6%B0."
+    },
+    {
+      "id": "162",
+      "text": "Làm bài tập",
+      "file": "162.wav",
+      "duration_ms": 996,
+      "sha256": "999c1037fc1ba160e3060d4b65cfb49c586ae716fba0e370647b69e487710b49",
+      "source_sha256": "0209bf558d3133a2e3580e4a729b85e2adc1e5eddff65b7d808c66fb66eb9257",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=L%C3%A0m+b%C3%A0i+t%E1%BA%ADp."
+    },
+    {
+      "id": "163",
+      "text": "Làm việc",
+      "file": "163.wav",
+      "duration_ms": 874,
+      "sha256": "1d55fa179fb8185f637b2e896901dc5f94047b3b442c2da54d72df3808f86483",
+      "source_sha256": "65ecf19cd5dd23a93959923a174093d3ccad07de5e000d019652ee2a25a9a97c",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=L%C3%A0m+vi%E1%BB%87c."
+    },
+    {
+      "id": "164",
+      "text": "Lùn",
+      "file": "164.wav",
+      "duration_ms": 704,
+      "sha256": "6bc86f5b175a8bfe029a6015a9cc60ccfeae817cdcc59775659fc7b540175993",
+      "source_sha256": "48b85f5f33315174e0ef08ed590377666b670ddfcceb187ade639ca3597349af",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=L%C3%B9n."
+    },
+    {
+      "id": "165",
+      "text": "Lười biếng",
+      "file": "165.wav",
+      "duration_ms": 974,
+      "sha256": "373fee2f6ef5eb2dfe09234531825e1ed654ff7555f74fdedc517e554b555f1a",
+      "source_sha256": "ab979eb532090450bc1d1ad3b6b106bae3c21bd8590fdee1691bb4d6ce79cf0b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=L%C6%B0%E1%BB%9Di+bi%E1%BA%BFng."
+    },
+    {
+      "id": "166",
+      "text": "Lạnh",
+      "file": "166.wav",
+      "duration_ms": 592,
+      "sha256": "9c3c600c2c22bcb5eb6f5d76ccb815be3602210774425791b80a534f33a82ff3",
+      "source_sha256": "de48a37b998aa16464251166a33581f5e0509fe61033139b31494b696bba6c4c",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=L%E1%BA%A1nh."
+    },
+    {
+      "id": "167",
+      "text": "Lễ tân",
+      "file": "167.wav",
+      "duration_ms": 964,
+      "sha256": "d7f3ffb8a956435867848920767a743a424f4a85b5162506d9fbafe2d1f952c7",
+      "source_sha256": "20c1a663d87a941cee85bf6e4c0ab925ce0b4bd119423bd51a50ded3be93cfc4",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=L%E1%BB%85+t%C3%A2n."
+    },
+    {
+      "id": "168",
+      "text": "Mua bán",
+      "file": "168.wav",
+      "duration_ms": 930,
+      "sha256": "141e343e858097955d6184713f3401554ab9413e98b6f4e5323b1f73abeac50e",
+      "source_sha256": "1ea3aa016f0be1b5d5812659fb0322c4795e268c63f08a8be9b9cbe24527ef10",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Mua+b%C3%A1n."
+    },
+    {
+      "id": "169",
+      "text": "Muốn",
+      "file": "169.wav",
+      "duration_ms": 733,
+      "sha256": "748c319e3a6ae2a7f71b16b0725d043165315dccd159e9c89c880317b9c5a401",
+      "source_sha256": "bfb6849d532736d52b7e168533e94d2929f8a7ef5c1d07578dfef96b567509b5",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Mu%E1%BB%91n."
+    },
+    {
+      "id": "170",
+      "text": "Màu cam",
+      "file": "170.wav",
+      "duration_ms": 978,
+      "sha256": "7c50d96d2df8e28884b2b08af8558cc0c285de02ea6fa928ee61fd0dfabc743d",
+      "source_sha256": "ea1fb8c07388d8564d968ed45dec882a736b19e48c5c3866407d200105704cf2",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%A0u+cam."
+    },
+    {
+      "id": "171",
+      "text": "Màu hồng",
+      "file": "171.wav",
+      "duration_ms": 952,
+      "sha256": "9b985bcfe2276036c7fc2f2a936e41846d26b72167918b90bdefd4e441abf7e1",
+      "source_sha256": "ad81469f5dfed8fd5a2a8124cd1d3d41e79c802ed666f2e81bba0c85af09bf7f",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%A0u+h%E1%BB%93ng."
+    },
+    {
+      "id": "172",
+      "text": "Màu nâu",
+      "file": "172.wav",
+      "duration_ms": 956,
+      "sha256": "00fe22b1aa4d3184f6f900261299c775547aca629a700429b172df704db4e277",
+      "source_sha256": "5b7ea7d11cc9d6a3462cc19af64822f7d4120687ed3d1fe81a185c206b5202e6",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%A0u+n%C3%A2u."
+    },
+    {
+      "id": "173",
+      "text": "Màu trắng",
+      "file": "173.wav",
+      "duration_ms": 1007,
+      "sha256": "af251ec911f8c66786dc67ca8443fd9770ead4cd6f27f0703f7f83b33910d44a",
+      "source_sha256": "06d3b1498dd8edd390b4fea0dd30d375f07e80609205da483688667609011fa8",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%A0u+tr%E1%BA%AFng."
+    },
+    {
+      "id": "174",
+      "text": "Màu tím",
+      "file": "174.wav",
+      "duration_ms": 1016,
+      "sha256": "e3c36d37fdb93e9924d31a96cdbaa2328a5fe1e899b7006de0ff8769d08dcb88",
+      "source_sha256": "7b941f6a0714cd89cff5c587d7c4c39815352e3c60d0914a460bb486a01c90ad",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%A0u+t%C3%ADm."
+    },
+    {
+      "id": "175",
+      "text": "Màu vàng",
+      "file": "175.wav",
+      "duration_ms": 990,
+      "sha256": "532f6028a3a9248d5dbe58270b67b87f75f420a0cb3ca88da61d79bb4b31a5c9",
+      "source_sha256": "56aaa694b7c25e5e4b8411a75934f6f3d75326f2bbf081da3bb746fb9d629c21",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%A0u+v%C3%A0ng."
+    },
+    {
+      "id": "176",
+      "text": "Màu xanh da trời",
+      "file": "176.wav",
+      "duration_ms": 1600,
+      "sha256": "87ab479f12e68f7583f6e638079580c0543208be7bca30701eaa040d506ff0e1",
+      "source_sha256": "59f6b79ded239dd46db5736605e7ff97a016a34bc7fa06509ad7aa8353443e95",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%A0u+xanh+da+tr%E1%BB%9Di."
+    },
+    {
+      "id": "177",
+      "text": "Màu xanh lá cây",
+      "file": "177.wav",
+      "duration_ms": 1530,
+      "sha256": "36486318fcbe644515fee08f79631f93a0396c7f7133e31264f39e40f088a636",
+      "source_sha256": "f74fe401d88bbd5d0616cb9460fcfc115eab8f7e393159378aefa30a9d47bed5",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%A0u+xanh+l%C3%A1+c%C3%A2y."
+    },
+    {
+      "id": "178",
+      "text": "Màu đen",
+      "file": "178.wav",
+      "duration_ms": 942,
+      "sha256": "79f75bd52411dd664afffc2ef98c57b28fdc2f5afe146a510b446afd5b8c41f4",
+      "source_sha256": "e3a17c5d358cdc03ea35256dcc8297c56d498c853f1d4e1bb8204c2956889557",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%A0u+%C4%91en."
+    },
+    {
+      "id": "179",
+      "text": "Màu đỏ",
+      "file": "179.wav",
+      "duration_ms": 932,
+      "sha256": "6ccc7b4e8b125f7cfdb645f596f56ff799d9d0ee26ecd5063069ac0b8213f38a",
+      "source_sha256": "f0635dab298528e3e1447b5ddacddcf040c8290f7d723028cd6cc431286ff50f",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%A0u+%C4%91%E1%BB%8F."
+    },
+    {
+      "id": "180",
+      "text": "Mách",
+      "file": "180.wav",
+      "duration_ms": 595,
+      "sha256": "1e2342f09ff781682db05a94a75722bb64c917e263a4e1dde62ff6a724b7cf61",
+      "source_sha256": "224663b26ad9798a7275fbf55c0cd45151eaa2ece0a1db492bad24ed7364e06b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%A1ch."
+    },
+    {
+      "id": "181",
+      "text": "Mát mẻ",
+      "file": "181.wav",
+      "duration_ms": 987,
+      "sha256": "70b6936ab0800604235fbfc78e38cc5db2267c060d85849a8320d39b36d30450",
+      "source_sha256": "142607ce9141d1f96721f8557680a55d997290046b2b388c18d5494f69b2c1cb",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%A1t+m%E1%BA%BB."
+    },
+    {
+      "id": "182",
+      "text": "Máy bay",
+      "file": "182.wav",
+      "duration_ms": 866,
+      "sha256": "55c8f6cf59112a19e12df0a027e34cae57b635d25fd266d5a8688be79cfb722b",
+      "source_sha256": "4042c15692fc6e1cc9b3f1219d1989ee2bd85f1e611a0ef59bc31499466e903c",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%A1y+bay."
+    },
+    {
+      "id": "183",
+      "text": "Máy chiếu",
+      "file": "183.wav",
+      "duration_ms": 1050,
+      "sha256": "0ee01b0f1a595141516b8b066d2aa1093124da1f859a7801379dc803410366a5",
+      "source_sha256": "31f4581963e494d9f3ed1df9c1f6625e819bf69e3984aefb0790d86b84acb53d",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%A1y+chi%E1%BA%BFu."
+    },
+    {
+      "id": "184",
+      "text": "Máy giặt",
+      "file": "184.wav",
+      "duration_ms": 851,
+      "sha256": "aac1d29f4c997287683c1faebb8621cc940fd010fad315e521fd3371403f529c",
+      "source_sha256": "e4aad990568bbd4041323058d35511f2f8bc3c6cf1e5681efd93fe3fd38fef71",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%A1y+gi%E1%BA%B7t."
+    },
+    {
+      "id": "185",
+      "text": "Máy tính cầm tay",
+      "file": "185.wav",
+      "duration_ms": 1565,
+      "sha256": "f297877f3b15667fd09d0634b4f1b968813ec37ef7aec20a8160b1d92001db06",
+      "source_sha256": "294ea13fc9869445fe4b334fd8f9754f7abbe57705a931089d1bdad4bbb3331e",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%A1y+t%C3%ADnh+c%E1%BA%A7m+tay."
+    },
+    {
+      "id": "186",
+      "text": "Máy điều hoà",
+      "file": "186.wav",
+      "duration_ms": 1144,
+      "sha256": "e6efd9dd676dd27138c1cbc36311901eccfcb359baa2397a04cba230f51e6a6c",
+      "source_sha256": "f33e9c09efe8390e71b4679c7399f187f34575ea6d05227fa6b33fea477b2bd8",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%A1y+%C4%91i%E1%BB%81u+ho%C3%A0."
+    },
+    {
+      "id": "187",
+      "text": "Mì gói",
+      "file": "187.wav",
+      "duration_ms": 1020,
+      "sha256": "771707d043e3a9599fab547985718126ec7c7800d5b49dcdbb52162a2ece1c49",
+      "source_sha256": "0085817f42e8858c63c6a326b14410abd7b8397837c8f01b0044c6864a684a8a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%AC+g%C3%B3i."
+    },
+    {
+      "id": "188",
+      "text": "Mùa hè",
+      "file": "188.wav",
+      "duration_ms": 908,
+      "sha256": "b35ca6107e88b632d46a447d875f97761be2244f9fe9d8954a2fba3a4b3931fd",
+      "source_sha256": "63f655e465b50882a2b9caff83441c8afe2ad50cdaa58b62403e81bd44302abb",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%B9a+h%C3%A8."
+    },
+    {
+      "id": "189",
+      "text": "Mùa khô",
+      "file": "189.wav",
+      "duration_ms": 977,
+      "sha256": "3048cfa2092c219297540f60d728056598900c9a7b82ae0bd221373ff6844132",
+      "source_sha256": "9771ee2eb8b98b24ac5638afa288b1e4cd40f0634cfb8b0dbf7e1409e39083be",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%B9a+kh%C3%B4."
+    },
+    {
+      "id": "190",
+      "text": "Mùa mưa",
+      "file": "190.wav",
+      "duration_ms": 958,
+      "sha256": "8d9ee19f16caf06f97d0e789bc93adf8e5a021fd574e00cb0167773cc971f030",
+      "source_sha256": "33d11e1568763c64886f97b509627cf2edb538b24b6c509a93c99d227420d465",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%B9a+m%C6%B0a."
+    },
+    {
+      "id": "191",
+      "text": "Mùa thu",
+      "file": "191.wav",
+      "duration_ms": 934,
+      "sha256": "483cef73a08d8cecf65a0b6ee7568b67dcb6ce0f026403ecd9ee6d5fd90aa319",
+      "source_sha256": "5b85ee49d0e85bd46b169f485daad051753f67fd5a91aa5d663820bd4b911af3",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%B9a+thu."
+    },
+    {
+      "id": "192",
+      "text": "Mùa xuân",
+      "file": "192.wav",
+      "duration_ms": 977,
+      "sha256": "1856ed7a019ccbebc80b6326e3cfcabd5d93a3671e46323b1fa80c96a98d2657",
+      "source_sha256": "32c63729188f87d8e02519050d00f9ea62769568b6a656a5a9b239758a65767a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%B9a+xu%C3%A2n."
+    },
+    {
+      "id": "193",
+      "text": "Mùa đông",
+      "file": "193.wav",
+      "duration_ms": 887,
+      "sha256": "025164e25b9e7df4efa85a43c7d98886308c7ca892be5ae8365f488def0421c0",
+      "source_sha256": "22f715bb612f10eefef39c79f06d5e4bcaf729fd1b89d57050bb800ab987ee40",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%B9a+%C4%91%C3%B4ng."
+    },
+    {
+      "id": "194",
+      "text": "Múa",
+      "file": "194.wav",
+      "duration_ms": 761,
+      "sha256": "ff41bad68ecb42e64dc8c6f1ebee2ae85093eda1bf0ae4f66ce4a1367f2b87a9",
+      "source_sha256": "d5a639fb029cd6f7fbcf46c646cf101faa0157b2f16236b08d552c65cfeca593",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C3%BAa."
+    },
+    {
+      "id": "195",
+      "text": "Mũ",
+      "file": "195.wav",
+      "duration_ms": 721,
+      "sha256": "2f7ebf943b7f611b4df9b267b02e19e409da2266897aa9a7aca07a3aaa319450",
+      "source_sha256": "20b93c7aeb04e15bf5de4333bc2135b050aa71e6f30de695711fbfc11163863c",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C5%A9."
+    },
+    {
+      "id": "196",
+      "text": "Mũ bảo hiểm",
+      "file": "196.wav",
+      "duration_ms": 1086,
+      "sha256": "fc9b1960789243fab8d71c5000b4739adc620758c5d29a4cdd1325c4ea8157a0",
+      "source_sha256": "4ab8eb05e5a3e38ca4633eb919e6dcfbc126156a4b6a45125b158f7f6bb18299",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C5%A9+b%E1%BA%A3o+hi%E1%BB%83m."
+    },
+    {
+      "id": "197",
+      "text": "Mưa",
+      "file": "197.wav",
+      "duration_ms": 767,
+      "sha256": "52aa05a573e679c6ff6e7da36fa767555e9135c3033d8ccd6e36832d36c46145",
+      "source_sha256": "5633ad1d2203d7003f3cc2ec4cb6889d7c97217e3df78d97742ced64d9b75681",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%C6%B0a."
+    },
+    {
+      "id": "198",
+      "text": "Mạnh",
+      "file": "198.wav",
+      "duration_ms": 622,
+      "sha256": "0292fe92a252eb8aaf4df99f9a290059f1c5c7111a7bc3fb21e0ee0bcbea872d",
+      "source_sha256": "54a0a682c2f01bb7b07e52f0d6a9af965150242bb2e9e9b79701b86aa1b1e503",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%E1%BA%A1nh."
+    },
+    {
+      "id": "199",
+      "text": "Mập",
+      "file": "199.wav",
+      "duration_ms": 573,
+      "sha256": "9df219f2e2d70457133f69897fdc9374b116eb64bde769252bccb175cac8e0e0",
+      "source_sha256": "f79b1ad1f6e1d5369486788651300617b95944862a57083850584de0833ddabd",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%E1%BA%ADp."
+    },
+    {
+      "id": "200",
+      "text": "Mặn",
+      "file": "200.wav",
+      "duration_ms": 656,
+      "sha256": "8095e27629a7abe9855e38d54eb0f0a44e18b31b7f06bb8c2a855cb5d11e7642",
+      "source_sha256": "e97ab48dcf443b83bb866aa15d8b814f6070232802062bcb90d6e6544ce271e5",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%E1%BA%B7n."
+    },
+    {
+      "id": "201",
+      "text": "Mẹ",
+      "file": "201.wav",
+      "duration_ms": 677,
+      "sha256": "0d9dfe643867cf7e452d5eff355f7369a701962a26f0f9c0d6ad70da20e26c2e",
+      "source_sha256": "ccb0e2a0a0a9f1f03940fd4b13138860f9a546c30ba1d5a9c2107bcb34d46f68",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%E1%BA%B9."
+    },
+    {
+      "id": "202",
+      "text": "Mềm",
+      "file": "202.wav",
+      "duration_ms": 723,
+      "sha256": "54ad5adaf1a5bef6a9b784dba137dbc9c1d3e676275aab129106f17f92648e1c",
+      "source_sha256": "9a2b2df8c10dda9ee76a414c415f4edf53b949a8ebeaa592a8a82e4042abb454",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%E1%BB%81m."
+    },
+    {
+      "id": "203",
+      "text": "Mền",
+      "file": "203.wav",
+      "duration_ms": 729,
+      "sha256": "2381fa25afb11dc5dd44818ae94a32d59cd4d93a9a281cbba4cd4703c26fceab",
+      "source_sha256": "c7c2a557d3479ec210c238e2156d3801ac0da3f41aa83644c41ae0c1c20bd513",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%E1%BB%81n."
+    },
+    {
+      "id": "204",
+      "text": "Mệt",
+      "file": "204.wav",
+      "duration_ms": 631,
+      "sha256": "9bde7f2a869ea06e9b25fdd97420f18bc49a1cc181b1a8ad3c1a9e527f80841e",
+      "source_sha256": "945624a6dff91de0e5f688d270059b6e28fc3e7506ca83f13c4b2065c02f1ce2",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%E1%BB%87t."
+    },
+    {
+      "id": "205",
+      "text": "Mới",
+      "file": "205.wav",
+      "duration_ms": 775,
+      "sha256": "98e00c7963ae3db7fb12ddb745406a3cd3a3df90a700429c247b0e221555d0dc",
+      "source_sha256": "7aedee65ccd31b119a3593dd2276103e8e5d9b335ca4f74e88a99c9919344bd7",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%E1%BB%9Bi."
+    },
+    {
+      "id": "206",
+      "text": "Mỹ",
+      "file": "206.wav",
+      "duration_ms": 705,
+      "sha256": "980d1181dbdf743c484a62bb77d0330d4ced6493ab066f088ba2de534291ff0a",
+      "source_sha256": "4b309d2d446f3d7280aa373ba688d439142255d60c88b91f3ec524a98d6631da",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=M%E1%BB%B9."
+    },
+    {
+      "id": "207",
+      "text": "Nghe",
+      "file": "207.wav",
+      "duration_ms": 686,
+      "sha256": "a0d05b2f50175ad2e8bfa90627b74a3a7aef4cb1e9c8c7838e36df2dde9537f3",
+      "source_sha256": "7bc93edaa6c460376e70bcaeb4979feff812461ba6f6f00d2d219096c8859830",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Nghe."
+    },
+    {
+      "id": "208",
+      "text": "Nghèo",
+      "file": "208.wav",
+      "duration_ms": 770,
+      "sha256": "ebb22d7d1019afa0bdba39b30914f0f14c420bbaa943607199494795b751a600",
+      "source_sha256": "723b273035d00205deb4c54fb90064a334fbe9b958758591050623855717cb23",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ngh%C3%A8o."
+    },
+    {
+      "id": "209",
+      "text": "Nghề nghiệp",
+      "file": "209.wav",
+      "duration_ms": 847,
+      "sha256": "ed0094b669c610ac589b8ffe516b294cacc27b3dfd5aa4152bf75aa283e7c4d3",
+      "source_sha256": "426168a4ebeac8bff33a61de15abf00119aa892dac8a9bc0b49b54d0bb209a2a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ngh%E1%BB%81+nghi%E1%BB%87p."
+    },
+    {
+      "id": "210",
+      "text": "Nghỉ ngơi",
+      "file": "210.wav",
+      "duration_ms": 943,
+      "sha256": "1bfbd284294bb96f6c4e42784f480cb4fb8acb3f43c97026fd5c1eeeaf69dc13",
+      "source_sha256": "659b5b75f16a970663ae08b754bf6cea4b41bdccdcc983e4aff818ff01e945c4",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ngh%E1%BB%89+ng%C6%A1i."
+    },
+    {
+      "id": "211",
+      "text": "Ngoan",
+      "file": "211.wav",
+      "duration_ms": 714,
+      "sha256": "6ce44a9b65b011ed99f382bc80636ec04e66ee37689308dbb3223a7c31e668d0",
+      "source_sha256": "8e44f45b8f69eac69a3df2478ba6900384eb3ab4a3e88711931d55263d88da1a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ngoan."
+    },
+    {
+      "id": "212",
+      "text": "Ngon miệng",
+      "file": "212.wav",
+      "duration_ms": 868,
+      "sha256": "99909f40f2a668a835d5010e961a3645a5317d2b2e938b833b8a6a64da40c899",
+      "source_sha256": "a27179c41c865809465952d231bf8e47aa440be031b4a32ee3cdc3f3c2afc8bc",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ngon+mi%E1%BB%87ng."
+    },
+    {
+      "id": "213",
+      "text": "Ngu ngốc",
+      "file": "213.wav",
+      "duration_ms": 821,
+      "sha256": "4bfe4cb2bf4c209325c06249e320755f0ffe18cb748425067749a5a74703fa9c",
+      "source_sha256": "8d89df554690fb79feaaef514cff198aa83de52e641a89b0999592244743f5cd",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ngu+ng%E1%BB%91c."
+    },
+    {
+      "id": "214",
+      "text": "Ngày",
+      "file": "214.wav",
+      "duration_ms": 732,
+      "sha256": "588818e68bbc53917bb82b8ac7b201104351eedd1230614805968d1c63e4811a",
+      "source_sha256": "01d18abaeb60260b3087706ad66e43e0fd27071dacf422344cc307fddb25b0e8",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ng%C3%A0y."
+    },
+    {
+      "id": "215",
+      "text": "Ngày Nhà giáo Việt Nam",
+      "file": "215.wav",
+      "duration_ms": 1687,
+      "sha256": "e8ae0d4488030cf96cbedb74f178c10cb995eec5e4287ce20a947cd70fc996e5",
+      "source_sha256": "f887e876e8afe482dd59c382ec9e1c5f3c764529afa61a72975c015a95f4b738",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ng%C3%A0y+Nh%C3%A0+gi%C3%A1o+Vi%E1%BB%87t+Nam."
+    },
+    {
+      "id": "216",
+      "text": "Ngày Quốc tế Lao động",
+      "file": "216.wav",
+      "duration_ms": 1656,
+      "sha256": "6fce99e1564dcf72d99eb2b6fb8129e84166fde6c16a0edd6a02106bc54f7f64",
+      "source_sha256": "646cbaa2f52f9fbf928efd4dcda87e3e466c1f50d3918b526c325783416d25cb",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ng%C3%A0y+Qu%E1%BB%91c+t%E1%BA%BF+Lao+%C4%91%E1%BB%99ng."
+    },
+    {
+      "id": "217",
+      "text": "Ngày Quốc tế Phụ nữ",
+      "file": "217.wav",
+      "duration_ms": 1694,
+      "sha256": "4c764fb56a4dd8d249b72eee55794ba3fe8ea144f8a04133da6c2e139de157ee",
+      "source_sha256": "686432e6a41f5f21f447338a1ca1a45ea3c803f1cef5948b52c46aecb53277ca",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ng%C3%A0y+Qu%E1%BB%91c+t%E1%BA%BF+Ph%E1%BB%A5+n%E1%BB%AF."
+    },
+    {
+      "id": "218",
+      "text": "Ngày Quốc tế Thiếu nhi",
+      "file": "218.wav",
+      "duration_ms": 1698,
+      "sha256": "91946fb9a87c0f2a62b1f9a84f268752e57c9b40d13ef4e4d025cc2d518d6e32",
+      "source_sha256": "09de5e57f497785fdd883736eaca9c09f2d49fea97bb62847f60f9c8ae30866b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ng%C3%A0y+Qu%E1%BB%91c+t%E1%BA%BF+Thi%E1%BA%BFu+nhi."
+    },
+    {
+      "id": "219",
+      "text": "Ngân hàng",
+      "file": "219.wav",
+      "duration_ms": 926,
+      "sha256": "246b980d38801ea44336705ab8b6025c7931c96459ae60fc5e4c0ceb76fd1465",
+      "source_sha256": "11cb34ad72a4d9a356f569d2aca24d521dc70fa3992a59fb10f1ce7e5b913919",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ng%C3%A2n+h%C3%A0ng."
+    },
+    {
+      "id": "220",
+      "text": "Ngắn",
+      "file": "220.wav",
+      "duration_ms": 704,
+      "sha256": "56bca4a94db359e8a514d57f2d793e7f86f08fb0bb837a876f4795946fe54613",
+      "source_sha256": "09c319af4390329c9f6fcf4bf312689802bf89257844c00fc8e308150dd7b4bf",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ng%E1%BA%AFn."
+    },
+    {
+      "id": "221",
+      "text": "Ngọt",
+      "file": "221.wav",
+      "duration_ms": 619,
+      "sha256": "785cc7706ef0461af79f3e9868c056e29c94452f3c24188352ca757c76dba68d",
+      "source_sha256": "1730f503acca6ffb5a739d53a4f4b06e73c4466e9e86970d09976167f3074435",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ng%E1%BB%8Dt."
+    },
+    {
+      "id": "222",
+      "text": "Ngủ",
+      "file": "222.wav",
+      "duration_ms": 722,
+      "sha256": "2065fd4593ad7d56423e9c064c7e64b676a6b2ce0c5100a4603274b78f5aec9b",
+      "source_sha256": "095f768ec650ed43239df59a1db9de6a717677b1b1b94c458615956365d2dcb6",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ng%E1%BB%A7."
+    },
+    {
+      "id": "223",
+      "text": "Ngửi",
+      "file": "223.wav",
+      "duration_ms": 698,
+      "sha256": "f82ebf16a486c77f8827bd51c5c27d62c5068445e3fbe9d42fe5386791be0df9",
+      "source_sha256": "c20cf6734ff8cef7aca59d3255d9a53a3c2bb907b43cc395da7fc4f9d5aa44d0",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ng%E1%BB%ADi."
+    },
+    {
+      "id": "224",
+      "text": "Nhanh",
+      "file": "224.wav",
+      "duration_ms": 704,
+      "sha256": "43fa44497d8512a2eb0ab85816ef3c46c1341a77168100c4577fae7b28e5c83c",
+      "source_sha256": "173c222c8b5a6822c9ac6f35c5f61d6cfba5c01fc2aaafad4c3028f271bd3b9a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Nhanh."
+    },
+    {
+      "id": "225",
+      "text": "Nhà",
+      "file": "225.wav",
+      "duration_ms": 763,
+      "sha256": "60e0994cecb245a45284dcd8eaedaa425731c35f8763d1247595856e8c0fedb3",
+      "source_sha256": "54994736c8936f649fe80ad50dcb85dda39f865850d05b64cf3dad89587dbdac",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Nh%C3%A0."
+    },
+    {
+      "id": "226",
+      "text": "Nhà hàng",
+      "file": "226.wav",
+      "duration_ms": 899,
+      "sha256": "6eee2918a0f3481d23240ff47003bd8091c292ea66cf812d97b98082d0fd64bd",
+      "source_sha256": "858d97b9907083ecf2d1df307554f9c60c6d95652c3419769a19b64694f39755",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Nh%C3%A0+h%C3%A0ng."
+    },
+    {
+      "id": "227",
+      "text": "Nhà sách",
+      "file": "227.wav",
+      "duration_ms": 891,
+      "sha256": "672f46299226961c480a18fa2d7b05f2501a180b437c824278931549e8ea6d4f",
+      "source_sha256": "161992b541445ba82e93d20b94f4af20215fd87a617d88508f6038bc7ede3865",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Nh%C3%A0+s%C3%A1ch."
+    },
+    {
+      "id": "228",
+      "text": "Nhà trọ",
+      "file": "228.wav",
+      "duration_ms": 949,
+      "sha256": "c669bf93f6ffc0cbe7c4e585e556735943c9e64934e47573fec62e7f715119b1",
+      "source_sha256": "2d7c8301da1a6bc4e48ebde536f0554c62abb7a4d5546656f477acc80aa0c5fe",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Nh%C3%A0+tr%E1%BB%8D."
+    },
+    {
+      "id": "229",
+      "text": "Nhân viên phục vụ",
+      "file": "229.wav",
+      "duration_ms": 1386,
+      "sha256": "d803f9e96a73e2299ad1706f07bc9977f82eab301b747e62f5852e6ef9f24ace",
+      "source_sha256": "0cb6a6ac7edcb4d60467f8e9b1d1ab4285c88b44e9b54065107b6467ba1c890c",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Nh%C3%A2n+vi%C3%AAn+ph%E1%BB%A5c+v%E1%BB%A5."
+    },
+    {
+      "id": "230",
+      "text": "Nhân viên văn phòng",
+      "file": "230.wav",
+      "duration_ms": 1435,
+      "sha256": "39abf566648aec03fd2b01c710037237311cb8c6276d85c31566a1351a929e28",
+      "source_sha256": "c893c7d7c39e3af14411765ed6e2123cebfbc7a09dafe1103b03a26c530f0308",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Nh%C3%A2n+vi%C3%AAn+v%C4%83n+ph%C3%B2ng."
+    },
+    {
+      "id": "231",
+      "text": "Nhạt",
+      "file": "231.wav",
+      "duration_ms": 601,
+      "sha256": "c2d4cad2633beb145d29e908d6366feec597fa17a15c3c98db9058bb3482c2d1",
+      "source_sha256": "a8c4be10a919553ca0e3e8e90e47ef20b841056434cc408a34807616f46594ba",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Nh%E1%BA%A1t."
+    },
+    {
+      "id": "232",
+      "text": "Nhảy cao",
+      "file": "232.wav",
+      "duration_ms": 974,
+      "sha256": "d8d11fb01daf11343dd997be4aaede2656ffc8e42d7381f2c339ce97e402425b",
+      "source_sha256": "03b2151a9c48df7546f8e14c0941a0624ecb148969508ae0509cc33109f521ec",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Nh%E1%BA%A3y+cao."
+    },
+    {
+      "id": "233",
+      "text": "Nhảy dây",
+      "file": "233.wav",
+      "duration_ms": 974,
+      "sha256": "7edb4a361fe7a8b5849d4e89d0c0350e552f57ef361d9da276a54e78fdd0b693",
+      "source_sha256": "203ae3aab7fe71ee0666b12f2ddb08ad33ede19a6186b2c6230405134ffc7b1a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Nh%E1%BA%A3y+d%C3%A2y."
+    },
+    {
+      "id": "234",
+      "text": "Nhầm lẫn",
+      "file": "234.wav",
+      "duration_ms": 953,
+      "sha256": "2d45793bf8866f9079f8ec35c39c6de65234c31227a3d26ecdde37b6354d15df",
+      "source_sha256": "82aa5ce00930b9054ed953416f083ed2abf12373c95a6ee51e400e7d21802bb1",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Nh%E1%BA%A7m+l%E1%BA%ABn."
+    },
+    {
+      "id": "235",
+      "text": "Nhật Bản",
+      "file": "235.wav",
+      "duration_ms": 902,
+      "sha256": "243749bbdd3936c7bd7aa62ccb6ed0026646b8226ad64fd3826d46962172bd9f",
+      "source_sha256": "150d9bfd215c009758d4978bf7d316a732dc15d89f12d04368a0ad0fafb91145",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Nh%E1%BA%ADt+B%E1%BA%A3n."
+    },
+    {
+      "id": "236",
+      "text": "Nhẹ",
+      "file": "236.wav",
+      "duration_ms": 640,
+      "sha256": "fc47e113f9183a038589e5d9f996bc84257b60642fa60ded8423c1c20e27a834",
+      "source_sha256": "5f527edacd65b59c06f637cb7004fed225a5e19e69f5a42ab7a3d6fe6b384c57",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Nh%E1%BA%B9."
+    },
+    {
+      "id": "237",
+      "text": "Nên",
+      "file": "237.wav",
+      "duration_ms": 721,
+      "sha256": "fa6e1aa8a7f68fa7acae2c077e4112fb686b5a4735d702f9c7d80aaa70dc09c1",
+      "source_sha256": "fd836b8e1e068d317f7e37290906612db38bd5b4d60e38b8ce15560d44493273",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=N%C3%AAn."
+    },
+    {
+      "id": "238",
+      "text": "Nói",
+      "file": "238.wav",
+      "duration_ms": 778,
+      "sha256": "ff007847e5d2360c37ae91aa2d84506b9a54a37f8233dc43610ec53bba8e4b45",
+      "source_sha256": "3a319b4a364536b1f913193d4e61e959b63d2023654a6405e533b623d909e272",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=N%C3%B3i."
+    },
+    {
+      "id": "239",
+      "text": "Nói chuyện",
+      "file": "239.wav",
+      "duration_ms": 905,
+      "sha256": "396fe5223a15ba8427e56068cdf00a414be80b43e2b170cad921df40494c2e9d",
+      "source_sha256": "98ccf7025bc191f8eac2c1dd7d9d3f4e983bc6a4e3cac46724fe22fef72434c0",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=N%C3%B3i+chuy%E1%BB%87n."
+    },
+    {
+      "id": "240",
+      "text": "Nóng",
+      "file": "240.wav",
+      "duration_ms": 723,
+      "sha256": "a76f6f1fb3906d26c1fc482e81dcd108ce61158f0fcd8e1c45c7e5fc7f20b2da",
+      "source_sha256": "705891f6a0a80b279a5b50502d2c8425fee40eeed4c82f54a7e89fb15f3e653b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=N%C3%B3ng."
+    },
+    {
+      "id": "241",
+      "text": "Nông dân",
+      "file": "241.wav",
+      "duration_ms": 929,
+      "sha256": "7893dc2110d905f1ffcc05130757d0a373f95bf5f69ec8f0e880dbb834bfcb32",
+      "source_sha256": "29e64c9be2b9fad2564d20a8e4a391c0a07a3254d3224611df38295436f67a6c",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=N%C3%B4ng+d%C3%A2n."
+    },
+    {
+      "id": "242",
+      "text": "Năm",
+      "file": "242.wav",
+      "duration_ms": 674,
+      "sha256": "284023ac544ee5f1b0fc3d7f02785ae43a0a97b8a289f299b36859f9a0893596",
+      "source_sha256": "aa08293a1cf503cfa560f24749beb823ee55c00be066d2868f9799e2bb11db52",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=N%C4%83m."
+    },
+    {
+      "id": "243",
+      "text": "Nước",
+      "file": "243.wav",
+      "duration_ms": 651,
+      "sha256": "547fbf92c993e97d429ff664972ab21a6c90567d3cecef86d1ac2a12cfe82abb",
+      "source_sha256": "adfaea2a115c2d62d34f2e7996209e77632fd46689c75538d9d58668de58be66",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=N%C6%B0%E1%BB%9Bc."
+    },
+    {
+      "id": "244",
+      "text": "Nướng",
+      "file": "244.wav",
+      "duration_ms": 726,
+      "sha256": "8472fc3ec8df5da771372fab11017c2c55edfdfaeca3853e5918d6834e25a862",
+      "source_sha256": "3eb535adbcbb5f77c590102a9090e3a93f80f4683450b2e7234d38844831898b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=N%C6%B0%E1%BB%9Bng."
+    },
+    {
+      "id": "245",
+      "text": "Nấu",
+      "file": "245.wav",
+      "duration_ms": 739,
+      "sha256": "0197b471f0d03fdc8e2d01ea76b968d3378bcf7527df1517b6c919c31c1abda4",
+      "source_sha256": "58612608e82fec586764a77fb4969cee25689264c1f83e5ae42592fb94f877e0",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=N%E1%BA%A5u."
+    },
+    {
+      "id": "246",
+      "text": "Nắng",
+      "file": "246.wav",
+      "duration_ms": 745,
+      "sha256": "35d5d474b1d1e66b994f5bee7474ad82be76d80510d51ca2213b251a4e538ba0",
+      "source_sha256": "e43ee110fe1b55fe110be88b60fe7688e42dfc065da563dcfa21580ac4ab7f62",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=N%E1%BA%AFng."
+    },
+    {
+      "id": "247",
+      "text": "Nặng",
+      "file": "247.wav",
+      "duration_ms": 588,
+      "sha256": "07041ddc8a7d9f2558844a7665596e6a03f2382bd84ba996b79fee9d60f9b2ce",
+      "source_sha256": "3d8d1d6b920b9b6882fed78828f9127df95c2a06c9e6219895ccf2323256639e",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=N%E1%BA%B7ng."
+    },
+    {
+      "id": "248",
+      "text": "Nếm",
+      "file": "248.wav",
+      "duration_ms": 720,
+      "sha256": "09fc07dde8b9a8d6d3860408ce62bacab008b60131f6357abe3018932f7ab84f",
+      "source_sha256": "e9b741f94f8b52c6af71dbc0aab540a7bfe1c267a915fe0a1606666d955bd2c9",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=N%E1%BA%BFm."
+    },
+    {
+      "id": "249",
+      "text": "Nồi cơm điện",
+      "file": "249.wav",
+      "duration_ms": 1169,
+      "sha256": "954e93a20f07e42d8278cb555c220331a7ddeb6a1db6d5569fda486ab888e4d3",
+      "source_sha256": "b8ea70c05f7b2ab837e0c807b214e3e6d96c8a4effd55bd13f4b184cc9d49312",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=N%E1%BB%93i+c%C6%A1m+%C4%91i%E1%BB%87n."
+    },
+    {
+      "id": "250",
+      "text": "Phút",
+      "file": "250.wav",
+      "duration_ms": 631,
+      "sha256": "87d8f7602c1d1b7bdae589695dfb431e179ef78d746f60c59b85a2468dc1dea9",
+      "source_sha256": "be7a1d755079a9ff76c936ca58eee2a7b72b4ee94b232bc103e96efca09b881d",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ph%C3%BAt."
+    },
+    {
+      "id": "251",
+      "text": "Phơi đồ",
+      "file": "251.wav",
+      "duration_ms": 976,
+      "sha256": "4916bf2576c404a6811fffe442ad726ae995a31eed0efcaf115529b235926f61",
+      "source_sha256": "32c68973d4ad24fa1a0fe845a4fb5b334c4ec4b7a4bfef4f2777f562374c565f",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ph%C6%A1i+%C4%91%E1%BB%93."
+    },
+    {
+      "id": "252",
+      "text": "Phở",
+      "file": "252.wav",
+      "duration_ms": 769,
+      "sha256": "6bd6237548ad90128d927731ed43ee8d432f864dc525f0a7b3e57375f47b0af6",
+      "source_sha256": "d054b52dfc85c64c89ec3c297668fc87de649def86134dedac2446a6db2864b5",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ph%E1%BB%9F."
+    },
+    {
+      "id": "253",
+      "text": "Quan sát",
+      "file": "253.wav",
+      "duration_ms": 898,
+      "sha256": "409ad90aeeaccfd33948278829632a596fa7c196ae4d71ae37f8c47965d2467d",
+      "source_sha256": "6695aa86cf91d9be2e2de8e5e8342b608cf100a45e6eccf32bc6e66c5dc72e5f",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Quan+s%C3%A1t."
+    },
+    {
+      "id": "254",
+      "text": "Quen",
+      "file": "254.wav",
+      "duration_ms": 671,
+      "sha256": "e26c4487a8ead2913b9cb748c31706961ae0741fe0c5cbf70627e11d9a3677e2",
+      "source_sha256": "f9f2527d6f0659f44395396125c366cf03fba40ada8627193a71a75b3f8e1ec9",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Quen."
+    },
+    {
+      "id": "255",
+      "text": "Quán cà phê",
+      "file": "255.wav",
+      "duration_ms": 1261,
+      "sha256": "3aedad669cf281690392140d26780c0c25d2d760dbc547c8c79597320c91294b",
+      "source_sha256": "8021b04cd8178cf88c5d9ec068bae7926158d75b29432a01cb318fcf0a280bbd",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Qu%C3%A1n+c%C3%A0+ph%C3%AA."
+    },
+    {
+      "id": "256",
+      "text": "Quạt (đứng)",
+      "file": "256.wav",
+      "duration_ms": 1307,
+      "sha256": "3104ea9d235c7e4970d74af5f87f051c682934664b9fea0aec813c3b2b5ad68d",
+      "source_sha256": "6f2f2a0b16490b8d8cdcb495a51a170a4d55f82006e81a906aecd20e8d4ce4c7",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Qu%E1%BA%A1t+%28%C4%91%E1%BB%A9ng%29."
+    },
+    {
+      "id": "257",
+      "text": "Quả bơ",
+      "file": "257.wav",
+      "duration_ms": 956,
+      "sha256": "9f07bec11d5805510e30de0b11a18771a90c1038b7871cbc128d3f5a7a01cdf5",
+      "source_sha256": "5c715e5a774d217689ad795e9383c503659f0e1f60f068e51fe8f680a6e3619e",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Qu%E1%BA%A3+b%C6%A1."
+    },
+    {
+      "id": "258",
+      "text": "Quả cam",
+      "file": "258.wav",
+      "duration_ms": 987,
+      "sha256": "776c34a5d6a18333d996b2584aedc23bfc5d01a456dc7f7d85b3c8901942276b",
+      "source_sha256": "ffc066294a8556654397a3332def5b460d94057a5828c0a57e614d19111c1482",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Qu%E1%BA%A3+cam."
+    },
+    {
+      "id": "259",
+      "text": "Quả chuối",
+      "file": "259.wav",
+      "duration_ms": 1023,
+      "sha256": "b6b57c123acb1188d0a2c5d77e988a6be4f73911ffca12efa95cf42802902855",
+      "source_sha256": "8f1e96f18a830b7317f13da4cf15b981a28392ee9c860fa5f8373c750f72b88e",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Qu%E1%BA%A3+chu%E1%BB%91i."
+    },
+    {
+      "id": "260",
+      "text": "Quả dâu",
+      "file": "260.wav",
+      "duration_ms": 967,
+      "sha256": "3e33dff52cbc27d73bc88374bf0bb2900800a60e15ba37e5b3d45da29a43408e",
+      "source_sha256": "b706a1b9510be7bb5e6e78e62f66a5e58095887fa01f8d122ffe043c92abf56b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Qu%E1%BA%A3+d%C3%A2u."
+    },
+    {
+      "id": "261",
+      "text": "Quả dứa",
+      "file": "261.wav",
+      "duration_ms": 1035,
+      "sha256": "7aba966a800012b19f66ce8e72ec957f041aee2857905f7fdfff393f2ec579cc",
+      "source_sha256": "eed1ec4ef0883d93036598a41327df89986e30508f0d18570d3b1d433d6a77e5",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Qu%E1%BA%A3+d%E1%BB%A9a."
+    },
+    {
+      "id": "262",
+      "text": "Quả dừa",
+      "file": "262.wav",
+      "duration_ms": 978,
+      "sha256": "a1f8da9baeb8622296b9bbd1fdd6e0d926994142a545dcd73b10ea2a363ed645",
+      "source_sha256": "8f73ec33eabfca04211396301abc92947cf645e44efbf8e94c99e092b64cdceb",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Qu%E1%BA%A3+d%E1%BB%ABa."
+    },
+    {
+      "id": "263",
+      "text": "Quả mận",
+      "file": "263.wav",
+      "duration_ms": 850,
+      "sha256": "5b512046400acab9de91306b9193e247507db9bded4c574da56ad1cc72a588ae",
+      "source_sha256": "2c4b1147322c27428ce163ae98afb93858c9e73deee35431092ef5afa3e5f285",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Qu%E1%BA%A3+m%E1%BA%ADn."
+    },
+    {
+      "id": "264",
+      "text": "Quả xoài",
+      "file": "264.wav",
+      "duration_ms": 1036,
+      "sha256": "584d2797544dd864fdb72be67846989143216f49f08d456bdda03d07001454ac",
+      "source_sha256": "272c4574765e9e2b8bf2231730e918d2b7a994bcbe4383a3a4e66a9aed85ad6a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Qu%E1%BA%A3+xo%C3%A0i."
+    },
+    {
+      "id": "265",
+      "text": "Quả đu đủ",
+      "file": "265.wav",
+      "duration_ms": 1124,
+      "sha256": "48bffe4e836993ff468ed0413045e856c76866d62744ae88e1a6360ea0e5bcf0",
+      "source_sha256": "3aadee32cfb14e9991f4686bf17b98771efc399a41059a3662f8bf50914f0b63",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Qu%E1%BA%A3+%C4%91u+%C4%91%E1%BB%A7."
+    },
+    {
+      "id": "266",
+      "text": "Quả đào",
+      "file": "266.wav",
+      "duration_ms": 968,
+      "sha256": "1821dfa49a4e28bbfc91634c54c1668b5aa0486745491ff1a1ec0e9f7a4cbbee",
+      "source_sha256": "c8031129085ccf8b3c7ce5e969d694e51f186c84f7f55a9df46c86f520872b09",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Qu%E1%BA%A3+%C4%91%C3%A0o."
+    },
+    {
+      "id": "267",
+      "text": "Quả địa cầu",
+      "file": "267.wav",
+      "duration_ms": 1177,
+      "sha256": "de9120e6aea6faab140c3a44be276f4baf5ecdc617605320b1825ee7dbc10fd8",
+      "source_sha256": "f10ea8faf2b2dafeb90b00cc8a8682a42e423be6438c843880b8786f53bde1cc",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Qu%E1%BA%A3+%C4%91%E1%BB%8Ba+c%E1%BA%A7u."
+    },
+    {
+      "id": "268",
+      "text": "Quần thun",
+      "file": "268.wav",
+      "duration_ms": 935,
+      "sha256": "6fee4a2104213cf144e2631d74038785382a9440fd462328efaa011b64dccfca",
+      "source_sha256": "678e0deacd7f1e34753cd151d14df4890cf8b84302bc082e14c8aacb030621cf",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Qu%E1%BA%A7n+thun."
+    },
+    {
+      "id": "269",
+      "text": "Quần tây",
+      "file": "269.wav",
+      "duration_ms": 987,
+      "sha256": "c9ec0b88a4fa5e1824371c917ac75c31d24c1743bf02c6b49d388e3dc1140cd6",
+      "source_sha256": "78e6680f509fb5e1025dbd3f4590f71a84c98b8584285b610e42d09ec5940919",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Qu%E1%BA%A7n+t%C3%A2y."
+    },
+    {
+      "id": "270",
+      "text": "Quần đùi",
+      "file": "270.wav",
+      "duration_ms": 935,
+      "sha256": "368deeb017d836816e6a2d745a248a1b0131d9b470e56afa5bb6a10e4b9a9552",
+      "source_sha256": "1fa883492c87202d7c529c593081724ee1e6f274ebeb2f0bc65603f4a4b53f62",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Qu%E1%BA%A7n+%C4%91%C3%B9i."
+    },
+    {
+      "id": "271",
+      "text": "Rượu",
+      "file": "271.wav",
+      "duration_ms": 670,
+      "sha256": "eadb41b42341887003f9e2bc8a310c59ee00ed35a0b0c77f221155ca83914346",
+      "source_sha256": "e8cd11625fe06badeafd1acb1f0cff2b7128f62db74404cf337b43c63dc7a76b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=R%C6%B0%E1%BB%A3u."
+    },
+    {
+      "id": "272",
+      "text": "Rạp chiếu phim",
+      "file": "272.wav",
+      "duration_ms": 1287,
+      "sha256": "506a0b1d85a236fbfaf0a9d0a0b266821cd6ba47d17ed9b44f3c5b12c89294dd",
+      "source_sha256": "96c51fab0fd98e747c0deb395ee1bccc2407942cda32e74c4ae3141a5ce6b900",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=R%E1%BA%A1p+chi%E1%BA%BFu+phim."
+    },
+    {
+      "id": "273",
+      "text": "Rẻ",
+      "file": "273.wav",
+      "duration_ms": 717,
+      "sha256": "bd156a3f6afab6c6cc7df3839c58007d4bb0b0ffc335ef83effd37027de7ecc0",
+      "source_sha256": "7907a6625f7f05cc7e2df9ef1b984912c78b75ea9c0c158205f4de27010aa608",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=R%E1%BA%BB."
+    },
+    {
+      "id": "274",
+      "text": "Rộng",
+      "file": "274.wav",
+      "duration_ms": 640,
+      "sha256": "e9aa89039530ed46ccf8b04c8a566f9a91431f1ea6f30ada4b1c35cdbe24c3d8",
+      "source_sha256": "b4b01d83d5970ee088110614d74e6283f5524d8076fbbb29f56f220fc8b36275",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=R%E1%BB%99ng."
+    },
+    {
+      "id": "275",
+      "text": "Rửa chén",
+      "file": "275.wav",
+      "duration_ms": 1057,
+      "sha256": "6df62e373cdb21a2318d12261ee77cdba103e298e26436d22e59eee754ae0227",
+      "source_sha256": "fc6d92ad9f6975ac00158625707a141c0b6917d71784a93944732b9f29eb03ce",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=R%E1%BB%ADa+ch%C3%A9n."
+    },
+    {
+      "id": "276",
+      "text": "Rửa mặt",
+      "file": "276.wav",
+      "duration_ms": 833,
+      "sha256": "7359d9ede7fb6c76de7414038f72ec2e99dd525be53257e5db0421b1421697f8",
+      "source_sha256": "5e2152cf2033b8c157c2bcec9c1f68ea890b7c87d337e8dc000fc1a5dfeceac0",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=R%E1%BB%ADa+m%E1%BA%B7t."
+    },
+    {
+      "id": "277",
+      "text": "Rửa tay",
+      "file": "277.wav",
+      "duration_ms": 986,
+      "sha256": "75646dcb84a13f92ce1cf57bf2c7d59dc8d41f0822dc8358bdf2282cde249197",
+      "source_sha256": "c6a2cef7bfe1ef32f877635c5c5df86b4b5ea4d185788d9068e6b675d0f62e4c",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=R%E1%BB%ADa+tay."
+    },
+    {
+      "id": "278",
+      "text": "Sai",
+      "file": "278.wav",
+      "duration_ms": 796,
+      "sha256": "6eec0b1b9e33f549f7f80d00cb03fc5e4efe0467ec9f07002c4b30c6ae436e7b",
+      "source_sha256": "1569da907964ffe2ebb94bac47210e301c4913c514e3ad79d113b40b4ca7fb30",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Sai."
+    },
+    {
+      "id": "279",
+      "text": "Sinh viên",
+      "file": "279.wav",
+      "duration_ms": 993,
+      "sha256": "c650f0539797ffc82f9c20a0592ca228a5d99a47fb73e833000e439a95e46792",
+      "source_sha256": "94018b931f0d3ef6a496489cc9dc8c446998e2f2c74f79dd232ab04ba64c6ad0",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Sinh+vi%C3%AAn."
+    },
+    {
+      "id": "280",
+      "text": "Siêu thị",
+      "file": "280.wav",
+      "duration_ms": 911,
+      "sha256": "0e4baed857033a07b59c832c150af181b0f736231a4ad22170e8e65e3fc8ae94",
+      "source_sha256": "bcb75563e7d6ae735506baec2bedba2c69aef9be2a34c111396034c00af51777",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Si%C3%AAu+th%E1%BB%8B."
+    },
+    {
+      "id": "281",
+      "text": "Sách",
+      "file": "281.wav",
+      "duration_ms": 642,
+      "sha256": "3d0b99844e8d2a0753c12dd329b11faf8a99db4729f62e318ba0d503f03a16fe",
+      "source_sha256": "d90a35c4166d4ccf6d6c1676822ce4df4073e75523d9b2459c3132c43ef69b47",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=S%C3%A1ch."
+    },
+    {
+      "id": "282",
+      "text": "Sáng tạo",
+      "file": "282.wav",
+      "duration_ms": 1000,
+      "sha256": "abe59c6feebe02a741dc9e2d383b4f4e6ba77b88f0a7ac4227aa335e9a909b46",
+      "source_sha256": "9ceae21830cc107574e04e5ebb81ec62462faa42ca084a28306eef23787824ee",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=S%C3%A1ng+t%E1%BA%A1o."
+    },
+    {
+      "id": "283",
+      "text": "Sạch sẽ",
+      "file": "283.wav",
+      "duration_ms": 1062,
+      "sha256": "dd167b834ad13db788652a95b7d4940d2155d2d38f45c4bc1860951ad405e576",
+      "source_sha256": "743361b951aae68082dca69284fec55bb18323e8269c55474b3071b4a8a07c7d",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=S%E1%BA%A1ch+s%E1%BA%BD."
+    },
+    {
+      "id": "284",
+      "text": "Sớm",
+      "file": "284.wav",
+      "duration_ms": 826,
+      "sha256": "433e09c2125eaca9a949d6ff2239d0a8ec28ed74f067e1d6341803ec4098116f",
+      "source_sha256": "3ff91dba20f036ca2f919d2964d0f2b0549fda2e1e2775c41700727194336665",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=S%E1%BB%9Bm."
+    },
+    {
+      "id": "285",
+      "text": "Sữa",
+      "file": "285.wav",
+      "duration_ms": 814,
+      "sha256": "6e12682cdfd920e428245a39d4b5f53ea5f21f60d18993a0e25ff7e317b86a6b",
+      "source_sha256": "283a545e261043c898e91521269f84090a6602bc761c3d683a811fde3530c7ff",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=S%E1%BB%AFa."
+    },
+    {
+      "id": "286",
+      "text": "Taxi",
+      "file": "286.wav",
+      "duration_ms": 919,
+      "sha256": "d59bd976e64b8f785aeab6a6223b45ab1ec85a48aea673706c0ab756268b8199",
+      "source_sha256": "6bc469de7bd252dac4c8b98bee8a957a35dfc2682be11d306b7ec37ac09dcfd6",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Taxi."
+    },
+    {
+      "id": "287",
+      "text": "Tham lam",
+      "file": "287.wav",
+      "duration_ms": 914,
+      "sha256": "ebe7206b7e665c4de430e40d12f9a987905519ff63fd08a2b9e198dbce5ea2ef",
+      "source_sha256": "77c98f1712731735daa579b8b39aa75cf6b175abb7ff27bfa338160457a3cb67",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Tham+lam."
+    },
+    {
+      "id": "288",
+      "text": "Tham ăn",
+      "file": "288.wav",
+      "duration_ms": 903,
+      "sha256": "c3705e8d6c07e5f316e92a4fd933abb53e9ec2d10ac5f5caaac0e2f5ac14186b",
+      "source_sha256": "488c56bd3b24963a4d85abaf6d93940c10c280ade5633990e3cef08dd133f14b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Tham+%C4%83n."
+    },
+    {
+      "id": "289",
+      "text": "Thay đổi",
+      "file": "289.wav",
+      "duration_ms": 909,
+      "sha256": "f19176a6e8b2c674b2d3f69dd5797b7ab5c77914e61a040509c6f3450ae9d66c",
+      "source_sha256": "f75da9c8f23034e529d5aa4b9165beac5a9b6f9465017436793fe0659d10ce79",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Thay+%C4%91%E1%BB%95i."
+    },
+    {
+      "id": "290",
+      "text": "Thuyền",
+      "file": "290.wav",
+      "duration_ms": 723,
+      "sha256": "0228a61c3f1d332781b1e9cb4e88c089e81c3618b54b368e82f33485d2d510ef",
+      "source_sha256": "3cd937aeaf4cbefd803eb52ebcf61c352f0faa13fa8c28e472da5aa5ca5dba17",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Thuy%E1%BB%81n."
+    },
+    {
+      "id": "291",
+      "text": "Thành phố",
+      "file": "291.wav",
+      "duration_ms": 1049,
+      "sha256": "cf7a1d23dab8b3d66afe6a839d05a7e32519fced355070a79f71355f7934ed63",
+      "source_sha256": "7b04d1e7857e912f3e544df9a682f9829e60859a7f6333d59ba771ef9db2831a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C3%A0nh+ph%E1%BB%91."
+    },
+    {
+      "id": "292",
+      "text": "Thái Lan",
+      "file": "292.wav",
+      "duration_ms": 943,
+      "sha256": "2d29ec7cf9659550bdcc1c7c4033247bc695b560119776a41d485a75df98dfe8",
+      "source_sha256": "11faeb61383fe0084cd0ec1ec51516337e6d98c4aa6cf7dec5d8ba637ca027f0",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C3%A1i+Lan."
+    },
+    {
+      "id": "293",
+      "text": "Tháng",
+      "file": "293.wav",
+      "duration_ms": 740,
+      "sha256": "757cea84a8e044acd457c4fe03eca88238ac01f236f84348189d9039002b8554",
+      "source_sha256": "84b001b80312534a9af112655801776fd0ce0d42016607fcde0cd90655f3d1cd",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C3%A1ng."
+    },
+    {
+      "id": "294",
+      "text": "Tháng ba",
+      "file": "294.wav",
+      "duration_ms": 959,
+      "sha256": "4cc7d2ade187a7353d969127c9815dd0b9b803f7adcc75bb1d0fdfc0f51374b6",
+      "source_sha256": "93ac2d7872a9944ddce801966c13c068a7029ef0c214edde980ae8b1fbe78186",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C3%A1ng+ba."
+    },
+    {
+      "id": "295",
+      "text": "Tháng bảy",
+      "file": "295.wav",
+      "duration_ms": 876,
+      "sha256": "9d11e6383574cf4b569a4ad8d62e4c0dbf320d9f8dfe4aa015cb03520a189279",
+      "source_sha256": "08622c700bdbd84a2fa19a725af2c4779df238f6d0c8191ca0ea2f05adc5d9d7",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C3%A1ng+b%E1%BA%A3y."
+    },
+    {
+      "id": "296",
+      "text": "Tháng chín",
+      "file": "296.wav",
+      "duration_ms": 1001,
+      "sha256": "882d8aaea3a3355b4e880adf1219474a2a08563c78d1c3f0b593c35c1dc92462",
+      "source_sha256": "a5f97bbcbe1651da7f0fa9527e993f12dbecff1f747ba2765ae63740bca0a0ac",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C3%A1ng+ch%C3%ADn."
+    },
+    {
+      "id": "297",
+      "text": "Tháng hai",
+      "file": "297.wav",
+      "duration_ms": 981,
+      "sha256": "919ea47f61a046126a28a58e3ab0dc17309f9daf57d0e36b40e0c2715ba76f4a",
+      "source_sha256": "4a277ec817d27345eee3ea62158f5fd357f9204cff917c13f1229e4a5b1650dd",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C3%A1ng+hai."
+    },
+    {
+      "id": "298",
+      "text": "Tháng mười",
+      "file": "298.wav",
+      "duration_ms": 979,
+      "sha256": "dcc9152faa6c245da858a9bfc8d2e7b9952c7b7a9d9e215ee07acc1d502a9dfc",
+      "source_sha256": "c1e51d57ec641d04670fb9256c91681e0d79c79142aab5bba16f1c32105c708b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C3%A1ng+m%C6%B0%E1%BB%9Di."
+    },
+    {
+      "id": "299",
+      "text": "Tháng mười hai",
+      "file": "299.wav",
+      "duration_ms": 1226,
+      "sha256": "47e7bd5906ce3693dbacebe44cba128070cd8737450fe75ca5701b0ff909f593",
+      "source_sha256": "44f8c37f5f093bb60d964a5a53f55c5f4fa429ad9e8b5881c56783f404ad907e",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C3%A1ng+m%C6%B0%E1%BB%9Di+hai."
+    },
+    {
+      "id": "300",
+      "text": "Tháng mười một",
+      "file": "300.wav",
+      "duration_ms": 1012,
+      "sha256": "f3c0cc0576c98382e3844039182a4219a9e842107cd721ad4ca50f78de888ba5",
+      "source_sha256": "67b68662518e26d9364b8025abce0929dc4c26d3add06e2b5af968aa5258fc3b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C3%A1ng+m%C6%B0%E1%BB%9Di+m%E1%BB%99t."
+    },
+    {
+      "id": "301",
+      "text": "Tháng một",
+      "file": "301.wav",
+      "duration_ms": 871,
+      "sha256": "a8f10750ef5ac14eaf1d4b45376cc67488e00f86f24ae44db72b005fa8e6c954",
+      "source_sha256": "fed379315b157b510fcf131c3428669a881bcedde999240073d3e3ec7bf08df7",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C3%A1ng+m%E1%BB%99t."
+    },
+    {
+      "id": "302",
+      "text": "Tháng năm",
+      "file": "302.wav",
+      "duration_ms": 931,
+      "sha256": "a2e19c0e745d7f0726c0d72124feeb3f4982c3a674b34dc16ed7a163ebc506dd",
+      "source_sha256": "f3d16091d84b2e0fd56d963a2c349fa3b0cf9c94dfe38c2fd2899396be3ae553",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C3%A1ng+n%C4%83m."
+    },
+    {
+      "id": "303",
+      "text": "Tháng sáu",
+      "file": "303.wav",
+      "duration_ms": 1036,
+      "sha256": "81706c858663cffacaf440e502b7b924eeaf1773555007928dbcf3d6a35abec7",
+      "source_sha256": "ca930c3ad67b4b8d3bd4807bd6f1c60bfe0ec1f0c46b0d42dc0faa9d24d4b261",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C3%A1ng+s%C3%A1u."
+    },
+    {
+      "id": "304",
+      "text": "Tháng tám",
+      "file": "304.wav",
+      "duration_ms": 990,
+      "sha256": "90b3dd9a3a4d945f6bc864e39dcfed5d7331af30d48dafb39dd770fda0280358",
+      "source_sha256": "2fe2c525dfbab68b308beac1a88d966bdaa9e97d7bdecf6526b603be428c8024",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C3%A1ng+t%C3%A1m."
+    },
+    {
+      "id": "305",
+      "text": "Tháng tư",
+      "file": "305.wav",
+      "duration_ms": 981,
+      "sha256": "9556d33e2f376a7d1b62453535c38baa3159b63dd1520c7016132acd24cd19fa",
+      "source_sha256": "094e86814043e64eb8c114572bf78c7aa6632bef624e9931849f8fde685939b7",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C3%A1ng+t%C6%B0."
+    },
+    {
+      "id": "306",
+      "text": "Thèm",
+      "file": "306.wav",
+      "duration_ms": 707,
+      "sha256": "a296c6243dfca4fdeb9a7461e74bbe1e46a653e02fabdd25cee0f9cde39b7e6e",
+      "source_sha256": "59c44869a3c293b753bc86fc6da1bc1fa9575883ee1c958e2f003c0d0ae041ea",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C3%A8m."
+    },
+    {
+      "id": "307",
+      "text": "Thích",
+      "file": "307.wav",
+      "duration_ms": 527,
+      "sha256": "b926b3f54931e42e72c76e3660788b9ddf6568913672d7154d0868be4ccd6885",
+      "source_sha256": "81db9ed826835e6922a01836648e1216ebb755aec823704306af3928ae039ef5",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C3%ADch."
+    },
+    {
+      "id": "308",
+      "text": "Thông minh",
+      "file": "308.wav",
+      "duration_ms": 887,
+      "sha256": "36089fafd5821844a9b8fd3bb2a1f977da7fe21fe190bf46df2a827a607e18d5",
+      "source_sha256": "94314ddd3e7c6e1427cc36f35f9bed8812c6a2fcfc3b9f7c59656407f19aea99",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C3%B4ng+minh."
+    },
+    {
+      "id": "309",
+      "text": "Thú vị",
+      "file": "309.wav",
+      "duration_ms": 885,
+      "sha256": "1cce33b9df272f26daf998d31ae2a424322a76bebd264a82fa63d2f684ee40aa",
+      "source_sha256": "ce0fa4a54ef955879ffeb206d139a2b8308f6a5f5c6ce814a88d084cf27a1c82",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C3%BA+v%E1%BB%8B."
+    },
+    {
+      "id": "310",
+      "text": "Thơm",
+      "file": "310.wav",
+      "duration_ms": 712,
+      "sha256": "e9d03005021a15882ace171cf0bd5cfc9ca607ebaf1868f0173f24413e88eb1c",
+      "source_sha256": "8163d1951748b0b960b40051427c7a7d723a9d8d5e87624d2433874697f4d085",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C6%A1m."
+    },
+    {
+      "id": "311",
+      "text": "Thư ký",
+      "file": "311.wav",
+      "duration_ms": 958,
+      "sha256": "4c88e9e27a3f3ebc1520da6d6014d5edb8aafe815c473d4df05a8f77d1e9a6b5",
+      "source_sha256": "73aba1423e54251eda9b8639af047b03b7acd39880d2fa6cd9661af0a398535f",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C6%B0+k%C3%BD."
+    },
+    {
+      "id": "312",
+      "text": "Thước kẻ",
+      "file": "312.wav",
+      "duration_ms": 1016,
+      "sha256": "db848f6e2635c838dcf910a4b6c1b92be3d979df9989ffb1e0ed35ad40133dc1",
+      "source_sha256": "c3f463df030097f0de948c9deced32928593b641e0f591a0bb56f41f84e3dd2e",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%C6%B0%E1%BB%9Bc+k%E1%BA%BB."
+    },
+    {
+      "id": "313",
+      "text": "Thấp (đồ vật)",
+      "file": "313.wav",
+      "duration_ms": 1364,
+      "sha256": "4589ae0f31a1f5d2af62ed03ba95042350c481c8c3090cca966bbd0050257ad0",
+      "source_sha256": "2646df5563783537757b417d4e678bf4e55bde0ae5d77586eda5861ec40194b6",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%E1%BA%A5p+%28%C4%91%E1%BB%93+v%E1%BA%ADt%29."
+    },
+    {
+      "id": "314",
+      "text": "Thể dục (thể thao)",
+      "file": "314.wav",
+      "duration_ms": 1622,
+      "sha256": "b9dffcc438f0d11c58d7f5c4c3df3a21ac6eb9e7b8211aaac7de17d371f5e42d",
+      "source_sha256": "b54df65dd6056057732b9a31e16f1215da21613450bff669b21ed8b921d0a2f3",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%E1%BB%83+d%E1%BB%A5c+%28th%E1%BB%83+thao%29."
+    },
+    {
+      "id": "315",
+      "text": "Thịt",
+      "file": "315.wav",
+      "duration_ms": 573,
+      "sha256": "a404a5f8887f96f9698fcd690f15f31364f06f6c4c97d8b936935762e8e05980",
+      "source_sha256": "b751dd9e31571d073aa49d070a0044175f63bfe9b95f68e59cb99756657e7a1f",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%E1%BB%8Bt."
+    },
+    {
+      "id": "316",
+      "text": "Thời gian",
+      "file": "316.wav",
+      "duration_ms": 922,
+      "sha256": "dd3cd7c9403c6480c3c69d2072619a8598b5eab2b10fc3a6627d9a1aed62b8b4",
+      "source_sha256": "57bfa48b96edc72c4fdfddbc54375ba655c9b10e857f608dd2adf2f9255a97e9",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%E1%BB%9Di+gian."
+    },
+    {
+      "id": "317",
+      "text": "Thời tiết",
+      "file": "317.wav",
+      "duration_ms": 844,
+      "sha256": "ef566017b07b8ff02a01781354d193acdfc14eeb4ff623f7d9ea0a7fc6503382",
+      "source_sha256": "24eeaa2d9fe4ee9b9fddc5061c4215669eb92dba53b16b9ce1983d65b913f69e",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%E1%BB%9Di+ti%E1%BA%BFt."
+    },
+    {
+      "id": "318",
+      "text": "Thứ ba",
+      "file": "318.wav",
+      "duration_ms": 882,
+      "sha256": "18c83802b704c70c1e3f4217e855166dc946cbdf81532151c8fa940686d03dbd",
+      "source_sha256": "927b58e7a79a56951e9275aa7c76802531f713b7ea31fe17551a8c728baa2d3d",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%E1%BB%A9+ba."
+    },
+    {
+      "id": "319",
+      "text": "Thứ bảy",
+      "file": "319.wav",
+      "duration_ms": 837,
+      "sha256": "237c858c2f552f6cb75e7afa0384b323649ac9f575c0e505abdbc23c1b39c087",
+      "source_sha256": "08638cc665455946e044601ce94ef139c6ef7b2b39d227ce87a45073597ba126",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%E1%BB%A9+b%E1%BA%A3y."
+    },
+    {
+      "id": "320",
+      "text": "Thứ hai",
+      "file": "320.wav",
+      "duration_ms": 934,
+      "sha256": "dfcbd6d982efc57f7ee0183acae89197dd016a2bf8d26f5f3c69d455f4036af8",
+      "source_sha256": "cd154d585af6f1318f9e0ac5ec69f3ef34ad3aaf341c15ace1e12a5ecae52e7a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%E1%BB%A9+hai."
+    },
+    {
+      "id": "321",
+      "text": "Thứ năm",
+      "file": "321.wav",
+      "duration_ms": 876,
+      "sha256": "959c1ce9407620bbe3f5eb64e1253c4702bf00a3b5edc23e5355cc7255285a4d",
+      "source_sha256": "fe79a3a7c9fc4a80bfdace3217257716c1298115bab0f9d51f6ddbd2b3570266",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%E1%BB%A9+n%C4%83m."
+    },
+    {
+      "id": "322",
+      "text": "Thứ sáu",
+      "file": "322.wav",
+      "duration_ms": 967,
+      "sha256": "d5f4a2a9955686a5489fd07bb62404c39f0d141cee5a1af2f622f767d71ae857",
+      "source_sha256": "c9c2cf367e103657cc81c84e33f323b90cdf38c8b036398d1cbef6102795e52e",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%E1%BB%A9+s%C3%A1u."
+    },
+    {
+      "id": "323",
+      "text": "Thứ tư",
+      "file": "323.wav",
+      "duration_ms": 946,
+      "sha256": "078879fbd4e294e3d6acf3a1948352a779e27140bb89cdaea381bf8709681934",
+      "source_sha256": "08b52fee1fb4c029f659d297bc030ce429bf0c7d41b7dd27756588724955be09",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%E1%BB%A9+t%C6%B0."
+    },
+    {
+      "id": "324",
+      "text": "Thức dậy",
+      "file": "324.wav",
+      "duration_ms": 906,
+      "sha256": "10b931bcdef0d966aa276e3533f5ada72ebf72ef3818e6b811b0834a4e24ff28",
+      "source_sha256": "0c420a78e044f7bf0051224d40d77fbfb0c4fc4518f288cbeba45f33afd825ce",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%E1%BB%A9c+d%E1%BA%ADy."
+    },
+    {
+      "id": "325",
+      "text": "Thử",
+      "file": "325.wav",
+      "duration_ms": 745,
+      "sha256": "f8057ac8b4e4fbdf6c875a530b6837fb8c5dc3b5edddd1f642ace8f39b5f107f",
+      "source_sha256": "4bf9736092ad464467840125338b32af0c25604a2cc5d4386cf70df0da0c8b2a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%E1%BB%AD."
+    },
+    {
+      "id": "326",
+      "text": "Tivi",
+      "file": "326.wav",
+      "duration_ms": 859,
+      "sha256": "c544945fe35966a6ba19ba53414fe37991fa6ea8a7bc4d77a2d2bdc1ff1b5e10",
+      "source_sha256": "e902110afeb6a968177f0b6efee0720b03a407f21a439cd6ab658e5d8925420d",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Tivi."
+    },
+    {
+      "id": "327",
+      "text": "Tiếp tục",
+      "file": "327.wav",
+      "duration_ms": 788,
+      "sha256": "ee422f211ac2791faa752d1c33657f2a5e0c9129d6a6eeae882bca5edc47208e",
+      "source_sha256": "00a91e2bece96b7d0a50fdf7969113da8281b087801b09054870d16320aab75a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ti%E1%BA%BFp+t%E1%BB%A5c."
+    },
+    {
+      "id": "328",
+      "text": "Trung Quốc",
+      "file": "328.wav",
+      "duration_ms": 840,
+      "sha256": "aec59c127a8a4c08d1caaeec97edba93d36cb77e623c19ceadb73c29c8d8fd87",
+      "source_sha256": "4055d94c9c88300f627408b585f6633e82f940a37fa8c57f6dea63b016b06744",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Trung+Qu%E1%BB%91c."
+    },
+    {
+      "id": "329",
+      "text": "Trung thu",
+      "file": "329.wav",
+      "duration_ms": 931,
+      "sha256": "f2e7faedf8acc93e16686a05635d490a9bbd316b8198a588ff80d255c0673d53",
+      "source_sha256": "4e6ff5e8e33c4adfad5a6c0d99de1334caa4cae2d2744a1679e1e232a1994b23",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Trung+thu."
+    },
+    {
+      "id": "330",
+      "text": "Trà",
+      "file": "330.wav",
+      "duration_ms": 769,
+      "sha256": "c51abe9b4cb218f1133c13fe70e6449b346e66f80b7fdcb6446f37093f9bfadc",
+      "source_sha256": "e9f9985e14ea85b666ac7f607a020b95627f2bc97a65adc69ec3429805cf096b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Tr%C3%A0."
+    },
+    {
+      "id": "331",
+      "text": "Trường Cao đẳng",
+      "file": "331.wav",
+      "duration_ms": 1169,
+      "sha256": "4f09fce907adb343715a07287ebd9e9b5977e6012288c5381f873872aaceee01",
+      "source_sha256": "f832a73296d66d895d247543028015564979f012330d66265946e094bd11066f",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Tr%C6%B0%E1%BB%9Dng+Cao+%C4%91%E1%BA%B3ng."
+    },
+    {
+      "id": "332",
+      "text": "Trường học",
+      "file": "332.wav",
+      "duration_ms": 774,
+      "sha256": "4ea57468130285e9d59659de982937518e8dd8ae37660f4eef372c0317a17589",
+      "source_sha256": "fee090301259e77dfc7cbabd92afb6b01d63efec584975a3bfb7bba17f297817",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Tr%C6%B0%E1%BB%9Dng+h%E1%BB%8Dc."
+    },
+    {
+      "id": "333",
+      "text": "Trường Đại học",
+      "file": "333.wav",
+      "duration_ms": 978,
+      "sha256": "42e1e4ce8ca956233e1456d8164f3f9eb1a8738663b3beb485da0419fceabaf4",
+      "source_sha256": "5372d7f2bfce9a638875fb501ca8d0d074f6f5fe137dfef59cc522054c3edfb5",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc."
+    },
+    {
+      "id": "334",
+      "text": "Trẻ",
+      "file": "334.wav",
+      "duration_ms": 763,
+      "sha256": "97457ab3faef9bf1bb6580c9039d86b25ebf198a5edc6a1df4006835702e5a00",
+      "source_sha256": "79ebfa477ed7163436de768e9913df1cb3c8a588220b89f06c59fc1ac03023b2",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Tr%E1%BA%BB."
+    },
+    {
+      "id": "335",
+      "text": "Trễ",
+      "file": "335.wav",
+      "duration_ms": 761,
+      "sha256": "d251e0c8f6344c502eb7a36325e24e2f34cce84d6cfe2d8326699315a8705d18",
+      "source_sha256": "ee353418770fcd5aad41557e82ae180951343e55dec2d11565a5d747ece7236c",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Tr%E1%BB%85."
+    },
+    {
+      "id": "336",
+      "text": "Trứng",
+      "file": "336.wav",
+      "duration_ms": 687,
+      "sha256": "88c8dfc4cbc7eaee4be295fc1fc05e0228ade0f0d7870902250032f0839379d3",
+      "source_sha256": "bd1885ee5d46accdf72f9be5bc07b131de18a7e2883201898b0121e0a82e25ec",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Tr%E1%BB%A9ng."
+    },
+    {
+      "id": "337",
+      "text": "Trực thăng",
+      "file": "337.wav",
+      "duration_ms": 910,
+      "sha256": "ea2dc6216dc596a9ed141ed7eecbfa7fb5255257abbadf6c1d4279c30f47c6ec",
+      "source_sha256": "db2463ed289c99a5cd9be540eee2a25a0955744f20670bf55f90fab7598f1e8c",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Tr%E1%BB%B1c+th%C4%83ng."
+    },
+    {
+      "id": "338",
+      "text": "Tàu hỏa",
+      "file": "338.wav",
+      "duration_ms": 950,
+      "sha256": "2a1419e75799e332eb305e596e175af0ce5f346e9492ee01d7cbad4295746d02",
+      "source_sha256": "43110d149664b75d2b5363feda8fec2d289f6a26b2353f1ba582020892f69499",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=T%C3%A0u+h%E1%BB%8Fa."
+    },
+    {
+      "id": "339",
+      "text": "Tìm",
+      "file": "339.wav",
+      "duration_ms": 718,
+      "sha256": "ea0992f35f5d65cd0d29b88a451de5434e74f31ecd0ce538b74c93b5346a3558",
+      "source_sha256": "d7fb964a8dc29f940319c7d9e526967700e5b4970af53bcd9d79de902388cf77",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=T%C3%ACm."
+    },
+    {
+      "id": "340",
+      "text": "Túi xách",
+      "file": "340.wav",
+      "duration_ms": 814,
+      "sha256": "03216905f5f84737a3884954d3d54f6b469e57e28653f1d9f701deb954cfd22a",
+      "source_sha256": "3156e0357ac87cf788b629210989d8b4d082e3aa773664241e4aa6fa0b857253",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=T%C3%BAi+x%C3%A1ch."
+    },
+    {
+      "id": "341",
+      "text": "Tường",
+      "file": "341.wav",
+      "duration_ms": 749,
+      "sha256": "dac2ef9750ac4cdb2aab4c9eca3c595515488fb6f313f1acc2b60fe7f838be8a",
+      "source_sha256": "f8684fcb87a6099e38da1d93972eea325f7ffb8da3279227a0f1a8adbf16f802",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=T%C6%B0%E1%BB%9Dng."
+    },
+    {
+      "id": "342",
+      "text": "Tắm rửa",
+      "file": "342.wav",
+      "duration_ms": 1039,
+      "sha256": "1084bf06f3f2473c99a41ffc8d730c318ae0b9692fd07ca73706af1dd8de20b7",
+      "source_sha256": "a38a3bb61e9552a02ed8115a12e3f89ac592e5a221128b1a7e910ec5377ec722",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=T%E1%BA%AFm+r%E1%BB%ADa."
+    },
+    {
+      "id": "343",
+      "text": "Tết Âm lịch",
+      "file": "343.wav",
+      "duration_ms": 1054,
+      "sha256": "a051d1b8cb373de520b0a051019e72d8b09d6c6f47a4b4b5167cfe52267735e1",
+      "source_sha256": "2013161cc890fd4e35aacc1dfc0223c52c3b109ad0259fafda0943b3e6388c1d",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=T%E1%BA%BFt+%C3%82m+l%E1%BB%8Bch."
+    },
+    {
+      "id": "344",
+      "text": "Tỉnh",
+      "file": "344.wav",
+      "duration_ms": 664,
+      "sha256": "29b3d4f39b9afc6696d88a6890a2c5d8aeac7b2162fcae8c9fc80ea36499960c",
+      "source_sha256": "4524a5da16138d9d5d047595c489138e3c8dd63391d90ffcddd8226396430c31",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=T%E1%BB%89nh."
+    },
+    {
+      "id": "345",
+      "text": "Tốt bụng",
+      "file": "345.wav",
+      "duration_ms": 840,
+      "sha256": "324d70e79a8e90d6b8b2ac8bb5c0b33e074ea5f45f6c642ae783ba51fa4f2c2e",
+      "source_sha256": "781142520dfb00672b7b278bc09f1ec4b03e7027b956c73a4587056c05f9607a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=T%E1%BB%91t+b%E1%BB%A5ng."
+    },
+    {
+      "id": "346",
+      "text": "Tủ lạnh",
+      "file": "346.wav",
+      "duration_ms": 784,
+      "sha256": "0a6024d2f44fc71d1feafc4b561f469f59af277bf69d64dcf993f5570715ce52",
+      "source_sha256": "cadc176558a5cbf64ac3558b3d52bdde8a64f8f4ed7c7d40becea1a28a25d523",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=T%E1%BB%A7+l%E1%BA%A1nh."
+    },
+    {
+      "id": "347",
+      "text": "Từ chối",
+      "file": "347.wav",
+      "duration_ms": 991,
+      "sha256": "3d6096dc1c1819a8d6e7a647408ceacc67bf8865ca6b26442789f120f3feabfa",
+      "source_sha256": "5af7620eef59c31d6c0c3994d6fb0823a9254fcfba6984576c69a9a878111ee0",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=T%E1%BB%AB+ch%E1%BB%91i."
+    },
+    {
+      "id": "348",
+      "text": "Uống",
+      "file": "348.wav",
+      "duration_ms": 736,
+      "sha256": "33eab0dea4d34b96571a332a4e4221a6c84641472b553cd8714c6ad2718baad0",
+      "source_sha256": "f3d75b05ee1116573299ef10eb36d9a0e58ef57167d916333bb9e70872c49fef",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=U%E1%BB%91ng."
+    },
+    {
+      "id": "349",
+      "text": "Viên phấn",
+      "file": "349.wav",
+      "duration_ms": 980,
+      "sha256": "e04b44144cedefaa70145f9062be41f06fccfdca6e7c8b0a9d2460303589df44",
+      "source_sha256": "caba27c1fc9aab33fe352259a184bd6340c84db8a8bdde4967bf3b27a1f05fce",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Vi%C3%AAn+ph%E1%BA%A5n."
+    },
+    {
+      "id": "350",
+      "text": "Viết",
+      "file": "350.wav",
+      "duration_ms": 600,
+      "sha256": "9b20b4b745d0e048f0dbc067de869b8d9ccbf90c1cdb4cc04c0e0f6f20c29590",
+      "source_sha256": "80844b3bfb677a3522569911607064e98e061ccb6059a9f6032fc11e65d2c50e",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Vi%E1%BA%BFt."
+    },
+    {
+      "id": "351",
+      "text": "Việt Nam",
+      "file": "351.wav",
+      "duration_ms": 926,
+      "sha256": "857cdbddce2de225b66d07a1f1c62c2967e6c8a3a015be638353ff2e7f41172c",
+      "source_sha256": "6eac6f628ca08287ccdfaf779e5c2cd75a0bd9fa2d70e66ae972b3a5e82278cb",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Vi%E1%BB%87t+Nam."
+    },
+    {
+      "id": "352",
+      "text": "Vâng lời",
+      "file": "352.wav",
+      "duration_ms": 986,
+      "sha256": "728665fa67df0f65c5f245682273ddca6eee0fa7f6d5310411fa87f71fbc897e",
+      "source_sha256": "fd5b85b073bb4c79d8cc444ad7ee0434aaf6edb3f3cbaee09da18cd85de3b2a3",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=V%C3%A2ng+l%E1%BB%9Di."
+    },
+    {
+      "id": "353",
+      "text": "Vòng tay",
+      "file": "353.wav",
+      "duration_ms": 963,
+      "sha256": "9522c0dcee1281499c084bfd6c7f2a9f4e372e65ef34a5aab23412e446db33e0",
+      "source_sha256": "81b4943794422a97502a0f7dd6c59b1b8c6f075fade527c16aceda3482897c1a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=V%C3%B2ng+tay."
+    },
+    {
+      "id": "354",
+      "text": "Võ",
+      "file": "354.wav",
+      "duration_ms": 759,
+      "sha256": "9af4bd507bc7441581dc212da0dadde2d5f3dc9121f2ac7ee04238ca7aa20704",
+      "source_sha256": "864164b1f89e9bbad3e92527f371e53f504f2863ae5683c3bf4810af01d85d66",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=V%C3%B5."
+    },
+    {
+      "id": "355",
+      "text": "Vở",
+      "file": "355.wav",
+      "duration_ms": 726,
+      "sha256": "693b1472f1c10a3feb0c0e2f5b42aa585adf9d6237d2649b1f4edcc436df7838",
+      "source_sha256": "824b8dd9a2454e6fad22aa993746f7285e7bce54177d8148cec93a57ec8e04ce",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=V%E1%BB%9F."
+    },
+    {
+      "id": "356",
+      "text": "Vợ",
+      "file": "356.wav",
+      "duration_ms": 667,
+      "sha256": "de37c9e280695c8c76bf2e7e4036dd71957e6f692dc0a17158c16b982e789ac0",
+      "source_sha256": "1562e0249fbcd41c92be9608ce33f2f4593a30af6d12d007c811cf6df9b64bb6",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=V%E1%BB%A3."
+    },
+    {
+      "id": "357",
+      "text": "Xa",
+      "file": "357.wav",
+      "duration_ms": 794,
+      "sha256": "70760d45eb44ed3d3a0097896b47fa4524ce5f6d28e34733341142328e1df840",
+      "source_sha256": "ae49cbe5c556f011157eec4c3c1cc0c6d4efe4624ab3b6e1cd174f3bda9c0007",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Xa."
+    },
+    {
+      "id": "358",
+      "text": "Xe buýt",
+      "file": "358.wav",
+      "duration_ms": 831,
+      "sha256": "0353ec013d7f51b29757683453027c0d0d225b77b18684718809276655256034",
+      "source_sha256": "72da8ccfd9240152d498ad132a8a6095272eb61667e5e6a88de2fa1016608481",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Xe+bu%C3%BDt."
+    },
+    {
+      "id": "359",
+      "text": "Xe máy",
+      "file": "359.wav",
+      "duration_ms": 961,
+      "sha256": "c8e8077eb4118716a4653cae51220fc546ee579d92830fe1c73cf9b8269bac88",
+      "source_sha256": "2ee1375cd4728148e6583b53561cb183c85bcd529c0eef964188e073715577bc",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Xe+m%C3%A1y."
+    },
+    {
+      "id": "360",
+      "text": "Xe tải",
+      "file": "360.wav",
+      "duration_ms": 991,
+      "sha256": "aff02117c7b5b75e6d0166a96eb4d497fa64c58327ee0a0b9187b2562631fa0d",
+      "source_sha256": "8ce3c66c9b051f0def972243b824391570b410bba3b5ebd5ac2b24dbc1b61fee",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Xe+t%E1%BA%A3i."
+    },
+    {
+      "id": "361",
+      "text": "Xe đạp",
+      "file": "361.wav",
+      "duration_ms": 811,
+      "sha256": "99cd8cdb851da9e706e3b088a37cfc6bfbd74ce18b4d1f7297817c1d31e26074",
+      "source_sha256": "383fc7b543f31114b66cb87c7e635bc772aec080fad4dac41ccf63348216a09c",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Xe+%C4%91%E1%BA%A1p."
+    },
+    {
+      "id": "362",
+      "text": "Xem",
+      "file": "362.wav",
+      "duration_ms": 751,
+      "sha256": "af81f16f974ac16985fc48855fde260adf8c4198032c8c4c098d77b5c59f3b1a",
+      "source_sha256": "7e79dd459ffd42beb8ab4ea8e19d30dd2991a78ed67a3c949003843755bbcd40",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Xem."
+    },
+    {
+      "id": "363",
+      "text": "Xin",
+      "file": "363.wav",
+      "duration_ms": 746,
+      "sha256": "9444d6104130e64be0d9166c4302a60ee00fcaf496482ef6d8c67fe9ba68247f",
+      "source_sha256": "d1e18403ae8799ba8f6e3fef452536d47f8817feaea2c6f6a6d5f9d06c16e88e",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Xin."
+    },
+    {
+      "id": "364",
+      "text": "Xin lỗi",
+      "file": "364.wav",
+      "duration_ms": 927,
+      "sha256": "b37f9a7f04be4d7e09f55e7d3ca92f028414d8dc1299520e4762b1870e7438e2",
+      "source_sha256": "d23b518b1aa3dd501cc2aa7b50ce146a1b92a1353fa7c3b6b0e096f4f3d0f70a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Xin+l%E1%BB%97i."
+    },
+    {
+      "id": "365",
+      "text": "Xôi",
+      "file": "365.wav",
+      "duration_ms": 785,
+      "sha256": "b68dbcaa5d04d7dd80330f63672de685ce6621471ad5042fc73fc4ad4c680701",
+      "source_sha256": "d153b484a9deb6ce2129467f69999a948647b169845536bc104966df92b6082d",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=X%C3%B4i."
+    },
+    {
+      "id": "366",
+      "text": "Xấu (vật)",
+      "file": "366.wav",
+      "duration_ms": 1321,
+      "sha256": "764bd4beb42bcddca0993360dd0f81574c897d30289f69381c546831866b98ca",
+      "source_sha256": "04027d8f8e88653dac3d17fd2a4cab92934f8b401f8c3b7e7dfdd56d7f237752",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=X%E1%BA%A5u+%28v%E1%BA%ADt%29."
+    },
+    {
+      "id": "367",
+      "text": "Xấu (người)",
+      "file": "367.wav",
+      "duration_ms": 1496,
+      "sha256": "26f1d46d839cbdbf2f4262d6b95063f5efff5e50f0f3e2d3b82c377c873379e1",
+      "source_sha256": "b5b68ff64209411f72c333450d9875ca54a0100ba20ab0dc04ced862ef80529b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=X%E1%BA%A5u+%28ng%C6%B0%E1%BB%9Di%29."
+    },
+    {
+      "id": "368",
+      "text": "Y tá",
+      "file": "368.wav",
+      "duration_ms": 964,
+      "sha256": "6520f716365b781bbb66a46aefe72192282c30f2ef8ab1d60238ac64550252d3",
+      "source_sha256": "093d8d21556d0758121f227f9059f903f3e19e906882248b033fd7f2fbf62dfb",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Y+t%C3%A1."
+    },
+    {
+      "id": "369",
+      "text": "Yên tĩnh",
+      "file": "369.wav",
+      "duration_ms": 910,
+      "sha256": "85bc3cdf931d746524522eb28a2f108545080f1ab13800ecf7219c5f2f7196b7",
+      "source_sha256": "2b45ac75552b2d77bd5ab6089bbd428a0c3b9e49ead4e75eeac20f126044d0ac",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Y%C3%AAn+t%C4%A9nh."
+    },
+    {
+      "id": "370",
+      "text": "Yêu thương",
+      "file": "370.wav",
+      "duration_ms": 978,
+      "sha256": "76ac5956420a13bf8a3acae5f8f9c275e7e84929286f920f11e3f8585778db64",
+      "source_sha256": "7e9732d8a79a60f484ef460a940aadf2777032345f4d04eb8b35652d4cd59923",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Y%C3%AAu+th%C6%B0%C6%A1ng."
+    },
+    {
+      "id": "371",
+      "text": "Yếu",
+      "file": "371.wav",
+      "duration_ms": 725,
+      "sha256": "0cfed7a5dd1cbc3c2411c2e187dca9a967a2ddc1206d6f64a4d45fd96e95339f",
+      "source_sha256": "6a8679fd57bc685b3d92fc183f063125d91285eae8cb364e3695d7fcedc1ad8e",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Y%E1%BA%BFu."
+    },
+    {
+      "id": "372",
+      "text": "Áo sơ mi",
+      "file": "372.wav",
+      "duration_ms": 1098,
+      "sha256": "0e39069c04534e213ab368584c8cc4c9ac1e383cdd0166e2a977b96638e73a9d",
+      "source_sha256": "0bd730657bd211e6566197e246910d5a19e0a633544121f4221f7dc8bb18dfe7",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C3%81o+s%C6%A1+mi."
+    },
+    {
+      "id": "373",
+      "text": "Áo thun",
+      "file": "373.wav",
+      "duration_ms": 863,
+      "sha256": "c71c846488aa9fadc1e523f954fe69d3d4c4040e4a8c780f8292e0a2f2a5bb73",
+      "source_sha256": "bcb1454bac72f8ef052ad9683e23ab1ac42e0918e3a921dcda81c3af59b99ed5",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C3%81o+thun."
+    },
+    {
+      "id": "374",
+      "text": "Áo đầm",
+      "file": "374.wav",
+      "duration_ms": 845,
+      "sha256": "711513b5d061a4828874fa42aecc3d7238b5cbcc61ae19c67ca3969facfc0a5e",
+      "source_sha256": "4b45f7a18c3f910ebb465a0803913a011a110ad092c7ecbcbe0637a5933d8b14",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C3%81o+%C4%91%E1%BA%A7m."
+    },
+    {
+      "id": "375",
+      "text": "Ô tô",
+      "file": "375.wav",
+      "duration_ms": 868,
+      "sha256": "9c223e5b9c1a839bd1a00ab0d1ddcc5979a75c9c871a3789eed6d10197deec06",
+      "source_sha256": "5ad38b4a909acd95cc36fc1f36368e803febc55a5fba530beda01c7a1181dcc5",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C3%94+t%C3%B4."
+    },
+    {
+      "id": "376",
+      "text": "Ông ngoại",
+      "file": "376.wav",
+      "duration_ms": 876,
+      "sha256": "ef6c576305c0fe20a3e8f0c8b0204557943b3982542a867ced71d9fbfb6a994a",
+      "source_sha256": "8280bbfa8bc660eaf97309845275f77a6f5490f1b5112df952b250736b01c6a1",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C3%94ng+ngo%E1%BA%A1i."
+    },
+    {
+      "id": "377",
+      "text": "Ông nội",
+      "file": "377.wav",
+      "duration_ms": 817,
+      "sha256": "633d50fad6be6c1d21b79667a806cf13f248ae2180577bc7b257857e7835c5d4",
+      "source_sha256": "5b504dab0fbe1d7d8a015f9e4f098f181f44c02e84d2bf7b436bcdec41ae870f",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C3%94ng+n%E1%BB%99i."
+    },
+    {
+      "id": "378",
+      "text": "Ăn",
+      "file": "378.wav",
+      "duration_ms": 632,
+      "sha256": "51541f6ca2afaafc4fd0f72750ed782b26239af649ccfd240f19671e90b62641",
+      "source_sha256": "3c3a534be453e749c5e1bc48cb1f2238dae3e1e4b888bd291f1c0771c0f6f01a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%82n."
+    },
+    {
+      "id": "379",
+      "text": "Đau",
+      "file": "379.wav",
+      "duration_ms": 713,
+      "sha256": "e5d94bdf4887b72a47150c3c9911f60c15f3793435f99df1bfd61c45a6b42ef6",
+      "source_sha256": "271c3ed1d72c373c2d9597e8f0c7949f29ca53dd965c310d5a1f55ea02cd055d",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%90au."
+    },
+    {
+      "id": "380",
+      "text": "Đi",
+      "file": "380.wav",
+      "duration_ms": 647,
+      "sha256": "710ac28abd5aa1bd203c4b52a97748e62a7004373d575a1cf0f8e5421a59757c",
+      "source_sha256": "cf9cbda91a90d844466004b34ef22f7077e53a3838ff396604934a73cdd7b6cc",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%90i."
+    },
+    {
+      "id": "381",
+      "text": "Điền kinh",
+      "file": "381.wav",
+      "duration_ms": 929,
+      "sha256": "ec33aba076727093dcd1047b2a71be7f431098e482f636142401769e2b8497c6",
+      "source_sha256": "9c1563b62c568e54bdd09a5fd8a415affcfa6e94458045c5e8c5158c48e0244c",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%90i%E1%BB%81n+kinh."
+    },
+    {
+      "id": "382",
+      "text": "Điện thoại",
+      "file": "382.wav",
+      "duration_ms": 865,
+      "sha256": "5f564234da2a2f509f7bcab4171ec270e8ee2bc273f331a386d51096eb0b3d24",
+      "source_sha256": "815c7d1df3073b1d47cc750ddacddbdad17c6dec273df08e0486216a3bfb2f37",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%90i%E1%BB%87n+tho%E1%BA%A1i."
+    },
+    {
+      "id": "383",
+      "text": "Đá cầu",
+      "file": "383.wav",
+      "duration_ms": 1026,
+      "sha256": "f17830347ba5e57312835a134f015c98edcd7c2c9068cc7f16cd2db7689e1f66",
+      "source_sha256": "eedd7240ebe813dba4fed15b2217fc426f56d4474078c7d83ebd240866351aaa",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%90%C3%A1+c%E1%BA%A7u."
+    },
+    {
+      "id": "384",
+      "text": "Đúng",
+      "file": "384.wav",
+      "duration_ms": 723,
+      "sha256": "dd4411ddd17fa894e364aa7370f60beff48f092e2844dcfc6ba61a5c8e36b772",
+      "source_sha256": "7b9910f8261ac01dbf6206add8a856c2d19306bae007d2b72b7a3972bbbfee9b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%90%C3%BAng."
+    },
+    {
+      "id": "385",
+      "text": "Đầu bếp",
+      "file": "385.wav",
+      "duration_ms": 795,
+      "sha256": "e9d78cf07a510d4e11967da325c16026d9ca283101a4661ac7c37347b2a00fb9",
+      "source_sha256": "16af66739efbb8a4b420201e855f0bf395a7fa636d4dd59660f8e57fbc6ce707",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%90%E1%BA%A7u+b%E1%BA%BFp."
+    },
+    {
+      "id": "386",
+      "text": "Đậm",
+      "file": "386.wav",
+      "duration_ms": 560,
+      "sha256": "89d67711e767b8efc4fe232b6283de9a4a4a875abd0dd26459f7acf92ee50b5a",
+      "source_sha256": "848a55d859424339940bd0208d0777963bda34942ed7371c880d64b242f1a511",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%90%E1%BA%ADm."
+    },
+    {
+      "id": "387",
+      "text": "Đắng",
+      "file": "387.wav",
+      "duration_ms": 703,
+      "sha256": "77ab3b6cac89306cdd82bc27b56777e6e5c84d836c9ddc828bb2e1f08495885b",
+      "source_sha256": "89c9e78e2c9f58a4a76a01def6eb78eb97720622b2c3d805a5ec949dbe00e5b1",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%90%E1%BA%AFng."
+    },
+    {
+      "id": "388",
+      "text": "Đắt",
+      "file": "388.wav",
+      "duration_ms": 534,
+      "sha256": "b5801d303ed6a72021da628207658ca027337e95e72b796517b57eb2db3e9d0c",
+      "source_sha256": "bfa6041b8da2c3fc73aad02730e3030d4770c5b823325a978faf6aee8e0a27c0",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%90%E1%BA%AFt."
+    },
+    {
+      "id": "389",
+      "text": "Đẹp (vật)",
+      "file": "389.wav",
+      "duration_ms": 1190,
+      "sha256": "b5f75b0dd2f6cb047362a905cedc421ca7089eccf11fda28a8e52378c74f606c",
+      "source_sha256": "c94e9ea10097043c2e3a417adc95cd2ae870500ba7ec988ed031d99216c805f5",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%90%E1%BA%B9p+%28v%E1%BA%ADt%29."
+    },
+    {
+      "id": "390",
+      "text": "Đẹp (người)",
+      "file": "390.wav",
+      "duration_ms": 1350,
+      "sha256": "381603ff72f31b5c31e5453d4a16c1ddbc1ed85de8f94d4dbf5f1e78b6d9e81f",
+      "source_sha256": "0ec737b9fdc8d76636f704fddc687083a8bfb77f8257ff42909076e648125f80",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%90%E1%BA%B9p+%28ng%C6%B0%E1%BB%9Di%29."
+    },
+    {
+      "id": "391",
+      "text": "Đọc",
+      "file": "391.wav",
+      "duration_ms": 583,
+      "sha256": "43c82c8a2aa33900bbb3a222c95c8e6e92f6da84bd77ba741b8aa7be0e216ced",
+      "source_sha256": "c0ecdf5b0c0046af2af66383c1bb48f915f85af970fa13fa31a35de462a784d3",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%90%E1%BB%8Dc."
+    },
+    {
+      "id": "392",
+      "text": "Đồ buộc tóc",
+      "file": "392.wav",
+      "duration_ms": 1085,
+      "sha256": "5066f351c8fd2b46956a8bf8d4ea8db38e82abafbd7c9407f94923a719b78d34",
+      "source_sha256": "d99ff01825c6174aec61974c05588f3a9e2783d7103edd41c34a5c44fe1772e2",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%90%E1%BB%93+bu%E1%BB%99c+t%C3%B3c."
+    },
+    {
+      "id": "393",
+      "text": "Đồ dùng",
+      "file": "393.wav",
+      "duration_ms": 916,
+      "sha256": "fbf9f404e7961a88f8373e7fa1c19387696edcb7d72be68022801ab65bf2abff",
+      "source_sha256": "b2abdb7828cd89bdd1f63692f066a21d91f99121b46d592f197041da94cbe34d",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%90%E1%BB%93+d%C3%B9ng."
+    },
+    {
+      "id": "394",
+      "text": "Đồng hồ đeo tay",
+      "file": "394.wav",
+      "duration_ms": 1448,
+      "sha256": "c66437d2500e6010b2497a692d8f322c26d83a0c3fd05b727e2e365e8f18234c",
+      "source_sha256": "8c223bd8f2297a7b6caa81e82f646349d6ae595197bfb790bcc566d0c9b65e8e",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%90%E1%BB%93ng+h%E1%BB%93+%C4%91eo+tay."
+    },
+    {
+      "id": "395",
+      "text": "Đồng ý",
+      "file": "395.wav",
+      "duration_ms": 968,
+      "sha256": "a7ef4315957ac16f271be78d8c6acbe982018c77cb70dfecc131665c8f986be7",
+      "source_sha256": "52f734a809dada14a34283f13cd787a82dd1c8952a13f6847e40b4de04877c92",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%90%E1%BB%93ng+%C3%BD."
+    },
+    {
+      "id": "396",
+      "text": "Ướt",
+      "file": "396.wav",
+      "duration_ms": 544,
+      "sha256": "847a9d717fe2a98705bd7a632382f51a8817462d6d7a131302f1291f256724b1",
+      "source_sha256": "59c1ca3fbd998c519c3d48bfc2ae17d09903a87ec40d1753391d559e5d0a5fe8",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C6%AF%E1%BB%9Bt."
+    },
+    {
+      "id": "397",
+      "text": "Ấm",
+      "file": "397.wav",
+      "duration_ms": 668,
+      "sha256": "97dea2126358baf777f1afad60a09536f8245632873fe950c4a73994a3ed011d",
+      "source_sha256": "37cd2e45e16063bce74d2fdf52296c9ce9d56dfdf085dbf68bf51e4fd425c7c3",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%E1%BA%A4m."
+    },
+    {
+      "id": "398",
+      "text": "Ốm",
+      "file": "398.wav",
+      "duration_ms": 629,
+      "sha256": "2d994b61d6b3d9677aa85c4236ed5130073bd2a69e6d1b022b905aa444a9c36d",
+      "source_sha256": "34802800cd2f4da2d4b334d4a1b69d8ac30fdd47d81a2f13d960f8a4d5268685",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%E1%BB%90m."
+    },
+    {
+      "id": "399",
+      "text": "Ồn ào",
+      "file": "399.wav",
+      "duration_ms": 948,
+      "sha256": "2b068bb2b9dd2ea94f1ac136509ef9a6a46451bd3eb47ccf2d3ddd5d7469b5df",
+      "source_sha256": "05a34f7e018d3fdec8cd1cfe8a25653db34c5d0766ddb0b4a4a12bc30a3f598d",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%E1%BB%92n+%C3%A0o."
+    },
+    {
+      "id": "uncertain",
+      "text": "Chưa chắc",
+      "file": "uncertain.wav",
+      "duration_ms": 792,
+      "sha256": "ab0554d1d22d88e79bd5f54ef2b50cc40c97ed900ecc5948d164acf432e2b17d",
+      "source_sha256": "ab3c045d6e532f09c125f0ed0a76d1b7a961910596454659541b8bd78641955b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ch%C6%B0a+ch%E1%BA%AFc."
+    },
+    {
+      "id": "mm100-W015",
+      "text": "Yêu",
+      "file": "mm100-W015.wav",
+      "duration_ms": 761,
+      "sha256": "a426683ea8006706286f1bd43e5956cec39f0819610fae41076044a7d4666e7d",
+      "source_sha256": "b5efb40c69b7e812b3625ef08f2fc06785557bf969a482709a72a9ffaf2ae78e",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Y%C3%AAu."
+    },
+    {
+      "id": "mm100-W038",
+      "text": "Lạnh (nhiệt độ)",
+      "file": "mm100-W038.wav",
+      "duration_ms": 1438,
+      "sha256": "04ec2b908b7caf11b585923d9dd56bc3a238a6bac6671e98dbfd383f2b74f280",
+      "source_sha256": "7e864cfdba9f422e74e1e4f3b83510fb9e78d929692fdff38ea454b0abe9abe8",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=L%E1%BA%A1nh+%28nhi%E1%BB%87t+%C4%91%E1%BB%99%29."
+    },
+    {
+      "id": "mm100-W065",
+      "text": "Bệnh nhân",
+      "file": "mm100-W065.wav",
+      "duration_ms": 914,
+      "sha256": "2bdb8e9b9c2979b042e8bb1b1b726c45ae8f1bfba40b5075eb3d2b7b52d414ac",
+      "source_sha256": "0c0c675baa7e9c12d2c0e83155be049a318e93a2b5dadb8126fc4089c4f65d1c",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%E1%BB%87nh+nh%C3%A2n."
+    },
+    {
+      "id": "mm100-W068",
+      "text": "Sốt",
+      "file": "mm100-W068.wav",
+      "duration_ms": 630,
+      "sha256": "c0d53f3651fa839da6a93a35c2ee25a497233301e7b3f4618aea806e8fa5986a",
+      "source_sha256": "7734ed2dd15a7453ac222d6581b23efcbdb9a696adfd109b96279536bced06eb",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=S%E1%BB%91t."
+    },
+    {
+      "id": "mm100-W069",
+      "text": "Buồn nôn",
+      "file": "mm100-W069.wav",
+      "duration_ms": 960,
+      "sha256": "d1826d191711b185696bdd73bfd5ee510ee4d6ec8f5ce3277eca222565f9c202",
+      "source_sha256": "a6f24cd7e9c8e3380f56c5e414410ca8869b35e46a28a5630c9ef283799c4d91",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Bu%E1%BB%93n+n%C3%B4n."
+    },
+    {
+      "id": "mm100-W070",
+      "text": "Đau mắt",
+      "file": "mm100-W070.wav",
+      "duration_ms": 780,
+      "sha256": "328fdc7ebeaeaceb77a0d2060bb2b5f55eb1c278dce82b57e436c871e6107afe",
+      "source_sha256": "7c7c99e3edccb31e3900c52cf527d3b8b03fafb667c319f604455a93fe929ffa",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%90au+m%E1%BA%AFt."
+    },
+    {
+      "id": "mm100-W071",
+      "text": "Đau tai",
+      "file": "mm100-W071.wav",
+      "duration_ms": 997,
+      "sha256": "47fd3a2af6eccba68fb271f41200cfad5a89c9eb4a8d42257aaf5e6312566a57",
+      "source_sha256": "cdcd2b8eab5984e345631376f53fd03932da14184297e27ee633741a4fca43ae",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=%C4%90au+tai."
+    },
+    {
+      "id": "mm100-W072",
+      "text": "Bụng",
+      "file": "mm100-W072.wav",
+      "duration_ms": 596,
+      "sha256": "fdacdf9157b61f717b3d741a04091f3e9d04e10a292623e463e5fa25b404e059",
+      "source_sha256": "cafe3d2e8e5397ee1ddf7ae1c42cfb09b3278c1316633fc8dc6b4bac9ab9c47b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%E1%BB%A5ng."
+    },
+    {
+      "id": "mm100-W073",
+      "text": "Tay",
+      "file": "mm100-W073.wav",
+      "duration_ms": 653,
+      "sha256": "83c447f550232137d1a769a2f6bb689ebe8c93cb915defbba07c8f1d14cf1d58",
+      "source_sha256": "a9b7f50d45edccd331ccb1680a1889a714277bc2407f1bdba7e4561e787df01b",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Tay."
+    },
+    {
+      "id": "mm100-W074",
+      "text": "Tim",
+      "file": "mm100-W074.wav",
+      "duration_ms": 681,
+      "sha256": "405e1ea7bc67e596f546684bc1c595c0eb7aa9bb601e1ce1e6a94971ae1ea17f",
+      "source_sha256": "87e28a0a8527c5c5b45bc7fb1c00807dd49e419e022703a4ac5177bf4a651401",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Tim."
+    },
+    {
+      "id": "mm100-W075",
+      "text": "Răng",
+      "file": "mm100-W075.wav",
+      "duration_ms": 681,
+      "sha256": "e4c99a7e570c72399d93f3403276ecae50d3534951c2b6c102ef180b519db604",
+      "source_sha256": "ea90f9fbd1700b6da147861621a500b967eeedcea571cdd62a8a52edc22df95f",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=R%C4%83ng."
+    },
+    {
+      "id": "mm100-W076",
+      "text": "Nhiệt độ",
+      "file": "mm100-W076.wav",
+      "duration_ms": 874,
+      "sha256": "8bbc07f1b0768fed6bb4abbad63538d47efc5d404055b455393b31339a436fca",
+      "source_sha256": "e2b9dbcbdad0ae3069e75e5140d8d6bb7a3834040a60f8ce3706a0f77e425bf8",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Nhi%E1%BB%87t+%C4%91%E1%BB%99."
+    },
+    {
+      "id": "mm100-W077",
+      "text": "Thở",
+      "file": "mm100-W077.wav",
+      "duration_ms": 719,
+      "sha256": "7bbd6c932b39b962fa005ab1a9c6bfc4f4f8e082bc43c7692e7afa34154c7d62",
+      "source_sha256": "f06025cc77cadab55a33a48d3ff3975a42d15d2c11057d2256724d651ded60b0",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Th%E1%BB%9F."
+    },
+    {
+      "id": "mm100-W078",
+      "text": "Tiêm",
+      "file": "mm100-W078.wav",
+      "duration_ms": 681,
+      "sha256": "18ee36d1a286b125b1bbcd11a526a53f0b1aa5f82575ba574ab7f01127fc6a6d",
+      "source_sha256": "05d31d5481da81836303e568bfa1e62139adf824dfc824657fe68a7ccd040c4d",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Ti%C3%AAm."
+    },
+    {
+      "id": "mm100-W079",
+      "text": "Băng bó",
+      "file": "mm100-W079.wav",
+      "duration_ms": 986,
+      "sha256": "a45eb2110098146a151d6292c896896ecd1833a0e8f42212e8f38ca1af131901",
+      "source_sha256": "17ef6ff64ff46a6e4c39dcbd9d1612195a3b55b3d9a2867d8ea4a91e608bdb1a",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=B%C4%83ng+b%C3%B3."
+    },
+    {
+      "id": "mm100-W080",
+      "text": "Cấp cứu",
+      "file": "mm100-W080.wav",
+      "duration_ms": 1014,
+      "sha256": "73390042ed5af1491ce41450e55f164a3db2f0e3e64ea7e1ce96c85fae730e09",
+      "source_sha256": "872584debb9230b14043b55e4082e278f16c0ae98c4984c146db6feef9f162f8",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=C%E1%BA%A5p+c%E1%BB%A9u."
+    },
+    {
+      "id": "mm100-W081",
+      "text": "Khẩu trang",
+      "file": "mm100-W081.wav",
+      "duration_ms": 1057,
+      "sha256": "b1fe3573afdaab965e43a0713c8bcf54e17bb2a77e3307c77b6a4409f1243c90",
+      "source_sha256": "44ef73c332abbdc2ca550c781fdca5f39fa693e932ce31e73792487ecc5b32a8",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Kh%E1%BA%A9u+trang."
+    },
+    {
+      "id": "mm100-W082",
+      "text": "Nhà vệ sinh",
+      "file": "mm100-W082.wav",
+      "duration_ms": 1150,
+      "sha256": "797781837ad3dd89ed8c132a88e9ae039de8bfc3edc9deb786b3f311982003ad",
+      "source_sha256": "90cfc12898a186fd2fcadcd3e1b80cedab91140a6f86f2bf52f35d7f595cbb31",
+      "source_url": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=Nh%C3%A0+v%E1%BB%87+sinh."
+    }
+  ]
+}

@@ -2,16 +2,18 @@ import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { VRM, VRMLoaderPlugin, VRMUtils } from '@pixiv/three-vrm';
-import { LoaderCircle, Maximize2 } from 'lucide-react';
+import { LoaderCircle, Maximize2, Volume2, VolumeX } from 'lucide-react';
 import { request } from '../api';
 import type { Bootstrap, Motion, Playback } from '../types';
-import { samplePlaylist } from './motion';
+import { elapsedPlayback, samplePlaylist } from './motion';
+import { AvatarNarrator, type NarrationEntry } from './narration';
+import voiceBank from '../../assets/avatar-voice/manifest.json';
 import { HumanoidRetargeter } from './retarget';
 import { dressClinician } from './clinicalOutfit';
 import { clinicalAppearance } from './clinicalAppearance';
 import { installQuestionExpression, questionWeight } from './nonmanual';
 
-export function AvatarView({ bootstrap, playback }: { bootstrap: Bootstrap; playback: Playback | null }) {
+export function AvatarView({ bootstrap, playback, voiceEnabled, connected }: { bootstrap: Bootstrap; playback: Playback | null; voiceEnabled: boolean; connected: boolean }) {
   const host = useRef<HTMLDivElement>(null);
   const current = useRef(playback);
   const zoomRef = useRef(false);
@@ -21,6 +23,9 @@ export function AvatarView({ bootstrap, playback }: { bootstrap: Bootstrap; play
   const [label, setLabel] = useState('');
   const [progress, setProgress] = useState(0);
   const [activeIndex, setActiveIndex] = useState(-1);
+  const [voiceError, setVoiceError] = useState('');
+  const audioSettings = useRef({ voiceEnabled, connected });
+  audioSettings.current = { voiceEnabled, connected };
   current.current = playback;
   zoomRef.current = zoom;
 
@@ -31,6 +36,10 @@ export function AvatarView({ bootstrap, playback }: { bootstrap: Bootstrap; play
     let contextLost = false;
     let contextPause = '';
     let vrm: VRM | null = null;
+    const narrator = new AvatarNarrator(voiceBank.entries as NarrationEntry[], event => {
+      if (event.type === 'error') setVoiceError(String(event.text));
+      if (event.type === 'playing') setVoiceError('');
+    });
     let retargeter: HumanoidRetargeter | null = null;
     const motions = new Map<string, Motion>();
     const sentReady = new Set<string>();
@@ -41,7 +50,7 @@ export function AvatarView({ bootstrap, playback }: { bootstrap: Bootstrap; play
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.0;
     renderer.localClippingEnabled = true;
-    renderer.domElement.setAttribute('aria-label', 'Avatar 3D thực hiện ký hiệu bằng cánh tay, bàn tay và các ngón tay');
+    renderer.domElement.setAttribute('aria-label', 'Người hướng dẫn thực hiện ký hiệu');
     renderer.domElement.setAttribute('role', 'img');
     container.append(renderer.domElement);
     const pauseForContext = () => {
@@ -55,6 +64,7 @@ export function AvatarView({ bootstrap, playback }: { bootstrap: Bootstrap; play
     const loseContext = (event: Event) => {
       event.preventDefault();
       contextLost = true;
+      narrator.pause();
       setFailure('Hình ảnh 3D tạm gián đoạn. Đang khôi phục; ký hiệu đã được tạm dừng.');
       pauseForContext();
     };
@@ -115,7 +125,7 @@ export function AvatarView({ bootstrap, playback }: { bootstrap: Bootstrap; play
       }
       vrm = gltf.userData.vrm as VRM;
       if (!vrm) {
-        throw new Error('Tệp avatar chưa có bộ xương VRM.');
+        throw new Error('Chưa mở được người hướng dẫn. Vui lòng đóng rồi mở lại ứng dụng.');
       }
       VRMUtils.removeUnnecessaryVertices(gltf.scene);
       VRMUtils.combineSkeletons(gltf.scene);
@@ -194,14 +204,18 @@ export function AvatarView({ bootstrap, playback }: { bootstrap: Bootstrap; play
       }
       const cycle = playing ? `${playing.id}:${playing.iteration}` : '';
       if (loaded && retargeter) {
-        if (playing?.status === 'loading' && !sentReady.has(cycle)) {
+        narrator.prepare(playing);
+        if (playing?.status === 'loading' && (narrator.ready() || !audioSettings.current.voiceEnabled) && !sentReady.has(cycle)) {
           sentReady.add(cycle);
           void request('/playback', { action: 'ready', playback_id: playing.id, iteration: playing.iteration }).catch(() => sentReady.delete(cycle));
         }
         const sample = samplePlaylist(playing, motions);
         const question = questionWeight(playing);
+        const narration = narrator.tick(playing, audioSettings.current.voiceEnabled, audioSettings.current.connected,
+          playing ? elapsedPlayback(playing) : 0, delta);
+        for (const [shape, weight] of Object.entries(narration.mouth)) vrm?.expressionManager?.setValue(shape, weight);
         const diagnostics = retargeter.apply(sample.pose, delta, seconds, question);
-        window.clinicDiagnostics = { ...diagnostics, questionWeight: question, playbackId: playing?.id, iteration: playing?.iteration, progress: sample.progress, label: sample.label, glossIndex: sample.index, phase: sample.phase, rendererFrames: renderer.info.render.frame, measuredFps };
+        window.clinicDiagnostics = { ...diagnostics, narration, mouthExpressions: vrm?.expressionManager?.expressions.map(e => e.expressionName), questionWeight: question, playbackId: playing?.id, iteration: playing?.iteration, progress: sample.progress, label: sample.label, glossIndex: sample.index, phase: sample.phase, rendererFrames: renderer.info.render.frame, measuredFps };
         if (seconds - lastNotice > 0.08) {
           setLabel(sample.label);
           setProgress(sample.progress);
@@ -252,6 +266,7 @@ export function AvatarView({ bootstrap, playback }: { bootstrap: Bootstrap; play
     animate();
     return () => {
       disposed = true;
+      narrator.dispose();
       cancelAnimationFrame(frame);
       observer.disconnect();
       if (vrm) {
@@ -270,8 +285,11 @@ export function AvatarView({ bootstrap, playback }: { bootstrap: Bootstrap; play
     {(!ready || failure) && <div className="avatar-loading">{failure ? <span role="alert">{failure}</span> : <><LoaderCircle size={28} /><span>Đang chuẩn bị người hướng dẫn…</span></>}</div>}
     <div className="avatar-stage-top"><span className="eyebrow">LỜI BÁC SĨ QUA KÝ HIỆU</span><span className="soft-tag">Hướng dẫn trực quan</span></div>
     <div className="avatar-stage-tools">
+      <button className="icon-button" aria-label={voiceEnabled ? 'Tắt đọc lời bác sĩ' : 'Bật đọc lời bác sĩ'} aria-pressed={voiceEnabled}
+        title="Bật hoặc tắt giọng đọc lời bác sĩ" onClick={() => void request('/avatar/voice', { enabled: !voiceEnabled }).catch(() => setVoiceError('Chưa đổi được giọng đọc. Vui lòng thử lại.'))}>{voiceEnabled ? <Volume2 size={19} /> : <VolumeX size={19} />}</button>
       <button className={`icon-button ${zoom ? 'selected' : ''}`} onClick={() => setZoom(!zoom)} title={zoom ? 'Xem toàn bộ cử động' : 'Xem gần bàn tay'} aria-label={zoom ? 'Xem toàn bộ cử động' : 'Xem gần bàn tay'}><Maximize2 size={19} /></button>
     </div>
+    {voiceError && <div className="avatar-voice-warning" role="status">{voiceError}</div>}
     <div className="avatar-caption"><span className={`status-dot ${playback?.status === 'playing' ? 'active' : ''}`} />{label ? `${label} · ${activeIndex + 1}/${playback?.glosses.length}` : (playback?.status === 'loading' ? 'Đang chuẩn bị ký hiệu' : 'Sẵn sàng lắng nghe bác sĩ')}</div>
     {playback && <div className="sign-sequence" aria-label="Thứ tự ký hiệu" data-testid="sign-sequence">{playback.glosses.map((gloss, index) => <span key={`${index}-${gloss.id}`} className={index === activeIndex ? 'current' : index < activeIndex ? 'done' : ''} aria-current={index === activeIndex ? 'step' : undefined}>{index + 1}. {gloss.label}</span>)}</div>}
     <div className="avatar-progress"><div style={{ width: `${progress * 100}%` }} /></div>

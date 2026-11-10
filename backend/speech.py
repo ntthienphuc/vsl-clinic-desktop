@@ -14,6 +14,7 @@ import numpy as np
 from fastapi import WebSocket
 from starlette.websockets import WebSocketDisconnect
 from .speech_activity import FRAME_BYTES, FRAME_MS, FRAME_SAMPLES, SAMPLE_RATE, SpeechActivity
+from .speech_quality import speech_evidence, accept_decoder_segment
 
 MAX_UTTERANCE_FRAMES = 375
 END_SILENCE_FRAMES = 18
@@ -137,14 +138,15 @@ class SpeechService:
                 get_vad_model()
 
     def transcribe(self, pcm: bytes) -> dict:
-        self.prepare()
         samples = np.frombuffer(pcm, dtype="<i2").astype(np.float32) / 32768
         if not 1600 <= samples.size <= SAMPLE_RATE * 13:
             raise ValueError("Mỗi ý nói phải dài từ 0,1 đến 13 giây.")
         start = time.perf_counter()
-        if float(np.sqrt(np.mean(samples * samples))) < 0.0003:
+        evidence = speech_evidence(pcm)
+        if not evidence["accepted"]:
             return {"text": "", "decode_ms": 0, "audio_ms": samples.size * 1000 / SAMPLE_RATE,
-                    "uncertain": True, "segments": []}
+                    "uncertain": True, "segments": [], "rejection_reason": "no_speech", "speech_evidence": evidence}
+        self.prepare()
         segments, _ = self.model.transcribe(
             samples, language="vi", task="transcribe", beam_size=3,
             temperature=0.0, condition_on_previous_text=False,
@@ -152,7 +154,7 @@ class SpeechService:
             max_new_tokens=160,
         )
         records = list(segments)
-        accepted = [part for part in records if not (part.no_speech_prob > 0.65 and part.avg_logprob < -0.7)]
+        accepted = [part for part in records if accept_decoder_segment(part)]
         text = " ".join(part.text.strip() for part in accepted).strip()
         return {
             "text": text,
@@ -160,6 +162,8 @@ class SpeechService:
             "audio_ms": samples.size * 1000 / SAMPLE_RATE,
             "uncertain": not accepted or any(part.avg_logprob < -0.85 or part.compression_ratio > 2.4 for part in accepted),
             "segments": [{"avg_logprob": part.avg_logprob, "no_speech_prob": part.no_speech_prob} for part in records],
+            "speech_evidence": evidence,
+            "rejection_reason": "no_speech" if records and not accepted else None,
         }
 
     async def run(self, function, *args):
@@ -223,8 +227,12 @@ async def stream_dictation(socket: WebSocket, service: SpeechService, session_id
                 if not valid():
                     return
                 if not result['text'].strip():
-                    await emit({'type': 'speech_rejected', 'message': 'Chưa nghe rõ lời nói. Bạn hãy nói lại gần micro hơn.'})
-                    record_metric({'type': 'speech_rejected', 'decode_ms': result['decode_ms'], 'audio_ms': result['audio_ms']})
+                    ignored = result.get('rejection_reason') == 'no_speech'
+                    await emit({'type': 'speech_ignored' if ignored else 'speech_rejected',
+                                'message': 'Đang chờ lời nói…' if ignored else 'Chưa nghe rõ lời nói. Bạn hãy nói lại gần micro hơn.'})
+                    record_metric({'type': 'speech_ignored' if ignored else 'speech_rejected',
+                                   'decode_ms': result['decode_ms'], 'audio_ms': result['audio_ms'],
+                                   'speech_evidence': result.get('speech_evidence')})
                     continue
                 sequence += 1
                 result.update({

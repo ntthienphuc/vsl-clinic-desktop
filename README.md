@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/demo-v0.3.4-087F83?style=flat-square" alt="Demo version 0.3.4">
+  <img src="https://img.shields.io/badge/demo-v0.5.2-087F83?style=flat-square" alt="Demo version 0.5.2">
   <img src="https://img.shields.io/badge/platform-Windows-254D68?style=flat-square" alt="Windows desktop">
   <img src="https://img.shields.io/badge/processing-local-496D59?style=flat-square" alt="Local processing">
 </p>
@@ -16,20 +16,25 @@
 <p align="center">
   <a href="#interface">Interface</a> ·
   <a href="#getting-started">Getting started</a> ·
-  <a href="#demo-scenarios">Demo</a> ·
   <a href="#how-it-works">Architecture</a> ·
   <a href="docs/README.md">Documentation</a>
 </p>
 
 ---
 
-**VSL Clinic** runs on one Windows computer with two simultaneous windows. Doctors speak Vietnamese or type; patients see the message and a signing avatar. In the other direction, recognized sign words appear immediately on the doctor's screen, then form a conversation turn after a pause.
+**VSL Clinic** runs on one Windows computer with two simultaneous windows. Doctors speak Vietnamese or type; patients see the message and a signing avatar. In the other direction, recognized sign words appear immediately and are read aloud on the doctor's screen, then form a conversation turn after a pause.
+
+Version **0.5.2** defaults to **Ký hiệu + khẩu hình · 100 words** (fusion) and offers **Chỉ ký hiệu · 400 words** on the patient screen. The active dictionary, label namespace, offline readout and sample selection switch together in both windows. The minimal Vietnamese interface puts setup in **Camera và tùy chọn**, and the doctor has 24 quick clinical phrases beside the composer plus stronger silence rejection. Each clear completed word still appears and is spoken before turn grouping. The app manages the bundled models and runtimes automatically. [Usage, measured checks and pilot limits](docs/CLINIC_0.5.2.md). The original 0.4.1 portable folder/launcher and previous 0.5.x packages remain preserved. Verification uses prerecorded fixtures; live webcam/room-noise robustness is unverified. This is a non-commercial research demo under the bundled AV-HuBERT license.
+
+Version 0.3.5 bundles Vietnamese readout audio for all 400 recognition labels. Playback is offline, uses a slightly slower pace with pitch preserved, and never repeats the completed sentence. The doctor microphone pauses during readout and resumes after the room-echo guard; a microphone manually muted by the doctor stays muted. The speaker button beside the live patient words turns readout on or off. Text is larger on both 16:9 screens. [Readout and packaging notes](docs/PATIENT_VOICE_0.3.5.md).
+
+Version 0.3.7 gives conversation history two thirds of the doctor's workspace, collapses pending speech into a compact review panel and shows the patient's avatar progress on the doctor's screen. Ending clears both screens; an optional temporary copy stays read-only in memory. [Workspace behavior and validation](docs/WORKSPACE_0.3.7.md).
 
 | Patient-side recognition | Avatar motion bank | Controlled templates | Setup |
 | :---: | :---: | :---: | :---: |
-| **400** isolated-word labels | **65** signs | **58** sentence patterns | **1 computer · 2 screens** |
+| **100** multimodal labels | **67** signs | **65** sentence patterns | **1 computer · 2 screens** |
 
-This is a demo with a defined vocabulary. Recognition labels and avatar motions are separate inventories: 400 recognition labels do not mean 400 avatar signs.
+This is a demo with a defined vocabulary. Recognition labels and avatar motions are separate inventories. Equal names across the new 100 and retained 400 labels are lexical candidates, not proven equivalent signing motions.
 
 ## Interface
 
@@ -39,12 +44,12 @@ This is a demo with a defined vocabulary. Recognition labels and avatar motions 
     <td width="50%"><strong>Patient screen</strong><br>View the signing avatar, the doctor's message, and a camera preview.</td>
   </tr>
   <tr>
-    <td><a href="docs/media/doctor-screen.png"><img src="docs/media/doctor-screen.png" alt="VSL Clinic 0.3.4 doctor interface: text input, live recognition and conversation history" width="100%"></a></td>
-    <td><a href="docs/media/patient-screen.png"><img src="docs/media/patient-screen.png" alt="VSL Clinic 0.3.4 patient interface: male doctor avatar, message panel and camera area" width="100%"></a></td>
+    <td><a href="docs/evidence/clinic-052-minimal-doctor-1280.png"><img src="docs/evidence/clinic-052-minimal-doctor-1280.png" alt="VSL Clinic 0.5.2 doctor interface: quick phrases, text input and conversation history" width="100%"></a></td>
+    <td><a href="docs/evidence/clinic-052-minimal-patient-1280.png"><img src="docs/evidence/clinic-052-minimal-patient-1280.png" alt="VSL Clinic 0.5.2 patient interface: signing avatar, doctor message and two recognition choices" width="100%"></a></td>
   </tr>
 </table>
 
-<sub>Actual Windows 0.3.4 screenshots in the idle state. The app interface and supported speech language are Vietnamese. Click an image to enlarge. [Image provenance](docs/media/README.md).</sub>
+<sub>Actual packaged 0.5.2 screenshots in the idle state, captured during the final fixture UI check. The app interface and supported speech language are Vietnamese. Click an image to enlarge. [Verification and limits](docs/CLINIC_0.5.2.md).</sub>
 
 ### Two directions, one conversation
 
@@ -72,9 +77,9 @@ npm start
 ```
 
 > [!IMPORTANT]
-> Git includes source, the motion bank, avatar assets and documentation. **Recognition/speech weights, original videos and the executable are not in this repository.** The restore tool verifies 107 local inputs using SHA-256; it does not download them. See the [source and local-assets guide](docs/GIT_SETUP.md).
+> Git includes source, the motion bank, avatar assets and documentation. **Recognition/speech weights, original videos and the executable are not in this repository.** The current restore manifest verifies 21,179 local asset/runtime files using SHA-256; it does not download them. See the [source and local-assets guide](docs/GIT_SETUP.md).
 
-Already have the portable distribution? Keep its entire folder together and open `VSL Clinic.exe`. It includes its own runtimes; installing Python or Node is not part of the end-user workflow. This is a portable folder, not a single-file EXE or installer. See [what the Windows package includes](docs/PACKAGE_CONTENTS.md).
+For end users, the local **VSL-Clinic-Setup-0.5.2.exe** installs all models and runtimes and creates **VSL Clinic** on the Desktop. Python, Node and a separate model server are not needed. The installer is a local artifact and is not uploaded to this repository. Developers can still use the complete portable folder. See [package contents](docs/PACKAGE_CONTENTS.md) and [installer build instructions](installer/README.md).
 
 ### Start a conversation
 
@@ -83,17 +88,6 @@ Already have the portable distribution? Keep its entire folder together and open
 3. **The patient signs individual words**, pausing approximately 0.7–1 second between words and 1.5 seconds after a turn. Each word appears immediately for the doctor.
 
 One monitor can display the windows side by side. With two monitors, **Bố trí màn hình** (Screen layout) can arrange or swap them. [Full usage guide →](docs/USAGE.md)
-
-## Demo scenarios
-
-Both scenarios are available in **Chọn câu / từ → 2 kịch bản demo** (Choose phrase/word → 2 demo scenarios). Each contains five turns with exact Vietnamese doctor prompts, patient sign order and practice-video instructions.
-
-| Scenario | Conversation | Script |
-| --- | --- | --- |
-| **01 · Reception and symptoms** | Examination, pain, tiredness, temperature measurement and rest. | [Vietnamese script](demo/HAI_KICH_BAN_2026-10-31/01_Tiep_don_va_hoi_trieu_chung/KICH_BAN.md) |
-| **02 · Needs and assistance** | Asking for help or water, agreement, rest and thanks. | [Vietnamese script](demo/HAI_KICH_BAN_2026-10-31/02_Nhu_cau_va_ho_tro/KICH_BAN.md) |
-
-After restoring local inputs, you can rehearse with video instead of a webcam. The app runs real recognition on the clips; it does not insert predefined answers. Scripts retain Vietnamese wording because they are actual demo inputs. [Video rehearsal instructions, Vietnamese →](demo/HAI_KICH_BAN_2026-10-31/README.md)
 
 ## How it works
 
@@ -105,7 +99,7 @@ flowchart LR
         C --> D["Sign sequence → avatar"]
     end
     subgraph patient["Patient → doctor"]
-        E["Camera / video"] --> F["Keypoints → 400-word model"]
+        E["One camera / video owner"] --> F["Pose + mouth images → 100-word fusion"]
         F --> G["Stream each word"]
         G --> H["Pause → group a turn"]
     end
@@ -148,7 +142,7 @@ This standalone desktop repository contains neither the Android/Flutter app nor 
 | Independent checkout · 2026-11-01 | **303 Python tests**, **6 avatar tests**, frontend build passed | [Source check](docs/evidence/standalone-source-check-2026-11-01.json) |
 | Portable inventory · 2026-11-01 | **1,990 payload files** matched the receipt; models, avatar and motions present | [Package inventory](docs/evidence/portable-inventory-2026-11-01.json) |
 | Relocated frozen engine · 2026-11-01 | Recognition and PhoWhisper ran with an empty model cache; **93 videos** decoded | [Runtime probe](docs/evidence/portable-runtime-2026-11-01.json) |
-| Fixed video scenarios, repeated twice · 2026-10-31 | **20/20 turns**, **28/28 word occurrences** in the expected order | [Rehearsal retest](docs/evidence/idle-retest-summary-2026-10-31.json) |
+| Fixed reference-video checks, repeated twice · 2026-10-31 | **20/20 turns**, **28/28 word occurrences** in the expected order | [Rehearsal retest](docs/evidence/idle-retest-summary-2026-10-31.json) |
 
 The rehearsal repeats the same 14 word occurrences after reducing machine load; these are not 28 independent samples or a 400-class accuracy benchmark. Earlier loaded-machine runs included errors. Relocation was tested on the same Windows PC, not a clean Windows VM. [Conditions and limitations, Vietnamese →](docs/DEMO_0.3.4.md)
 
@@ -183,7 +177,6 @@ The build checks backend behavior, kinematics, the VRM rig, notices and payload 
 | Set up source and recover local inputs | [Source & local assets](docs/GIT_SETUP.md) |
 | Use the two-screen app | [Usage guide](docs/USAGE.md) |
 | Check the end-user distribution | [Windows package contents](docs/PACKAGE_CONTENTS.md) |
-| Prepare a rehearsal | [Two demo scenarios, Vietnamese](demo/HAI_KICH_BAN_2026-10-31/README.md) |
 | Understand language coverage | [Semantic routing, Vietnamese](docs/SEMANTIC_AND_BANK_PLAN.md) |
 | Understand motion smoothing | [Motion quality, Vietnamese](docs/MOTION_QUALITY.md) |
 | Browse all guides and evidence | [Documentation index](docs/README.md) |

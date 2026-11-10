@@ -1,0 +1,19 @@
+{
+  "streams": [
+    [
+      "video",
+      "vp8"
+    ],
+    [
+      "audio",
+      "opus"
+    ]
+  ],
+  "video_frames": 447,
+  "video_seconds": 14.871,
+  "width": 1280,
+  "height": 720,
+  "audio_samples": 691200,
+  "audio_seconds": 14.4,
+  "audio_peak": 0.6551636457443237
+}

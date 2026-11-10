@@ -112,7 +112,7 @@ def test_unknown_user_question_warns_and_retry_then_auto_sends(session):
     session.configure_conversation('auto')
     session.start_conversation()
     epoch = session.conversation['epoch']
-    result = {'utterance_id': 'mic:1', 'text': 'Bạn cảm thấy thế nào?'}
+    result = {'utterance_id': 'mic:1', 'text': 'Bạn đau bụng bao nhiêu ngày?'}
     assert session.speech_result(result, epoch)['status'] == 'review'
     draft = session.speech_drafts[0]
     assert draft['reason_code'] == 'unsupported'

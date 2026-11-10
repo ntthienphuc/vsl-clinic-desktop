@@ -1,0 +1,115 @@
+{
+  "created_at": "2026-11-02T18:19:53.100456+07:00",
+  "scope": "Read-only source planner/retrieval probe; no actual audio, camera, recognition model inference or clinical validation",
+  "source_root": "E:\\Project\\VSL Clinic\\Source",
+  "git_head": "2436e7a9e9e80b805c08e6834a3029b75c4cbed6",
+  "source_is_dirty": true,
+  "python": "3.11.9",
+  "ctranslate2": "4.6.2",
+  "ct2_whisper_generate_supports_nbest": true,
+  "source_sha256": {
+    "backend/speech.py": "1a6d2b02212fff345d624e00e1495c41bed6b22e7102f34781e1c520a3ed6137",
+    "backend/live_segmenter.py": "252e314b952183d0f82081d1d0c1a769f25198694634cd3e32af86ac37e4a0b9",
+    "backend/recognition.py": "bb49d2587894c563a1f2e8ae606b380b46814f948c626fa7d52b660ae053f63f",
+    "backend/legacy/pipelines/slgcn_onnx_inference.py": "197ffcf19a4a9119bfad32ba3e7bebba3c43a70879ec336e700122f9c7789665",
+    "backend/session.py": "5899e5805948737d2547cea38350466be1078aaa61f2bd660fc85ffabcdcf4a8",
+    "backend/patient_turns.py": "bfc99fdcd4c18dfedd3f2c44ce48a8fce602c625a5fbbcf967e66b01b608b660",
+    "backend/text_to_sign.py": "fad5207eb8cc67db82f07063204f9767955e5c772ab2a255e04b5172d6816a57",
+    "backend/language_assist.py": "609847fe5da249c5c877b69a9e8c6ec1edbd888e3f76fc2a9302795b82a92f58",
+    "src/speech/patientWordSpeaker.ts": "7cf21341622c091b65fe8ec44731a4433b87cfeac0e7e7048c7c5a4a0fd126a4",
+    "src/avatar/nonmanual.ts": "6328b79756ec1057d3f2113b2fe8eb9ccd0bc43434af4175aa3d485e29c79132",
+    "assets/vocabulary.json": "bb4eaa014bc0add88493f8e9bed01eb5db367893f521af73f37a174772c3d87e",
+    "assets/phrases.json": "b71fda53acd2bcecb3d2fb1f45205ace493d99d2bc5cfb2927060748b7bb8473",
+    "assets/semantic_bank.json": "a1201bede73d7fe5cc87775b575cf30be572d34dadcaec65dba5617558f19671"
+  },
+  "cases": [
+    {
+      "input": "cạm ơn",
+      "supported": false,
+      "glosses": [],
+      "act": "word",
+      "nonmanual": "neutral",
+      "missing": [
+        "cạm",
+        "ơn"
+      ],
+      "retrieval": []
+    },
+    {
+      "input": "cảm ơn",
+      "supported": true,
+      "glosses": [
+        "Cảm ơn"
+      ],
+      "act": "word",
+      "nonmanual": "neutral",
+      "missing": [],
+      "retrieval": []
+    },
+    {
+      "input": "Bạn có đau không",
+      "supported": true,
+      "glosses": [
+        "Đau"
+      ],
+      "act": "yes_no_question",
+      "nonmanual": "question",
+      "missing": [],
+      "retrieval": [
+        "Bạn có đau không?",
+        "Bạn có đau bụng không?",
+        "Bạn có đau tay không?"
+      ]
+    },
+    {
+      "input": "Bạn không đau",
+      "supported": false,
+      "glosses": [
+        "Đau"
+      ],
+      "act": "word",
+      "nonmanual": "neutral",
+      "missing": [
+        "Bạn",
+        "không"
+      ],
+      "retrieval": []
+    },
+    {
+      "input": "y tá ơi đo nhiệt độ nha",
+      "supported": true,
+      "glosses": [
+        "Y tá",
+        "Nhiệt độ",
+        "Đo"
+      ],
+      "act": "statement",
+      "nonmanual": "neutral",
+      "missing": [],
+      "retrieval": [
+        "Y tá đo nhiệt độ.",
+        "Bây giờ y tá đo nhiệt độ."
+      ]
+    },
+    {
+      "input": "Tôi không đau bụng, tôi đau tay",
+      "supported": false,
+      "glosses": [
+        "Đau",
+        "Bụng",
+        "Đau",
+        "Tay"
+      ],
+      "act": "word",
+      "nonmanual": "neutral",
+      "missing": [
+        "Tôi",
+        "không",
+        "tôi"
+      ],
+      "retrieval": []
+    }
+  ],
+  "runtime_changes": false,
+  "new_release": false
+}

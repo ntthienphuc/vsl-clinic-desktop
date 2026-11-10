@@ -1,0 +1,15 @@
+{
+  "checks": {
+    "version_040": true,
+    "two_windows": true,
+    "polite_invitation": true,
+    "open_question": true,
+    "incomplete_question_blocked": true,
+    "bundled_language_result": true,
+    "no_auto_send": true,
+    "model_released": true
+  },
+  "suggestion_ms": 3109,
+  "source": "actual final EXE opened through Open Clinic.lnk",
+  "limits": "smoke test, not live user or clean-machine validation"
+}

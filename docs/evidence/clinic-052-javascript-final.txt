@@ -1,0 +1,152 @@
+
+> vsl-clinic-desktop@0.5.2 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: mouth follows actual voiced energy and closes outside audio
+ok 1 - mouth follows actual voiced energy and closes outside audio
+  ---
+  duration_ms: 2.5047
+  type: 'test'
+  ...
+# Subtest: narration pauses, resumes at the timeline position and preserves pitch on speed changes
+ok 2 - narration pauses, resumes at the timeline position and preserves pitch on speed changes
+  ---
+  duration_ms: 2.9959
+  type: 'test'
+  ...
+# Subtest: mute, disconnect, End and replay cannot keep stale audio speaking
+ok 3 - mute, disconnect, End and replay cannot keep stale audio speaking
+  ---
+  duration_ms: 1.0099
+  type: 'test'
+  ...
+# Subtest: bridges preserve endpoint velocity when feasible and bound conflicting contact trajectories
+ok 4 - bridges preserve endpoint velocity when feasible and bound conflicting contact trajectories
+  ---
+  duration_ms: 3.6843
+  type: 'test'
+  ...
+# Subtest: arm frames cross the antipodal T-pose direction without a roll flip or endpoint drift
+ok 5 - arm frames cross the antipodal T-pose direction without a roll flip or endpoint drift
+  ---
+  duration_ms: 6.7113
+  type: 'test'
+  ...
+# Subtest: cubic motion sampling preserves measured poses and never overshoots contact coordinates
+ok 6 - cubic motion sampling preserves measured poses and never overshoots contact coordinates
+  ---
+  duration_ms: 6.3683
+  type: 'test'
+  ...
+# Subtest: two-bone IK keeps both lengths, finite even at singular/parallel targets
+ok 7 - two-bone IK keeps both lengths, finite even at singular/parallel targets
+  ---
+  duration_ms: 2.0067
+  type: 'test'
+  ...
+# Subtest: palm-local hinge limits survive folds, mirrored hands, and adversarial point noise
+ok 8 - palm-local hinge limits survive folds, mirrored hands, and adversarial point noise
+  ---
+  duration_ms: 90.7645
+  type: 'test'
+  ...
+# Subtest: wrist swing bounds and shortest-arc palm speed limit
+ok 9 - wrist swing bounds and shortest-arc palm speed limit
+  ---
+  duration_ms: 2.2333
+  type: 'test'
+  ...
+# Subtest: every bank word and supported sentence uses a continuous server timeline and stable pause
+ok 10 - every bank word and supported sentence uses a continuous server timeline and stable pause
+  ---
+  duration_ms: 2124.4999
+  type: 'test'
+  ...
+# Subtest: reads each word immediately, in order, without waiting for the turn endpoint
+ok 11 - reads each word immediately, in order, without waiting for the turn endpoint
+  ---
+  duration_ms: 6.6127
+  type: 'test'
+  ...
+# Subtest: duplicate snapshots and confirmations never repeat audio; deliberate repeated words do
+ok 12 - duplicate snapshots and confirmations never repeat audio; deliberate repeated words do
+  ---
+  duration_ms: 1.1501
+  type: 'test'
+  ...
+# Subtest: mount, reconnection, mute and source/session changes baseline old history
+ok 13 - mount, reconnection, mute and source/session changes baseline old history
+  ---
+  duration_ms: 1.158
+  type: 'test'
+  ...
+# Subtest: uncertain word stays silent until the same ID is confirmed, then speaks once
+ok 14 - uncertain word stays silent until the same ID is confirmed, then speaks once
+  ---
+  duration_ms: 0.7497
+  type: 'test'
+  ...
+# Subtest: audio failure releases microphone gate; stale completion cannot play queued words
+ok 15 - audio failure releases microphone gate; stale completion cannot play queued words
+  ---
+  duration_ms: 1.538
+  type: 'test'
+  ...
+# Subtest: stopping the conversation cancels speaking; patient manual feedback is not a sign result
+ok 16 - stopping the conversation cancels speaking; patient manual feedback is not a sign result
+  ---
+  duration_ms: 0.5362
+  type: 'test'
+  ...
+# Subtest: microphone gate blocks synchronously and protects the echo tail between adjacent clips
+ok 17 - microphone gate blocks synchronously and protects the echo tail between adjacent clips
+  ---
+  duration_ms: 655.3718
+  type: 'test'
+  ...
+# Subtest: offline bank covers all 400 exact recognizer labels and every WAV matches its hash
+ok 18 - offline bank covers all 400 exact recognizer labels and every WAV matches its hash
+  ---
+  duration_ms: 454.942
+  type: 'test'
+  ...
+# Subtest: one audio source cannot release another sources microphone guard
+ok 19 - one audio source cannot release another sources microphone guard
+  ---
+  duration_ms: 1318.968
+  type: 'test'
+  ...
+# Subtest: multimodal identity plays the new voice and a correction cannot play its old clip
+ok 20 - multimodal identity plays the new voice and a correction cannot play its old clip
+  ---
+  duration_ms: 0.7639
+  type: 'test'
+  ...
+# Subtest: doctor progress follows the current sign, bridge and playback rate
+ok 21 - doctor progress follows the current sign, bridge and playback rate
+  ---
+  duration_ms: 2.6689
+  type: 'test'
+  ...
+# Subtest: pause and disconnect freeze progress; loading and replay begin at zero
+ok 22 - pause and disconnect freeze progress; loading and replay begin at zero
+  ---
+  duration_ms: 0.5148
+  type: 'test'
+  ...
+# Subtest: completed reaches 100 percent; stopped preserves actual progress
+ok 23 - completed reaches 100 percent; stopped preserves actual progress
+  ---
+  duration_ms: 0.3609
+  type: 'test'
+  ...
+1..23
+# tests 23
+# suites 0
+# pass 23
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3526.0077

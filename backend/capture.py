@@ -10,7 +10,7 @@ from typing import Callable
 import cv2
 
 from .landmarks import LandmarkDetector
-from .recognition import Recognizer, Segmenter
+from .recognition import Recognizer
 from .live_segmenter import LiveSegmenter
 
 
@@ -69,15 +69,23 @@ class CaptureEngine:
         with self.control:
             run = self.current
             if run is None:
+                with self.preview_lock:
+                    self.preview = None
+                    self.preview_version += 1
                 return
             run.cancel.set()
-            self.current = None
             for thread in run.threads:
                 if thread is not threading.current_thread():
                     thread.join(timeout=5)
             survivors = [thread.name for thread in run.threads if thread.is_alive()]
+            with self.preview_lock:
+                self.preview = None
+                self.preview_version += 1
             if survivors:
                 raise RuntimeError(f"Capture worker has not stopped: {survivors}")
+            # Retain a cancelled run until every device-owning worker exits.
+            # A retry must not forget a hung reader and open a second camera.
+            self.current = None
 
     def _read(self, run: Run):
         capture = None

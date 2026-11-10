@@ -5,6 +5,8 @@ import re
 import unicodedata
 
 from .semantic_router import SemanticRouter
+from .spoken_language import spoken_variant
+from .language_assist import preserves_protected
 
 
 def normalize(value: str) -> str:
@@ -200,7 +202,32 @@ class TextPlanner:
         # valid three-sentence message and propose dropping the other clauses.
         if raw["supported"] or not self.semantic_router:
             return raw
-        semantic = self.semantic_router.resolve(text, set(self.templates))
+        # Route each sentence independently. A partial match in one sentence
+        # must never swallow a second request, negation or unsupported dose.
+        parts = [part.strip() for part in re.findall(r"[^.!?;\n]+[.!?;\n]*", text) if part.strip()]
+        if len(parts) > 1:
+            plans = [self.plan(part.rstrip(";\n ")) for part in parts]
+            if all(item["supported"] for item in plans):
+                canonical = " ".join(item.get("semantic", {}).get("canonical_text", item["text"]).rstrip(".!? ") + ("?" if item["act"] in {"yes_no_question", "wh_question"} or item["nonmanual"] == "question" else ".") for item in plans)
+                merged = self._plan_raw(canonical)
+                if merged["supported"] and len(merged["clauses"]) == len(parts):
+                    merged["text"] = text
+                    for clause, original in zip(merged["clauses"], parts):
+                        clause["text"] = original
+                    merged["semantic"] = {
+                        "rule_id": "clause-composition-v1", "intent": "sentences", "canonical_text": canonical,
+                        "confidence": 1.0, "risk": "safe", "source": "clause-composition-v1",
+                        "explanation": "Mỗi ý đều khớp mẫu; không bỏ ý giữa các câu.",
+                        "decision": "auto", "applied": True, "matched": [],
+                        "omitted": [term for item in plans for term in item.get("semantic", {}).get("omitted", [])],
+                        "unmatched": [], "message": "Các ý được phát nối tiếp, giữ nguyên thứ tự.",
+                        "candidate_projection": merged["projection"],
+                    }
+                    return merged
+            raw["suggestions"] = []
+            raw["message"] = "Có ý chưa thể hiện đầy đủ. Hãy tách hoặc nói lại ý đó; app giữ nguyên các ý còn lại để bạn kiểm tra."
+            return raw
+        semantic = spoken_variant(text) or self.semantic_router.resolve(text, set(self.templates))
         if not semantic:
             return raw
         canonical = semantic["canonical_text"]
@@ -230,4 +257,7 @@ class TextPlanner:
         result["issues"] = [*result["issues"], {"text": text, "reason": "semantic_review"}]
         result["suggestions"] = [{"text": canonical, "reason": semantic["explanation"]}]
         result["message"] = semantic["message"]
+        if not preserves_protected(text, canonical):
+            result["suggestions"] = []
+            result["message"] = "Mẫu gần nhất chưa giữ đủ ý quan trọng của câu gốc. Hãy nói lại, tách ý hoặc gửi nguyên văn bằng chữ."
         return result

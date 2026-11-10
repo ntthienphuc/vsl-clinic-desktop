@@ -1,0 +1,115 @@
+{
+  "encoder": "current",
+  "device": "cuda",
+  "precision": "FP32 TF32 disabled",
+  "gpu": "NVIDIA GeForce GTX 1650 Ti",
+  "torch": "2.6.0+cu124",
+  "scope": "3 fixed VSL100 clips with matched keypoints and mouth pixels; feasibility not new accuracy estimate",
+  "tolerance": {
+    "atol": 0.0002,
+    "rtol": 0.0002
+  },
+  "clips": [
+    {
+      "clip_id": "Huy_T01_C1_W068",
+      "frames": 74,
+      "repeats_ms": [
+        78.43709999997373,
+        74.91039999968052,
+        75.22040000003472
+      ],
+      "features": {
+        "spoter": {
+          "shape": [
+            1,
+            108
+          ],
+          "max_abs": 2.384185791015625e-06,
+          "mean_abs": 6.232359055502457e-07,
+          "relative_l2": 3.641082173544419e-07,
+          "within_tolerance": true
+        },
+        "vlr_uniform_fp32": {
+          "shape": [
+            74,
+            768
+          ],
+          "max_abs": 4.178285598754883e-05,
+          "mean_abs": 1.9754993445531e-06,
+          "relative_l2": 4.149839696765412e-06,
+          "within_tolerance": true
+        }
+      },
+      "first_ms": 278.30790000007255
+    },
+    {
+      "clip_id": "Học_T01_C1_W066",
+      "frames": 66,
+      "repeats_ms": [
+        72.65999999981432,
+        74.73389999995561,
+        71.03060000008554
+      ],
+      "features": {
+        "spoter": {
+          "shape": [
+            1,
+            108
+          ],
+          "max_abs": 1.1920928955078125e-06,
+          "mean_abs": 2.669274010713707e-07,
+          "relative_l2": 1.5675325926167716e-07,
+          "within_tolerance": true
+        },
+        "vlr_uniform_fp32": {
+          "shape": [
+            66,
+            768
+          ],
+          "max_abs": 0.00015623867511749268,
+          "mean_abs": 2.3774844066792866e-06,
+          "relative_l2": 5.662522198690567e-06,
+          "within_tolerance": true
+        }
+      },
+      "first_ms": 69.37729999981457
+    },
+    {
+      "clip_id": "Huy_T01_C1_W093",
+      "frames": 63,
+      "repeats_ms": [
+        66.13000000015745,
+        64.96429999970132,
+        64.19740000001184
+      ],
+      "features": {
+        "spoter": {
+          "shape": [
+            1,
+            108
+          ],
+          "max_abs": 1.3113021850585938e-06,
+          "mean_abs": 4.24476127136586e-07,
+          "relative_l2": 2.50319629913065e-07,
+          "within_tolerance": true
+        },
+        "vlr_uniform_fp32": {
+          "shape": [
+            63,
+            768
+          ],
+          "max_abs": 0.00014019012451171875,
+          "mean_abs": 1.976816292881267e-06,
+          "relative_l2": 5.1688093662960455e-06,
+          "within_tolerance": true
+        }
+      },
+      "first_ms": 67.59719999990921
+    }
+  ],
+  "errors": [],
+  "load_seconds": 7.27881699999989,
+  "peak_cuda_allocated_mib": 844.0556640625,
+  "peak_cuda_reserved_mib": 928.0,
+  "parity_passed": true
+}

@@ -61,7 +61,39 @@ export function sampleMotion(motion: Motion, timeMs: number): Point[] {
 
 function eased(value: number): number {
   const x = Math.max(0, Math.min(1, value));
-  return x * x * (3 - 2 * x);
+  return x ** 3 * (10 - 15 * x + 6 * x * x);
+}
+
+/** Quintic Bezier with endpoint velocities and zero endpoint acceleration.
+ * Ordered control points bound each coordinate to the measured endpoints.
+ * Incompatible velocities are limited rather than extrapolating a hand/contact.
+ * This only affects transitions; the measured sign strokes remain untouched.
+ */
+export function transitionPose(a: Point[], b: Point[], va: Point[], vb: Point[], duration: number, value: number): Point[] {
+  const t = Math.max(0, Math.min(1, value));
+  const u = 1 - t;
+  return a.map((point, index) => point.map((start, axis) => {
+    const end = b[index][axis];
+    const delta = end - start;
+    if (Math.abs(delta) < 1e-9) return start;
+    let startSlope = Math.max(0, va[index][axis] * duration / delta);
+    let endSlope = Math.max(0, vb[index][axis] * duration / delta);
+    const scale = Math.min(1, 2.5 / Math.max(1e-12, startSlope + endSlope));
+    startSlope *= scale; endSlope *= scale;
+    const p1 = start + delta * startSlope / 5;
+    const p2 = start + 2 * delta * startSlope / 5;
+    const p4 = end - delta * endSlope / 5;
+    const p3 = end - 2 * delta * endSlope / 5;
+    return u ** 5 * start + 5 * u ** 4 * t * p1 + 10 * u ** 3 * t ** 2 * p2
+      + 10 * u ** 2 * t ** 3 * p3 + 5 * u * t ** 4 * p4 + t ** 5 * end;
+  }) as Point);
+}
+
+function velocity(motion: Motion, time: number, direction: -1 | 1): Point[] {
+  const step = 2;
+  const center = sampleMotion(motion, time);
+  const neighbor = sampleMotion(motion, time + step * direction);
+  return center.map((point, index) => point.map((value, axis) => (neighbor[index][axis] - value) / (step * direction)) as Point);
 }
 
 export function elapsedPlayback(playback: Playback, now = Date.now()): number {
@@ -99,7 +131,9 @@ export function samplePlaylist(playback: Playback | null, motions: Map<string, M
   } else if (segment.phase === 'outro') {
     pose = blendPose(sampleMotion(clip, segment.source_ms!), neutral, eased(ratio));
   } else if (segment.phase === 'bridge') {
-    pose = blendPose(sampleMotion(clips[segment.from_index!], segment.from_ms!), sampleMotion(clip, segment.to_ms!), eased(ratio));
+    const previous = clips[segment.from_index!];
+    pose = transitionPose(sampleMotion(previous, segment.from_ms!), sampleMotion(clip, segment.to_ms!),
+      velocity(previous, segment.from_ms!, -1), velocity(clip, segment.to_ms!, 1), segment.end_ms - segment.start_ms, ratio);
   }
   const showWord = segment.phase !== 'outro' && segment.phase !== 'hold';
   return { pose, label: showWord ? clip.label : '', progress, complete: false, index: showWord ? segment.index : -1, phase: segment.phase };

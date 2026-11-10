@@ -4,6 +4,13 @@ This project includes third-party software and locally inherited research assets
 
 ## Software
 
+### Optional offline language assistant (0.4.0)
+
+- **Qwen3-0.6B-GGUF Q8_0**, official Qwen distribution, Apache-2.0. Pinned revision `23749fefcc72300e3a2ad315e1317431b06b590a`; SHA-256 and original download URL are in `assets/language/manifest.json`. License: `assets/language/QWEN_LICENSE`.
+- **llama.cpp b12034**, official Windows CPU build from ggml-org, MIT. Archive hash and runtime file hashes are in the same manifest. Retain `assets/language/LLAMA_CPP_LICENSE` and `runtime/LICENSE-LLVM-OpenMP`.
+- The local portable package includes these files. Git excludes the large binaries; `tools/prepare_language_model.py` restores the pinned official assets with SHA-256 validation. No runtime download is required.
+- This model only selects an existing phrase for explicit doctor review. It does not diagnose, generate sign motion, rewrite recognized patient words, or authorize automatic clinical interpretation.
+
 Exact installed versions, available license expressions, and copied license texts are indexed in `licenses/inventory.json`. Texts are retained under `licenses/javascript`, `licenses/python`, and `licenses/electron`. The Python inventory covers the build environment and includes development packages; it is an over-inclusive inventory, not a statement that every installed package is shipped.
 
 - Electron and Chromium: retain `LICENSE.electron.txt` and `LICENSES.chromium.html` provided by Electron, plus the copied notices.
@@ -54,6 +61,10 @@ Three public Vietnamese WAV examples from `dangnguyenngochai/demo_vietasr` were 
 
 Four fixed Vietnamese test phrases were synthesized using Google Translate TTS for development-only audio-path checks. `research/speech-samples/synthetic-vi/provenance.json` records their text, source and hash. These files are excluded from the portable build. They are synthetic fixtures, not recordings of a doctor, and do not establish microphone accuracy. Runtime audio never goes to this service.
 
+## Patient word readout audio
+
+Version 0.3.5 includes 400 fixed Vietnamese label WAVs and one uncertainty cue, prepared using Google Translate TTS at build time. Only the public label dictionary and fixed cue were submitted; no microphone input, conversation, or patient data was sent. `assets/patient-voice/manifest.json` records the requested texts, source URLs, original MP3 hashes and delivered WAV hashes. The clips are decoded to mono PCM with short leading/trailing silence guards. Runtime playback is local and needs no voice download, network service, or TTS model. These generated clips are included for the authorized local demo; no new public license or general redistribution right over service-generated audio is asserted. The rejected Piper experiment remains outside the shipped package in the local research cache.
+
 ## Sentence and regional references
 
 Official Ministry of Education and Training QIPEDC materials informed the controlled sentence catalogue (58 templates in 0.3.0). Nine QIPEDC videos were downloaded on the user's request for local reference extraction: W00362, W03090, W03008, W02400N, W01227, W01298, W00884, W03305 and W00248. Their derived motion files are included in this local demo; the original QIPEDC videos are excluded from the desktop package. `assets/qipedc-provenance.json` records URLs, hashes, source windows and descriptions. A missing download timestamp remains null rather than being invented. `research/qipedc-sources.json` retains development provenance and original paths. No new license or general redistribution permission is asserted by this import.
@@ -69,3 +80,40 @@ The patient practice kit in `demo/benh_nhan` contains 13 unchanged copies of eig
 These local files are included for the authorized local development demo. This project does not establish new ownership, consent, dataset/model redistribution rights, or a public license for them. Verify those rights before distributing recordings or trained weights outside the project. No original source video was modified.
 
 The inherited preprocessing/graph files remain byte-identical copies of the original project, with provenance checked by backend tests. Research papers and local Signova/reference-toolkit repositories informed the design; their published accuracy or motion quality is not claimed as this application's result.
+# Avatar narration added in local 0.4.1
+
+The local demonstration includes fixed Vietnamese speech generated using Microsoft Edge online TTS through the build-only `edge-tts` tool (LGPL-3.0 project), with voice `vi-VN-NamMinhNeural` at -10% rate. Only public dictionary labels and reviewed generic doctor templates were submitted. No patient conversation is uploaded and runtime narration is offline.
+
+Audio provenance, exact texts, durations, word boundaries and checksums are in `assets/avatar-voice/manifest.json`; original compressed audio is retained in the local build cache. These local demo assets are not offered under a newly asserted public redistribution license. Mouth animation uses locally computed energy and approximate vowel shapes, not a phoneme-alignment model.
+
+
+
+## Local multimodal100 integration (0.5.0)
+
+The original VSL100 r3 fold01/seed17 heads, label order and foundation hashes are retained in assets/multimodal100/models/MODEL_MANIFEST.json. DEPLOYMENT.json maps these assets to portable paths. The source Android application is not modified.
+
+SPOTER and Auto-AVSR upstream Apache-2.0 license texts are included in licenses/multimodal100 (retrieved 2026-11-09 from https://github.com/matyasbohacek/spoter/blob/main/LICENSE and https://github.com/mpc001/auto_avsr/blob/main/LICENSE). Torch, torchvision, MediaPipe, OpenCV, NumPy and Python licenses/metadata are preserved in the bundled runtime and its RUNTIME_MANIFEST.json. Local research checkpoints and recorded examples retain their original provenance; this local review build does not assert new public redistribution permissions.
+
+Eighteen additional patient voice clips contain only fixed public Vietnamese vocabulary labels, generated using the existing build-time label-voice tool. URLs, source/audio hashes and text are recorded in assets/patient-voice/manifest.json. No patient conversations or images are sent to a voice service. Normal runtime is offline.
+
+## VSL100 R3 fusion upgrade (0.5.1 local research demo)
+
+The active recognizer uses the frozen SL-GCN + AV-HuBERT cross-attention head,
+VSL100 R3 fold01/seed17. The 100 ordered labels and all patient/doctor voice
+assets are retained. The source research checkpoint, its artifact hashes and
+strict encoder manifests are included under assets/multimodal100/r3.
+
+AV-HuBERT is licensed under the AV-HuBERT license, Copyright (c) Meta
+Platforms, Inc. All Rights Reserved. The original AV-HuBERT LICENSE and
+Fairseq MIT LICENSE are included under licenses/multimodal100 and alongside
+the staged original inference sources. AV-HuBERT is restricted to
+non-commercial research, with commercial/production and other restrictions;
+this local research demo does not grant production or redistribution rights.
+Source: https://github.com/facebookresearch/av_hubert/blob/main/LICENSE.
+
+The adapter loads unchanged eager inference definitions and strict frozen
+weights without importing Fairseq training registries. Pose-format0.15.0
+source and distribution metadata/license are retained with the model.
+SL-GCN derives from the same inherited local foundation; exact configuration,
+transforms, weight hash and research head provenance are retained. No original
+research file or weight is changed.

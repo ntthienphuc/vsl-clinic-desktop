@@ -1,0 +1,57 @@
+{
+  "version": "0.4.0",
+  "scope": "Actual packaged engine, local model, HTTP concurrent planning and actual patient-renderer completion; no live human speech/sign validation.",
+  "language": {
+    "available": true,
+    "loaded": false,
+    "name": "Qwen3 0.6B · CPU",
+    "offline": true,
+    "requires_confirmation": true
+  },
+  "speech": {
+    "available": true,
+    "loaded": false,
+    "name": "PhoWhisper base INT8",
+    "language": "vi",
+    "device": "cpu",
+    "cpu_threads": 2,
+    "sample_rate": 16000,
+    "endpoint_ms": 576,
+    "activity_detector": "Silero v6 ONNX streaming"
+  },
+  "plan_during_model_ms": {
+    "median": 13.279700004204642,
+    "max": 26.72740000707563
+  },
+  "advice": {
+    "text": "Bụng của bạn có bị nhức không",
+    "suggestions": [
+      {
+        "text": "Bạn có đau bụng không?",
+        "phrase_id": "ask-abdomen",
+        "projection": [
+          "Bụng",
+          "Đau"
+        ]
+      }
+    ],
+    "source": "local-model",
+    "requires_confirmation": true,
+    "message": "Gợi ý cần bác sĩ đối chiếu với câu gốc trước khi gửi.",
+    "elapsed_ms": 5204
+  },
+  "checks": {
+    "language_bundled": true,
+    "speech_bundled": true,
+    "400_labels": true,
+    "plans_supported": true,
+    "planning_not_blocked_by_model": true,
+    "local_model_returns_expected_phrase": true,
+    "suggestion_never_sent": true,
+    "unsupported_send_blocked": true,
+    "patient_render_completed": true,
+    "old_suggestion_rejected_after_stop": true,
+    "model_released": true,
+    "session_cleared": true
+  }
+}

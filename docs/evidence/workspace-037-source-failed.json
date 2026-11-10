@@ -1,0 +1,6 @@
+{
+  "scope": "Real Electron windows/API, real model video and synthetic speech, no human microphone validation.",
+  "layouts": [],
+  "checks": {},
+  "error": "Error: Timed out\n    at until (E:\\Project\\VSL Clinic\\Source\\tools\\probe_conversation_workspace.cjs:12:154)\n    at async E:\\Project\\VSL Clinic\\Source\\tools\\probe_conversation_workspace.cjs:25:2"
+}

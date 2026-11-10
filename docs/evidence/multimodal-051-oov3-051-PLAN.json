@@ -1,0 +1,25 @@
+{
+  "scope": "Three fixed existing vocabulary-labelled sign videos outside the multimodal100 mapping. Actual packaged worker, natural boundaries, no full UI. Not incidental-action, mask, clinical or general OOV validation.",
+  "selection": "Buổi chiều / Chú ý / Đọc chosen before this probe from packaged legacy samples; no selection by score; thresholds/model unchanged.",
+  "expected_behavior": "No automatic confident in-vocabulary speech for these out-of-vocabulary labels. All outputs recorded, including failures.",
+  "clips": [
+    {
+      "legacy_model_id": 3,
+      "expected_gloss": "Buổi chiều",
+      "path": "E:\\Project\\VSL Clinic\\App\\0.5.1\\win-unpacked\\resources\\assets\\samples\\003.mp4",
+      "sha256": "efc0df67a3f6ff200df81d2d5fdd62ebe037b005d46f3faff8bc445346ba957c"
+    },
+    {
+      "legacy_model_id": 43,
+      "expected_gloss": "Chú ý",
+      "path": "E:\\Project\\VSL Clinic\\App\\0.5.1\\win-unpacked\\resources\\assets\\samples\\043.mp4",
+      "sha256": "467b6743ffbbd22407b4ad22fe1693a472bfc9913b4e48ddba3c97d3f735ac60"
+    },
+    {
+      "legacy_model_id": 391,
+      "expected_gloss": "Đọc",
+      "path": "E:\\Project\\VSL Clinic\\App\\0.5.1\\win-unpacked\\resources\\assets\\samples\\391.mp4",
+      "sha256": "b5859605515c1fa298640569f8b9838bdc57a01a036799e13775f92e18ce8cea"
+    }
+  ]
+}

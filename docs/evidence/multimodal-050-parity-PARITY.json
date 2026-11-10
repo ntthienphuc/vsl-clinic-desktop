@@ -1,0 +1,149 @@
+{
+  "scope": "Three prespecified first live-build16 intervals; paired technical parity, not new signer accuracy.",
+  "contract": "vsl100-r3-spoter-vlr-f01-s17-v2.0",
+  "checks": {
+    "all_observed_pose_face_gray_frames_exact": true,
+    "boundary_and_shared_context_exact": true,
+    "same_frames_timestamp_resampling_pixels_features_logits": true
+  },
+  "segments": [
+    {
+      "segment": 1,
+      "sampled_frames": 46,
+      "tensor_max_abs": 0,
+      "sign_feature_max_abs": 0.0,
+      "lip_feature_max_abs": 0.0,
+      "timing": {
+        "sign_encoder_ms": 32.03219999886642,
+        "mouth_encoder_ms": 50.274500001251,
+        "encoder_wall_ms": 50.493699998696684,
+        "encoder_schedule": "cpu_sign_cuda_mouth_overlap"
+      },
+      "heads": {
+        "sign_only": {
+          "max_logit_abs": 0.0,
+          "top1": {
+            "index": 65,
+            "class_id": "W066",
+            "gloss": "Mệt",
+            "score": 0.9894505143165588
+          }
+        },
+        "mouth_only": {
+          "max_logit_abs": 0.0,
+          "top1": {
+            "index": 32,
+            "class_id": "W033",
+            "gloss": "Mạnh",
+            "score": 0.4013933837413788
+          }
+        },
+        "fusion": {
+          "max_logit_abs": 0.0,
+          "top1": {
+            "index": 65,
+            "class_id": "W066",
+            "gloss": "Mệt",
+            "score": 0.9771947264671326
+          }
+        }
+      }
+    },
+    {
+      "segment": 2,
+      "sampled_frames": 46,
+      "tensor_max_abs": 0,
+      "sign_feature_max_abs": 0.0,
+      "lip_feature_max_abs": 0.0,
+      "timing": {
+        "sign_encoder_ms": 33.59699999964505,
+        "mouth_encoder_ms": 55.571599999893806,
+        "encoder_wall_ms": 55.823700000473764,
+        "encoder_schedule": "cpu_sign_cuda_mouth_overlap"
+      },
+      "heads": {
+        "sign_only": {
+          "max_logit_abs": 0.0,
+          "top1": {
+            "index": 92,
+            "class_id": "W093",
+            "gloss": "Cần",
+            "score": 0.9417150020599365
+          }
+        },
+        "mouth_only": {
+          "max_logit_abs": 0.0,
+          "top1": {
+            "index": 39,
+            "class_id": "W040",
+            "gloss": "Gần",
+            "score": 0.8722327947616577
+          }
+        },
+        "fusion": {
+          "max_logit_abs": 0.0,
+          "top1": {
+            "index": 92,
+            "class_id": "W093",
+            "gloss": "Cần",
+            "score": 0.5012216567993164
+          }
+        }
+      }
+    },
+    {
+      "segment": 3,
+      "sampled_frames": 46,
+      "tensor_max_abs": 0,
+      "sign_feature_max_abs": 0.0,
+      "lip_feature_max_abs": 0.0,
+      "timing": {
+        "sign_encoder_ms": 34.47799999958079,
+        "mouth_encoder_ms": 56.24310000166588,
+        "encoder_wall_ms": 56.58450000009907,
+        "encoder_schedule": "cpu_sign_cuda_mouth_overlap"
+      },
+      "heads": {
+        "sign_only": {
+          "max_logit_abs": 0.0,
+          "top1": {
+            "index": 9,
+            "class_id": "W010",
+            "gloss": "Nước",
+            "score": 0.987458348274231
+          }
+        },
+        "mouth_only": {
+          "max_logit_abs": 0.0,
+          "top1": {
+            "index": 26,
+            "class_id": "W027",
+            "gloss": "Thích",
+            "score": 0.8568089008331299
+          }
+        },
+        "fusion": {
+          "max_logit_abs": 0.0,
+          "top1": {
+            "index": 9,
+            "class_id": "W010",
+            "gloss": "Nước",
+            "score": 0.9893479347229004
+          }
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "observed_frames": 172,
+  "preprocess_timing_ms": {
+    "original_mean": 57.75623779072703,
+    "clinic_mean": 46.204858720874505,
+    "clinic_face_mean": 8.180637209291088,
+    "clinic_pose_hands_mean": 41.914445930298065
+  },
+  "input_bytes_sha256": "d014d5fd1e841ccb7c5ffa354d328669e0d841b1e534ce5deb62e7d7ac05c0af",
+  "metadata_sha256": "1703d62ab6857603eaa6c81c7268219957d49814d97a9ec7b8cec4b34421b034",
+  "device": "cuda",
+  "passed": true
+}

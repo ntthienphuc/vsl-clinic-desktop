@@ -1,0 +1,208 @@
+{
+  "schema": "clinic-rehearsal-v1",
+  "scope": "Two fictional interview rehearsals, not diagnostic protocols. Patient replies use only unchanged 400 classes. Fluent signer review and live-user validation remain pending.",
+  "scenarios": [
+    {
+      "id": "01_Dau_bung_va_trieu_chung_kem_theo",
+      "title": "Đau bụng và các triệu chứng kèm theo",
+      "context": "Người bệnh trong tình huống giả định đau bụng vào buổi sáng, thấy mệt, lạnh và yếu; trả lời có khi được hỏi về sốt. Bác sĩ hỏi thêm và đo nhiệt độ, chưa kết luận nguyên nhân.",
+      "patient_summary": "Đau, mệt; đau vào buổi sáng; có đau bụng, lạnh, yếu và tự nhận có sốt; cần giúp đỡ và nghỉ ngơi.",
+      "steps": [
+        {
+          "doctor": "Bây giờ bác sĩ khám bệnh.",
+          "patient_ids": [
+            395
+          ],
+          "meaning": "Đồng ý.",
+          "purpose": "Mở đầu cuộc trao đổi, xin sự hợp tác."
+        },
+        {
+          "doctor": "Bạn cảm thấy thế nào?",
+          "patient_ids": [
+            379,
+            204
+          ],
+          "meaning": "Đau, mệt.",
+          "purpose": "Để người bệnh tự nêu cảm giác trước khi hỏi cụ thể."
+        },
+        {
+          "doctor": "Bạn có đau bụng không?",
+          "patient_ids": [
+            79
+          ],
+          "meaning": "Có.",
+          "purpose": "Làm rõ vị trí đau; câu trả lời Có được hiểu cùng câu hỏi ngay trước đó."
+        },
+        {
+          "doctor": "Bạn đau bụng vào lúc nào?",
+          "patient_ids": [
+            4
+          ],
+          "meaning": "Buổi sáng.",
+          "purpose": "Hỏi thời điểm đau; không suy thành đã đau bao nhiêu ngày."
+        },
+        {
+          "doctor": "Bạn có lạnh không?",
+          "patient_ids": [
+            166
+          ],
+          "meaning": "Lạnh.",
+          "purpose": "Hỏi thêm cảm giác đi kèm."
+        },
+        {
+          "doctor": "Bạn có cảm thấy yếu không?",
+          "patient_ids": [
+            371
+          ],
+          "meaning": "Yếu.",
+          "purpose": "Hỏi tình trạng hiện tại bằng một câu ngắn."
+        },
+        {
+          "doctor": "Bạn có sốt không?",
+          "patient_ids": [
+            79
+          ],
+          "meaning": "Có.",
+          "purpose": "Ghi nhận lời kể; chưa có số đo nhiệt độ hoặc kết luận chẩn đoán."
+        },
+        {
+          "doctor": "Bác sĩ đo nhiệt độ.",
+          "patient_ids": [
+            395
+          ],
+          "meaning": "Đồng ý.",
+          "purpose": "Thông báo thao tác kiểm tra tiếp theo."
+        },
+        {
+          "doctor": "Bạn có cần giúp đỡ không?",
+          "patient_ids": [
+            87,
+            116
+          ],
+          "meaning": "Cần giúp đỡ.",
+          "purpose": "Hỏi nhu cầu hỗ trợ."
+        },
+        {
+          "doctor": "Bạn muốn nghỉ ngơi không?",
+          "patient_ids": [
+            87,
+            210
+          ],
+          "meaning": "Cần nghỉ ngơi.",
+          "purpose": "Cho người bệnh nêu nhu cầu nghỉ."
+        },
+        {
+          "doctor": "Ngồi nghỉ ngơi.",
+          "patient_ids": [
+            86
+          ],
+          "meaning": "Cảm ơn.",
+          "purpose": "Khép lại đoạn demo; không kê thuốc hoặc tự suy ra bệnh."
+        }
+      ]
+    },
+    {
+      "id": "02_Met_moi_giac_ngu_va_an_uong",
+      "title": "Mệt mỏi, giấc ngủ và ăn uống",
+      "context": "Người bệnh trong tình huống giả định đang mệt, muốn ngủ. Người bệnh ngủ buổi tối, thức dậy buổi sáng, vẫn ăn ngon miệng, tự uống nước và không cần người hỗ trợ.",
+      "patient_summary": "Mệt, muốn ngủ; ngủ buổi tối, dậy buổi sáng; ăn ngon miệng; không cần giúp đỡ; cần nước và nghỉ ngơi.",
+      "steps": [
+        {
+          "doctor": "Bây giờ bác sĩ khám bệnh.",
+          "patient_ids": [
+            395
+          ],
+          "meaning": "Đồng ý.",
+          "purpose": "Mở một phiên mới để tách hai bệnh cảnh giả định."
+        },
+        {
+          "doctor": "Bạn cảm thấy thế nào?",
+          "patient_ids": [
+            204
+          ],
+          "meaning": "Mệt.",
+          "purpose": "Hỏi mở về cảm giác hiện tại."
+        },
+        {
+          "doctor": "Bạn ngủ vào lúc nào?",
+          "patient_ids": [
+            6
+          ],
+          "meaning": "Buổi tối.",
+          "purpose": "Hỏi giờ giấc sinh hoạt; chưa suy ra đủ hay thiếu ngủ."
+        },
+        {
+          "doctor": "Bạn thức dậy vào lúc nào?",
+          "patient_ids": [
+            4
+          ],
+          "meaning": "Buổi sáng.",
+          "purpose": "Bổ sung mốc thời gian còn lại."
+        },
+        {
+          "doctor": "Bạn có muốn ngủ không?",
+          "patient_ids": [
+            169,
+            222
+          ],
+          "meaning": "Muốn ngủ.",
+          "purpose": "Làm rõ nhu cầu hiện tại."
+        },
+        {
+          "doctor": "Bạn có ăn ngon miệng không?",
+          "patient_ids": [
+            212
+          ],
+          "meaning": "Ngon miệng.",
+          "purpose": "Hỏi thêm tình trạng ăn uống."
+        },
+        {
+          "doctor": "Bạn có cần giúp đỡ không?",
+          "patient_ids": [
+            150
+          ],
+          "meaning": "Không cần.",
+          "purpose": "Thể hiện được một câu trả lời phủ định bằng đúng lớp Không cần.",
+          "patient_reference_ids": {
+            "150": "022152"
+          }
+        },
+        {
+          "doctor": "Bạn muốn uống nước không?",
+          "patient_ids": [
+            87,
+            243
+          ],
+          "meaning": "Cần nước.",
+          "purpose": "Chuyển từ hỏi tình trạng sang nhu cầu cụ thể."
+        },
+        {
+          "doctor": "Uống nước nhé.",
+          "patient_ids": [
+            395
+          ],
+          "meaning": "Đồng ý.",
+          "purpose": "Xác nhận một hành động trong kịch bản giả định."
+        },
+        {
+          "doctor": "Bạn muốn nghỉ ngơi không?",
+          "patient_ids": [
+            204,
+            87,
+            210
+          ],
+          "meaning": "Mệt. Cần nghỉ ngơi.",
+          "purpose": "Trình diễn từ hiện và được đọc ngay, rồi gom thành lượt."
+        },
+        {
+          "doctor": "Ngồi nghỉ ngơi.",
+          "patient_ids": [
+            86
+          ],
+          "meaning": "Cảm ơn.",
+          "purpose": "Khép lại cuộc trao đổi."
+        }
+      ]
+    }
+  ]
+}

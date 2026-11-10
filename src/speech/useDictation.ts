@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { token } from '../api';
+import { patientAudioBlocked, subscribePatientAudio } from './patientAudioGate';
 
 type Phase = 'idle' | 'loading' | 'permission' | 'listening' | 'finishing';
 
@@ -89,7 +90,7 @@ export function useDictation(sessionId: string, live = false) {
   }, [fail, stop]);
 
   const start = useCallback(async () => {
-    if (active.current) {
+    if (active.current || patientAudioBlocked()) {
       return;
     }
     setError('');
@@ -157,6 +158,7 @@ export function useDictation(sessionId: string, live = false) {
                 return;
               }
               if (audio.data.pcm) {
+                if (patientAudioBlocked()) return;
                 if (socket.readyState !== WebSocket.OPEN || socket.bufferedAmount > 64000) {
                   fail('Kết nối micro bị chậm. Hãy kiểm tra nội dung và nói lại ý còn thiếu.');
                   return;
@@ -203,13 +205,13 @@ export function useDictation(sessionId: string, live = false) {
         } else if (message.type === 'decoding') {
           setNotice('');
           setDecoding(true);
-        } else if (message.type === 'speech_rejected') {
+        } else if (message.type === 'speech_rejected' || message.type === 'speech_ignored') {
           setDecoding(false);
           setNotice(message.message);
         } else if (message.type === 'transcript' && message.session_id === sessionId) {
           setNotice('');
           setDelivery(message.delivery?.status ?? '');
-          setDraft((previous) => live ? message.text : `${previous} ${message.text}`.trim());
+          setDraft((previous) => live ? message.delivery?.text ?? message.text : `${previous} ${message.text}`.trim());
           setUncertain((previous) => previous || message.uncertain || message.cut_at_limit);
           setLatency(message.decode_ms + message.queue_ms + message.endpoint_audio_ms);
           setDecoding(false);
@@ -234,6 +236,10 @@ export function useDictation(sessionId: string, live = false) {
       }
     }
   }, [deviceId, fail, finish, live, releaseAudio, sessionId, stop]);
+
+  useEffect(() => subscribePatientAudio(() => {
+    if (patientAudioBlocked()) stop(true);
+  }), [stop]);
 
   useEffect(() => {
     alive.current = true;

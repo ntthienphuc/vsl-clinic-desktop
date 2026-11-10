@@ -1,0 +1,7 @@
+{
+  "scope": "QA harness recovery, not an application recognition failure",
+  "video_report": "interview-packaged-2026-11-01.json",
+  "video_passed": true,
+  "issue": "The second-run doctor Page.captureScreenshot call stalled after setting 1280x720; both renderer DOM evaluations and the API remained responsive. Only the owned Node QA harness was stopped. Speech replay continued separately.",
+  "prior_visual_review": "Initial actual-package screenshots for both roles at 1280x720 and 1920x1080 were inspected; page layout and rendering code did not change in the corrective build."
+}

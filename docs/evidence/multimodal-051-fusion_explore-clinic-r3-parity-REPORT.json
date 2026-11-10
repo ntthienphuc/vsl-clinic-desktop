@@ -1,0 +1,78 @@
+{
+  "passed": true,
+  "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+  "manifest_sha256": "2b962b63efabf554a721e4e8221d36facdada9b36924959d91c0bfbefce8a4dd",
+  "scope": "3 fixed VSL100 video-derived pixel sequences; exact 100-label output vs saved original research predictions; not live accuracy",
+  "clips": [
+    {
+      "clip_id": "Huy_T01_C1_W068",
+      "feature_max_abs": {
+        "slgcn_replication_fp32": 9.5367431640625e-07,
+        "avhubert_replication_fp32": 1.1622905731201172e-06
+      },
+      "probabilities_max_abs": 1.1920928955078125e-07,
+      "top1": {
+        "index": 67,
+        "class_id": "W068",
+        "gloss": "Sốt",
+        "score": 0.9478210806846619
+      },
+      "timing": {
+        "sign_encoder_ms": 163.87299999996685,
+        "mouth_encoder_ms": 175.68559999972422,
+        "encoder_wall_ms": 339.59850000019287,
+        "encoder_schedule": "serial_slgcn_avhubert_cuda"
+      },
+      "head_ms": 7.207100000414357
+    },
+    {
+      "clip_id": "Học_T01_C1_W066",
+      "feature_max_abs": {
+        "slgcn_replication_fp32": 3.814697265625e-06,
+        "avhubert_replication_fp32": 7.152557373046875e-07
+      },
+      "probabilities_max_abs": 1.1920928955078125e-07,
+      "top1": {
+        "index": 65,
+        "class_id": "W066",
+        "gloss": "Mệt",
+        "score": 0.9943063855171204
+      },
+      "timing": {
+        "sign_encoder_ms": 23.816200000055687,
+        "mouth_encoder_ms": 71.3671999997132,
+        "encoder_wall_ms": 95.21619999986797,
+        "encoder_schedule": "serial_slgcn_avhubert_cuda"
+      },
+      "head_ms": 12.82549999996263
+    },
+    {
+      "clip_id": "Huy_T01_C1_W093",
+      "feature_max_abs": {
+        "slgcn_replication_fp32": 1.6093254089355469e-06,
+        "avhubert_replication_fp32": 9.5367431640625e-07
+      },
+      "probabilities_max_abs": 2.384185791015625e-07,
+      "top1": {
+        "index": 92,
+        "class_id": "W093",
+        "gloss": "Cần",
+        "score": 0.9925335645675659
+      },
+      "timing": {
+        "sign_encoder_ms": 37.647499999820866,
+        "mouth_encoder_ms": 42.18330000003334,
+        "encoder_wall_ms": 79.86160000018572,
+        "encoder_schedule": "serial_slgcn_avhubert_cuda"
+      },
+      "head_ms": 7.117800000287389
+    }
+  ],
+  "modality_sensitivity": {
+    "changed_sign_logit_delta": 7.21513295173645,
+    "changed_mouth_logit_delta": 4.463984966278076
+  },
+  "missing_modality_suppressed": true,
+  "peak_cuda_allocated_mib": 1394.72265625,
+  "peak_cuda_reserved_mib": 1466.0
+}

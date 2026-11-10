@@ -1,0 +1,9 @@
+{
+  "status": "EXACT_SAVED_ENCODER_TENSORS_EXPORTED",
+  "original_checkpoint_sha256": "d8925082bab32f49b0f99d83a8133fbea08ea677d7fb9e57589ad6a698c28b95",
+  "encoder_sha256": "9e8e6b03bcdf39084bb41c58b309f38fc69b563f5d4610c656a40bff74d0a61e",
+  "encoder_bytes": 1300757315,
+  "encoder_keys": 536,
+  "saved_config_sha256": "2a835064e1c81f3ffe2e55151e4e448da4aca7f54f8a300c7043796d241ae304",
+  "scope": "All encoder.w2v_model tensors exported without changing values, dtype or names. Decoder and optimizer omitted from feature-only inference asset; original full checkpoint preserved."
+}

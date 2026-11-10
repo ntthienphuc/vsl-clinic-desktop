@@ -1,0 +1,131 @@
+{
+  "scope": "Actual 0.4.1 source Electron windows, real offline WAV playback and mouth animation. Synthetic speech and prerecorded sign video; not human pilot validation.",
+  "checks": {
+    "layout720p": true,
+    "actualSoundAndMouth": true,
+    "pauseFreezesAudioAndMouth": true,
+    "mute": true,
+    "replaySpeedAndCompletion": true,
+    "recordedActualAudioAndAvatar": true,
+    "patientVideoToImmediateVoice": true,
+    "syntheticSpeechAutoAvatar": true,
+    "endClearsAndStops": true
+  },
+  "samples": [
+    {
+      "mouth": {
+        "aa": 0.288568162843201,
+        "ee": 0,
+        "ih": 0,
+        "oh": 0,
+        "ou": 0
+      },
+      "speaking": true,
+      "audioTimeMs": 292.58,
+      "driftMs": -49.25764648437497,
+      "cueIndex": 0,
+      "events": [
+        {
+          "type": "playing",
+          "entry_id": "p:ask-abdomen",
+          "text": "Bạn có đau bụng không?",
+          "at_ms": 1793623636019
+        }
+      ]
+    },
+    {
+      "driftMs": -56.92153906249999,
+      "audioTimeMs": 57.431000000000004
+    },
+    {
+      "driftMs": -50.0715390625,
+      "audioTimeMs": 169.28099999999998
+    },
+    {
+      "driftMs": -45.790539062500024,
+      "audioTimeMs": 234.56199999999998
+    },
+    {
+      "driftMs": -61.19753906249997,
+      "audioTimeMs": 324.15500000000003
+    },
+    {
+      "driftMs": -54.27053906249996,
+      "audioTimeMs": 428.082
+    },
+    {
+      "driftMs": -47.83753906249999,
+      "audioTimeMs": 532.515
+    },
+    {
+      "driftMs": -42.0155390625,
+      "audioTimeMs": 641.337
+    },
+    {
+      "driftMs": -54.96753906250007,
+      "audioTimeMs": 725.385
+    },
+    {
+      "driftMs": -50.14953906249997,
+      "audioTimeMs": 800.203
+    },
+    {
+      "driftMs": -44.69753906250007,
+      "audioTimeMs": 902.655
+    },
+    {
+      "driftMs": -57.761539062500034,
+      "audioTimeMs": 993.591
+    },
+    {
+      "driftMs": -51.031539062499796,
+      "audioTimeMs": 1098.3210000000001
+    }
+  ],
+  "video": "E:\\Project\\VSL Clinic\\Demo\\AVATAR_GIONG_NAM_0.4.1.webm",
+  "patientVoice": [
+    {
+      "type": "queued",
+      "message_id": "bfa43a9333c8",
+      "text": "Đồng ý"
+    },
+    {
+      "type": "playing",
+      "message_id": "bfa43a9333c8",
+      "text": "Đồng ý",
+      "latency_ms": 33
+    },
+    {
+      "type": "ended",
+      "message_id": "bfa43a9333c8",
+      "text": "Đồng ý"
+    }
+  ],
+  "speech": [
+    {
+      "text": "bạn có đau bụng không.",
+      "decode_ms": 973.540499995579,
+      "audio_ms": 2016,
+      "uncertain": false,
+      "segments": [
+        {
+          "avg_logprob": -0.0001916018399325284,
+          "no_speech_prob": 1.4649689447643333e-11
+        }
+      ],
+      "type": "transcript",
+      "sequence": 1,
+      "utterance_id": "e1cc473beef042e9871b0cf67b05bfe4:1",
+      "session_id": "ba9a0bcc53a6:f54e00e170cc",
+      "queue_ms": 0.14300001203082502,
+      "endpoint_audio_ms": 576,
+      "cut_at_limit": false,
+      "delivery": {
+        "status": "sent",
+        "message_id": "fe930d0c732f",
+        "repair": null,
+        "text": "bạn có đau bụng không."
+      }
+    }
+  ]
+}

@@ -10,8 +10,7 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'Actual VRM joint audit failed.' }
     & .venv\Scripts\python.exe tools/collect_notices.py
     if ($LASTEXITCODE -ne 0) { throw 'License inventory failed.' }
-    & .venv\Scripts\python.exe -m PyInstaller --noconfirm --distpath build/engine --workpath build/pyinstaller tools/clinic-engine.spec
-    if ($LASTEXITCODE -ne 0) { throw 'Engine packaging failed.' }
+    # package_multimodal.py compiles the engine and records its exact inputs.
     & npm.cmd run package
     if ($LASTEXITCODE -ne 0) { throw 'Desktop packaging failed.' }
     & .venv\Scripts\python.exe tools/release_receipt.py

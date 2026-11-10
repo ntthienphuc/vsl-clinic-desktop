@@ -1,0 +1,8 @@
+{
+  "scope": "Actual 0.4.1 source Electron windows, real offline WAV playback and mouth animation. Synthetic speech and prerecorded sign video; not human pilot validation.",
+  "checks": {
+    "layout720p": true
+  },
+  "samples": [],
+  "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(Object.values(active.narration.mouth).some(n => n > .01))\n\n    at E:\\Project\\VSL Clinic\\Source\\tools\\probe_avatar_voice.cjs:44:12"
+}

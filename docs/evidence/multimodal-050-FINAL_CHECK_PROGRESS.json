@@ -1,0 +1,25 @@
+{
+  "completed": [
+    {
+      "phase": "long-packaged",
+      "exit_code": 0,
+      "elapsed_seconds": 355.9972410999999
+    },
+    {
+      "phase": "capture-final",
+      "exit_code": 0,
+      "elapsed_seconds": 54.038131799999974
+    },
+    {
+      "phase": "visibility-final",
+      "exit_code": 0,
+      "elapsed_seconds": 30.988614699999744
+    },
+    {
+      "phase": "cpu-final",
+      "exit_code": 0,
+      "elapsed_seconds": 20.04576579999957
+    }
+  ],
+  "status": "complete"
+}

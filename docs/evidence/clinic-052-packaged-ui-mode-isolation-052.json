@@ -1,0 +1,2932 @@
+{
+  "scope": "0.5.2 packaged EXE; fixed prerecorded samples and synthetic silent/doctor mic; no live person.",
+  "runName": "mode-isolation-052",
+  "startedAt": "2026-11-10T02:41:29.465Z",
+  "checks": {
+    "layout720p1080p": true,
+    "defaultFusion100": true,
+    "quickPhrases24ReviewThenRealAvatarVoiceMouth": true,
+    "patientFeedbackAndUnsupportedMeaningPreserved": true,
+    "liveModeSwitchSharedDictionarySourceAndOldResultFence": true,
+    "sign400RealRecognitionAndVoice": true,
+    "returnFusionAndEndFencesBothEngines": true,
+    "sameStreamRepeatedWordSpokenOnceEachBeforeTurnEnd": true,
+    "realSpeechSocketRejectsSyntheticNoise": true,
+    "realBundledASRSendsOnce": true,
+    "endFencesFusionAndAudio": true,
+    "temporaryHistoryNeverReplaysAndDiscards": true
+  },
+  "trials": [],
+  "graphics": {
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 Ti (0x00001F95) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "vendor": "WebKit"
+  },
+  "worker": {
+    "name": "Tay và môi · 100 từ",
+    "labels": 100,
+    "family": "multimodal100",
+    "sha256": "0ccf0476091990ef84055a362376f96d40987916b95be6e568f9152f64a6f28d",
+    "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+    "capture_profile": "clinic-mm100-ram-r3-v1",
+    "active_head": "fusion",
+    "worker": {
+      "type": "worker_ready",
+      "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+      "device": "cuda",
+      "pid": 4396,
+      "load_ms": 11346.989900000153,
+      "warmup_ms": 2509.217300000273,
+      "manifest_sha256": "f4c3c90e19bb49b2ae8b0fb402a71c8a8b0688177bb76b71446d9b915b424722",
+      "storage": "ram_only",
+      "status": "ready"
+    },
+    "mode": "fusion",
+    "status": "ready",
+    "switching": false
+  },
+  "modeSwitch": {
+    "fusionToSignMs": 923,
+    "oldGeneration": 2,
+    "newGeneration": 4
+  },
+  "legacyWord": {
+    "word": {
+      "id": "3af9b454029c",
+      "role": "patient",
+      "text": "Đau",
+      "created_at_ms": 1794278531108.7273,
+      "status": "candidate",
+      "confidence": 1,
+      "uncertain": false,
+      "predictions": [
+        {
+          "gloss": "Đau",
+          "score": 1,
+          "model_id": 379
+        },
+        {
+          "gloss": "Bố",
+          "score": 4.5949216597627957e-23,
+          "model_id": 33
+        },
+        {
+          "gloss": "Quạt (đứng)",
+          "score": 7.51613997875546e-28,
+          "model_id": 256
+        }
+      ],
+      "voice_key": null,
+      "original_gloss": "Đau",
+      "recognition": {
+        "engine_family": "legacy400",
+        "contract": "clinic-slgcn400-onnx-v1",
+        "actual_mode": "sign_only",
+        "segment_id": null,
+        "policy": null
+      },
+      "quality_warning": null,
+      "context_candidates": [],
+      "metrics": {
+        "observed_fps": 29.438750000000006,
+        "maximum_observation_gap_ms": 66.72449456195375,
+        "quality_warning": null,
+        "frame_count": 56,
+        "hand_coverage": 1,
+        "inference_ms": 159.815185546875,
+        "queue_ms": 0,
+        "last_active_epoch_ms": 1794278530556.3618,
+        "server_result_epoch_ms": 1794278531108.7273,
+        "source_start_ms": 500.4337092146527,
+        "source_end_ms": 2301.9950623874024,
+        "model": "SL-GCN / 400 gloss",
+        "profile": "clinic-pc-tasks-lite-parallel-bounded-v3",
+        "generation": 6,
+        "engine_family": "legacy400",
+        "actual_mode": "sign_only",
+        "contract": "clinic-slgcn400-onnx-v1"
+      },
+      "turn_id": "6acd80266f34"
+    },
+    "reviewed": false
+  },
+  "fixturePlan": "Focused repeated VSL100 word: identity, policy, audio, ASR and End; not a new 12-clip sweep.",
+  "counts": {
+    "trials": 0,
+    "autoWords": 0,
+    "newWords": 0,
+    "yielded": 0
+  },
+  "repeatFixture": {
+    "file": "E:\\Project\\VSL Clinic\\Organization\\MultimodalIntegration_2026-11-09\\fusion_explore\\repeat-original-vsl100.mp4",
+    "sourceEncodingPreserved": true,
+    "repeatOnly": true
+  },
+  "repeat": {
+    "first": {
+      "id": "42873f2404a0",
+      "role": "patient",
+      "text": "Sốt",
+      "created_at_ms": 1794278537897.5786,
+      "status": "candidate",
+      "confidence": 0.904865026473999,
+      "uncertain": false,
+      "predictions": [
+        {
+          "gloss": "Sốt",
+          "score": 0.904865026473999,
+          "model_id": null,
+          "class_id": "W068",
+          "class_index": 67,
+          "original_gloss": "Sốt",
+          "canonical_concept_id": "mm100:W068",
+          "legacy_label_candidate": null,
+          "voice_key": "mm100-W068",
+          "engine_family": "multimodal100"
+        },
+        {
+          "gloss": "Từ chối",
+          "score": 0.04870589077472687,
+          "model_id": null,
+          "class_id": "W098",
+          "class_index": 97,
+          "original_gloss": "Từ chối",
+          "canonical_concept_id": "mm100:W098",
+          "legacy_label_candidate": 347,
+          "voice_key": "347",
+          "engine_family": "multimodal100"
+        },
+        {
+          "gloss": "Giàu",
+          "score": 0.006798500660806894,
+          "model_id": null,
+          "class_id": "W034",
+          "class_index": 33,
+          "original_gloss": "Giàu",
+          "canonical_concept_id": "mm100:W034",
+          "legacy_label_candidate": 110,
+          "voice_key": "110",
+          "engine_family": "multimodal100"
+        },
+        {
+          "gloss": "Học",
+          "score": 0.0034170160070061684,
+          "model_id": null,
+          "class_id": "W052",
+          "class_index": 51,
+          "original_gloss": "Học",
+          "canonical_concept_id": "mm100:W052",
+          "legacy_label_candidate": 140,
+          "voice_key": "140",
+          "engine_family": "multimodal100"
+        },
+        {
+          "gloss": "Giỏi",
+          "score": 0.003394470317289233,
+          "model_id": null,
+          "class_id": "W059",
+          "class_index": 58,
+          "original_gloss": "Giỏi",
+          "canonical_concept_id": "mm100:W059",
+          "legacy_label_candidate": 120,
+          "voice_key": "120",
+          "engine_family": "multimodal100"
+        }
+      ],
+      "voice_key": "mm100-W068",
+      "original_gloss": "Sốt",
+      "recognition": {
+        "engine_family": "multimodal100",
+        "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+        "actual_mode": "fusion",
+        "segment_id": "1e00d7ec45fe4700a750d3faf17f8c20:1",
+        "policy": {
+          "version": "clinic-fusion-quality-v1",
+          "committed": true,
+          "disposition": "committed",
+          "reasons": [],
+          "prompt": "",
+          "scores": "uncalibrated_softmax"
+        }
+      },
+      "quality_warning": null,
+      "context_candidates": [],
+      "metrics": {
+        "segment_id": "1e00d7ec45fe4700a750d3faf17f8c20:1",
+        "segment_number": 1,
+        "request_id": "1e00d7ec45fe4700a750d3faf17f8c20:1",
+        "engine_family": "multimodal100",
+        "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+        "manifest_sha256": "f4c3c90e19bb49b2ae8b0fb402a71c8a8b0688177bb76b71446d9b915b424722",
+        "checkpoint_sha256": "0ccf0476091990ef84055a362376f96d40987916b95be6e568f9152f64a6f28d",
+        "actual_mode": "fusion",
+        "requested_mode": "fusion",
+        "fallback_reason": null,
+        "policy": {
+          "version": "clinic-fusion-quality-v1",
+          "committed": true,
+          "disposition": "committed",
+          "reasons": [],
+          "prompt": "",
+          "scores": "uncalibrated_softmax"
+        },
+        "quality_warning": null,
+        "quality": {
+          "frame_count": 56,
+          "sampled_frames": 71,
+          "capture_span_ms": 2800,
+          "input_fps": 19.642857142857142,
+          "max_capture_gap_ms": 200,
+          "frame_ids": [
+            1,
+            1,
+            1,
+            13,
+            13,
+            13,
+            16,
+            18,
+            21,
+            21,
+            25,
+            28,
+            30,
+            33,
+            33,
+            37,
+            40,
+            42,
+            45,
+            45,
+            49,
+            52,
+            54,
+            57,
+            59,
+            59,
+            64,
+            66,
+            69,
+            69,
+            73,
+            76,
+            78,
+            81,
+            81,
+            85,
+            88,
+            90,
+            93,
+            93,
+            97,
+            100,
+            102,
+            105,
+            107,
+            109,
+            112,
+            114,
+            114,
+            119,
+            121,
+            124,
+            126,
+            129,
+            129,
+            133,
+            136,
+            138,
+            141,
+            141,
+            145,
+            148,
+            150,
+            153,
+            155,
+            157,
+            160,
+            162,
+            162,
+            167,
+            169
+          ],
+          "geometry": {
+            "rejected": [],
+            "pose_consistency": "CHECKED",
+            "anchor_frames": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70
+            ],
+            "nose_bias_px": [
+              11.84796142578125,
+              10.359237670898438
+            ],
+            "nose_threshold_px": 32.01434326171875,
+            "eye_scale_bounds": [
+              0.65,
+              1.5
+            ],
+            "raw_fraction": 1,
+            "filtered_fraction": 1,
+            "diagnostics": [
+              {
+                "frame": 0,
+                "nose_residual_px": 1.2941595315933228,
+                "relative_eye_scale": 1.0521185398101807
+              },
+              {
+                "frame": 1,
+                "nose_residual_px": 1.2941595315933228,
+                "relative_eye_scale": 1.0521185398101807
+              },
+              {
+                "frame": 2,
+                "nose_residual_px": 1.2941595315933228,
+                "relative_eye_scale": 1.0521185398101807
+              },
+              {
+                "frame": 3,
+                "nose_residual_px": 4.018510818481445,
+                "relative_eye_scale": 1.1147897243499756
+              },
+              {
+                "frame": 4,
+                "nose_residual_px": 4.018510818481445,
+                "relative_eye_scale": 1.1147897243499756
+              },
+              {
+                "frame": 5,
+                "nose_residual_px": 4.018510818481445,
+                "relative_eye_scale": 1.1147897243499756
+              },
+              {
+                "frame": 6,
+                "nose_residual_px": 2.9246106147766113,
+                "relative_eye_scale": 1.0432902574539185
+              },
+              {
+                "frame": 7,
+                "nose_residual_px": 2.8458919525146484,
+                "relative_eye_scale": 0.9783254265785217
+              },
+              {
+                "frame": 8,
+                "nose_residual_px": 5.189401149749756,
+                "relative_eye_scale": 0.9737294316291809
+              },
+              {
+                "frame": 9,
+                "nose_residual_px": 5.189401149749756,
+                "relative_eye_scale": 0.9737294316291809
+              },
+              {
+                "frame": 10,
+                "nose_residual_px": 3.916368007659912,
+                "relative_eye_scale": 1.003954529762268
+              },
+              {
+                "frame": 11,
+                "nose_residual_px": 4.494534015655518,
+                "relative_eye_scale": 0.9828962087631226
+              },
+              {
+                "frame": 12,
+                "nose_residual_px": 3.726348876953125,
+                "relative_eye_scale": 0.9466392993927002
+              },
+              {
+                "frame": 13,
+                "nose_residual_px": 6.438348770141602,
+                "relative_eye_scale": 0.895396888256073
+              },
+              {
+                "frame": 14,
+                "nose_residual_px": 6.438348770141602,
+                "relative_eye_scale": 0.895396888256073
+              },
+              {
+                "frame": 15,
+                "nose_residual_px": 9.847195625305176,
+                "relative_eye_scale": 0.9142969846725464
+              },
+              {
+                "frame": 16,
+                "nose_residual_px": 9.875744819641113,
+                "relative_eye_scale": 0.8658725023269653
+              },
+              {
+                "frame": 17,
+                "nose_residual_px": 8.91244888305664,
+                "relative_eye_scale": 0.8751312494277954
+              },
+              {
+                "frame": 18,
+                "nose_residual_px": 1.981624960899353,
+                "relative_eye_scale": 0.8449229001998901
+              },
+              {
+                "frame": 19,
+                "nose_residual_px": 1.981624960899353,
+                "relative_eye_scale": 0.8449229001998901
+              },
+              {
+                "frame": 20,
+                "nose_residual_px": 4.8734822273254395,
+                "relative_eye_scale": 0.936329185962677
+              },
+              {
+                "frame": 21,
+                "nose_residual_px": 6.807484149932861,
+                "relative_eye_scale": 1.1933763027191162
+              },
+              {
+                "frame": 22,
+                "nose_residual_px": 4.830063343048096,
+                "relative_eye_scale": 1.1744554042816162
+              },
+              {
+                "frame": 23,
+                "nose_residual_px": 2.8252503871917725,
+                "relative_eye_scale": 1.1678115129470825
+              },
+              {
+                "frame": 24,
+                "nose_residual_px": 5.680478096008301,
+                "relative_eye_scale": 1.0588178634643555
+              },
+              {
+                "frame": 25,
+                "nose_residual_px": 5.680478096008301,
+                "relative_eye_scale": 1.0588178634643555
+              },
+              {
+                "frame": 26,
+                "nose_residual_px": 11.312095642089844,
+                "relative_eye_scale": 0.953620195388794
+              },
+              {
+                "frame": 27,
+                "nose_residual_px": 10.584770202636719,
+                "relative_eye_scale": 0.9868857860565186
+              },
+              {
+                "frame": 28,
+                "nose_residual_px": 9.442715644836426,
+                "relative_eye_scale": 0.9885177612304688
+              },
+              {
+                "frame": 29,
+                "nose_residual_px": 9.442715644836426,
+                "relative_eye_scale": 0.9885177612304688
+              },
+              {
+                "frame": 30,
+                "nose_residual_px": 8.092466354370117,
+                "relative_eye_scale": 0.9631757736206055
+              },
+              {
+                "frame": 31,
+                "nose_residual_px": 7.359896659851074,
+                "relative_eye_scale": 1.049627661705017
+              },
+              {
+                "frame": 32,
+                "nose_residual_px": 6.837295055389404,
+                "relative_eye_scale": 1.0821201801300049
+              },
+              {
+                "frame": 33,
+                "nose_residual_px": 6.9485015869140625,
+                "relative_eye_scale": 1.0789439678192139
+              },
+              {
+                "frame": 34,
+                "nose_residual_px": 6.9485015869140625,
+                "relative_eye_scale": 1.0789439678192139
+              },
+              {
+                "frame": 35,
+                "nose_residual_px": 6.027379989624023,
+                "relative_eye_scale": 1.1057487726211548
+              },
+              {
+                "frame": 36,
+                "nose_residual_px": 7.4301934242248535,
+                "relative_eye_scale": 1.0730319023132324
+              },
+              {
+                "frame": 37,
+                "nose_residual_px": 8.049678802490234,
+                "relative_eye_scale": 1.0847944021224976
+              },
+              {
+                "frame": 38,
+                "nose_residual_px": 7.28974723815918,
+                "relative_eye_scale": 1.1263564825057983
+              },
+              {
+                "frame": 39,
+                "nose_residual_px": 7.28974723815918,
+                "relative_eye_scale": 1.1263564825057983
+              },
+              {
+                "frame": 40,
+                "nose_residual_px": 6.320362091064453,
+                "relative_eye_scale": 1.157156229019165
+              },
+              {
+                "frame": 41,
+                "nose_residual_px": 4.86105489730835,
+                "relative_eye_scale": 1.150305986404419
+              },
+              {
+                "frame": 42,
+                "nose_residual_px": 4.811162948608398,
+                "relative_eye_scale": 1.1704577207565308
+              },
+              {
+                "frame": 43,
+                "nose_residual_px": 6.334604263305664,
+                "relative_eye_scale": 1.2179864645004272
+              },
+              {
+                "frame": 44,
+                "nose_residual_px": 6.6775431632995605,
+                "relative_eye_scale": 1.2547651529312134
+              },
+              {
+                "frame": 45,
+                "nose_residual_px": 5.725831508636475,
+                "relative_eye_scale": 1.2611743211746216
+              },
+              {
+                "frame": 46,
+                "nose_residual_px": 4.781944274902344,
+                "relative_eye_scale": 1.3959065675735474
+              },
+              {
+                "frame": 47,
+                "nose_residual_px": 7.769281387329102,
+                "relative_eye_scale": 1.478934645652771
+              },
+              {
+                "frame": 48,
+                "nose_residual_px": 7.769281387329102,
+                "relative_eye_scale": 1.478934645652771
+              },
+              {
+                "frame": 49,
+                "nose_residual_px": 11.245878219604492,
+                "relative_eye_scale": 1.177486777305603
+              },
+              {
+                "frame": 50,
+                "nose_residual_px": 8.729690551757812,
+                "relative_eye_scale": 1.000114917755127
+              },
+              {
+                "frame": 51,
+                "nose_residual_px": 11.303277969360352,
+                "relative_eye_scale": 0.895147442817688
+              },
+              {
+                "frame": 52,
+                "nose_residual_px": 7.726824760437012,
+                "relative_eye_scale": 0.7305433750152588
+              },
+              {
+                "frame": 53,
+                "nose_residual_px": 5.997882843017578,
+                "relative_eye_scale": 0.8072633147239685
+              },
+              {
+                "frame": 54,
+                "nose_residual_px": 5.997882843017578,
+                "relative_eye_scale": 0.8072633147239685
+              },
+              {
+                "frame": 55,
+                "nose_residual_px": 9.154275894165039,
+                "relative_eye_scale": 0.7984612584114075
+              },
+              {
+                "frame": 56,
+                "nose_residual_px": 5.620718479156494,
+                "relative_eye_scale": 0.9599627256393433
+              },
+              {
+                "frame": 57,
+                "nose_residual_px": 3.796442985534668,
+                "relative_eye_scale": 0.9194730520248413
+              },
+              {
+                "frame": 58,
+                "nose_residual_px": 1.226410150527954,
+                "relative_eye_scale": 1.1245850324630737
+              },
+              {
+                "frame": 59,
+                "nose_residual_px": 1.226410150527954,
+                "relative_eye_scale": 1.1245850324630737
+              },
+              {
+                "frame": 60,
+                "nose_residual_px": 1.6398894786834717,
+                "relative_eye_scale": 1.0895919799804688
+              },
+              {
+                "frame": 61,
+                "nose_residual_px": 4.3055219650268555,
+                "relative_eye_scale": 1.0152462720870972
+              },
+              {
+                "frame": 62,
+                "nose_residual_px": 7.033048152923584,
+                "relative_eye_scale": 0.984993577003479
+              },
+              {
+                "frame": 63,
+                "nose_residual_px": 6.112034797668457,
+                "relative_eye_scale": 0.9745471477508545
+              },
+              {
+                "frame": 64,
+                "nose_residual_px": 4.186893939971924,
+                "relative_eye_scale": 1.0869115591049194
+              },
+              {
+                "frame": 65,
+                "nose_residual_px": 3.849050521850586,
+                "relative_eye_scale": 1.0695421695709229
+              },
+              {
+                "frame": 66,
+                "nose_residual_px": 5.910120010375977,
+                "relative_eye_scale": 0.9849414229393005
+              },
+              {
+                "frame": 67,
+                "nose_residual_px": 6.870696544647217,
+                "relative_eye_scale": 0.9750300645828247
+              },
+              {
+                "frame": 68,
+                "nose_residual_px": 6.870696544647217,
+                "relative_eye_scale": 0.9750300645828247
+              },
+              {
+                "frame": 69,
+                "nose_residual_px": 8.008840560913086,
+                "relative_eye_scale": 0.9960454702377319
+              },
+              {
+                "frame": 70,
+                "nose_residual_px": 5.087496757507324,
+                "relative_eye_scale": 0.9501495957374573
+              }
+            ]
+          },
+          "sign_valid": true,
+          "mouth_valid": true,
+          "hand_coverage": 1,
+          "single_face_fraction": 1,
+          "preprocess_ms": 2819.6379000009983,
+          "roi_ms": 40.24509999999282,
+          "sampling": "nearest capture timestamp at 25fps",
+          "source_resolution": [
+            1080,
+            1080
+          ]
+        },
+        "boundary": {
+          "start_capture_ms": 0,
+          "end_capture_ms": 2800,
+          "first_active_capture_ms": 483.3333333333333,
+          "last_active_capture_ms": 2450,
+          "decision_capture_ms": 2800,
+          "reason": "arms_returned_to_neutral",
+          "buffered_frame_count": 48,
+          "selected_frame_ids": [
+            1,
+            13,
+            16,
+            18,
+            21,
+            25,
+            28,
+            30,
+            33,
+            37,
+            40,
+            42,
+            45,
+            49,
+            52,
+            54,
+            57,
+            59,
+            64,
+            66,
+            69,
+            73,
+            76,
+            78,
+            81,
+            85,
+            88,
+            90,
+            93,
+            97,
+            100,
+            102,
+            105,
+            107,
+            109,
+            112,
+            114,
+            119,
+            121,
+            124,
+            126,
+            129,
+            133,
+            136,
+            138,
+            141,
+            145,
+            148,
+            150,
+            153,
+            155,
+            157,
+            160,
+            162,
+            167,
+            169
+          ],
+          "boundary_config": {
+            "version": "clinic-r3-elbow140-context500-400-v1",
+            "use_raised_wrist_fallback": false,
+            "angle_threshold": 140,
+            "visibility": 0.5,
+            "min_num_up_frames": 4,
+            "min_num_down_frames": 4,
+            "min_down_time_ms": 300,
+            "delay_ms": 400,
+            "min_segment_frames": 6,
+            "max_segment_ms": 8000,
+            "max_candidate_frames": 10,
+            "context_before_ms": 500,
+            "context_after_ms": 400
+          },
+          "boundary_source": "Elbow flexion only; shared sign-guided boundaries for every mode",
+          "trim": "Active core plus observed 500-ms lead-in and 400-ms tail; capped at unchanged boundary decision",
+          "core_start_capture_ms": 483.3333333333333,
+          "core_end_capture_ms": 2483.3333333333335,
+          "core_frame_ids": [
+            30,
+            33,
+            37,
+            40,
+            42,
+            45,
+            49,
+            52,
+            54,
+            57,
+            59,
+            64,
+            66,
+            69,
+            73,
+            76,
+            78,
+            81,
+            85,
+            88,
+            90,
+            93,
+            97,
+            100,
+            102,
+            105,
+            107,
+            109,
+            112,
+            114,
+            119,
+            121,
+            124,
+            126,
+            129,
+            133,
+            136,
+            138,
+            141,
+            145,
+            148,
+            150
+          ],
+          "decision_captured_monotonic_ms": 6306230.481
+        },
+        "timing": {
+          "sign_encoder_ms": 191.77059999947232,
+          "mouth_encoder_ms": 78.8963999993939,
+          "encoder_wall_ms": 270.7147000000987,
+          "encoder_schedule": "serial_slgcn_avhubert_cuda",
+          "queue_ms": 0.4223999995738268,
+          "inference_wall_ms": 322.315700000152,
+          "decision_to_result_ms": 322.7380999997258,
+          "decision_capture_to_result_ms": 410.89780000038445,
+          "last_selected_capture_to_result_ms": 410.89780000038445,
+          "emitted_monotonic_ms": 6306641.3788,
+          "clock": "python_performance_counter_ms_same_host",
+          "last_active_capture_to_result_ms": 758.5537000000477,
+          "worker_to_backend_ms": 0.9564000004902482,
+          "backend_received_epoch_ms": 1794278537897.5786
+        },
+        "inference_ms": 322.315700000152,
+        "raw_logits": [
+          -2.866389513015747,
+          -2.801150321960449,
+          -0.4617637097835541,
+          -0.06453932821750641,
+          -4.9412102699279785,
+          -5.771832466125488,
+          -6.559883117675781,
+          -1.3164653778076172,
+          -6.467672348022461,
+          -2.263123035430908,
+          -2.530839681625366,
+          -2.305753707885742,
+          -5.591285228729248,
+          -0.44637587666511536,
+          -1.4524965286254883,
+          -3.427215576171875,
+          -1.4132193326950073,
+          -1.9085462093353271,
+          -5.03782320022583,
+          -3.3329570293426514,
+          -1.3038438558578491,
+          -7.516743183135986,
+          -2.7018377780914307,
+          -5.432577133178711,
+          -3.851147413253784,
+          -5.315250873565674,
+          -2.8284945487976074,
+          -4.024998664855957,
+          -3.488926410675049,
+          -5.272165298461914,
+          -1.5549752712249756,
+          -5.055495738983154,
+          -5.699310779571533,
+          1.3608688116073608,
+          0.5174199342727661,
+          -9.205794334411621,
+          0.05075589939951897,
+          -5.532840728759766,
+          -3.05381178855896,
+          -4.075339317321777,
+          -5.979511737823486,
+          -4.0336761474609375,
+          -0.9491540193557739,
+          -1.2274409532546997,
+          -3.1960582733154297,
+          -2.9252848625183105,
+          -2.1902856826782227,
+          -0.9200683832168579,
+          -1.9142874479293823,
+          -1.7793086767196655,
+          0.23613806068897247,
+          0.6729346513748169,
+          -6.120173454284668,
+          -3.4608097076416016,
+          -6.361685752868652,
+          -6.080656051635742,
+          -4.175940036773682,
+          -3.2313311100006104,
+          0.666314423084259,
+          -3.082327127456665,
+          -1.2218384742736816,
+          -1.9368007183074951,
+          -0.85166335105896,
+          -5.5212249755859375,
+          -5.63658332824707,
+          -3.835944652557373,
+          -0.4829419255256653,
+          6.251952648162842,
+          -3.1685891151428223,
+          -0.7948471903800964,
+          -2.8999381065368652,
+          -1.5617347955703735,
+          -3.121030569076538,
+          -3.6545963287353516,
+          -2.046996593475342,
+          0.1166963055729866,
+          -3.60347318649292,
+          -1.4376133680343628,
+          -4.939297676086426,
+          -4.080053329467773,
+          -2.8097662925720215,
+          0.6347252130508423,
+          -2.757154941558838,
+          -2.8781356811523438,
+          -2.855851650238037,
+          -1.3083890676498413,
+          -3.5309767723083496,
+          -1.6901335716247559,
+          -3.976527690887451,
+          0.3127841651439667,
+          -1.4929388761520386,
+          -1.8053478002548218,
+          -4.0723958015441895,
+          -4.038941383361816,
+          -4.1684112548828125,
+          -1.8276432752609253,
+          -3.9541802406311035,
+          3.3299667835235596,
+          -7.660660266876221,
+          -1.5696232318878174
+        ],
+        "generation": 13,
+        "stream_id": "1e00d7ec45fe4700a750d3faf17f8c20"
+      },
+      "turn_id": "9d8f0a7171af"
+    },
+    "firstCapture": {
+      "type": "capture",
+      "status": "ready",
+      "generation": 13,
+      "source_kind": "video",
+      "message": "Đang chuẩn bị nhận dạng tay và môi…",
+      "stream_id": "1e00d7ec45fe4700a750d3faf17f8c20",
+      "captured": 193,
+      "processed": 61,
+      "dropped": 18,
+      "fps_cap_drops": 112,
+      "processed_fps": 18.991588967718513,
+      "inflight_segments": 0,
+      "queued_segments": 0,
+      "has_pose": true,
+      "hand_count": 2,
+      "has_face": true,
+      "boundary_state": "listening",
+      "detect_ms": 51.378800000748015,
+      "frame_age_ms": 72.67649999912828,
+      "face_ms": 8.947400000579364,
+      "pose_hands_ms": 49.728899999536225,
+      "source_width": 1080,
+      "source_height": 1080,
+      "buffer_frames": 61
+    },
+    "originalDecisions": [
+      {
+        "id": "42873f2404a0",
+        "text": "Sốt",
+        "uncertain": false,
+        "recognition": {
+          "engine_family": "multimodal100",
+          "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+          "actual_mode": "fusion",
+          "segment_id": "1e00d7ec45fe4700a750d3faf17f8c20:1",
+          "policy": {
+            "version": "clinic-fusion-quality-v1",
+            "committed": true,
+            "disposition": "committed",
+            "reasons": [],
+            "prompt": "",
+            "scores": "uncalibrated_softmax"
+          }
+        }
+      },
+      {
+        "id": "0372a8668311",
+        "text": "Sốt",
+        "uncertain": false,
+        "recognition": {
+          "engine_family": "multimodal100",
+          "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+          "actual_mode": "fusion",
+          "segment_id": "1e00d7ec45fe4700a750d3faf17f8c20:2",
+          "policy": {
+            "version": "clinic-fusion-quality-v1",
+            "committed": true,
+            "disposition": "committed",
+            "reasons": [],
+            "prompt": "",
+            "scores": "uncalibrated_softmax"
+          }
+        }
+      }
+    ],
+    "qaConfirmations": 0,
+    "words": [
+      {
+        "id": "42873f2404a0",
+        "role": "patient",
+        "text": "Sốt",
+        "created_at_ms": 1794278537897.5786,
+        "status": "candidate",
+        "confidence": 0.904865026473999,
+        "uncertain": false,
+        "predictions": [
+          {
+            "gloss": "Sốt",
+            "score": 0.904865026473999,
+            "model_id": null,
+            "class_id": "W068",
+            "class_index": 67,
+            "original_gloss": "Sốt",
+            "canonical_concept_id": "mm100:W068",
+            "legacy_label_candidate": null,
+            "voice_key": "mm100-W068",
+            "engine_family": "multimodal100"
+          },
+          {
+            "gloss": "Từ chối",
+            "score": 0.04870589077472687,
+            "model_id": null,
+            "class_id": "W098",
+            "class_index": 97,
+            "original_gloss": "Từ chối",
+            "canonical_concept_id": "mm100:W098",
+            "legacy_label_candidate": 347,
+            "voice_key": "347",
+            "engine_family": "multimodal100"
+          },
+          {
+            "gloss": "Giàu",
+            "score": 0.006798500660806894,
+            "model_id": null,
+            "class_id": "W034",
+            "class_index": 33,
+            "original_gloss": "Giàu",
+            "canonical_concept_id": "mm100:W034",
+            "legacy_label_candidate": 110,
+            "voice_key": "110",
+            "engine_family": "multimodal100"
+          },
+          {
+            "gloss": "Học",
+            "score": 0.0034170160070061684,
+            "model_id": null,
+            "class_id": "W052",
+            "class_index": 51,
+            "original_gloss": "Học",
+            "canonical_concept_id": "mm100:W052",
+            "legacy_label_candidate": 140,
+            "voice_key": "140",
+            "engine_family": "multimodal100"
+          },
+          {
+            "gloss": "Giỏi",
+            "score": 0.003394470317289233,
+            "model_id": null,
+            "class_id": "W059",
+            "class_index": 58,
+            "original_gloss": "Giỏi",
+            "canonical_concept_id": "mm100:W059",
+            "legacy_label_candidate": 120,
+            "voice_key": "120",
+            "engine_family": "multimodal100"
+          }
+        ],
+        "voice_key": "mm100-W068",
+        "original_gloss": "Sốt",
+        "recognition": {
+          "engine_family": "multimodal100",
+          "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+          "actual_mode": "fusion",
+          "segment_id": "1e00d7ec45fe4700a750d3faf17f8c20:1",
+          "policy": {
+            "version": "clinic-fusion-quality-v1",
+            "committed": true,
+            "disposition": "committed",
+            "reasons": [],
+            "prompt": "",
+            "scores": "uncalibrated_softmax"
+          }
+        },
+        "quality_warning": null,
+        "context_candidates": [],
+        "metrics": {
+          "segment_id": "1e00d7ec45fe4700a750d3faf17f8c20:1",
+          "segment_number": 1,
+          "request_id": "1e00d7ec45fe4700a750d3faf17f8c20:1",
+          "engine_family": "multimodal100",
+          "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+          "manifest_sha256": "f4c3c90e19bb49b2ae8b0fb402a71c8a8b0688177bb76b71446d9b915b424722",
+          "checkpoint_sha256": "0ccf0476091990ef84055a362376f96d40987916b95be6e568f9152f64a6f28d",
+          "actual_mode": "fusion",
+          "requested_mode": "fusion",
+          "fallback_reason": null,
+          "policy": {
+            "version": "clinic-fusion-quality-v1",
+            "committed": true,
+            "disposition": "committed",
+            "reasons": [],
+            "prompt": "",
+            "scores": "uncalibrated_softmax"
+          },
+          "quality_warning": null,
+          "quality": {
+            "frame_count": 56,
+            "sampled_frames": 71,
+            "capture_span_ms": 2800,
+            "input_fps": 19.642857142857142,
+            "max_capture_gap_ms": 200,
+            "frame_ids": [
+              1,
+              1,
+              1,
+              13,
+              13,
+              13,
+              16,
+              18,
+              21,
+              21,
+              25,
+              28,
+              30,
+              33,
+              33,
+              37,
+              40,
+              42,
+              45,
+              45,
+              49,
+              52,
+              54,
+              57,
+              59,
+              59,
+              64,
+              66,
+              69,
+              69,
+              73,
+              76,
+              78,
+              81,
+              81,
+              85,
+              88,
+              90,
+              93,
+              93,
+              97,
+              100,
+              102,
+              105,
+              107,
+              109,
+              112,
+              114,
+              114,
+              119,
+              121,
+              124,
+              126,
+              129,
+              129,
+              133,
+              136,
+              138,
+              141,
+              141,
+              145,
+              148,
+              150,
+              153,
+              155,
+              157,
+              160,
+              162,
+              162,
+              167,
+              169
+            ],
+            "geometry": {
+              "rejected": [],
+              "pose_consistency": "CHECKED",
+              "anchor_frames": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70
+              ],
+              "nose_bias_px": [
+                11.84796142578125,
+                10.359237670898438
+              ],
+              "nose_threshold_px": 32.01434326171875,
+              "eye_scale_bounds": [
+                0.65,
+                1.5
+              ],
+              "raw_fraction": 1,
+              "filtered_fraction": 1,
+              "diagnostics": [
+                {
+                  "frame": 0,
+                  "nose_residual_px": 1.2941595315933228,
+                  "relative_eye_scale": 1.0521185398101807
+                },
+                {
+                  "frame": 1,
+                  "nose_residual_px": 1.2941595315933228,
+                  "relative_eye_scale": 1.0521185398101807
+                },
+                {
+                  "frame": 2,
+                  "nose_residual_px": 1.2941595315933228,
+                  "relative_eye_scale": 1.0521185398101807
+                },
+                {
+                  "frame": 3,
+                  "nose_residual_px": 4.018510818481445,
+                  "relative_eye_scale": 1.1147897243499756
+                },
+                {
+                  "frame": 4,
+                  "nose_residual_px": 4.018510818481445,
+                  "relative_eye_scale": 1.1147897243499756
+                },
+                {
+                  "frame": 5,
+                  "nose_residual_px": 4.018510818481445,
+                  "relative_eye_scale": 1.1147897243499756
+                },
+                {
+                  "frame": 6,
+                  "nose_residual_px": 2.9246106147766113,
+                  "relative_eye_scale": 1.0432902574539185
+                },
+                {
+                  "frame": 7,
+                  "nose_residual_px": 2.8458919525146484,
+                  "relative_eye_scale": 0.9783254265785217
+                },
+                {
+                  "frame": 8,
+                  "nose_residual_px": 5.189401149749756,
+                  "relative_eye_scale": 0.9737294316291809
+                },
+                {
+                  "frame": 9,
+                  "nose_residual_px": 5.189401149749756,
+                  "relative_eye_scale": 0.9737294316291809
+                },
+                {
+                  "frame": 10,
+                  "nose_residual_px": 3.916368007659912,
+                  "relative_eye_scale": 1.003954529762268
+                },
+                {
+                  "frame": 11,
+                  "nose_residual_px": 4.494534015655518,
+                  "relative_eye_scale": 0.9828962087631226
+                },
+                {
+                  "frame": 12,
+                  "nose_residual_px": 3.726348876953125,
+                  "relative_eye_scale": 0.9466392993927002
+                },
+                {
+                  "frame": 13,
+                  "nose_residual_px": 6.438348770141602,
+                  "relative_eye_scale": 0.895396888256073
+                },
+                {
+                  "frame": 14,
+                  "nose_residual_px": 6.438348770141602,
+                  "relative_eye_scale": 0.895396888256073
+                },
+                {
+                  "frame": 15,
+                  "nose_residual_px": 9.847195625305176,
+                  "relative_eye_scale": 0.9142969846725464
+                },
+                {
+                  "frame": 16,
+                  "nose_residual_px": 9.875744819641113,
+                  "relative_eye_scale": 0.8658725023269653
+                },
+                {
+                  "frame": 17,
+                  "nose_residual_px": 8.91244888305664,
+                  "relative_eye_scale": 0.8751312494277954
+                },
+                {
+                  "frame": 18,
+                  "nose_residual_px": 1.981624960899353,
+                  "relative_eye_scale": 0.8449229001998901
+                },
+                {
+                  "frame": 19,
+                  "nose_residual_px": 1.981624960899353,
+                  "relative_eye_scale": 0.8449229001998901
+                },
+                {
+                  "frame": 20,
+                  "nose_residual_px": 4.8734822273254395,
+                  "relative_eye_scale": 0.936329185962677
+                },
+                {
+                  "frame": 21,
+                  "nose_residual_px": 6.807484149932861,
+                  "relative_eye_scale": 1.1933763027191162
+                },
+                {
+                  "frame": 22,
+                  "nose_residual_px": 4.830063343048096,
+                  "relative_eye_scale": 1.1744554042816162
+                },
+                {
+                  "frame": 23,
+                  "nose_residual_px": 2.8252503871917725,
+                  "relative_eye_scale": 1.1678115129470825
+                },
+                {
+                  "frame": 24,
+                  "nose_residual_px": 5.680478096008301,
+                  "relative_eye_scale": 1.0588178634643555
+                },
+                {
+                  "frame": 25,
+                  "nose_residual_px": 5.680478096008301,
+                  "relative_eye_scale": 1.0588178634643555
+                },
+                {
+                  "frame": 26,
+                  "nose_residual_px": 11.312095642089844,
+                  "relative_eye_scale": 0.953620195388794
+                },
+                {
+                  "frame": 27,
+                  "nose_residual_px": 10.584770202636719,
+                  "relative_eye_scale": 0.9868857860565186
+                },
+                {
+                  "frame": 28,
+                  "nose_residual_px": 9.442715644836426,
+                  "relative_eye_scale": 0.9885177612304688
+                },
+                {
+                  "frame": 29,
+                  "nose_residual_px": 9.442715644836426,
+                  "relative_eye_scale": 0.9885177612304688
+                },
+                {
+                  "frame": 30,
+                  "nose_residual_px": 8.092466354370117,
+                  "relative_eye_scale": 0.9631757736206055
+                },
+                {
+                  "frame": 31,
+                  "nose_residual_px": 7.359896659851074,
+                  "relative_eye_scale": 1.049627661705017
+                },
+                {
+                  "frame": 32,
+                  "nose_residual_px": 6.837295055389404,
+                  "relative_eye_scale": 1.0821201801300049
+                },
+                {
+                  "frame": 33,
+                  "nose_residual_px": 6.9485015869140625,
+                  "relative_eye_scale": 1.0789439678192139
+                },
+                {
+                  "frame": 34,
+                  "nose_residual_px": 6.9485015869140625,
+                  "relative_eye_scale": 1.0789439678192139
+                },
+                {
+                  "frame": 35,
+                  "nose_residual_px": 6.027379989624023,
+                  "relative_eye_scale": 1.1057487726211548
+                },
+                {
+                  "frame": 36,
+                  "nose_residual_px": 7.4301934242248535,
+                  "relative_eye_scale": 1.0730319023132324
+                },
+                {
+                  "frame": 37,
+                  "nose_residual_px": 8.049678802490234,
+                  "relative_eye_scale": 1.0847944021224976
+                },
+                {
+                  "frame": 38,
+                  "nose_residual_px": 7.28974723815918,
+                  "relative_eye_scale": 1.1263564825057983
+                },
+                {
+                  "frame": 39,
+                  "nose_residual_px": 7.28974723815918,
+                  "relative_eye_scale": 1.1263564825057983
+                },
+                {
+                  "frame": 40,
+                  "nose_residual_px": 6.320362091064453,
+                  "relative_eye_scale": 1.157156229019165
+                },
+                {
+                  "frame": 41,
+                  "nose_residual_px": 4.86105489730835,
+                  "relative_eye_scale": 1.150305986404419
+                },
+                {
+                  "frame": 42,
+                  "nose_residual_px": 4.811162948608398,
+                  "relative_eye_scale": 1.1704577207565308
+                },
+                {
+                  "frame": 43,
+                  "nose_residual_px": 6.334604263305664,
+                  "relative_eye_scale": 1.2179864645004272
+                },
+                {
+                  "frame": 44,
+                  "nose_residual_px": 6.6775431632995605,
+                  "relative_eye_scale": 1.2547651529312134
+                },
+                {
+                  "frame": 45,
+                  "nose_residual_px": 5.725831508636475,
+                  "relative_eye_scale": 1.2611743211746216
+                },
+                {
+                  "frame": 46,
+                  "nose_residual_px": 4.781944274902344,
+                  "relative_eye_scale": 1.3959065675735474
+                },
+                {
+                  "frame": 47,
+                  "nose_residual_px": 7.769281387329102,
+                  "relative_eye_scale": 1.478934645652771
+                },
+                {
+                  "frame": 48,
+                  "nose_residual_px": 7.769281387329102,
+                  "relative_eye_scale": 1.478934645652771
+                },
+                {
+                  "frame": 49,
+                  "nose_residual_px": 11.245878219604492,
+                  "relative_eye_scale": 1.177486777305603
+                },
+                {
+                  "frame": 50,
+                  "nose_residual_px": 8.729690551757812,
+                  "relative_eye_scale": 1.000114917755127
+                },
+                {
+                  "frame": 51,
+                  "nose_residual_px": 11.303277969360352,
+                  "relative_eye_scale": 0.895147442817688
+                },
+                {
+                  "frame": 52,
+                  "nose_residual_px": 7.726824760437012,
+                  "relative_eye_scale": 0.7305433750152588
+                },
+                {
+                  "frame": 53,
+                  "nose_residual_px": 5.997882843017578,
+                  "relative_eye_scale": 0.8072633147239685
+                },
+                {
+                  "frame": 54,
+                  "nose_residual_px": 5.997882843017578,
+                  "relative_eye_scale": 0.8072633147239685
+                },
+                {
+                  "frame": 55,
+                  "nose_residual_px": 9.154275894165039,
+                  "relative_eye_scale": 0.7984612584114075
+                },
+                {
+                  "frame": 56,
+                  "nose_residual_px": 5.620718479156494,
+                  "relative_eye_scale": 0.9599627256393433
+                },
+                {
+                  "frame": 57,
+                  "nose_residual_px": 3.796442985534668,
+                  "relative_eye_scale": 0.9194730520248413
+                },
+                {
+                  "frame": 58,
+                  "nose_residual_px": 1.226410150527954,
+                  "relative_eye_scale": 1.1245850324630737
+                },
+                {
+                  "frame": 59,
+                  "nose_residual_px": 1.226410150527954,
+                  "relative_eye_scale": 1.1245850324630737
+                },
+                {
+                  "frame": 60,
+                  "nose_residual_px": 1.6398894786834717,
+                  "relative_eye_scale": 1.0895919799804688
+                },
+                {
+                  "frame": 61,
+                  "nose_residual_px": 4.3055219650268555,
+                  "relative_eye_scale": 1.0152462720870972
+                },
+                {
+                  "frame": 62,
+                  "nose_residual_px": 7.033048152923584,
+                  "relative_eye_scale": 0.984993577003479
+                },
+                {
+                  "frame": 63,
+                  "nose_residual_px": 6.112034797668457,
+                  "relative_eye_scale": 0.9745471477508545
+                },
+                {
+                  "frame": 64,
+                  "nose_residual_px": 4.186893939971924,
+                  "relative_eye_scale": 1.0869115591049194
+                },
+                {
+                  "frame": 65,
+                  "nose_residual_px": 3.849050521850586,
+                  "relative_eye_scale": 1.0695421695709229
+                },
+                {
+                  "frame": 66,
+                  "nose_residual_px": 5.910120010375977,
+                  "relative_eye_scale": 0.9849414229393005
+                },
+                {
+                  "frame": 67,
+                  "nose_residual_px": 6.870696544647217,
+                  "relative_eye_scale": 0.9750300645828247
+                },
+                {
+                  "frame": 68,
+                  "nose_residual_px": 6.870696544647217,
+                  "relative_eye_scale": 0.9750300645828247
+                },
+                {
+                  "frame": 69,
+                  "nose_residual_px": 8.008840560913086,
+                  "relative_eye_scale": 0.9960454702377319
+                },
+                {
+                  "frame": 70,
+                  "nose_residual_px": 5.087496757507324,
+                  "relative_eye_scale": 0.9501495957374573
+                }
+              ]
+            },
+            "sign_valid": true,
+            "mouth_valid": true,
+            "hand_coverage": 1,
+            "single_face_fraction": 1,
+            "preprocess_ms": 2819.6379000009983,
+            "roi_ms": 40.24509999999282,
+            "sampling": "nearest capture timestamp at 25fps",
+            "source_resolution": [
+              1080,
+              1080
+            ]
+          },
+          "boundary": {
+            "start_capture_ms": 0,
+            "end_capture_ms": 2800,
+            "first_active_capture_ms": 483.3333333333333,
+            "last_active_capture_ms": 2450,
+            "decision_capture_ms": 2800,
+            "reason": "arms_returned_to_neutral",
+            "buffered_frame_count": 48,
+            "selected_frame_ids": [
+              1,
+              13,
+              16,
+              18,
+              21,
+              25,
+              28,
+              30,
+              33,
+              37,
+              40,
+              42,
+              45,
+              49,
+              52,
+              54,
+              57,
+              59,
+              64,
+              66,
+              69,
+              73,
+              76,
+              78,
+              81,
+              85,
+              88,
+              90,
+              93,
+              97,
+              100,
+              102,
+              105,
+              107,
+              109,
+              112,
+              114,
+              119,
+              121,
+              124,
+              126,
+              129,
+              133,
+              136,
+              138,
+              141,
+              145,
+              148,
+              150,
+              153,
+              155,
+              157,
+              160,
+              162,
+              167,
+              169
+            ],
+            "boundary_config": {
+              "version": "clinic-r3-elbow140-context500-400-v1",
+              "use_raised_wrist_fallback": false,
+              "angle_threshold": 140,
+              "visibility": 0.5,
+              "min_num_up_frames": 4,
+              "min_num_down_frames": 4,
+              "min_down_time_ms": 300,
+              "delay_ms": 400,
+              "min_segment_frames": 6,
+              "max_segment_ms": 8000,
+              "max_candidate_frames": 10,
+              "context_before_ms": 500,
+              "context_after_ms": 400
+            },
+            "boundary_source": "Elbow flexion only; shared sign-guided boundaries for every mode",
+            "trim": "Active core plus observed 500-ms lead-in and 400-ms tail; capped at unchanged boundary decision",
+            "core_start_capture_ms": 483.3333333333333,
+            "core_end_capture_ms": 2483.3333333333335,
+            "core_frame_ids": [
+              30,
+              33,
+              37,
+              40,
+              42,
+              45,
+              49,
+              52,
+              54,
+              57,
+              59,
+              64,
+              66,
+              69,
+              73,
+              76,
+              78,
+              81,
+              85,
+              88,
+              90,
+              93,
+              97,
+              100,
+              102,
+              105,
+              107,
+              109,
+              112,
+              114,
+              119,
+              121,
+              124,
+              126,
+              129,
+              133,
+              136,
+              138,
+              141,
+              145,
+              148,
+              150
+            ],
+            "decision_captured_monotonic_ms": 6306230.481
+          },
+          "timing": {
+            "sign_encoder_ms": 191.77059999947232,
+            "mouth_encoder_ms": 78.8963999993939,
+            "encoder_wall_ms": 270.7147000000987,
+            "encoder_schedule": "serial_slgcn_avhubert_cuda",
+            "queue_ms": 0.4223999995738268,
+            "inference_wall_ms": 322.315700000152,
+            "decision_to_result_ms": 322.7380999997258,
+            "decision_capture_to_result_ms": 410.89780000038445,
+            "last_selected_capture_to_result_ms": 410.89780000038445,
+            "emitted_monotonic_ms": 6306641.3788,
+            "clock": "python_performance_counter_ms_same_host",
+            "last_active_capture_to_result_ms": 758.5537000000477,
+            "worker_to_backend_ms": 0.9564000004902482,
+            "backend_received_epoch_ms": 1794278537897.5786
+          },
+          "inference_ms": 322.315700000152,
+          "raw_logits": [
+            -2.866389513015747,
+            -2.801150321960449,
+            -0.4617637097835541,
+            -0.06453932821750641,
+            -4.9412102699279785,
+            -5.771832466125488,
+            -6.559883117675781,
+            -1.3164653778076172,
+            -6.467672348022461,
+            -2.263123035430908,
+            -2.530839681625366,
+            -2.305753707885742,
+            -5.591285228729248,
+            -0.44637587666511536,
+            -1.4524965286254883,
+            -3.427215576171875,
+            -1.4132193326950073,
+            -1.9085462093353271,
+            -5.03782320022583,
+            -3.3329570293426514,
+            -1.3038438558578491,
+            -7.516743183135986,
+            -2.7018377780914307,
+            -5.432577133178711,
+            -3.851147413253784,
+            -5.315250873565674,
+            -2.8284945487976074,
+            -4.024998664855957,
+            -3.488926410675049,
+            -5.272165298461914,
+            -1.5549752712249756,
+            -5.055495738983154,
+            -5.699310779571533,
+            1.3608688116073608,
+            0.5174199342727661,
+            -9.205794334411621,
+            0.05075589939951897,
+            -5.532840728759766,
+            -3.05381178855896,
+            -4.075339317321777,
+            -5.979511737823486,
+            -4.0336761474609375,
+            -0.9491540193557739,
+            -1.2274409532546997,
+            -3.1960582733154297,
+            -2.9252848625183105,
+            -2.1902856826782227,
+            -0.9200683832168579,
+            -1.9142874479293823,
+            -1.7793086767196655,
+            0.23613806068897247,
+            0.6729346513748169,
+            -6.120173454284668,
+            -3.4608097076416016,
+            -6.361685752868652,
+            -6.080656051635742,
+            -4.175940036773682,
+            -3.2313311100006104,
+            0.666314423084259,
+            -3.082327127456665,
+            -1.2218384742736816,
+            -1.9368007183074951,
+            -0.85166335105896,
+            -5.5212249755859375,
+            -5.63658332824707,
+            -3.835944652557373,
+            -0.4829419255256653,
+            6.251952648162842,
+            -3.1685891151428223,
+            -0.7948471903800964,
+            -2.8999381065368652,
+            -1.5617347955703735,
+            -3.121030569076538,
+            -3.6545963287353516,
+            -2.046996593475342,
+            0.1166963055729866,
+            -3.60347318649292,
+            -1.4376133680343628,
+            -4.939297676086426,
+            -4.080053329467773,
+            -2.8097662925720215,
+            0.6347252130508423,
+            -2.757154941558838,
+            -2.8781356811523438,
+            -2.855851650238037,
+            -1.3083890676498413,
+            -3.5309767723083496,
+            -1.6901335716247559,
+            -3.976527690887451,
+            0.3127841651439667,
+            -1.4929388761520386,
+            -1.8053478002548218,
+            -4.0723958015441895,
+            -4.038941383361816,
+            -4.1684112548828125,
+            -1.8276432752609253,
+            -3.9541802406311035,
+            3.3299667835235596,
+            -7.660660266876221,
+            -1.5696232318878174
+          ],
+          "generation": 13,
+          "stream_id": "1e00d7ec45fe4700a750d3faf17f8c20"
+        },
+        "turn_id": "9d8f0a7171af"
+      },
+      {
+        "id": "0372a8668311",
+        "role": "patient",
+        "text": "Sốt",
+        "created_at_ms": 1794278540877.486,
+        "status": "candidate",
+        "confidence": 0.944416880607605,
+        "uncertain": false,
+        "predictions": [
+          {
+            "gloss": "Sốt",
+            "score": 0.944416880607605,
+            "model_id": null,
+            "class_id": "W068",
+            "class_index": 67,
+            "original_gloss": "Sốt",
+            "canonical_concept_id": "mm100:W068",
+            "legacy_label_candidate": null,
+            "voice_key": "mm100-W068",
+            "engine_family": "multimodal100"
+          },
+          {
+            "gloss": "Từ chối",
+            "score": 0.02048274129629135,
+            "model_id": null,
+            "class_id": "W098",
+            "class_index": 97,
+            "original_gloss": "Từ chối",
+            "canonical_concept_id": "mm100:W098",
+            "legacy_label_candidate": 347,
+            "voice_key": "347",
+            "engine_family": "multimodal100"
+          },
+          {
+            "gloss": "Giàu",
+            "score": 0.0060095107182860374,
+            "model_id": null,
+            "class_id": "W034",
+            "class_index": 33,
+            "original_gloss": "Giàu",
+            "canonical_concept_id": "mm100:W034",
+            "legacy_label_candidate": 110,
+            "voice_key": "110",
+            "engine_family": "multimodal100"
+          },
+          {
+            "gloss": "Học",
+            "score": 0.004838084802031517,
+            "model_id": null,
+            "class_id": "W052",
+            "class_index": 51,
+            "original_gloss": "Học",
+            "canonical_concept_id": "mm100:W052",
+            "legacy_label_candidate": 140,
+            "voice_key": "140",
+            "engine_family": "multimodal100"
+          },
+          {
+            "gloss": "Cười",
+            "score": 0.0033838755916804075,
+            "model_id": null,
+            "class_id": "W051",
+            "class_index": 50,
+            "original_gloss": "Cười",
+            "canonical_concept_id": "mm100:W051",
+            "legacy_label_candidate": 84,
+            "voice_key": "84",
+            "engine_family": "multimodal100"
+          }
+        ],
+        "voice_key": "mm100-W068",
+        "original_gloss": "Sốt",
+        "recognition": {
+          "engine_family": "multimodal100",
+          "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+          "actual_mode": "fusion",
+          "segment_id": "1e00d7ec45fe4700a750d3faf17f8c20:2",
+          "policy": {
+            "version": "clinic-fusion-quality-v1",
+            "committed": true,
+            "disposition": "committed",
+            "reasons": [],
+            "prompt": "",
+            "scores": "uncalibrated_softmax"
+          }
+        },
+        "quality_warning": null,
+        "context_candidates": [],
+        "metrics": {
+          "segment_id": "1e00d7ec45fe4700a750d3faf17f8c20:2",
+          "segment_number": 2,
+          "request_id": "1e00d7ec45fe4700a750d3faf17f8c20:2",
+          "engine_family": "multimodal100",
+          "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+          "manifest_sha256": "f4c3c90e19bb49b2ae8b0fb402a71c8a8b0688177bb76b71446d9b915b424722",
+          "checkpoint_sha256": "0ccf0476091990ef84055a362376f96d40987916b95be6e568f9152f64a6f28d",
+          "actual_mode": "fusion",
+          "requested_mode": "fusion",
+          "fallback_reason": null,
+          "policy": {
+            "version": "clinic-fusion-quality-v1",
+            "committed": true,
+            "disposition": "committed",
+            "reasons": [],
+            "prompt": "",
+            "scores": "uncalibrated_softmax"
+          },
+          "quality_warning": null,
+          "quality": {
+            "frame_count": 56,
+            "sampled_frames": 71,
+            "capture_span_ms": 2833.3333333333335,
+            "input_fps": 19.41176470588235,
+            "max_capture_gap_ms": 83.33333333333394,
+            "frame_ids": [
+              179,
+              181,
+              186,
+              186,
+              189,
+              189,
+              193,
+              198,
+              198,
+              201,
+              201,
+              205,
+              208,
+              210,
+              213,
+              213,
+              217,
+              220,
+              222,
+              227,
+              227,
+              229,
+              232,
+              234,
+              237,
+              237,
+              241,
+              244,
+              246,
+              249,
+              249,
+              253,
+              256,
+              258,
+              261,
+              261,
+              265,
+              268,
+              270,
+              275,
+              275,
+              277,
+              282,
+              282,
+              285,
+              287,
+              287,
+              292,
+              294,
+              297,
+              299,
+              299,
+              304,
+              306,
+              309,
+              311,
+              313,
+              318,
+              318,
+              321,
+              323,
+              325,
+              330,
+              330,
+              333,
+              335,
+              337,
+              340,
+              342,
+              347,
+              347
+            ],
+            "geometry": {
+              "rejected": [],
+              "pose_consistency": "CHECKED",
+              "anchor_frames": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70
+              ],
+              "nose_bias_px": [
+                12.650634765625,
+                10.814178466796875
+              ],
+              "nose_threshold_px": 32.58097839355469,
+              "eye_scale_bounds": [
+                0.65,
+                1.5
+              ],
+              "raw_fraction": 1,
+              "filtered_fraction": 1,
+              "diagnostics": [
+                {
+                  "frame": 0,
+                  "nose_residual_px": 7.069511890411377,
+                  "relative_eye_scale": 1.0000600814819336
+                },
+                {
+                  "frame": 1,
+                  "nose_residual_px": 3.1903603076934814,
+                  "relative_eye_scale": 1.0048905611038208
+                },
+                {
+                  "frame": 2,
+                  "nose_residual_px": 0.7581068277359009,
+                  "relative_eye_scale": 1.0135550498962402
+                },
+                {
+                  "frame": 3,
+                  "nose_residual_px": 0.7581068277359009,
+                  "relative_eye_scale": 1.0135550498962402
+                },
+                {
+                  "frame": 4,
+                  "nose_residual_px": 0.87359619140625,
+                  "relative_eye_scale": 1.0302664041519165
+                },
+                {
+                  "frame": 5,
+                  "nose_residual_px": 0.87359619140625,
+                  "relative_eye_scale": 1.0302664041519165
+                },
+                {
+                  "frame": 6,
+                  "nose_residual_px": 1.3391354084014893,
+                  "relative_eye_scale": 1.0217310190200806
+                },
+                {
+                  "frame": 7,
+                  "nose_residual_px": 2.339993476867676,
+                  "relative_eye_scale": 0.9138132929801941
+                },
+                {
+                  "frame": 8,
+                  "nose_residual_px": 2.339993476867676,
+                  "relative_eye_scale": 0.9138132929801941
+                },
+                {
+                  "frame": 9,
+                  "nose_residual_px": 4.526062965393066,
+                  "relative_eye_scale": 0.9916037917137146
+                },
+                {
+                  "frame": 10,
+                  "nose_residual_px": 4.526062965393066,
+                  "relative_eye_scale": 0.9916037917137146
+                },
+                {
+                  "frame": 11,
+                  "nose_residual_px": 4.482534408569336,
+                  "relative_eye_scale": 0.981813371181488
+                },
+                {
+                  "frame": 12,
+                  "nose_residual_px": 3.541029453277588,
+                  "relative_eye_scale": 0.9330155253410339
+                },
+                {
+                  "frame": 13,
+                  "nose_residual_px": 3.91269850730896,
+                  "relative_eye_scale": 0.8927311897277832
+                },
+                {
+                  "frame": 14,
+                  "nose_residual_px": 7.575084686279297,
+                  "relative_eye_scale": 0.9259107708930969
+                },
+                {
+                  "frame": 15,
+                  "nose_residual_px": 7.575084686279297,
+                  "relative_eye_scale": 0.9259107708930969
+                },
+                {
+                  "frame": 16,
+                  "nose_residual_px": 4.536837577819824,
+                  "relative_eye_scale": 0.8891215920448303
+                },
+                {
+                  "frame": 17,
+                  "nose_residual_px": 3.9068400859832764,
+                  "relative_eye_scale": 0.8709012866020203
+                },
+                {
+                  "frame": 18,
+                  "nose_residual_px": 3.71602201461792,
+                  "relative_eye_scale": 0.863324761390686
+                },
+                {
+                  "frame": 19,
+                  "nose_residual_px": 2.0190491676330566,
+                  "relative_eye_scale": 0.927177369594574
+                },
+                {
+                  "frame": 20,
+                  "nose_residual_px": 2.0190491676330566,
+                  "relative_eye_scale": 0.927177369594574
+                },
+                {
+                  "frame": 21,
+                  "nose_residual_px": 3.956914186477661,
+                  "relative_eye_scale": 1.0597606897354126
+                },
+                {
+                  "frame": 22,
+                  "nose_residual_px": 1.0214263200759888,
+                  "relative_eye_scale": 1.0736370086669922
+                },
+                {
+                  "frame": 23,
+                  "nose_residual_px": 6.940876007080078,
+                  "relative_eye_scale": 1.1550384759902954
+                },
+                {
+                  "frame": 24,
+                  "nose_residual_px": 0.9133262038230896,
+                  "relative_eye_scale": 1.107604742050171
+                },
+                {
+                  "frame": 25,
+                  "nose_residual_px": 0.9133262038230896,
+                  "relative_eye_scale": 1.107604742050171
+                },
+                {
+                  "frame": 26,
+                  "nose_residual_px": 5.482886791229248,
+                  "relative_eye_scale": 1.085039734840393
+                },
+                {
+                  "frame": 27,
+                  "nose_residual_px": 7.061665058135986,
+                  "relative_eye_scale": 0.9807717204093933
+                },
+                {
+                  "frame": 28,
+                  "nose_residual_px": 6.943114757537842,
+                  "relative_eye_scale": 0.9588815569877625
+                },
+                {
+                  "frame": 29,
+                  "nose_residual_px": 6.960744380950928,
+                  "relative_eye_scale": 0.9625610113143921
+                },
+                {
+                  "frame": 30,
+                  "nose_residual_px": 6.960744380950928,
+                  "relative_eye_scale": 0.9625610113143921
+                },
+                {
+                  "frame": 31,
+                  "nose_residual_px": 6.3264079093933105,
+                  "relative_eye_scale": 1.0156848430633545
+                },
+                {
+                  "frame": 32,
+                  "nose_residual_px": 6.36083984375,
+                  "relative_eye_scale": 1.0551249980926514
+                },
+                {
+                  "frame": 33,
+                  "nose_residual_px": 7.7096452713012695,
+                  "relative_eye_scale": 1.0505963563919067
+                },
+                {
+                  "frame": 34,
+                  "nose_residual_px": 7.916174411773682,
+                  "relative_eye_scale": 1.0746252536773682
+                },
+                {
+                  "frame": 35,
+                  "nose_residual_px": 7.916174411773682,
+                  "relative_eye_scale": 1.0746252536773682
+                },
+                {
+                  "frame": 36,
+                  "nose_residual_px": 8.319557189941406,
+                  "relative_eye_scale": 1.0670245885849
+                },
+                {
+                  "frame": 37,
+                  "nose_residual_px": 9.242504119873047,
+                  "relative_eye_scale": 1.0833851099014282
+                },
+                {
+                  "frame": 38,
+                  "nose_residual_px": 8.835317611694336,
+                  "relative_eye_scale": 1.1080079078674316
+                },
+                {
+                  "frame": 39,
+                  "nose_residual_px": 7.654066562652588,
+                  "relative_eye_scale": 1.1557221412658691
+                },
+                {
+                  "frame": 40,
+                  "nose_residual_px": 7.654066562652588,
+                  "relative_eye_scale": 1.1557221412658691
+                },
+                {
+                  "frame": 41,
+                  "nose_residual_px": 7.024460315704346,
+                  "relative_eye_scale": 1.1615397930145264
+                },
+                {
+                  "frame": 42,
+                  "nose_residual_px": 7.626142978668213,
+                  "relative_eye_scale": 1.1703089475631714
+                },
+                {
+                  "frame": 43,
+                  "nose_residual_px": 7.626142978668213,
+                  "relative_eye_scale": 1.1703089475631714
+                },
+                {
+                  "frame": 44,
+                  "nose_residual_px": 7.45824670791626,
+                  "relative_eye_scale": 1.2310627698898315
+                },
+                {
+                  "frame": 45,
+                  "nose_residual_px": 5.741008758544922,
+                  "relative_eye_scale": 1.225670337677002
+                },
+                {
+                  "frame": 46,
+                  "nose_residual_px": 5.741008758544922,
+                  "relative_eye_scale": 1.225670337677002
+                },
+                {
+                  "frame": 47,
+                  "nose_residual_px": 8.633706092834473,
+                  "relative_eye_scale": 1.4195268154144287
+                },
+                {
+                  "frame": 48,
+                  "nose_residual_px": 6.514036655426025,
+                  "relative_eye_scale": 1.281766653060913
+                },
+                {
+                  "frame": 49,
+                  "nose_residual_px": 8.257615089416504,
+                  "relative_eye_scale": 0.9760177731513977
+                },
+                {
+                  "frame": 50,
+                  "nose_residual_px": 5.176159381866455,
+                  "relative_eye_scale": 0.8305763602256775
+                },
+                {
+                  "frame": 51,
+                  "nose_residual_px": 5.176159381866455,
+                  "relative_eye_scale": 0.8305763602256775
+                },
+                {
+                  "frame": 52,
+                  "nose_residual_px": 6.521175384521484,
+                  "relative_eye_scale": 0.6528733372688293
+                },
+                {
+                  "frame": 53,
+                  "nose_residual_px": 2.481901168823242,
+                  "relative_eye_scale": 0.7113075256347656
+                },
+                {
+                  "frame": 54,
+                  "nose_residual_px": 4.682131290435791,
+                  "relative_eye_scale": 0.7469359636306763
+                },
+                {
+                  "frame": 55,
+                  "nose_residual_px": 8.745868682861328,
+                  "relative_eye_scale": 0.7580414414405823
+                },
+                {
+                  "frame": 56,
+                  "nose_residual_px": 7.645523548126221,
+                  "relative_eye_scale": 0.893488883972168
+                },
+                {
+                  "frame": 57,
+                  "nose_residual_px": 3.6397714614868164,
+                  "relative_eye_scale": 1.066933274269104
+                },
+                {
+                  "frame": 58,
+                  "nose_residual_px": 3.6397714614868164,
+                  "relative_eye_scale": 1.066933274269104
+                },
+                {
+                  "frame": 59,
+                  "nose_residual_px": 1.8751839399337769,
+                  "relative_eye_scale": 1.045436978340149
+                },
+                {
+                  "frame": 60,
+                  "nose_residual_px": 1.3735756874084473,
+                  "relative_eye_scale": 1.0370235443115234
+                },
+                {
+                  "frame": 61,
+                  "nose_residual_px": 1.646261215209961,
+                  "relative_eye_scale": 0.9999399185180664
+                },
+                {
+                  "frame": 62,
+                  "nose_residual_px": 4.846874713897705,
+                  "relative_eye_scale": 0.939071536064148
+                },
+                {
+                  "frame": 63,
+                  "nose_residual_px": 4.846874713897705,
+                  "relative_eye_scale": 0.939071536064148
+                },
+                {
+                  "frame": 64,
+                  "nose_residual_px": 3.190864086151123,
+                  "relative_eye_scale": 1.064926028251648
+                },
+                {
+                  "frame": 65,
+                  "nose_residual_px": 2.051180601119995,
+                  "relative_eye_scale": 1.0368456840515137
+                },
+                {
+                  "frame": 66,
+                  "nose_residual_px": 1.5445691347122192,
+                  "relative_eye_scale": 0.9483009576797485
+                },
+                {
+                  "frame": 67,
+                  "nose_residual_px": 5.28076171875,
+                  "relative_eye_scale": 0.9573636054992676
+                },
+                {
+                  "frame": 68,
+                  "nose_residual_px": 4.9837565422058105,
+                  "relative_eye_scale": 1.0191177129745483
+                },
+                {
+                  "frame": 69,
+                  "nose_residual_px": 4.568366050720215,
+                  "relative_eye_scale": 0.919035792350769
+                },
+                {
+                  "frame": 70,
+                  "nose_residual_px": 4.568366050720215,
+                  "relative_eye_scale": 0.919035792350769
+                }
+              ]
+            },
+            "sign_valid": true,
+            "mouth_valid": true,
+            "hand_coverage": 1,
+            "single_face_fraction": 1,
+            "preprocess_ms": 2865.856200000053,
+            "roi_ms": 45.143600000301376,
+            "sampling": "nearest capture timestamp at 25fps",
+            "source_resolution": [
+              1080,
+              1080
+            ]
+          },
+          "boundary": {
+            "start_capture_ms": 2966.6666666666665,
+            "end_capture_ms": 5800,
+            "first_active_capture_ms": 3450,
+            "last_active_capture_ms": 5400,
+            "decision_capture_ms": 5800,
+            "reason": "arms_returned_to_neutral",
+            "buffered_frame_count": 47,
+            "selected_frame_ids": [
+              179,
+              181,
+              186,
+              189,
+              193,
+              198,
+              201,
+              205,
+              208,
+              210,
+              213,
+              217,
+              220,
+              222,
+              227,
+              229,
+              232,
+              234,
+              237,
+              241,
+              244,
+              246,
+              249,
+              253,
+              256,
+              258,
+              261,
+              265,
+              268,
+              270,
+              275,
+              277,
+              282,
+              285,
+              287,
+              292,
+              294,
+              297,
+              299,
+              304,
+              306,
+              309,
+              311,
+              313,
+              318,
+              321,
+              323,
+              325,
+              330,
+              333,
+              335,
+              337,
+              340,
+              342,
+              347,
+              349
+            ],
+            "boundary_config": {
+              "version": "clinic-r3-elbow140-context500-400-v1",
+              "use_raised_wrist_fallback": false,
+              "angle_threshold": 140,
+              "visibility": 0.5,
+              "min_num_up_frames": 4,
+              "min_num_down_frames": 4,
+              "min_down_time_ms": 300,
+              "delay_ms": 400,
+              "min_segment_frames": 6,
+              "max_segment_ms": 8000,
+              "max_candidate_frames": 10,
+              "context_before_ms": 500,
+              "context_after_ms": 400
+            },
+            "boundary_source": "Elbow flexion only; shared sign-guided boundaries for every mode",
+            "trim": "Active core plus observed 500-ms lead-in and 400-ms tail; capped at unchanged boundary decision",
+            "core_start_capture_ms": 3450,
+            "core_end_capture_ms": 5483.333333333333,
+            "core_frame_ids": [
+              208,
+              210,
+              213,
+              217,
+              220,
+              222,
+              227,
+              229,
+              232,
+              234,
+              237,
+              241,
+              244,
+              246,
+              249,
+              253,
+              256,
+              258,
+              261,
+              265,
+              268,
+              270,
+              275,
+              277,
+              282,
+              285,
+              287,
+              292,
+              294,
+              297,
+              299,
+              304,
+              306,
+              309,
+              311,
+              313,
+              318,
+              321,
+              323,
+              325,
+              330
+            ],
+            "decision_captured_monotonic_ms": 6309239.0192
+          },
+          "timing": {
+            "sign_encoder_ms": 90.9046999995553,
+            "mouth_encoder_ms": 142.54170000003796,
+            "encoder_wall_ms": 233.49710000002233,
+            "encoder_schedule": "serial_slgcn_avhubert_cuda",
+            "queue_ms": 0.07710000034421682,
+            "inference_wall_ms": 286.90940000023693,
+            "decision_to_result_ms": 286.98650000058115,
+            "decision_capture_to_result_ms": 382.5239000003785,
+            "last_selected_capture_to_result_ms": 382.5239000003785,
+            "emitted_monotonic_ms": 6309621.5431,
+            "clock": "python_performance_counter_ms_same_host",
+            "last_active_capture_to_result_ms": 777.1834000004455,
+            "worker_to_backend_ms": 0.7968999994918704,
+            "backend_received_epoch_ms": 1794278540877.486
+          },
+          "inference_ms": 286.90940000023693,
+          "raw_logits": [
+            -3.363309860229492,
+            -3.9320669174194336,
+            -0.36404547095298767,
+            -0.6971562504768372,
+            -6.3232645988464355,
+            -5.524779319763184,
+            -7.204537868499756,
+            -2.8937933444976807,
+            -6.019818305969238,
+            -2.659372091293335,
+            -2.071016788482666,
+            -2.2673263549804688,
+            -6.487976551055908,
+            -0.4799829125404358,
+            -2.5821144580841064,
+            -3.226558208465576,
+            -2.197551727294922,
+            -2.1758031845092773,
+            -5.974384784698486,
+            -3.7550346851348877,
+            -1.3528605699539185,
+            -8.136401176452637,
+            -2.0640435218811035,
+            -4.648636817932129,
+            -4.508267402648926,
+            -5.156060218811035,
+            -2.6949782371520996,
+            -4.80427360534668,
+            -3.7064387798309326,
+            -5.745487213134766,
+            -1.8602436780929565,
+            -6.12427282333374,
+            -6.407207012176514,
+            1.842174768447876,
+            1.2527637481689453,
+            -10.630793571472168,
+            0.21784810721874237,
+            -5.899460315704346,
+            -3.350978374481201,
+            -4.30086088180542,
+            -6.4408135414123535,
+            -4.3665289878845215,
+            -0.41467371582984924,
+            -1.0990012884140015,
+            -4.230236053466797,
+            -3.1053428649902344,
+            -1.5943397283554077,
+            -1.3305116891860962,
+            -1.8401182889938354,
+            -0.9301273822784424,
+            1.267853021621704,
+            1.6253503561019897,
+            -7.044134140014648,
+            -4.877079486846924,
+            -6.313765525817871,
+            -6.321507453918457,
+            -3.957265853881836,
+            -3.3237171173095703,
+            1.2314825057983398,
+            -3.1020667552948,
+            -2.007899522781372,
+            -3.640340805053711,
+            -0.9191011786460876,
+            -6.191990375518799,
+            -5.341841697692871,
+            -5.028102874755859,
+            -0.45283234119415283,
+            6.899399280548096,
+            -3.865368604660034,
+            -0.5541720390319824,
+            -3.3869900703430176,
+            -1.83183753490448,
+            -2.444509506225586,
+            -2.8035871982574463,
+            -1.3332010507583618,
+            0.5703366994857788,
+            -4.101668834686279,
+            -1.8101491928100586,
+            -6.046622276306152,
+            -4.825326919555664,
+            -4.41148567199707,
+            -0.01924421265721321,
+            -2.4046523571014404,
+            -3.832606077194214,
+            -2.959977865219116,
+            -1.8628113269805908,
+            -3.605384588241577,
+            -2.0918028354644775,
+            -3.6121044158935547,
+            0.49642932415008545,
+            -1.1904367208480835,
+            -2.45354962348938,
+            -5.0688581466674805,
+            -4.307659149169922,
+            -3.587393045425415,
+            -2.2696168422698975,
+            -4.034886837005615,
+            3.0684142112731934,
+            -8.968096733093262,
+            -1.8332257270812988
+          ],
+          "generation": 13,
+          "stream_id": "1e00d7ec45fe4700a750d3faf17f8c20"
+        },
+        "turn_id": "9d8f0a7171af"
+      }
+    ],
+    "voice": [
+      {
+        "type": "queued",
+        "message_id": "42873f2404a0",
+        "text": "Sốt",
+        "recorded_at_ms": 1794278537908
+      },
+      {
+        "type": "playing",
+        "message_id": "42873f2404a0",
+        "text": "Sốt",
+        "latency_ms": 41,
+        "recorded_at_ms": 1794278537948
+      },
+      {
+        "type": "ended",
+        "message_id": "42873f2404a0",
+        "text": "Sốt",
+        "recorded_at_ms": 1794278538701
+      },
+      {
+        "type": "queued",
+        "message_id": "0372a8668311",
+        "text": "Sốt",
+        "recorded_at_ms": 1794278540884
+      },
+      {
+        "type": "playing",
+        "message_id": "0372a8668311",
+        "text": "Sốt",
+        "latency_ms": 25,
+        "recorded_at_ms": 1794278540909
+      },
+      {
+        "type": "ended",
+        "message_id": "0372a8668311",
+        "text": "Sốt",
+        "recorded_at_ms": 1794278541651
+      }
+    ]
+  },
+  "speechNegative": {
+    "seconds": 8,
+    "kinds": [
+      "silence",
+      "hiss",
+      "hum",
+      "keyboard-like impulses"
+    ],
+    "transcripts": 0
+  },
+  "speech": [
+    {
+      "text": "bạn có đau bụng không.",
+      "decode_ms": 848.4196999997948,
+      "audio_ms": 2016,
+      "uncertain": false,
+      "segments": [
+        {
+          "avg_logprob": -0.0001916018399325284,
+          "no_speech_prob": 1.4649689447643333e-11
+        }
+      ],
+      "speech_evidence": {
+        "voiced_ms": 1216,
+        "peak_speech_probability": 0.9932283163070679,
+        "rms": 0.09092757105827332,
+        "accepted": true
+      },
+      "rejection_reason": null,
+      "type": "transcript",
+      "sequence": 1,
+      "utterance_id": "c31632f1679344c9be94f3800bdf6977:1",
+      "session_id": "28e4178c713b:fa661231cc20",
+      "queue_ms": 0.1855000000432483,
+      "endpoint_audio_ms": 576,
+      "cut_at_limit": false,
+      "delivery": {
+        "status": "sent",
+        "message_id": "f4e7bd02ebbe",
+        "repair": null,
+        "text": "bạn có đau bụng không."
+      }
+    }
+  ],
+  "passed": true,
+  "finalDiagnostics": {
+    "model_sha256": "0ccf0476091990ef84055a362376f96d40987916b95be6e568f9152f64a6f28d",
+    "capture_profile": "clinic-mm100-ram-r3-v1",
+    "model": {
+      "name": "Tay và môi · 100 từ",
+      "labels": 100,
+      "family": "multimodal100",
+      "sha256": "0ccf0476091990ef84055a362376f96d40987916b95be6e568f9152f64a6f28d",
+      "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+      "capture_profile": "clinic-mm100-ram-r3-v1",
+      "active_head": "fusion",
+      "worker": {
+        "type": "worker_ready",
+        "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+        "device": "cuda",
+        "pid": 4396,
+        "load_ms": 11346.989900000153,
+        "warmup_ms": 2509.217300000273,
+        "manifest_sha256": "f4c3c90e19bb49b2ae8b0fb402a71c8a8b0688177bb76b71446d9b915b424722",
+        "storage": "ram_only",
+        "status": "ready"
+      },
+      "mode": "fusion",
+      "status": "ready",
+      "switching": false
+    },
+    "state": {
+      "session_id": "a10f491c5fb0",
+      "revision": 111,
+      "server_time_ms": 1794278569050.723,
+      "messages": [],
+      "capture": {
+        "status": "idle",
+        "generation": 15
+      },
+      "current_result": null,
+      "playback": null,
+      "pending_count": 0,
+      "clients": {
+        "doctor": 1,
+        "patient": 1
+      },
+      "conversation": {
+        "status": "idle",
+        "mode": "auto",
+        "epoch": "f88d35e275ff",
+        "source": {
+          "kind": "demo",
+          "demo_id": "mm100:W068",
+          "camera_index": 0
+        },
+        "started_at_ms": null
+      },
+      "patient_turn": null,
+      "speech_drafts": [],
+      "avatar_voice_enabled": true,
+      "recognition": {
+        "name": "Tay và môi · 100 từ",
+        "labels": 100,
+        "family": "multimodal100",
+        "sha256": "0ccf0476091990ef84055a362376f96d40987916b95be6e568f9152f64a6f28d",
+        "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+        "capture_profile": "clinic-mm100-ram-r3-v1",
+        "active_head": "fusion",
+        "worker": {
+          "type": "worker_ready",
+          "contract": "vsl100-r3-slgcn-avhubert-xattn-f01-s17-clinic-v1",
+          "device": "cuda",
+          "pid": 4396,
+          "load_ms": 11346.989900000153,
+          "warmup_ms": 2509.217300000273,
+          "manifest_sha256": "f4c3c90e19bb49b2ae8b0fb402a71c8a8b0688177bb76b71446d9b915b424722",
+          "storage": "ram_only",
+          "status": "ready"
+        },
+        "mode": "fusion",
+        "status": "ready",
+        "switching": false
+      },
+      "temporary": null
+    },
+    "metrics": [],
+    "uptime_seconds": 77.55568861961365
+  },
+  "desktopExit": 0
+}

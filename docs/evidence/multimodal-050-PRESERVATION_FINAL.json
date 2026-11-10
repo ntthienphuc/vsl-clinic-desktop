@@ -1,0 +1,368 @@
+{
+  "original_research_files": [
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\README_LIVE_BUILD16.md",
+      "sha256": "16b0168139f43f28182477fae643a7a20f9d78effbf14e4e3ea7acc8b134ea6e",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\README_RUNTIME222.md",
+      "sha256": "275a77ff00aa6f7a09bf1e9397090d44fe1f7ad628a9c94f7a7581efd96a01bb",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\README_BUILD16.md",
+      "sha256": "f050f632ad647807f164ffa072ae91d0a1badd7f501fbe2376170561d74cb688",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\MODEL_MANIFEST.json",
+      "sha256": "b0b8601aa87070be78ec18355b019f78016f480aa06a7ab3c365edff1359adcf",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\classes.json",
+      "sha256": "498208e0034ac32154937f261511b2c932fda9766526a53566421a1daad2ba9a",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\engine.py",
+      "sha256": "7354bf35a3a26de093371b1d259212dd5307390d7300ccdc2744aeee8dfc4f2c",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\app.py",
+      "sha256": "7b8c5ab63156d75632829c8b10e573e6321a66e82d6aed77b3139ecf860de590",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\continuous.py",
+      "sha256": "8cc1ae07e1dd5205309e3cacf662441583b053b7c3395599fddb41fd9b969a47",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\preprocess.py",
+      "sha256": "b0d3798ce50d18108ae8ae674ce046996a989f2db073d8e3d16734074d5587b7",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\segmentation.py",
+      "sha256": "ac43d71b2f0ec7a59e7e864cfecfc4ff125c405699e371a6893460c18f6631aa",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\sessions.py",
+      "sha256": "730fad3f4ef96dd266b6e6363695b04005f59e651ba4e91a9ddeb7aa074ca211",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\requirements.lock.txt",
+      "sha256": "c73ea5eea6e1325aeee7a7f488fd59c3318981d39861e8e54e337fe24d9b497d",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\START_SERVER.ps1",
+      "sha256": "655622282071fedb899719882c0cf8b8a9c705751a154f9ea850a1d1c9fb53a0",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\lib\\multimodal\\continuous_controller.dart",
+      "sha256": "be313fc26abdc1f44329119b2734670898ecd3ec4bfff67ba42c2f55d1402c05",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\lib\\multimodal\\controller.dart",
+      "sha256": "a4589aaf684a26eac9d6220f8d74a2a27275988e8c32f834abe99370b1457386",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\lib\\multimodal\\event_journal.dart",
+      "sha256": "4b1de7db1703ecb219519a191fe8fb026296aa4e7a3b567b9928a6f49d01145a",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\android\\app\\src\\main\\kotlin\\com\\example\\vsl_translator\\MultimodalCamera.kt",
+      "sha256": "54431ee52033db92c82f4c768dca959683cb09fa0d74fa78119f70f8d944d43d",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\fusion.pt",
+      "sha256": "1367a90f4cd3fedeba1e62b4314eaa95f0cf94f82983b722130bb61d85325c99",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\sign_only.pt",
+      "sha256": "f1a0ea4ae20f66946ac35b3ccfdd1c4a859fdce0acf35b48d21b2cdf9aed4180",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\mouth_only.pt",
+      "sha256": "b1a41f9eea2ba4b3988b9994d33a353f23b5d04987576a73e74be34baf24c5fe",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\VSL100_Run_20261105\\remote_backup_20261105\\assets\\spoter.safetensors",
+      "sha256": "d62ed125de51c5719daa48f340f66695353e24776a534ac28266b86663dd185e",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\VSL100_Run_20261105\\remote_backup_20261105\\assets\\vlr_pretrained.pt",
+      "sha256": "b38177ae98f1f3cbea1a4c183c2bca804cf0a576e99abd23aab85ae56f413280",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\model.py",
+      "sha256": "52fda263bab6a8564261efcbf49b09fdda23c7f9a7bca3ac5507fe8ca834ab02",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\legacy_fusion.py",
+      "sha256": "07b12f7b977b40480487eac926e9e7df3228b799e876f300698531ce4c8134a8",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\extract_frozen_fp32.py",
+      "sha256": "70d24803dbfd6076f87321a74a7ace99822415d4e4a6f6bef2b9dae1f7519209",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\crop_geometry.py",
+      "sha256": "480835efd5e873e2502d9b51f4ca7ec32346f1a6d33f98aa17cddb4f95fbe0de",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\assets\\sign_transforms.py",
+      "sha256": "3d5de162996a428f48e21b67afe18c233c6fa0725d44e11b414d56f4792b5969",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\assets\\spoter_modelling.py",
+      "sha256": "2d8669e22fae05749c6888ae1b1273e1037d8e0f45afed59dc1f458e608a479c",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\assets\\mean_face.npy",
+      "sha256": "dbf68b2044171e1160716df7c53e8bbfaa0ee8c61fb41171d04cb6092bb81422",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\batch_beam_search.py",
+      "sha256": "4d319866d432a94f68969cb46a3569f7b9f99abd9c6df9eb1d53f68a1467ff6e",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\beam_search.py",
+      "sha256": "600a9434bdcf44312de002ac509e55ca936ede6df270b49f2887299cc29df2df",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\ctc_prefix_score.py",
+      "sha256": "c26e5ce6f4884cfbf329e3bd8ac75089a47e4a4e79355db024dc0056b48da6c9",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\e2e_asr_common.py",
+      "sha256": "e24670378092040db8bded6a9383f9d2859fc5d6db5946f7409e4df5b23278ff",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\scorer_interface.py",
+      "sha256": "bfb21dd5b99f892fa9880764a47032729735bce3dd3b143d396e13ce1f31fc27",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\ctc.py",
+      "sha256": "39c589343af0943663029e8d68e04ef04642e2b38d7499d052b860ddcf2ecee0",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\e2e_asr_conformer.py",
+      "sha256": "144c68cb2e696eb3735617770f21c9c0fe7e0e359cac77ae05a17dec5c0095b7",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\e2e_asr_count.py",
+      "sha256": "60f29683136fe95cb23d352eb941415302e0c3f3121bfeaeabce5ae1dc13eb4b",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\e2e_asr_interctc.py",
+      "sha256": "8caaa18dfbf5f2eda364b4d0491980c1cc5ac47810e305ccb52c56087ca067df",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\e2e_asr_mdbridge.py",
+      "sha256": "8d00b9edfe75354aaf78e72f10f716f5203cbcc9c81f422ea192a8b182ac75f9",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\e2e_asr_signer.py",
+      "sha256": "64e6030889db66b03dfe46ed5d08f0cf23873c23ae5f72bf4948391a5700a52c",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\e2e_asr_structured.py",
+      "sha256": "d11027089b85e8d482cadc61411c2a8dc9475c5ab59153ca616644480fc734e1",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\e2e_asr_visyll.py",
+      "sha256": "8475db788502b08d065823a4d57d380d5021e951b0485bdea7879b7c9f62ffb2",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\e2e_asr_xbridge.py",
+      "sha256": "11f5e72497b179c0567fa3536cf859bb746bcf0c38dec4894d170c1937780382",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\nets_utils.py",
+      "sha256": "34f0c4ef9f19f7e9526f0436a508371a0e68b6c4bebb687ca6372cf1d2ab638d",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\decoder\\transformer_decoder.py",
+      "sha256": "3c9c8745dd33e440ecd34eb3903d559d6f5213e52e89598713d3dad56fc5d762",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\encoder\\conformer_encoder.py",
+      "sha256": "ed595f814ebba45b1e2853555c85b0bb197ed2e14e8b730c6b1368b384a8e790",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\frontend\\resnet.py",
+      "sha256": "4097c6ff8675ec76bcf74e3290d1fe06b5e536f194a2784ccdd4b81029afbbfb",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\frontend\\resnet1d.py",
+      "sha256": "2b3d1e4cd68ea9ccce5813689234e7e95e6cb327181ca1335c6d63058da13a18",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\transformer\\add_sos_eos.py",
+      "sha256": "e73c11b60af9a67467bde1e53b031d43ccd00cd55e5f85813c4e6d757114c7ce",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\transformer\\attention.py",
+      "sha256": "ed4cf0a1bbb9551f66586338ea19d6e5cc12fd897b989fbd51a0d9a11304ed6d",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\transformer\\embedding.py",
+      "sha256": "08157dc9be6e1363653c8689af94ec51f82b56a7acf8cea46711b009ca8c491c",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\transformer\\label_smoothing_loss.py",
+      "sha256": "70f6a14a1f8749c1dfa39a96469d9633246856572d2140cddd0378857598e265",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\transformer\\layer_norm.py",
+      "sha256": "9685ea76896c4624ebd0db5afc2e7b7b77a1f467ae33ca0bd8876c802d46beb3",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\transformer\\mask.py",
+      "sha256": "dbc6b6d7e1449404c7463ce3a89a193f9c0c9a57e381b32572821af3ba1f9275",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\transformer\\positionwise_feed_forward.py",
+      "sha256": "c4db61e228ba3c55158d20ce53a1d5ec13e87a34148d38164230d4ac93d506b2",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\transformer\\repeat.py",
+      "sha256": "a441c579cc57d25721ecf59ec357a0ab64e68abddadc4b955bc4fa01f643f0f8",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\transformer\\__init__.py",
+      "sha256": "aba1b9ff25a1b69d8a6905e7ed877205b5b8af6f3d1d9e82bb28b8aaed9aaeee",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\scorers\\ctc.py",
+      "sha256": "556c10c796866c703398bcbc72dcf7d7557fe781431e8efc44f62d69c853a4fe",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\scorers\\length_bonus.py",
+      "sha256": "8c0aea891ef3aca25387acfafedbbec4210938cd3f9df14323eeb9fd36af9f78",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\scorers\\word_ngram.py",
+      "sha256": "36e8be8a2993bba3735d61d65403bd6e5284de543c6c4c348e63571888d4a173",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\scorers\\__init__.py",
+      "sha256": "aba1b9ff25a1b69d8a6905e7ed877205b5b8af6f3d1d9e82bb28b8aaed9aaeee",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\preparation\\detectors\\mediapipe\\detector.py",
+      "sha256": "a9296173fd7c63e5e8e8561f68ba53a1c6a859c8c1e6006cbc8fc43f4800bc2d",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\preparation\\detectors\\mediapipe\\video_process.py",
+      "sha256": "986632fbb7f3ec189f4be9ab58e8f6ae4e782274290d3cfa1a7df4d5c99d2060",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\fusion.config.json",
+      "sha256": "ee3c3c85469553f2fc0ae7fee7fb31f2b2aa261d5bf9d6dfd52c44301fce2d05",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\fusion.source_hashes.json",
+      "sha256": "bc303e5e81cbb51f177ba91121b58f451e3ec8f044790987a17defda8f0bcbd6",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\sign_only.config.json",
+      "sha256": "8f198b4f3f8c1ce0a9ddb9d3bd13f47f15324fa913a7d9ce2aadfdff5d0413b4",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\sign_only.source_hashes.json",
+      "sha256": "fe38b76f582b0d0c4b9997e9b4b7663a9d4f05a4a7785e35e605b8a37e644257",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\mouth_only.config.json",
+      "sha256": "b4bca1b4e6a338eb579c7d30c59bfddfa0ec118da6189e7121a559c6eca36862",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\mouth_only.source_hashes.json",
+      "sha256": "26badb2d235cbc0b4e21793588c4858427b9507426c86b476010053fac7b0a39",
+      "unchanged": true
+    }
+  ],
+  "baseline_launch_files": [
+    {
+      "path": "E:\\Project\\VSL Clinic\\App\\0.4.1\\win-unpacked\\VSL Clinic.exe",
+      "sha256": "35546e7e319c89b6092053b4fe4960fab8d59dc3a6a7ebc1df9c29b7b10d75f7",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Clinic\\App\\0.4.1\\win-unpacked\\resources\\app.asar",
+      "sha256": "09c959c746281b45f3f498051627992688bc09de57294852b49a5e17c079a5af",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Clinic\\Open Clinic.lnk",
+      "sha256": "3a03e58326c22ce27dbb0998da41d55354111e43db54d45a0d5a31831986cfc4",
+      "unchanged": true
+    }
+  ],
+  "baseline_snapshot_sha256": "408ce47bf92f15b405647924a7539e4abcfbb74e9affd9af5b7dc3154845efd8",
+  "passed": true
+}

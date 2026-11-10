@@ -1,0 +1,35 @@
+{
+  "arch": "sl_gcn",
+  "architectures": [
+    "SLGCNForGraphClassification"
+  ],
+  "auto_map": {
+    "AutoConfig": "configuration.SLGCNConfig",
+    "AutoModel": "modelling.SLGCNForGraphClassification"
+  },
+  "block_size": 41,
+  "bone_stream": true,
+  "depth": 4,
+  "drop_layers": 2,
+  "dtype": "float32",
+  "graph": "wlasl",
+  "groups": 16,
+  "hidden_dim": 108,
+  "id2label": null,
+  "ignored_weights": [],
+  "in_channels": 3,
+  "inner_dim": 64,
+  "is_vector": false,
+  "label2id": null,
+  "labeling_mode": "spatial",
+  "model_type": "sl_gcn",
+  "motion_stream": false,
+  "num_frames": 150,
+  "num_frozen_layers": 0,
+  "num_people": 1,
+  "num_points": 27,
+  "pretrained": "DEFAULT",
+  "s_num_heads": 1,
+  "transformers_version": "4.57.1",
+  "window_size": 100
+}

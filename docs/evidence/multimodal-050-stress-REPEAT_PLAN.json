@@ -1,0 +1,9 @@
+{
+  "scope": "Two copies of the fixed W068 clip, nearest 25fps composition; not two independent signer observations.",
+  "expected": [
+    "W068",
+    "W068"
+  ],
+  "duration_seconds": 6.0,
+  "sha256": "3b13c4068e73bc78963e286adadd12d9d0694af275aae52d4dd38739a1af1f8f"
+}

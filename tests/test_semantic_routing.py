@@ -31,7 +31,7 @@ def test_unknown_meaning_is_not_hidden_by_semantic_router():
     assert plan["unsupported"]
     assert plan["semantic"]["decision"] == "review"
     assert [item["text"] for item in plan["semantic"]["unmatched"]] == ["không"]
-    assert plan["suggestions"][0]["text"] == "Y tá đo nhiệt độ."
+    assert plan["suggestions"] == []  # A positive rewrite would invert the negation.
 
 
 def test_long_spoken_sentence_exposes_review_candidate_without_auto_playback():
@@ -42,9 +42,8 @@ def test_long_spoken_sentence_exposes_review_candidate_without_auto_playback():
     assert [item["text"] for item in plan["semantic"]["unmatched"]] == ["hôm", "nay"]
     assert plan["semantic"]["candidate_projection"] == ["Y tá", "Nhiệt độ", "Đo"]
     assert [item["text"] for item in plan["unsupported"]] == ["hôm", "nay"]
-    assert plan["suggestions"][0]["text"] == "Y tá đo nhiệt độ."
-    assert "Đã nhận ra: Y tá, Kiểm tra thân nhiệt." in plan["message"]
-    assert "hôm, nay" in plan["message"]
+    assert plan["suggestions"] == []  # Do not propose dropping the date qualifier.
+    assert "chưa giữ đủ ý" in plan["message"]
 
 
 def test_partial_candidate_keeps_negation_in_review_instead_of_dropping_it():
@@ -52,7 +51,7 @@ def test_partial_candidate_keeps_negation_in_review_instead_of_dropping_it():
     assert not plan["supported"]
     assert plan["semantic"]["decision"] == "review"
     assert [item["text"] for item in plan["semantic"]["unmatched"]] == ["không"]
-    assert plan["suggestions"][0]["text"] == "Y tá đo nhiệt độ."
+    assert plan["suggestions"] == []
 
 
 def test_pronoun_reordering_stays_review_only_until_signer_review():
@@ -61,7 +60,7 @@ def test_pronoun_reordering_stays_review_only_until_signer_review():
     assert plan["semantic"]["decision"] == "review"
     assert plan["semantic"]["applied"] is False
     assert plan["unsupported"] == []
-    assert plan["suggestions"][0]["text"] == "Ăn cơm."
+    assert plan["suggestions"] == []  # The missing first-person sign cannot be omitted.
 
 
 def test_patient_turn_keeps_raw_glosses_and_uses_only_reviewed_reordering():

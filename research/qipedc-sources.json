@@ -234,6 +234,58 @@
           "window_method": "front-facing take only; side-view repetition excluded after visual review"
         }
       ]
+    },
+    {
+      "id": "qipedc-W03239N",
+      "label": "Thế nào",
+      "model_id": null,
+      "category": "Khám bệnh",
+      "demo": null,
+      "source_kind": "qipedc-single",
+      "source_id": "W03239N",
+      "source_url": "https://qipedc.moet.gov.vn/videos/W03239N.mp4",
+      "description": "Tổ hợp biểu thị có một điều muốn hỏi.",
+      "downloaded_at": "2026-11-01T03:11:42.636939+00:00",
+      "references": [
+        {
+          "video_id": "qipedc-W03239N",
+          "signer_id": "qipedc-unknown-W03239N",
+          "path": "E:\\Project\\VSL Clinic\\Source\\assets\\reference-source\\qipedc\\W03239N.mp4",
+          "sha256": "78107c5c8747438d4c05dd9adbbb7e5c15ebfd08ea4cb93c60eae5f1a4c0b315",
+          "url": "https://qipedc.moet.gov.vn/videos/W03239N.mp4",
+          "source_window_ms": [
+            250,
+            2300
+          ],
+          "window_method": "complete front-facing question; initial idle cropped after contact-sheet review"
+        }
+      ]
+    },
+    {
+      "id": "qipedc-W00145N",
+      "label": "Bao giờ",
+      "model_id": null,
+      "category": "Khám bệnh",
+      "demo": null,
+      "source_kind": "qipedc-single",
+      "source_id": "W00145N",
+      "source_url": "https://qipedc.moet.gov.vn/videos/W00145N.mp4",
+      "description": "Khoảng thời gian nào đó chưa xác định, (thường dùng để hỏi).",
+      "downloaded_at": "2026-11-01T03:11:43.856192+00:00",
+      "references": [
+        {
+          "video_id": "qipedc-W00145N",
+          "signer_id": "qipedc-unknown-W00145N",
+          "path": "E:\\Project\\VSL Clinic\\Source\\assets\\reference-source\\qipedc\\W00145N.mp4",
+          "sha256": "cf34cb913a625ab1641a9b336bc50aa2a72dcaf5b3cec96d1e0f434b54fcaff0",
+          "url": "https://qipedc.moet.gov.vn/videos/W00145N.mp4",
+          "source_window_ms": [
+            1600,
+            3500
+          ],
+          "window_method": "single front-facing question; long idle lead and tail excluded after contact-sheet review"
+        }
+      ]
     }
   ],
   "scope": "Local demo. Single videos, not a multi-signer average. Fluent review pending."

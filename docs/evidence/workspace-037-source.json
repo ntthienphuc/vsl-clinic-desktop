@@ -1,0 +1,52 @@
+{
+  "scope": "Real Electron windows/API, real model video and synthetic speech, no human microphone validation.",
+  "layouts": [
+    {
+      "role": "doctor",
+      "width": 1280,
+      "height": 720,
+      "scrollWidth": 1280,
+      "scrollHeight": 720,
+      "sidebar": 405.32501220703125,
+      "chat": 810.6749877929688,
+      "drafts": 75.70000457763672
+    },
+    {
+      "role": "patient",
+      "width": 1280,
+      "height": 720,
+      "scrollWidth": 1280,
+      "scrollHeight": 720
+    },
+    {
+      "role": "doctor",
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080,
+      "sidebar": 618.6625366210938,
+      "chat": 1237.3375244140625,
+      "drafts": 75.70000457763672
+    },
+    {
+      "role": "patient",
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080
+    }
+  ],
+  "checks": {
+    "nineActualDrafts": true,
+    "pauseFrozen": true,
+    "resumeAndSpeed": true,
+    "disconnectFrozen": true,
+    "reviewDialog": true,
+    "completedProgress": true,
+    "replayRestarted": true,
+    "endClearsBothScreens": true,
+    "temporaryReadOnly": true,
+    "defaultEndDiscards": true
+  },
+  "passed": true
+}

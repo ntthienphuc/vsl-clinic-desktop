@@ -1,0 +1,130 @@
+{
+  "encoder": "slgcn",
+  "device": "cpu",
+  "precision": "FP32 TF32 disabled",
+  "gpu": "NVIDIA GeForce GTX 1650 Ti",
+  "torch": "2.6.0+cu124",
+  "scope": "3 fixed VSL100 clips with matched keypoints and mouth pixels; feasibility not new accuracy estimate",
+  "tolerance": {
+    "atol": 0.0002,
+    "rtol": 0.0002
+  },
+  "clips": [
+    {
+      "clip_id": "Huy_T01_C1_W068",
+      "frames": 74,
+      "repeats_ms": [
+        91.2692000001698,
+        95.07979999989402,
+        96.78829999984373
+      ],
+      "features": {
+        "slgcn_replication_fp32": {
+          "shape": [
+            1,
+            256
+          ],
+          "max_abs": 3.039836883544922e-06,
+          "mean_abs": 1.9602508416483033e-07,
+          "relative_l2": 2.11979590858391e-06,
+          "within_tolerance": true
+        }
+      },
+      "first_ms": 248.98979999989024
+    },
+    {
+      "clip_id": "Học_T01_C1_W066",
+      "frames": 66,
+      "repeats_ms": [
+        94.59920000017519,
+        93.91540000024179,
+        95.86340000032578
+      ],
+      "features": {
+        "slgcn_replication_fp32": {
+          "shape": [
+            1,
+            256
+          ],
+          "max_abs": 5.9604644775390625e-06,
+          "mean_abs": 5.66710866678477e-07,
+          "relative_l2": 1.856444328041107e-06,
+          "within_tolerance": true
+        }
+      },
+      "first_ms": 94.51239999998506
+    },
+    {
+      "clip_id": "Huy_T01_C1_W093",
+      "frames": 63,
+      "repeats_ms": [
+        94.62719999964975,
+        97.08199999977296,
+        100.15560000010737
+      ],
+      "features": {
+        "slgcn_replication_fp32": {
+          "shape": [
+            1,
+            256
+          ],
+          "max_abs": 5.066394805908203e-06,
+          "mean_abs": 4.113964848784235e-07,
+          "relative_l2": 3.314216883154586e-06,
+          "within_tolerance": true
+        }
+      },
+      "first_ms": 93.9183000000412
+    }
+  ],
+  "errors": [],
+  "loader": {
+    "variant": "slgcn",
+    "checkpoint_sha256": "50132e8054203437b8c65e869ceed5b90a34f6d45e8dacaed6e8d30c31eadb54",
+    "strict_load": true,
+    "loaded_keys": 342,
+    "foundation_classes": 400,
+    "feature_dimension": 256,
+    "config": {
+      "arch": "sl_gcn",
+      "architectures": [
+        "SLGCNForGraphClassification"
+      ],
+      "auto_map": {
+        "AutoConfig": "configuration.SLGCNConfig",
+        "AutoModel": "modelling.SLGCNForGraphClassification"
+      },
+      "block_size": 41,
+      "bone_stream": true,
+      "depth": 4,
+      "drop_layers": 2,
+      "dtype": "float32",
+      "graph": "wlasl",
+      "groups": 16,
+      "hidden_dim": 108,
+      "id2label": null,
+      "ignored_weights": [],
+      "in_channels": 3,
+      "inner_dim": 64,
+      "is_vector": false,
+      "label2id": null,
+      "labeling_mode": "spatial",
+      "model_type": "sl_gcn",
+      "motion_stream": false,
+      "num_frames": 150,
+      "num_frozen_layers": 0,
+      "num_people": 1,
+      "num_points": 27,
+      "pretrained": "DEFAULT",
+      "s_num_heads": 1,
+      "transformers_version": "4.57.1",
+      "window_size": 100
+    },
+    "transform_sha256": "334465078c1214b37f255d0a88bcf64391f946a3b4693a9ee9a504d6ba5e46b4",
+    "normalization": "pose-format0.15.0 NumPyPoseBody confidence==0 mask; Pose.normalize_distribution default axes(0,1); archived 27-joint/bone/motion/pad/normalize transforms",
+    "raw_input": "75 MediaPipe landmarks from verified pixels_v2; no new detection or crop",
+    "device": "cpu"
+  },
+  "load_seconds": 0.8381440999996812,
+  "parity_passed": true
+}

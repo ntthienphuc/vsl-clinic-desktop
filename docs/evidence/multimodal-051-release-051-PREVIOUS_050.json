@@ -1,0 +1,56 @@
+{
+  "schema": "clinic-portable-inventory-v1",
+  "checked_at": "2026-11-09T16:03:36.998149+00:00",
+  "version": "0.5.0",
+  "distribution": "portable folder, not a single-file executable or installer",
+  "receipt_payload_files_verified": 23855,
+  "launcher_sha256": "24951c0099c4671fa1e7d6efd52dc1e3febb2e6d0c2e12d503a1ab78c64e8f4c",
+  "app_asar_sha256": "cd8b84d940dc044ba576faa6fce44ead913f143af5ad1de5faae8e4d4a099e86",
+  "package_files": 23931,
+  "package_bytes": 8288395544,
+  "recognizer_labels": 100,
+  "recognizer_family": "multimodal100",
+  "legacy_recognizer_labels": 400,
+  "multimodal_runtime_files": 20400,
+  "multimodal_contract": "vsl100-r3-spoter-vlr-f01-s17-v2.0",
+  "patient_readout_clips": 419,
+  "avatar_narration_clips": 132,
+  "avatar_vocabulary": 67,
+  "motion_entries": 67,
+  "sample_videos": 56,
+  "demo_kit_videos": 88,
+  "raw_reference_videos": 0,
+  "inherited_catalog_video_links": 400,
+  "inherited_catalog_video_files_present": 0,
+  "speech_files_verified": [
+    "config.json",
+    "LICENSE",
+    "model.bin",
+    "preprocessor_config.json",
+    "tokenizer.json",
+    "vocabulary.json"
+  ],
+  "silero_payload": [
+    "resources/engine/_internal/faster_whisper/assets/silero_vad_v6.onnx"
+  ],
+  "recognition_models": [
+    {
+      "name": "hand_landmarker.task",
+      "bytes": 7819105,
+      "sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1"
+    },
+    {
+      "name": "pose_landmarker_lite.task",
+      "bytes": 5777746,
+      "sha256": "59929e1d1ee95287735ddd833b19cf4ac46d29bc7afddbbf6753c459690d574a"
+    },
+    {
+      "name": "slgcn_bone_all_cams.onnx",
+      "bytes": 17041797,
+      "sha256": "582f3d8712f73f78c5fe7b7521609ea54a9257e5a3a877aa8c9346b8e28ebb21"
+    }
+  ],
+  "problems": [],
+  "passed": true,
+  "scope": "Checks bundled runtime assets and existing build receipt. Raw research references and all 400 dictionary videos are not required by the current runtime and are reported separately. Does not prove clean-machine compatibility or signer comprehension."
+}

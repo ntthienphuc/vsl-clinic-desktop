@@ -4,6 +4,7 @@ node_modules/
 __pycache__/
 *.pyc
 .pytest_cache/
+.ruff_cache/
 dist/
 build/
 release/
@@ -38,3 +39,20 @@ docs/evidence/*.mp4
 !.env.example
 *.jks
 *.keystore
+
+# Reproducible local language assets; metadata/licenses stay in source control.
+assets/language/*.gguf
+assets/language/*.zip
+assets/language/*.partial
+assets/language/runtime/
+assets/avatar-voice/*.wav
+assets/patient-voice/*.wav
+assets/multimodal100/models/*.pt
+assets/multimodal100/models/foundations/
+assets/multimodal100/**/*.pt
+assets/multimodal100/**/*.safetensors
+assets/multimodal-samples/*.mp4
+
+# Current product screenshots are small, reviewed UI images used by README.
+!docs/evidence/clinic-052-minimal-doctor-1280.png
+!docs/evidence/clinic-052-minimal-patient-1280.png

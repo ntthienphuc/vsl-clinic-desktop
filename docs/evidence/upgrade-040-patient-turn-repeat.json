@@ -1,0 +1,208 @@
+{
+  "schema": "clinic-live-turn-probe-v1",
+  "note": "Concatenated heldout isolated recordings with 800 ms hold between words and a frozen final frame. Tests streaming and turn grouping, not natural continuous sentence recognition.",
+  "sources": [
+    {
+      "model_id": 379,
+      "sha256": "cdf21771e58fb060e9733108b2580ef62f6927cd60ee022531e1d0eff4dcb3ff",
+      "ends_at_ms": 2366.6666666666665
+    },
+    {
+      "model_id": 204,
+      "sha256": "ab893d25729ad900a51e450ea85231e20451225f4dacbf53e4b2176d3877a288",
+      "ends_at_ms": 5533.333333333333
+    }
+  ],
+  "words": [
+    {
+      "text": "Đau",
+      "turn_id": "016ad91b25a0",
+      "received_ms": 3698.1435546875,
+      "turn_status_when_received": "streaming",
+      "metrics": {
+        "observed_fps": 17.5,
+        "maximum_observation_gap_ms": 133.33333333333326,
+        "quality_warning": null,
+        "frame_count": 50,
+        "hand_coverage": 1.0,
+        "inference_ms": 322.08837890625,
+        "queue_ms": 0.0,
+        "last_active_epoch_ms": 1793616536114.2847,
+        "server_result_epoch_ms": 1793616537203.1318,
+        "source_start_ms": 400.0,
+        "source_end_ms": 3033.3333333333335,
+        "model": "SL-GCN / 400 gloss",
+        "profile": "clinic-pc-tasks-lite-parallel-v2",
+        "generation": 6
+      },
+      "paint": {
+        "event": "doctor_result_painted",
+        "message_id": "a294ed820a19",
+        "received_at_ms": 1793616537205,
+        "painted_at_ms": 1793616537224,
+        "role": "doctor",
+        "recorded_at_ms": 1793616537229.6643
+      }
+    },
+    {
+      "text": "Mệt",
+      "turn_id": "016ad91b25a0",
+      "received_ms": 6897.2421875,
+      "turn_status_when_received": "streaming",
+      "metrics": {
+        "observed_fps": 18.48837209302326,
+        "maximum_observation_gap_ms": 100.0,
+        "quality_warning": null,
+        "frame_count": 54,
+        "hand_coverage": 1.0,
+        "inference_ms": 330.37939453125,
+        "queue_ms": 1.00146484375,
+        "last_active_epoch_ms": 1793616539277.522,
+        "server_result_epoch_ms": 1793616540397.7148,
+        "source_start_ms": 3566.6666666666665,
+        "source_end_ms": 6233.333333333333,
+        "model": "SL-GCN / 400 gloss",
+        "profile": "clinic-pc-tasks-lite-parallel-v2",
+        "generation": 6
+      },
+      "paint": {
+        "event": "doctor_result_painted",
+        "message_id": "4ad9ea05cda8",
+        "received_at_ms": 1793616540404,
+        "painted_at_ms": 1793616540419,
+        "role": "doctor",
+        "recorded_at_ms": 1793616540420.7915
+      }
+    }
+  ],
+  "turns": [
+    {
+      "id": "016ad91b25a0",
+      "role": "patient",
+      "kind": "patient_turn",
+      "created_at_ms": 1793616537204.1328,
+      "status": "candidate",
+      "words": [
+        {
+          "id": "a294ed820a19",
+          "role": "patient",
+          "text": "Đau",
+          "created_at_ms": 1793616537204.1328,
+          "status": "candidate",
+          "confidence": 1.0,
+          "uncertain": false,
+          "predictions": [
+            {
+              "gloss": "Đau",
+              "score": 1.0,
+              "model_id": 379
+            },
+            {
+              "gloss": "Ghét",
+              "score": 2.8984996292965247e-16,
+              "model_id": 108
+            },
+            {
+              "gloss": "Bố",
+              "score": 2.199615937434166e-18,
+              "model_id": 33
+            }
+          ],
+          "quality_warning": null,
+          "context_candidates": [],
+          "metrics": {
+            "observed_fps": 17.5,
+            "maximum_observation_gap_ms": 133.33333333333326,
+            "quality_warning": null,
+            "frame_count": 50,
+            "hand_coverage": 1.0,
+            "inference_ms": 322.08837890625,
+            "queue_ms": 0.0,
+            "last_active_epoch_ms": 1793616536114.2847,
+            "server_result_epoch_ms": 1793616537203.1318,
+            "source_start_ms": 400.0,
+            "source_end_ms": 3033.3333333333335,
+            "model": "SL-GCN / 400 gloss",
+            "profile": "clinic-pc-tasks-lite-parallel-v2",
+            "generation": 6
+          },
+          "turn_id": "016ad91b25a0"
+        },
+        {
+          "id": "4ad9ea05cda8",
+          "role": "patient",
+          "text": "Mệt",
+          "created_at_ms": 1793616540398.7163,
+          "status": "candidate",
+          "confidence": 1.0,
+          "uncertain": false,
+          "predictions": [
+            {
+              "gloss": "Mệt",
+              "score": 1.0,
+              "model_id": 204
+            },
+            {
+              "gloss": "Thích",
+              "score": 1.9276107277195014e-21,
+              "model_id": 307
+            },
+            {
+              "gloss": "Mát mẻ",
+              "score": 9.333342797983811e-22,
+              "model_id": 181
+            }
+          ],
+          "quality_warning": null,
+          "context_candidates": [],
+          "metrics": {
+            "observed_fps": 18.48837209302326,
+            "maximum_observation_gap_ms": 100.0,
+            "quality_warning": null,
+            "frame_count": 54,
+            "hand_coverage": 1.0,
+            "inference_ms": 330.37939453125,
+            "queue_ms": 1.00146484375,
+            "last_active_epoch_ms": 1793616539277.522,
+            "server_result_epoch_ms": 1793616540397.7148,
+            "source_start_ms": 3566.6666666666665,
+            "source_end_ms": 6233.333333333333,
+            "model": "SL-GCN / 400 gloss",
+            "profile": "clinic-pc-tasks-lite-parallel-v2",
+            "generation": 6
+          },
+          "turn_id": "016ad91b25a0"
+        }
+      ],
+      "text": "Đau và mệt.",
+      "uncertain": false,
+      "updated_at_ms": 1793616540398.7163,
+      "ended_at_ms": 1793616541945.1147,
+      "end_reason": "pause",
+      "raw_text": "Đau · Mệt",
+      "reading": {
+        "text": "Đau và mệt.",
+        "rewritten": true,
+        "rule": "symptom-conjunction-v1"
+      }
+    }
+  ],
+  "stream_snapshots": [
+    {
+      "elapsed_ms": 3698.1435546875,
+      "live_text": "Đau",
+      "status": "streaming"
+    },
+    {
+      "elapsed_ms": 6897.2421875,
+      "live_text": "Đau · Mệt",
+      "status": "streaming"
+    }
+  ],
+  "checks": {
+    "correct_order": true,
+    "single_turn": true,
+    "immediate_streaming_words": true,
+    "finished": true
+  }
+}

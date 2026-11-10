@@ -15,7 +15,7 @@ export function PatientView({ bootstrap, state, connected, run, busy }: { bootst
     <div className="workspace-toolbar"><h1>Cuộc trao đổi của bạn</h1><span>Xem lời bác sĩ · Trả lời bằng ký hiệu</span></div>
     <div className="patient-grid">
       <section className="card avatar-card">
-        <AvatarView bootstrap={bootstrap} playback={state.playback} />
+        <AvatarView bootstrap={bootstrap} playback={state.playback} voiceEnabled={state.avatar_voice_enabled !== false} connected={connected} />
         <PlaybackControls playback={state.playback} pending={state.pending_count} run={run} />
       </section>
       <aside className="patient-aside">
@@ -23,10 +23,10 @@ export function PatientView({ bootstrap, state, connected, run, busy }: { bootst
           <div className="section-heading"><span className="heading-icon"><MessageSquareText size={19} /></span><div><h2>Lời bác sĩ</h2></div></div>
           <div className={displayedText ? 'doctor-caption' : 'doctor-caption empty'} data-testid="doctor-caption" aria-live="polite">{displayedText ?? 'Lời nhắn của bác sĩ sẽ xuất hiện ở đây.'}</div>
           {activePlayback && latestDoctor && latestDoctor.id !== activePlayback.message_id && <div className="current-sign-text">{latestDoctor.mode === 'text' ? 'Lời nhắn mới bằng chữ' : 'Lời nhắn tiếp theo'}: <strong>{latestDoctor.text}</strong></div>}
-          <div className="feedback-buttons"><button className="button primary" disabled={!connected || busy} onClick={() => void run(() => request('/feedback', { value: 'understood' }))}><Check size={19} /> Tôi đã hiểu</button><button className="button secondary" disabled={!connected || busy} onClick={() => void run(() => request('/feedback', { value: 'repeat' }))}><RotateCcw size={17} /> Xin giải thích lại</button></div>
+          <div className="feedback-buttons"><button className="button primary" disabled={!connected || busy || !displayedText} onClick={() => void run(() => request('/feedback', { value: 'understood' }))}><Check size={19} /> Tôi đã hiểu</button><button className="button secondary" disabled={!connected || busy || !displayedText} onClick={() => void run(() => request('/feedback', { value: 'repeat' }))}><RotateCcw size={17} /> Xin giải thích lại</button></div>
           {lastFeedback?.role === 'patient' && lastFeedback.manual && <div className="feedback-sent"><Check size={13} /> Đã báo với bác sĩ: {lastFeedback.text}</div>}
         </section>
-        <div className="card patient-camera"><PatientCamera state={state} /></div>
+        <div className="card patient-camera"><PatientCamera bootstrap={bootstrap} state={state} run={run} disabled={!connected || busy} /></div>
       </aside>
     </div>
   </main>;

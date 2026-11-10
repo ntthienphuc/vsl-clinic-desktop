@@ -1,0 +1,12 @@
+{
+  "scope": "Two concatenated packets of the same original VSL100 Huy W068 clip, no transcoding; every decoded BGR pixel verified equal in order. Repetition fixture only, not independent accuracy cases.",
+  "source_sha256": "0e1a431422177eecf919619c7a5695600f4776c4b280b29ac74d5087288de012",
+  "file_sha256": "d0b5c3e7b76bd639b474c51818fc36bb22c583d151f654376a254503c9973f00",
+  "decoded_frames": 356,
+  "cycles": [
+    178,
+    178
+  ],
+  "decoded_pixel_sha256": "08701c72826e7202f25d30986b0afbc08bbbc6c77e7561b7673d3bedc3a554ee",
+  "exact_pixels": true
+}

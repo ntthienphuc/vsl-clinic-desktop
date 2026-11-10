@@ -1,0 +1,208 @@
+{
+  "schema": "clinic-live-turn-probe-v1",
+  "note": "Concatenated heldout isolated recordings with 800 ms hold between words and a frozen final frame. Tests streaming and turn grouping, not natural continuous sentence recognition.",
+  "sources": [
+    {
+      "model_id": 379,
+      "sha256": "cdf21771e58fb060e9733108b2580ef62f6927cd60ee022531e1d0eff4dcb3ff",
+      "ends_at_ms": 2366.6666666666665
+    },
+    {
+      "model_id": 204,
+      "sha256": "ab893d25729ad900a51e450ea85231e20451225f4dacbf53e4b2176d3877a288",
+      "ends_at_ms": 5533.333333333333
+    }
+  ],
+  "words": [
+    {
+      "text": "Con trai",
+      "turn_id": "e0609a9f04a9",
+      "received_ms": 2988.240966796875,
+      "turn_status_when_received": "streaming",
+      "metrics": {
+        "observed_fps": 7.6923076923076925,
+        "maximum_observation_gap_ms": 233.33333333333348,
+        "quality_warning": "Hình ảnh bị thiếu nhịp. Vui lòng ký lại chậm hơn; kiểm tra các ứng dụng đang làm máy bận.",
+        "frame_count": 11,
+        "hand_coverage": 1.0,
+        "inference_ms": 507.92822265625,
+        "queue_ms": 0.0,
+        "last_active_epoch_ms": 1793616358450.8123,
+        "server_result_epoch_ms": 1793616359797.1055,
+        "source_start_ms": 700.0,
+        "source_end_ms": 1700.0,
+        "model": "SL-GCN / 400 gloss",
+        "profile": "clinic-pc-tasks-lite-parallel-v2",
+        "generation": 4
+      },
+      "paint": {
+        "event": "doctor_result_painted",
+        "message_id": "0983dd638084",
+        "received_at_ms": 1793616359800,
+        "painted_at_ms": 1793616359831,
+        "role": "doctor",
+        "recorded_at_ms": 1793616359838.9963
+      }
+    },
+    {
+      "text": "Mệt",
+      "turn_id": "e0609a9f04a9",
+      "received_ms": 7536.410888671875,
+      "turn_status_when_received": "streaming",
+      "metrics": {
+        "observed_fps": 9.310344827586206,
+        "maximum_observation_gap_ms": 166.66666666666697,
+        "quality_warning": "Hình ảnh bị thiếu nhịp. Vui lòng ký lại chậm hơn; kiểm tra các ứng dụng đang làm máy bận.",
+        "frame_count": 37,
+        "hand_coverage": 1.0,
+        "inference_ms": 541.232666015625,
+        "queue_ms": 1.008544921875,
+        "last_active_epoch_ms": 1793616362918.686,
+        "server_result_epoch_ms": 1793616364340.7153,
+        "source_start_ms": 2700.0,
+        "source_end_ms": 6233.333333333333,
+        "model": "SL-GCN / 400 gloss",
+        "profile": "clinic-pc-tasks-lite-parallel-v2",
+        "generation": 4
+      },
+      "paint": {
+        "event": "doctor_result_painted",
+        "message_id": "253126dece31",
+        "received_at_ms": 1793616364347,
+        "painted_at_ms": 1793616364365,
+        "role": "doctor",
+        "recorded_at_ms": 1793616364368.5664
+      }
+    }
+  ],
+  "turns": [
+    {
+      "id": "e0609a9f04a9",
+      "role": "patient",
+      "kind": "patient_turn",
+      "created_at_ms": 1793616359797.6187,
+      "status": "candidate",
+      "words": [
+        {
+          "id": "0983dd638084",
+          "role": "patient",
+          "text": "Con trai",
+          "created_at_ms": 1793616359797.6187,
+          "status": "candidate",
+          "confidence": 0.504841148853302,
+          "uncertain": true,
+          "predictions": [
+            {
+              "gloss": "Con trai",
+              "score": 0.504841148853302,
+              "model_id": 65
+            },
+            {
+              "gloss": "Chồng",
+              "score": 0.4898565113544464,
+              "model_id": 51
+            },
+            {
+              "gloss": "Nước",
+              "score": 0.002483404939994216,
+              "model_id": 243
+            }
+          ],
+          "quality_warning": "Hình ảnh bị thiếu nhịp. Vui lòng ký lại chậm hơn; kiểm tra các ứng dụng đang làm máy bận.",
+          "context_candidates": [],
+          "metrics": {
+            "observed_fps": 7.6923076923076925,
+            "maximum_observation_gap_ms": 233.33333333333348,
+            "quality_warning": "Hình ảnh bị thiếu nhịp. Vui lòng ký lại chậm hơn; kiểm tra các ứng dụng đang làm máy bận.",
+            "frame_count": 11,
+            "hand_coverage": 1.0,
+            "inference_ms": 507.92822265625,
+            "queue_ms": 0.0,
+            "last_active_epoch_ms": 1793616358450.8123,
+            "server_result_epoch_ms": 1793616359797.1055,
+            "source_start_ms": 700.0,
+            "source_end_ms": 1700.0,
+            "model": "SL-GCN / 400 gloss",
+            "profile": "clinic-pc-tasks-lite-parallel-v2",
+            "generation": 4
+          },
+          "turn_id": "e0609a9f04a9"
+        },
+        {
+          "id": "253126dece31",
+          "role": "patient",
+          "text": "Mệt",
+          "created_at_ms": 1793616364341.8726,
+          "status": "candidate",
+          "confidence": 0.9999194145202637,
+          "uncertain": true,
+          "predictions": [
+            {
+              "gloss": "Mệt",
+              "score": 0.9999194145202637,
+              "model_id": 204
+            },
+            {
+              "gloss": "Giỏi",
+              "score": 7.635621295776218e-05,
+              "model_id": 120
+            },
+            {
+              "gloss": "Trễ",
+              "score": 3.7049642287456663e-06,
+              "model_id": 335
+            }
+          ],
+          "quality_warning": "Hình ảnh bị thiếu nhịp. Vui lòng ký lại chậm hơn; kiểm tra các ứng dụng đang làm máy bận.",
+          "context_candidates": [],
+          "metrics": {
+            "observed_fps": 9.310344827586206,
+            "maximum_observation_gap_ms": 166.66666666666697,
+            "quality_warning": "Hình ảnh bị thiếu nhịp. Vui lòng ký lại chậm hơn; kiểm tra các ứng dụng đang làm máy bận.",
+            "frame_count": 37,
+            "hand_coverage": 1.0,
+            "inference_ms": 541.232666015625,
+            "queue_ms": 1.008544921875,
+            "last_active_epoch_ms": 1793616362918.686,
+            "server_result_epoch_ms": 1793616364340.7153,
+            "source_start_ms": 2700.0,
+            "source_end_ms": 6233.333333333333,
+            "model": "SL-GCN / 400 gloss",
+            "profile": "clinic-pc-tasks-lite-parallel-v2",
+            "generation": 4
+          },
+          "turn_id": "e0609a9f04a9"
+        }
+      ],
+      "text": "Con trai · Mệt",
+      "uncertain": true,
+      "updated_at_ms": 1793616364341.8726,
+      "ended_at_ms": 1793616365933.6206,
+      "end_reason": "pause",
+      "raw_text": "Con trai · Mệt",
+      "reading": {
+        "text": "Con trai · Mệt",
+        "rewritten": false,
+        "rule": "uncertain-verbatim"
+      }
+    }
+  ],
+  "stream_snapshots": [
+    {
+      "elapsed_ms": 2988.240966796875,
+      "live_text": "Con trai",
+      "status": "streaming"
+    },
+    {
+      "elapsed_ms": 7536.410888671875,
+      "live_text": "Con trai · Mệt",
+      "status": "streaming"
+    }
+  ],
+  "checks": {
+    "correct_order": false,
+    "single_turn": true,
+    "immediate_streaming_words": true,
+    "finished": true
+  }
+}

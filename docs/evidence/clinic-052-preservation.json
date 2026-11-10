@@ -1,0 +1,961 @@
+{
+  "checked_at": "2026-11-10T03:10:20.152165+00:00",
+  "files": [
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\README_LIVE_BUILD16.md",
+      "sha256": "16b0168139f43f28182477fae643a7a20f9d78effbf14e4e3ea7acc8b134ea6e",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\README_RUNTIME222.md",
+      "sha256": "275a77ff00aa6f7a09bf1e9397090d44fe1f7ad628a9c94f7a7581efd96a01bb",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\README_BUILD16.md",
+      "sha256": "f050f632ad647807f164ffa072ae91d0a1badd7f501fbe2376170561d74cb688",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\MODEL_MANIFEST.json",
+      "sha256": "b0b8601aa87070be78ec18355b019f78016f480aa06a7ab3c365edff1359adcf",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\classes.json",
+      "sha256": "498208e0034ac32154937f261511b2c932fda9766526a53566421a1daad2ba9a",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\engine.py",
+      "sha256": "7354bf35a3a26de093371b1d259212dd5307390d7300ccdc2744aeee8dfc4f2c",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\app.py",
+      "sha256": "7b8c5ab63156d75632829c8b10e573e6321a66e82d6aed77b3139ecf860de590",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\continuous.py",
+      "sha256": "8cc1ae07e1dd5205309e3cacf662441583b053b7c3395599fddb41fd9b969a47",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\preprocess.py",
+      "sha256": "b0d3798ce50d18108ae8ae674ce046996a989f2db073d8e3d16734074d5587b7",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\segmentation.py",
+      "sha256": "ac43d71b2f0ec7a59e7e864cfecfc4ff125c405699e371a6893460c18f6631aa",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\sessions.py",
+      "sha256": "730fad3f4ef96dd266b6e6363695b04005f59e651ba4e91a9ddeb7aa074ca211",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\requirements.lock.txt",
+      "sha256": "c73ea5eea6e1325aeee7a7f488fd59c3318981d39861e8e54e337fe24d9b497d",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\START_SERVER.ps1",
+      "sha256": "655622282071fedb899719882c0cf8b8a9c705751a154f9ea850a1d1c9fb53a0",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\lib\\multimodal\\continuous_controller.dart",
+      "sha256": "be313fc26abdc1f44329119b2734670898ecd3ec4bfff67ba42c2f55d1402c05",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\lib\\multimodal\\controller.dart",
+      "sha256": "a4589aaf684a26eac9d6220f8d74a2a27275988e8c32f834abe99370b1457386",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\lib\\multimodal\\event_journal.dart",
+      "sha256": "4b1de7db1703ecb219519a191fe8fb026296aa4e7a3b567b9928a6f49d01145a",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\android\\app\\src\\main\\kotlin\\com\\example\\vsl_translator\\MultimodalCamera.kt",
+      "sha256": "54431ee52033db92c82f4c768dca959683cb09fa0d74fa78119f70f8d944d43d",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\fusion.pt",
+      "sha256": "1367a90f4cd3fedeba1e62b4314eaa95f0cf94f82983b722130bb61d85325c99",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\sign_only.pt",
+      "sha256": "f1a0ea4ae20f66946ac35b3ccfdd1c4a859fdce0acf35b48d21b2cdf9aed4180",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\mouth_only.pt",
+      "sha256": "b1a41f9eea2ba4b3988b9994d33a353f23b5d04987576a73e74be34baf24c5fe",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\VSL100_Run_20261105\\remote_backup_20261105\\assets\\spoter.safetensors",
+      "sha256": "d62ed125de51c5719daa48f340f66695353e24776a534ac28266b86663dd185e",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\VSL100_Run_20261105\\remote_backup_20261105\\assets\\vlr_pretrained.pt",
+      "sha256": "b38177ae98f1f3cbea1a4c183c2bca804cf0a576e99abd23aab85ae56f413280",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\model.py",
+      "sha256": "52fda263bab6a8564261efcbf49b09fdda23c7f9a7bca3ac5507fe8ca834ab02",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\legacy_fusion.py",
+      "sha256": "07b12f7b977b40480487eac926e9e7df3228b799e876f300698531ce4c8134a8",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\extract_frozen_fp32.py",
+      "sha256": "70d24803dbfd6076f87321a74a7ace99822415d4e4a6f6bef2b9dae1f7519209",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\crop_geometry.py",
+      "sha256": "480835efd5e873e2502d9b51f4ca7ec32346f1a6d33f98aa17cddb4f95fbe0de",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\assets\\sign_transforms.py",
+      "sha256": "3d5de162996a428f48e21b67afe18c233c6fa0725d44e11b414d56f4792b5969",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\assets\\spoter_modelling.py",
+      "sha256": "2d8669e22fae05749c6888ae1b1273e1037d8e0f45afed59dc1f458e608a479c",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\assets\\mean_face.npy",
+      "sha256": "dbf68b2044171e1160716df7c53e8bbfaa0ee8c61fb41171d04cb6092bb81422",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\batch_beam_search.py",
+      "sha256": "4d319866d432a94f68969cb46a3569f7b9f99abd9c6df9eb1d53f68a1467ff6e",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\beam_search.py",
+      "sha256": "600a9434bdcf44312de002ac509e55ca936ede6df270b49f2887299cc29df2df",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\ctc_prefix_score.py",
+      "sha256": "c26e5ce6f4884cfbf329e3bd8ac75089a47e4a4e79355db024dc0056b48da6c9",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\e2e_asr_common.py",
+      "sha256": "e24670378092040db8bded6a9383f9d2859fc5d6db5946f7409e4df5b23278ff",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\scorer_interface.py",
+      "sha256": "bfb21dd5b99f892fa9880764a47032729735bce3dd3b143d396e13ce1f31fc27",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\ctc.py",
+      "sha256": "39c589343af0943663029e8d68e04ef04642e2b38d7499d052b860ddcf2ecee0",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\e2e_asr_conformer.py",
+      "sha256": "144c68cb2e696eb3735617770f21c9c0fe7e0e359cac77ae05a17dec5c0095b7",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\e2e_asr_count.py",
+      "sha256": "60f29683136fe95cb23d352eb941415302e0c3f3121bfeaeabce5ae1dc13eb4b",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\e2e_asr_interctc.py",
+      "sha256": "8caaa18dfbf5f2eda364b4d0491980c1cc5ac47810e305ccb52c56087ca067df",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\e2e_asr_mdbridge.py",
+      "sha256": "8d00b9edfe75354aaf78e72f10f716f5203cbcc9c81f422ea192a8b182ac75f9",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\e2e_asr_signer.py",
+      "sha256": "64e6030889db66b03dfe46ed5d08f0cf23873c23ae5f72bf4948391a5700a52c",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\e2e_asr_structured.py",
+      "sha256": "d11027089b85e8d482cadc61411c2a8dc9475c5ab59153ca616644480fc734e1",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\e2e_asr_visyll.py",
+      "sha256": "8475db788502b08d065823a4d57d380d5021e951b0485bdea7879b7c9f62ffb2",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\e2e_asr_xbridge.py",
+      "sha256": "11f5e72497b179c0567fa3536cf859bb746bcf0c38dec4894d170c1937780382",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\nets_utils.py",
+      "sha256": "34f0c4ef9f19f7e9526f0436a508371a0e68b6c4bebb687ca6372cf1d2ab638d",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\decoder\\transformer_decoder.py",
+      "sha256": "3c9c8745dd33e440ecd34eb3903d559d6f5213e52e89598713d3dad56fc5d762",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\encoder\\conformer_encoder.py",
+      "sha256": "ed595f814ebba45b1e2853555c85b0bb197ed2e14e8b730c6b1368b384a8e790",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\frontend\\resnet.py",
+      "sha256": "4097c6ff8675ec76bcf74e3290d1fe06b5e536f194a2784ccdd4b81029afbbfb",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\frontend\\resnet1d.py",
+      "sha256": "2b3d1e4cd68ea9ccce5813689234e7e95e6cb327181ca1335c6d63058da13a18",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\transformer\\add_sos_eos.py",
+      "sha256": "e73c11b60af9a67467bde1e53b031d43ccd00cd55e5f85813c4e6d757114c7ce",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\transformer\\attention.py",
+      "sha256": "ed4cf0a1bbb9551f66586338ea19d6e5cc12fd897b989fbd51a0d9a11304ed6d",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\transformer\\embedding.py",
+      "sha256": "08157dc9be6e1363653c8689af94ec51f82b56a7acf8cea46711b009ca8c491c",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\transformer\\label_smoothing_loss.py",
+      "sha256": "70f6a14a1f8749c1dfa39a96469d9633246856572d2140cddd0378857598e265",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\transformer\\layer_norm.py",
+      "sha256": "9685ea76896c4624ebd0db5afc2e7b7b77a1f467ae33ca0bd8876c802d46beb3",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\transformer\\mask.py",
+      "sha256": "dbc6b6d7e1449404c7463ce3a89a193f9c0c9a57e381b32572821af3ba1f9275",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\transformer\\positionwise_feed_forward.py",
+      "sha256": "c4db61e228ba3c55158d20ce53a1d5ec13e87a34148d38164230d4ac93d506b2",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\transformer\\repeat.py",
+      "sha256": "a441c579cc57d25721ecf59ec357a0ab64e68abddadc4b955bc4fa01f643f0f8",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\pytorch_backend\\transformer\\__init__.py",
+      "sha256": "aba1b9ff25a1b69d8a6905e7ed877205b5b8af6f3d1d9e82bb28b8aaed9aaeee",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\scorers\\ctc.py",
+      "sha256": "556c10c796866c703398bcbc72dcf7d7557fe781431e8efc44f62d69c853a4fe",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\scorers\\length_bonus.py",
+      "sha256": "8c0aea891ef3aca25387acfafedbbec4210938cd3f9df14323eeb9fd36af9f78",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\scorers\\word_ngram.py",
+      "sha256": "36e8be8a2993bba3735d61d65403bd6e5284de543c6c4c348e63571888d4a173",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\espnet\\nets\\scorers\\__init__.py",
+      "sha256": "aba1b9ff25a1b69d8a6905e7ed877205b5b8af6f3d1d9e82bb28b8aaed9aaeee",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\preparation\\detectors\\mediapipe\\detector.py",
+      "sha256": "a9296173fd7c63e5e8e8561f68ba53a1c6a859c8c1e6006cbc8fc43f4800bc2d",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\server\\vendor\\auto_avsr\\preparation\\detectors\\mediapipe\\video_process.py",
+      "sha256": "986632fbb7f3ec189f4be9ab58e8f6ae4e782274290d3cfa1a7df4d5c99d2060",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\fusion.config.json",
+      "sha256": "ee3c3c85469553f2fc0ae7fee7fb31f2b2aa261d5bf9d6dfd52c44301fce2d05",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\fusion.source_hashes.json",
+      "sha256": "bc303e5e81cbb51f177ba91121b58f451e3ec8f044790987a17defda8f0bcbd6",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\sign_only.config.json",
+      "sha256": "8f198b4f3f8c1ce0a9ddb9d3bd13f47f15324fa913a7d9ce2aadfdff5d0413b4",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\sign_only.source_hashes.json",
+      "sha256": "fe38b76f582b0d0c4b9997e9b4b7663a9d4f05a4a7785e35e605b8a37e644257",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\mouth_only.config.json",
+      "sha256": "b4bca1b4e6a338eb579c7d30c59bfddfa0ec118da6189e7121a559c6eca36862",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Projects\\vsl-translator-multimodal-v2\\models\\mouth_only.source_hashes.json",
+      "sha256": "26badb2d235cbc0b4e21793588c4858427b9507426c86b476010053fac7b0a39",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Clinic\\App\\0.4.1\\win-unpacked\\VSL Clinic.exe",
+      "sha256": "35546e7e319c89b6092053b4fe4960fab8d59dc3a6a7ebc1df9c29b7b10d75f7",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Clinic\\App\\0.4.1\\win-unpacked\\resources\\app.asar",
+      "sha256": "09c959c746281b45f3f498051627992688bc09de57294852b49a5e17c079a5af",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Clinic\\Open Clinic.lnk",
+      "sha256": "3a03e58326c22ce27dbb0998da41d55354111e43db54d45a0d5a31831986cfc4",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\assets\\slgcn\\model.safetensors",
+      "sha256": "50132e8054203437b8c65e869ceed5b90a34f6d45e8dacaed6e8d30c31eadb54",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\assets\\avhubert\\encoder_state.pt",
+      "sha256": "9e8e6b03bcdf39084bb41c58b309f38fc69b563f5d4610c656a40bff74d0a61e",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\assets\\avhubert\\EXPORT_RECEIPT.json",
+      "sha256": "406b9e92a88009625ea352da6af9eede2dfa739800157908ada9dadb72394146",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\assets\\avhubert\\saved_config.json",
+      "sha256": "2a835064e1c81f3ffe2e55151e4e448da4aca7f54f8a300c7043796d241ae304",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\slgcn\\config.json",
+      "sha256": "5fbcfc1c133d0b2c40a96b761f9d9773c2238d575d0e4f0cbfc3f0fe98411753",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\slgcn\\configuration.py",
+      "sha256": "d41edac209e3ec43643eca44fff60f63dc6168b3004b1393f8f60c150f21d567",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\slgcn\\decouple_gcn_attn.py",
+      "sha256": "82de6873b2f49fe42674d70370a4f49309159e23bf0cae85c7c4bbc5a74b9d3e",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\slgcn\\dropSke.py",
+      "sha256": "d4507ef371bbdcb51a8dc5d8c6b37ba2b3d1578302f648596679b762aba422db",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\slgcn\\dropT.py",
+      "sha256": "d0a74bf36f23d1752b71461d23d15d50ecb035ff14a731245f6570c552a00c59",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\slgcn\\graph.py",
+      "sha256": "c08bd3bb4beab96e62306d66da02d828a8205c9b1536bd489f60f8389fd87869",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\slgcn\\modelling.py",
+      "sha256": "f336b27b7d3042230d3cb72297623e71d5bdd7931cf11f3a9cb5b82bf2cab8ef",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\slgcn\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\code\\sign_backbones.py",
+      "sha256": "fa470ef2c68b4c776d207b8ed635c57955bfc661f00fc937ff0c668dc4c0d51d",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\pose_transforms.py",
+      "sha256": "334465078c1214b37f255d0a88bcf64391f946a3b4693a9ee9a504d6ba5e46b4",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\avhubert_source\\LICENSE",
+      "sha256": "5b364a4b2b161f0b1db93cb14de7343a6ea33c80e4633fb8db0765a764d4770c",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\avhubert_source\\avhubert\\hubert.py",
+      "sha256": "abb648e3ad1bdb073c1646ee439ab5b8d26b6b642601b62ca336620d91000a30",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\avhubert_source\\avhubert\\resnet.py",
+      "sha256": "3bfe2a33e89efb5adf5a7f9d419b4e10e80eac7e07c0e94bd95644f91a5eb48a",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\avhubert_source\\fairseq\\LICENSE",
+      "sha256": "f08a94bfb0bdc1d7f1cb59badaf0f8c551b10db871185622dbf1fd036affa9cb",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\avhubert_source\\fairseq\\fairseq\\incremental_decoding_utils.py",
+      "sha256": "6d8f9fb048fbd8c4385086a97db2174c4437c7bb42b36f55de2beaacaa6515c8",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\avhubert_source\\fairseq\\fairseq\\utils.py",
+      "sha256": "90c5ca06ae36d2ecdba1ebbb99036a9a791b2a3ea00993a63238deeb92a82db1",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\avhubert_source\\fairseq\\fairseq\\models\\wav2vec\\wav2vec2.py",
+      "sha256": "832f33fb9bd8bcdc482a6a5a769b3fa9f4bab12e918bc8bd07893084133c3d18",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\avhubert_source\\fairseq\\fairseq\\modules\\gelu.py",
+      "sha256": "cba571283eea375b7631930a09a6c09afd1c145ed5b5f65658d4ffae35aecd24",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\avhubert_source\\fairseq\\fairseq\\modules\\quant_noise.py",
+      "sha256": "87535a26c4659072bd16ac317bebbd4a5aaae7210d0122a50f4565c0e8a690fe",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\avhubert_source\\fairseq\\fairseq\\modules\\fairseq_dropout.py",
+      "sha256": "df38ec76c2800365adb9db21d37bd795995871e11ff8f6c002ae0f62cf32acae",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\avhubert_source\\fairseq\\fairseq\\modules\\grad_multiply.py",
+      "sha256": "ab1a1a9ed08f23ee8fd7337a0356ba5e34ea404bd4379ef14fc2f105a2cd0b06",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\avhubert_source\\fairseq\\fairseq\\modules\\same_pad.py",
+      "sha256": "d768315790a165bf331155baa031912b6b2b1334d63bfd16516f22d54a4a1318",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\avhubert_source\\fairseq\\fairseq\\modules\\transpose_last.py",
+      "sha256": "f9c7bb7a4e926eb5171e941e270980f1943a0e4d1013969b3489ccc4a89f2c96",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\avhubert_source\\fairseq\\fairseq\\modules\\multihead_attention.py",
+      "sha256": "b5faa39a9ac5af88251f62b4d1dec816382dac10582b763d35d12c88b5aea2e6",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\avhubert_source\\fairseq\\fairseq\\modules\\transformer_sentence_encoder.py",
+      "sha256": "da84cdbecb5104d83bb9d83742f91679cf2414fa236f930a20edb83e4ac67b27",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\pose.py",
+      "sha256": "7de32d55a6a2a3d762aa4ce34893fb51b806012e0703eeb52cf3bcfd771399a6",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\pose_body.py",
+      "sha256": "fba3793b3a4316efab145fe38abc72f8af82f1e85c660ac38c8182abb6068482",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\pose_header.py",
+      "sha256": "40b653d28136dd61a65991264483f1179d1c4303c3f13d129e0c6aea77c8d56e",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\pose_representation.py",
+      "sha256": "9e021175f90c5f35643eb433118ae047d4699ee410115b42c5c214d49c0cdc22",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\pose_visualizer.py",
+      "sha256": "98cdb2eb1718dd6ccd20a52db29c03bf1ba9f661957224f5ea6ca83bf9ba47d1",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\__init__.py",
+      "sha256": "0b0f6d3b7ca8b40cebe5d8d0fea88e308c172fe8b200e1ccbb342b0a5da7e7da",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\bin\\directory.py",
+      "sha256": "8e59928aa374912675cd39337e61fafd4fa0d67e2b1f2c887a0a6be2ff9ace5f",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\bin\\pose_estimation.py",
+      "sha256": "eb5809069769d54cf7b856ccc0c3c920f4ff9e9ec0792eda5c2f78cf52764d26",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\bin\\pose_info.py",
+      "sha256": "38bc3760d8189d30be7574b0aa654109994db731972c4a82c16f6c77af763cc8",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\bin\\pose_visualizer.py",
+      "sha256": "df623a109da148f9b5e6cdaf5b00bfc68a27cc55258c67007e21d5a9fe9d39f2",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\bin\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\numpy\\pose_body.py",
+      "sha256": "9b63bc172caadcab80995eb289e17d746bffa6ecc457aec2fe4ea871bc668a76",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\numpy\\__init__.py",
+      "sha256": "829bf03cdea701f4863c044a390396556a53c0f18ca2e2956967c1188d0ceec4",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\numpy\\representation\\distance.py",
+      "sha256": "066a0cbda62151b2c6cf02aa27f74f4c98533166095d3b0924ace7c86299df4f",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\numpy\\representation\\distance_test.py",
+      "sha256": "b5d25a8fe311fb2e0dea2cc402d517a8a0a0620bda601a4866b1df40c11bc11b",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\numpy\\representation\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\pose_body.py",
+      "sha256": "03322f77071c85bffe932077b450d9292e924f6799fcb19049e4c4a460bd822c",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\pose_body_test.py",
+      "sha256": "7cc3af926cb15ff94b60cbe065e816d26c7d0eb5ca5f5f3c146d42cf653c502f",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\pose_representation.py",
+      "sha256": "29deb31e87517e506c62689fed752d085107a863ceb69849907414637224aba0",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\pose_representation_test.py",
+      "sha256": "e9f2521402848c7b71a1336eaa618318d6173391abeeb956eecd2b003be49410",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\masked\\tensor.py",
+      "sha256": "9ee81d41ee3441c2a7719df75e7bcbac69a6dd4d9ba0e5aace1d0b881f5853e0",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\masked\\tensorflow.py",
+      "sha256": "576d1be49a1ad9299aecd3f96127e993734f4d7b89ec1b3565f4053aa093bb08",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\masked\\tensorflow_test.py",
+      "sha256": "3942a092190de5a6dee936f444d5931cb136af484a7fcd227f19ea6de2b4fa89",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\masked\\tensor_graph_mode_test.py",
+      "sha256": "d903455e33cf97c928070037ff2cf119f39e9938a77743740a700f586015d991",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\masked\\tensor_test.py",
+      "sha256": "d4f98a57802bf445221a95971adad5b8f852c6095cfd1c7bd723ab3b410aae7b",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\masked\\__init__.py",
+      "sha256": "3460117b03cd61a9cf2e7fb334e661b81384ccc76713049cf0466bb690ef987a",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\representation\\angle.py",
+      "sha256": "3e9b6d509ac9281e04410d31b7123cdce5bdb422aaad38b257522fb77ecc9879",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\representation\\angle_test.py",
+      "sha256": "7cd7383621f12cb0e787ffd04d63a22d6b78a7df66f41e6af308b9c18e59ff74",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\representation\\distance.py",
+      "sha256": "2e06f7940ac982039a59a274e00b3bbef0cbef06cd607ca304914ba5fc7ff2f3",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\representation\\distance_test.py",
+      "sha256": "731cef346f38177ac943c2cb4b921ddb87c6756b34367aa131db1ba7545adf40",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\representation\\inner_angle.py",
+      "sha256": "4592315d69ea06e5dc7b064bd1b9c4a7efb50b243e20a2130e4c8261c3b25afa",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\representation\\inner_angle_test.py",
+      "sha256": "f40cfb95ad6800853083030e4afb82bccd232cfc8a5f712cbe3bf4df8dc7ca59",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\representation\\point_line_distance.py",
+      "sha256": "8aead2909752112199b51ccc9c0e74cd04983ca3022cd70e9d4ff47434414de1",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\representation\\point_line_distance_test.py",
+      "sha256": "76a87cce465adb94bb67ee7a9c65f7c736b66d8fcdc6020f0ecb50a71d5182e3",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\tensorflow\\representation\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\testing\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\torch\\pose_body.py",
+      "sha256": "ec4e8e26d53c85721d6e6d3fc0dc1fb3e48d50ea82cd77ef56c9f603e570868a",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\torch\\pose_representation.py",
+      "sha256": "eb4799dc4e536eb3428205b35b466ddfb4d2a678ce9de3c86d0282ae8d0d4ba6",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\torch\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\torch\\masked\\collator.py",
+      "sha256": "a17971ae5445a71d6c3d9d5db73ffc92f9e1cb29faacf001bc966c8c749ed977",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\torch\\masked\\tensor.py",
+      "sha256": "1a88f479989849055bb6a4aa22523c528741e550fa6be8b26e97701b274e0f81",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\torch\\masked\\torch.py",
+      "sha256": "38c5d3b26b94b778083841383f5ba81c463e16b2b4c284fd49d8d66b620ef37a",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\torch\\masked\\torch_test.py",
+      "sha256": "d531782f33af6d5369c81511a19002fd62e1f83318bf49d74c90fd3205d03b65",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\torch\\masked\\__init__.py",
+      "sha256": "8aba603edd9e4ecbd2136a3ad0739f1e6941a72da7841d9592eae1f8007521e3",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\torch\\representation\\angle.py",
+      "sha256": "45ced3287fec7a8e466742587c4d273abc8ed49badf6db5795fa6769c6f6ced7",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\torch\\representation\\angle_test.py",
+      "sha256": "81af0426681b17c5f9360d9c68e054c802f75ae0092f08d24d9baca8d19e3b81",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\torch\\representation\\distance.py",
+      "sha256": "ab24a8f3b0bff38c487b3d6c188a24a72b9a743224f281e8e27c710b3f933b4d",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\torch\\representation\\distance_test.py",
+      "sha256": "2deeaea218afac4d68da2ec6f28b191b5994c83c3871747fd20cd21ca7869a53",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\torch\\representation\\inner_angle.py",
+      "sha256": "5960917f80705b9b80ecb369b4e94577690a28d738bc6c33d643e67ec38ee9d8",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\torch\\representation\\inner_angle_test.py",
+      "sha256": "ea170deb4ff33f659bc581e6cc81513511564ea0542ba7985e7e1165ea172694",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\torch\\representation\\points.py",
+      "sha256": "7cc12cd3615536441ca7a54c1f0b0aa2b144db9a5db171f19433fab2cd22d07c",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\torch\\representation\\point_line_distance.py",
+      "sha256": "c4c9b08237f9b20e85d5dfdaf075020a31512037441d92ec5a72abd61f9f58ac",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\torch\\representation\\point_line_distance_test.py",
+      "sha256": "a3b1223bdf0d79891f6102e150ebc0be455c70e53c134b4af795363a21a148ef",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\torch\\representation\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\alphapose.py",
+      "sha256": "e1c384b85ca4846947b9a7cb5970456f66f4af6c7c1eeb67206f096d235f7688",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\alphapose_133.py",
+      "sha256": "2f99b5782ca0b0242416ad650c5ef3aac9b9aafce8249c9476d54da5d01baa2a",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\alphapose_test.py",
+      "sha256": "26d3bb862cd739795c5cd3d26dc113d1ccbc04ae776ebe1abb491bb3d8dd4750",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\cocowholebody133_header.py",
+      "sha256": "4ea38dd8197c2d7d42984d51acdf5148c6c247461b38fab0fb22542c1c156ba7",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\conftest.py",
+      "sha256": "ce5d03123fce4a28f9b5910b9638ecdd0844c1cc3f2683c0ccfb7099938ae7dc",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\fast_math.py",
+      "sha256": "41c8f07e133da2cfe74d310edcd959724cf2e70d2f1327b337f70757ab38d6f0",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\generic.py",
+      "sha256": "273b275fa014e15090d71a57cb570655916cf9355766188dde0f07f5e0772588",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\generic_test.py",
+      "sha256": "6d693374d98642d6c2434055abb833a7604bfe0dba67f6a05353149da93802a9",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\hand.py",
+      "sha256": "e6c4b2bbccfec4e9ea2819325a334752b8f8899054c0b509cee3bd8bf1144184",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\holistic.py",
+      "sha256": "26dc46cd830784528ee3b273d668f7b926c3e412c8e8d8d86ab51179fb9f5393",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\mmposewholebody.py",
+      "sha256": "6a5c815dbd4f624555ef6cbf512a55846739f942ff5966d8b088f039fb836dd4",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\mmposewholebody_test.py",
+      "sha256": "3597c05dbbe2fb9e1a6a614806fbae57729d8e2f5d825b8eb8c4046a16f3347f",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\normalization_3d.py",
+      "sha256": "b00b1b1828171ad25177f63eeca42667d5805074039aae5aa177f16b74bc22bd",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\openpose.py",
+      "sha256": "11f9b8f3c046ef41d96b62df51107d2e3dab2062b193ff588de85c3e7f698f6b",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\openpose_135.py",
+      "sha256": "a96dfbb27bf82da1e8a4e0baa29598a14578fdeda77b90ad508b9fc6fcaa6223",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\openpose_test.py",
+      "sha256": "40805b5544f7c8159effb98c609e79b99943ad07f7c02ea2ac0f922d5a0ecde7",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\optical_flow.py",
+      "sha256": "0be08f2a9716e8cd2309ad40d3752fa7421f8672e4d1d0e05263ccfef4fa867a",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\pose_converter.py",
+      "sha256": "f91134b5732421db57a3ccd79e0b7903a140577e2125cb56496990ee2691bcfd",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\reader.py",
+      "sha256": "870e4e7e7d2f67d97c21b4bc23b8d8b5784a6c8c432931abc4e0eaa8e6dd99b8",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\reader_test.py",
+      "sha256": "0f07a9e4d159bf6e3665d0d002acc8c7e757f4b96b2b57d23f63fa596003d139",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\siren.py",
+      "sha256": "bea737895904d08505a787321d58f1aec6b38a1f2b6d262df84945fe26a103f2",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format\\utils\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format-0.15.0.dist-info\\entry_points.txt",
+      "sha256": "44bdd545310998563e937a68bb5e4425cceb2f667fa55aeb3436fc86f74c4d4c",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format-0.15.0.dist-info\\INSTALLER",
+      "sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format-0.15.0.dist-info\\METADATA",
+      "sha256": "b7b6bb233378e440d54bf8f4b049b8d8b14983c799363fb4b7b3fed60f5acb90",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format-0.15.0.dist-info\\RECORD",
+      "sha256": "93073800fc425d8e7d969b3ecc2374a161c3b27dc508c7b21e235f16fce683c1",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format-0.15.0.dist-info\\REQUESTED",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format-0.15.0.dist-info\\top_level.txt",
+      "sha256": "368c7a7904987e39d5e589cf702fbf965bdc8d09b7b3b5d198a7f82fdff7b3cd",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\Multimodal_Expanded_20261105\\supplemental\\vendor\\runtime_linux_deps\\pose_format-0.15.0.dist-info\\WHEEL",
+      "sha256": "61532836a2b3111b7ec23519c09df7c41180c27165fb872a6d8913b566b88ad1",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Clinic\\Organization\\MultimodalIntegration_2026-11-09\\fusion_explore\\avhubert_preset.json",
+      "sha256": "af589ec7963ba0ddf8c12ea8e8e7c179019b7b4ef0f5b88e28396b5cd3ae198a",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\VSL100_R3_20261106\\results\\primary__r3_loso_01__slgcn_replication_fp32__avhubert_replication_fp32__cross_attention__s17\\best.pt",
+      "sha256": "0ccf0476091990ef84055a362376f96d40987916b95be6e568f9152f64a6f28d",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\VSL100_R3_20261106\\results\\primary__r3_loso_01__slgcn_replication_fp32__avhubert_replication_fp32__cross_attention__s17\\config_and_provenance.json",
+      "sha256": "6d744794c0cedb3195a1907565040524747516fbf5ec35a21ee8361e252280f2",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Paper\\MultiModel Paper\\VSL100_R3_20261106\\results\\primary__r3_loso_01__slgcn_replication_fp32__avhubert_replication_fp32__cross_attention__s17\\ARTIFACT_HASHES.json",
+      "sha256": "88f8b750f65e57405dce6f7e4f8fd785427be740bc2171d52ea3dd33715894dd",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\Project\\VSL Clinic\\Organization\\MultimodalIntegration_2026-11-09\\baseline\\source_before.zip",
+      "sha256": "408ce47bf92f15b405647924a7539e4abcfbb74e9affd9af5b7dc3154845efd8",
+      "unchanged": true
+    }
+  ],
+  "checks": {
+    "original_inputs_unchanged": true,
+    "previous_receipt_unchanged": true
+  },
+  "source_snapshot_sha256": "003d41f9b55097178d71b8ed090cab2573f5d421af1dc34dfecd6b0f1bbdb147",
+  "passed": true
+}
