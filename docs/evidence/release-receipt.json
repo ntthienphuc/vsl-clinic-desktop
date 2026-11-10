@@ -2,10 +2,17 @@
   "schema": "clinic-local-release-receipt-v1",
   "version": "0.5.2",
   "package": "../App/0.5.2/win-unpacked",
-  "created_at": "2026-11-10T04:43:59.212403+00:00",
-  "git_head": "fac73655b53a7fc34787d61333297d47a0241930",
+  "created_at": "2026-11-10T05:03:46.803767+00:00",
+  "git_head": "162cb508fcd138cc6db1a0f19c32e884952edacf",
   "scope": "Uncommitted local project. Build payload parity, not clean-machine or clinical validation.",
-  "payload_files_verified": 24037,
+  "payload_files_verified": 24032,
+  "inactive_historical_weights_omitted": [
+    "assets/multimodal100/models/foundations/spoter.safetensors",
+    "assets/multimodal100/models/foundations/vlr_pretrained.pt",
+    "assets/multimodal100/models/fusion.pt",
+    "assets/multimodal100/models/mouth_only.pt",
+    "assets/multimodal100/models/sign_only.pt"
+  ],
   "asar_source_files_verified": {
     "desktop/launch.cjs": "4fed797a715d72f08d71a9ea8bf4f0be33d81c3c00b8222f598b0a0e134015b0",
     "desktop/main.cjs": "fb4f45d9d8f67eef59f31119a1bfd45017dbf96af3b90cfe1939b8cde45609ea",
@@ -93,7 +100,7 @@
     "tools/build.ps1": "0e47dd5061476a1a73684869d756287526800dc8c9c554e04d30eb88f0cdda33",
     "tools/build_avatar_voice.py": "d1619c43de9976847a9c7d14e86bb952055e6d5ddb3c57f0c1e1ddae1f59a43c",
     "tools/build_demo_kit.py": "54457ef982fff83af12287477e21af2e7944fb3786c173592a27d73b3d0c541d",
-    "tools/build_installer.py": "ddb9cd5ed99bed15bbdcb0bdb2d56d165694f4c37d929a8b06bf257f66f49aee",
+    "tools/build_installer.py": "bde6d7bb5723d5722050c5c48db4f92deff487e2d89d448c8de8934a8209973a",
     "tools/build_multimodal_runtime.py": "1d2a29efbec480f74ebff50fd2c87a287d53df4a360145341c5b913f3902ab5c",
     "tools/build_multimodal_voice.py": "820815720a8dcf032138f3d215d96b858f74c3e58076544ec61aeef8b7f117b9",
     "tools/build_patient_voice_bank.py": "2949c291cea6d9feea1dd94f8f0c1e57a3a262250a5f6f931dbc2154c358e7ef",
@@ -111,13 +118,14 @@
     "tools/import_qipedc.py": "cff2f72769f774df04cf7ec259dd978d70838c64f69f66ea805198860ab210df",
     "tools/make_multimodal_stress_fixture.py": "843341a3606380dfac407c0a8f3d98b3dca75aa88ce5396f4a1019b4f502b2ec",
     "tools/motion_extract.py": "837466f299e0bd07df5aea8c86ffcccd24bf493372f579129b51332ef68806f3",
-    "tools/package_multimodal.py": "f8d69740fc191e6babb6fd7bae190dc57236f43af239eca70ea235e06580da15",
+    "tools/package_multimodal.py": "18ae15533a45364e726cbe0b78d1f98a586ccaf059e670a9a7589f91ab2c763f",
+    "tools/packaging_assets.py": "f9eb0f92584daaad5418daddccab985c18bae0f4b209791474500915ea092d8f",
     "tools/playback_fixtures.py": "8916e57b6cbbddb7c34839c4dab0e5f4b15c98eb2805de2ff04cd5204f4179e9",
     "tools/prepare_assets.py": "a6a1c0d6e845e6a4cdd6cab70b8c6ce2866fa35119b0421a3a13e8b1ca65666c",
     "tools/prepare_clinic_avatar.py": "e8cc19a52c3efc16d7d3a44f9af2f0f6d0373a85fd1f166c6efcc997900538dd",
     "tools/prepare_language_model.py": "a70ad9df8d65f3224b1074f059ba9af2d9b8b191556eba9443246914c1d34dca",
     "tools/prepare_multimodal.py": "2467f758fbead1c29f9438b3beeb012be6d4776d4bddc4664216733f7884e265",
-    "tools/prepare_multimodal_r3.py": "8cb53db11f001b39e013923420af10b25cccd9cd60667f6557dfa12394cd4bf4",
+    "tools/prepare_multimodal_r3.py": "c5d2a8219a3a28bfd73eae6311f697b2be12bab2d527bf8bb0835c9bffa01a8f",
     "tools/prepare_multimodal_samples.py": "f5258942ee0d49baec4c59691adb5e8a5db28560dcd356d7be9dfc873637ecf7",
     "tools/prepare_speech_fixtures.py": "063ea89ce711ce1875522f4b9993f8a4a97cdb2c6f8cf01d6081d83cdb828600",
     "tools/prepare_speech_model.py": "4f12662f8fbd3b08ce7ff992517054071a73b16d7c0be923a5db7708c96b3c33",
@@ -150,7 +158,7 @@
     "tools/probe_upgrade_runtime.py": "0d7eafa2ef845deacafb294bb79f6ff6fc453ae41ef565ca021f8b23ae09360e",
     "tools/profile_runtime.py": "b9b79e24ffd969445fc5f8fa3c4fbe53d048ad7c96f5f60a89c127d709b64840",
     "tools/realtime_probe.py": "6408ba9154157c9b463dad3a509abe192455ba2ad8a41f3ff20ecbdb34c39193",
-    "tools/release_receipt.py": "9a9f12020a296d206018119d6968b0e22d1f35006a2d4dc50de4158290f578dc",
+    "tools/release_receipt.py": "ee1998bf1fd1079fb22784dccfcae43719b760a28b40c1cbc9e49eaa388e830b",
     "tools/research_qipedc.py": "5c550048015cb4b48b4c63af543c742c5b28d571a7d9a5d79322cb6ce5605b3c",
     "tools/restore_local_assets.py": "a4268891b5d29d861222f568809dcbac04c1e0ef5e3f5eccb47919f7957946f4",
     "tools/review_motion.html": "aaedf86d3c312c02d5f078e9dd63bd510e9227dac2693a07a2d58e2a3cab19d7",
@@ -208,7 +216,7 @@
     "docs/MULTIMODAL100_0.5.0.md": "e573b64f5f5b8354e2b65a58ddab996802f138b4fe4f50f794be4f8bb80d187c",
     "docs/MULTIMODAL100_0.5.1.md": "81c7eda7dda98ab3db0cbbc5e44212be042241148757ac4a1ccd60b2a59a4f90",
     "docs/NATURAL_CONVERSATION_RESEARCH_2026-11-02.md": "5fa05a210e4e3bdb225354a657301c0d6bf5e8df50c453e0fd4ed527a94fdedf",
-    "docs/PACKAGE_CONTENTS.md": "71f4b6c677821ecec6ceb1d497333668cb34c19c522022fe26c479dee9587a2e",
+    "docs/PACKAGE_CONTENTS.md": "4ea37c60a7b4d58c671cf386f27e3bb7ec0c56579c2eed16efa9bcc7c3a86e2c",
     "docs/PATIENT_VOICE_0.3.5.md": "41f656bf9fffd098930c9c0dd3e7e7dd17048b5a5ad571ffd37567324e20f638",
     "docs/README.md": "6141550892684948fd80d9b8adc3ec083eb250ac3e6d974b480026df5d2e9ebf",
     "docs/SEMANTIC_AND_BANK_PLAN.md": "c72b6d31c3dbfc0761ea1b1f6f1db1d938844ba1291ce1b5f65c791f5fed6d06",
@@ -1668,8 +1676,8 @@
     },
     {
       "path": "resources/assets/multimodal100/DEPLOYMENT.json",
-      "sha256": "fb8f0162647d1381f138052dfd0a96f1a353dab3bb2728fd12c6f55d18af88a5",
-      "bytes": 52379
+      "sha256": "620f940711dc67058947ff840cb60936e22517d012a0b0d80f95e42dbc21cf3f",
+      "bytes": 51533
     },
     {
       "path": "resources/assets/multimodal100/label_mapping.json",
@@ -1697,24 +1705,9 @@
       "bytes": 38622
     },
     {
-      "path": "resources/assets/multimodal100/models/foundations/spoter.safetensors",
-      "sha256": "d62ed125de51c5719daa48f340f66695353e24776a534ac28266b86663dd185e",
-      "bytes": 24974624
-    },
-    {
-      "path": "resources/assets/multimodal100/models/foundations/vlr_pretrained.pt",
-      "sha256": "b38177ae98f1f3cbea1a4c183c2bca804cf0a576e99abd23aab85ae56f413280",
-      "bytes": 973787221
-    },
-    {
       "path": "resources/assets/multimodal100/models/fusion.config.json",
       "sha256": "ee3c3c85469553f2fc0ae7fee7fb31f2b2aa261d5bf9d6dfd52c44301fce2d05",
       "bytes": 1785
-    },
-    {
-      "path": "resources/assets/multimodal100/models/fusion.pt",
-      "sha256": "1367a90f4cd3fedeba1e62b4314eaa95f0cf94f82983b722130bb61d85325c99",
-      "bytes": 2308201
     },
     {
       "path": "resources/assets/multimodal100/models/fusion.source_hashes.json",
@@ -1732,11 +1725,6 @@
       "bytes": 1771
     },
     {
-      "path": "resources/assets/multimodal100/models/mouth_only.pt",
-      "sha256": "b1a41f9eea2ba4b3988b9994d33a353f23b5d04987576a73e74be34baf24c5fe",
-      "bytes": 2308201
-    },
-    {
       "path": "resources/assets/multimodal100/models/mouth_only.source_hashes.json",
       "sha256": "26badb2d235cbc0b4e21793588c4858427b9507426c86b476010053fac7b0a39",
       "bytes": 727
@@ -1745,11 +1733,6 @@
       "path": "resources/assets/multimodal100/models/sign_only.config.json",
       "sha256": "8f198b4f3f8c1ce0a9ddb9d3bd13f47f15324fa913a7d9ce2aadfdff5d0413b4",
       "bytes": 1773
-    },
-    {
-      "path": "resources/assets/multimodal100/models/sign_only.pt",
-      "sha256": "f1a0ea4ae20f66946ac35b3ccfdd1c4a859fdce0acf35b48d21b2cdf9aed4180",
-      "bytes": 2308201
     },
     {
       "path": "resources/assets/multimodal100/models/sign_only.source_hashes.json",
@@ -120408,8 +120391,8 @@
     },
     {
       "path": "docs/PACKAGE_CONTENTS.md",
-      "sha256": "71f4b6c677821ecec6ceb1d497333668cb34c19c522022fe26c479dee9587a2e",
-      "bytes": 6360
+      "sha256": "4ea37c60a7b4d58c671cf386f27e3bb7ec0c56579c2eed16efa9bcc7c3a86e2c",
+      "bytes": 6862
     },
     {
       "path": "docs/PATIENT_VOICE_0.3.5.md",
