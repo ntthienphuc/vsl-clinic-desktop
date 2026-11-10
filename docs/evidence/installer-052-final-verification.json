@@ -1,0 +1,418 @@
+{
+  "checked_at": "2026-11-10T07:02:08.553825+00:00",
+  "setup": {
+    "version": "0.5.2",
+    "created_at": "2026-11-10T06:10:42.113881+00:00",
+    "setup": "E:\\Project\\VSL Clinic\\Installer\\VSL-Clinic-Setup-0.5.2.exe",
+    "bytes": 3546645557,
+    "sha256": "0dd0987b4736693b82c8a8b45f3690bcb256c323b4f8efb30c203492560f3c9f",
+    "compiler": "E:\\Project\\VSL Clinic\\Organization\\CleanupInstaller_2026-11-10\\compiler\\ISCC.exe",
+    "compiler_sha256": "e0f9f1dc32032650c6629f6dee41eb6d20ba140e4e3c07c25d8a24f9ba781644",
+    "payload_receipt_sha256": "a5276af90807d0ddaea987394340df800280c4d4d65fbcc3bb82b9fe4601e48d",
+    "inventory_passed": true,
+    "installation_verified": false,
+    "note": "Build receipt only. Verify a real installation and installed app before handoff."
+  },
+  "installation_acceptance": {
+    "checked_at": "2026-11-10T06:57:29.825041+00:00",
+    "passed": true,
+    "installed_runtime_passed": true,
+    "desktop_shortcut_passed": true,
+    "full_payload_parity_passed": true,
+    "native_installed_launch_passed": true,
+    "source_files_verified": 205,
+    "setup_sha256": "0dd0987b4736693b82c8a8b45f3690bcb256c323b4f8efb30c203492560f3c9f",
+    "payload_receipt_sha256": "a5276af90807d0ddaea987394340df800280c4d4d65fbcc3bb82b9fe4601e48d",
+    "evidence": {
+      "installer-build.json": "5af48d3e1f4788e69107206713ca9d03d7d790e5ae2867de754b9f071d02b204",
+      "installed-parity.json": "2a8f6038d7ee9de75948fd05a5866fd53963aef2d58ec0147453de7056fa77c1",
+      "installed-runtime-summary.json": "9f5ccd3defb2bfc78b682e6dced2856536d760a631badeb19d74cdaaf5192850",
+      "desktop-shortcut.json": "f377c3675934e9d7e03b80641e0f705e1396562d20d63e171e1ad943a729d623",
+      "native-installed-launch.json": "2283f09e53c64fef3a12b75d346840a73777b053bbb93a203c9d7ca37d6e0af5"
+    }
+  },
+  "build_receipt_note": "setup.installation_verified is a historical build-time field; installation_acceptance records the subsequent actual installed verification.",
+  "installed_payload": {
+    "checked_at": "2026-11-10T06:16:56.732624+00:00",
+    "payload": "E:\\Project\\VSL Clinic\\App\\0.5.2\\win-unpacked",
+    "installed": "C:\\Users\\thien\\AppData\\Local\\Programs\\VSL Clinic",
+    "files_verified": 24113,
+    "payload_bytes": 8616387247,
+    "extra_files": [
+      "unins000.dat",
+      "unins000.exe"
+    ],
+    "receipt_sha256": "a5276af90807d0ddaea987394340df800280c4d4d65fbcc3bb82b9fe4601e48d",
+    "launcher_sha256": "53c05ff612b3bd4eddff7e37010ed81245f2b51547ef5e3eb8a592244a1ac371",
+    "problems": [],
+    "passed": true,
+    "scope": "Byte parity for every portable file, including Electron, models, runtime and voice. Runtime and UI checks are separate."
+  },
+  "runtime": {
+    "passed": true,
+    "desktop_exit": 0,
+    "checks": {
+      "layout720p1080p": true,
+      "minimalPlainLanguageResponsiveSettingsAndCancel": true,
+      "defaultFusion100": true,
+      "quickPhrases24ReviewThenRealAvatarVoiceMouth": true,
+      "patientFeedbackAndUnsupportedMeaningPreserved": true,
+      "liveModeSwitchSharedDictionarySourceAndOldResultFence": true,
+      "sign400RealRecognitionAndVoice": true,
+      "returnFusionAndEndFencesBothEngines": true,
+      "avatarVoiceMouthAndMicGuard": true,
+      "manualPauseResumeStopsSoundAndMouth": true,
+      "reviewCorrectionUsesCorrectVoice": true,
+      "realFusionIncrementalWordsVoiceAndReview": true,
+      "noRepeatWhenTurnEnds": true,
+      "realPatientReplyYieldsAvatar": true,
+      "sameStreamRepeatedWordSpokenOnceEachBeforeTurnEnd": true,
+      "realSpeechSocketRejectsSyntheticNoise": true,
+      "realBundledASRSendsOnce": true,
+      "endFencesFusionAndAudio": true,
+      "temporaryHistoryNeverReplaysAndDiscards": true,
+      "cleanDesktopEngineAndWorkerExit": true
+    },
+    "clips": 12,
+    "automatic": 9,
+    "wrong_automatic": 0,
+    "review": 3,
+    "top1_agreement": 11,
+    "omitted_clips": 0,
+    "input_fps": [
+      13.919999999999998,
+      19.480519480519483
+    ],
+    "latency": {
+      "last_active_frame_to_paint": {
+        "n": 12,
+        "p50_ms": 802.97,
+        "p95_ms": 869.74,
+        "min_ms": 694.78,
+        "max_ms": 892.27
+      },
+      "last_active_frame_to_audio": {
+        "n": 9,
+        "p50_ms": 853.59,
+        "p95_ms": 899.49,
+        "min_ms": 720.78,
+        "max_ms": 914.27
+      },
+      "inference": {
+        "n": 12,
+        "p50_ms": 306.52,
+        "p95_ms": 424.05,
+        "min_ms": 209.87,
+        "max_ms": 437.38
+      },
+      "caveat": "Software timestamps, not photon/acoustic latency; tiny fixed sample, descriptive p95."
+    },
+    "report": "E:\\Project\\VSL Clinic\\Organization\\MultimodalIntegration_2026-11-09\\packaged-ui-12-installed-warmup-052\\REPORT.json",
+    "report_sha256": "27999dc29603d226261d04d4bcf827c743176797f8e35d1460796066ee798a44",
+    "executable": "C:\\Users\\thien\\AppData\\Local\\Programs\\VSL Clinic\\VSL Clinic.exe",
+    "started_at": "2026-11-10T06:16:57.559Z",
+    "error": null,
+    "shutdown_ms": 1695,
+    "forced_shutdown": false,
+    "worker_exited": true,
+    "engine_graceful_exit": true,
+    "speech_negative": {
+      "seconds": 8,
+      "kinds": [
+        "silence",
+        "hiss",
+        "hum",
+        "keyboard-like impulses"
+      ],
+      "transcripts": 0
+    },
+    "counts": {
+      "trials": 12,
+      "autoWords": 9,
+      "newWords": 5,
+      "yielded": 8
+    },
+    "repeated_words": [
+      {
+        "text": "Sốt",
+        "uncertain": false
+      },
+      {
+        "text": "Sốt",
+        "uncertain": false
+      }
+    ],
+    "repeat_qa_confirmations": 1,
+    "trials": [
+      {
+        "clip": "Học_T01_C1_W066",
+        "expected": "W066",
+        "recognized": "Mệt",
+        "review": false,
+        "reasons": [],
+        "input_fps": 19.480519480519483,
+        "max_capture_gap_ms": 83.33333333333348,
+        "detector_warmup_ms": 187.84470000173314
+      },
+      {
+        "clip": "Học_T01_C1_W068",
+        "expected": "W068",
+        "recognized": "Sốt",
+        "review": false,
+        "reasons": [],
+        "input_fps": 14.899328859060402,
+        "max_capture_gap_ms": 166.66666666666666,
+        "detector_warmup_ms": 266.68079999944894
+      },
+      {
+        "clip": "Học_T01_C1_W069",
+        "expected": "W069",
+        "recognized": "Buồn nôn",
+        "review": false,
+        "reasons": [],
+        "input_fps": 14.339622641509434,
+        "max_capture_gap_ms": 133.33333333333334,
+        "detector_warmup_ms": 226.59809999822755
+      },
+      {
+        "clip": "Học_T01_C1_W072",
+        "expected": "W072",
+        "recognized": "Bụng",
+        "review": false,
+        "reasons": [],
+        "input_fps": 15.413793103448274,
+        "max_capture_gap_ms": 132.4384787472036,
+        "detector_warmup_ms": 228.22150000138208
+      },
+      {
+        "clip": "Học_T01_C1_W082",
+        "expected": "W082",
+        "recognized": "Quen",
+        "review": true,
+        "reasons": [
+          "ambiguous_closed_set_prediction"
+        ],
+        "input_fps": 13.919999999999998,
+        "max_capture_gap_ms": 133.33333333333334,
+        "detector_warmup_ms": 225.94309999840334
+      },
+      {
+        "clip": "Học_T01_C1_W093",
+        "expected": "W093",
+        "recognized": "Cần",
+        "review": false,
+        "reasons": [],
+        "input_fps": 15.211267605633804,
+        "max_capture_gap_ms": 133.33333333333337,
+        "detector_warmup_ms": 234.27110000193352
+      },
+      {
+        "clip": "Huy_T01_C1_W066",
+        "expected": "W066",
+        "recognized": "Mệt",
+        "review": false,
+        "reasons": [],
+        "input_fps": 14.999999999999998,
+        "max_capture_gap_ms": 150,
+        "detector_warmup_ms": 223.35730000122567
+      },
+      {
+        "clip": "Huy_T01_C1_W068",
+        "expected": "W068",
+        "recognized": "Sốt",
+        "review": false,
+        "reasons": [],
+        "input_fps": 15.828220858895707,
+        "max_capture_gap_ms": 133.33333333333337,
+        "detector_warmup_ms": 217.4924999999348
+      },
+      {
+        "clip": "Huy_T01_C1_W069",
+        "expected": "W069",
+        "recognized": "Buồn nôn",
+        "review": true,
+        "reasons": [
+          "ambiguous_closed_set_prediction"
+        ],
+        "input_fps": 15.789473684210527,
+        "max_capture_gap_ms": 166.66666666666669,
+        "detector_warmup_ms": 665.488099999493
+      },
+      {
+        "clip": "Huy_T01_C1_W072",
+        "expected": "W072",
+        "recognized": "Bụng",
+        "review": true,
+        "reasons": [
+          "ambiguous_closed_set_prediction"
+        ],
+        "input_fps": 14,
+        "max_capture_gap_ms": 116.66666666666674,
+        "detector_warmup_ms": 225.29930000018794
+      },
+      {
+        "clip": "Huy_T01_C1_W082",
+        "expected": "W082",
+        "recognized": "Nhà vệ sinh",
+        "review": false,
+        "reasons": [],
+        "input_fps": 14.164672765657986,
+        "max_capture_gap_ms": 165.54054054054063,
+        "detector_warmup_ms": 248.8539000005403
+      },
+      {
+        "clip": "Huy_T01_C1_W093",
+        "expected": "W093",
+        "recognized": "Cần",
+        "review": false,
+        "reasons": [],
+        "input_fps": 14.693877551020408,
+        "max_capture_gap_ms": 166.66666666666669,
+        "detector_warmup_ms": 264.87599999745726
+      }
+    ],
+    "scope": "Same fixed 12 VSL100 recordings with mouth pixels, synthetic audio and real local UI; no live person/camera, real room noise or independent accuracy claim."
+  },
+  "shortcut": {
+    "CheckedAt": "2026-11-10T13:17:24.1055805+07:00",
+    "Shortcut": "C:\\Users\\thien\\OneDrive\\Desktop\\VSL Clinic.lnk",
+    "Target": "C:\\Users\\thien\\AppData\\Local\\Programs\\VSL Clinic\\VSL Clinic.exe",
+    "Arguments": "--user-data-dir=\"C:\\Users\\thien\\AppData\\Local\\VSL Clinic\\UserData\"",
+    "WorkingDirectory": "C:\\Users\\thien\\AppData\\Local\\Programs\\VSL Clinic",
+    "DesktopClinicShortcutCount": 1,
+    "UninstallDisplayName": "VSL Clinic 0.5.2",
+    "UninstallVersion": "0.5.2",
+    "UninstallCommand": "\"C:\\Users\\thien\\AppData\\Local\\Programs\\VSL Clinic\\unins000.exe\"",
+    "Passed": true
+  },
+  "cleanup": {
+    "CompletedAt": "2026-11-10T14:00:15.1943465+07:00",
+    "Targets": [
+      {
+        "Path": "E:\\Project\\VSL Clinic\\App\\0.3.4",
+        "Files": 2078,
+        "LogicalBytes": 1265188780
+      },
+      {
+        "Path": "E:\\Project\\VSL Clinic\\App\\0.3.5",
+        "Files": 2461,
+        "LogicalBytes": 1284039925
+      },
+      {
+        "Path": "E:\\Project\\VSL Clinic\\App\\0.3.6",
+        "Files": 2559,
+        "LogicalBytes": 1335339499
+      },
+      {
+        "Path": "E:\\Project\\VSL Clinic\\App\\0.3.7",
+        "Files": 3174,
+        "LogicalBytes": 1337653719
+      },
+      {
+        "Path": "E:\\Project\\VSL Clinic\\App\\0.4.0",
+        "Files": 3250,
+        "LogicalBytes": 2040824141
+      },
+      {
+        "Path": "E:\\Project\\VSL Clinic\\App\\0.5.0",
+        "Files": 23932,
+        "LogicalBytes": 8288396403
+      },
+      {
+        "Path": "E:\\Project\\VSL Clinic\\App\\0.5.1",
+        "Files": 24084,
+        "LogicalBytes": 9616525566
+      },
+      {
+        "Path": "E:\\Project\\VSL Clinic\\Archive\\PreviousReleases",
+        "Files": 13247,
+        "LogicalBytes": 8941699467
+      },
+      {
+        "Path": "E:\\Project\\VSL Clinic\\Archive\\PortabilityAudit_2026-11-01",
+        "Files": 2219,
+        "LogicalBytes": 1322968424
+      }
+    ],
+    "DeletedFiles": 77004,
+    "LogicalBytes": 35432635924.0,
+    "DriveFreeBefore": 14951575552,
+    "DriveFreeAfter": 35214483456,
+    "ObservedFreeDelta": 20262907904,
+    "RemainingTargets": [],
+    "Passed": true,
+    "Note": "Observed free-space change can include concurrent disk activity; hardlinks make logical bytes larger than recovered bytes."
+  },
+  "task_generated_scratch_cleanup": {
+    "CompletedAt": "2026-11-10T14:01:08.1311898+07:00",
+    "RetiredShortcut": "E:\\Project\\VSL Clinic\\Archive\\RetiredShortcuts\\Open Clinic 0.5.1 - retired 2026-11-10.lnk",
+    "RetiredShortcutSHA256": "7EA90AB2AD8038E84F20EB558FD001F0C67A55AA93F0342353C417A864517B93",
+    "DeletedTaskPartial": "E:\\Project\\VSL Clinic\\Organization\\CleanupInstaller_2026-11-10\\superseded-setup.partial",
+    "DeletedBytes": 2617873924,
+    "DeletedSHA256": "389848928755D8CF5B39C50EF28BC4BC837A342FDF3B646B42D321C7E20992DB",
+    "ObservedFreeDelta": 2617876480,
+    "PreservedSourceSnapshot": true,
+    "Passed": true
+  },
+  "retained_inputs": {
+    "passed": true,
+    "links_verified": 75,
+    "documents": [
+      {
+        "path": "E:\\Project\\VSL Clinic\\Demo\\KICH_BAN_DEMO_VSL_CLINIC_0.3.4.docx",
+        "sha256": "8615355232cb134542fef95dbb0d58954f648de4dfab07d192715e35a06e3975",
+        "links_verified": 24,
+        "unchanged_text_and_layout_parts": true
+      },
+      {
+        "path": "E:\\Project\\VSL Clinic\\Demo\\KICH_BAN_HOI_BENH_VSL_CLINIC_0.3.6.docx",
+        "sha256": "c1af6167db4ffdb172fc71f60ede244457a16c05b952dd9e2b21ca44f0075ecd",
+        "links_verified": 51,
+        "unchanged_text_and_layout_parts": true
+      }
+    ],
+    "original_research_weights": [
+      {
+        "path": "E:\\Project\\VSL Clinic\\Source\\assets\\multimodal100\\models\\fusion.pt",
+        "sha256": "1367a90f4cd3fedeba1e62b4314eaa95f0cf94f82983b722130bb61d85325c99",
+        "bytes": 2308201,
+        "unchanged": true
+      },
+      {
+        "path": "E:\\Project\\VSL Clinic\\Source\\assets\\multimodal100\\models\\sign_only.pt",
+        "sha256": "f1a0ea4ae20f66946ac35b3ccfdd1c4a859fdce0acf35b48d21b2cdf9aed4180",
+        "bytes": 2308201,
+        "unchanged": true
+      },
+      {
+        "path": "E:\\Project\\VSL Clinic\\Source\\assets\\multimodal100\\models\\mouth_only.pt",
+        "sha256": "b1a41f9eea2ba4b3988b9994d33a353f23b5d04987576a73e74be34baf24c5fe",
+        "bytes": 2308201,
+        "unchanged": true
+      },
+      {
+        "path": "E:\\Project\\VSL Clinic\\Source\\assets\\multimodal100\\models\\foundations\\spoter.safetensors",
+        "sha256": "d62ed125de51c5719daa48f340f66695353e24776a534ac28266b86663dd185e",
+        "bytes": 24974624,
+        "unchanged": true
+      },
+      {
+        "path": "E:\\Project\\VSL Clinic\\Source\\assets\\multimodal100\\models\\foundations\\vlr_pretrained.pt",
+        "sha256": "b38177ae98f1f3cbea1a4c183c2bca804cf0a576e99abd23aab85ae56f413280",
+        "bytes": 973787221,
+        "unchanged": true
+      }
+    ]
+  },
+  "baseline_payload_files": 3306,
+  "research_files": 190,
+  "all_deleted_log_paths_absent": true,
+  "one_installer_file": true,
+  "passed": true,
+  "limits": [
+    "Fixed prerecorded VSL100 and legacy samples only; no live patient/camera.",
+    "Synthetic microphone fixtures; no hospital room-noise or acoustic echo validation.",
+    "Review words remain silent until confirmed. Closed-set model scores are not calibrated accuracy.",
+    "Noncommercial research artifact under the bundled AV-HuBERT license."
+  ]
+}
