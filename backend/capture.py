@@ -12,6 +12,7 @@ import cv2
 from .landmarks import LandmarkDetector
 from .recognition import Recognizer
 from .live_segmenter import LiveSegmenter
+from multimodal.preview import LatestPreview
 
 
 @dataclass
@@ -32,6 +33,7 @@ class Run:
     inflight: int = 0
     segment_lock: threading.Lock = field(default_factory=threading.Lock)
     started: float = field(default_factory=time.perf_counter)
+    preview: LatestPreview | None = None
 
 
 class CaptureEngine:
@@ -55,6 +57,14 @@ class CaptureEngine:
             self.generation += 1
             run = Run(self.generation, source, source_kind)
             self.current = run
+            def publish_preview(jpeg):
+                with self.preview_lock:
+                    if self.current is run and not run.cancel.is_set():
+                        self.preview = jpeg
+                        self.preview_version += 1
+            run.preview = LatestPreview(publish_preview, run.cancel, run.reader_done)
+            run.threads.append(run.preview.thread)
+            run.preview.thread.start()
             with self.preview_lock:
                 self.preview = None
                 self.preview_version += 1
@@ -107,7 +117,6 @@ class CaptureEngine:
                     return
             base = time.perf_counter()
             run.started = base
-            preview_at = 0.0
             while not run.cancel.is_set():
                 ok, bgr = capture.read()
                 if not ok:
@@ -126,6 +135,7 @@ class CaptureEngine:
                 if ratio < 1:
                     bgr = cv2.resize(bgr, None, fx=ratio, fy=ratio, interpolation=cv2.INTER_AREA)
                 run.captured += 1
+                run.preview.offer(bgr, time.perf_counter() * 1000)
                 item = (bgr, timestamp_ms, epoch_ms)
                 try:
                     run.frames.put_nowait(item)
@@ -136,14 +146,6 @@ class CaptureEngine:
                     except queue.Empty:
                         pass
                     run.frames.put_nowait(item)
-                now = time.perf_counter()
-                if now - preview_at >= 1 / 20:
-                    success, encoded = cv2.imencode(".jpg", bgr, [cv2.IMWRITE_JPEG_QUALITY, 78])
-                    if success:
-                        with self.preview_lock:
-                            self.preview = encoded.tobytes()
-                            self.preview_version += 1
-                    preview_at = now
         except Exception as error:
             self.emit(run, {"type": "capture", "status": "error", "message": str(error)})
             run.cancel.set()
@@ -170,6 +172,7 @@ class CaptureEngine:
         last_notice = 0.0
         try:
             with LandmarkDetector(self.recognizer.assets) as detector:
+                detector.warmup()
                 run.detector_ready.set()
                 while not run.cancel.is_set():
                     try:

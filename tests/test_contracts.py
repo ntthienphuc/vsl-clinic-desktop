@@ -49,10 +49,10 @@ def test_uncovered_content_never_becomes_partial_signs(session, text):
 
 def test_compound_words_longest_match():
     result = TextPlanner(WORDS).plan("Bác sĩ, khám bệnh. Uống nước; nghỉ ngơi!")
-    assert not result["supported"]
+    assert result["supported"]  # Explicit clause boundaries now compose naturally.
     assert result["coverage"] == 1
-    assert not result["grammar_supported"]
-    assert [item["label"] for item in result["glosses"]] == ["Bác sĩ", "Khám bệnh", "Uống", "Nước", "Nghỉ ngơi"]
+    assert result["grammar_supported"]
+    assert [item["label"] for item in result["glosses"]] == ["Bác sĩ", "Khám bệnh", "Nước", "Uống", "Nghỉ ngơi"]
 
 
 def test_playback_waits_for_patient_and_clock_is_continuous(session, monkeypatch):
@@ -79,13 +79,13 @@ def test_playback_waits_for_patient_and_clock_is_continuous(session, monkeypatch
         session.control_playback("speed", identity, 99)
 
 
-def test_ordered_queue_and_stale_completion(session, monkeypatch):
+def test_replacement_preserves_history_and_rejects_stale_completion(session, monkeypatch):
     clock = [1000.0]
     monkeypatch.setattr("backend.session.now_ms", lambda: clock[0])
     first = session.send("Bác sĩ", "sign")
     first_playback = session.playback["id"]
     second = session.send("Cảm ơn", "sign")
-    assert len(session.pending) == 1
+    assert len(session.pending) == 0
     session.control_playback("ready", first_playback)
     clock[0] += session.playback["total_ms"]
     session.control_playback("complete", first_playback, iteration=0)
@@ -93,18 +93,20 @@ def test_ordered_queue_and_stale_completion(session, monkeypatch):
     next_playback = dict(session.playback)
     session.control_playback("complete", first_playback, iteration=0)
     assert session.playback == next_playback
-    assert first["status"] == "completed"
+    assert first["status"] == "interrupted"
+    assert first["superseded_by"] == second["id"]
     assert not session.pending
 
 
-def test_queue_bound_does_not_silently_drop(session):
+def test_successive_doctor_messages_replace_playback_without_losing_history(session):
     session.send("Đau", "sign")
     for _ in range(6):
         session.send("Mệt", "sign")
-    with pytest.raises(ValueError):
-        session.send("Khỏe", "sign")
-    assert len(session.messages) == 7
-    assert len(session.pending) == 6
+    latest = session.send("Khỏe", "sign")
+    assert len(session.messages) == 8
+    assert not session.pending
+    assert all(message["status"] == "interrupted" for message in session.messages[:-1])
+    assert session.playback["message_id"] == latest["id"]
 
 
 def test_generation_fence_and_reset(session):
@@ -160,8 +162,12 @@ def test_model_and_inherited_preprocessing():
 @pytest.mark.parametrize("entry", BANK["entries"], ids=[item["label"] for item in BANK["entries"]])
 def test_reference_geometry_and_provenance(entry):
     path = ASSETS / "motions" / (entry["id"] + ".json")
-    assert hashlib.sha256(path.read_bytes()).hexdigest() == entry["sha256"]
+    assert hashlib.sha256(path.read_bytes()).hexdigest() == entry.get("original_sha256", entry["sha256"])
+    from backend.motion_assets import motion_metadata
+    active = motion_metadata(ASSETS, entry)
     motion = json.loads(path.read_text(encoding="utf-8"))
+    assert active["duration_ms"] == motion["duration_ms"]
+    assert active["frame_count"] == len(motion["frames"])
     frames = np.asarray(motion["frames"])
     confidence = np.asarray(motion["confidence"])
     assert frames.shape == (72, 75, 3)
@@ -171,19 +177,26 @@ def test_reference_geometry_and_provenance(entry):
     assert ((confidence >= 0) & (confidence <= 1)).all()
     single = entry.get("source_kind") == "qipedc-single"
     assert len(motion["reference_ids"]) == len(set(motion["declared_signers"]))
-    assert len(motion["reference_ids"]) == 1 if single else len(motion["reference_ids"]) >= 4
     source_file = "qipedc-sources.json" if single else "source-manifest.json"
     sources = json.loads((ROOT / "research" / source_file).read_text(encoding="utf-8"))
     source = next(item for item in sources["words"] if item["id"] == entry["id"])
+    minimum = 1 if single else source.get("minimum_reference_signers", 4)
+    assert minimum in {1, 3, 4, 5}
+    assert len(motion["reference_ids"]) == 1 if single else len(motion["reference_ids"]) >= minimum
     if single:
         assert source["model_id"] is None
         assert source["demo"] is None
         assert motion["synthesis_profile"] == "palm-local-single-v1"
         assert source["source_url"].startswith("https://qipedc.moet.gov.vn/videos/")
         original = ASSETS / "reference-source/qipedc" / Path(source["references"][0]["path"]).name
+        if not original.is_file():
+            original = ROOT.parent / "Archive/LegacyWorkspace/assets/reference-source/qipedc" / original.name
         assert hashlib.sha256(original.read_bytes()).hexdigest() == motion["source_hashes"][0]
     else:
-        assert source["demo_source"]["video_id"] not in motion["reference_ids"]
+        if source.get("demo_source"):
+            assert source["demo_source"]["video_id"] not in motion["reference_ids"]
+        else:
+            assert source.get("demo") is None
     refs = {item["video_id"]: item for item in source["references"]}
     for identity, digest in zip(motion["reference_ids"], motion["source_hashes"], strict=True):
         assert refs[identity]["sha256"] == digest

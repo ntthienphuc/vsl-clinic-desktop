@@ -97,7 +97,10 @@ class RecognitionModes:
             self.running = True
             self.last_source = (source, source_kind)
             try:
-                assert provider.start(source, source_kind) == self.generation
+                started = provider.start(source, source_kind)
+                if started != self.generation:
+                    getattr(provider, "stop_and_wait", provider.stop)()
+                    raise RuntimeError("Capture was superseded while starting.")
             except Exception:
                 self.running = False
                 raise

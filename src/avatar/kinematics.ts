@@ -278,3 +278,29 @@ export function constrainWrist(frame: THREE.Quaternion, forearmDirection: THREE.
   const correction = new THREE.Quaternion().setFromUnitVectors(target, local);
   return { frame: frame.clone().multiply(correction), correctionDegrees: degrees(correction.angleTo(new THREE.Quaternion())) };
 }
+
+/** Filter wrist motion in the moving forearm frame. A world-space follower can
+ * lag behind a turning arm until the flexion angle crosses atan2's +/-pi seam;
+ * projecting that lagging frame then snaps between opposite joint limits. */
+export class WristFollower {
+  private rotation = new RotationFollower();
+  private forearm: THREE.Vector3 | null = null;
+
+  get maximumSpeed() { return this.rotation.maximumSpeed; }
+
+  step(target: THREE.Quaternion, forearmDirection: THREE.Vector3, dt: number) {
+    const direction = forearmDirection.clone().normalize();
+    if (this.forearm && this.rotation.value) {
+      const transport = new THREE.Quaternion().setFromUnitVectors(this.forearm, direction);
+      this.rotation.value.premultiply(transport);
+    }
+    const bounded = constrainWrist(target, direction);
+    const filtered = this.rotation.step(bounded.frame, dt);
+    const frame = constrainWrist(filtered, direction).frame;
+    // The next step starts at the orientation actually displayed, so projection
+    // cannot accumulate an invisible lag outside the anatomical guardrails.
+    this.rotation.value = frame.clone();
+    this.forearm = direction;
+    return { frame, correctionDegrees: bounded.correctionDegrees };
+  }
+}

@@ -1,0 +1,319 @@
+{
+  "schema": "clinic-055-final-acceptance-v1",
+  "checked_at": "2026-11-10T14:21:54.967303+00:00",
+  "passed": true,
+  "checks": {
+    "preinstall": true,
+    "portable_ui": true,
+    "old_fp32_ui": true,
+    "installed_ui": true,
+    "speed": true,
+    "overload": true,
+    "lifecycle": true,
+    "installation": true,
+    "installed_parity": true,
+    "shortcut": true,
+    "baseline_installer": true,
+    "current_source_parity": true,
+    "receipt_copies_equal": true,
+    "installer_hash": true,
+    "single_current_setup": true,
+    "baseline_git_retained": true,
+    "baseline_package_receipt_retained": true,
+    "installed_all_23_flow_checks": true,
+    "installed_no_wrong_green": true,
+    "installed_all_12_spoken": true,
+    "installed_preserves_paired_top1_count": true,
+    "installed_majority_clear": true,
+    "installed_preview_above20fps": true,
+    "installed_cpu_int8_default": true,
+    "same_12_vsl100_mouth_videos": true,
+    "actual_mouth_input": true,
+    "cpu_speed_benefit_both_phases": true
+  },
+  "problems": [],
+  "source_build_commit": "425c708d1786af6a8e1cc1904d25af083d8f8094",
+  "source_files_verified": 225,
+  "receipt_sha256": "8992f0faa84a886c33d8bc9717fda0d85deb5dabf01d687efb0a9bdb62ff6471",
+  "package_bytes": 4205304032,
+  "baseline_package_bytes": 8616432928,
+  "evidence": {
+    "preinstall": {
+      "path": "E:\\Project\\VSL Clinic\\Organization\\CPURealtime_2026-11-10\\v055\\PREINSTALL_GATE.json",
+      "sha256": "47e6b489533d48b58a84a5644f7b73bd1d54b7db11835e8e3ead4b78a7e45c91"
+    },
+    "portable_ui": {
+      "path": "E:\\Project\\VSL Clinic\\Organization\\MultimodalIntegration_2026-11-09\\packaged-ui-12-cpu-realtime-055-exe2\\REPORT.json",
+      "sha256": "e9d92171fff3e00bf224187ad59a3248f66a81021cc6a4c5c25bb42fbb10bdca"
+    },
+    "old_fp32_ui": {
+      "path": "E:\\Project\\VSL Clinic\\Organization\\MultimodalIntegration_2026-11-09\\packaged-ui-12-cpu-realtime-055-oldfp32-1\\REPORT.json",
+      "sha256": "12ebe5ffb675f2c52b72ff50864ea7115f143f41a2a6b9788cea39058cf9bf60"
+    },
+    "installed_ui": {
+      "path": "E:\\Project\\VSL Clinic\\Organization\\MultimodalIntegration_2026-11-09\\packaged-ui-12-cpu-realtime-055-installed1\\REPORT.json",
+      "sha256": "ab77ead793a63cf8b9563ac9de03b2916aeac2776b3da5cc005793dd7b2330ae"
+    },
+    "speed": {
+      "path": "E:\\Project\\VSL Clinic\\Organization\\CPURealtime_2026-11-10\\v055\\paired-speed-055\\REPORT.json",
+      "sha256": "570516bdd1780f17bea73fabcfede475d66224c049c7b932e0a2805a98a611c9"
+    },
+    "overload": {
+      "path": "E:\\Project\\VSL Clinic\\Organization\\CPURealtime_2026-11-10\\v055\\overload-final-01\\REPORT.json",
+      "sha256": "2b00fc761e78296b24fbb535d280e28c75cbaa445d98692ce2dbb1bf4900877d"
+    },
+    "lifecycle": {
+      "path": "E:\\Project\\VSL Clinic\\Organization\\MultimodalIntegration_2026-11-09\\stress-055\\LIFECYCLE.json",
+      "sha256": "cf2478a6cc63c87cf9b603fc43e5abfeaec19a65d39af03fee1c9c9e72c4c88b"
+    },
+    "build": {
+      "path": "E:\\Project\\VSL Clinic\\Organization\\Installer_0.5.5\\installer-build.json",
+      "sha256": "b7650059bd808f8042a014c31d284b66465803ee1ffe35eb05b74731d6c650c1"
+    },
+    "installation": {
+      "path": "E:\\Project\\VSL Clinic\\Organization\\Installer_0.5.5\\installation-command.json",
+      "sha256": "16ff516f89312135f3790b10c6777e137748f0592e523dc9512b24bacd6d8d6f"
+    },
+    "installed_parity": {
+      "path": "E:\\Project\\VSL Clinic\\Organization\\Installer_0.5.5\\installed-parity-final.json",
+      "sha256": "92d1462fed2f04bdce161834ef0c5ca0e281c3cb5747a4b90c31e30e55b27eb5"
+    },
+    "shortcut": {
+      "path": "E:\\Project\\VSL Clinic\\Organization\\Installer_0.5.5\\shortcut-runtime.json",
+      "sha256": "c0de4fbfe62786de411386a88ec58a9ec4a5efe5a6a6fe635e51c61444d51a9a"
+    },
+    "baseline_installer": {
+      "path": "E:\\Project\\VSL Clinic\\Organization\\Installer_0.5.5\\baseline-installer-archived.json",
+      "sha256": "6f7b789195979c7c17a6168c333e01e5035e1927bf9742d603d8e57d0335a017"
+    }
+  },
+  "limits": [
+    "Twelve reused VSL100 clips from two signers; not an independent 100-word accuracy benchmark.",
+    "One uncertain wrong top-1 is spoken after a beep as requested; no wrong green in the accepted runs.",
+    "Software preview/audio events, not display-photon or acoustic measurement.",
+    "FP32 GPU remains faster than INT8 CPU on this laptop; CPU improvement compares both models on CPU.",
+    "No live webcam, hospital noise or clinical validation; static idle and synthetic audio are bounded fixtures.",
+    "CPU models still coexist with WebGL avatar rendering on the laptop GPU; no GPU-free-machine or ARM validation."
+  ],
+  "runtime_summary": {
+    "installed_int8_cpu": {
+      "clips": 12,
+      "green": 8,
+      "yellow": 4,
+      "top1_correct": 11,
+      "wrong_green": 0,
+      "spoken_original": 12,
+      "wrong_spoken": 1,
+      "preview": {
+        "frames": 73,
+        "distinctFrames": 73,
+        "fps": 27.64063883351595,
+        "p95GapMs": 65.8127999999997,
+        "maxGapMs": 77.46250000000146,
+        "scope": "Real MJPEG transport arrivals with unique JPEG hashes; not display/photon FPS."
+      },
+      "latency": {
+        "last_active_frame_to_paint": {
+          "n": 12,
+          "p50": 1766.8729248046875,
+          "p95": 2019.34228515625,
+          "min": 1218.547607421875,
+          "max": 2070.036376953125
+        },
+        "last_active_frame_to_voice": {
+          "n": 12,
+          "p50": 1841.6707763671875,
+          "p95": 2226.33154296875,
+          "min": 1295.4912109375,
+          "max": 2315.036376953125
+        },
+        "backend_received_to_voice": {
+          "n": 12,
+          "p50": 72.6148681640625,
+          "p95": 267.896240234375,
+          "min": 43.710693359375,
+          "max": 275.969482421875
+        },
+        "inference": {
+          "n": 12,
+          "p50": 972.9160500019789,
+          "p95": 1153.2635000050068,
+          "min": 756.4034000039101,
+          "max": 1280.4499999955297
+        }
+      },
+      "shutdown_ms": 1335
+    },
+    "portable_int8_cpu": {
+      "clips": 12,
+      "green": 9,
+      "yellow": 3,
+      "top1_correct": 11,
+      "wrong_green": 0,
+      "spoken_original": 12,
+      "wrong_spoken": 1,
+      "preview": {
+        "frames": 72,
+        "distinctFrames": 72,
+        "fps": 26.610138237794164,
+        "p95GapMs": 71.48240000000078,
+        "maxGapMs": 100.51460000000225,
+        "scope": "Real MJPEG transport arrivals with unique JPEG hashes; not display/photon FPS."
+      },
+      "latency": {
+        "last_active_frame_to_paint": {
+          "n": 12,
+          "p50": 1314.8924560546875,
+          "p95": 1508.846923828125,
+          "min": 1153.598388671875,
+          "max": 1994.865966796875
+        },
+        "last_active_frame_to_voice": {
+          "n": 12,
+          "p50": 1345.92578125,
+          "p95": 1700.339111328125,
+          "min": 1180.598388671875,
+          "max": 2204.865966796875
+        },
+        "backend_received_to_voice": {
+          "n": 12,
+          "p50": 61.0343017578125,
+          "p95": 262.13525390625,
+          "min": 48.124755859375,
+          "max": 263.511962890625
+        },
+        "inference": {
+          "n": 12,
+          "p50": 724.6611999981105,
+          "p95": 922.4364000037313,
+          "min": 606.3780000060797,
+          "max": 1103.05340000242
+        }
+      },
+      "shutdown_ms": 1316
+    },
+    "old_fp32_gpu": {
+      "clips": 12,
+      "green": 9,
+      "yellow": 3,
+      "top1_correct": 11,
+      "wrong_green": 0,
+      "spoken_original": 12,
+      "wrong_spoken": 1,
+      "preview": {
+        "frames": 70,
+        "distinctFrames": 70,
+        "fps": 26.29330979688336,
+        "p95GapMs": 71.38350000000355,
+        "maxGapMs": 105.2560999999987,
+        "scope": "Real MJPEG transport arrivals with unique JPEG hashes; not display/photon FPS."
+      },
+      "latency": {
+        "last_active_frame_to_paint": {
+          "n": 12,
+          "p50": 800.5321044921875,
+          "p95": 891.908447265625,
+          "min": 722.04931640625,
+          "max": 951.786865234375
+        },
+        "last_active_frame_to_voice": {
+          "n": 12,
+          "p50": 847.0595703125,
+          "p95": 1076.24560546875,
+          "min": 769.116455078125,
+          "max": 1163.786865234375
+        },
+        "backend_received_to_voice": {
+          "n": 12,
+          "p50": 65.8624267578125,
+          "p95": 271.512451171875,
+          "min": 45.93359375,
+          "max": 284.24560546875
+        },
+        "inference": {
+          "n": 12,
+          "p50": 303.88665000349283,
+          "p95": 421.6335000023246,
+          "min": 278.7457999885082,
+          "max": 424.6220000013709
+        }
+      },
+      "shutdown_ms": 2469
+    }
+  },
+  "cpu_paired": {
+    "alternating": {
+      "fp32": {
+        "n": 24,
+        "median_ms": 773.874500002421,
+        "p95_ms": 926.4097599996601,
+        "correct_clips": 11,
+        "peak_rss_mib": 2729.78515625,
+        "final_rss_mib": 1624.390625
+      },
+      "int8": {
+        "n": 24,
+        "median_ms": 604.5187499985332,
+        "p95_ms": 775.8979700000053,
+        "correct_clips": 11,
+        "peak_rss_mib": 1152.4375,
+        "final_rss_mib": 1152.33203125
+      },
+      "top1_same_rounds": 24,
+      "max_probability_delta": 0.005536443631985341,
+      "overlapping_rounds": 0,
+      "latency_reduction_pct": 21.88413625250063
+    },
+    "simultaneous": {
+      "fp32": {
+        "n": 24,
+        "median_ms": 870.1972999988357,
+        "p95_ms": 1077.3626350004631,
+        "correct_clips": 11,
+        "peak_rss_mib": 2729.78515625,
+        "final_rss_mib": 1624.67578125
+      },
+      "int8": {
+        "n": 24,
+        "median_ms": 732.6542000009795,
+        "p95_ms": 920.3026399980444,
+        "correct_clips": 11,
+        "peak_rss_mib": 1152.95703125,
+        "final_rss_mib": 1152.83203125
+      },
+      "top1_same_rounds": 24,
+      "max_probability_delta": 0.005536443631985341,
+      "overlapping_rounds": 24,
+      "latency_reduction_pct": 15.805967221231354
+    }
+  },
+  "installer": {
+    "version": "0.5.5",
+    "created_at": "2026-11-10T14:07:06.308330+00:00",
+    "setup": "E:\\Project\\VSL Clinic\\Installer\\VSL-Clinic-Setup-0.5.5.exe",
+    "bytes": 1718170679,
+    "sha256": "455cb21d4af041faa20d2610a6fa9ea7f17b1e52331191f352051eb0c7067cb1",
+    "compiler": "E:\\Project\\VSL Clinic\\Organization\\CleanupInstaller_2026-11-10\\compiler\\ISCC.exe",
+    "compiler_sha256": "e0f9f1dc32032650c6629f6dee41eb6d20ba140e4e3c07c25d8a24f9ba781644",
+    "payload_receipt_sha256": "8992f0faa84a886c33d8bc9717fda0d85deb5dabf01d687efb0a9bdb62ff6471",
+    "inventory_passed": true,
+    "installation_verified": false,
+    "note": "Build receipt only. Verify a real installation and installed app before handoff."
+  },
+  "installed_parity": {
+    "checked_at": "2026-11-10T14:19:47.235119+00:00",
+    "payload": "E:\\Project\\VSL Clinic\\App\\0.5.5\\win-unpacked",
+    "installed": "C:\\Users\\thien\\AppData\\Local\\Programs\\VSL Clinic",
+    "files_verified": 23879,
+    "payload_bytes": 4205304032,
+    "extra_files": [
+      "unins000.dat",
+      "unins000.exe"
+    ],
+    "receipt_sha256": "8992f0faa84a886c33d8bc9717fda0d85deb5dabf01d687efb0a9bdb62ff6471",
+    "launcher_sha256": "2a883024136208da63e6fcf029175e9d9f069b32edf38b00a67a5d706f988bed",
+    "problems": [],
+    "passed": true,
+    "scope": "Byte parity for every portable file, including Electron, models, runtime and voice. Runtime and UI checks are separate."
+  }
+}

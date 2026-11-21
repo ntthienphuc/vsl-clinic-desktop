@@ -1,0 +1,36 @@
+/* Native dialog behavior, shared task-oriented settings. */
+.sheet-dialog { width: min(760px, calc(100vw - 40px)); max-height: calc(100dvh - 48px); border: 1px solid #dce4d6; border-radius: 20px; padding: 0; background: #fff; color: #304b39; box-shadow: 0 24px 90px #18352329; }
+.sheet-dialog[open] { display: flex; flex-direction: column; }
+.sheet-dialog::backdrop { background: #203d3060; backdrop-filter: blur(4px); }
+.sheet-heading { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; gap: 16px; border-bottom: 1px solid #edf0e8; }
+.sheet-heading h2 { font-size: 20px; font-weight: 600; letter-spacing: -.4px; }
+.sheet-content { min-height: 0; overflow-y: auto; padding: 24px; }
+.sheet-content .section-heading { padding-left: 0; padding-right: 0; }
+.sheet-content label { line-height: 1.5; }
+.settings-voice-option, .conversation-send-option { font-size: 14px; }
+.settings-heading { font-size: 15px; margin-top: 24px; }
+.sheet-content select, .sheet-content input:not([type=checkbox]) { border-color: #c9d7c3; border-radius: 9px; font-size: 14px; }
+.sheet-content .recognition-mode-panel { padding: 0 0 12px; }
+.recognition-mode-options { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+.recognition-mode-options button { display: flex; flex-direction: column; gap: 6px; text-align: left; border: 1px solid #d8e1d1; border-radius: 12px; background: #f9fbf7; padding: 13px; color: #5f7957; }
+.recognition-mode-options button.selected { padding: 12px; border: 2px solid #568361; background: #eef5e9; color: #345e3d; }
+.recognition-mode-options strong { font-size: 14px; }
+.recognition-mode-options span { font-size: 12px; }
+.recognition-mode-summary { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 12px; padding-top: 6px; }
+.recognition-mode-summary .text-button { font-size: 12px; }
+.recognition-vocabulary { display: grid; grid-template-columns: repeat(auto-fill,minmax(140px,1fr)); gap: 8px; }
+.recognition-vocabulary > div { padding: 10px; background: #f1f5ed; border-radius: 8px; display: grid; gap: 3px; }
+.recognition-vocabulary small { color: #708468; font-size: 12px; }
+.vocabulary-search { width: 100%; padding: 10px; min-height: 42px; margin-bottom: 12px; }
+.source-select select { font-size: 14px; }
+.source-options { padding: 0; }
+.source-select { margin-top: 14px; }
+.upload-button { margin: 14px 0; font-size: 14px; }
+.diagnostics { margin-top: 18px; font-size: 12px; border-top: 1px solid var(--line); padding-top: 14px; }
+.diagnostic-grid, .diagnostics p { font-size: 11px; }
+.diagnostics summary { min-height: 36px; }
+.session-reset-option { margin-top: 18px; padding-top: 12px; }
+.temporary-conversation { border: 1px solid var(--line); border-radius: 12px; margin: 15px 0; }
+.temporary-conversation .conversation { max-height: 50vh; }
+.temporary-help { color: #74846b; font-size: 14px; }
+@media (max-width: 599px) { .sheet-dialog { width: calc(100vw - 20px); max-height: calc(100dvh - 24px); border-radius: 15px; } .sheet-heading { padding: 16px 18px; } .sheet-heading h2 { font-size: 18px; } .sheet-content { padding: 18px; } }

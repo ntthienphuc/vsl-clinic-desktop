@@ -9,9 +9,9 @@ from collections import deque
 from .text_to_sign import TextPlanner
 from .playback import build_timeline
 from .patient_turns import PatientTurns
-from .patient_handover import PatientHandover
 from .avatar_voice import attach_narration
 from .speech_repair import repair_speech
+from .ui_snapshot import ui_copy
 
 
 def now_ms():
@@ -47,8 +47,7 @@ class ClinicSession:
         self.recognition_seen = deque(maxlen=512)
         self.recognition_sequence = None
         self.turns = PatientTurns()
-        self.handover = PatientHandover()
-        self.conversation = {"status": "idle", "mode": "manual", "epoch": identity(),
+        self.conversation = {"status": "idle", "mode": "auto", "epoch": identity(),
                              "source": {"kind": "camera", "camera_index": 0}, "started_at_ms": None}
         self.speech_drafts = []
         self.speech_seen = set()
@@ -58,18 +57,19 @@ class ClinicSession:
         self.revision += 1
         self.broadcast()
 
-    def snapshot(self):
+    def snapshot(self, *, diagnostics=False):
+        clone = copy.deepcopy if diagnostics else ui_copy
         return {
             "session_id": self.session_id, "revision": self.revision,
-            "server_time_ms": now_ms(), "messages": copy.deepcopy(self.messages),
-            "capture": dict(self.capture), "current_result": copy.deepcopy(self.current_result),
-            "playback": copy.deepcopy(self.playback), "pending_count": len(self.pending),
+            "server_time_ms": now_ms(), "messages": clone(self.messages),
+            "capture": dict(self.capture), "current_result": clone(self.current_result),
+            "playback": clone(self.playback), "pending_count": len(self.pending),
             "clients": {role: sum(item[0] == role for item in self.listeners.values()) for role in ("doctor", "patient")},
-            "conversation": copy.deepcopy(self.conversation),
-            "patient_turn": copy.deepcopy(self.turns.current),
-            "speech_drafts": copy.deepcopy(self.speech_drafts),
+            "conversation": clone(self.conversation),
+            "patient_turn": clone(self.turns.current),
+            "speech_drafts": clone(self.speech_drafts),
             "avatar_voice_enabled": self.avatar_voice_enabled,
-            "recognition": copy.deepcopy(self.recognition),
+            "recognition": clone(self.recognition),
             "temporary": ({"id": self.temporary["id"], "saved_at_ms": self.temporary["saved_at_ms"],
                            "message_count": len(self.temporary["messages"]), "draft_count": len(self.temporary["speech_drafts"])}
                           if self.temporary else None),
@@ -105,7 +105,10 @@ class ClinicSession:
                 self.capture.pop("quality_warning", None)
             if event["status"] in {"error", "idle", "no_person", "starting"}:
                 self.current_result = None
-            self.handover.observe(self.playback, self.capture, self.conversation["mode"] == "auto", self.elapsed, now_ms())
+        elif event["type"] == "segment_ignored":
+            # Diagnostic only: a brief return-motion flick is not a patient word.
+            self.metrics.append({**event, "recorded_at_ms": now_ms()})
+            self.metrics = self.metrics[-500:]
         elif event["type"] == "recognition_unavailable":
             self.capture["quality_warning"] = event.get("quality_warning") or event.get("policy", {}).get("prompt")
             self.current_result = None
@@ -154,10 +157,8 @@ class ClinicSession:
             self.messages = self.messages[-100:]
             self.current_result = message
             self.capture.pop("quality_warning", None)
-            if not message["uncertain"] and self.conversation["mode"] == "auto" and self.playback and (self.playback["status"] == "playing" or self.playback.get("pause_reason") == "patient_activity"):
-                self.playback["elapsed_ms"] = self.elapsed()
-                self.playback["status"] = "paused"
-                self.playback["pause_reason"] = "patient_reply"
+            # Patient words and the doctor's avatar have independent clocks.
+            # A reply must not interrupt a sign or leave queued speech waiting.
             self.metrics.append({"type": "recognition", "message_id": message["id"], **event})
             self.metrics = self.metrics[-500:]
         self.changed()
@@ -170,8 +171,7 @@ class ClinicSession:
 
     def tick(self):
         turn_changed = self.turns.tick(now_ms(), self.capture)
-        handover_changed = self.handover.settle(self.playback, self.capture, now_ms())
-        if turn_changed or handover_changed:
+        if turn_changed:
             self.changed()
 
     def configure_conversation(self, mode: str, source: dict | None = None):
@@ -227,7 +227,8 @@ class ClinicSession:
             reason = "Chưa nghe rõ hoặc câu quá dài. Bạn hãy nói lại từng ý ngắn, ngắt một nhịp giữa các ý."
         elif not plan["supported"]:
             reason_code = "unsupported"
-            reason = "Chưa có đủ ký hiệu hoặc mẫu câu này. Bạn hãy nói lại bằng câu ngắn hơn, hoặc chọn câu có sẵn."
+            reason = plan.get("message", "Có phần chưa thể hiện đủ bằng ký hiệu. Bạn có thể sửa câu hoặc gửi nguyên văn bằng chữ.")
+            reason += " Bạn cũng có thể nói lại từng ý."
         elif self.conversation["mode"] == "auto":
             try:
                 message = self.send(spoken_text, "sign")
@@ -243,6 +244,7 @@ class ClinicSession:
         draft = {"id": key, "text": spoken_text, "raw_text": result["text"], "repair": repair, "created_at_ms": now_ms(),
                  "reason": reason or "Kiểm tra nội dung rồi gửi.", "supported": plan["supported"],
                  "reason_code": reason_code,
+                 "suggestions": plan.get("suggestions", []),
                  "unsupported": list(dict.fromkeys(item["text"] for item in plan.get("unsupported", [])))}
         self.speech_drafts.append(draft)
         # Unsent speech is not silently discarded. Stop accepting before overflow.
@@ -264,22 +266,28 @@ class ClinicSession:
             raise ValueError("Unknown message mode")
         if mode == "sign" and not plan["supported"]:
             raise ValueError(plan["message"])
-        if mode == "sign" and len(self.pending) >= 6:
-            raise ValueError("Đã có 6 nội dung đang chờ. Vui lòng chờ phát xong.")
         message = {"id": identity(), "role": "doctor", "text": plan["text"], "created_at_ms": now_ms(),
                    "mode": mode, "glosses": plan["glosses"], "status": "sent",
                    "phrase_id": plan.get("phrase_id"), "nonmanual": plan.get("nonmanual", "neutral"),
                    "act": plan.get("act", "sequence"), "clauses": plan.get("clauses", [])}
         if mode == "text":
             message["presented_at_ms"] = now_ms()
+        # A newly sent doctor utterance supersedes their previous delivery.
+        # Patient recognition never calls this path. Discarding the old playback
+        # ID also fences late ready/complete callbacks from the patient window.
+        if self.playback and self.playback["status"] in {"loading", "playing", "paused"}:
+            previous = next((item for item in self.messages if item["id"] == self.playback["message_id"]), None)
+            if previous:
+                previous.update(status="interrupted", interrupted_at_ms=now_ms(),
+                                interrupted_elapsed_ms=self.elapsed(), superseded_by=message["id"])
+        for queued in self.pending:
+            queued.update(status="cancelled", superseded_by=message["id"])
+        self.pending.clear()
+        self.playback = None
         self.messages.append(message)
         self.messages = self.messages[-100:]
         if mode == "sign":
-            if self.playback and self.playback["status"] not in {"completed", "stopped"}:
-                self.pending.append(message)
-                message["status"] = "queued"
-            else:
-                self._start_playback(message)
+            self._start_playback(message)
         self.changed()
         return message
 
@@ -329,7 +337,6 @@ class ClinicSession:
             playback["elapsed_ms"] = self.elapsed()
             playback["status"] = "paused"
         elif action == "resume" and playback["status"] == "paused":
-            self.handover.manual()
             playback["started_at_ms"] = now_ms()
             playback["status"] = "playing"
             playback.pop("pause_reason", None)
@@ -371,8 +378,6 @@ class ClinicSession:
         message["text"] = text.strip()
         message["status"] = "confirmed"
         message["uncertain"] = False
-        if self.conversation["mode"] == "auto" and self.playback and (self.playback["status"] == "playing" or self.playback.get("pause_reason") == "patient_activity"):
-            self.playback.update(elapsed_ms=self.elapsed(), status="paused", pause_reason="patient_reply")
         for turn in self.messages:
             if message in turn.get("words", []):
                 from .patient_turns import paraphrase

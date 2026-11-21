@@ -13,12 +13,19 @@ def digest(path: Path) -> str:
         return hashlib.file_digest(stream, 'sha256').hexdigest()
 
 
-def verify(payload: Path, installed: Path) -> dict:
+def verify(payload: Path, installed: Path, compute: str | None = None) -> dict:
     payload, installed = payload.resolve(strict=True), installed.resolve(strict=True)
     if payload == installed:
         raise ValueError('Installation must be separate from the portable build.')
-    files = sorted(p for p in payload.rglob('*') if p.is_file())
+    all_files = sorted(p for p in payload.rglob('*') if p.is_file())
     problems = []
+    preference = installed / 'runtime-preference.json'
+    selected = json.loads(preference.read_text('utf8')).get('compute') if preference.exists() else 'gpu'
+    if selected not in {'cpu', 'gpu'} or compute and selected != compute:
+        problems.append(dict(reason='installed compute preference differs', expected=compute, selected=selected))
+    excluded = [p for p in all_files if selected == 'cpu' and p.relative_to(payload).as_posix().startswith('resources/multimodal-runtime/')]
+    excluded_set = set(excluded)
+    files = [p for p in all_files if p not in excluded_set]
     total = 0
     for source in files:
         relative = source.relative_to(payload)
@@ -33,17 +40,18 @@ def verify(payload: Path, installed: Path) -> dict:
     expected = {p.relative_to(payload).as_posix() for p in files}
     extra = sorted(p.relative_to(installed).as_posix() for p in installed.rglob('*')
                    if p.is_file() and p.relative_to(installed).as_posix() not in expected)
-    unexpected = [name for name in extra if name not in {'unins000.exe', 'unins000.dat', 'unins000.msg'}]
+    unexpected = [name for name in extra if name not in {'unins000.exe', 'unins000.dat', 'unins000.msg', 'runtime-preference.json'}]
     if unexpected:
         problems.append(dict(reason='unexpected installed files', paths=unexpected))
     if not (installed / 'unins000.exe').is_file():
         problems.append(dict(reason='Windows uninstaller missing'))
     return dict(checked_at=datetime.now(timezone.utc).isoformat(), payload=str(payload),
-                installed=str(installed), files_verified=len(files), payload_bytes=total,
+                installed=str(installed), files_verified=len(files), payload_bytes=total, compute=selected,
+                excluded_gpu_files=len(excluded), saved_gpu_bytes=sum(p.stat().st_size for p in excluded),
                 extra_files=extra, receipt_sha256=digest(payload / 'BUILD_RECEIPT.json'),
                 launcher_sha256=digest(installed / 'VSL Clinic.exe'),
                 problems=problems, passed=not problems,
-                scope='Byte parity for every portable file, including Electron, models, runtime and voice. Runtime and UI checks are separate.')
+                scope='Byte parity for every file selected by the installer, including Electron, models, runtime and voice. CPU excludes the entire GPU runtime and rejects leftover GPU files. Runtime and UI checks are separate.')
 
 
 def main() -> None:
@@ -51,8 +59,9 @@ def main() -> None:
     parser.add_argument('--payload', type=Path, required=True)
     parser.add_argument('--installed', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--compute', choices=['cpu', 'gpu'])
     args = parser.parse_args()
-    report = verify(args.payload, args.installed)
+    report = verify(args.payload, args.installed, args.compute)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2), 'utf8')
     print(json.dumps(report, indent=2))

@@ -56,3 +56,7 @@ assets/multimodal-samples/*.mp4
 # Current product screenshots are small, reviewed UI images used by README.
 !docs/evidence/clinic-052-minimal-doctor-1280.png
 !docs/evidence/clinic-052-minimal-patient-1280.png
+
+# Release motion data restored from an authorized local source copy.
+/assets/motions/*.vslm
+/assets/motions/*.json

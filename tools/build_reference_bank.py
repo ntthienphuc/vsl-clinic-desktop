@@ -295,7 +295,9 @@ def main() -> None:
     updated_ids = {entry["id"] for entry in entries}
     combined = [entry for entry in previous.get("entries", []) if entry["id"] not in updated_ids] + entries
     method = "local-consensus-plus-explicit-qipedc-single-v1" if any(entry.get("source_kind") == "qipedc-single" for entry in combined) else "shared-band-DTW-medoid-weighted-palm-local-consensus-v2"
-    manifest_path.write_text(json.dumps({"schema": "clinic-bank-v1", "method": method, "entries": combined, "extraction_errors": errors}, ensure_ascii=False, indent=2), encoding="utf-8")
+    temporary = manifest_path.with_suffix('.json.tmp')
+    temporary.write_text(json.dumps({"schema": "clinic-bank-v1", "method": method, "entries": combined, "extraction_errors": errors}, ensure_ascii=False, indent=2), encoding="utf-8")
+    temporary.replace(manifest_path)
 
 
 if __name__ == "__main__":

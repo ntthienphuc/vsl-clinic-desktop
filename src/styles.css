@@ -24,38 +24,6 @@
   --line: #e4ece9;
   --shadow: 0 5px 24px #163d3410;
 }
-
-.dictation-panel {
-  margin: 0 24px 14px;
-  padding: 12px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: #f6faf8;
-}
-.dictation-panel.recording {
-  border-color: #369b87;
-}
-.dictation-toolbar, .dictation-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-.dictation-toolbar select {
-  max-width: 180px;
-  font-size: 12px;
-  padding: 6px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-}
-.dictation-help, .dictation-actions small {
-  font-size: 12px;
-  color: #536b70;
-  line-height: 1.5;
-}
-.dictation-help {
-  margin-top: 6px;
-}
 .audio-meter {
   flex: 1;
   min-width: 35px;
@@ -69,31 +37,6 @@
   display: block;
   height: 100%;
   background: #087b6b;
-}
-.dictation-review {
-  padding-top: 12px;
-}
-.dictation-review label {
-  font-size: 13px;
-  font-weight: 800;
-}
-.dictation-review label span {
-  font-weight: 400;
-}
-.dictation-review textarea {
-  width: 100%;
-  resize: vertical;
-  min-height: 80px;
-  margin: 7px 0;
-  padding: 10px;
-  border: 1px solid #cedfd7;
-  border-radius: 8px;
-  background: white;
-  color: #203a40;
-  line-height: 1.6;
-}
-.dictation-actions {
-  justify-content: space-between;
 }
 .inline-error, .review-note {
   color: #8a4d22;
@@ -565,10 +508,6 @@ h1, h2, h3, p {
   color: #799083;
 }
 
-.result-review {
-  padding: 0 23px 20px;
-}
-
 .alternative-list {
   display: flex;
   align-items: center;
@@ -579,11 +518,6 @@ h1, h2, h3, p {
   margin-bottom: 10px;
 }
 
-.confirm-row {
-  display: flex;
-  gap: 8px;
-}
-
 input, select {
   border: 1px solid #dfe8e4;
   border-radius: 7px;
@@ -591,11 +525,6 @@ input, select {
   background: white;
   padding: 9px 11px;
   font-size: 12px;
-}
-
-.confirm-row input {
-  flex: 1;
-  min-width: 0;
 }
 
 .segmented {
@@ -1274,28 +1203,6 @@ input, select {
   color: #91a297;
 }
 
-.feedback-buttons {
-  display: flex;
-  gap: 8px;
-  padding: 0 24px 22px;
-}
-
-.feedback-buttons .button {
-  flex: 1;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 12px;
-}
-
-.feedback-sent {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin: -8px 24px 15px;
-  font-size: 10px;
-  color: #699680;
-}
-
 .camera-preview {
   position: relative;
   aspect-ratio: 16 / 9;
@@ -1549,14 +1456,6 @@ input, select {
     padding: 11px;
     font-size: 11px;
   }
-  .feedback-buttons {
-    flex-wrap: wrap;
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-  .feedback-buttons .button {
-    min-width: 115px;
-  }
   .avatar-stage {
     height: 530px;
   }
@@ -1647,14 +1546,6 @@ input, select {
   }
   .patient-aside .doctor-caption.empty {
     font-size: 14px;
-  }
-  .patient-aside .feedback-buttons {
-    padding: 0 12px 12px;
-    gap: 6px;
-  }
-  .patient-aside .feedback-buttons .button {
-    padding: 8px;
-    min-width: 100%;
   }
   .patient-aside .camera-preview {
     height: 145px;
@@ -1770,9 +1661,6 @@ input, select {
   .patient-aside .camera-preview {
     height: clamp(170px, 24vh, 210px);
     aspect-ratio: auto;
-  }
-  .patient-aside .feedback-buttons {
-    padding-bottom: 16px;
   }
   .patient-aside {
     gap: 14px;

@@ -1,4 +1,4 @@
-"""Attach only allowlisted offline narration to the shared sign timeline."""
+"""Speak each signed gloss on the avatar's shared playback clock."""
 import json
 from pathlib import Path
 
@@ -8,41 +8,42 @@ def load_avatar_voice(assets: Path):
     return {item["id"]: item for item in json.loads(path.read_text(encoding="utf8"))["entries"]} if path.is_file() else {}
 
 
-def voice_for_clause(clause, glosses, bank):
-    key = "p:" + clause["phrase_id"] if clause.get("phrase_id") else (
-        "w:" + glosses[clause["gloss_start"]]["id"] if clause["gloss_end"] - clause["gloss_start"] == 1 else "")
-    return bank.get(key)
-
-
 def attach_narration(timing, glosses, bank):
-    # Preserve every measured sign stroke. If speech is longer, add a neutral
-    # pause after the clause's existing outro, never accelerate a handshape.
-    shift, cues, segments = 0, [], []
+    # Word clips follow sign order, including deliberate repetitions. Sentence
+    # recordings must not run ahead of (or reorder) the signed instruction.
     original = timing["timeline"]
+    segments, cues, extensions = [], [], []
+    shift = 0
+    for segment in original:
+        current = {**segment, "start_ms": segment["start_ms"] + shift,
+                   "end_ms": segment["end_ms"] + shift}
+        segments.append(current)
+        if segment["phase"] != "sign":
+            continue
+        index = segment["index"]
+        entry = bank.get("w:" + glosses[index]["id"])
+        if not entry:
+            continue
+        start = current["start_ms"]
+        end = start + entry["duration_ms"]
+        cues.append({"entry_id": entry["id"], "text": entry["text"], "file": entry["file"],
+                     "gloss_index": index, "start_ms": start, "end_ms": end,
+                     "duration_ms": entry["duration_ms"]})
+        # Never speed up a measured sign stroke or start the next word early.
+        # If needed, hold this sign's final pose while its voice finishes.
+        extra = max(0, end + 80 - current["end_ms"])
+        if extra:
+            segments.append({"phase": "voice_hold", "index": index,
+                             "source_ms": segment["source_end_ms"],
+                             "start_ms": current["end_ms"], "end_ms": current["end_ms"] + extra})
+            extensions.append((segment["end_ms"], extra))
+            shift += extra
     for clause in timing["clauses"]:
-        old_start, old_end = clause["start_ms"], clause["end_ms"]
-        entry = voice_for_clause(clause, glosses, bank)
-        for segment in original:
-            if old_start <= segment["start_ms"] < old_end:
-                segments.append({**segment, "start_ms": segment["start_ms"] + shift, "end_ms": segment["end_ms"] + shift})
-        clause["start_ms"] += shift
-        clause["end_ms"] += shift
-        extra = 0
-        if entry:
-            start = clause["start_ms"] + 350
-            end = start + entry["duration_ms"]
-            cues.append({"entry_id": entry["id"], "text": entry["text"], "file": entry["file"],
-                         "start_ms": start, "end_ms": end, "duration_ms": entry["duration_ms"]})
-            extra = max(0, end + 120 - clause["end_ms"])
-            if extra:
-                segments.append({"phase": "hold", "start_ms": clause["end_ms"],
-                                           "end_ms": clause["end_ms"] + extra, "index": clause["gloss_end"] - 1})
-                clause["end_ms"] += extra
-        shift += extra
-        for segment in original:
-            if segment["phase"] == "hold" and segment["start_ms"] == old_end:
-                segments.append({**segment, "start_ms": segment["start_ms"] + shift, "end_ms": segment["end_ms"] + shift})
+        for key in ("start_ms", "end_ms"):
+            at = clause[key]
+            clause[key] += sum(extra for boundary, extra in extensions if boundary <= at)
     timing["timeline"] = segments
     timing["total_ms"] += shift
     timing["audio_cues"] = cues
+    timing["narration_mode"] = "per_sign"
     return timing

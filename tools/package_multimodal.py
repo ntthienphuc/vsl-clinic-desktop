@@ -1,4 +1,4 @@
-"""Build the 0.5.x portable payload without duplicating immutable model DLLs.
+"""Build the 0.5.x/0.6.x portable payload without duplicating immutable model DLLs.
 
 Electron-builder still creates the EXE/app.asar/frontend. This wrapper excludes
 large local assets from its copying phase, then links verified immutable source
@@ -12,7 +12,8 @@ import shutil
 import subprocess
 import sys
 from datetime import datetime, timezone
-from packaging_assets import inactive_multimodal_weights
+from packaging_assets import inactive_package_assets, multimodal_runtime, extra_multimodal_runtimes
+from runtime_package import stage_runtime
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -60,8 +61,8 @@ def require_closed(package):
 def main():
     config = json.loads((ROOT / "package.json").read_text("utf8"))
     version = config["version"]
-    if not version.startswith("0.5."):
-        raise ValueError("This packager may only write the new 0.5.x integration")
+    if not version.startswith(("0.5.", "0.6.", "0.7.")):
+        raise ValueError("This packager may only write the 0.5.x/0.6.x/0.7.x integration")
     package = (ROOT / config["build"]["directories"]["output"] / "win-unpacked").resolve()
     allowed = (ROOT.parent / "App" / version).resolve()
     if not package.is_relative_to(allowed) or version == "0.4.1":
@@ -71,6 +72,7 @@ def main():
     def engine_inputs():
         files = list((ROOT / "backend").rglob("*.py")) + list((ROOT / "tools/hooks").rglob("*.py"))
         files += [ROOT / "tools/clinic-engine.spec", ROOT / "requirements.txt"]
+        files += [ROOT / "multimodal/preview.py"]  # Also embedded by backend.capture.
         return {p.relative_to(ROOT).as_posix(): digest(p) for p in sorted(files) if "__pycache__" not in p.parts}
     before = engine_inputs()
     command = [sys.executable, "-m", "PyInstaller", "--noconfirm", "--distpath", "build/engine",
@@ -92,7 +94,7 @@ def main():
     require_closed(package)
     subprocess.run(["node", str(ROOT / "node_modules/electron-builder/cli.js"),
                     "--win", "dir", "--config", str(custom)], cwd=ROOT, check=True)
-    inactive = inactive_multimodal_weights(ROOT / "assets")
+    inactive = inactive_package_assets(ROOT / "assets")
     for source in inactive:
         target = package / "resources/assets" / source.relative_to(ROOT / "assets")
         if not target.resolve().is_relative_to(package):
@@ -102,7 +104,9 @@ def main():
     stage_tree(ROOT / "assets", package / "resources/assets",
                skip=lambda p: p in inactive or "reference-source" in p.parts or p.suffix in {".partial", ".map"} or p == ROOT / "assets/language/runtime.zip")
     stage_tree(ROOT / "build/engine/ClinicEngine", package / "resources/engine")
-    stage_tree(ROOT / "build/multimodal-runtime", package / "resources/multimodal-runtime")
+    stage_runtime(multimodal_runtime(ROOT), package / "resources/multimodal-runtime", stage_tree)
+    for source, name in extra_multimodal_runtimes(ROOT):
+        stage_runtime(source, package / 'resources' / name, stage_tree)
     stage_tree(ROOT / "multimodal", package / "resources/multimodal")
     stage_tree(ROOT / "licenses", package / "resources/licenses")
     stage_tree(ROOT / "demo", package / "demo")

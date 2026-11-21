@@ -1,3 +1,5 @@
+> **Kịch bản VSL100 mới, 13/11/2026:** [Hai kịch bản bổ sung — 34 lượt, 62 nhãn VSL100](VSL100_THEM_2_KICH_BAN_2026-11-13/README.md). Dùng với bản vá top 1 hiện tại; tài liệu bên dưới là lịch sử.
+
 > **Kịch bản mới 0.3.6:** [Hai cuộc hỏi bệnh, 22 lượt](HOI_BENH_2026-11-01/README.md). Phần dưới là kịch bản cũ được giữ để đối chiếu.
 
 # Kịch bản demo VSL Clinic — bác sĩ và bệnh nhân

@@ -1,0 +1,30 @@
+{
+  "scope": "Authoring-time catalog and exact phrase lookup only; no app/model/UI/ASR test",
+  "created_at": "2026-11-13T07:59:41.358708+00:00",
+  "catalog": "assets/multimodal100/label_mapping.json",
+  "catalog_sha256": "e967e3dbb47f88816f176954fddfacd678be80a2e6d8ba10b907fd8039a783ba",
+  "catalog_labels": 100,
+  "all_patient_words_in_catalog": true,
+  "unique_words_total": 62,
+  "total_turns": 34,
+  "total_word_occurrences": 132,
+  "scenarios": [
+    {
+      "id": "01_Kho_ngu_met_va_hoi_benh",
+      "turns": 16,
+      "word_occurrences": 61,
+      "unique_words": 41,
+      "doctor_bank_phrases": 10,
+      "doctor_text_turns": 6
+    },
+    {
+      "id": "02_Dieu_duong_ho_tro_sinh_hoat",
+      "turns": 18,
+      "word_occurrences": 71,
+      "unique_words": 45,
+      "doctor_bank_phrases": 7,
+      "doctor_text_turns": 11
+    }
+  ],
+  "runtime_tested": false
+}

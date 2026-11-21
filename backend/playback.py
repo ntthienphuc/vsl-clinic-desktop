@@ -1,9 +1,9 @@
 """One serialized playback timeline, shared by the server and avatar renderer."""
 from __future__ import annotations
 
-import hashlib
 import json
 from pathlib import Path
+from .motion_assets import motion_metadata
 
 INTRO_MS = 350
 OUTRO_MS = 350
@@ -16,12 +16,12 @@ def load_join_profile(assets: Path) -> dict:
     if not path.is_file():
         return {}
     profile = json.loads(path.read_text(encoding="utf-8"))
+    bank = {entry["id"]: entry for entry in json.loads((assets / "motions/manifest.json").read_text(encoding="utf-8"))["entries"]}
     for identity, window in profile.get("windows", {}).items():
-        source = assets / "motions" / f"{identity}.json"
-        if hashlib.sha256(source.read_bytes()).hexdigest() != window["motion_sha256"]:
+        motion = motion_metadata(assets, bank[identity])
+        if motion["original_sha256"] != window["motion_sha256"]:
             raise ValueError(f"Sentence motion annotations are stale: {identity}")
-        motion = json.loads(source.read_text(encoding="utf-8"))
-        count = len(motion["frames"])
+        count = motion["frame_count"]
         if not 0 <= window["entry_frame"] < window["exit_frame"] < count:
             raise ValueError(f"Invalid sentence motion window: {identity}")
         window["entry_ms"] = motion["duration_ms"] * window["entry_frame"] / (count - 1)

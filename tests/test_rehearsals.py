@@ -28,6 +28,7 @@ def test_demo_speech_auto_routes_once_and_manual_waits(step):
     assert session.playback["glosses"]
     assert all(g["id"] in durations for g in session.playback["glosses"])
     session.reset()
+    session.configure_conversation("manual")
     session.start_conversation()
     assert session.speech_result(result, session.conversation["epoch"])["status"] == "review"
     assert not session.messages and session.playback is None

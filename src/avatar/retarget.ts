@@ -1,7 +1,8 @@
 import * as THREE from 'three';
 import { VRM, VRMHumanBoneName } from '@pixiv/three-vrm';
 import type { Point } from '../types';
-import { HandArticulation, RotationFollower, RULES, constrainWrist } from './kinematics';
+import { HandArticulation, WristFollower, constrainWrist, RULES } from './kinematics';
+import type { HandContact } from './contact';
 
 interface RestBone {
   node: THREE.Object3D;
@@ -59,10 +60,13 @@ export class HumanoidRetargeter {
   private rest = new Map<string, RestBone>();
   private span = 0.3;
   private hands = { left: new HandArticulation('left'), right: new HandArticulation('right') };
-  private palms = { left: new RotationFollower(), right: new RotationFollower() };
+  private palms = { left: new WristFollower(), right: new WristFollower() };
   private poles = new Map<string, THREE.Vector3>();
   private wrists = new Map<string, THREE.Vector3>();
   private armFrames = new Map<string, THREE.Quaternion>();
+  private armBindings = new Map<string, { axis: THREE.Vector3; reference: THREE.Quaternion; hanging: THREE.Vector3 }>();
+  private contactError = 0;
+  private palmFrames = new Map<string, THREE.Quaternion>();
   private diagnostics = { profile: RULES.profile, frames: 0, maximumReachError: 0, currentReachError: 0, bonesDriven: 0, shoulderSpan: 0, armLength: 0, fingerRotations: [] as number[], wristPositions: [] as number[], jointAngles: [] as number[][][], elbowFlexDegrees: [] as number[], fingerCorrectionDegrees: [] as number[], wristCorrectionDegrees: [] as number[], limitedFingerSegments: 0, maximumPalmSpeed: 0, degeneratePalms: 0, palmForward: [] as number[] };
 
   constructor(private vrm: VRM) {
@@ -80,6 +84,17 @@ export class HumanoidRetargeter {
     this.span = this.get('leftUpperArm').position.distanceTo(this.get('rightUpperArm').position);
     this.diagnostics.shoulderSpan = this.span;
     this.diagnostics.armLength = this.get('leftUpperArm').position.distanceTo(this.get('leftLowerArm').position) + this.get('leftLowerArm').position.distanceTo(this.get('leftHand').position);
+    for (const side of ['left', 'right'] as const) {
+      const hanging = new THREE.Vector3(side === 'left' ? .12 : -.12, -1, .04).normalize();
+      for (const [name, child] of [[`${side}UpperArm`, `${side}LowerArm`], [`${side}LowerArm`, `${side}Hand`]]) {
+        const rest = this.get(name);
+        const axis = this.get(child).position.clone().sub(rest.position).normalize().applyQuaternion(rest.quaternion.clone().invert());
+        const reference = name.endsWith('LowerArm')
+          ? this.get(`${side}UpperArm`).quaternion.clone().invert().multiply(rest.quaternion)
+          : transportAim(axis, rest.quaternion, hanging);
+        this.armBindings.set(name, { axis, reference, hanging });
+      }
+    }
   }
 
   private get(name: string): RestBone {
@@ -99,21 +114,121 @@ export class HumanoidRetargeter {
     this.diagnostics.bonesDriven += 1;
   }
 
-  private aim(name: string, child: string, targetDirection: THREE.Vector3) {
-    const rest = this.get(name);
-    const localDirection = this.get(child).position.clone().sub(rest.position).normalize().applyQuaternion(rest.quaternion.clone().invert());
-    const previous = this.armFrames.get(name) ?? rest.quaternion;
-    // Parallel-transport the full bone frame from the preceding direction.
-    // Re-solving a shortest arc from the fixed T pose introduces a roll
-    // singularity when an arm crosses its opposite rest direction (VRM0).
-    // This changes orientation without smoothing away the solved IK endpoint.
-    const desired = transportAim(localDirection, previous, targetDirection);
+  private aim(name: string, targetDirection: THREE.Vector3) {
+    const binding = this.armBindings.get(name)!;
+    const side = name.startsWith('left') ? 'left' : 'right';
+    let reference: THREE.Quaternion;
+    if (name.endsWith('LowerArm')) {
+      // Elbow is a hinge: inherit the upper arm's roll, then bend toward the
+      // solved wrist. Independently transporting both bones around successive
+      // signs accumulates different roll (holonomy), twisting the sleeve shut
+      // even after the hand has returned to the neutral position.
+      const upper = this.get(`${side}UpperArm`);
+      reference = upper.node.getWorldQuaternion(new THREE.Quaternion())
+        .multiply(binding.reference);
+    } else {
+      // Anchor the swing at the hanging arm, inside the signing workspace.
+      // Unlike the horizontal T-pose anchor this stays away from the opposite
+      // direction when a hand crosses the chest, and unlike a previous-frame
+      // anchor it returns to the same roll after a closed movement sequence.
+      reference = binding.reference;
+      // The exact overhead antipode has no unique swing axis. Only there use
+      // the preceding frame; normal signing and neutral poses remain absolute.
+      if (binding.hanging.dot(targetDirection.clone().normalize()) < -.98) {
+        reference = this.armFrames.get(name) ?? reference;
+      }
+    }
+    const desired = transportAim(binding.axis, reference, targetDirection);
     this.armFrames.set(name, desired.clone());
     this.worldRotation(name, desired);
   }
 
-  apply(points: Point[], deltaSeconds: number, seconds: number, question = 0) {
+  private landmark(side: 'left' | 'right', name: 'palm' | 'indexTip' | 'pairTip' | 'thumbTip' | 'indexMiddle') {
+    const position = (bone: string) => this.get(side + bone).node.getWorldPosition(new THREE.Vector3());
+    const tip = (finger: 'Index' | 'Middle' | 'Thumb') => {
+      const distal = this.get(side + finger + 'Distal'), previous = this.get(side + finger + (finger === 'Thumb' ? 'Proximal' : 'Intermediate'));
+      const restTip = distal.position.clone().sub(previous.position).multiplyScalar(.7).applyQuaternion(distal.quaternion.clone().invert());
+      return distal.node.localToWorld(restTip);
+    };
+    if (name === 'indexTip') return tip('Index');
+    if (name === 'indexMiddle') return position('IndexIntermediate');
+    if (name === 'thumbTip') return tip('Thumb');
+    if (name === 'pairTip') return tip('Index').add(tip('Middle')).multiplyScalar(.5);
+    return position('Hand').lerp(position('MiddleProximal'), .68);
+  }
+
+  private refineContact(contact: HandContact, dt: number, previous: { left?: THREE.Vector3; right?: THREE.Vector3 }) {
+    const worldPosition = (bone: RestBone) => bone.node.getWorldPosition(new THREE.Vector3());
+    const source = this.landmark('right', contact.point);
+    let target = contact.target === 'leftThumb' ? this.landmark('left', 'thumbTip')
+      : contact.target === 'leftIndex' ? this.get('leftIndexIntermediate').node.getWorldPosition(new THREE.Vector3())
+      : this.landmark('left', 'palm');
+    if (contact.target === 'abdomen') {
+      const center = worldPosition(this.get('leftUpperArm')).add(worldPosition(this.get('rightUpperArm'))).multiplyScalar(.5);
+      target = source.clone(); target.z = center.z + this.span * .55;
+    }
+    if (contact.target === 'forehead' || contact.target === 'foreheadCross') {
+      // Eye bones sit inside the face. The reviewed ClinicMale forehead mesh is
+      // ~0.115 m forward; this anchor includes the palm/finger surface thickness.
+      const head = this.get('head');
+      const rotation = head.node.getWorldQuaternion(new THREE.Quaternion()).multiply(head.quaternion.clone().invert());
+      const forehead = worldPosition(this.get('leftEye')).add(worldPosition(this.get('rightEye'))).multiplyScalar(.5)
+        .add(new THREE.Vector3(0, this.span * .15, this.span * .34).applyQuaternion(rotation));
+      if (contact.target === 'foreheadCross') {
+        // Fit the horizontal index first, then cross its middle phalanx with
+        // the vertical index. Fingertip-to-middle contact creates a T instead.
+        this.fitHandContact('left', 'indexMiddle', forehead, contact.weight, dt, previous.left);
+        target = this.landmark('left', 'indexMiddle').add(new THREE.Vector3(0, 0, this.span * .05).applyQuaternion(rotation));
+      } else target = forehead.add(new THREE.Vector3(-this.span * .07, 0, 0).applyQuaternion(rotation));
+    }
+    if (contact.target === 'rightCheek') {
+      const head = this.get('head');
+      const rotation = head.node.getWorldQuaternion(new THREE.Quaternion()).multiply(head.quaternion.clone().invert());
+      target = worldPosition(this.get('leftEye')).add(worldPosition(this.get('rightEye'))).multiplyScalar(.5)
+        .add(new THREE.Vector3(-this.span * .34, -this.span * .26, this.span * .21).applyQuaternion(rotation));
+    }
+    this.fitHandContact('right', contact.point, target, contact.weight, dt, previous.right);
+  }
+
+  private fitHandContact(side: 'left' | 'right', point: HandContact['point'], target: THREE.Vector3, weight: number, dt: number, previous?: THREE.Vector3) {
+    const upper = this.get(side + 'UpperArm'), lower = this.get(side + 'LowerArm'), wrist = this.get(side + 'Hand');
+    const worldPosition = (bone: RestBone) => bone.node.getWorldPosition(new THREE.Vector3());
+    const source = this.landmark(side, point);
+    const handBones = [...this.rest.keys()].filter(name => name.startsWith(side) && /Hand|Thumb|Index|Middle|Ring|Little/.test(name));
+    const rotations = handBones.map(name => [name, this.get(name).node.getWorldQuaternion(new THREE.Quaternion())] as const);
+    const frame = this.palmFrames.get(side)!;
+    const shoulder = worldPosition(upper);
+    // Blend once from the unconstrained pose. Re-applying a fractional weight
+    // inside the iterations would silently pull a fading contact to full strength.
+    const desired = source.clone().lerp(target, weight);
+    let forearm = worldPosition(wrist).sub(worldPosition(lower)).normalize();
+    for (let iteration = 0; iteration < 5; iteration++) {
+      const error = desired.clone().sub(this.landmark(side, point));
+      if (error.lengthSq() < .000001) break;
+      const proposed = worldPosition(wrist).add(error.clampLength(0, this.span * .45));
+      // Contact is part of the same movement, so it must not bypass the wrist
+      // speed limit already applied to the unconstrained source trajectory.
+      if (previous) proposed.sub(previous).clampLength(0, 3 * dt).add(previous);
+      const solved = solveArm(shoulder, proposed, worldPosition(lower), upper.position.distanceTo(lower.position), lower.position.distanceTo(wrist.position));
+      this.aim(side + 'UpperArm', solved.elbow.clone().sub(shoulder));
+      this.aim(side + 'LowerArm', solved.wrist.clone().sub(worldPosition(lower)));
+      forearm = worldPosition(wrist).sub(worldPosition(lower)).normalize();
+      const bounded = constrainWrist(frame, forearm);
+      const correction = bounded.frame.clone().multiply(frame.clone().invert());
+      for (const [name, rotation] of rotations) this.worldRotation(name, correction.clone().multiply(rotation));
+      this.palmFrames.set(side, bounded.frame);
+      const index = side === 'left' ? 0 : 1;
+      this.diagnostics.wristCorrectionDegrees[index] = Math.max(this.diagnostics.wristCorrectionDegrees[index] ?? 0, bounded.correctionDegrees);
+      this.diagnostics.currentReachError = Math.max(this.diagnostics.currentReachError, worldPosition(wrist).distanceTo(solved.wrist));
+    }
+    this.diagnostics.elbowFlexDegrees[side === 'left' ? 0 : 1] = THREE.MathUtils.radToDeg(worldPosition(lower).sub(shoulder).angleTo(forearm));
+    this.wrists.set(side, worldPosition(wrist));
+    this.contactError = Math.max(this.contactError, this.landmark(side, point).distanceTo(target));
+  }
+
+  apply(points: Point[], deltaSeconds: number, seconds: number, question = 0, contact?: HandContact) {
     const dt = THREE.MathUtils.clamp(deltaSeconds, 1 / 240, 0.1);
+    const previousContactWrists = contact ? { left: this.wrists.get('left')?.clone(), right: this.wrists.get('right')?.clone() } : {};
     const alpha = 1 - Math.exp(-dt * 35);
     this.diagnostics.bonesDriven = 0;
     this.diagnostics.currentReachError = 0;
@@ -177,7 +292,8 @@ export class HumanoidRetargeter {
       const torsoY = targetWrist.y - center.y;
       if (torsoY < 0.04 && torsoY > -this.span * 2.6) {
         const envelope = 1 - THREE.MathUtils.smoothstep(Math.abs(torsoX) / this.span, 0.62, 0.84);
-        targetWrist.z = THREE.MathUtils.lerp(targetWrist.z, Math.max(targetWrist.z, center.z + this.span * 0.95), envelope);
+        const clearance = side === 'right' && contact?.target === 'abdomen' ? THREE.MathUtils.lerp(.95, .55, contact.weight) : .95;
+        targetWrist.z = THREE.MathUtils.lerp(targetWrist.z, Math.max(targetWrist.z, center.z + this.span * clearance), envelope);
       }
       const previousWrist = this.wrists.get(side) ?? targetWrist.clone();
       const movement = targetWrist.clone().sub(previousWrist).multiplyScalar(alpha);
@@ -210,9 +326,9 @@ export class HumanoidRetargeter {
       const solved = solveArm(shoulder, targetWrist, targetElbow, upperLength, lowerLength);
       // Solve the complete chain after temporal filtering. Independently
       // smoothing these two rotations would break the IK/contact constraint.
-      this.aim(upper, lower, solved.elbow.clone().sub(shoulder));
+      this.aim(upper, solved.elbow.clone().sub(shoulder));
       const actualElbow = this.get(lower).node.getWorldPosition(new THREE.Vector3());
-      this.aim(lower, hand, solved.wrist.clone().sub(actualElbow));
+      this.aim(lower, solved.wrist.clone().sub(actualElbow));
       const actualWrist = this.get(hand).node.getWorldPosition(new THREE.Vector3());
       this.diagnostics.currentReachError = Math.max(this.diagnostics.currentReachError, actualWrist.distanceTo(solved.wrist));
       this.diagnostics.maximumReachError = Math.max(this.diagnostics.maximumReachError, actualWrist.distanceTo(solved.wrist));
@@ -229,10 +345,10 @@ export class HumanoidRetargeter {
       this.diagnostics.elbowFlexDegrees.push(THREE.MathUtils.radToDeg(upperDirection.angleTo(lowerDirection)));
       const restAcross = this.get(`${side}IndexProximal`).position.clone().sub(this.get(`${side}LittleProximal`).position);
       const restAlong = this.get(`${side}MiddleProximal`).position.clone().sub(this.get(hand).position);
-      const wrist = constrainWrist(articulation.basis, lowerDirection);
+      const wrist = this.palms[side].step(articulation.basis, lowerDirection, dt);
       this.diagnostics.wristCorrectionDegrees.push(wrist.correctionDegrees);
-      const filteredPalm = this.palms[side].step(wrist.frame, dt);
-      const limitedPalm = constrainWrist(filteredPalm, lowerDirection).frame;
+      const limitedPalm = wrist.frame;
+      this.palmFrames.set(side, limitedPalm.clone());
       const rotation = limitedPalm.clone().multiply(basis(restAcross, restAlong).invert());
       const displayedDelta = limitedPalm.clone().multiply(articulation.basis.clone().invert());
       this.worldRotation(hand, rotation.clone().multiply(this.get(hand).quaternion));
@@ -260,6 +376,8 @@ export class HumanoidRetargeter {
         }
       }
     }
+    this.contactError = 0;
+    if (contact) this.refineContact(contact, dt, previousContactWrists);
     const blinkPhase = seconds % 4.7;
     const blink = blinkPhase < 0.14 ? Math.sin(blinkPhase / 0.14 * Math.PI) : 0;
     this.vrm.expressionManager?.setValue('blink', blink);
@@ -268,6 +386,6 @@ export class HumanoidRetargeter {
     this.diagnostics.fingerRotations = ['leftIndexProximal', 'leftIndexIntermediate', 'rightIndexProximal', 'rightIndexIntermediate'].flatMap((name) => this.get(name).node.quaternion.toArray());
     this.diagnostics.wristPositions = ['leftHand', 'rightHand'].flatMap((name) => this.get(name).node.getWorldPosition(new THREE.Vector3()).toArray());
     this.diagnostics.frames += 1;
-    return this.diagnostics;
+    return { ...this.diagnostics, contactErrorM: this.contactError, contactTarget: contact?.target ?? null };
   }
 }

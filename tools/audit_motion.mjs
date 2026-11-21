@@ -5,67 +5,24 @@ import { pathToFileURL } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import ts from 'typescript';
 import * as THREE from 'three';
-import { VRMHumanoid } from '@pixiv/three-vrm';
+import { avatarRig } from './avatar_rig.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const output = path.join(root, 'build', 'audit-modules');
 await fs.mkdir(output, { recursive: true });
-for (const name of ['motion', 'kinematics', 'retarget']) {
-  const source = await fs.readFile(path.join(root, 'src/avatar', `${name}.ts`), 'utf8');
+for (const name of ['motion', 'kinematics', 'retarget', 'curatedHands', 'packedMotion', 'contact']) {
+  let source = await fs.readFile(path.join(root, 'src/avatar', `${name}.ts`), 'utf8');
+  source = source.replace("import curation from '../../assets/motions/hand-curation.json';", 'const curation = ' + await fs.readFile(path.join(root, 'assets/motions/hand-curation.json'), 'utf8') + ';');
   const compiled = ts.transpileModule(source, { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ESNext } });
   await fs.writeFile(path.join(output, `${name}.mjs`), compiled.outputText.replace("'./kinematics'", "'./kinematics.mjs'"));
 }
 const { HumanoidRetargeter } = await import(pathToFileURL(path.join(output, 'retarget.mjs')));
-const { samplePlaylist, neutralPose } = await import(pathToFileURL(path.join(output, 'motion.mjs')));
+const { samplePlaylist, sampleMotion, neutralPose } = await import(pathToFileURL(path.join(output, 'motion.mjs')));
 const { RULES } = await import(pathToFileURL(path.join(output, 'kinematics.mjs')));
+const { curateHands } = await import(pathToFileURL(path.join(output, 'curatedHands.mjs')));
+const { decodePackedMotion } = await import(pathToFileURL(path.join(output, 'packedMotion.mjs')));
+const { handContact } = await import(pathToFileURL(path.join(output, 'contact.mjs')));
 const avatarBytes = await fs.readFile(path.join(root, 'assets/avatar/ClinicMale.vrm'));
-const gltf = JSON.parse(avatarBytes.subarray(20, 20 + avatarBytes.readUInt32LE(12)).toString('utf8'));
-
-// Use the actual GLB hierarchy/rest transforms and three-vrm normalized bones.
-// No texture renderer is needed for numerical joint checks. Skin deformation,
-// spring bones, and visual/contact readability still require browser review.
-function rig() {
-  const scene = new THREE.Group();
-  const nodes = gltf.nodes.map((entry) => {
-    const node = new THREE.Object3D();
-    node.name = entry.name ?? '';
-    if (entry.translation) {
-      node.position.fromArray(entry.translation);
-    }
-    if (entry.rotation) {
-      node.quaternion.fromArray(entry.rotation);
-    }
-    if (entry.scale) {
-      node.scale.fromArray(entry.scale);
-    }
-    if (entry.matrix) {
-      new THREE.Matrix4().fromArray(entry.matrix).decompose(node.position, node.quaternion, node.scale);
-    }
-    return node;
-  });
-  gltf.nodes.forEach((entry, index) => {
-    for (const child of entry.children ?? []) {
-      nodes[index].add(nodes[child]);
-    }
-  });
-  for (const index of gltf.scenes[gltf.scene ?? 0].nodes) {
-    scene.add(nodes[index]);
-  }
-  const legacy = !gltf.extensions.VRMC_vrm;
-  if (legacy) {
-    scene.rotation.y = Math.PI;
-  }
-  scene.updateMatrixWorld(true);
-  const sourceBones = legacy
-    ? gltf.extensions.VRM.humanoid.humanBones.map((entry) => [entry.bone.replace('ThumbProximal', 'ThumbMetacarpal').replace('ThumbIntermediate', 'ThumbProximal'), entry])
-    : Object.entries(gltf.extensions.VRMC_vrm.humanoid.humanBones);
-  const humanBones = Object.fromEntries(sourceBones.map(([name, entry]) => [name, { node: nodes[entry.node] }]));
-  const humanoid = new VRMHumanoid(humanBones);
-  scene.add(humanoid.normalizedHumanBonesRoot);
-  scene.updateMatrixWorld(true);
-  return { scene, humanoid, update: () => humanoid.update() };
-}
-
 function stats(values) {
   const sorted = [...values].sort((a, b) => a - b);
   return { median: sorted[Math.floor(sorted.length * .5)] ?? 0, p95: sorted[Math.min(sorted.length - 1, Math.floor(sorted.length * .95))] ?? 0, max: sorted.at(-1) ?? 0 };
@@ -73,14 +30,18 @@ function stats(values) {
 
 const manifest = JSON.parse(await fs.readFile(path.join(root, 'assets/motions/manifest.json'), 'utf8'));
 const fixtures = JSON.parse(execFileSync(path.join(root, '.venv/Scripts/python.exe'), ['-X', 'utf8', 'tools/playback_fixtures.py'], { cwd: root, encoding: 'utf8' }));
-const allMotions = new Map(await Promise.all(manifest.entries.map(async (entry) => [entry.id, JSON.parse(await fs.readFile(path.join(root, 'assets/motions', `${entry.id}.json`), 'utf8'))])));
+const allMotions = new Map(await Promise.all(manifest.entries.map(async entry => {
+  const bytes = await fs.readFile(path.join(root, entry.path));
+  const motion = entry.path.endsWith('.vslm') ? decodePackedMotion(bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength)) : JSON.parse(bytes);
+  return [entry.id, curateHands(motion)];
+})));
 const cases = [...manifest.entries, ...fixtures.sentences.map((playback, index) => ({ id: `sentence-${index}`, label: playback.text, playback }))];
 const rows = [];
 let failures = 0;
 for (const entry of cases) {
   const bytes = entry.playback ? Buffer.from(JSON.stringify(entry.playback)) : await fs.readFile(path.join(root, 'assets/motions', `${entry.id}.json`));
   const motion = entry.playback ? { id: entry.id, label: entry.label, medoid_id: null } : JSON.parse(bytes);
-  const avatar = rig();
+  const avatar = avatarRig(avatarBytes);
   const retargeter = new HumanoidRetargeter(avatar);
   for (let warmup = 0; warmup < 20; warmup += 1) {
     retargeter.apply(neutralPose(), 1 / 30, warmup / 30);
@@ -88,6 +49,8 @@ for (const entry of cases) {
   const playback = entry.playback ?? fixtures.single[entry.id];
   const motions = allMotions;
   const fingerCorrections = [];
+  const contactErrors = [];
+  const stableContactErrors = [];
   const wristCorrections = [];
   const wristSpeeds = [];
   const wristAccelerations = [];
@@ -106,8 +69,11 @@ for (const entry of cases) {
   let sampleCount = 0;
   for (let elapsed = 0; elapsed < playback.total_ms; elapsed += 1000 / 30) {
     const sample = samplePlaylist(playback, motions, 1000 + elapsed);
-    const diagnostic = structuredClone(retargeter.apply(sample.pose, 1 / 30, elapsed / 1000));
+    const contact = handContact(sample.motionId, sample.sourceFraction);
+    const diagnostic = structuredClone(retargeter.apply(sample.pose, 1 / 30, elapsed / 1000, 0, contact));
     const positions = diagnostic.wristPositions;
+    if (diagnostic.contactTarget) contactErrors.push(diagnostic.contactErrorM);
+    if (contact?.weight >= .99) stableContactErrors.push(diagnostic.contactErrorM);
     for (const name of boneNames) {
       const node = avatar.humanoid.getNormalizedBoneNode(name);
       if (!node || ![...node.position.toArray(), ...node.quaternion.toArray()].every(Number.isFinite)) {
@@ -172,6 +138,7 @@ for (const entry of cases) {
   const report = {
     id: motion.id, label: motion.label, input_sha256: crypto.createHash('sha256').update(bytes).digest('hex'), medoid_id: motion.medoid_id,
     samples: sampleCount, reach_error_m: reachError,
+    contact_error_m: stats(contactErrors), stable_contact_error_m: stats(stableContactErrors), stable_contact_samples: stableContactErrors.length, runtime_sha256: entry.sha256 ?? null,
     elbow_flex_deg: { min: Math.min(...elbowAngles), max: Math.max(...elbowAngles) },
     mean_finger_correction_deg_per_hand: stats(fingerCorrections), wrist_correction_deg: stats(wristCorrections),
     wrist_speed_m_s: stats(wristSpeeds), wrist_acceleration_m_s2: stats(wristAccelerations),
@@ -185,14 +152,34 @@ for (const entry of cases) {
   rows.push(report);
   console.log(`${motion.label}: finger p95=${report.mean_finger_correction_deg_per_hand.p95.toFixed(1)}deg wrist p95=${report.wrist_correction_deg.p95.toFixed(1)}deg reach=${(reachError * 1000).toFixed(3)}mm`);
 }
+// The per-clip audit above resets the rig. Also reuse one rig through the whole
+// bank to expose history-dependent roll drift that isolated clips cannot catch.
+const sequenceAvatar = avatarRig(avatarBytes), sequenceRig = new HumanoidRetargeter(sequenceAvatar);
+const armNames = ['leftUpperArm', 'leftLowerArm', 'rightUpperArm', 'rightLowerArm'];
+const settle = () => { for (let i = 0; i < 90; i++) sequenceRig.apply(neutralPose(), 1 / 30, 0); };
+settle();
+const neutralRotations = armNames.map(name => sequenceAvatar.humanoid.getNormalizedBoneNode(name).quaternion.clone());
+const sequenceDrifts = [];
+for (const entry of manifest.entries) {
+  const motion = allMotions.get(entry.id);
+  for (let i = 0; i < 24; i++) sequenceRig.apply(sampleMotion(motion, motion.duration_ms * i / 23), 1 / 30, 0, 0, handContact(entry.id, i / 23));
+  settle();
+  const degrees = armNames.map((name, i) => THREE.MathUtils.radToDeg(neutralRotations[i].angleTo(sequenceAvatar.humanoid.getNormalizedBoneNode(name).quaternion)));
+  sequenceDrifts.push({ id: entry.id, max_neutral_drift_degrees: Math.max(...degrees) });
+}
+const sequence = { method: 'One persistent actual rig; 24 sampled poses per word, with contact correction, then 90 neutral settling frames at a fixed breathing phase. This checks accumulated roll, not realtime visual smoothness.', words: sequenceDrifts, max_neutral_drift_degrees: Math.max(...sequenceDrifts.map(row => row.max_neutral_drift_degrees)) };
+if (sequence.max_neutral_drift_degrees > .001) failures++;
 const report = {
   schema: 'clinic-motion-audit-v1', created_at: new Date().toISOString(), rules: RULES,
   method: 'Actual VRM bone hierarchy + normalized humanoid, 30 Hz full clips including neutral transitions. Texture/skin collisions are not certified by this numerical check.',
-  avatar_sha256: crypto.createHash('sha256').update(avatarBytes).digest('hex'), failures, words: rows,
+  avatar_sha256: crypto.createHash('sha256').update(avatarBytes).digest('hex'), failures, words: rows, sequence,
   code_sha256: Object.fromEntries(await Promise.all(['motion', 'kinematics', 'retarget'].map(async (name) => [name, crypto.createHash('sha256').update(await fs.readFile(path.join(root, 'src/avatar', `${name}.ts`))).digest('hex')]))),
 };
 await fs.mkdir(path.join(root, 'docs/evidence'), { recursive: true });
-await fs.writeFile(path.join(root, 'docs/evidence/motion-audit.json'), JSON.stringify(report, null, 2));
+const reportPath = process.argv.find(value => value.startsWith('--output='))?.slice(9)
+  ?? path.join(root, 'docs/evidence/motion-audit.json');
+await fs.mkdir(path.dirname(reportPath), { recursive: true });
+await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
 if (failures) {
   process.exitCode = 1;
 }

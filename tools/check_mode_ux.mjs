@@ -51,7 +51,7 @@ export async function checkModeUx({doctor,patient,api,state,until,delay,output,r
  report.checks.defaultFusion100=true;
 
  await click(doctor,'Câu khám bệnh');
- await until(()=>doctor.eval('document.querySelectorAll(".clinic-phrase-list button").length===24'));
+ await until(()=>doctor.eval(`document.querySelectorAll(".clinic-phrase-list button").length===${boot.quick_phrases.length}`));
  await shot(doctor,'quick-phrases-all');
  await click(doctor,'Điều dưỡng');
  assert.equal(await doctor.eval('document.querySelectorAll(".clinic-phrase-list button").length'),6);
@@ -65,7 +65,8 @@ export async function checkModeUx({doctor,patient,api,state,until,delay,output,r
  await until(async()=>{const n=await patient.eval('window.clinicDiagnostics.narration');return n?.speaking&&Object.values(n.mouth).some(v=>v>.01);});
  assert.equal((await state()).messages.at(-1).text,'Y tá đo nhiệt độ.');
  await until(async()=>(await state()).playback.status==='completed');
- report.checks.quickPhrases24ReviewThenRealAvatarVoiceMouth=true;
+ report.quickPhraseCount=boot.quick_phrases.length;
+ report.checks.quickPhrasesReviewThenRealAvatarVoiceMouth=true;
  await click(patient,'Tôi đã hiểu');
  await until(async()=>(await state()).messages.at(-1)?.text==='Tôi đã hiểu');
  await click(patient,'Xin giải thích lại');
@@ -109,7 +110,7 @@ export async function checkModeUx({doctor,patient,api,state,until,delay,output,r
  assert.equal(word.predictions[0].model_id,legacy.model_id);
  assert.equal(word.recognition.actual_mode,'sign_only');
  if(word.uncertain)await api('/confirm',{message_id:word.id,text:legacy.label});
- await until(async()=>(await doctor.eval('window.clinicDiagnostics.patientVoice??[]')).some(e=>e.type==='playing'&&e.message_id===word.id));
+ await until(async()=>(await doctor.eval('window.clinicDiagnostics?.patientVoice??[]')).some(e=>e.type==='playing'&&e.message_id===word.id));
  report.legacyWord={word,reviewed:word.uncertain};
  await until(async()=>(await state()).capture.status==='ended');
  report.checks.sign400RealRecognitionAndVoice=true;

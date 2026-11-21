@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import type { SessionState } from '../types';
 import bank from '../../assets/patient-voice/manifest.json';
 import { PatientWordSpeaker, type VoiceEvent } from './patientWordSpeaker';
-import { setPatientAudioPlaying } from './patientAudioGate';
 
 export function usePatientVoice(state: SessionState, connected: boolean) {
   const [enabled, setEnabled] = useState(() => localStorage.getItem('clinic-patient-voice') !== 'off');
@@ -16,7 +15,7 @@ export function usePatientVoice(state: SessionState, connected: boolean) {
       audio.playbackRate = 0.9;
       audio.preservesPitch = true;
       return audio;
-    }, setPatientAudioPlaying, (event) => {
+    }, (event) => {
       events.current = [...events.current.slice(-79), { ...event, recorded_at_ms: Date.now() }];
       window.clinicDiagnostics = { ...window.clinicDiagnostics, patientVoice: events.current };
       if (event.type === 'playing') setStatus(`Đang đọc: ${event.text}`);

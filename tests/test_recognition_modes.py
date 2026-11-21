@@ -117,9 +117,13 @@ def test_quick_clinic_phrases_keep_supported_meaning_and_examples():
     phrases = json.loads((ASSETS/"phrases.json").read_text("utf8"))
     p = TextPlanner(words, phrases)
     rows = quick_phrases(p)
-    assert len(rows) == 24 and all(r["supported"] for r in rows)
+    assert len(rows) >= 44 and all(r["supported"] for r in rows)
+    assert {"Bạn cần nghỉ ngơi không?", "Bạn có buồn nôn không?", "Mời bạn nằm trên giường."} <= {r["text"] for r in rows}
     assert {"Bác sĩ khám bệnh.", "Y tá đo nhiệt độ."} <= {r["text"] for r in rows}
     assert len({r["id"] for r in rows}) == len(rows)
+    assert len({r['text'].casefold().rstrip('.?! ') for r in rows}) == len(rows)
+    assert {r['category'] for r in rows} <= {'Hỏi triệu chứng', 'Khám và đo', 'Chăm sóc', 'Nhu cầu hằng ngày', 'Hướng dẫn', 'Giao tiếp'}
+    assert {'Bạn cần gối không?', 'Bạn có cần chăn không?', 'Bạn có muốn uống nước ấm không?'} <= {r['text'] for r in rows}
 
 
 def test_confident_hallucinated_text_cannot_overrule_no_speech():

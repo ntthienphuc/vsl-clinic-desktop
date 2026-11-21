@@ -6,18 +6,71 @@ import test from 'node:test';
 import { execFileSync } from 'node:child_process';
 import ts from 'typescript';
 import * as THREE from 'three';
+import { avatarRig } from '../tools/avatar_rig.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const output = path.join(root, 'build', 'test-modules');
 await fs.mkdir(output, { recursive: true });
-for (const name of ['motion', 'kinematics', 'retarget']) {
-  const source = await fs.readFile(path.join(root, 'src', 'avatar', `${name}.ts`), 'utf8');
+for (const name of ['motion', 'kinematics', 'retarget', 'contact', 'curatedHands']) {
+  let source = await fs.readFile(path.join(root, 'src', 'avatar', `${name}.ts`), 'utf8');
+  source = source.replace("import curation from '../../assets/motions/hand-curation.json';", 'const curation = ' + await fs.readFile(path.join(root, 'assets/motions/hand-curation.json'), 'utf8') + ';');
   const compiled = ts.transpileModule(source, { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ESNext } });
   await fs.writeFile(path.join(output, `${name}.mjs`), compiled.outputText.replace("'./kinematics'", "'./kinematics.mjs'"));
 }
-const { solveArm, transportAim } = await import(pathToFileURL(path.join(output, 'retarget.mjs')));
-const { HandArticulation, RULES, constrainWrist, RotationFollower } = await import(pathToFileURL(path.join(output, 'kinematics.mjs')));
+const { solveArm, transportAim, HumanoidRetargeter } = await import(pathToFileURL(path.join(output, 'retarget.mjs')));
+const { HandArticulation, RULES, constrainWrist, RotationFollower, WristFollower } = await import(pathToFileURL(path.join(output, 'kinematics.mjs')));
 const { samplePlaylist, sampleMotion, neutralPose, elapsedPlayback, transitionPose } = await import(pathToFileURL(path.join(output, 'motion.mjs')));
+const { handContact } = await import(pathToFileURL(path.join(output, 'contact.mjs')));
+const { curateHands } = await import(pathToFileURL(path.join(output, 'curatedHands.mjs')));
+
+test('reviewed weekday counts retain extended digits while other fingers fold, with provenance lock', async () => {
+  for (const [id, offset, extended] of [['320', 33, 2], ['318', 54, 3], ['323', 54, 4]]) {
+    const raw = JSON.parse(await fs.readFile(path.join(root, 'assets/motions', id + '.json'), 'utf8'));
+    const before = JSON.stringify(raw), corrected = curateHands(raw);
+    assert.equal(JSON.stringify(raw), before, 'source coordinates must remain unchanged');
+    const frame = corrected.frames[Math.floor(corrected.frames.length / 2)];
+    assert.deepEqual(frame[offset], raw.frames[Math.floor(raw.frames.length / 2)][offset], 'wrist path retained');
+    for (let finger = 0; finger < 4; finger++) {
+      const base = offset + 5 + 4 * finger;
+      const p = i => new THREE.Vector3(...frame[i]);
+      const bend = THREE.MathUtils.radToDeg(p(base + 1).sub(p(base)).angleTo(p(base + 2).sub(p(base + 1))));
+      assert.ok(finger < extended ? bend < 10 : bend > 65, `${id}: digit ${finger} bend ${bend}`);
+    }
+    const changedSource = { ...raw, source_hashes: ['unreviewed-source'] };
+    assert.equal(curateHands(changedSource), changedSource, 'unreviewed variants must not inherit this correction');
+  }
+});
+
+test('source-reviewed face contacts stay aligned and preserve the crossed indices', async () => {
+  for (const id of ['11', 'qipedc-W03008', '201']) {
+    const avatar = avatarRig(await fs.readFile(path.join(root, 'assets/avatar/ClinicMale.vrm')));
+    const retargeter = new HumanoidRetargeter(avatar);
+    const motion = curateHands(JSON.parse(await fs.readFile(path.join(root, 'assets/motions', id + '.json'), 'utf8')));
+    const contact = handContact(id, .5), pose = sampleMotion(motion, motion.duration_ms * .5);
+    for (let i = 0; i < 90; i++) retargeter.apply(neutralPose(), 1 / 30, 0);
+    let diagnostic;
+    for (let i = 0; i < 90; i++) diagnostic = retargeter.apply(pose, 1 / 30, 0, 0, contact);
+    assert.ok(diagnostic.contactErrorM < .002, `${id}: stable contact misses target`);
+    const p = name => avatar.humanoid.getNormalizedBoneNode(name).getWorldPosition(new THREE.Vector3());
+    const eyes = p('leftEye').add(p('rightEye')).multiplyScalar(.5);
+    if (id === '11') {
+      const left = p('leftIndexIntermediate'), right = p('rightIndexIntermediate');
+      assert.ok(left.y > eyes.y + .025 && right.y > eyes.y + .025);
+      assert.ok(left.z > eyes.z + .08 && right.z > left.z + .008, 'indices must be in front of the visible forehead surface');
+      assert.ok(left.distanceTo(right) < .02, 'middle phalanges must meet at the crossing');
+      const angle = THREE.MathUtils.radToDeg(p('leftIndexDistal').sub(left).angleTo(p('rightIndexDistal').sub(right)));
+      assert.ok(angle > 60 && angle < 120, `indices do not form a cross: ${angle}`);
+    } else if (id === '201') {
+      const palm = p('rightHand').lerp(p('rightMiddleProximal'), .68);
+      assert.ok(palm.x < eyes.x - .08 && palm.x > eyes.x - .13, 'mother palm belongs beside the right cheek');
+      assert.ok(palm.y < eyes.y - .05 && palm.y > eyes.y - .10, 'mother palm must be lower than the eyes');
+      assert.ok(palm.z > eyes.z + .04 && palm.z < eyes.z + .09, 'cheek contact must not float in the frontal signing space');
+    } else {
+      const palm = p('rightHand').lerp(p('rightMiddleProximal'), .68);
+      assert.ok(palm.y > eyes.y + .025 && palm.z > eyes.z + .08, 'fever palm must be above the eyes and clear of the face');
+    }
+  }
+});
 
 test('bridges preserve endpoint velocity when feasible and bound conflicting contact trajectories', () => {
   const a = [[0, 1, -.5]], b = [[1, -1, -.5]];
@@ -47,6 +100,42 @@ test('arm frames cross the antipodal T-pose direction without a roll flip or end
     assert.ok(axis.clone().applyQuaternion(next).distanceTo(direction) < 1e-8);
     assert.ok(frame.angleTo(next) < .025, `Arm roll discontinuity at ${index} degrees`);
     frame = next;
+  }
+});
+
+test('successive signs return to the same arm roll and never twist the elbow hinge', async () => {
+  const avatar = avatarRig(await fs.readFile(path.join(root, 'assets/avatar/ClinicMale.vrm')));
+  const retargeter = new HumanoidRetargeter(avatar);
+  const arms = ['leftUpperArm', 'leftLowerArm', 'rightUpperArm', 'rightLowerArm'];
+  const hingeRest = ['left', 'right'].map(side => {
+    const upper = avatar.humanoid.getNormalizedBoneNode(side + 'UpperArm');
+    const lower = avatar.humanoid.getNormalizedBoneNode(side + 'LowerArm');
+    const hand = avatar.humanoid.getNormalizedBoneNode(side + 'Hand');
+    const upperRotation = upper.getWorldQuaternion(new THREE.Quaternion()), lowerRotation = lower.getWorldQuaternion(new THREE.Quaternion());
+    return { upperRotation, lowerRotation, axis: hand.getWorldPosition(new THREE.Vector3()).sub(lower.getWorldPosition(new THREE.Vector3())).normalize().applyQuaternion(lowerRotation.clone().invert()) };
+  });
+  const neutral = neutralPose();
+  const settle = () => { for (let i = 0; i < 90; i++) retargeter.apply(neutral, 1 / 30, 0); };
+  settle();
+  const original = arms.map(name => avatar.humanoid.getNormalizedBoneNode(name).quaternion.clone());
+  const originalWrists = ['leftHand', 'rightHand'].map(name => avatar.humanoid.getNormalizedBoneNode(name).getWorldPosition(new THREE.Vector3()));
+  const motions = await Promise.all(['qipedc-W00362', 'qipedc-W03008', 'qipedc-W01227', 'qipedc-W01298', '11', '368', '32', '145', '379'].map(async id => JSON.parse(await fs.readFile(path.join(root, 'assets/motions', id + '.json'), 'utf8'))));
+  for (let pass = 0; pass < 3; pass++) {
+    for (const motion of motions) for (let i = 0; i < 36; i++) {
+      retargeter.apply(sampleMotion(motion, motion.duration_ms * i / 35), 1 / 30, 0);
+      for (const [index, side] of ['left', 'right'].entries()) {
+        const reference = hingeRest[index];
+        const upper = avatar.humanoid.getNormalizedBoneNode(side + 'UpperArm');
+        const elbow = avatar.humanoid.getNormalizedBoneNode(side + 'LowerArm');
+        const inherited = upper.getWorldQuaternion(new THREE.Quaternion()).multiply(reference.upperRotation.clone().invert()).multiply(reference.lowerRotation);
+        const relative = inherited.invert().multiply(elbow.getWorldQuaternion(new THREE.Quaternion()));
+        const twist = new THREE.Vector3(relative.x, relative.y, relative.z).dot(reference.axis);
+        assert.ok(Math.abs(twist) < 1e-6, `${side}: elbow adds axial twist ${twist}`);
+      }
+    }
+    settle();
+    arms.forEach((name, i) => assert.ok(original[i].angleTo(avatar.humanoid.getNormalizedBoneNode(name).quaternion) < 1e-5, `${name} accumulated twist after sequence ${pass}`));
+    ['leftHand', 'rightHand'].forEach((name, i) => assert.ok(originalWrists[i].distanceTo(avatar.humanoid.getNormalizedBoneNode(name).getWorldPosition(new THREE.Vector3())) < 1e-6));
   }
 });
 
@@ -124,6 +213,26 @@ test('wrist swing bounds and shortest-arc palm speed limit', () => {
       assert.ok(previous.angleTo(next) <= RULES.palmSpeed / 30 + 1e-6);
     }
     previous = next.clone();
+  }
+});
+
+test('moving forearms retain bounded wrist swing without snapping at the flexion seam', () => {
+  for (const dt of [1 / 30, 1 / 60, 1 / 120]) {
+    const follower = new WristFollower();
+    let previous;
+    for (let tick = 0; tick < 12 / dt; tick++) {
+      const time = tick * dt;
+      const forearm = new THREE.Vector3(.3 * Math.sin(time * 3), Math.cos(time * 4), Math.sin(time * 4)).normalize();
+      const target = new THREE.Quaternion().setFromEuler(new THREE.Euler(time * .7, time * .2, Math.sin(time)));
+      const { frame } = follower.step(target, forearm, dt);
+      const local = forearm.clone().applyQuaternion(frame.clone().invert());
+      const flex = THREE.MathUtils.radToDeg(Math.atan2(local.z, local.y));
+      const deviation = THREE.MathUtils.radToDeg(Math.atan2(local.x, Math.hypot(local.y, local.z)));
+      assert.ok(Math.abs(flex) <= 80 + 1e-6 && Math.abs(deviation) <= 35 + 1e-6);
+      assert.ok(frame.toArray().every(Number.isFinite));
+      if (previous) assert.ok(previous.angleTo(frame) < 20 * dt, `Wrist jump at ${time}s (${dt}s/frame)`);
+      previous = frame;
+    }
   }
 });
 

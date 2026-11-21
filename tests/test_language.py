@@ -31,7 +31,7 @@ def test_complete_phrase_preserves_written_meaning_and_nonmanuals(planner, entry
     assert session.playback["text"] == entry["text"]
 
 
-@pytest.mark.parametrize("text", ["Không đau", "Bạn không đau", "Bạn có đau không 2 ngày?", "Uống nước?", "Uống 2 nước", "khỏe?", "khoe", "ôm", "ấn", "Có mệt không hay đau?", "Không mệt mỏi"])
+@pytest.mark.parametrize("text", ["Không đau", "Bạn không đau", "Bạn có đau không 2 ngày?", "Uống 2 nước", "khoe", "ôm", "ấn", "Có mệt không hay đau?", "Không mệt mỏi"])
 def test_unknown_semantics_are_not_replaced_or_partially_sent(planner, text):
     plan = planner.plan(text)
     assert not plan["supported"]
@@ -75,7 +75,7 @@ def test_three_sign_clause_and_multisentence_order(planner):
     assert [(item["gloss_start"], item["gloss_end"]) for item in plan["clauses"]] == [(0, 3), (3, 4), (4, 5)]
 
 
-@pytest.mark.parametrize("text", ["Nước bác sĩ uống", "Bác sĩ không uống nước", "Bác sĩ uống nước 2 lần", "Bác sĩ uống nước và nghỉ ngơi", "Tôi ăn cơm", "Uống nước. Không đau.", "?Đau", "Đau / Mệt", "Bác sĩ uống nước?", "Bạn có đau không??", "Đau_", "Uống nước…"])
+@pytest.mark.parametrize("text", ["Nước bác sĩ uống", "Bác sĩ không uống nước", "Bác sĩ uống nước 2 lần", "Tôi ăn cơm", "Uống nước. Không đau.", "?Đau", "Đau / Mệt", "Bạn có đau không??", "Đau_", "Uống nước…"])
 def test_incomplete_or_unreviewed_clause_never_plays_partial_meaning(planner, text):
     assert not planner.plan(text)["supported"]
     session = ClinicSession(planner, {word["id"]: 1000 for word in WORDS})
@@ -93,7 +93,7 @@ def test_known_vocabulary_is_not_a_grammar_claim(planner):
     assert plan["issues"][0]["reason"] == "unknown_grammar"
 
 
-def test_future_queued_question_does_not_bias_current_recognition(planner):
+def test_loading_replacement_question_does_not_bias_current_recognition(planner):
     session = ClinicSession(planner, {word["id"]: 1000 for word in WORDS})
     session.send("Cảm ơn", "sign")
     session.control_playback("ready", session.playback["id"])
@@ -124,10 +124,26 @@ def test_polite_spoken_markers_are_removed_only_before_planning(planner, text):
 @pytest.mark.parametrize("text", [
     "Y tá ơi, không đo nhiệt độ nha",
     "Y tá ơi, đo nhiệt độ 2 lần nha",
-    "Y tá ơi, đo nhiệt độ và uống nước nha",
+    "Y tá ơi, đo nhiệt độ hoặc uống nước nha",
 ])
 def test_meaningful_unknown_words_still_block_partial_sign(planner, text):
     plan = planner.plan(text)
     assert not plan["supported"]
     assert plan["unsupported"]
     assert plan["projection"] != ["Y tá", "Nhiệt độ", "Đo"]
+
+
+def test_nurse_asr_variants_require_choice_and_keep_time(planner, monkeypatch):
+    from backend.language_assist import LanguageAssist
+
+    helper = LanguageAssist(ASSETS, planner)
+    monkeypatch.setattr(helper, "suggest", lambda *_: pytest.fail("Unneeded model call"))
+    for raw, expected in [("y tở giúp đỡ.", "Y tá giúp đỡ."),
+                          ("bây giờ y tọ giúp đỡ nhé.", "Bây giờ y tá giúp đỡ nhé.")]:
+        draft = helper.resolve(raw)
+        assert not draft["supported"] and draft["text"] == raw
+        assert [item["text"] for item in draft["suggestions"]] == [expected]
+        assert planner.plan(expected)["supported"]
+    for raw in ["Không cần y tở giúp đỡ.", "y tọ giúp đỡ tiêm thuốc.", "ý tớ giúp đỡ."]:
+        assert not planner.suggestions(raw)
+    helper.close()

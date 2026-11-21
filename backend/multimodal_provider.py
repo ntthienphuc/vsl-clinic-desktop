@@ -8,21 +8,37 @@ import subprocess
 import sys
 import threading
 import time
+from .runtime_selection import select_runtime
 
 
 class MultimodalProvider:
     def __init__(self, assets, publish, *, command=None):
         self.assets, self.publish = Path(assets), publish
         root = Path(__file__).resolve().parents[1]
+        self.runtime_options = None
+        self.runtime_choice = None
+        self.force_cpu = False
         if command is None:
             resources = self.assets.parent
-            runtime = Path(os.environ.get("CLINIC_MM_RUNTIME", str(root / "build/multimodal-runtime")))
+            deployment = json.loads((self.assets / "multimodal100/DEPLOYMENT.json").read_text("utf8"))
+            runtime_name = ("multimodal-runtime-cpu" if deployment.get("inference", {}).get("device") == "cpu"
+                            else "multimodal-runtime")
+            runtime = Path(os.environ.get("CLINIC_MM_RUNTIME", str(root / "build" / runtime_name)))
             worker = root / "multimodal/worker.py"
             if getattr(sys, "frozen", False):
                 runtime = resources / "multimodal-runtime"
                 worker = resources / "multimodal/worker.py"
+            if deployment.get('inference', {}).get('device') == 'auto' and not os.environ.get('CLINIC_MM_RUNTIME'):
+                cpu = (resources if getattr(sys, 'frozen', False) else root / 'build') / 'multimodal-runtime-cpu'
+                self.runtime_options = (runtime, cpu)
             command = [str(runtime / "python.exe"), "-B", "-u", "-X", "utf8", str(worker),
                        "--assets", str(self.assets / "multimodal100")]
+            # Developer candidate runs only; no extra end-user model controls.
+            if not getattr(sys, 'frozen', False):
+                if os.environ.get('CLINIC_MM_DEVICE'):
+                    command += ['--device', os.environ['CLINIC_MM_DEVICE']]
+                if os.environ.get('CLINIC_MM_QUANTIZED'):
+                    command += ['--quantized', os.environ['CLINIC_MM_QUANTIZED']]
         self.command = command
         manifest = json.loads((self.assets / "multimodal100/models/MODEL_MANIFEST.json").read_text("utf8"))
         self.manifest = manifest
@@ -47,9 +63,9 @@ class MultimodalProvider:
         return dict(name="Tay và môi · 100 từ", labels=100, family="multimodal100",
                     sha256=self.manifest["heads"]["fusion"]["sha256"],
                     contract=self.manifest["contract"], capture_profile=(
-                        "clinic-mm100-ram-r3-v1" if self.manifest.get("profile") == "slgcn-avhubert"
+                        "clinic-mm100-ram-r3-v1" if self.manifest.get("profile") in {"slgcn-avhubert", "slgcn-autoavsr"}
                         else "clinic-mm100-ram-v2"),
-                    active_head="fusion", worker=dict(self.worker_info))
+                    active_head="fusion", worker=dict(self.worker_info), runtime_choice=self.runtime_choice)
 
     def warmup(self):
         """Load weights in the background; this never opens a camera."""
@@ -73,11 +89,23 @@ class MultimodalProvider:
         self.closing = False
         self.worker_info = dict(status="loading")
         env = dict(os.environ, PYTHONUNBUFFERED="1", PYTHONUTF8="1", PYTHONDONTWRITEBYTECODE="1",
-                   OMP_NUM_THREADS="2", MKL_NUM_THREADS="2", TF_CPP_MIN_LOG_LEVEL="2")
+                   OMP_NUM_THREADS="2", MKL_NUM_THREADS="2", TF_CPP_MIN_LOG_LEVEL="2",
+                   OMP_WAIT_POLICY="PASSIVE", KMP_BLOCKTIME="0")
         # A frozen parent must not make its child load ClinicEngine's DLLs.
         env.pop("PYTHONHOME", None)
         env.pop("PYTHONPATH", None)
-        self.process = subprocess.Popen(self.command, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+        command = list(self.command)
+        if self.runtime_options:
+            if self.force_cpu:
+                runtime, self.runtime_choice = self.runtime_options[1], dict(selected='cpu', reason='gpu_worker_failed')
+            elif self.runtime_choice is None:
+                runtime, self.runtime_choice = select_runtime(*self.runtime_options, env)
+            else:
+                runtime = self.runtime_options[self.runtime_choice['selected'] != 'cuda']
+            command[0] = str(runtime / 'python.exe')
+            if runtime == self.runtime_options[1] and '--device' not in command:
+                command += ['--device', 'cpu']
+        self.process = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
             stderr=subprocess.PIPE, text=True, encoding="utf8", bufsize=1, env=env,
             creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
         process = self.process
@@ -92,17 +120,26 @@ class MultimodalProvider:
             self.last_errors.append(line.strip()[:500])
 
     def _read(self, process):
+        was_ready = False
+        recover_cpu = False
         try:
             for line in process.stdout:
                 if process is not self.process:
                     return
                 event = json.loads(line)
                 kind = event["type"]
+                if kind == "runtime_changed":
+                    self.worker_info.update({key: event[key] for key in ("device", "precision", "runtime_selection")})
+                    continue
                 if kind == "worker_ready":
+                    was_ready = True
                     self.worker_info = dict(event, status="ready")
                     self.ready.set()
                     continue
                 if kind == "worker_error":
+                    if self.runtime_choice and self.runtime_choice['selected'] == 'cuda' and 'cuda' in event.get('error_code', '').lower():
+                        recover_cpu = True
+                        continue
                     self.worker_info = dict(status="error", error_code=event.get("error_code"))
                     self.ready.set()
                     continue
@@ -126,10 +163,38 @@ class MultimodalProvider:
         except Exception as exc:
             self.last_errors.append(type(exc).__name__ + ": " + str(exc))
         finally:
+            if process is self.process and not self.closing and self.runtime_options and self.runtime_choice['selected'] == 'cuda':
+                # A native driver crash cannot be caught inside Python. Before
+                # capture, transparently restart once on the pure CPU runtime.
+                # During capture, fence the lost segment and use CPU on Retry;
+                # never replay an already spoken file/word automatically.
+                self.force_cpu = True
+                if not was_ready and (recover_cpu or self.worker_info.get('status') != 'error'):
+                    self.worker_info = dict(status='loading', recovery='cpu_runtime')
+                    self.ready.clear()
+                    def recover():
+                        try:
+                            process.wait(timeout=5)
+                        except subprocess.TimeoutExpired:
+                            process.kill()
+                            process.wait(timeout=5)
+                        with self.lock:
+                            if process is self.process and not self.closing:
+                                self._spawn()
+                    threading.Thread(target=recover, name='clinic-mm100-recovery', daemon=True).start()
+                    return
             if process is self.process:
                 self.ready.set()
             if process is self.process and not self.closing:
-                self.worker_info = dict(status="error", error_code="worker_disconnected")
+                # Keep the actionable model/startup error sent before EOF.
+                # Replacing it with "disconnected" hid CPU fallback failures.
+                if self.worker_info.get("status") != "error":
+                    try:
+                        exit_code = process.wait(timeout=.2)
+                    except subprocess.TimeoutExpired:
+                        exit_code = None
+                    self.worker_info = dict(status="error", error_code="worker_disconnected",
+                                            exit_code=exit_code)
                 generation = self.active_generation
                 if generation is not None:
                     self.publish(dict(type="capture", status="error", generation=generation,

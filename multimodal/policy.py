@@ -3,10 +3,12 @@
 Scores remain uncalibrated. This policy is NOT an out-of-vocabulary or trained
 non-sign detector. Its version and reasons travel with every result.
 """
-POLICY = "clinic-fusion-quality-v1"
+POLICY = "clinic-fusion-quality-v5"
+MIN_SCORE = .70  # Owner-requested 0.75 -> 0.70; softmax is not calibrated accuracy.
+MIN_MARGIN = .15  # Previously .20. Modality/sampling guards remain enforced.
 
 
-def decide(result, info, boundary):
+def decide(result, info, boundary, *, require_continuity=False):
     reasons = []
     if result.get("status") != "ok":
         return dict(version=POLICY, committed=False, disposition="unavailable",
@@ -23,16 +25,21 @@ def decide(result, info, boundary):
     if info.get("input_fps", 0) < 10 or info.get("max_capture_gap_ms", 1e9) > 300:
         reasons.append("insufficient_temporal_sampling")
     top = result["top_k"]
-    if top[0]["score"] < .8 or top[0]["score"] - top[1]["score"] < .25:
+    if require_continuity and info.get("sampling_complete") is not True:
+        reasons.append("interrupted_temporal_sampling")
+    if require_continuity and info.get("model_cadence_observed") is not True:
+        reasons.append("insufficient_model_cadence")
+    if top[0]["score"] < MIN_SCORE or top[0]["score"] - top[1]["score"] < MIN_MARGIN:
         reasons.append("ambiguous_closed_set_prediction")
     return dict(version=POLICY, committed=not reasons,
                 disposition="review" if reasons else "committed", reasons=reasons,
                 prompt="Chưa nhận chắc. Bạn ký lại hoặc nhờ bác sĩ đối chiếu." if reasons else "",
-                scores="uncalibrated_softmax")
+                scores="uncalibrated_softmax", thresholds=dict(score=MIN_SCORE, margin=MIN_MARGIN))
 
 
 def recognition_event(result, info, boundary, mapping, model, segment_id, timing):
-    policy = decide(result, info, boundary)
+    policy = decide(result, info, boundary,
+                    require_continuity=model["contract"].startswith("vsl100-r3-"))
     predictions = []
     for entry in result.get("top_k", []):
         label = mapping[entry["index"]]

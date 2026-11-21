@@ -103,7 +103,7 @@ export function elapsedPlayback(playback: Playback, now = Date.now()): number {
 
 export function samplePlaylist(playback: Playback | null, motions: Map<string, Motion>, now = Date.now()) {
   const neutral = neutralPose();
-  const idle = { pose: neutral, label: '', progress: 0, complete: false, index: -1, phase: 'idle' };
+  const idle = { pose: neutral, label: '', progress: 0, complete: false, index: -1, phase: 'idle', motionId: '', sourceFraction: 0 };
   if (!playback || ['completed', 'stopped', 'loading'].includes(playback.status)) {
     return idle;
   }
@@ -126,6 +126,8 @@ export function samplePlaylist(playback: Playback | null, motions: Map<string, M
   let pose = neutral;
   if (segment.phase === 'sign') {
     pose = sampleMotion(clip, segment.source_start_ms! + elapsed - segment.start_ms);
+  } else if (segment.phase === 'voice_hold') {
+    pose = sampleMotion(clip, segment.source_ms!);
   } else if (segment.phase === 'intro') {
     pose = blendPose(neutral, sampleMotion(clip, segment.source_ms!), eased(ratio));
   } else if (segment.phase === 'outro') {
@@ -136,5 +138,8 @@ export function samplePlaylist(playback: Playback | null, motions: Map<string, M
       velocity(previous, segment.from_ms!, -1), velocity(clip, segment.to_ms!, 1), segment.end_ms - segment.start_ms, ratio);
   }
   const showWord = segment.phase !== 'outro' && segment.phase !== 'hold';
-  return { pose, label: showWord ? clip.label : '', progress, complete: false, index: showWord ? segment.index : -1, phase: segment.phase };
+  const sourceTime = segment.phase === 'sign' ? segment.source_start_ms! + elapsed - segment.start_ms
+    : segment.phase === 'voice_hold' ? segment.source_ms! : 0;
+  return { pose, label: showWord ? clip.label : '', progress, complete: false, index: showWord ? segment.index : -1, phase: segment.phase,
+    motionId: clip.id, sourceFraction: sourceTime / clip.duration_ms };
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-const { app, BrowserWindow, dialog, ipcMain, screen, session } = require('electron');
+const { app, BrowserWindow, dialog, ipcMain, screen, session, shell } = require('electron');
 const { spawn } = require('node:child_process');
 const crypto = require('node:crypto');
 const fs = require('node:fs');
@@ -22,6 +22,10 @@ let shuttingDown = false;
 let allowQuit = false;
 let logStream = null;
 let engineExit = null;
+let launchDetails = {};
+let interfaceLanguage = null;
+let swappedDisplays = false;
+const uiText = (vi, en) => interfaceLanguage?.get() === 'en' ? en : vi;
 
 function log(message) {
   logStream?.write(`${new Date().toISOString()} ${message}\n`);
@@ -45,40 +49,55 @@ async function startEngine() {
   const executable = app.isPackaged
     ? path.join(process.resourcesPath, 'engine', 'ClinicEngine.exe')
     : path.join(project, '.venv', 'Scripts', 'python.exe');
+  const cwd = app.isPackaged ? process.resourcesPath : project;
+  launchDetails = { executable, cwd, enginePresent: fs.existsSync(executable), frontendPresent: fs.existsSync(path.join(frontend, 'index.html')) };
   if (!fs.existsSync(executable) || !fs.existsSync(path.join(frontend, 'index.html'))) {
-    throw new Error('Thiếu bộ chạy hoặc giao diện. Hãy chạy tools/setup.ps1 và npm run build trong thư mục dự án.');
+    throw new Error(app.isPackaged
+      ? uiText('Ứng dụng thiếu một thành phần cần thiết. Hãy chạy lại bộ cài VSL Clinic để sửa bản cài đặt.', 'An app component is missing. Run the VSL Clinic installer again to repair the installation.')
+      : 'Thiếu bộ chạy hoặc giao diện. Hãy chạy tools/setup.ps1 và npm run build trong thư mục dự án.');
   }
   const args = app.isPackaged ? ['--port', String(port)] : ['-u', '-X', 'utf8', path.join(project, 'backend', 'main.py'), '--port', String(port)];
+  let computeMode = process.env.CLINIC_COMPUTE || 'auto';
+  if (app.isPackaged && !process.env.CLINIC_COMPUTE) {
+    try {
+      const preference = JSON.parse(fs.readFileSync(path.join(path.dirname(process.execPath), 'runtime-preference.json'), 'utf8'));
+      if (['cpu', 'gpu'].includes(preference.compute)) computeMode = preference.compute;
+    } catch { /* Older portable packages keep automatic detection. */ }
+  }
+  launchDetails.compute = computeMode;
   engine = spawn(executable, args, {
-    cwd: app.isPackaged ? process.resourcesPath : project,
+    cwd,
     windowsHide: true,
     stdio: ['ignore', 'pipe', 'pipe'],
-    env: { ...process.env, CLINIC_ASSETS: assets, CLINIC_FRONTEND: frontend, CLINIC_TOKEN: sessionToken, PYTHONUNBUFFERED: '1', PYTHONUTF8: '1' },
+    env: { ...process.env, CLINIC_COMPUTE: computeMode, CLINIC_ASSETS: assets, CLINIC_FRONTEND: frontend, CLINIC_TOKEN: sessionToken, PYTHONUNBUFFERED: '1', PYTHONUTF8: '1' },
   });
   engine.on('error', (error) => {
     engineExit = error.message;
+    Object.assign(launchDetails, { code: error.code, errno: error.errno, syscall: error.syscall });
     log(`engine error: ${error.message}`);
   });
   engine.on('exit', (code, signal) => {
+    Object.assign(launchDetails, { exitCode: code, signal });
     engineExit = `exit ${code}, signal ${signal}`;
     log(`engine ${engineExit}`);
     if (windows.size > 0 && !shuttingDown) {
-      dialog.showErrorBox('VSL Clinic · Dịch vụ đã dừng', 'Bộ nhận dạng trên máy đã dừng. Hãy đóng và mở lại ứng dụng. Chi tiết nằm trong tệp clinic-engine.log của ứng dụng.');
+      dialog.showErrorBox(uiText('VSL Clinic · Dịch vụ đã dừng', 'VSL Clinic · Service stopped'), uiText('Bộ nhận dạng trên máy đã dừng. Hãy đóng và mở lại ứng dụng. Chi tiết nằm trong tệp clinic-engine.log của ứng dụng.', 'Local recognition has stopped. Close and reopen the app. Details are in the app’s clinic-engine.log file.'));
     }
   });
   engine.stdout.on('data', (data) => log(data.toString().trimEnd()));
   engine.stderr.on('data', (data) => log(data.toString().trimEnd()));
   origin = `http://127.0.0.1:${port}`;
-  for (let attempt = 0; attempt < 240; attempt += 1) {
+  const deadline = Date.now() + 60_000;
+  while (Date.now() < deadline) {
     if (engineExit !== null) {
-      throw new Error(`Bộ nhận dạng chưa khởi động được (${engineExit}). Xem clinic-engine.log.`);
+      throw new Error(uiText(`Bộ nhận dạng chưa khởi động được (${engineExit}). Xem clinic-engine.log.`, `Recognition could not start (${engineExit}). See clinic-engine.log.`));
     }
     try {
-      const response = await fetch(`${origin}/api/bootstrap`, {
+      const response = await fetch(`${origin}/api/ready`, {
         headers: { Authorization: `Bearer ${sessionToken}` },
         signal: AbortSignal.timeout(700),
       });
-      if (response.ok) {
+      if (response.ok && (await response.json()).version === app.getVersion()) {
         log(`ready at ${origin}; recognition=managed multimodal worker`);
         return;
       }
@@ -87,10 +106,11 @@ async function startEngine() {
     }
     await new Promise((resolve) => setTimeout(resolve, 250));
   }
-  throw new Error('Bộ nhận dạng chưa sẵn sàng sau 60 giây.');
+  throw new Error(uiText('Bộ nhận dạng chưa sẵn sàng sau 60 giây.', 'Recognition was not ready after 60 seconds.'));
 }
 
-function layout(swap = false) {
+function layout(swap = swappedDisplays) {
+  swappedDisplays = swap;
   const displays = screen.getAllDisplays();
   const primary = screen.getPrimaryDisplay();
   const secondary = displays.find((display) => display.id !== primary.id);
@@ -127,7 +147,7 @@ function openWindow(role) {
     return existing;
   }
   const window = new BrowserWindow({
-    title: role === 'doctor' ? 'VSL Clinic · Bác sĩ' : 'VSL Clinic · Người bệnh',
+    title: role === 'doctor' ? uiText('VSL Clinic · Bác sĩ', 'VSL Clinic · Doctor') : uiText('VSL Clinic · Người bệnh', 'VSL Clinic · Patient'),
     backgroundColor: '#f3f6f5',
     minWidth: 570,
     minHeight: 600,
@@ -201,6 +221,19 @@ function installPermissions() {
 }
 
 function installIPC() {
+  interfaceLanguage = require('./interface-language.cjs')(app.getPath('userData'));
+  ipcMain.handle('clinic:interface-language:get', (event) => {
+    trustedWindow(event);
+    return interfaceLanguage.get();
+  });
+  ipcMain.handle('clinic:interface-language:set', (event, language) => {
+    trustedWindow(event);
+    const saved = interfaceLanguage.set(language);
+    for (const window of windows.values()) {
+      if (!window.isDestroyed()) window.webContents.send('clinic:interface-language:changed', saved);
+    }
+    return saved;
+  });
   ipcMain.handle('clinic:displays', (event) => {
     trustedWindow(event);
     const primary = screen.getPrimaryDisplay().id;
@@ -227,7 +260,7 @@ function installIPC() {
 }
 
 async function stopEngine() {
-  if (!engine || engine.exitCode !== null || engine.killed) {
+  if (!engine?.pid || engine.exitCode !== null || engine.killed) {
     return;
   }
   try {
@@ -289,9 +322,29 @@ if (!app.requestSingleInstanceLock()) {
     openWindow('doctor');
     openWindow('patient');
     screen.on('display-removed', () => layout());
-  }).catch((error) => {
+    screen.on('display-added', () => layout());
+  }).catch(async (error) => {
     log(error.stack || error.message);
-    dialog.showErrorBox('VSL Clinic chưa mở được', error.message);
+    // A synchronous spawn error happens before ChildProcess emits 'error'.
+    // Save only startup fields. Never include env, argv, URL tokens or session content.
+    const reportPath = path.join(app.getPath('userData'), 'clinic-startup.json');
+    const report = { time: new Date().toISOString(), version: app.getVersion(), arch: process.arch,
+      windows: require('node:os').release(), ...launchDetails, message: error.message };
+    for (const key of ['code', 'errno', 'syscall']) if (error[key] !== undefined) report[key] = error[key];
+    let saved = false;
+    try {
+      fs.writeFileSync(reportPath, JSON.stringify(report, null, 2), 'utf8');
+      saved = true;
+    } catch { /* The profile may itself be unavailable. */ }
+    const locate = uiText('Xem tệp chẩn đoán', 'Show diagnostic file');
+    const close = uiText('Đóng', 'Close');
+    const choice = await dialog.showMessageBox({
+      type: 'error', title: uiText('VSL Clinic chưa mở được', 'VSL Clinic could not start'),
+      message: uiText('Chưa mở được dịch vụ nhận dạng trên máy.', 'The local recognition service could not start.'),
+      detail: [error.message, saved && uiText('Khi cần hỗ trợ, hãy gửi tệp clinic-startup.json cho kỹ thuật viên.', 'For support, send clinic-startup.json to your technician.')].filter(Boolean).join('\n\n'),
+      buttons: saved ? [locate, close] : [close], defaultId: saved ? 1 : 0, cancelId: saved ? 1 : 0,
+    });
+    if (saved && choice.response === 0) shell.showItemInFolder(reportPath);
     app.quit();
   });
 }

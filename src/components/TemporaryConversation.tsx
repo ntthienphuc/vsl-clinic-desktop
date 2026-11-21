@@ -1,3 +1,4 @@
+import { t } from '../i18n';
 import { useEffect, useState } from 'react';
 import { request } from '../api';
 import type { TemporaryConversation as SavedConversation } from '../types';
@@ -18,12 +19,12 @@ export function TemporaryConversation({ id, onClose, run }: { id: string; onClos
     }).catch((problem: Error) => { if (alive) setError(problem.message); });
     return () => { alive = false; };
   }, [id]);
-  return <Dialog title="Cuộc trao đổi đã lưu tạm" onClose={onClose}>
-    <p className="temporary-help">Chỉ để xem lại ở phía bác sĩ. Bản này tự mất khi đóng ứng dụng hoặc khi kết thúc một phiên khác.</p>
-    {error ? <p role="alert">{error}</p> : !saved ? <p>Đang mở bản tạm…</p> : <>
+  return <Dialog title={t("Cuộc trao đổi đã lưu tạm")} onClose={onClose}>
+    <p className="temporary-help">{t("Chỉ để xem lại ở phía bác sĩ. Bản này tự mất khi đóng ứng dụng hoặc khi kết thúc một phiên khác.")}</p>
+    {error ? <p role="alert">{t(error)}</p> : !saved ? <p>{t("Đang mở bản tạm…")}</p> : <>
       <div className="temporary-conversation"><Conversation messages={saved.messages} /></div>
-      {saved.speech_drafts.length > 0 && <details className="temporary-drafts"><summary>{saved.speech_drafts.length} câu chưa gửi trong phiên này</summary>{saved.speech_drafts.map(draft => <p key={draft.id}>{draft.text}<small>Chưa gửi người bệnh</small></p>)}</details>}
-      <button className="button secondary" onClick={() => void run(async () => { await request('/session/temporary/discard', {}); onClose(); })}>Xóa bản tạm</button>
+      {saved.speech_drafts.length > 0 && <details className="temporary-drafts"><summary>{saved.speech_drafts.length} {t(" câu chưa gửi trong phiên này")}</summary>{saved.speech_drafts.map(draft => <p key={draft.id}>{draft.text}<small>{t("Chưa gửi người bệnh")}</small></p>)}</details>}
+      <button className="button secondary" onClick={() => void run(async () => { await request('/session/temporary/discard', {}); onClose(); })}>{t("Xóa bản tạm")}</button>
     </>}
   </Dialog>;
 }

@@ -1,0 +1,8 @@
+{
+  "Giao tiếp": ["Xin", "Giới thiệu", "Hứa", "Quen", "Không quen", "Không cho", "Quan sát", "Tìm", "Thích", "Yêu thương", "Nhầm lẫn", "Nhanh", "Chậm chạp", "Gần", "Xa", "Ồn ào"],
+  "Gia đình": ["Anh", "Bác", "Bố", "Mẹ", "Chú", "Chị", "Cô", "Cậu", "Dì", "Em", "Cháu", "Vợ", "Chồng", "Con gái", "Con trai", "Ông ngoại", "Ông nội", "Bà ngoại", "Bà nội", "Họ hàng", "Già", "Trẻ"],
+  "Khám bệnh": ["Cứng", "Mềm", "Mát mẻ", "Hôi", "Thơm", "Ngửi", "Dơ", "Hẹp", "Rộng", "Dài", "Ngắn"],
+  "Thời gian": ["Năm", "Thời gian", "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy", "Chủ nhật"],
+  "Sinh hoạt": ["Giặt đồ", "Phơi đồ", "Rửa chén", "Cái áo", "Cái quần", "Dép", "Giày", "Cửa sổ", "Chìa khóa", "Tủ lạnh", "Xe máy", "Xe buýt", "Ô tô", "Mũ bảo hiểm"],
+  "Ăn uống": ["Ngọt", "Nhạt", "Mặn", "Xôi", "Cay", "Đắng", "Gạo", "Thịt", "Trứng", "Nấu", "Phở", "Bún", "Mì gói", "Quả cam", "Quả chuối", "Quả đu đủ", "Trà", "Cà phê", "Bánh bao", "Rượu", "Bia", "Nếm", "Thèm", "Kem"]
+}

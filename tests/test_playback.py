@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+import shutil
 
 import pytest
 
@@ -47,7 +48,7 @@ def test_no_trim_across_clauses_and_unknown_join_keeps_complete_strokes(session)
     assert len(playback["clauses"]) == 2
 
 
-def test_stop_clears_queue_and_replay_rejects_old_completion(session, monkeypatch):
+def test_stop_and_replay_reject_old_completion(session, monkeypatch):
     clock = [1000.0]
     monkeypatch.setattr("backend.session.now_ms", lambda: clock[0])
     session.send("Bác sĩ uống nước", "sign")
@@ -63,11 +64,53 @@ def test_stop_clears_queue_and_replay_rejects_old_completion(session, monkeypatc
     clock[0] += session.playback["total_ms"]
     session.control_playback("complete", identity, iteration=0)
     assert session.playback["status"] == "playing"
-    queued = session.send("Cảm ơn", "sign")
     session.control_playback("stop", identity)
     assert session.playback["status"] == "stopped"
     assert not session.pending
-    assert queued["status"] == "cancelled"
+
+
+@pytest.mark.parametrize("state", ["loading", "playing", "paused"])
+@pytest.mark.parametrize("mode", ["sign", "text"])
+def test_doctor_barge_in_replaces_delivery_and_ignores_late_callbacks(session, state, mode):
+    previous = session.send("Bác sĩ uống nước", "sign")
+    old_id = session.playback["id"]
+    if state != "loading":
+        session.control_playback("ready", old_id, iteration=0)
+    if state == "paused":
+        session.control_playback("pause", old_id)
+    following = session.send("Cảm ơn", mode)
+    assert previous["status"] == "interrupted"
+    assert previous["superseded_by"] == following["id"]
+    assert not session.pending
+    new_id = session.playback["id"] if mode == "sign" else None
+    for action in ["ready", "complete", "stop", "resume", "replay"]:
+        session.control_playback(action, old_id, iteration=0)
+    if mode == "sign":
+        assert session.playback["id"] == new_id != old_id
+        assert session.playback["message_id"] == following["id"]
+        assert session.playback["status"] == "loading"
+        session.control_playback("ready", new_id, iteration=0)
+        assert session.playback["status"] == "playing"
+    else:
+        assert session.playback is None
+        assert following["presented_at_ms"]
+
+
+def test_unaccepted_speech_does_not_interrupt_but_accepted_speech_does(session):
+    session.configure_conversation("auto")
+    session.start_conversation()
+    previous = session.send("Bác sĩ uống nước", "sign")
+    old_id = session.playback["id"]
+    session.control_playback("ready", old_id, iteration=0)
+    epoch = session.conversation["epoch"]
+    assert session.speech_result({"utterance_id": "mic:1", "text": "Uống thuốc 2 viên"}, epoch)["status"] == "review"
+    assert session.playback["id"] == old_id
+    result = session.speech_result({"utterance_id": "mic:2", "text": "Đồng ý nằm nghỉ ngơi"}, epoch)
+    assert result["status"] == "sent"
+    assert previous["status"] == "interrupted"
+    assert session.playback["message_id"] == result["message_id"]
+    assert session.playback["id"] != old_id
+    assert not session.pending
 
 
 def test_disconnection_freezes_playback_until_explicit_resume(session, monkeypatch):
@@ -91,6 +134,28 @@ def test_profile_and_complete_clause_coverage_are_checked(session):
         build_timeline([{"id": "11"}, {"id": "243"}], [{"gloss_start": 0, "gloss_end": 1}], DURATIONS)
 
 
+def test_packaged_sentence_joins_need_only_compact_motions(tmp_path):
+    compact = tmp_path / "motions"
+    compact.mkdir()
+    for name in ["sentence_motion.json", "motions/manifest.json"]:
+        shutil.copyfile(ASSETS / name, tmp_path / name)
+    profile = json.loads((ASSETS / "sentence_motion.json").read_text("utf-8"))
+    for identity, window in profile["windows"].items():
+        shutil.copyfile(ASSETS / "motions" / (identity + ".vslm"), compact / (identity + ".vslm"))
+    loaded = load_join_profile(tmp_path)
+    assert loaded == load_join_profile(ASSETS)
+    for identity, window in loaded["windows"].items():
+        original = json.loads((ASSETS / "motions" / (identity + ".json")).read_text("utf-8"))
+        assert window["entry_ms"] == original["duration_ms"] * window["entry_frame"] / (len(original["frames"]) - 1)
+    assert not list(compact.glob("[0-9]*.json"))
+    damaged = next(compact.glob("*.vslm"))
+    data = bytearray(damaged.read_bytes())
+    data[-1] ^= 1
+    damaged.write_bytes(data)
+    with pytest.raises(ValueError, match="checksum mismatch"):
+        load_join_profile(tmp_path)
+
+
 def test_replay_ignores_ready_from_previous_iteration(session):
     session.send("Y tá đo nhiệt độ.", "sign")
     identity = session.playback["id"]
@@ -103,6 +168,8 @@ def test_replay_ignores_ready_from_previous_iteration(session):
 
 
 def test_context_uses_presented_clause_not_future_question(session, monkeypatch):
+    # Inspect clause context without automatic patient handover pausing time.
+    session.configure_conversation("manual")
     clock = [1000.0]
     monkeypatch.setattr("backend.session.now_ms", lambda: clock[0])
     session.send("Cảm ơn. Bạn có đau không?", "sign")

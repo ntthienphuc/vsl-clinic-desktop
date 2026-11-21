@@ -62,7 +62,9 @@ export default defineConfig({
     proxy: {
       '/api': engineOrigin,
       '/ws': { target: engineOrigin.replace('http:', 'ws:'), ws: true },
-      '/assets': engineOrigin,
+      // JSON imported by source modules must reach Vite's module transformer;
+      // only runtime asset requests belong to the local engine.
+      '^/assets/(?!.*(?:\\?|&)import(?:&|$))': engineOrigin,
     },
   },
 });

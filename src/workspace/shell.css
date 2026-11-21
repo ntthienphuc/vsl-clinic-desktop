@@ -1,0 +1,45 @@
+/* A quiet clinical workspace: warm neutrals, pine actions, readable system type. */
+:root { font-family: 'Segoe UI', sans-serif; color: #263e3a; background: #f4f5f2; --teal: #215e52; --teal-dark: #16493f; --teal-pale: #e8f0ec; --muted: #657770; --line: #e2e7e1; --shadow: 0 8px 32px #1d3f3306; }
+body { font-size: 15px; line-height: 1.5; }
+.app { display: flex; flex-direction: column; height: 100dvh; min-height: 0; overflow: hidden; }
+.app-header { flex-shrink: 0; min-height: 66px; padding: 12px 28px; gap: 18px; border: 0; background: transparent; }
+.brand { gap: 10px; font-size: 21px; font-weight: 650; letter-spacing: -.65px; color: #254b42; }
+.brand-light { font-weight: 400; }
+.brand-mark { width: 32px; height: 32px; border-radius: 11px; background: #215e52; }
+.brand-mark svg { width: 22px; height: 22px; }
+.header-divider { height: 18px; border-color: #d0dad2; }
+.role-heading strong { margin: 0; font-size: 12px; font-weight: 500; color: #536858; }
+.header-right { gap: 14px; }
+.connection { gap: 6px; font-size: 12px; font-weight: 400; }
+.connection.good { color: #587366; }
+.status-dot { width: 6px; height: 6px; flex-shrink: 0; }
+.status-dot.active { background: #3d8a68; box-shadow: none; }
+.language-toggle { display: inline-flex; align-items: center; gap: 7px; min-height: 36px; padding: 5px 9px; border: 0; border-radius: 8px; color: #7c8780; background: transparent; font-size: 12px; }
+.language-toggle .current { color: #254b42; font-weight: 650; }
+.language-toggle:hover, .icon-button:hover { background: #e6ece5; }
+.icon-button { min-width: 36px; width: 36px; height: 36px; padding: 8px; border-radius: 10px; color: #597166; }
+.button { min-height: 42px; border-radius: 10px; padding: 10px 17px; font-size: 14px; font-weight: 600; box-shadow: none; }
+.button.compact { min-height: 40px; font-size: 14px; padding: 8px 16px; }
+.button.primary { background: #215e52; border-color: #215e52; box-shadow: 0 2px 3px #1c463012; }
+.button.primary:hover { background: #16493f; border-color: #16493f; }
+.button.secondary { border-color: #d9e2da; background: #fff; color: #355f51; }
+.button.secondary:hover { background: #eff4ed; }
+.button:disabled { opacity: 1; background: #e9eee9; border-color: transparent; color: #8a9a90; box-shadow: none; }
+.text-button { color: #4f6b5b; min-height: 36px; font-size: 13px; }
+.segmented { display: flex; gap: 2px; padding: 3px; border-radius: 9px; background: #eef2ed; }
+.segmented button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 34px; padding: 6px 11px; font-size: 13px; border: 0; border-radius: 7px; color: #617357; background: transparent; }
+.segmented button.selected { color: #215e52; background: white; box-shadow: 0 1px 4px #193b2b0c; font-weight: 600; }
+.section-heading { display: flex; align-items: center; gap: 8px; padding: 14px 20px; }
+.section-heading h2, .section-heading h3 { font-size: 14px; font-weight: 600; }
+.heading-icon { display: inline-flex; align-items: center; justify-content: center; width: auto; height: auto; padding: 0; background: transparent; color: #728a78; }
+.section-heading > .icon-button { margin-left: auto; }
+.card { border: 1px solid var(--line); border-radius: 16px; box-shadow: none; }
+.app-footer { width: 100%; max-width: none; padding: 4px 28px 8px; color: #5b6f54; font-size: 10px; flex-shrink: 0; }
+.app-footer > span:first-child { display: none; }
+.app-footer > span:last-child { margin-left: auto; }
+.connection-banner { flex-shrink: 0; padding: 8px 20px; }
+.display-menu .dropdown { min-width: 270px; border-radius: 13px; border-color: var(--line); box-shadow: 0 12px 36px #243b2d1a; }
+.toast { max-width: calc(100vw - 32px); border-radius: 12px; }
+@media (max-width: 850px) { .app-header { padding: 10px 20px; min-height: 58px; } .header-divider, .role-heading { display: none; } }
+@media (max-width: 480px) { .app-header { padding: 10px 14px; gap: 8px; } .brand { font-size: 19px; } .header-right { gap: 6px; } .header-right .connection { display: none; } .app-footer { padding-inline: 14px; } }
+@media (max-width: 599px), (max-height: 599px) { .app { height: auto; min-height: 100dvh; overflow: visible; } }

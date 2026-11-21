@@ -759,6 +759,26 @@
       "input": "ngưng lại",
       "canonical": "Dừng lại",
       "reason": "Cách diễn đạt tương đương; không áp dụng tự động vào câu dài."
+    },
+    {
+      "input": "y tở giúp đỡ",
+      "canonical": "Y tá giúp đỡ.",
+      "reason": "Kiểm tra xem người giúp có phải là y tá."
+    },
+    {
+      "input": "bây giờ y tở giúp đỡ nhé",
+      "canonical": "Bây giờ y tá giúp đỡ nhé.",
+      "reason": "Kiểm tra xem người giúp có phải là y tá."
+    },
+    {
+      "input": "y tọ giúp đỡ",
+      "canonical": "Y tá giúp đỡ.",
+      "reason": "Kiểm tra xem người giúp có phải là y tá."
+    },
+    {
+      "input": "bây giờ y tọ giúp đỡ nhé",
+      "canonical": "Bây giờ y tá giúp đỡ nhé.",
+      "reason": "Kiểm tra xem người giúp có phải là y tá."
     }
   ]
 }

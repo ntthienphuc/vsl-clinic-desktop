@@ -18,13 +18,15 @@ class BoundedSolution(SolutionBase):
     # XNNPACK defaults to -1 (automatic cores) per inference node. Bound each
     # kernel while the two graph threads can still overlap left/right hands.
     # Model files, precision, calculators and tensor values stay unchanged.
+    inference_threads = 1
+
     def _initialize_graph_interface(self, *args, **kwargs):
         graph = super()._initialize_graph_interface(*args, **kwargs)
         for node in graph.node:
             if node.calculator == "InferenceCalculatorCpu":
                 options = node.options.Extensions[inference_calculator_pb2.InferenceCalculatorOptions.ext]
                 if options.delegate.HasField("xnnpack"):
-                    options.delegate.xnnpack.num_threads = 1
+                    options.delegate.xnnpack.num_threads = self.inference_threads
         return graph
 
 
@@ -42,6 +44,11 @@ class FacePoints(BoundedSolution):
 
 
 class PoseHands(BoundedSolution):
+    # Two bounded kernel threads bring the original 1080px graph closer to its
+    # 40ms frame budget. Paired validation frames preserved pose/mouth/logits
+    # exactly; FacePoints remains at one thread. Never use automatic core count.
+    inference_threads = 2
+
     def __init__(self):
         graph = calculator_pb2.CalculatorGraphConfig()
         graph.ParseFromString((Path(mp.__file__).parent /

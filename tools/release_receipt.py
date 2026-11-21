@@ -6,7 +6,8 @@ import os
 from pathlib import Path
 import shutil
 import subprocess
-from packaging_assets import inactive_multimodal_weights
+from packaging_assets import inactive_package_assets, multimodal_runtime, extra_multimodal_runtimes
+from runtime_package import development_file, runtime_manifest
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
@@ -23,7 +24,7 @@ def digest(path):
 
 def main():
     records = []
-    inactive = inactive_multimodal_weights(ROOT / "assets")
+    inactive = inactive_package_assets(ROOT / "assets")
     engine_build = json.loads((PACKAGE / "resources/engine/ENGINE_BUILD_INFO.json").read_text("utf8"))
     for name, checksum in engine_build["source_sha256"].items():
         if digest(ROOT / name) != checksum:
@@ -57,20 +58,41 @@ process.stdout.write(JSON.stringify({hashes, manifest: JSON.parse(manifest), man
         (ROOT / "dist", PACKAGE / "resources/frontend"),
         (ROOT / "assets", PACKAGE / "resources/assets"),
         (ROOT / "build/engine/ClinicEngine", PACKAGE / "resources/engine"),
-        (ROOT / "build/multimodal-runtime", PACKAGE / "resources/multimodal-runtime"),
+        (multimodal_runtime(ROOT), PACKAGE / "resources/multimodal-runtime"),
         (ROOT / "multimodal", PACKAGE / "resources/multimodal"),
         (ROOT / "licenses", PACKAGE / "resources/licenses"),
         (ROOT / "demo", PACKAGE / "demo"),
+        *[(source, PACKAGE / 'resources' / name) for source, name in extra_multimodal_runtimes(ROOT)],
     ]:
+        is_runtime = destination_folder.name.startswith('multimodal-runtime')
         for source in sorted(source_folder.rglob("*")):
             if not source.is_file() or source in inactive or "__pycache__" in source.parts or source.suffix in {".map", ".partial"} or "reference-source" in source.parts or source == ROOT / "assets/language/runtime.zip":
                 continue
             relative = source.relative_to(source_folder)
             packaged = destination_folder / relative
+            if is_runtime and development_file(relative):
+                if packaged.exists():
+                    raise RuntimeError(f'Development-only file shipped: {packaged}')
+                continue
+            if is_runtime and relative.as_posix() == 'RUNTIME_MANIFEST.json':
+                if json.loads(packaged.read_text('utf8')) != runtime_manifest(source_folder):
+                    raise RuntimeError(f'Filtered runtime manifest differs: {packaged}')
+                records.append({'path': packaged.relative_to(PACKAGE).as_posix(), 'sha256': digest(packaged), 'bytes': packaged.stat().st_size})
+                continue
             original_hash = digest(source)
             if not packaged.is_file() or digest(packaged) != original_hash:
                 raise RuntimeError(f"Packaged content differs: {packaged}")
             records.append({"path": packaged.relative_to(PACKAGE).as_posix(), "sha256": original_hash, "bytes": packaged.stat().st_size})
+    # Ship the separate legal document; the installer no longer presents an
+    # acceptance page. Original component notices remain in resources/licenses.
+    legal_source = ROOT / 'installer/Giay_phep_VSL_Clinic.docx'
+    legal_destination = PACKAGE / 'Tai_lieu/Giay_phep_VSL_Clinic.docx'
+    legal_destination.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(legal_source, legal_destination)
+    if digest(legal_source) != digest(legal_destination):
+        raise RuntimeError('Separate license document differs from source')
+    records.append({'path': legal_destination.relative_to(PACKAGE).as_posix(),
+                    'sha256': digest(legal_destination), 'bytes': legal_destination.stat().st_size})
     # Ship the evidence referenced by this demo's handoff, including failed runs.
     # The receipt itself is excluded to avoid a recursive checksum dependency.
     evidence = ROOT / "docs/evidence"
@@ -90,13 +112,13 @@ process.stdout.write(JSON.stringify({hashes, manifest: JSON.parse(manifest), man
             raise RuntimeError(f"Packaged demo evidence differs: {destination}")
         records.append({"path": destination.relative_to(PACKAGE).as_posix(), "sha256": checksum, "bytes": destination.stat().st_size})
     source_records = {}
-    for folder in ["src", "backend", "desktop", "multimodal", "tools", "tests", "installer"]:
+    for folder in ["src", "public", "backend", "desktop", "multimodal", "tools", "tests", "installer"]:
         for source in sorted((ROOT / folder).rglob("*")):
             if source.is_file() and "__pycache__" not in source.parts:
                 source_records[source.relative_to(ROOT).as_posix()] = digest(source)
-    for name in ["package.json", "package-lock.json", "requirements.txt", "pytest.ini", "vite.config.ts", "tsconfig.json", "local-assets-manifest.json", "README.md", "PROJECT_STATE.md"]:
+    for name in ["package.json", "package-lock.json", "requirements.txt", "pytest.ini", "vite.config.ts", "tsconfig.json", "local-assets-manifest.json", "README.md", "PROJECT_STATE.md", "UI_UX_AUDIT.md", "UI_UX_POLISH_REPORT.md"]:
         source_records[name] = digest(ROOT / name)
-    for name in ["README.md", "THIRD_PARTY_NOTICES.md", "PROJECT_STATE.md"]:
+    for name in ["README.md", "THIRD_PARTY_NOTICES.md", "PROJECT_STATE.md", "UI_UX_AUDIT.md", "UI_UX_POLISH_REPORT.md"]:
         shutil.copy2(ROOT / name, PACKAGE / name)
         checksum = digest(ROOT / name)
         if digest(PACKAGE / name) != checksum:
@@ -111,13 +133,22 @@ process.stdout.write(JSON.stringify({hashes, manifest: JSON.parse(manifest), man
             raise RuntimeError(f"Packaged documentation differs: {destination}")
         source_records[source.relative_to(ROOT).as_posix()] = checksum
         records.append({"path": destination.relative_to(PACKAGE).as_posix(), "sha256": checksum, "bytes": destination.stat().st_size})
+    for source in sorted((ROOT / "docs/media").glob("product07*-*.png")):
+        destination = PACKAGE / "docs/media" / source.name
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, destination)
+        checksum = digest(source)
+        if digest(destination) != checksum:
+            raise RuntimeError(f"Packaged current screenshot differs: {source.name}")
+        source_records[source.relative_to(ROOT).as_posix()] = checksum
+        records.append({"path": destination.relative_to(PACKAGE).as_posix(), "sha256": checksum, "bytes": destination.stat().st_size})
     report = {
         "schema": "clinic-local-release-receipt-v1",
         "version": CONFIG["version"],
         "package": Path(os.path.relpath(PACKAGE, ROOT)).as_posix(),
         "created_at": datetime.now(timezone.utc).isoformat(),
         "git_head": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
-        "scope": "Uncommitted local project. Build payload parity, not clean-machine or clinical validation.",
+        "scope": "Local source/build payload parity. Installation, clean-machine compatibility and clinical validation are separate checks.",
         "payload_files_verified": len(records),
         "inactive_historical_weights_omitted": [p.relative_to(ROOT).as_posix() for p in sorted(inactive)],
         "asar_source_files_verified": archived,

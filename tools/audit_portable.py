@@ -62,11 +62,19 @@ def audit(package: Path) -> dict:
     voice_entries = []
     voice_manifest = assets / 'patient-voice/manifest.json'
     if voice_manifest.is_file():
-        voice_entries = read(voice_manifest)['entries']
+        voice_bank = read(voice_manifest)
+        voice_entries = voice_bank['entries']
         if {e['id']: e['text'] for e in voice_entries if e['id'].isdigit()} != dict(labels):
             problems.append({'reason': 'patient readout dictionary differs from the 400 labels'})
         for entry in voice_entries:
             verify('resources/assets/patient-voice/' + entry['file'], entry['sha256'])
+            warning = entry.get('warning')
+            if warning:
+                verify('resources/assets/patient-voice/' + warning['file'], warning['sha256'])
+                if warning.get('original_sha256') != entry['sha256'] or not 80 <= warning.get('prefix_ms', 0) <= 150:
+                    problems.append({'reason': 'invalid continuous patient warning clip', 'id': entry['id']})
+            elif voice_bank.get('warning_generation'):
+                problems.append({'reason': 'continuous warning bank is incomplete', 'id': entry['id']})
     elif tuple(map(int, receipt['version'].split('.'))) >= (0, 3, 5):
         problems.append({'reason': 'bundled Vietnamese patient readout is missing'})
     multimodal = assets / "multimodal100"
@@ -92,6 +100,31 @@ def audit(package: Path) -> dict:
         runtime = read(package / "resources/multimodal-runtime/RUNTIME_MANIFEST.json")
         for row in runtime["files"]:
             verify("resources/multimodal-runtime/" + row["path"], row["sha256"])
+        if deployment.get("inference", {}).get("device") == "cpu":
+            if not runtime.get("torch", "").endswith("+cpu"):
+                problems.append({"reason": "CPU deployment contains a non-CPU Torch runtime"})
+            old_encoder = multimodal / "r3/assets/avhubert/encoder_state.pt"
+            cuda_files = list((package / "resources/multimodal-runtime/Lib/site-packages/torch/lib").glob("*cuda*.dll"))
+            if old_encoder.exists() or cuda_files:
+                problems.append({"reason": "CPU payload still includes obsolete FP32 encoder or CUDA DLLs"})
+        elif deployment.get("inference", {}).get("device") == "auto":
+            cpu_runtime = read(package / 'resources/multimodal-runtime-cpu/RUNTIME_MANIFEST.json')
+            if not cpu_runtime.get('torch', '').endswith('+cpu'):
+                problems.append({'reason': 'Pure CPU fallback runtime is missing'})
+            for row in cpu_runtime['files']:
+                verify('resources/multimodal-runtime-cpu/' + row['path'], row['sha256'])
+            if not runtime.get("torch", "").startswith("2.6.0+cu"):
+                problems.append({"reason": "Auto deployment requires its tested CUDA-capable Torch runtime"})
+            if deployment.get('profile') == 'slgcn-autoavsr':
+                verify('resources/multimodal/vlr_encoder.py')
+                if (multimodal / 'r3/assets/avhubert').exists():
+                    problems.append(dict(reason='Retired AV-HuBERT assets present'))
+            else:
+                for name in ("avhubert_encoder.pt", "avhubert_transformer_int8.pt"):
+                    if name not in deployment["foundations"]:
+                        problems.append({"reason": "Auto deployment lacks an inference fallback weight", "name": name})
+                verify("resources/multimodal/auto_device.py")
+                verify("resources/assets/multimodal100/" + deployment["inference"]["quantized_encoder"])
     avatar_voice_entries = []
     avatar_voice_manifest = assets / 'avatar-voice/manifest.json'
     if avatar_voice_manifest.is_file():
@@ -133,6 +166,7 @@ def audit(package: Path) -> dict:
         "multimodal_runtime_files": len(runtime["files"]) if multimodal.is_dir() else 0,
         "multimodal_contract": manifest.get("contract_id", manifest.get("contract")) if multimodal.is_dir() else None,
         "patient_readout_clips": len(voice_entries),
+        "patient_warning_clips": sum(bool(entry.get('warning')) for entry in voice_entries),
         "avatar_narration_clips": len(avatar_voice_entries),
         "avatar_vocabulary": len(words),
         "motion_entries": len(motions),

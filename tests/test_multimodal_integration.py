@@ -76,6 +76,19 @@ def test_missing_modality_never_returns_fusion_guess():
     assert policy["disposition"] == "unavailable" and not policy["committed"]
 
 
+def test_slightly_lower_fusion_score_boundary_preserves_input_quality_guards():
+    quality=dict(sign_valid=True,mouth_valid=True,hand_coverage=.9,single_face_fraction=.9,
+                 input_fps=20,max_capture_gap_ms=100)
+    boundary=dict(reason='arms_returned_to_neutral')
+    result=dict(status='ok',top_k=[dict(score=.71),dict(score=.2)])
+    assert decide(result,quality,boundary)['committed']
+    result['top_k'][0]['score']=.69
+    assert not decide(result,quality,boundary)['committed']
+    result['top_k'][0]['score']=.99
+    for bad in [dict(mouth_valid=False),dict(hand_coverage=.5),dict(input_fps=9),dict(max_capture_gap_ms=400)]:
+        assert not decide(result,{**quality,**bad},boundary)['committed']
+
+
 def test_r3_context_preserves_decision_and_does_not_read_future_frames(monkeypatch):
     from dataclasses import asdict
     monkeypatch.syspath_prepend(str(ASSETS / "multimodal100"))
@@ -111,41 +124,23 @@ def test_r3_context_is_limited_to_observed_buffer(monkeypatch):
     assert extended["decision_capture_ms"] == 750
 
 
-def test_activity_hold_resumes_without_committing_a_word():
-    from backend.patient_handover import PatientHandover
-    handover = PatientHandover()
-    playback = dict(id="p",status="playing",elapsed_ms=0,rate=1)
-    capture = dict(status="signing",boundary_state="signing",has_face=True,hand_count=1)
-    assert handover.observe(playback,capture,True,lambda:500,1000)
-    assert playback["pause_reason"] == "patient_activity" and playback["elapsed_ms"] == 500
-    assert not handover.settle(playback,dict(status="ready",inflight_segments=1),3000)
-    assert handover.settle(playback,dict(status="ready",inflight_segments=0),3100)
-    assert playback["status"] == "playing" and playback["elapsed_ms"] == 500
+@pytest.mark.parametrize("first,last,ignored", [(100,333,True),(100,348,True),
+    (100,399,True),(100,400,False),(100,800,False),(None,None,True)])
+def test_short_return_motion_is_not_made_a_word_by_context_padding(monkeypatch,first,last,ignored):
+    monkeypatch.syspath_prepend(str(ASSETS / "multimodal100"))
+    from multimodal.boundaries import insufficient_active_core
+    assert insufficient_active_core(dict(first_active_capture_ms=first,last_active_capture_ms=last,
+        start_capture_ms=0,end_capture_ms=1200,buffered_frame_count=30)) is ignored
 
 
-def test_committed_reply_cannot_auto_resume_and_manual_mode_does_not_hold():
-    from backend.patient_handover import PatientHandover
-    hold = PatientHandover()
-    playback = dict(id="p",status="playing",elapsed_ms=0)
-    capture = dict(status="signing",boundary_state="signing",has_face=True,hand_count=1)
-    assert not hold.observe(playback,capture,False,lambda:500,1000)
-    assert hold.observe(playback,capture,True,lambda:500,1000)
-    playback["pause_reason"] = "patient_reply"
-    assert not hold.settle(playback,dict(status="ended"),9000)
-    hold.manual()
-    playback.update(status="playing")
-    assert not hold.observe(playback,capture,True,lambda:500,10000)
-
-
-def test_explicit_stop_is_never_undone_by_activity_timeout():
-    from backend.patient_handover import PatientHandover
-    hold = PatientHandover()
-    playback = dict(id="p",status="playing",elapsed_ms=0)
-    capture = dict(status="signing",boundary_state="signing",has_face=True,hand_count=1)
-    hold.observe(playback,capture,True,lambda:500,1000)
-    playback["status"] = "stopped"
-    assert not hold.settle(playback,dict(status="ended"),10000)
-    assert playback["status"] == "stopped"
+def test_ignored_motion_keeps_the_last_patient_word_and_records_the_reason():
+    s=session()
+    s.capture_event(event())
+    previous=s.current_result
+    s.capture_event(dict(type='segment_ignored',generation=1,reason='insufficient_active_motion'))
+    assert s.current_result is previous
+    assert len(s.turns.current['words'])==1
+    assert s.metrics[-1]['reason']=='insufficient_active_motion'
 
 
 @pytest.mark.parametrize("reason,value", [

@@ -42,12 +42,15 @@ SEMANTIC_BANK = json.loads((ASSETS / "semantic_bank.json").read_text(encoding="u
 MM_SAMPLES = json.loads((ASSETS / "multimodal-samples/manifest.json").read_text(encoding="utf-8"))["entries"]
 RECOGNITION_CATALOGS = load_catalogs(ASSETS)
 planner = TextPlanner(WORDS, PHRASES, SEMANTIC_BANK)
+QUICK_PHRASES = quick_phrases(planner)
 session = ClinicSession(planner, {entry["id"]: entry["duration_ms"] for entry in BANK["entries"]}, load_join_profile(ASSETS), load_avatar_voice(ASSETS))
 engine = None
 temp_root = None
+active_upload: Path | None = None
 control = asyncio.Lock()
 speech = SpeechService(ASSETS)
 language = LanguageAssist(ASSETS, planner)
+language_tasks: set[asyncio.Task] = set()
 
 
 @asynccontextmanager
@@ -77,12 +80,16 @@ async def lifespan(app):
         endpoint_task.cancel()
         await asyncio.gather(endpoint_task, return_exceptions=True)
         speech.close()
+        for task in tuple(language_tasks):
+            task.cancel()
+        await asyncio.gather(*language_tasks, return_exceptions=True)
         await run_in_threadpool(language.close)
         await run_in_threadpool(getattr(engine, "close", engine.stop))
         temp_root.cleanup()
 
 
-app = FastAPI(title="VSL Clinic", version="0.5.2", lifespan=lifespan, docs_url=None, redoc_url=None)
+APP_VERSION = "0.7.5"
+app = FastAPI(title="VSL Clinic", version=APP_VERSION, lifespan=lifespan, docs_url=None, redoc_url=None)
 app.add_middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost", "testserver"])
 app.add_middleware(CORSMiddleware, allow_origins=["http://127.0.0.1:5173", "http://localhost:5173"], allow_methods=["GET", "POST"], allow_headers=["Authorization", "Content-Type"])
 
@@ -96,7 +103,7 @@ def authorize(authorization: str | None = Header(default=None)):
 async def healthcheck():
     model = recognition_info()
     loaded = model.get("worker", {}).get("status") == "ready" if model.get("family") == "multimodal100" else engine is not None
-    return {"service": "vsl-clinic", "status": "ok", "version": "0.5.2", "model_loaded": loaded,
+    return {"service": "vsl-clinic", "status": "ok", "version": APP_VERSION, "model_loaded": loaded,
             "recognition": model}
 
 
@@ -109,9 +116,14 @@ def recognition_info():
             "sha256": engine.recognizer.sha256 if engine else None, "capture_profile": CAPTURE_PROFILE}
 
 
+@app.get("/api/ready", dependencies=[Depends(authorize)])
+async def ready():
+    return {"service": "vsl-clinic", "version": APP_VERSION}
+
+
 @app.get("/api/bootstrap", dependencies=[Depends(authorize)])
 async def bootstrap():
-    return {"vocabulary": WORDS, "phrases": planner.entries, "quick_phrases": quick_phrases(planner), "bank": BANK, "avatar_url": "/assets/avatar/ClinicMale.vrm",
+    return {"vocabulary": WORDS, "phrases": planner.entries, "quick_phrases": QUICK_PHRASES, "bank": BANK, "avatar_url": "/assets/avatar/ClinicMale.vrm",
             "model": recognition_info(),
             "patient_sources": [w for w in RECOGNITION_CATALOGS[engine.mode] if w["demo"]],
             "recognition_catalogs": RECOGNITION_CATALOGS,
@@ -138,7 +150,14 @@ async def speech_socket(socket: WebSocket, token: str = "", live: bool = False):
         return session.session_id
     def receive_transcript(result):
         if live:
-            return session.speech_result(result, epoch)
+            delivery = session.speech_result(result, epoch)
+            if delivery and delivery["status"] == "review":
+                draft = next((item for item in session.speech_drafts if item["id"] == delivery["draft_id"]), None)
+                if draft and draft["reason_code"] == "unsupported":
+                    task = asyncio.create_task(resolve_speech_draft(draft, epoch, language))
+                    language_tasks.add(task)
+                    task.add_done_callback(language_tasks.discard)
+            return delivery
         return None
     await stream_dictation(socket, speech, context_id, record_speech_metric,
                            live=live, on_transcript=receive_transcript,
@@ -150,10 +169,33 @@ class TextRequest(BaseModel):
     mode: str = "sign"
 
 
+async def resolve_speech_draft(draft: dict, epoch: str, helper: LanguageAssist):
+    """Improve an existing unsent draft without delaying microphone delivery."""
+    draft['language_assist_busy'] = True
+    session.changed()
+    try:
+        plan = await run_in_threadpool(helper.resolve, draft["text"])
+        if session.conversation["epoch"] == epoch and any(item is draft for item in session.speech_drafts):
+            draft["suggestions"] = plan.get("suggestions", [])
+            draft["reason"] = plan["message"]
+            session.changed()
+    except (ValueError, RuntimeError, OSError):
+        # The original draft remains available during model failure or shutdown.
+        return
+    finally:
+        if session.conversation['epoch'] == epoch and any(item is draft for item in session.speech_drafts):
+            draft['language_assist_busy'] = False
+            session.changed()
+
+
 @app.post("/api/text/plan", dependencies=[Depends(authorize)])
 async def plan(payload: TextRequest):
+    context = (session.session_id, session.conversation["epoch"])
     try:
-        return planner.plan(payload.text)
+        result = await run_in_threadpool(language.resolve if payload.mode == "sign" else planner.plan, payload.text)
+        if context != (session.session_id, session.conversation["epoch"]):
+            raise HTTPException(409, "Cuộc trao đổi đã thay đổi. Vui lòng nhập lại câu trong phiên mới.")
+        return result
     except ValueError as error:
         raise HTTPException(422, str(error)) from error
 
@@ -178,6 +220,10 @@ async def language_suggestion(payload: TextRequest):
 async def clear_language_context():
     global language
     previous, language = language, LanguageAssist(ASSETS, planner)
+    tasks = tuple(language_tasks)
+    for task in tasks:
+        task.cancel()
+    await asyncio.gather(*tasks, return_exceptions=True)
     await run_in_threadpool(previous.close)
 
 
@@ -238,7 +284,7 @@ def capture_source(payload):
 @app.post("/api/recognition/mode", dependencies=[Depends(authorize)])
 async def recognition_mode(payload: RecognitionModeRequest):
     if payload.mode not in RECOGNITION_CATALOGS:
-        raise HTTPException(422, "Chọn Fusion hoặc Sign only.")
+        raise HTTPException(422, "Chọn Ký hiệu + khẩu hình hoặc Chỉ ký hiệu.")
     async with control:
         if engine.mode == payload.mode:
             return session.snapshot()
@@ -284,9 +330,12 @@ async def configure_conversation(payload: ConversationRequest):
 
 @app.post("/api/conversation/start", dependencies=[Depends(authorize)])
 async def start_conversation():
-    if session.conversation["status"] != "active":
-        await start_capture(CaptureRequest(**session.conversation["source"]))
-        session.start_conversation()
+    owner = session.session_id
+    async with control:
+        require_session(owner)
+        if session.conversation["status"] != "active":
+            await open_capture(CaptureRequest(**session.conversation["source"]), owner)
+            session.start_conversation()
     return session.snapshot()
 
 
@@ -303,6 +352,7 @@ async def stop_conversation(payload: EndConversationRequest = EndConversationReq
     async with control:
         await clear_language_context()
         await run_in_threadpool(engine.stop)
+        release_upload()
     return session.snapshot()
 
 
@@ -333,18 +383,42 @@ async def review_speech(payload: SpeechReviewRequest):
     return session.snapshot()
 
 
+def require_session(owner):
+    if owner != session.session_id:
+        raise HTTPException(409, "Cuộc trao đổi đã kết thúc.")
+
+
+def release_upload():
+    global active_upload
+    if active_upload is not None:
+        active_upload.unlink(missing_ok=True)
+        if engine.last_source == (str(active_upload), "video"):
+            engine.last_source = None
+        active_upload = None
+
+
+async def open_capture(payload, owner):
+    require_session(owner)
+    generation = await run_in_threadpool(engine.start, capture_source(payload), payload.kind)
+    require_session(owner)
+    release_upload()
+    session.conversation["source"] = payload.model_dump()
+    session.changed()
+    return generation
+
+
 @app.post("/api/capture/start", dependencies=[Depends(authorize)])
 async def start_capture(payload: CaptureRequest):
+    owner = session.session_id
     async with control:
-        source = capture_source(payload)
-        generation = await run_in_threadpool(engine.start, source, payload.kind)
-        session.conversation["source"] = payload.model_dump()
-        session.changed()
+        generation = await open_capture(payload, owner)
     return {"generation": generation}
 
 
 @app.post("/api/capture/upload", dependencies=[Depends(authorize)])
 async def upload_video(file: UploadFile):
+    global active_upload
+    owner = session.session_id
     suffix = Path(file.filename or "").suffix.lower()
     if suffix not in {".mp4", ".mov", ".avi", ".mkv"}:
         raise HTTPException(422, "Chọn video MP4, MOV, AVI hoặc MKV.")
@@ -365,7 +439,14 @@ async def upload_video(file: UploadFile):
         if not readable or fps <= 0 or frames <= 0 or frames / fps > 180:
             raise HTTPException(422, "Video không đọc được hoặc dài quá 3 phút.")
         async with control:
+            require_session(owner)
             generation = await run_in_threadpool(engine.start, str(path), "video")
+            release_upload()
+            active_upload = path
+            if owner != session.session_id:
+                await run_in_threadpool(engine.stop)
+                release_upload()
+                require_session(owner)
         return {"generation": generation, "bytes": total, "duration_seconds": frames / fps}
     except Exception:
         path.unlink(missing_ok=True)
@@ -378,6 +459,7 @@ async def upload_video(file: UploadFile):
 async def stop_capture():
     async with control:
         await run_in_threadpool(engine.stop)
+        release_upload()
         engine.generation += 1
         session.capture_stopped(engine.generation)
     return session.snapshot()
@@ -394,7 +476,7 @@ async def preview(request: Request, token: str):
             if version != last_version and data:
                 last_version = version
                 yield b"--frame\r\nContent-Type: image/jpeg\r\nContent-Length: " + str(len(data)).encode() + b"\r\n\r\n" + data + b"\r\n"
-            await asyncio.sleep(0.04)
+            await asyncio.sleep(0.015)
     return StreamingResponse(frames(), media_type="multipart/x-mixed-replace; boundary=frame", headers={"Cache-Control": "no-store"})
 
 
@@ -432,6 +514,7 @@ async def reset_session():
         session.reset(generation=engine.generation, preserve_temporary=True)
         await clear_language_context()
         await run_in_threadpool(engine.stop)
+        release_upload()
     return session.snapshot()
 
 
@@ -445,10 +528,10 @@ async def metric(payload: dict):
 
 
 @app.get("/api/diagnostics", dependencies=[Depends(authorize)])
-async def diagnostics():
+async def diagnostics(light: bool = False):
     model = recognition_info()
     return {"model_sha256": model["sha256"], "capture_profile": model["capture_profile"], "model": model,
-            "state": session.snapshot(), "metrics": session.metrics,
+            "state": session.snapshot(diagnostics=not light), "metrics": [] if light else session.metrics,
             "uptime_seconds": time.time() - app.state.started}
 
 

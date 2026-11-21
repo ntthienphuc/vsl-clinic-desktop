@@ -536,5 +536,1095 @@
     "source_kind": "qipedc-single",
     "source_id": "W00145N",
     "source_url": "https://qipedc.moet.gov.vn/videos/W00145N.mp4"
+  },
+  {
+    "id": "qipedc-W00372",
+    "label": "Buồn nôn",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W00372",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W00372.mp4"
+  },
+  {
+    "id": "qipedc-W00238",
+    "label": "Bên phải",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W00238",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W00238.mp4"
+  },
+  {
+    "id": "qipedc-W00239",
+    "label": "Bên trái",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W00239",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W00239.mp4"
+  },
+  {
+    "id": "qipedc-W02295",
+    "label": "Nằm",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W02295",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W02295.mp4"
+  },
+  {
+    "id": "qipedc-W01304N",
+    "label": "Đợi",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W01304N",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W01304N.mp4"
+  },
+  {
+    "id": "qipedc-D0355",
+    "label": "Đau mắt",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "D0355",
+    "source_url": "https://qipedc.moet.gov.vn/videos/D0355.mp4"
+  },
+  {
+    "id": "qipedc-D0359",
+    "label": "Đau tai",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "D0359",
+    "source_url": "https://qipedc.moet.gov.vn/videos/D0359.mp4"
+  },
+  {
+    "id": "qipedc-D0485",
+    "label": "Nhà vệ sinh",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "D0485",
+    "source_url": "https://qipedc.moet.gov.vn/videos/D0485.mp4"
+  },
+  {
+    "id": "qipedc-W00042",
+    "label": "Ăn uống",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W00042",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W00042.mp4"
+  },
+  {
+    "id": "qipedc-W00188",
+    "label": "Băng bó",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W00188",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W00188.mp4"
+  },
+  {
+    "id": "qipedc-W00432",
+    "label": "Cấp cứu",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W00432",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W00432.mp4"
+  },
+  {
+    "id": "qipedc-W01786",
+    "label": "Khẩu trang",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W01786",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W01786.mp4"
+  },
+  {
+    "id": "qipedc-W03394",
+    "label": "Tiêm",
+    "model_id": null,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "qipedc-single",
+    "source_id": "W03394",
+    "source_url": "https://qipedc.moet.gov.vn/videos/W03394.mp4"
+  },
+  {
+    "id": "276",
+    "label": "Rửa mặt",
+    "model_id": 276,
+    "category": "Chăm sóc",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "127",
+    "label": "Gội đầu",
+    "model_id": 127,
+    "category": "Chăm sóc",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "342",
+    "label": "Tắm rửa",
+    "model_id": 342,
+    "category": "Chăm sóc",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "126",
+    "label": "Gối (đầu)",
+    "model_id": 126,
+    "category": "Chăm sóc",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "203",
+    "label": "Mền",
+    "model_id": 203,
+    "category": "Chăm sóc",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "73",
+    "label": "Cái ghế",
+    "model_id": 73,
+    "category": "Chăm sóc",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "148",
+    "label": "Khô",
+    "model_id": 148,
+    "category": "Chăm sóc",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "396",
+    "label": "Ướt",
+    "model_id": 396,
+    "category": "Chăm sóc",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "397",
+    "label": "Ấm",
+    "model_id": 397,
+    "category": "Chăm sóc",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "38",
+    "label": "Cho",
+    "model_id": 38,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "146",
+    "label": "Khó",
+    "model_id": 146,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "101",
+    "label": "Dễ",
+    "model_id": 101,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "369",
+    "label": "Yên tĩnh",
+    "model_id": 369,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "382",
+    "label": "Điện thoại",
+    "model_id": 382,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "167",
+    "label": "Lễ tân",
+    "model_id": 167,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "225",
+    "label": "Nhà",
+    "model_id": 225,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "347",
+    "label": "Từ chối",
+    "model_id": 347,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "289",
+    "label": "Thay đổi",
+    "model_id": 289,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "114",
+    "label": "Giây",
+    "model_id": 114,
+    "category": "Thời gian",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "122",
+    "label": "Giờ",
+    "model_id": 122,
+    "category": "Thời gian",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "214",
+    "label": "Ngày",
+    "model_id": 214,
+    "category": "Thời gian",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "293",
+    "label": "Tháng",
+    "model_id": 293,
+    "category": "Thời gian",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "284",
+    "label": "Sớm",
+    "model_id": 284,
+    "category": "Thời gian",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "335",
+    "label": "Trễ",
+    "model_id": 335,
+    "category": "Thời gian",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "363",
+    "label": "Xin",
+    "model_id": 363,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "121",
+    "label": "Giới thiệu",
+    "model_id": 121,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "142",
+    "label": "Hứa",
+    "model_id": 142,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "254",
+    "label": "Quen",
+    "model_id": 254,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "153",
+    "label": "Không quen",
+    "model_id": 153,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "149",
+    "label": "Không cho",
+    "model_id": 149,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "253",
+    "label": "Quan sát",
+    "model_id": 253,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "339",
+    "label": "Tìm",
+    "model_id": 339,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "307",
+    "label": "Thích",
+    "model_id": 307,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "370",
+    "label": "Yêu thương",
+    "model_id": 370,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "234",
+    "label": "Nhầm lẫn",
+    "model_id": 234,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "224",
+    "label": "Nhanh",
+    "model_id": 224,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "47",
+    "label": "Chậm chạp",
+    "model_id": 47,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "124",
+    "label": "Gần",
+    "model_id": 124,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "357",
+    "label": "Xa",
+    "model_id": 357,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "399",
+    "label": "Ồn ào",
+    "model_id": 399,
+    "category": "Giao tiếp",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "0",
+    "label": "Anh",
+    "model_id": 0,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "10",
+    "label": "Bác",
+    "model_id": 10,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "33",
+    "label": "Bố",
+    "model_id": 33,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "201",
+    "label": "Mẹ",
+    "model_id": 201,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "42",
+    "label": "Chú",
+    "model_id": 42,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "50",
+    "label": "Chị",
+    "model_id": 50,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "80",
+    "label": "Cô",
+    "model_id": 80,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "89",
+    "label": "Cậu",
+    "model_id": 89,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "98",
+    "label": "Dì",
+    "model_id": 98,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "107",
+    "label": "Em",
+    "model_id": 107,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "40",
+    "label": "Cháu",
+    "model_id": 40,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "356",
+    "label": "Vợ",
+    "model_id": 356,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "51",
+    "label": "Chồng",
+    "model_id": 51,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "60",
+    "label": "Con gái",
+    "model_id": 60,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "65",
+    "label": "Con trai",
+    "model_id": 65,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "376",
+    "label": "Ông ngoại",
+    "model_id": 376,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "377",
+    "label": "Ông nội",
+    "model_id": 377,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "7",
+    "label": "Bà ngoại",
+    "model_id": 7,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "8",
+    "label": "Bà nội",
+    "model_id": 8,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "139",
+    "label": "Họ hàng",
+    "model_id": 139,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "109",
+    "label": "Già",
+    "model_id": 109,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "334",
+    "label": "Trẻ",
+    "model_id": 334,
+    "category": "Gia đình",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "92",
+    "label": "Cứng",
+    "model_id": 92,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "202",
+    "label": "Mềm",
+    "model_id": 202,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "181",
+    "label": "Mát mẻ",
+    "model_id": 181,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "136",
+    "label": "Hôi",
+    "model_id": 136,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "310",
+    "label": "Thơm",
+    "model_id": 310,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "223",
+    "label": "Ngửi",
+    "model_id": 223,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "100",
+    "label": "Dơ",
+    "model_id": 100,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "138",
+    "label": "Hẹp",
+    "model_id": 138,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "274",
+    "label": "Rộng",
+    "model_id": 274,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "95",
+    "label": "Dài",
+    "model_id": 95,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "220",
+    "label": "Ngắn",
+    "model_id": 220,
+    "category": "Khám bệnh",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "242",
+    "label": "Năm",
+    "model_id": 242,
+    "category": "Thời gian",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "316",
+    "label": "Thời gian",
+    "model_id": 316,
+    "category": "Thời gian",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "320",
+    "label": "Thứ hai",
+    "model_id": 320,
+    "category": "Thời gian",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "318",
+    "label": "Thứ ba",
+    "model_id": 318,
+    "category": "Thời gian",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "323",
+    "label": "Thứ tư",
+    "model_id": 323,
+    "category": "Thời gian",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "321",
+    "label": "Thứ năm",
+    "model_id": 321,
+    "category": "Thời gian",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "322",
+    "label": "Thứ sáu",
+    "model_id": 322,
+    "category": "Thời gian",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "319",
+    "label": "Thứ bảy",
+    "model_id": 319,
+    "category": "Thời gian",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "54",
+    "label": "Chủ nhật",
+    "model_id": 54,
+    "category": "Thời gian",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "119",
+    "label": "Giặt đồ",
+    "model_id": 119,
+    "category": "Sinh hoạt",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "251",
+    "label": "Phơi đồ",
+    "model_id": 251,
+    "category": "Sinh hoạt",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "275",
+    "label": "Rửa chén",
+    "model_id": 275,
+    "category": "Sinh hoạt",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "77",
+    "label": "Cái áo",
+    "model_id": 77,
+    "category": "Sinh hoạt",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "76",
+    "label": "Cái quần",
+    "model_id": 76,
+    "category": "Sinh hoạt",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "97",
+    "label": "Dép",
+    "model_id": 97,
+    "category": "Sinh hoạt",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "111",
+    "label": "Giày",
+    "model_id": 111,
+    "category": "Sinh hoạt",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "93",
+    "label": "Cửa sổ",
+    "model_id": 93,
+    "category": "Sinh hoạt",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "41",
+    "label": "Chìa khóa",
+    "model_id": 41,
+    "category": "Sinh hoạt",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "346",
+    "label": "Tủ lạnh",
+    "model_id": 346,
+    "category": "Sinh hoạt",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "359",
+    "label": "Xe máy",
+    "model_id": 359,
+    "category": "Sinh hoạt",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "358",
+    "label": "Xe buýt",
+    "model_id": 358,
+    "category": "Sinh hoạt",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "375",
+    "label": "Ô tô",
+    "model_id": 375,
+    "category": "Sinh hoạt",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "196",
+    "label": "Mũ bảo hiểm",
+    "model_id": 196,
+    "category": "Sinh hoạt",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "221",
+    "label": "Ngọt",
+    "model_id": 221,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "231",
+    "label": "Nhạt",
+    "model_id": 231,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "200",
+    "label": "Mặn",
+    "model_id": 200,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "365",
+    "label": "Xôi",
+    "model_id": 365,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "37",
+    "label": "Cay",
+    "model_id": 37,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "387",
+    "label": "Đắng",
+    "model_id": 387,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "123",
+    "label": "Gạo",
+    "model_id": 123,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "315",
+    "label": "Thịt",
+    "model_id": 315,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "336",
+    "label": "Trứng",
+    "model_id": 336,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "245",
+    "label": "Nấu",
+    "model_id": 245,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "252",
+    "label": "Phở",
+    "model_id": 252,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "23",
+    "label": "Bún",
+    "model_id": 23,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "187",
+    "label": "Mì gói",
+    "model_id": 187,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "258",
+    "label": "Quả cam",
+    "model_id": 258,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "259",
+    "label": "Quả chuối",
+    "model_id": 259,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "265",
+    "label": "Quả đu đủ",
+    "model_id": 265,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "330",
+    "label": "Trà",
+    "model_id": 330,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "69",
+    "label": "Cà phê",
+    "model_id": 69,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "12",
+    "label": "Bánh bao",
+    "model_id": 12,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "271",
+    "label": "Rượu",
+    "model_id": 271,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "2",
+    "label": "Bia",
+    "model_id": 2,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "248",
+    "label": "Nếm",
+    "model_id": 248,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "306",
+    "label": "Thèm",
+    "model_id": 306,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
+  },
+  {
+    "id": "143",
+    "label": "Kem",
+    "model_id": 143,
+    "category": "Ăn uống",
+    "demo": null,
+    "source_kind": "local-consensus"
   }
 ]

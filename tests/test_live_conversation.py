@@ -85,6 +85,7 @@ def test_no_context_hallucination_or_negation_loss():
 
 
 def test_manual_never_sends_until_review(session):
+    session.configure_conversation("manual")
     session.start_conversation()
     epoch = session.conversation["epoch"]
     result = {"utterance_id": "a:1", "text": "Uống nước", "uncertain": False}
@@ -158,3 +159,45 @@ def test_word_correction_updates_completed_turn(session):
     session.confirm(identity, "Lạnh")
     assert session.messages[0]["raw_text"] == "Đau · Lạnh"
     assert session.messages[0]["text"] == "Đau và lạnh."
+
+
+@pytest.mark.parametrize("mode", ["auto", "manual"])
+def test_patient_signs_run_concurrently_and_new_doctor_message_interrupts(session, monkeypatch, mode):
+    clock = [1000.0]
+    monkeypatch.setattr("backend.session.now_ms", lambda: clock[0])
+    session.configure_conversation(mode)
+    session.start_conversation()
+    first = session.send("Bác sĩ đo nhiệt độ.", "sign")
+    playback_id = session.playback["id"]
+    session.control_playback("ready", playback_id, iteration=0)
+    clock[0] += 250
+    session.capture_event({"type": "capture", "generation": 1, "status": "signing",
+                           "boundary_state": "waiting_for_boundary", "has_face": True,
+                           "hand_count": 2, "inflight_segments": 1})
+    assert session.playback["status"] == "playing"
+    recognized(session, "Mệt", .2)
+    recognized(session, "Đau", .9)
+    session.confirm(session.current_result["id"], "Bụng")
+    assert session.playback["status"] == "playing"
+    assert "pause_reason" not in session.playback
+    second = session.send("Uống nước.", "sign")
+    assert second["status"] == "presenting"
+    session.tick()
+    session.control_playback("complete", playback_id, iteration=0)
+    assert first["status"] == "interrupted"
+    assert session.playback["message_id"] == second["id"]
+    session.control_playback("ready", session.playback["id"], iteration=0)
+    assert session.playback["status"] == "playing"
+    assert session.turns.current["raw_text"] == "Mệt · Bụng"
+    assert not session.pending
+
+
+def test_patient_activity_cannot_undo_explicit_pause_or_stop(session):
+    session.send("Bác sĩ.", "sign")
+    playback_id = session.playback["id"]
+    session.control_playback("ready", playback_id, iteration=0)
+    for action, expected in [("pause", "paused"), ("stop", "stopped")]:
+        session.control_playback(action, playback_id)
+        recognized(session, "Mệt")
+        session.tick()
+        assert session.playback["status"] == expected

@@ -1,0 +1,39 @@
+/* The avatar and the doctor's full sentence form one visual unit. */
+.patient-page { display: flex; flex-direction: column; flex: 1; min-height: 0; width: 100%; max-width: none; padding: 4px 24px 12px; margin: 0; }
+.patient-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(210px, .38fr); flex: 1; align-items: stretch; min-height: 0; gap: 18px; }
+.patient-stage-panel { display: flex; flex-direction: column; min-height: 0; min-width: 0; overflow: hidden; border: 1px solid #dfe7db; border-radius: 22px; background: #edf2e8; }
+.patient-stage-panel .avatar-stage { flex: 1; min-height: 0; height: auto; background: #edf2e8; }
+.avatar-stage::before { display: none; }
+.avatar-stage-top { top: 19px; left: 22px; right: 22px; }
+.avatar-stage-label { display: inline-flex; align-items: center; gap: 7px; color: #536f4a; font-size: 12px; font-weight: 500; }
+.avatar-caption { bottom: 18px; max-width: calc(100% - 40px); padding: 8px 15px; border: 1px solid #dbe5d5; border-radius: 12px; background: #ffffffed; font-size: 14px; font-weight: 500; color: #487044; box-shadow: none; }
+.avatar-stage:has(.sign-sequence) .avatar-caption { bottom: 58px; }
+.sign-sequence { left: 16px; right: 16px; bottom: 12px; max-height: 36px; font-size: 11px; flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; padding-bottom: 2px; }
+.sign-sequence span { flex-shrink: 0; padding: 4px 9px; border: 0; border-radius: 7px; background: #f9fcf6; color: #617654; }
+.sign-sequence .current { background: #2e604c; color: #fff; }
+.sign-sequence .done { background: #e2ebdb; color: #617654; }
+.avatar-progress { height: 2px; background: #dce7d4; }
+.avatar-progress > div { background: #6d9470; }
+.patient-message { min-height: 108px; max-height: 34%; padding: 17px 24px 22px; background: #fff; overflow-y: auto; flex-shrink: 0; }
+.patient-message-label { color: #617455; font-size: 11px; font-weight: 500; }
+.patient-message .doctor-caption { margin: 5px 0 0; padding: 0; border: 0; max-height: none; overflow: visible; font-size: clamp(24px, 2.4vw, 36px); line-height: 1.35; font-weight: 500; letter-spacing: -.5px; color: #2d4f3d; }
+.patient-message .doctor-caption.empty { color: #64785b; font-size: 20px; font-weight: 400; }
+.current-sign-text { margin: 9px 0 0; color: #718568; font-size: 13px; }
+.patient-camera { display: flex; min-width: 0; min-height: 0; background: transparent; }
+.patient-passive-camera { display: flex; flex-direction: column; min-height: 0; height: 100%; width: 100%; }
+.patient-passive-camera .section-heading { padding: 10px 0 12px; gap: 7px; }
+.patient-passive-camera .heading-icon { display: none; }
+.patient-passive-camera .section-heading h3 { font-size: 12px; font-weight: 500; color: #536d4c; }
+.patient-passive-camera .soft-tag { display: none; }
+.patient-passive-camera .camera-preview { flex: 1; aspect-ratio: auto; min-height: 100px; max-height: none; height: auto; margin: 0; border: 1px solid #e0e6db; border-radius: 17px; background: #e9eee4; }
+.camera-preview img { object-fit: contain; }
+.camera-placeholder { min-height: 0; display: flex; flex-direction: column; justify-content: center; gap: 12px; padding: 16px; text-align: center; }
+.camera-placeholder > svg { width: 26px; height: 26px; color: #a7b59b; }
+.camera-placeholder strong { font-size: 13px; line-height: 1.5; font-weight: 400; color: #526747; }
+.patient-listening { display: flex; justify-content: center; align-items: center; gap: 6px; padding: 10px 0 0; color: #5c8056; font-size: 12px; font-weight: 500; text-align: center; }
+.patient-passive-camera .capture-help { margin: 0; padding: 12px 4px 4px; color: #627655; font-size: 12px; line-height: 1.6; text-align: center; }
+.patient-recognized { margin: 10px 0 0; border-radius: 12px; padding: 12px; background: #e5efdf; color: #476c3d; font-size: 14px; text-align: left; }
+.patient-recognized strong { display: block; font-size: 24px; font-weight: 600; margin-top: 4px; }
+@media (min-width: 1200px) { .patient-grid { grid-template-columns: minmax(0, 1fr) minmax(270px, .34fr); gap: 24px; } }
+@media (max-width: 850px) { .patient-page { padding: 4px 16px 10px; } .patient-grid { gap: 12px; grid-template-columns: minmax(0, 1fr) minmax(190px, .48fr); } .patient-message { padding: 14px 18px 18px; } }
+@media (max-width: 599px), (max-height: 599px) { .patient-grid { display: flex; flex-direction: column; } .patient-stage-panel { flex: none; } .patient-stage-panel .avatar-stage { height: 420px; flex: none; } .patient-message { max-height: 280px; } .patient-camera { height: 300px; flex: none; } .patient-passive-camera .camera-preview { min-height: 160px; } }

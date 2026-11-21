@@ -1,0 +1,35 @@
+﻿scenario,turn,doctor,doctor_mode,patient,class_ids
+01_Kho_ngu_met_va_hoi_benh,1,Chị muốn đến khám vì điều gì?,text,Cần → Khám bệnh → Cảm thấy → Mệt → Yếu,W093 → W064 → W025 → W066 → W067
+01_Kho_ngu_met_va_hoi_benh,2,"Trước khi đến đây, chị đã làm gì và nghỉ thế nào?",text,Làm việc → Nặng → Ngủ → Ngắn,W022 → W036 → W017 → W030
+01_Kho_ngu_met_va_hoi_benh,3,Bạn thức dậy vào lúc nào?,sign,Thức dậy → Sớm → Đi → Làm việc,W088 → W035 → W089 → W022
+01_Kho_ngu_met_va_hoi_benh,4,"Ở nhà, chị thường uống gì khi làm việc?",text,Nhà → Làm việc → Uống → Cà phê,W001 → W022 → W048 → W011
+01_Kho_ngu_met_va_hoi_benh,5,Bạn có đau không?,sign,Có → Đau mắt → Đau tai,W096 → W070 → W071
+01_Kho_ngu_met_va_hoi_benh,6,Bạn có sốt không?,sign,Có → Sốt → Cảm thấy → Nóng,W096 → W068 → W025 → W092
+01_Kho_ngu_met_va_hoi_benh,7,Bác sĩ đo nhiệt độ.,sign,Đồng ý → Nhiệt độ → Cảm ơn,W097 → W076 → W026
+01_Kho_ngu_met_va_hoi_benh,8,Bạn có ăn ngon miệng không?,sign,Ăn → Khó → Buồn nôn,W047 → W032 → W069
+01_Kho_ngu_met_va_hoi_benh,9,Bạn có cần giúp đỡ không?,sign,Cần → Gọi → Chồng → Giúp đỡ,W093 → W023 → W046 → W095
+01_Kho_ngu_met_va_hoi_benh,10,Chồng chị đang ở đâu?,text,Chồng → Nhà → Xa → Bệnh viện,W046 → W001 → W039 → W063
+01_Kho_ngu_met_va_hoi_benh,11,Chị muốn nói hay viết thêm điều gì cho bác sĩ?,text,Muốn → Viết → Nói chuyện → Bác sĩ,W020 → W016 → W100 → W061
+01_Kho_ngu_met_va_hoi_benh,12,Bạn muốn uống nước không?,sign,Muốn → Uống → Nước,W020 → W048 → W010
+01_Kho_ngu_met_va_hoi_benh,13,Bạn có cần giúp đỡ không?,sign,Cần → Đi → Giường → Nghỉ ngơi,W093 → W089 → W087 → W086
+01_Kho_ngu_met_va_hoi_benh,14,Bạn muốn ngủ không?,sign,Đồng ý → Muốn → Ngủ → Nghỉ ngơi,W097 → W020 → W017 → W086
+01_Kho_ngu_met_va_hoi_benh,15,"Nếu muốn tôi dừng trao đổi để chị nghỉ, chị có thể báo.",text,Bây giờ → Muốn → Dừng lại → Nghỉ ngơi,W009 → W020 → W099 → W086
+01_Kho_ngu_met_va_hoi_benh,16,Bây giờ nghỉ ngơi.,sign,Cảm ơn → Bác sĩ → Cảm ơn → Y tá,W026 → W061 → W026 → W062
+02_Dieu_duong_ho_tro_sinh_hoat,1,Bạn cảm thấy thế nào?,sign,Bây giờ → Cảm thấy → Tay → Đau,W009 → W025 → W073 → W058
+02_Dieu_duong_ho_tro_sinh_hoat,2,Chị muốn ai ở cạnh hỗ trợ?,text,Cần → Mẹ → Con gái → Giúp đỡ,W093 → W044 → W045 → W095
+02_Dieu_duong_ho_tro_sinh_hoat,3,Mẹ và con gái chị đang ở đâu?,text,Mẹ → Con gái → Bệnh viện → Gần,W044 → W045 → W063 → W040
+02_Dieu_duong_ho_tro_sinh_hoat,4,Bạn có cần giúp đỡ không?,sign,Cần → Y tá → Băng bó → Tay,W093 → W062 → W079 → W073
+02_Dieu_duong_ho_tro_sinh_hoat,5,Chị có đồng ý tiếp tục chăm sóc tay ngay lúc này không?,text,Từ chối → Muốn → Nói chuyện → Bác sĩ,W098 → W020 → W100 → W061
+02_Dieu_duong_ho_tro_sinh_hoat,6,Gọi bác sĩ.,sign,Cảm ơn → Cần → Giúp đỡ,W026 → W093 → W095
+02_Dieu_duong_ho_tro_sinh_hoat,7,Chị muốn tạm dừng hay tiếp tục trao đổi?,text,Dừng lại → Cảm thấy → Mệt → Cần → Nghỉ ngơi,W099 → W025 → W066 → W093 → W086
+02_Dieu_duong_ho_tro_sinh_hoat,8,Bây giờ nghỉ ngơi.,sign,Đồng ý → Giường → Nghỉ ngơi,W097 → W087 → W086
+02_Dieu_duong_ho_tro_sinh_hoat,9,Bạn có đồng ý không?,sign,Có → Muốn → Tiếp tục → Nói chuyện,W096 → W020 → W024 → W100
+02_Dieu_duong_ho_tro_sinh_hoat,10,Bây giờ chị cần gì để sinh hoạt?,text,Cần → Đi → Nhà vệ sinh → Giúp đỡ,W093 → W089 → W082 → W095
+02_Dieu_duong_ho_tro_sinh_hoat,11,Rửa tay.,sign,Đồng ý → Rửa tay → Sạch sẽ,W097 → W083 → W085
+02_Dieu_duong_ho_tro_sinh_hoat,12,Chị còn cần hỗ trợ việc vệ sinh cá nhân nào không?,text,Muốn → Tắm rửa → Thay đổi → Khẩu trang,W020 → W084 → W028 → W081
+02_Dieu_duong_ho_tro_sinh_hoat,13,Chị muốn đồ uống nóng hay lạnh?,text,Muốn → Uống → Nước → Lạnh (nhiệt độ),W020 → W048 → W010 → W038
+02_Dieu_duong_ho_tro_sinh_hoat,14,Chị còn muốn chọn đồ uống nào khác?,text,Thích → Uống → Sữa → Không cần → Cà phê,W027 → W048 → W091 → W094 → W011
+02_Dieu_duong_ho_tro_sinh_hoat,15,Chị muốn tôi nói nhanh hơn hay dùng cách khác?,text,Nghe → Khó → Cần → Viết → Xem,W014 → W032 → W093 → W016 → W049
+02_Dieu_duong_ho_tro_sinh_hoat,16,Tôi sẽ viết lời nhắn ngắn. Chị xem có dễ theo dõi hơn không?,text,Viết → Ngắn → Xem → Dễ → Đồng ý,W016 → W030 → W049 → W037 → W097
+02_Dieu_duong_ho_tro_sinh_hoat,17,Bạn có cần giúp đỡ không?,sign,Không cần → Cảm ơn,W094 → W026
+02_Dieu_duong_ho_tro_sinh_hoat,18,Chị muốn làm gì sau lượt trao đổi này?,text,Muốn → Đi → Nhà → Nghỉ ngơi,W020 → W089 → W001 → W086

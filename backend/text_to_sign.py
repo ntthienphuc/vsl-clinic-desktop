@@ -7,6 +7,7 @@ import unicodedata
 from .semantic_router import SemanticRouter
 from .spoken_language import spoken_variant
 from .language_assist import preserves_protected
+from .natural_clauses import NaturalClauses, split_clauses
 
 
 def normalize(value: str) -> str:
@@ -24,6 +25,7 @@ def tokens_of(value: str) -> list[str]:
 class TextPlanner:
     def __init__(self, words: list[dict], catalog: dict | None = None, semantic_bank: dict | None = None):
         self.words = words
+        self.exact_words = {phrase_key(word['label']): word for word in words}
         self.phrases = {tuple(normalize(word["label"]).split()): word for word in words}
         self.maximum = max((len(key) for key in self.phrases), default=1)
         self.catalog = catalog or {}
@@ -57,6 +59,7 @@ class TextPlanner:
                     raise ValueError(f"Ambiguous phrase: {alias}")
                 self.templates[key] = entry
         self.semantic_router = SemanticRouter(semantic_bank) if semantic_bank else None
+        self.natural = NaturalClauses(words)
 
     def _semantic_clause(self, value: str) -> str:
         """Remove only approved discourse markers before sign planning.
@@ -132,9 +135,16 @@ class TextPlanner:
             semantic_content = self._semantic_clause(content)
             normalized_parts.append(semantic_content)
             semantic_token_total += len(tokens_of(semantic_content))
-            entry = self.templates.get(phrase_key(semantic_content))
+            entry = self.templates.get(phrase_key(semantic_content)) or self.natural.parse(semantic_content)
             lexical, missing = self._lexical(semantic_content, token_offset)
             symbols = re.findall(r"[^\w\s.!?;’']|_", normalize(semantic_content), re.UNICODE)
+            # Parentheses in an exact dictionary label distinguish its sense
+            # (e.g. Gối (đầu)). They are not arbitrary sentence operators.
+            exact = self.exact_words.get(phrase_key(semantic_content))
+            if exact and symbols:
+                lexical = [dict(id=exact['id'], label=exact['label'], start=token_offset,
+                                tokens=len(tokens_of(semantic_content)))]
+                missing, symbols = [], []
             single = len(lexical) == 1 and not missing and not symbols and "?" not in content
             if entry and not symbols:
                 selected = [{"id": key, "label": self.by_id[key]["label"], "start": token_offset, "tokens": 0}
@@ -160,6 +170,7 @@ class TextPlanner:
                 "nonmanual": entry["nonmanual"] if entry and valid else "neutral",
                 "act": entry["act"] if entry and valid else "word",
                 "explanation": entry["explanation"] if entry and valid else "Một ký hiệu riêng lẻ.",
+                "meaning": entry.get("frame") if entry and valid else None,
             })
             token_offset += len(tokens_of(content))
         if len(clauses) > 6 or len(glosses) > 24:
@@ -170,9 +181,9 @@ class TextPlanner:
         elif any(item["reason"] == "too_long" for item in issues):
             message = "Hãy chia nội dung thành tối đa 6 câu ngắn hoặc 24 ký hiệu mỗi lần gửi."
         elif unsupported:
-            message = "Có từ hoặc nội dung chưa hỗ trợ avatar. Hãy sửa nội dung hoặc gửi nguyên văn bằng chữ."
+            message = "Có phần chưa thể hiện đủ bằng ký hiệu. Bạn có thể sửa câu hoặc gửi nguyên văn bằng chữ."
         else:
-            message = "Các từ đã có nhưng cấu trúc câu chưa được hỗ trợ. Chọn mẫu câu hoặc gửi nguyên văn bằng chữ."
+            message = "Đã có các từ, nhưng chưa xác định rõ cách ghép ý. Bạn có thể tách câu hoặc gửi nguyên văn bằng chữ."
         return {
             "text": text, "supported": supported, "glosses": glosses,
             "unsupported": unsupported, "issues": issues, "clauses": clauses,
@@ -189,6 +200,54 @@ class TextPlanner:
             "regional_review": self.catalog.get("regional_review"),
         }
 
+    def _compose_natural(self, text: str) -> dict | None:
+        parts = split_clauses(text)
+        if not 1 < len(parts) <= 6:
+            return None
+        plans = []
+        previous = None
+        for original, connector in parts:
+            content = original
+            parsed = self.natural.parse(self._semantic_clause(content))
+            # Explicit subjects start new scopes. Only an ordinary positive
+            # subject carries over "and/then"; never guess negation/modality.
+            if connector in {"và", "rồi", "sau đó", "tiếp theo"} and previous and parsed and not parsed["explicit_subject"]:
+                if previous["frame"]["modal"] or previous["frame"]["act"].endswith("question") or previous["frame"]["time"]:
+                    return None
+                subject = previous["frame"]["subject"]
+                if subject:
+                    content = ("Bạn" if subject == "addressee" else subject) + " " + content
+                    parsed = self.natural.parse(self._semantic_clause(content))
+            plan = self._plan_raw(content)
+            if not plan["supported"]:
+                # Individual clauses may use existing complete semantic aliases.
+                # No multi-clause fallback is allowed to consume just one idea.
+                semantic = spoken_variant(content) or (self.semantic_router.resolve(content, set(self.templates)) if self.semantic_router else None)
+                if not semantic or semantic["decision"] != "auto":
+                    return None
+                plan = self._plan_raw(semantic["canonical_text"])
+                if not plan["supported"]:
+                    return None
+            plans.append((original, connector, plan))
+            previous = parsed
+        glosses, clauses = [], []
+        for original, connector, plan in plans:
+            offset = len(glosses)
+            glosses.extend(plan["glosses"])
+            clauses.extend({**clause, "text": original, "connector": connector,
+                            "gloss_start": offset + clause["gloss_start"],
+                            "gloss_end": offset + clause["gloss_end"]} for clause in plan["clauses"])
+        if len(glosses) > 24:
+            return None
+        return {**plans[0][2], "text": text, "supported": True, "glosses": glosses,
+                "clauses": clauses, "projection": [item["label"] for item in glosses],
+                "normalized_text": " ".join(plan["normalized_text"] for _, _, plan in plans),
+                "mode": "phrase", "act": "sentences", "nonmanual": "neutral",
+                "phrase_id": clauses[-1]["phrase_id"], "coverage": 1.0,
+                "semantic": {"source": "natural-clause-composition-v1", "applied": True,
+                             "decision": "auto", "unmatched": [], "canonical_text": text},
+                "message": "Sẵn sàng gửi từng ý theo thứ tự, cùng câu gốc."}
+
     def plan(self, text: str) -> dict:
         """Plan text, optionally through the finite semantic bank first.
 
@@ -200,7 +259,18 @@ class TextPlanner:
         # Fully covered, reviewed clauses take precedence over a partial alias
         # candidate. Otherwise one "uống nước" match can invalidate an entire
         # valid three-sentence message and propose dropping the other clauses.
-        if raw["supported"] or not self.semantic_router:
+        if raw["supported"]:
+            if any(clause.get("meaning") for clause in raw["clauses"]):
+                raw["semantic"] = {"source": "natural-clauses-v1", "applied": True,
+                                   "decision": "auto", "unmatched": [], "canonical_text": text,
+                                   "omitted": [{"text": match.group(), "reason": "bounded_politeness_wrapper"}
+                                               for match in re.finditer(r"\b(?:giúp em|giúp tôi|ơi|nhé|nha|ạ)\b", text, re.IGNORECASE)],
+                                   "frames": [clause.get("meaning") for clause in raw["clauses"]]}
+            return raw
+        composed = self._compose_natural(text)
+        if composed:
+            return composed
+        if not self.semantic_router:
             return raw
         # Route each sentence independently. A partial match in one sentence
         # must never swallow a second request, negation or unsupported dose.

@@ -1,7 +1,7 @@
 {
   "name": "vsl-clinic-desktop",
   "productName": "VSL Clinic",
-  "version": "0.5.2",
+  "version": "0.7.5",
   "private": true,
   "type": "module",
   "description": "Giao tiếp VSL cục bộ giữa bác sĩ và bệnh nhân trên hai màn hình",
@@ -37,12 +37,12 @@
     "asar": true,
     "electronDist": "node_modules/electron/dist",
     "directories": {
-      "output": "../App/0.5.2"
+      "output": "../App/0.7.5"
     },
     "files": [
       "desktop/**/*",
-      "dist/**/*",
-      "package.json"
+      "package.json",
+      "!node_modules/**/*"
     ],
     "extraFiles": [
       {

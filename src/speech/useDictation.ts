@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { token } from '../api';
-import { patientAudioBlocked, subscribePatientAudio } from './patientAudioGate';
 
 type Phase = 'idle' | 'loading' | 'permission' | 'listening' | 'finishing';
 
@@ -90,7 +89,7 @@ export function useDictation(sessionId: string, live = false) {
   }, [fail, stop]);
 
   const start = useCallback(async () => {
-    if (active.current || patientAudioBlocked()) {
+    if (active.current) {
       return;
     }
     setError('');
@@ -158,7 +157,6 @@ export function useDictation(sessionId: string, live = false) {
                 return;
               }
               if (audio.data.pcm) {
-                if (patientAudioBlocked()) return;
                 if (socket.readyState !== WebSocket.OPEN || socket.bufferedAmount > 64000) {
                   fail('Kết nối micro bị chậm. Hãy kiểm tra nội dung và nói lại ý còn thiếu.');
                   return;
@@ -236,10 +234,6 @@ export function useDictation(sessionId: string, live = false) {
       }
     }
   }, [deviceId, fail, finish, live, releaseAudio, sessionId, stop]);
-
-  useEffect(() => subscribePatientAudio(() => {
-    if (patientAudioBlocked()) stop(true);
-  }), [stop]);
 
   useEffect(() => {
     alive.current = true;

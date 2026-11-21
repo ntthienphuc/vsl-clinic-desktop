@@ -1,10 +1,6 @@
-/* Plain language workspace: primary actions stay visible; setup lives in a dialog. */
-.card { box-shadow: none; border: 1px solid #e0e8e4; border-radius: 14px; }
-.button, .icon-button, .text-button, .word-chip, .segmented button { touch-action: manipulation; }
-button:focus-visible, summary:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #267cbb; outline-offset: 3px; }
-.composer-body .quick-phrases { padding: 0; border: 0; flex-shrink: 0; gap: 12px; }
-.composer-body .quick-phrases .text-button { min-height: 40px; font-size: 14px; }
 .conversation-send-option { display: grid; gap: 8px; font-size: 16px; margin-bottom: 24px; }
+.settings-voice-option { display: flex; align-items: center; gap: 10px; font-size: 16px; margin-bottom: 24px; }
+.settings-voice-option input { width: 18px; height: 18px; accent-color: #188575; }
 .conversation-send-option select { min-height: 44px; padding: 8px 12px; border: 1px solid #bad1c5; border-radius: 8px; font: inherit; background: white; color: #203a40; }
 .settings-heading { margin: 0 0 12px; font-size: 17px; }
 .session-reset-option { padding-top: 18px; margin-top: 20px; border-top: 1px solid #e0e8e4; }
@@ -20,16 +16,28 @@ button:focus-visible, summary:focus-visible, select:focus-visible, input:focus-v
 .recognition-mode-summary { font-size: 13px; }
 .recognition-mode-summary .text-button { min-height: 40px; }
 .patient-passive-camera .capture-help { margin: 8px 14px 12px; font-size: 14px; }
-.clinic-phrase-list button { min-height: 70px; }
-.doctor-aside .recognition-card:has(.word-review[open]) { max-height: 55%; }
-.result-review .confirm-row { margin: 8px 0 10px; }
-.review-confirmed { display: flex; align-items: center; gap: 6px; font-size: 14px; color: #22665e; }
 .app-footer { color: #526c62; }
 @media (max-width: 620px) {
   .recognition-mode-options strong { font-size: 15px; }
   .recognition-mode-options span { font-size: 12px; }
-  .clinic-phrase-list { grid-template-columns: 1fr; }
   .conversation-bar { flex-wrap: wrap; gap: 10px; }
   .conversation-bar > span { flex-basis: 100%; }
   .conversation-bar > .button { margin-left: auto; }
 }
+.history-word-list { display: flex; flex-wrap: wrap; gap: 5px; }
+.history-word-list > span { padding: 2px 6px; border-radius: 5px; }
+.ranked-word-list { display: grid; gap: 10px; }
+.patient-word-result { display: flex; align-items: flex-start; flex-wrap: wrap; gap: 5px 8px; min-width: 0; }
+.patient-top-word, .patient-alternative-word { display: flex; align-items: baseline; gap: 8px; width: fit-content; max-width: 100%; padding: 5px 10px; border-radius: 8px; font-size: 23px; font-weight: 700; line-height: 1.3; overflow-wrap: anywhere; }
+.patient-top-word { color: #196442; background: #e1f2e7; }
+.patient-alternative-word { color: #805600; background: #fff0bd; }
+.word-rank { font-size: 12px; font-weight: 600; opacity: .7; }
+.patient-other-words { display: contents; }
+.history-word-list > .patient-chat-word { background: transparent; color: inherit; }
+.skip-link { position: fixed; left: 16px; top: -100px; z-index: 100; padding: 12px 18px; background: white; color: #095a57; border: 2px solid #095a57; border-radius: 8px; }
+.skip-link:focus { top: 12px; }
+
+.button, .icon-button, .text-button, .word-chip, .segmented button { touch-action: manipulation; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0; }
+button:focus-visible, a:focus-visible, summary:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #2a7aa1; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0s !important; animation-duration: 0s !important; } }

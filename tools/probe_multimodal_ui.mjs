@@ -2,9 +2,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
-import {spawn} from 'node:child_process';
+import {spawn,execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {checkModeUx} from './check_mode_ux.mjs';
+import {checkWordAudio,samplePreview} from './check_word_audio.mjs';
+import {checkNaturalDialogue} from './check_natural_dialogue.mjs';
+import {checkIndependentVoiceClock} from './check_voice_clock.mjs';
+import {checkDelayedVoiceLoad} from './check_voice_loading.mjs';
 const root=path.resolve(import.meta.dirname,'..');
 const version=JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8')).version;
 const installedExecutable=process.argv.find(a=>a.startsWith('--executable='))?.slice(13);
@@ -13,12 +17,20 @@ assert.ok(!packaged||!fs.existsSync(path.join(root,'build/PACKAGING_IN_PROGRESS'
 const allFixtures=process.argv.includes('--12');
 const repeatOnly=process.argv.includes('--repeat-only');
 const originalRepeat=process.argv.includes('--repeat-original');
-const runName=process.argv.find(a=>a.startsWith('--run='))?.slice(6)??'';
+const runArgument=process.argv.indexOf('--run');
+const runName=process.argv.find(a=>a.startsWith('--run='))?.slice(6)
+ ??(runArgument>=0?process.argv[runArgument+1]:new Date().toISOString().replace(/[^0-9]/g,''));
 assert.ok(!runName||/^[a-z0-9-]+$/.test(runName),'Run name must be a simple evidence suffix');
 const output=path.join(root,'../Organization/MultimodalIntegration_2026-11-09',(packaged?(allFixtures?'packaged-ui-12':'packaged-ui'):'source-ui-final')+(runName?'-'+runName:''));
+assert.ok(!fs.existsSync(output),'Preserve previous attempt; choose a new --run value: '+output);
 fs.mkdirSync(output,{recursive:true});
 const report={scope:`${version} ${packaged?'packaged EXE':'source Electron'}; fixed prerecorded samples and synthetic silent/doctor mic; no live person.`,runName,startedAt:new Date().toISOString(),checks:{},trials:[]};
 const delay=ms=>new Promise(r=>setTimeout(r,ms));
+report.artifactVersion=installedExecutable
+ ?JSON.parse(fs.readFileSync(path.join(path.dirname(path.resolve(installedExecutable)),'BUILD_RECEIPT.json'),'utf8')).version
+ :version;
+report.runnerVersion=version;
+report.scope=report.scope.replace(version,report.artifactVersion);
 async function until(fn, timeout=90000) {const start=Date.now();while(Date.now()-start<timeout){const r=await fn();if(r)return r;await delay(80);}throw Error('Timeout: '+fn.toString().slice(0,150));}
 const env={...process.env};delete env.ELECTRON_RUN_AS_NODE;delete env.PYTHONPATH;delete env.PYTHONHOME;
 if(installedExecutable){env.HF_HOME=path.join(output,'empty-hf-cache');env.HF_HUB_OFFLINE='1';env.TRANSFORMERS_OFFLINE='1';}
@@ -27,6 +39,12 @@ if(packaged)env.PATH=process.env.SystemRoot+'\\System32;'+process.env.SystemRoot
 const executable=installedExecutable?path.resolve(installedExecutable):packaged?path.join(root,'../App',version,'win-unpacked/VSL Clinic.exe'):path.join(root,'node_modules/electron/dist/electron.exe');
 assert.ok(fs.existsSync(executable),'Application executable is missing: '+executable);
 report.executable=executable;
+if(packaged){
+ const artifact=path.dirname(executable);
+ report.artifactReceiptSha256=createHash('sha256').update(fs.readFileSync(path.join(artifact,'BUILD_RECEIPT.json'))).digest('hex');
+ report.artifactAsarSha256=createHash('sha256').update(fs.readFileSync(path.join(artifact,'resources/app.asar'))).digest('hex');
+ report.artifactLauncherSha256=createHash('sha256').update(fs.readFileSync(executable)).digest('hex');
+}
 const args=[...(packaged?[]:[root]),'--remote-debugging-port=58914',`--user-data-dir=${path.join(output,'profile')}`,
  '--use-fake-device-for-media-stream',`--use-file-for-fake-audio-capture=${path.join(root,'research/cache/mic-silence.wav')}`];
 const child=spawn(executable,args,{cwd:output,env,windowsHide:true,stdio:['ignore',fs.openSync(path.join(output,'stdout.log'),'w'),fs.openSync(path.join(output,'stderr.log'),'w')]});
@@ -47,12 +65,18 @@ try {
  const url=new URL(dpage.url),token=url.searchParams.get('token');
  const headers={Authorization:'Bearer '+token,'Content-Type':'application/json'};
  api=async(route,body)=>{const r=await fetch(url.origin+'/api'+route,{method:body===undefined?'GET':'POST',headers,body:body===undefined?undefined:JSON.stringify(body)});if(!r.ok)throw Error(await r.text());return r.json();};
- state=async()=>(await api('/diagnostics')).state;
- assert.equal((await(await fetch(url.origin+'/healthcheck')).json()).version,version);
+ state=async()=>(await api('/diagnostics?light=true')).state;
+ assert.equal((await(await fetch(url.origin+'/healthcheck')).json()).version,report.artifactVersion);
  await until(async()=>await patient.eval("window.clinicDiagnostics?.mouthExpressions?.includes('aa')"));
+ for(const page of [doctor,patient])assert.ok(await page.eval(`document.querySelector('.app-footer').textContent.includes(${JSON.stringify(report.artifactVersion)})`),'Visible version must match the executable');
  report.graphics=await patient.eval("(()=>{const gl=document.querySelector('canvas').getContext('webgl2');const ext=gl.getExtension('WEBGL_debug_renderer_info');return {renderer:ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER),vendor:gl.getParameter(gl.VENDOR)};})()");
- await until(async()=>{const m=(await api('/diagnostics')).model;assert.notEqual(m.worker.status,'error',JSON.stringify(m));return m.worker.status==='ready';});
+ await until(async()=>{const m=(await api('/diagnostics?light=true')).model;assert.notEqual(m.worker.status,'error',JSON.stringify(m));return m.worker.status==='ready';});
  report.worker=(await api('/diagnostics')).model;
+ if(process.argv.includes('--natural'))assert.equal((await state()).conversation.mode,'auto','New sessions should send complete speech automatically by default');
+ if(process.argv.includes('--cpu-int8')){
+  assert.equal(report.worker.worker.device,'cpu');
+  assert.equal(report.worker.worker.precision,'transformer_dynamic_int8');
+ }
  for(const [width,height] of [[1280,720],[1920,1080]])for(const page of [doctor,patient]){
   await page.call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});await delay(200);
   const l=await page.eval('({w:innerWidth,h:innerHeight,sh:document.documentElement.scrollHeight,sw:document.documentElement.scrollWidth})');assert.ok(l.sh<=l.h+1&&l.sw<=l.w+1,JSON.stringify(l));
@@ -60,13 +84,17 @@ try {
  for(const page of [doctor,patient])await page.call('Emulation.setDeviceMetricsOverride',{width:1280,height:720,deviceScaleFactor:1,mobile:false});
  report.checks.layout720p1080p=true;
  if(process.argv.includes('--modes'))await checkModeUx({doctor,patient,api,state,until,delay,output,report});
+ if(process.argv.includes('--natural'))await checkNaturalDialogue({doctor,patient,api,state,until,delay,output,report});
+ await checkWordAudio({api,state,patient,until,report});
+ if(process.argv.includes('--voice-clock'))await checkIndependentVoiceClock({api,state,patient,until,report});
+ if(process.argv.includes('--voice-clock'))await checkDelayedVoiceLoad({api,state,patient,until,delay,report});
  await api('/conversation/configure',{mode:'auto',source:{kind:'demo',demo_id:'mm100:W068'}});
  await api('/conversation/start',{});
  if(allFixtures||repeatOnly)await api('/capture/stop',{});
  let yielded=0, autoWords=0, newWords=0, reviewDone=false;
  const ids=['W068','W066','W069','W072','W082','W093'];
  const cases=repeatOnly?[]:allFixtures?JSON.parse(fs.readFileSync(path.join(root,'../Organization/MultimodalIntegration_2026-11-09/capture/PLAN.json'),'utf8')).clips:ids.map(class_id=>({class_id}));
- report.fixturePlan=repeatOnly?'Focused repeated VSL100 word: identity, policy, audio, ASR and End; not a new 12-clip sweep.':allFixtures?'Same prespecified 12 VSL100 clips with mouth pixels: Học validation + Huy test, T01/C1; fixed fold01/seed17; no threshold tuning.':'Six staged VSL100 Huy test examples.';
+ report.fixturePlan=repeatOnly?'Focused repeated VSL100 word: identity, policy, audio, ASR and End; not a new 12-clip sweep.':allFixtures?'Same prespecified 12 VSL100 clips with mouth pixels: Học validation + Huy test, T01/C1; fixed fold01/seed17. Owner-requested policy thresholds; no checkpoint search. Reused fixtures, not independent validation.':'Six staged VSL100 Huy test examples.';
  for(const [i,fixture] of cases.entries()){
   const cid=fixture.class_id;let targetGeneration;
   if(i){await api('/messages',{text:'Bạn có đau bụng không? Vui lòng ngồi nghỉ nhé.',mode:'sign'});await until(async()=>{const n=await patient.eval('window.clinicDiagnostics.narration');return n.speaking&&Object.values(n.mouth).some(v=>v>.01);});
@@ -86,6 +114,7 @@ try {
    const form=new FormData();form.append('file',new Blob([bytes],{type:'video/mp4'}),'fixture.mp4');
    const response=await fetch(url.origin+'/api/capture/upload',{method:'POST',headers:{Authorization:'Bearer '+token},body:form});const body=await response.json();assert.ok(response.ok,JSON.stringify(body));targetGeneration=body.generation;
   }else if(i){targetGeneration=(await api('/capture/start',{kind:'demo',demo_id:'mm100:'+cid})).generation;}
+  const previewSample=i===0?samplePreview(url.origin+'/api/preview?token='+encodeURIComponent(token)):null;
   const s=await until(async()=>{const s=await state();return s.current_result&&(targetGeneration===undefined||s.capture.generation===targetGeneration)?s:null;});const word=s.current_result;
   assert.equal(word.predictions[0].model_id,null);assert.equal(word.recognition.actual_mode,'fusion');
   assert.equal(s.patient_turn.status,'streaming');
@@ -93,11 +122,32 @@ try {
   if(!word.uncertain){
    assert.equal(word.predictions[0].class_id,cid,'Wrong committed word');autoWords++;if(['W068','W069','W072','W082'].includes(cid))newWords++;
    await until(async()=>(await doctor.eval('window.clinicDiagnostics?.patientVoice??[]')).some(e=>e.type==='playing'&&e.message_id===word.id));
-   if(i){assert.equal(s.playback.pause_reason,'patient_reply');yielded++;await delay(200);assert.equal((await patient.eval('window.clinicDiagnostics.narration')).speaking,false);}
+   assert.equal((await doctor.eval('window.clinicDiagnostics?.patientVoice??[]')).filter(e=>e.type==='beep'&&e.message_id===word.id).length,0,'Clear words have no warning beep');
+   if(i){
+    // A short doctor utterance can finish naturally before a slower capture
+    // produces its word. Only a still-active timeline must be interrupted.
+    if(s.playback.status==='completed')trial.avatarCompletedBeforeReply=true;
+    else {assert.equal(s.playback.pause_reason,'patient_reply');yielded++;}
+    await delay(200);assert.equal((await patient.eval('window.clinicDiagnostics.narration')).speaking,false);
+   }
   }else{
-   assert.ok(!(await doctor.eval('window.clinicDiagnostics?.patientVoice??[]')).some(e=>e.type==='playing'&&e.message_id===word.id));
+   await until(async()=>(await doctor.eval('window.clinicDiagnostics?.patientVoice??[]')).some(e=>e.type==='playing'&&e.message_id===word.id&&e.uncertain));
+   const warningEvents=(await doctor.eval('window.clinicDiagnostics?.patientVoice??[]')).filter(e=>e.message_id===word.id);
+   trial.warningEvents=warningEvents;
+   const beep=warningEvents.filter(e=>e.type==='beep'),beepEnd=warningEvents.find(e=>e.type==='beep-ended'),spoken=warningEvents.find(e=>e.type==='playing');
+   assert.equal(beep.length,1,'Exactly one quiet cue for a yellow word');
+   assert.ok(beepEnd && beep[0].recorded_at_ms<=beepEnd.recorded_at_ms && beepEnd.recorded_at_ms<=spoken.recorded_at_ms,'Beep ends before the word starts');
+   assert.ok(spoken.recorded_at_ms-beep[0].recorded_at_ms<700,'Warning should not delay a word by a long pause');
+   const choices=await doctor.eval("[...document.querySelectorAll('.candidate-choices button')].map(b=>({text:b.textContent,r:b.getBoundingClientRect().toJSON()}))");
+   assert.deepEqual(choices.map(c=>c.text),word.predictions.slice(0,3).map(p=>p.gloss));
+   assert.ok(await doctor.eval("(()=>{const card=document.querySelector('.recognition-card').getBoundingClientRect();return [...document.querySelectorAll('.candidate-choices button')].every(b=>{const r=b.getBoundingClientRect();return r.top>=card.top&&r.bottom<=card.bottom&&r.right<=innerWidth;});})()"),'All three candidates must be visible');
+   report.checks.yellowBeepsBeforeVoiceAndShowsThreeChoices=true;
+   assert.equal((await state()).current_result.uncertain,true,'Speaking must not confirm a yellow candidate');
+   assert.ok(await doctor.eval(`!![...document.querySelectorAll('.live-word-list .uncertain')].find(e=>e.textContent.includes(${JSON.stringify(word.text)}))`));
    if(!reviewDone){
     await until(()=>doctor.eval("!!document.querySelector('.word-review[open] input[aria-label=\"Nội dung xác nhận\"]')"));
+    await doctor.eval("document.querySelectorAll('.candidate-choices button')[1].click()");
+    await until(async()=>await doctor.eval("document.querySelector('input[aria-label=\"Nội dung xác nhận\"]').value")===word.predictions[1].gloss);
     await doctor.eval("(()=>{const el=document.querySelector('input[aria-label=\"Nội dung xác nhận\"]');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(el,'Mệt');el.dispatchEvent(new Event('input',{bubbles:true}));})()");
     await until(()=>doctor.eval("[...document.querySelectorAll('.confirm-row button')].some(b=>!b.disabled)"));
     assert.ok(await doctor.eval("(()=>{const row=document.querySelector('.confirm-row').getBoundingClientRect();const card=document.querySelector('.recognition-card').getBoundingClientRect();return row.top>=card.top&&row.bottom<=card.bottom&&row.bottom<=innerHeight;})()"),'Review input and confirmation must be visible without scrolling');
@@ -108,12 +158,20 @@ try {
    }
   }
   await until(async()=>(await state()).capture.status==='ended');
+  if(previewSample){report.preview=await previewSample;assert.ok(report.preview.distinctFrames>25&&report.preview.fps>20,JSON.stringify(report.preview));report.checks.previewIndependentAbove20Fps=true;}
   await until(async()=>(await state()).patient_turn===null);
   trial.voice=await doctor.eval('window.clinicDiagnostics?.patientVoice??[]');
-  trial.paint=(await api('/diagnostics')).metrics.filter(e=>e.message_id===word.id&&e.event==='doctor_result_painted');
-  assert.equal(trial.voice.filter(e=>e.type==='playing'&&e.message_id===word.id).length,word.uncertain&&!trial.correctionApplied?0:1);
+  // Fetch full model traces only after capture ends; polling them during capture
+  // would make the test harness contend with the real-time preprocessing path.
+  const diagnostics=await api('/diagnostics');
+  trial.paint=diagnostics.metrics.filter(e=>e.message_id===word.id&&e.event==='doctor_result_painted');
+  const detailedWord=diagnostics.state.messages.flatMap(m=>m.words??[m]).find(w=>w.id===word.id)
+   ??diagnostics.state.current_result;
+  assert.equal(detailedWord?.id,word.id,'Full diagnostics must retain the recognized word');
+  trial.word={...word,metrics:detailedWord.metrics};
+  assert.equal(trial.voice.filter(e=>e.type==='playing'&&e.message_id===word.id).length,trial.correctionApplied&&word.text!=='Mệt'?2:1);
   const playback=(await state()).playback;if(playback)await api('/playback',{action:'stop',playback_id:playback.id});
-  console.log(JSON.stringify({sample:cid,recognized:word.text,committed:!word.uncertain,policy:word.recognition.policy,quality:word.metrics.quality.input_fps}));
+  console.log(JSON.stringify({sample:cid,recognized:word.text,committed:!word.uncertain,policy:word.recognition.policy,quality:trial.word.metrics.quality.input_fps}));
   fs.writeFileSync(path.join(output,'PROGRESS.json'),JSON.stringify(report,null,2));
  }
  if(!repeatOnly)assert.ok(autoWords>=2&&newWords>=1&&yielded>=1,JSON.stringify({autoWords,newWords,yielded}));
@@ -130,8 +188,7 @@ try {
  async function verifyRepeatedReadout(word){
   report.repeat.originalDecisions.push({id:word.id,text:word.text,uncertain:word.uncertain,recognition:word.recognition});
   if(word.uncertain){
-   assert.ok(!(await doctor.eval('window.clinicDiagnostics?.patientVoice??[]')).some(e=>e.type==='playing'&&e.message_id===word.id));
-   await api('/confirm',{message_id:word.id,text:'Sốt'});report.repeat.qaConfirmations++;
+   assert.equal((await state()).current_result.uncertain,true);
   }
   await until(async()=>(await doctor.eval('window.clinicDiagnostics?.patientVoice??[]')).some(e=>e.type==='playing'&&e.message_id===word.id));
   assert.notEqual((await state()).patient_turn,null,'Readout must occur before turn grouping');
@@ -143,7 +200,7 @@ try {
  await verifyRepeatedReadout(secondRepeat.current_result);
  await until(async()=>(await state()).capture.status==='ended');await until(async()=>(await state()).patient_turn===null);
  const repeated=(await state()).messages.flatMap(x=>x.words??[]).filter(w=>w.recognition?.segment_id?.startsWith(firstRepeat.current_result.recognition.segment_id.split(':')[0]+':'));
- assert.deepEqual(repeated.map(w=>[w.text,w.uncertain]),[['Sốt',false],['Sốt',false]]);
+ assert.deepEqual(repeated.map(w=>w.text),['Sốt','Sốt']);
  const repeatVoice=await doctor.eval('window.clinicDiagnostics?.patientVoice??[]');
  for(const w of repeated)assert.equal(repeatVoice.filter(e=>e.message_id===w.id&&e.type==='playing').length,1);
  report.repeat.words=repeated;report.repeat.voice=repeatVoice.filter(e=>repeated.some(w=>w.id===e.message_id));
@@ -174,6 +231,35 @@ try {
  await until(()=>ev.some(e=>e.type==='transcript'));report.speech=ev.filter(e=>e.type==='transcript');assert.equal(report.speech.length,1);assert.equal(report.speech[0].delivery.status,'sent');
  speech.send(JSON.stringify({action:'finish'}));await delay(200);speech.close();report.checks.realBundledASRSendsOnce=true;
  await until(async()=>(await state()).playback.status==='completed');
+ if(process.argv.includes('--natural')){
+  // Real PCM -> bundled ASR -> auto conversation -> avatar. No message POST,
+  // suggestion click, review endpoint or injected transcript is used here.
+  const naturalSocket=new WebSocket(url.origin.replace('http','ws')+'/ws/speech?live=true&token='+token);
+  sockets.push(naturalSocket);const events=[];
+  naturalSocket.addEventListener('message',e=>events.push(JSON.parse(e.data)));
+  await until(()=>{const error=events.find(e=>e.type==='error');if(error)throw Error(error.message);return events.some(e=>e.type==='ready');});
+  const fixture=fs.readFileSync(path.join(root,'research/speech-samples/synthetic-vi/need-rest-benefactive.pcm'));
+  const before=(await state()).messages.length;
+  const pcm=Buffer.concat([Buffer.alloc(16000),fixture,Buffer.alloc(192000)]);
+  for(let i=0;i<pcm.length;i+=3200){naturalSocket.send(pcm.subarray(i,i+3200));await delay(100);}
+  await until(()=>events.some(e=>e.type==='transcript'));
+  naturalSocket.send(JSON.stringify({action:'finish'}));await delay(200);naturalSocket.close();
+  const transcripts=events.filter(e=>e.type==='transcript');
+  assert.equal(transcripts.length,1);
+  assert.equal(transcripts[0].delivery.status,'sent','Complete speech must send without review');
+  const after=await state();
+  assert.equal(after.messages.length,before+1);
+  assert.equal(after.speech_drafts.length,0);
+  assert.match(after.messages.at(-1).text,/cần được nghỉ ngơi không/iu);
+  assert.equal(after.messages.at(-1).text,transcripts[0].text);
+  assert.equal(after.playback.nonmanual,'question');
+  assert.deepEqual(after.playback.glosses.map(g=>g.label),['Cần','Nghỉ ngơi']);
+  await until(async()=>(await state()).playback.status==='completed');
+  const audioEvents=await patient.eval('window.clinicDiagnostics.narration.events');
+  assert.equal(audioEvents.filter(e=>e.type==='playing'&&e.cycle===after.playback.id+':'+after.playback.iteration).length,2);
+  report.naturalSpeech={fixtureSha256:createHash('sha256').update(fixture).digest('hex'),transcripts,message:after.messages.at(-1)};
+  report.checks.realNaturalSpeechAutoSendsOnceWithoutConfirmation=true;
+ }
  for(const [name,page] of [['doctor-conversation',doctor],['patient-conversation',patient]]){const s=await page.call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(output,name+'.png'),Buffer.from(s.data,'base64'));}
  await api('/messages',{text:'Bạn có đau bụng không?',mode:'sign'});await api('/capture/start',{kind:'demo',demo_id:'mm100:W068'});
  await until(async()=>(await state()).capture.status==='signing');await api('/conversation/stop',process.argv.includes('--modes')?{keep_temporary:true}:{});await delay(6000);
@@ -190,6 +276,13 @@ try {
  report.passed=true;
 }catch(error){report.error=error.stack;report.passed=false;process.exitCode=1;console.error(error.stack);}
 finally{
+ try{report.finalPatientVoice=await doctor?.eval('window.clinicDiagnostics?.patientVoice');}catch{}
+ try{report.finalNarration=await patient?.eval('window.clinicDiagnostics?.narration');}catch{}
+ try{
+  const pid=report.worker?.worker?.pid;
+  if(Number.isSafeInteger(pid))report.workerMemory=JSON.parse(execFileSync('powershell.exe',['-NoProfile','-Command',
+   `Get-Process -Id ${pid} | Select-Object Id,WorkingSet64,PeakWorkingSet64,PrivateMemorySize64 | ConvertTo-Json -Compress`],{encoding:'utf8',windowsHide:true}));
+ }catch{}
  try{report.finalDiagnostics=await api('/diagnostics');}catch{}
  fs.writeFileSync(path.join(output,'REPORT.json'),JSON.stringify(report,null,2));
  console.log(JSON.stringify({passed:report.passed,checks:report.checks,counts:report.counts,error:report.error}));

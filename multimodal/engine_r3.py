@@ -1,4 +1,4 @@
-"""Strict frozen SL-GCN + AV-HuBERT, VSL100 R3 cross-attention head.
+"""Strict frozen SL-GCN + visual encoder, VSL100 R3 cross-attention head.
 
 Both encoders execute serially on the selected device; a capture worker owns
 one segment at a time. No recording or network access is performed here.
@@ -12,13 +12,15 @@ import numpy as np
 import torch
 
 from .runtime import sha256
-from .avhubert_loader import load as load_avhubert
+
 
 
 class R3Engine:
-    def __init__(self, root, device=None, **_):
+    def __init__(self, root, device=None, quantized=None, **_):
         self.root = Path(root)
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
+        if quantized and self.device != 'cpu':
+            raise ValueError('Quantized candidate must explicitly select CPU')
         torch.set_num_threads(2)
         torch.backends.cuda.matmul.allow_tf32 = False
         torch.backends.cudnn.allow_tf32 = False
@@ -32,18 +34,25 @@ class R3Engine:
         from sign_backbones import build
         from model import MultiModalFusionClassifier
         self.prepare_sign, self.forward_sign, self.sign_info = build(r3, "slgcn", self.device)
-        self.mouth_model, self.forward_mouth, self.mouth_info = load_avhubert(
-            r3/"vendor/avhubert_source", r3/"assets/avhubert",
-            r3/"avhubert_preset.json", self.device)
+        if self.manifest['profile'] == 'slgcn-autoavsr':
+            from .vlr_encoder import load_visual
+            self.encoder_name, self.lip_dim = 'autoavsr', 768
+            self.mouth_model, self.forward_mouth, self.mouth_info = load_visual(self.root, self.device, quantized)
+        else:
+            from .avhubert_loader import load as load_avhubert
+            self.encoder_name, self.lip_dim = 'avhubert', 1024
+            self.mouth_model, self.forward_mouth, self.mouth_info = load_avhubert(
+                r3/"vendor/avhubert_source", r3/"assets/avhubert",
+                r3/"avhubert_preset.json", self.device, quantized=quantized)
         rec = self.manifest["heads"]["fusion"]
         checkpoint = self.root/rec["checkpoint"]
         assert sha256(checkpoint) == rec["sha256"]
         ck = torch.load(checkpoint, map_location="cpu", weights_only=True)
         args = ck["args"]
         assert (args["seed"],args["sign_dim"],args["lip_dim"],args["num_classes"],args["arm"]) == (
-            17,256,1024,100,"cross_attention")
+            17,256,self.lip_dim,100,"cross_attention")
         assert Path(args["fold"]).name == "r3_loso_01.json"
-        head = MultiModalFusionClassifier(256,1024,100,fusion="cross_attention",init_seed=17)
+        head = MultiModalFusionClassifier(256,self.lip_dim,100,fusion="cross_attention",init_seed=17)
         head.load_state_dict(ck["model"], strict=True)
         self.head = head.eval().requires_grad_(False).to(self.device)
 
@@ -80,7 +89,7 @@ class R3Engine:
         if mouth is not None:
             l,timing["mouth_encoder_ms"] = self._mouth_features(mouth)
         timing["encoder_wall_ms"] = (time.perf_counter()-start)*1000
-        timing["encoder_schedule"] = "serial_slgcn_avhubert_" + self.device
+        timing["encoder_schedule"] = f"serial_slgcn_{self.encoder_name}_{self.device}"
         return s,l,timing
 
     @torch.inference_mode()
@@ -89,13 +98,13 @@ class R3Engine:
             raise ValueError("This deployment contains the genuine fusion head only")
         if sign is None or mouth is None:
             return dict(status="unavailable", reason="fusion_requires_both", mode=mode)
-        assert sign.shape == (1,256) and mouth.ndim == 2 and mouth.shape[1] == 1024
+        assert sign.shape == (1,256) and mouth.ndim == 2 and mouth.shape[1] == self.lip_dim
         assert np.isfinite(sign).all() and np.isfinite(mouth).all()
         if len(mouth) > 96:
             mouth = mouth[np.linspace(0,len(mouth)-1,96).round().astype(int)]
         s,l = [torch.from_numpy(a).float().to(self.device)[None] for a in (sign,mouth)]
         s = torch.nn.functional.layer_norm(s,(256,))
-        l = torch.nn.functional.layer_norm(l,(1024,))
+        l = torch.nn.functional.layer_norm(l,(self.lip_dim,))
         sm = torch.ones(s.shape[:2],dtype=torch.bool,device=self.device)
         lm = torch.ones(l.shape[:2],dtype=torch.bool,device=self.device)
         started = time.perf_counter()

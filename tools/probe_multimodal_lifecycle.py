@@ -85,6 +85,11 @@ def main():
         assert any(e.get("boundary", {}).get("decision_capture_ms", 0) > 300000 for e in recognition)
         assert len({e["segment_id"] for e in recognition}) == len(recognition)
         assert max(s["capture"].get("buffer_frames", 0) for s in samples) <= 271
+        assert max(s["capture"].get("queued_frames", 0) for s in samples) <= 12
+        for word in recognition:
+            if word.get("policy", {}).get("committed"):
+                assert word["quality"]["sampling_complete"]
+                assert word["quality"]["model_cadence_observed"]
         assert max(s["capture"].get("queued_segments", 0) for s in samples) <= 2
         assert max(s["capture"].get("inflight_segments", 0) for s in samples) <= 3
         report.update(long_recognition=recognition, samples=samples, long_final=dict(latest))

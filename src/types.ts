@@ -79,15 +79,15 @@ export interface Playback {
   requested_at_ms: number;
   rate: number;
   iteration: number;
-  pause_reason?: 'patient_disconnected' | 'patient_reply' | 'patient_activity';
-  audio_cues?: { entry_id: string; text: string; file: string; start_ms: number; end_ms: number; duration_ms: number }[];
+  pause_reason?: 'patient_disconnected';
+  audio_cues?: { entry_id: string; text: string; file: string; gloss_index?: number; start_ms: number; end_ms: number; duration_ms: number }[];
   timeline_schema: 'clinic-playback-v2';
   timeline: TimelineSegment[];
   clauses: SentenceClause[];
 }
 
 export interface TimelineSegment {
-  phase: 'intro' | 'sign' | 'bridge' | 'outro' | 'hold';
+  phase: 'intro' | 'sign' | 'bridge' | 'outro' | 'hold' | 'voice_hold';
   start_ms: number;
   end_ms: number;
   index: number;
@@ -140,11 +140,13 @@ export interface ConversationSettings {
 }
 
 export interface SpeechDraft {
+  language_assist_busy?: boolean;
   id: string;
   text: string;
   reason: string;
   reason_code?: 'manual' | 'unclear' | 'unsupported' | 'busy';
   unsupported?: string[];
+  suggestions?: { text: string; reason: string }[];
   supported: boolean;
   created_at_ms: number;
 }
@@ -194,9 +196,9 @@ export interface Motion {
   label: string;
   duration_ms: number;
   frames: Point[][];
-  confidence: number[][];
-  reference_ids: string[];
-  review_status: string;
+  confidence?: number[][];
+  reference_ids?: string[];
+  review_status?: string;
 }
 
 export interface SemanticPlan {
@@ -216,6 +218,7 @@ export interface SemanticPlan {
 }
 
 export interface TextPlan {
+  language_assist?: { source: string; elapsed_ms: number; busy: boolean };
   mode: 'phrase' | 'word';
   nonmanual: 'neutral' | 'question';
   suggestions: { text: string; reason: string }[];
@@ -234,6 +237,9 @@ export interface TextPlan {
 declare global {
   interface Window {
     clinicDesktop?: {
+      getInterfaceLanguage: () => Promise<'vi' | 'en'>;
+      setInterfaceLanguage: (language: 'vi' | 'en') => Promise<'vi' | 'en'>;
+      onInterfaceLanguageChanged: (callback: (language: 'vi' | 'en') => void) => () => void;
       displays: () => Promise<{ id: number; label: string; primary: boolean }[]>;
       arrange: (swap?: boolean) => Promise<void>;
       openPatient: () => Promise<void>;

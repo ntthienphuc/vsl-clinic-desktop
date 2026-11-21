@@ -1,3 +1,4 @@
+import { t } from '../i18n';
 import { useEffect, useRef, useState } from 'react';
 import { Camera, FileVideo, Play, Settings2, Square, Upload, VideoOff } from 'lucide-react';
 import { Dialog } from './Dialog';
@@ -41,51 +42,50 @@ export function SourcePanel({ words, capture, run, busy, showPreview = false, co
     : { kind: 'camera', camera_index: camera }));
 
   const controls = <div className="source-options">
-      <div className="segmented" aria-label="Loại nguồn hình ảnh">
-        <button disabled={busy} className={source === 'demo' ? 'selected' : ''} onClick={() => configure('demo')}><FileVideo size={15} /> Video mẫu</button>
+      <div className="segmented" aria-label={t("Loại nguồn hình ảnh")}>
+        <button disabled={busy} className={source === 'demo' ? 'selected' : ''} onClick={() => configure('demo')}><FileVideo size={15} /> {t(" Video mẫu")}</button>
         <button disabled={busy} className={source === 'camera' ? 'selected' : ''} onClick={() => configure('camera')}><Camera size={15} /> Camera</button>
       </div>
       <div className="source-select">
         {source === 'demo'
-          ? <select disabled={busy} aria-label="Chọn video mẫu" value={word} onChange={(event) => configure(source, event.target.value)}>{demos.map((item) => <option key={item.id} value={item.id}>{item.label}</option>)}</select>
-          : <select disabled={busy} aria-label="Chọn camera" value={camera} onChange={(event) => configure(source, word, Number(event.target.value))}>{[0, 1, 2, 3].map((index) => <option key={index} value={index}>Camera {index + 1}{index === 0 ? ' · mặc định' : ''}</option>)}</select>}
-        <button className="button primary compact" disabled={busy} onClick={() => void start()}><Play size={15} fill="currentColor" />{source === 'camera' ? active ? 'Mở lại camera' : 'Mở thử camera' : active ? 'Phát lại video' : 'Phát video mẫu'}</button>
-        {active && <button className="icon-button stop" disabled={busy} aria-label="Dừng nhận dạng" title="Dừng nhận dạng" onClick={() => void run(() => request('/capture/stop', {}))}><Square size={16} fill="currentColor" /></button>}
+          ? <select disabled={busy} aria-label={t("Chọn video mẫu")} value={word} onChange={(event) => configure(source, event.target.value)}>{demos.map((item) => <option key={item.id} value={item.id}>{item.label}</option>)}</select>
+          : <select disabled={busy} aria-label={t("Chọn camera")} value={camera} onChange={(event) => configure(source, word, Number(event.target.value))}>{[0, 1, 2, 3].map((index) => <option key={index} value={index}>Camera {index + 1}{index === 0 ? t(" · mặc định") : ''}</option>)}</select>}
+        <button className="button primary compact" disabled={busy} onClick={() => void start()}><Play size={15} fill="currentColor" />{source === 'camera' ? active ? t("Mở lại camera") : t("Mở thử camera") : active ? t("Phát lại video") : t("Phát video mẫu")}</button>
+        {active && <button className="icon-button stop" disabled={busy} aria-label={t("Dừng nhận dạng")} title={t("Dừng nhận dạng")} onClick={() => void run(() => request('/capture/stop', {}))}><Square size={16} fill="currentColor" /></button>}
       </div>
-      <input ref={fileInput} type="file" accept=".mp4,.mov,.avi,.mkv" className="visually-hidden" aria-label="Tệp video nhận dạng" onChange={(event) => {
+      <input ref={fileInput} type="file" accept=".mp4,.mov,.avi,.mkv" className="visually-hidden" aria-label={t("Tệp video nhận dạng")} onChange={(event) => {
         const file = event.target.files?.[0];
         if (file) {
           void run(() => uploadVideo(file));
         }
         event.target.value = '';
       }} />
-      <button className="text-button upload-button" disabled={busy} onClick={() => fileInput.current?.click()}><Upload size={14} /> Mở video trên máy <span>MP4 · tối đa 3 phút</span></button>
+      <button className="text-button upload-button" disabled={busy} onClick={() => fileInput.current?.click()}><Upload size={14} /> {t(" Mở video trên máy ")}<span>{t("MP4 · tối đa 3 phút")}</span></button>
     </div>;
   return <section className={showPreview ? 'source-panel with-preview' : 'source-panel'}>
     <div className="section-heading">
       <span className="heading-icon"><Camera size={18} /></span>
-      <div><h3>{showPreview ? 'Hình ảnh của bạn' : 'Camera và video mẫu'}</h3></div>
-      <span className={active ? 'soft-tag teal' : 'soft-tag'}>{liveCamera ? 'Trực tiếp' : active ? 'Video mẫu' : capture.status === 'ended' ? 'Đã hết video' : 'Chưa phát'}</span>
+      <div><h3>{showPreview ? t("Hình ảnh của bạn") : t("Camera và video mẫu")}</h3></div>
+      <span className={active ? 'soft-tag teal' : 'soft-tag'}>{liveCamera ? t("Trực tiếp") : active ? t("Video mẫu") : capture.status === 'ended' ? t("Đã hết video") : t("Chưa phát")}</span>
     </div>
     {showPreview && <>
       <div className={liveCamera ? 'camera-preview mirrored' : 'camera-preview'}>
         {hasFrame && active
-          ? <img key={capture.generation} src={previewUrl} alt={liveCamera ? 'Hình ảnh camera của bạn' : 'Video đang được nhận dạng theo thời gian thực'} />
-          : <div className="camera-placeholder"><Camera size={38} strokeWidth={1.3} /><strong>{capture.status === 'ended' ? 'Video đã phát xong' : 'Giữ mặt và hai tay trong hình'}</strong><span>{capture.status === 'ended' ? 'Chọn video khác hoặc bấm Bắt đầu để phát lại.' : 'Bấm Bắt đầu khi bạn sẵn sàng.'}</span></div>}
-        {hasFrame && active && <span className="preview-source">{liveCamera ? 'Camera · xem như gương' : 'Video mẫu · tốc độ gốc'}</span>}
+          ? <img key={capture.generation} src={previewUrl} alt={liveCamera ? t("Hình ảnh camera của bạn") : t("Video đang được nhận dạng theo thời gian thực")} />
+          : <div className="camera-placeholder"><Camera size={38} strokeWidth={1.3} /><strong>{capture.status === 'ended' ? t("Video đã phát xong") : t("Giữ mặt và hai tay trong hình")}</strong><span>{capture.status === 'ended' ? t("Chọn video khác hoặc bấm Bắt đầu để phát lại.") : t("Bấm Bắt đầu khi bạn sẵn sàng.")}</span></div>}
+        {hasFrame && active && <span className="preview-source">{liveCamera ? t("Camera · xem như gương") : t("Video mẫu · tốc độ gốc")}</span>}
       </div>
       <div className="capture-toolbar">
         <button className="button primary" disabled={busy} onClick={() => void (active ? run(() => request('/capture/stop', {})) : start())}>
-          {active ? <Square size={17} /> : <Play size={17} />}{active ? 'Dừng nhận dạng' : 'Bắt đầu'}
+          {active ? <Square size={17} /> : <Play size={17} />}{active ? t("Dừng nhận dạng") : t("Bắt đầu")}
         </button>
         <button className="button secondary" onClick={() => setSettingsOpen(true)}><Settings2 size={17} /> Camera / video</button>
       </div>
-      <p className="capture-help">Hạ tay một nhịp sau mỗi ký hiệu.</p>
-      {settingsOpen && <Dialog title="Chọn camera hoặc video" onClose={() => setSettingsOpen(false)}>{controls}</Dialog>}
+      <p className="capture-help">{t("Hạ tay một nhịp sau mỗi ký hiệu.")}</p>
+      {settingsOpen && <Dialog title={t("Chọn camera hoặc video")} onClose={() => setSettingsOpen(false)}>{controls}</Dialog>}
     </>}
     {!showPreview && controls}
-    {capture.status === 'error' && <div className="inline-error"><VideoOff size={16} />{capture.message || 'Chưa mở được nguồn hình ảnh. Hãy thử video mẫu.'}</div>}
-    {capture.quality_warning && <p className="tracking-note" role="status">{capture.quality_warning}</p>}
-    {active && <div className="tracking-note"><span className={capture.has_pose ? 'status-dot active' : 'status-dot amber'} />{capture.status === 'starting' ? 'Đang mở nguồn hình ảnh…' : capture.has_pose ? `Đã thấy người · ${capture.hand_count ?? 0} bàn tay` : 'Đưa mặt, vai và hai bàn tay vào khung hình.'}</div>}
+    {capture.status === 'error' && <div className="inline-error"><VideoOff size={16} />{t(capture.message) || t("Chưa mở được nguồn hình ảnh. Hãy thử video mẫu.")}</div>}
+    {active && <div className="tracking-note"><span className={capture.has_pose ? 'status-dot active' : 'status-dot amber'} />{capture.status === 'starting' ? t("Đang mở nguồn hình ảnh…") : capture.has_pose ? t("Đã thấy người · {0} bàn tay", capture.hand_count ?? 0) : t("Đưa mặt, vai và hai bàn tay vào khung hình.")}</div>}
   </section>;
 }

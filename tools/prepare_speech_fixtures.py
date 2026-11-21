@@ -10,6 +10,8 @@ from pathlib import Path
 import urllib.parse
 import urllib.request
 
+import av
+
 ROOT = Path(__file__).resolve().parents[1]
 DESTINATION = ROOT / 'research/speech-samples/synthetic-vi'
 PHRASES = {
@@ -17,6 +19,7 @@ PHRASES = {
     'pain-question': 'Bạn có đau không?',
     'unsupported-feeling': 'Bạn cảm thấy thế nào?',
     'unsupported-dose': 'Uống thuốc hai viên.',
+    'need-rest-benefactive': 'Bạn có cần được nghỉ ngơi không?',
 }
 
 
@@ -37,6 +40,16 @@ def main():
             path.write_bytes(data)
         records.append({'file': path.name, 'text': text, 'url': url,
                         'sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
+        if name == 'need-rest-benefactive':
+            converter = av.AudioResampler(format='s16', layout='mono', rate=16000)
+            with av.open(str(path)) as container:
+                chunks = [out.to_ndarray().tobytes() for frame in container.decode(audio=0)
+                          for out in converter.resample(frame)]
+                chunks.extend(out.to_ndarray().tobytes() for out in converter.resample(None))
+            pcm = path.with_suffix('.pcm')
+            pcm.write_bytes(b''.join(chunks))
+            records[-1].update(pcm_file=pcm.name, pcm_sha256=hashlib.sha256(pcm.read_bytes()).hexdigest(),
+                               format='16000 Hz mono signed 16-bit little-endian PCM')
         print(name, path.stat().st_size, flush=True)
     (DESTINATION / 'provenance.json').write_text(json.dumps({
         'kind': 'synthetic TTS smoke fixtures, not human microphone evaluation',

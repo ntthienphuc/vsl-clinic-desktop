@@ -14,6 +14,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--assets", type=Path, required=True)
     parser.add_argument("--device", choices=["cpu", "cuda"])
+    parser.add_argument("--quantized", type=Path)
     args = parser.parse_args()
     protocol = sys.stdout
     sys.stdout = sys.stderr  # Third-party print() must not corrupt the protocol.
@@ -30,7 +31,7 @@ def main():
         engine_class, deployment = load_contract(args.assets)
         from multimodal.capture import MultimodalCapture
         started = time.perf_counter()
-        engine = engine_class(device=args.device)
+        engine = engine_class(device=args.device, quantized=args.quantized)
         # Pay one-time CUDA/module initialization before a patient's first word.
         # Synthetic constant features never create a capture event or a word.
         import numpy as np
@@ -52,6 +53,8 @@ def main():
         send(dict(type="worker_ready", contract=deployment["contract"], device=engine.device,
                   pid=os.getpid(), load_ms=(time.perf_counter() - started) * 1000,
                   warmup_ms=warmup_ms,
+                  precision=engine.mouth_info.get('precision') if hasattr(engine,'mouth_info') else None,
+                  runtime_selection=getattr(engine, 'runtime_selection', None),
                   manifest_sha256=engine.manifest_hash, storage="ram_only"))
         # EOF from a dead parent is also a shutdown request.
         for line in sys.stdin:

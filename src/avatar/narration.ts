@@ -36,16 +36,21 @@ export class AvatarNarrator {
   private audible = false;
   private allowed = false;
   private finished = new Set<string>();
+  private started = new Set<string>();
+  private heard = new Set<string>();
   private timers: ReturnType<typeof setTimeout>[] = [];
   private events: Record<string, unknown>[] = [];
   private smooth = closedMouth();
+  private activeCueIndex = -1;
+  private activeGlossIndex = -1;
+  private timelineMs = 0;
   constructor(entries: NarrationEntry[],
     private report: (event: Record<string, unknown>) => void,
     private makeAudio = (url: string) => new Audio(url)) {
     this.bank = new Map(entries.map(e => [e.id, e]));
   }
   private emit(event: Record<string, unknown>) {
-    this.events = [...this.events.slice(-59), { ...event, at_ms: Date.now() }];
+    this.events = [...this.events.slice(-59), { ...event, cycle: this.cycle, at_ms: Date.now() }];
     this.report(event);
   }
   prepare(playback: Playback | null) {
@@ -65,14 +70,20 @@ export class AvatarNarrator {
         if (!valid() || slot.failed) return;
         slot.ready = true; slot.failed = true;
         audio.pause();
-        this.emit({ type: 'error', text: 'Chưa phát được giọng avatar. Ký hiệu và chữ vẫn tiếp tục.' });
+        this.emit({ type: 'error', entry_id: cue.entry_id, ready_state: audio.readyState,
+          text: 'Chưa phát được giọng avatar. Ký hiệu và chữ vẫn tiếp tục.' });
       };
-      audio.oncanplay = () => { if (valid()) slot.ready = true; };
+      audio.oncanplay = () => { if (valid()) { slot.ready = true; slot.failed = false; } };
       audio.onerror = fail;
       audio.onplaying = () => {
         if (!valid() || this.current !== audio || !this.allowed) { audio.pause(); return; }
         this.audible = true;
-        this.emit({ type: 'playing', entry_id: cue.entry_id, text: cue.text });
+        const key = this.cycle + ':' + this.activeCueIndex;
+        const continuation = this.heard.has(key);
+        this.heard.add(key);
+        this.emit({ type: continuation ? 'resumed' : 'playing', entry_id: cue.entry_id, text: cue.text,
+          cue_index: this.activeCueIndex, gloss_index: this.activeGlossIndex, timeline_ms: this.timelineMs,
+          audio_time_ms: audio.currentTime * 1000 });
       };
       audio.onpause = () => { if (this.current === audio) this.audible = false; };
       audio.onended = () => {
@@ -80,15 +91,34 @@ export class AvatarNarrator {
         this.audible = false;
         this.emit({ type: 'ended', entry_id: cue.entry_id });
       };
-      this.timers.push(setTimeout(() => { if (!slot.ready) fail(); }, 5000));
+      // Slow I/O or decoder startup is still loading, not a missing clip. Keep
+      // the readiness barrier until the voice is available; a real error or
+      // bounded terminal timeout retains the explicit visual-only fallback.
+      this.timers.push(setTimeout(() => {
+        if (valid() && !slot.ready) this.emit({ type: 'loading', entry_id: cue.entry_id,
+          text: 'Đang chuẩn bị giọng đọc… Bạn có thể dừng hoặc chờ thêm một chút.' });
+      }, 5000));
+      this.timers.push(setTimeout(() => { if (!slot.ready) fail(); }, 15000));
       audio.load();
     }
   }
-  ready() { return [...this.clips.values()].every(slot => slot.ready); }
+  ready() {
+    for (const slot of this.clips.values()) {
+      if (slot.audio.readyState >= 3 && !slot.audio.error) { slot.ready = true; slot.failed = false; }
+    }
+    return [...this.clips.values()].every(slot => slot.ready);
+  }
   tick(playback: Playback | null, enabled: boolean, connected: boolean, elapsed: number, dt: number) {
     this.prepare(playback);
-    const cueIndex = playback?.audio_cues?.findIndex(cue => elapsed >= cue.start_ms && elapsed < cue.end_ms) ?? -1;
+    const cues = playback?.audio_cues ?? [];
+    // The next sign is the deadline, not the WAV's nominal duration. This lets
+    // a short clip finish naturally despite audio-device startup latency.
+    const cueIndex = cues.findIndex((cue, index) => elapsed >= cue.start_ms
+      && elapsed < (cues[index + 1]?.start_ms ?? playback?.total_ms ?? cue.end_ms));
     const cue = playback?.audio_cues?.[cueIndex];
+    this.activeCueIndex = cueIndex;
+    this.activeGlossIndex = cue?.gloss_index ?? -1;
+    this.timelineMs = elapsed;
     const slot = cue ? this.clips.get(cue.entry_id) : undefined;
     const active = enabled && connected && playback?.status === 'playing' && cue && slot?.ready && !slot.failed;
     let target = closedMouth();
@@ -103,16 +133,22 @@ export class AvatarNarrator {
       const expected = (elapsed - cue.start_ms) / 1000;
       drift = audio.currentTime - expected;
       if (!this.finished.has(key)) {
-        if (audio.ended && expected > cue.duration_ms / 1000 - .2) this.finished.add(key);
+        if (this.started.has(key) && audio.ended) this.finished.add(key);
         else {
-          if (Math.abs(drift) > .18 || (audio.paused && this.pending !== audio)) audio.currentTime = expected;
           audio.playbackRate = playback.rate;
           if (audio.paused && this.pending !== audio) {
-            this.pending = audio;
-            const cycle = this.cycle;
-            void audio.play().catch(() => {
-              if (cycle === this.cycle) { slot.failed = true; this.emit({ type: 'error', text: 'Bật giọng avatar để thử phát lại âm thanh.' }); }
-            }).finally(() => { if (this.pending === audio) this.pending = null; });
+            if (expected >= cue.duration_ms / 1000) this.finished.add(key);
+            else {
+              // Seek only on an actual start/resume. Repeatedly correcting a
+              // hardware clock lag jumps into the middle of a spoken word.
+              audio.currentTime = expected;
+              this.started.add(key);
+              this.pending = audio;
+              const cycle = this.cycle;
+              void audio.play().catch(() => {
+                if (cycle === this.cycle) { slot.failed = true; this.emit({ type: 'error', text: 'Bật giọng avatar để thử phát lại âm thanh.' }); }
+              }).finally(() => { if (this.pending === audio) this.pending = null; });
+            }
           }
           if (this.audible && !audio.paused && !audio.ended) {
             const entry = this.bank.get(cue.entry_id);
@@ -140,7 +176,7 @@ export class AvatarNarrator {
       audio.oncanplay = audio.onerror = audio.onplaying = audio.onended = audio.onpause = null;
       audio.pause(); audio.removeAttribute('src'); audio.load();
     }
-    this.clips.clear(); this.finished.clear(); this.current = this.pending = null;
+    this.clips.clear(); this.finished.clear(); this.started.clear(); this.heard.clear(); this.current = this.pending = null;
     this.smooth = closedMouth(); this.cycle = '';
   }
 }

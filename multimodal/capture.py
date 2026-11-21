@@ -11,7 +11,9 @@ import cv2
 
 from .preprocessing import MemoryProcessor
 from .policy import recognition_event
-from .boundaries import make_gate, extend_context
+from .boundaries import make_gate, extend_context, insufficient_active_core, MIN_ACTIVE_CORE_MS
+from .preview import LatestPreview
+from .sampling import DETECTOR_FPS, FRAME_QUEUE_CAPACITY
 
 
 @dataclass
@@ -24,7 +26,10 @@ class Run:
     reader_done: threading.Event = field(default_factory=threading.Event)
     detector_done: threading.Event = field(default_factory=threading.Event)
     detector_ready: threading.Event = field(default_factory=threading.Event)
-    frames: queue.Queue = field(default_factory=lambda: queue.Queue(maxsize=1))
+    # Absorb short detector/OS scheduling bursts without losing the first hand
+    # motion. Twelve scheduled frames hold roughly 480 ms at 25 fps;
+    # overflow still discards the oldest item, while preview has its own queue.
+    frames: queue.Queue = field(default_factory=lambda: queue.Queue(maxsize=FRAME_QUEUE_CAPACITY))
     segments: queue.Queue = field(default_factory=lambda: queue.Queue(maxsize=2))
     lock: threading.Lock = field(default_factory=threading.Lock)
     threads: list = field(default_factory=list)
@@ -38,6 +43,7 @@ class Run:
     started: float = field(default_factory=time.perf_counter)
     state: str = "starting"
     last_activity: dict = field(default_factory=dict)
+    preview: LatestPreview | None = None
 
 
 class MultimodalCapture:
@@ -55,6 +61,9 @@ class MultimodalCapture:
         self.stop()
         run = Run(generation, source, source_kind)
         self.current = run
+        run.preview = LatestPreview(lambda jpeg: self.emit(run, dict(type="preview", jpeg=base64.b64encode(jpeg).decode("ascii"))), run.cancel, run.reader_done)
+        run.threads.append(run.preview.thread)
+        run.preview.thread.start()
         self.emit(run, dict(type="capture", status="starting", source_kind=source_kind,
                             message="Đang chuẩn bị nhận dạng tay và môi…"))
         for name, target in [("infer", self._infer), ("detect", self._detect), ("read", self._read)]:
@@ -106,7 +115,8 @@ class MultimodalCapture:
             fps = cap.get(cv2.CAP_PROP_FPS)
             fps = fps if 1 <= fps <= 240 else 30.
             run.started = base = time.perf_counter()
-            preview_at, next_due = -1e6, 0.
+            next_due = 0.
+            interval_ms = 1000 / DETECTOR_FPS
             while not run.cancel.is_set():
                 ok, bgr = cap.read()
                 if not ok:
@@ -122,19 +132,15 @@ class MultimodalCapture:
                     break
                 stamp = time.perf_counter() * 1000
                 run.captured += 1
-                # Preview has a separate low-resolution copy, never fed to the model.
-                if stamp - preview_at >= 100:
-                    h, w = bgr.shape[:2]
-                    preview = cv2.resize(bgr, (round(w * min(1., 640 / w)), round(h * min(1., 640 / w))))
-                    success, encoded = cv2.imencode(".jpg", preview, [cv2.IMWRITE_JPEG_QUALITY, 78])
-                    if success:
-                        self.emit(run, dict(type="preview", jpeg=base64.b64encode(encoded).decode("ascii")))
-                    preview_at = stamp
+                run.preview.offer(bgr, stamp)
                 if capture_ms + .01 < next_due:
                     run.capped += 1
                     continue
-                next_due = (int(capture_ms / 40) + 1) * 40
-                item = (bgr, run.captured, capture_ms, stamp)
+                next_due = (int(capture_ms / interval_ms) + 1) * interval_ms
+                # Assign before enqueue: intentional FPS limiting is not loss,
+                # but replacing a queued sample must be visible to the policy.
+                sample_sequence = run.captured - run.capped
+                item = (bgr, run.captured, capture_ms, stamp, sample_sequence)
                 try:
                     run.frames.put_nowait(item)
                 except queue.Full:
@@ -157,12 +163,19 @@ class MultimodalCapture:
         self.emit(run, dict(type="capture", status=run.state, source_kind=run.source_kind,
             captured=run.captured, processed=run.processed, dropped=run.dropped, fps_cap_drops=run.capped,
             processed_fps=run.processed / max(.001, time.perf_counter() - run.started),
+            detector_target_fps=DETECTOR_FPS, frame_queue_capacity=FRAME_QUEUE_CAPACITY,
+            queued_frames=run.frames.qsize(),
             detector_warmup_ms=run.detector_warmup_ms,
+            **(run.preview.stats() if run.preview else {}),
             inflight_segments=inflight, queued_segments=run.segments.qsize(),
             **run.last_activity, **extra))
 
     def _enqueue(self, run, processor, boundary):
         if boundary is None or run.cancel.is_set():
+            return
+        if insufficient_active_core(boundary):
+            self.emit(run, dict(type="segment_ignored", reason="insufficient_active_motion",
+                boundary=boundary, minimum_active_core_ms=MIN_ACTIVE_CORE_MS))
             return
         boundary = extend_context(boundary, [f.meta() for f in processor.frames])
         boundary["decision_captured_monotonic_ms"] = processor.frames[-1].captured_monotonic_ms
@@ -196,14 +209,14 @@ class MultimodalCapture:
             last_notice = 0.
             while not run.cancel.is_set():
                 try:
-                    bgr, fid, capture_ms, stamp = run.frames.get(timeout=.1)
+                    bgr, fid, capture_ms, stamp, sample_sequence = run.frames.get(timeout=.1)
                 except queue.Empty:
                     if run.reader_done.is_set():
                         # EOF can flush for review, but End cancellation never commits a tail.
                         self._enqueue(run, processor, gate.flush())
                         break
                     continue
-                frame = processor.append(bgr, fid, capture_ms, stamp)
+                frame = processor.append(bgr, fid, capture_ms, stamp, sample_sequence=sample_sequence)
                 run.processed += 1
                 boundary = gate.feed(frame.pose, capture_ms, fid)
                 has_pose = bool((frame.pose[:33, 3] >= .5).any())
@@ -248,6 +261,12 @@ class MultimodalCapture:
                 else:
                     sign, lip, timing = self.engine.features(pose, mouth)
                     result = self.engine.predict(sign, lip, "fusion")
+                    # A GPU can become unavailable after startup (for example
+                    # another application consumes VRAM). Publish actual state.
+                    if hasattr(self.engine, "runtime_selection"):
+                        self.send(dict(type="runtime_changed", device=self.engine.device,
+                                       precision=self.engine.mouth_info.get("precision"),
+                                       runtime_selection=self.engine.runtime_selection))
                 finished = time.perf_counter() * 1000
                 timing.update(queue_ms=started - queued_ms, inference_wall_ms=finished - started,
                     decision_to_result_ms=finished - queued_ms,

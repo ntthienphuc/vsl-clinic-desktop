@@ -62,6 +62,12 @@ class LandmarkDetector:
             self.close()
             raise
 
+    def warmup(self):
+        """Initialize detector kernels before the capture clock begins."""
+        if self.last_timestamp != -1:
+            raise ValueError("warmup_requires_fresh_detector")
+        self.process(np.zeros((480, 640, 3), np.uint8), 0)
+
     def process(self, bgr: np.ndarray, timestamp_ms: float):
         timestamp = max(self.last_timestamp + 1, int(round(timestamp_ms)))
         self.last_timestamp = timestamp

@@ -16,6 +16,7 @@ import numpy as np
 from server.preprocess import canonical_square, crops_from_gray
 from server.vendor.crop_geometry import filter_points
 from .landmarks import PoseHands, FacePoints
+from .sampling import observation_continuity
 
 MAX_RETAINED_FRAMES = 270
 RETENTION_MS = 10400
@@ -35,6 +36,7 @@ class Frame:
     source_height: int
     face_ms: float = 0.
     pose_hands_ms: float = 0.
+    sample_sequence: int | None = None
 
     def meta(self):
         return dict(frame_id=self.frame_id, capture_ms=self.capture_ms,
@@ -62,6 +64,7 @@ class MemoryProcessor:
             raise ValueError("warmup_requires_fresh_processor")
         started = time.perf_counter()
         blank = np.zeros((1080, 1080, 3), dtype=np.uint8)
+        blank.flags.writeable = False
         face_pending = self.face_executor.submit(self._face, blank)
         try:
             self.holistic.process(blank)
@@ -69,7 +72,7 @@ class MemoryProcessor:
             face_pending.result()
         return (time.perf_counter() - started) * 1000
 
-    def append(self, bgr, frame_id, capture_ms, captured_monotonic_ms=None):
+    def append(self, bgr, frame_id, capture_ms, captured_monotonic_ms=None, *, sample_sequence=None):
         if self.closed:
             raise ValueError("processor_closed")
         if self.frames and (frame_id <= self.frames[-1].frame_id or capture_ms <= self.frames[-1].capture_ms):
@@ -80,6 +83,7 @@ class MemoryProcessor:
         h, w = bgr.shape[:2]
         rgb = canonical_square(cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB))
         gray = cv2.cvtColor(rgb, cv2.COLOR_RGB2GRAY)
+        rgb.flags.writeable = False
         # Independent graphs see exactly the same immutable RGB frame. Join
         # both before advancing either tracker to the next timestamp.
         face_pending = self.face_executor.submit(self._face, rgb)
@@ -103,7 +107,8 @@ class MemoryProcessor:
                              for v in group.landmark]
         frame = Frame(frame_id, float(capture_ms),
                       captured_monotonic_ms if captured_monotonic_ms is not None else started * 1000,
-                      pose, points, gray, len(detections), (time.perf_counter() - started) * 1000, w, h, face_ms, pose_ms)
+                      pose, points, gray, len(detections), (time.perf_counter() - started) * 1000, w, h, face_ms, pose_ms,
+                      sample_sequence)
         self.frames.append(frame)
         return frame
 
@@ -151,6 +156,12 @@ class PreparedSegment:
         except ValueError as exc:
             geometry["unavailable_reason"] = str(exc)
         info = dict(frame_count=len(times), sampled_frames=len(indices),
+                    **observation_continuity([f.sample_sequence for f in self.frames]),
+                    scheduled_sequences=[f.sample_sequence for f in self.frames],
+                    # One endpoint may round to a neighboring capture frame.
+                    # A genuinely lower camera rate must not be certified by
+                    # an unbroken queue sequence alone (e.g. 20-fps input).
+                    model_cadence_observed=len(times) >= len(indices) - 1,
                     capture_span_ms=float(times[-1] - times[0]),
                     input_fps=float((len(times) - 1) * 1000 / (times[-1] - times[0])),
                     max_capture_gap_ms=float(np.diff(times).max()),
@@ -159,6 +170,9 @@ class PreparedSegment:
                     hand_coverage=float(np.any(pose[:, 33:, 3] > 0, axis=1).mean()),
                     single_face_fraction=float(np.mean([f.faces == 1 for f in self.frames])),
                     preprocess_ms=sum(f.preprocess_ms for f in self.frames),
+                    detector_ms_p50=float(np.median([f.preprocess_ms for f in self.frames])),
+                    detector_ms_p95=float(np.percentile([f.preprocess_ms for f in self.frames], 95)),
+                    detector_ms_max=max(f.preprocess_ms for f in self.frames),
                     roi_ms=(time.perf_counter() - start) * 1000,
                     sampling="nearest capture timestamp at 25fps" if resample else "ffmpeg fps=25",
                     source_resolution=[self.frames[0].source_width, self.frames[0].source_height])

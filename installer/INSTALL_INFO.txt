@@ -1,0 +1,18 @@
+VSL Clinic dùng trên Windows 10 (phiên bản 2004 trở lên) hoặc Windows 11,
+máy 64-bit và CPU hỗ trợ AVX2.
+Khuyến nghị RAM 16 GB, camera thấy rõ mặt và hai tay, micro và loa.
+
+Bộ cài có sẵn chương trình, model, bộ chạy và giọng đọc. Không cần cài Python,
+CUDA Toolkit hoặc tải thêm model. Sau khi cài, mở VSL Clinic trên Desktop.
+
+Trong bước chọn cách chạy, GPU được chọn sẵn nếu phát hiện card NVIDIA.
+Bạn có thể chọn CPU để giảm dung lượng cài. Bản GPU có CPU dự phòng:
+nếu GPU không dùng được, app chạy bằng CPU với model INT8. Driver NVIDIA thuộc Windows/máy của bạn;
+bộ cài không thay driver. GPU AMD/Intel vẫn có thể hiển thị nhân vật, còn bộ
+nhận dạng dùng CPU. Tốc độ phụ thuộc cấu hình và tải hiện tại của máy.
+
+Đây là bản thử nghiệm nghiên cứu giao tiếp VSL. Hãy đối chiếu chữ, ký hiệu và
+ý định với người bệnh. Câu có chi tiết chưa thể hiện đủ được giữ lại để sửa.
+Từ có xác suất cao nhất của người bệnh hiện và được đọc từng từ, không tiếng
+báo. Bác sĩ có thể xem thêm hai từ gợi ý đi kèm để đối chiếu khi cần.
+Nội dung cuộc trao đổi không được gửi ra Internet.

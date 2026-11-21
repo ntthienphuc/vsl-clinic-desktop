@@ -1,3 +1,11 @@
+# VSL Clinic 0.7.5 · 20/11/2026
+
+Bản đánh giá nội bộ dùng SL-GCN và nhánh hình ảnh Auto-AVSR với cross-attention. Mô hình mặc định nhận 100 từ qua tay và khẩu hình. Bác sĩ có thể chọn Chỉ ký hiệu (400 từ) trong Tùy chọn. Avatar có 200 mục. CPU lượng tử hóa động 48 lớp truyền thẳng của Conformer; GPU dùng FP32.
+
+Bấm Bắt đầu ở màn hình bác sĩ. Chọn câu mẫu để gửi ngay, hoặc nói hay nhập câu. Khi camera lỗi, có thể tiếp tục trao đổi bằng chữ và câu mẫu. Người bệnh xem avatar và ký trước camera. Bấm Kết thúc trước khi tiếp người tiếp theo.
+
+Trọng số môi được tách từ bản VLR có SHA-256 b38177ae98f1f3cbea1a4c183c2bca804cf0a576e99abd23aab85ae56f413280. Apache-2.0 áp dụng cho mã Auto-AVSR. Quyền phân phối trọng số và phạm vi sử dụng tại BV175 cần được xác nhận riêng. Tài liệu nhà phát triển: https://github.com/mpc001/auto_avsr#license . Các mục bên dưới lưu thông tin các phiên bản trước.
+
 # Third-party notices — local demo
 
 This project includes third-party software and locally inherited research assets. The Git source snapshot excludes the local recognition/speech weights, source videos and practice recordings listed in `local-assets-manifest.json`; an authorized local copy is required to restore them. Git synchronization does not create new redistribution rights for inherited or derived research assets. The local portable demo and Git source snapshot have different payloads; see `docs/GIT_SETUP.md`.

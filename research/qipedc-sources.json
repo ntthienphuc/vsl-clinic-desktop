@@ -286,6 +286,344 @@
           "window_method": "single front-facing question; long idle lead and tail excluded after contact-sheet review"
         }
       ]
+    },
+    {
+      "id": "qipedc-W00372",
+      "label": "Buồn nôn",
+      "model_id": null,
+      "category": "Khám bệnh",
+      "demo": null,
+      "source_kind": "qipedc-single",
+      "source_id": "W00372",
+      "source_url": "https://qipedc.moet.gov.vn/videos/W00372.mp4",
+      "description": "Ở trạng thái cảm thấy muốn nôn.",
+      "downloaded_at": "2026-11-10T14:47:25.845906+00:00",
+      "references": [
+        {
+          "video_id": "qipedc-W00372",
+          "signer_id": "qipedc-unknown-W00372",
+          "path": "E:\\Project\\VSL Clinic\\Source\\assets\\reference-source\\qipedc\\W00372.mp4",
+          "sha256": "b5bcdb6982e9e8fefee91d77be2412d73af41670d2fde7361ee3c1094d00c356",
+          "url": "https://qipedc.moet.gov.vn/videos/W00372.mp4",
+          "source_window_ms": [
+            2100,
+            4800
+          ],
+          "window_method": "front-facing nausea gesture; idle lead/tail excluded after 12-frame contact-sheet review"
+        }
+      ]
+    },
+    {
+      "id": "qipedc-W00238",
+      "label": "Bên phải",
+      "model_id": null,
+      "category": "Khám bệnh",
+      "demo": null,
+      "source_kind": "qipedc-single",
+      "source_id": "W00238",
+      "source_url": "https://qipedc.moet.gov.vn/videos/W00238.mp4",
+      "description": "",
+      "downloaded_at": "2026-11-10T14:47:26.650359+00:00",
+      "references": [
+        {
+          "video_id": "qipedc-W00238",
+          "signer_id": "qipedc-unknown-W00238",
+          "path": "E:\\Project\\VSL Clinic\\Source\\assets\\reference-source\\qipedc\\W00238.mp4",
+          "sha256": "6dae2a45d0752dea980ce9cbf84b039d2de3f2b3b565ecdee2523ffabfd6ee6d",
+          "url": "https://qipedc.moet.gov.vn/videos/W00238.mp4",
+          "source_window_ms": [
+            1300,
+            3000
+          ],
+          "window_method": "right-side sign, complete motion plus return; contact-sheet review"
+        }
+      ]
+    },
+    {
+      "id": "qipedc-W00239",
+      "label": "Bên trái",
+      "model_id": null,
+      "category": "Khám bệnh",
+      "demo": null,
+      "source_kind": "qipedc-single",
+      "source_id": "W00239",
+      "source_url": "https://qipedc.moet.gov.vn/videos/W00239.mp4",
+      "description": "",
+      "downloaded_at": "2026-11-10T14:47:27.298268+00:00",
+      "references": [
+        {
+          "video_id": "qipedc-W00239",
+          "signer_id": "qipedc-unknown-W00239",
+          "path": "E:\\Project\\VSL Clinic\\Source\\assets\\reference-source\\qipedc\\W00239.mp4",
+          "sha256": "fb90c9ecfd5f17e99430d8406711a0d2df59cd559ae8059d70cda46c13072795",
+          "url": "https://qipedc.moet.gov.vn/videos/W00239.mp4",
+          "source_window_ms": [
+            1050,
+            3650
+          ],
+          "window_method": "left-side sign, preserve cross-body direction and return; contact-sheet review"
+        }
+      ]
+    },
+    {
+      "id": "qipedc-W02295",
+      "label": "Nằm",
+      "model_id": null,
+      "category": "Khám bệnh",
+      "demo": null,
+      "source_kind": "qipedc-single",
+      "source_id": "W02295",
+      "source_url": "https://qipedc.moet.gov.vn/videos/W02295.mp4",
+      "description": "Ngả thân mình trên một vật nào đó, thường để nghỉ.",
+      "downloaded_at": "2026-11-10T14:47:27.959061+00:00",
+      "references": [
+        {
+          "video_id": "qipedc-W02295",
+          "signer_id": "qipedc-unknown-W02295",
+          "path": "E:\\Project\\VSL Clinic\\Source\\assets\\reference-source\\qipedc\\W02295.mp4",
+          "sha256": "dc85e65eb192ddb0778ebda7b083b02b842d3cccae56f02b90eddeebc155fb63",
+          "url": "https://qipedc.moet.gov.vn/videos/W02295.mp4",
+          "source_window_ms": [
+            600,
+            2450
+          ],
+          "window_method": "lying gesture from both hands rising through return; contact-sheet review"
+        }
+      ]
+    },
+    {
+      "id": "qipedc-W01304N",
+      "label": "Đợi",
+      "model_id": null,
+      "category": "Khám bệnh",
+      "demo": null,
+      "source_kind": "qipedc-single",
+      "source_id": "W01304N",
+      "source_url": "https://qipedc.moet.gov.vn/videos/W01304N.mp4",
+      "description": "Chờ ai hoặc cái gì mà biết hoặc tin là sẽ tới, sẽ có, sẽ xảy ra.",
+      "downloaded_at": "2026-11-10T14:47:28.557085+00:00",
+      "references": [
+        {
+          "video_id": "qipedc-W01304N",
+          "signer_id": "qipedc-unknown-W01304N",
+          "path": "E:\\Project\\VSL Clinic\\Source\\assets\\reference-source\\qipedc\\W01304N.mp4",
+          "sha256": "c4a45dde5ecb5e478851a718ddd01cdd2347243078306e233c50bd7f831dde4e",
+          "url": "https://qipedc.moet.gov.vn/videos/W01304N.mp4",
+          "source_window_ms": [
+            800,
+            2700
+          ],
+          "window_method": "southern wait variant, complete gesture and return; contact-sheet review"
+        }
+      ]
+    },
+    {
+      "id": "qipedc-D0355",
+      "label": "Đau mắt",
+      "model_id": null,
+      "category": "Khám bệnh",
+      "demo": null,
+      "source_kind": "qipedc-single",
+      "source_id": "D0355",
+      "source_url": "https://qipedc.moet.gov.vn/videos/D0355.mp4",
+      "description": "",
+      "downloaded_at": "2026-11-13T15:35:06.618652+00:00",
+      "references": [
+        {
+          "video_id": "qipedc-D0355",
+          "signer_id": "qipedc-unknown-D0355",
+          "path": "E:\\Project\\VSL Clinic\\Source\\assets\\reference-source\\qipedc\\D0355.mp4",
+          "sha256": "0931e538ad6b45c88a54135f23917fcf88faabe230adef09145e599851ec645b",
+          "url": "https://qipedc.moet.gov.vn/videos/D0355.mp4",
+          "source_window_ms": [
+            600,
+            2550
+          ],
+          "window_method": "front-facing eye pain sign and return; 12-frame contact sheet reviewed 2026-11-13"
+        }
+      ]
+    },
+    {
+      "id": "qipedc-D0359",
+      "label": "Đau tai",
+      "model_id": null,
+      "category": "Khám bệnh",
+      "demo": null,
+      "source_kind": "qipedc-single",
+      "source_id": "D0359",
+      "source_url": "https://qipedc.moet.gov.vn/videos/D0359.mp4",
+      "description": "",
+      "downloaded_at": "2026-11-13T15:35:06.624842+00:00",
+      "references": [
+        {
+          "video_id": "qipedc-D0359",
+          "signer_id": "qipedc-unknown-D0359",
+          "path": "E:\\Project\\VSL Clinic\\Source\\assets\\reference-source\\qipedc\\D0359.mp4",
+          "sha256": "ef973ab37fe30dc66a235a506b06be58623533cca27b8e1ad41fc87735ddefd6",
+          "url": "https://qipedc.moet.gov.vn/videos/D0359.mp4",
+          "source_window_ms": [
+            850,
+            2850
+          ],
+          "window_method": "ear pain sign, preserve head and torso tilt through return; contact sheet reviewed 2026-11-13"
+        }
+      ]
+    },
+    {
+      "id": "qipedc-D0485",
+      "label": "Nhà vệ sinh",
+      "model_id": null,
+      "category": "Khám bệnh",
+      "demo": null,
+      "source_kind": "qipedc-single",
+      "source_id": "D0485",
+      "source_url": "https://qipedc.moet.gov.vn/videos/D0485.mp4",
+      "description": "",
+      "downloaded_at": "2026-11-13T15:35:06.580104+00:00",
+      "references": [
+        {
+          "video_id": "qipedc-D0485",
+          "signer_id": "qipedc-unknown-D0485",
+          "path": "E:\\Project\\VSL Clinic\\Source\\assets\\reference-source\\qipedc\\D0485.mp4",
+          "sha256": "ad30fe532d13bf40959478ac65cf1db2c0054ae6bbf3006e9f0f084ff37fbba1",
+          "url": "https://qipedc.moet.gov.vn/videos/D0485.mp4",
+          "source_window_ms": [
+            650,
+            2450
+          ],
+          "window_method": "toilet sign, complete hand shape and return; contact sheet reviewed 2026-11-13"
+        }
+      ]
+    },
+    {
+      "id": "qipedc-W00042",
+      "label": "Ăn uống",
+      "model_id": null,
+      "category": "Khám bệnh",
+      "demo": null,
+      "source_kind": "qipedc-single",
+      "source_id": "W00042",
+      "source_url": "https://qipedc.moet.gov.vn/videos/W00042.mp4",
+      "description": "Ăn và uống (nói khái quát).",
+      "downloaded_at": "2026-11-13T15:35:08.538546+00:00",
+      "references": [
+        {
+          "video_id": "qipedc-W00042",
+          "signer_id": "qipedc-unknown-W00042",
+          "path": "E:\\Project\\VSL Clinic\\Source\\assets\\reference-source\\qipedc\\W00042.mp4",
+          "sha256": "e00f5adf889e2996ac9b012d03790535555a2bd4325b2dbfd35216beb87171c2",
+          "url": "https://qipedc.moet.gov.vn/videos/W00042.mp4",
+          "source_window_ms": [
+            1250,
+            4200
+          ],
+          "window_method": "front-facing eating/drinking take only; exclude repeated side-facing demonstration; reviewed 2026-11-13"
+        }
+      ]
+    },
+    {
+      "id": "qipedc-W00188",
+      "label": "Băng bó",
+      "model_id": null,
+      "category": "Khám bệnh",
+      "demo": null,
+      "source_kind": "qipedc-single",
+      "source_id": "W00188",
+      "source_url": "https://qipedc.moet.gov.vn/videos/W00188.mp4",
+      "description": "Băng c\u0010ho kín vết thương (nói khái quát).",
+      "downloaded_at": "2026-11-13T15:35:08.462072+00:00",
+      "references": [
+        {
+          "video_id": "qipedc-W00188",
+          "signer_id": "qipedc-unknown-W00188",
+          "path": "E:\\Project\\VSL Clinic\\Source\\assets\\reference-source\\qipedc\\W00188.mp4",
+          "sha256": "025560ef9b0e2a4dff5960baabfc442b2854f8af99f01e0de72f5c4de80b0840",
+          "url": "https://qipedc.moet.gov.vn/videos/W00188.mp4",
+          "source_window_ms": [
+            1000,
+            3100
+          ],
+          "window_method": "bandaging sign, both hands and return; contact sheet reviewed 2026-11-13"
+        }
+      ]
+    },
+    {
+      "id": "qipedc-W00432",
+      "label": "Cấp cứu",
+      "model_id": null,
+      "category": "Khám bệnh",
+      "demo": null,
+      "source_kind": "qipedc-single",
+      "source_id": "W00432",
+      "source_url": "https://qipedc.moet.gov.vn/videos/W00432.mp4",
+      "description": "Cứu chữa gấp để thoát khỏi tình trạng nguy kịch.",
+      "downloaded_at": "2026-11-13T15:35:08.548552+00:00",
+      "references": [
+        {
+          "video_id": "qipedc-W00432",
+          "signer_id": "qipedc-unknown-W00432",
+          "path": "E:\\Project\\VSL Clinic\\Source\\assets\\reference-source\\qipedc\\W00432.mp4",
+          "sha256": "37234a9d494a25cb3f4829cfa79c763d15214a222c0a7410c37f14be82481a88",
+          "url": "https://qipedc.moet.gov.vn/videos/W00432.mp4",
+          "source_window_ms": [
+            700,
+            2900
+          ],
+          "window_method": "emergency sign, both hands rising and returning; contact sheet reviewed 2026-11-13"
+        }
+      ]
+    },
+    {
+      "id": "qipedc-W01786",
+      "label": "Khẩu trang",
+      "model_id": null,
+      "category": "Khám bệnh",
+      "demo": null,
+      "source_kind": "qipedc-single",
+      "source_id": "W01786",
+      "source_url": "https://qipedc.moet.gov.vn/videos/W01786.mp4",
+      "description": "Đồ dùng làm bằng vải, có nhiều lớp hoặc có lót lớp ngăn cách để đeo che miệng và mũi nhằm ngăn giữ bụi bặm, chất độc hoặc chống rét.",
+      "downloaded_at": "2026-11-13T15:35:10.254573+00:00",
+      "references": [
+        {
+          "video_id": "qipedc-W01786",
+          "signer_id": "qipedc-unknown-W01786",
+          "path": "E:\\Project\\VSL Clinic\\Source\\assets\\reference-source\\qipedc\\W01786.mp4",
+          "sha256": "d36339de5f5b4e5582d59449e1df2acb639a858769485c5cf867f0ad84dfae48",
+          "url": "https://qipedc.moet.gov.vn/videos/W01786.mp4",
+          "source_window_ms": [
+            800,
+            2800
+          ],
+          "window_method": "mask sign, two hands near face through return; contact sheet reviewed 2026-11-13"
+        }
+      ]
+    },
+    {
+      "id": "qipedc-W03394",
+      "label": "Tiêm",
+      "model_id": null,
+      "category": "Khám bệnh",
+      "demo": null,
+      "source_kind": "qipedc-single",
+      "source_id": "W03394",
+      "source_url": "https://qipedc.moet.gov.vn/videos/W03394.mp4",
+      "description": "Đưa thuốc nước vào cơ thể bằng ống bơm qua kim rỗng.",
+      "downloaded_at": "2026-11-13T15:35:10.371434+00:00",
+      "references": [
+        {
+          "video_id": "qipedc-W03394",
+          "signer_id": "qipedc-unknown-W03394",
+          "path": "E:\\Project\\VSL Clinic\\Source\\assets\\reference-source\\qipedc\\W03394.mp4",
+          "sha256": "ed31293948d4ba56be9d45fc5299adc3f9d1ed57daa15dc7f719e5715c2c05f4",
+          "url": "https://qipedc.moet.gov.vn/videos/W03394.mp4",
+          "source_window_ms": [
+            800,
+            2850
+          ],
+          "window_method": "injection sign, preserve arm contact through return; contact sheet reviewed 2026-11-13"
+        }
+      ]
     }
   ],
   "scope": "Local demo. Single videos, not a multi-signer average. Fluent review pending."

@@ -14,6 +14,13 @@ def repair_speech(result):
     acoustic_ok = bool(segments) and all(
         item.get("avg_logprob", -99) >= -.6 and item.get("no_speech_prob", 1) < .3
         for item in segments)
+    # A numeral cannot modify "nghỉ" here. Match the complete rest instruction
+    # only, not arbitrary năm/nằm tokens (e.g. năm phút, năm ngày, năm nay).
+    rest = re.fullmatch(r"(?:(?:đồng ý[, ]+)?(?:(?:xin )?mời )?(?:(?:bạn|anh|chị|cô|chú|bác|em) )?(?:hãy )?)năm nghỉ(?: ngơi)?(?: (?:nhé|nha|ạ))?", key)
+    if acoustic_ok and rest and not raw.rstrip().endswith('?'):
+        corrected = re.sub(r"\bnăm(?= nghỉ\b)", "nằm", raw, count=1, flags=re.IGNORECASE)
+        return corrected, {"rule": "rest-instruction-asr-v1", "raw_text": raw,
+                           "corrected_text": corrected, "scope": "whole rest instruction; no numbers or modifiers"}
     if acoustic_ok and re.fullmatch(r"c[ạá]m ơn(?: ạ)?", key):
         return "Cảm ơn", {"rule": "courtesy-thanks-asr-v1", "raw_text": raw,
                            "corrected_text": "Cảm ơn", "scope": "whole courtesy utterance"}

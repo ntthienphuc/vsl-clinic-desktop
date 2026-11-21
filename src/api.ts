@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Bootstrap, Role, SessionState } from './types';
-import { setPatientAudioPlaying } from './speech/patientAudioGate';
-import { elapsedPlayback } from './avatar/motion';
+import { MessageSnapshotCache } from './messageSnapshot';
 
 export const token = new URLSearchParams(location.search).get('token') ?? 'local-development';
 export const previewUrl = `/api/preview?token=${encodeURIComponent(token)}`;
@@ -48,14 +47,19 @@ export function useClinic(role: Role) {
     let socket: WebSocket | null = null;
     let reconnect: ReturnType<typeof setTimeout> | undefined;
     let retry = 500;
+    const messages = new MessageSnapshotCache();
     const accept = (next: SessionState) => {
       if (!alive) {
         return;
       }
+      if (latest.current?.session_id !== next.session_id) {
+        seen.current.clear();
+        receivedAt.current.clear();
+      }
+      next.messages = messages.accept(next.session_id, next.messages);
       setState(next);
       latest.current = next;
       if (role === 'doctor') {
-        guardAvatarAudio();
         for (const message of next.messages.flatMap((item) => item.words ?? [item])) {
           if (message.role !== 'patient' || message.manual || receivedAt.current.has(message.id)) {
             continue;
@@ -64,16 +68,6 @@ export function useClinic(role: Role) {
         }
       }
     };
-    const guardAvatarAudio = () => {
-      if (role !== 'doctor') return;
-      const next = latest.current, playback = next?.playback;
-      const elapsed = playback ? elapsedPlayback(playback) : 0;
-      const playingCue = playback?.status === 'playing' && playback.audio_cues?.some(cue =>
-        elapsed >= cue.start_ms - 160 && elapsed < cue.end_ms + 120);
-      setPatientAudioPlaying(next?.avatar_voice_enabled !== false && !!playback?.audio_cues?.length &&
-        (playback.status === 'loading' || !!playingCue), 'avatar');
-    };
-    const audioClock = setInterval(guardAvatarAudio, 40);
     const connect = () => {
       if (!alive) {
         return;
@@ -119,8 +113,6 @@ export function useClinic(role: Role) {
     };
     void initialize();
     return () => {
-      clearInterval(audioClock);
-      if (role === 'doctor') setPatientAudioPlaying(false, 'avatar');
       alive = false;
       clearTimeout(reconnect);
       socket?.close();

@@ -52,7 +52,7 @@ def test_optional_temporary_copy_is_separate_and_never_replayed(session):
     session.stop_conversation(keep_temporary=True, generation=8)
     saved = deepcopy(session.temporary)
     assert len(saved['messages']) == 3 and len(saved['speech_drafts']) == 1
-    assert saved['messages'][0]['status'] == 'cancelled'
+    assert saved['messages'][0]['status'] == 'interrupted'
     assert saved['messages'][1]['status'] == 'cancelled'
     assert saved['messages'][2]['status'] != 'streaming'
     assert not session.messages and session.playback is None
@@ -89,3 +89,57 @@ def test_stopping_capture_releases_the_last_preview_even_after_eof():
     engine.preview, engine.preview_version, engine.current = b'old-frame', 2, None
     engine.stop()
     assert engine.preview is None and engine.preview_version == 3
+
+def test_end_while_camera_opens_cannot_reactivate_session(session, monkeypatch):
+    import asyncio
+    from types import SimpleNamespace
+    from fastapi import HTTPException
+    from backend import app as routes
+
+    async def scenario():
+        entered, resume = threading.Event(), threading.Event()
+        def start_camera(source, kind):
+            entered.set()
+            assert resume.wait(5)
+            return 1
+        engine = SimpleNamespace(start=start_camera, generation=0, stop=lambda: None)
+        monkeypatch.setattr(routes, 'engine', engine)
+        monkeypatch.setattr(routes, 'session', session)
+        monkeypatch.setattr(routes, 'control', asyncio.Lock())
+        async def clear():
+            pass
+        monkeypatch.setattr(routes, 'clear_language_context', clear)
+        start = asyncio.create_task(routes.start_conversation())
+        assert await asyncio.to_thread(entered.wait, 2)
+        stop = asyncio.create_task(routes.stop_conversation())
+        await asyncio.sleep(0)
+        resume.set()
+        with pytest.raises(HTTPException) as problem:
+            await start
+        assert problem.value.status_code == 409
+        await stop
+        assert session.conversation['status'] == 'idle'
+        assert session.capture['status'] == 'idle'
+
+    asyncio.run(scenario())
+
+
+@pytest.mark.parametrize('end', ['stop_capture', 'stop_conversation', 'reset_session'])
+def test_release_imported_video_at_session_boundary(end, tmp_path, monkeypatch, session):
+    import asyncio
+    from types import SimpleNamespace
+    from backend import app as routes
+
+    clip = tmp_path / 'import.mp4'
+    clip.write_bytes(b'fixture')
+    engine = SimpleNamespace(generation=0, last_source=(str(clip), 'video'), stop=lambda: None)
+    async def clear():
+        pass
+    monkeypatch.setattr(routes, 'engine', engine)
+    monkeypatch.setattr(routes, 'session', session)
+    monkeypatch.setattr(routes, 'active_upload', clip)
+    monkeypatch.setattr(routes, 'clear_language_context', clear)
+    monkeypatch.setattr(routes, 'control', asyncio.Lock())
+    asyncio.run(getattr(routes, end)())
+    assert not clip.exists()
+    assert routes.active_upload is None and engine.last_source is None

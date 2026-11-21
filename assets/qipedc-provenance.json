@@ -157,6 +157,188 @@
         3500
       ],
       "window_method": "single front-facing question; long idle lead and tail excluded after contact-sheet review"
+    },
+    {
+      "id": "qipedc-W00372",
+      "label": "Buồn nôn",
+      "source_id": "W00372",
+      "url": "https://qipedc.moet.gov.vn/videos/W00372.mp4",
+      "description": "Ở trạng thái cảm thấy muốn nôn.",
+      "sha256": "b5bcdb6982e9e8fefee91d77be2412d73af41670d2fde7361ee3c1094d00c356",
+      "downloaded_at": "2026-11-10T14:47:25.845906+00:00",
+      "source_window_ms": [
+        2100,
+        4800
+      ],
+      "window_method": "front-facing nausea gesture; idle lead/tail excluded after 12-frame contact-sheet review"
+    },
+    {
+      "id": "qipedc-W00238",
+      "label": "Bên phải",
+      "source_id": "W00238",
+      "url": "https://qipedc.moet.gov.vn/videos/W00238.mp4",
+      "description": "",
+      "sha256": "6dae2a45d0752dea980ce9cbf84b039d2de3f2b3b565ecdee2523ffabfd6ee6d",
+      "downloaded_at": "2026-11-10T14:47:26.650359+00:00",
+      "source_window_ms": [
+        1300,
+        3000
+      ],
+      "window_method": "right-side sign, complete motion plus return; contact-sheet review"
+    },
+    {
+      "id": "qipedc-W00239",
+      "label": "Bên trái",
+      "source_id": "W00239",
+      "url": "https://qipedc.moet.gov.vn/videos/W00239.mp4",
+      "description": "",
+      "sha256": "fb90c9ecfd5f17e99430d8406711a0d2df59cd559ae8059d70cda46c13072795",
+      "downloaded_at": "2026-11-10T14:47:27.298268+00:00",
+      "source_window_ms": [
+        1050,
+        3650
+      ],
+      "window_method": "left-side sign, preserve cross-body direction and return; contact-sheet review"
+    },
+    {
+      "id": "qipedc-W02295",
+      "label": "Nằm",
+      "source_id": "W02295",
+      "url": "https://qipedc.moet.gov.vn/videos/W02295.mp4",
+      "description": "Ngả thân mình trên một vật nào đó, thường để nghỉ.",
+      "sha256": "dc85e65eb192ddb0778ebda7b083b02b842d3cccae56f02b90eddeebc155fb63",
+      "downloaded_at": "2026-11-10T14:47:27.959061+00:00",
+      "source_window_ms": [
+        600,
+        2450
+      ],
+      "window_method": "lying gesture from both hands rising through return; contact-sheet review"
+    },
+    {
+      "id": "qipedc-W01304N",
+      "label": "Đợi",
+      "source_id": "W01304N",
+      "url": "https://qipedc.moet.gov.vn/videos/W01304N.mp4",
+      "description": "Chờ ai hoặc cái gì mà biết hoặc tin là sẽ tới, sẽ có, sẽ xảy ra.",
+      "sha256": "c4a45dde5ecb5e478851a718ddd01cdd2347243078306e233c50bd7f831dde4e",
+      "downloaded_at": "2026-11-10T14:47:28.557085+00:00",
+      "source_window_ms": [
+        800,
+        2700
+      ],
+      "window_method": "southern wait variant, complete gesture and return; contact-sheet review"
+    },
+    {
+      "id": "qipedc-D0355",
+      "label": "Đau mắt",
+      "source_id": "D0355",
+      "url": "https://qipedc.moet.gov.vn/videos/D0355.mp4",
+      "description": "",
+      "sha256": "0931e538ad6b45c88a54135f23917fcf88faabe230adef09145e599851ec645b",
+      "downloaded_at": "2026-11-13T15:35:06.618652+00:00",
+      "source_window_ms": [
+        600,
+        2550
+      ],
+      "window_method": "front-facing eye pain sign and return; 12-frame contact sheet reviewed 2026-11-13"
+    },
+    {
+      "id": "qipedc-D0359",
+      "label": "Đau tai",
+      "source_id": "D0359",
+      "url": "https://qipedc.moet.gov.vn/videos/D0359.mp4",
+      "description": "",
+      "sha256": "ef973ab37fe30dc66a235a506b06be58623533cca27b8e1ad41fc87735ddefd6",
+      "downloaded_at": "2026-11-13T15:35:06.624842+00:00",
+      "source_window_ms": [
+        850,
+        2850
+      ],
+      "window_method": "ear pain sign, preserve head and torso tilt through return; contact sheet reviewed 2026-11-13"
+    },
+    {
+      "id": "qipedc-D0485",
+      "label": "Nhà vệ sinh",
+      "source_id": "D0485",
+      "url": "https://qipedc.moet.gov.vn/videos/D0485.mp4",
+      "description": "",
+      "sha256": "ad30fe532d13bf40959478ac65cf1db2c0054ae6bbf3006e9f0f084ff37fbba1",
+      "downloaded_at": "2026-11-13T15:35:06.580104+00:00",
+      "source_window_ms": [
+        650,
+        2450
+      ],
+      "window_method": "toilet sign, complete hand shape and return; contact sheet reviewed 2026-11-13"
+    },
+    {
+      "id": "qipedc-W00042",
+      "label": "Ăn uống",
+      "source_id": "W00042",
+      "url": "https://qipedc.moet.gov.vn/videos/W00042.mp4",
+      "description": "Ăn và uống (nói khái quát).",
+      "sha256": "e00f5adf889e2996ac9b012d03790535555a2bd4325b2dbfd35216beb87171c2",
+      "downloaded_at": "2026-11-13T15:35:08.538546+00:00",
+      "source_window_ms": [
+        1250,
+        4200
+      ],
+      "window_method": "front-facing eating/drinking take only; exclude repeated side-facing demonstration; reviewed 2026-11-13"
+    },
+    {
+      "id": "qipedc-W00188",
+      "label": "Băng bó",
+      "source_id": "W00188",
+      "url": "https://qipedc.moet.gov.vn/videos/W00188.mp4",
+      "description": "Băng c\u0010ho kín vết thương (nói khái quát).",
+      "sha256": "025560ef9b0e2a4dff5960baabfc442b2854f8af99f01e0de72f5c4de80b0840",
+      "downloaded_at": "2026-11-13T15:35:08.462072+00:00",
+      "source_window_ms": [
+        1000,
+        3100
+      ],
+      "window_method": "bandaging sign, both hands and return; contact sheet reviewed 2026-11-13"
+    },
+    {
+      "id": "qipedc-W00432",
+      "label": "Cấp cứu",
+      "source_id": "W00432",
+      "url": "https://qipedc.moet.gov.vn/videos/W00432.mp4",
+      "description": "Cứu chữa gấp để thoát khỏi tình trạng nguy kịch.",
+      "sha256": "37234a9d494a25cb3f4829cfa79c763d15214a222c0a7410c37f14be82481a88",
+      "downloaded_at": "2026-11-13T15:35:08.548552+00:00",
+      "source_window_ms": [
+        700,
+        2900
+      ],
+      "window_method": "emergency sign, both hands rising and returning; contact sheet reviewed 2026-11-13"
+    },
+    {
+      "id": "qipedc-W01786",
+      "label": "Khẩu trang",
+      "source_id": "W01786",
+      "url": "https://qipedc.moet.gov.vn/videos/W01786.mp4",
+      "description": "Đồ dùng làm bằng vải, có nhiều lớp hoặc có lót lớp ngăn cách để đeo che miệng và mũi nhằm ngăn giữ bụi bặm, chất độc hoặc chống rét.",
+      "sha256": "d36339de5f5b4e5582d59449e1df2acb639a858769485c5cf867f0ad84dfae48",
+      "downloaded_at": "2026-11-13T15:35:10.254573+00:00",
+      "source_window_ms": [
+        800,
+        2800
+      ],
+      "window_method": "mask sign, two hands near face through return; contact sheet reviewed 2026-11-13"
+    },
+    {
+      "id": "qipedc-W03394",
+      "label": "Tiêm",
+      "source_id": "W03394",
+      "url": "https://qipedc.moet.gov.vn/videos/W03394.mp4",
+      "description": "Đưa thuốc nước vào cơ thể bằng ống bơm qua kim rỗng.",
+      "sha256": "ed31293948d4ba56be9d45fc5299adc3f9d1ed57daa15dc7f719e5715c2c05f4",
+      "downloaded_at": "2026-11-13T15:35:10.371434+00:00",
+      "source_window_ms": [
+        800,
+        2850
+      ],
+      "window_method": "injection sign, preserve arm contact through return; contact sheet reviewed 2026-11-13"
     }
   ]
 }

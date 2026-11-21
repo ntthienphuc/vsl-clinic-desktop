@@ -44,10 +44,17 @@ def definitions(path,scope,names=None,strip_model_registration=False,drop_activa
     exec(compile(ast.Module(body=nodes,type_ignores=[]),str(path),'exec'),scope)
 
 
-def load(source,asset,preset_json,device='cuda'):
+def load(source,asset,preset_json,device='cuda',quantized=None):
     source,asset=Path(source),Path(asset)
     proof=json.loads((asset/'EXPORT_RECEIPT.json').read_text('utf8'))
-    assert digest(asset/'encoder_state.pt')==proof['encoder_sha256']
+    quant_record = quant_path = None
+    if quantized:
+        if device != 'cpu':
+            raise ValueError('This INT8 encoder requires CPU execution')
+        from .quantized_encoder import read_manifest, install_linear_skeleton
+        quant_record, quant_path = read_manifest(quantized,proof['encoder_sha256'])
+    else:
+        assert digest(asset/'encoder_state.pt')==proof['encoder_sha256']
     assert digest(asset/'saved_config.json')==proof['saved_config_sha256']
     module=types.ModuleType('_clinic_avh_inference_definitions')
     sys.modules[module.__name__]=module
@@ -86,11 +93,25 @@ def load(source,asset,preset_json,device='cuda'):
     for key in ['dropout','activation_dropout','dropout_input','attention_dropout','feature_grad_mult']:
         if key in fine:setattr(cfg,key,fine[key])
     cfg.encoder_layerdrop=fine['layerdrop']
-    model=scope['AVHubertModel'](cfg,types.SimpleNamespace(sample_rate=25,normalize=True),[range(2004)])
+    if quantized:
+        # Every parameter will be strictly loaded from the saved artifact.
+        # Fairseq's random initializer explicitly calls .cpu(), which is not
+        # meaningful on a meta skeleton; skip initialization, not inference.
+        scope['init_bert_params'] = lambda module: None
+    with torch.device('meta' if quantized else 'cpu'):
+        model=scope['AVHubertModel'](cfg,types.SimpleNamespace(sample_rate=25,normalize=True),[range(2004)])
     model.remove_pretraining_modules()
-    state=torch.load(asset/'encoder_state.pt',map_location='cpu',weights_only=True,mmap=True)
-    assert len(state)==536 and tuple(state['label_embs_concat'].shape)==(2004,256)
-    model.load_state_dict(state,strict=True)
+    if quantized:
+        names = install_linear_skeleton(model)
+        assert names == quant_record['converted_layers']
+        state=torch.load(quant_path,map_location='cpu',weights_only=True,mmap=True)
+        model.load_state_dict(state,strict=True,assign=True)
+        assert not any(value.is_meta for value in list(model.parameters()) + list(model.buffers()))
+    else:
+        state=torch.load(asset/'encoder_state.pt',map_location='cpu',weights_only=True,mmap=True)
+        assert len(state)==536 and tuple(state['label_embs_concat'].shape)==(2004,256)
+        model.load_state_dict(state,strict=True)
+    loaded_keys = len(state)
     del state
     model.eval().requires_grad_(False).to(device)
     @torch.inference_mode()
@@ -99,6 +120,7 @@ def load(source,asset,preset_json,device='cuda'):
         x=torch.from_numpy(mouth[:,4:92,4:92].copy()).float().to(device)
         x=((x/255-.421)/.165)[None,None]
         return model.extract_finetune({'audio':None,'video':x},padding_mask=None,mask=False)[0][0].float().cpu().numpy()
-    return model,infer,dict(strict_load_keys=536,encoder_sha256=proof['encoder_sha256'],precision='fp32_tf32_off',
+    return model,infer,dict(strict_load_keys=loaded_keys,encoder_sha256=proof['encoder_sha256'],precision='transformer_dynamic_int8' if quantized else 'fp32_tf32_off',
+        quantized_sha256=quant_record['sha256'] if quantized else None,
         adaptation='Original eager inference definitions; omit task/training registries only. Numerical replay required.',
         parameter_count=sum(p.numel() for p in model.parameters()))

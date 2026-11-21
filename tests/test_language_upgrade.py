@@ -40,7 +40,7 @@ def test_conversational_variants_cover_entire_clause(planner, text, projection):
 
 
 @pytest.mark.parametrize("text", [
-    "Chị không đau bụng.", "Chị có hơi đau bụng không?", "Bạn có đau bụng bên trái không?",
+    "Chị không đau bụng.", "Chị có hơi đau bụng không?", "Bạn có đau bụng phía sau không?",
     "Bạn có sốt 2 ngày không?", "Chị uống nước trước khám.", "Anh nên uống hai ly nước.",
     "Bạn không được uống nước.", "Bạn có đau ngực không?", "Cho tôi hỏi bạn có dị ứng thuốc không?",
     "Y tá đo nhiệt độ và tiêm thuốc.", "Chị bị sốt từ hôm qua.", "Bạn uống nước hoặc nghỉ ngơi.",
@@ -81,6 +81,8 @@ def test_auto_speech_sends_new_variant_exactly_once(planner):
     ("Y tá đo nhiệt độ hôm nay", "Y tá đo nhiệt độ."),
     ("Bạn có hơi mệt không", "Bạn có mệt không?"),
     ("Bạn có đau bụng bên trái không", "Bạn có đau bụng không?"),
+    ("Bụng bị nhức không?", "Bạn có đau bụng bên phải không?"),
+    ("Bạn có mệt không?", "Bạn có cảm thấy yếu không?"),
 ])
 def test_retrieval_does_not_offer_meaning_dropping_candidates(source, target):
     assert not preserves_protected(source, target)

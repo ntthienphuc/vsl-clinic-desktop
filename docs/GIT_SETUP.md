@@ -4,15 +4,15 @@
 
 VSL Clinic uses Electron, React/TypeScript, Three.js/VRM and Python/FastAPI. This standalone repository does not include Android/Flutter code or the Translator project's Git history.
 
-The current source is 0.5.2, with two patient recognition modes and an offline
-installer recipe. The restore manifest covers **21,179** local inputs, including
+The current source is 0.7.5, with two patient recognition modes and an offline
+installer recipe. The restore manifest covers the exact local inputs listed in `local-assets-manifest.json`, including
 both recognition dictionaries, voices, examples, retained reference-audit videos
 and the isolated multimodal runtime. Model weights, runtime binaries and raw
 videos are excluded from Git. Keep an authorized complete **Source** folder to
 restore them; cloning Git alone does not supply these inputs.
 
 `DEPLOYMENT.json` and the runtime manifest preserve provenance and checksums.
-`tools/prepare_multimodal_r3.py` is a local staging recipe using preserved research
+`tools/prepare_autoavsr.py` is a local staging recipe using preserved research
 paths; those paths are not needed by the installed app. Build with
 `npm run package`, verify with `tools/release_receipt.py` and
 `tools/audit_portable.py`, then use `npm run installer` to create one offline
@@ -29,7 +29,7 @@ cd vsl-clinic-desktop
 
 `package.json`, `src/`, `backend/`, `desktop/`, `assets/` and `tools/` are at the repository root. An Android checkout is not needed to run Clinic.
 
-Git contains source, lockfiles, tests, build configuration, the motion bank, avatar assets, scripts and JSON evidence. Recognition/ASR weights, original videos, caches, development environments and executables remain outside Git. `local-assets-manifest.json` records paths, sizes and SHA-256 hashes for current local inputs; it is not a full training-corpus backup.
+Git contains source, lockfiles, tests, build configuration, motion playback code, avatar assets, scripts and JSON evidence. Recognition/ASR weights, original videos, caches, development environments and executables remain outside Git. `local-assets-manifest.json` records paths, sizes and SHA-256 hashes for current local inputs; it is not a full training-corpus backup.
 
 ## Restore authorized inputs
 
@@ -55,6 +55,6 @@ After restoration, run `.venv/Scripts/python.exe -m pytest -q`, `npm test` and `
 
 The portable distribution runs independently of this checkout and includes its own runtimes and model files. Keep its complete folder together. [Package contents](PACKAGE_CONTENTS.md) distinguishes recognition labels, avatar motions, sample videos and raw research references.
 
-Research scripts such as `prepare_assets.py`, `expand_vocabulary.py`, `build_qipedc_bank.py` and `research_qipedc.py` retain default paths to the original corpus. They are separate data-building tools, not part of setup or startup. Rebuilding the bank requires the appropriate original corpus; the tested motion bank is already in Git.
+Research scripts such as `prepare_assets.py`, `expand_vocabulary.py`, `build_qipedc_bank.py` and `research_qipedc.py` retain default paths to the original corpus. They are separate data-building tools, not part of setup or startup. Rebuilding the bank requires the appropriate original corpus; restore the complete tested 200-sign bank from the authorized source copy using the asset manifest.
 
 Inherited recognition code is checked against fixed hashes in `backend/legacy/provenance.json`; tests do not depend on the Android/server parent's current revision. QIPEDC source checks read restored videos from `assets/reference-source/qipedc` instead of the original workstation's absolute paths.

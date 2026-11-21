@@ -29,6 +29,19 @@ SELECTION = {
 # Reviewed against the unchanged source video. W00248 demonstrates the same
 # sign again after turning sideways; that second take must not enter one motion.
 REVIEWED_WINDOWS = {
+    "D0355": (600, 2550, "front-facing eye pain sign and return; 12-frame contact sheet reviewed 2026-11-13"),
+    "D0359": (850, 2850, "ear pain sign, preserve head and torso tilt through return; contact sheet reviewed 2026-11-13"),
+    "D0485": (650, 2450, "toilet sign, complete hand shape and return; contact sheet reviewed 2026-11-13"),
+    "W00042": (1250, 4200, "front-facing eating/drinking take only; exclude repeated side-facing demonstration; reviewed 2026-11-13"),
+    "W00188": (1000, 3100, "bandaging sign, both hands and return; contact sheet reviewed 2026-11-13"),
+    "W00432": (700, 2900, "emergency sign, both hands rising and returning; contact sheet reviewed 2026-11-13"),
+    "W01786": (800, 2800, "mask sign, two hands near face through return; contact sheet reviewed 2026-11-13"),
+    "W03394": (800, 2850, "injection sign, preserve arm contact through return; contact sheet reviewed 2026-11-13"),
+    "W00372": (2100, 4800, "front-facing nausea gesture; idle lead/tail excluded after 12-frame contact-sheet review"),
+    "W00238": (1300, 3000, "right-side sign, complete motion plus return; contact-sheet review"),
+    "W00239": (1050, 3650, "left-side sign, preserve cross-body direction and return; contact-sheet review"),
+    "W02295": (600, 2450, "lying gesture from both hands rising through return; contact-sheet review"),
+    "W01304N": (800, 2700, "southern wait variant, complete gesture and return; contact-sheet review"),
     "W00248": (1500, 4200, "front-facing take only; side-view repetition excluded after visual review"),
     "W03239N": (250, 2300, "complete front-facing question; initial idle cropped after contact-sheet review"),
     "W00145N": (1600, 3500, "single front-facing question; long idle lead and tail excluded after contact-sheet review"),
